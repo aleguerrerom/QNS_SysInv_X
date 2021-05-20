@@ -13,6 +13,8 @@ namespace CNV_Inventario.MVCView.Resources
 {
     public partial class GestorUsuarios : Form
     {
+        private Usuarios user;
+        private UsuariosHelper userHelper;
         public GestorUsuarios()
         {
             InitializeComponent();
@@ -33,15 +35,18 @@ namespace CNV_Inventario.MVCView.Resources
             try
             {
                 this.user = new Usuarios();
-                this.user.Nombre = this.txtNombreUser.Text;
-                this.user.Cedula = this.txtCedulaUser.Text;
-                this.user.FechaNacimiento = this.dtpFechaNaUsu.Value;
-                this.user.Genero = this.cmbGeneroUsu.Text;
-                this.user.Telefono = this.txtTelefonoUsu.Text;
-                this.user.Correo = this.txtCorreoUsu.Text;
-                this.user.Perfil = this.cmbPerfilUsu.Text;
                 this.user.Usuario = this.txtUsuario.Text;
                 this.user.Clave = this.txtClave.Text;
+                //this.user.Rol = int.Parse(this.textBox1.Text);
+                //this.user.Activo = int.Parse(this.textBox2.Text);
+                if (this.chckbxActivo.Checked)
+                {
+                    this.user.Activo = true;
+                }
+                else this.user.Activo = false;
+                this.user.Rol = int.Parse(this.cmbRol.Text);
+                this.user.Nombre = this.txtNombre.Text;
+                this.user.Apellido = this.txtApellido.Text;
                 this.user.opc = 2;
 
                 this.userHelper = new UsuariosHelper(user);
@@ -61,7 +66,6 @@ namespace CNV_Inventario.MVCView.Resources
              && this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
-
             }
             else
             {
@@ -87,5 +91,5 @@ namespace CNV_Inventario.MVCView.Resources
                 }
             }
         }
-
+    }
     }

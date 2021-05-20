@@ -12,6 +12,8 @@ namespace CNV_Inventario.MVCView
 {
     public partial class AcercaDe : Form
     {
+        
+
         public AcercaDe()
         {
             InitializeComponent();
@@ -20,6 +22,13 @@ namespace CNV_Inventario.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+           
+        }
+
+        private void AcercaDe_Load(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

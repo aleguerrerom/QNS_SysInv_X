@@ -15,6 +15,7 @@ namespace CNV_Inventario.MVCView
     public partial class Principal : Form
     {
         private Usuarios user;
+       
         public Principal()
         {
             InitializeComponent();
@@ -24,12 +25,12 @@ namespace CNV_Inventario.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusUsuario.Text = "Usuario: " + this.user.Nombre;
+            this.statusUsuario.Text = "Usuario: " /*+ this.user.Nombre*/;
             validarPerfil();
         }
 
         private void validarPerfil()
-        {
+        {/*
             switch (this.user.Rol)
             {
                 /*case "5":
@@ -40,13 +41,14 @@ namespace CNV_Inventario.MVCView
                       break;
                     //estudiantesToolStripMenuItem
                     //cursosToolStripMenuItem
-                  */  //usuariosToolStripMenuItem
-            }
+                    //usuariosToolStripMenuItem
+            }*/
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestorUsuarios gu = new GestorUsuarios();
+            
             gu.Show();
         }
 

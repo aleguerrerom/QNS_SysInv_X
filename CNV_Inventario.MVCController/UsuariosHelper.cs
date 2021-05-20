@@ -69,15 +69,15 @@ namespace CNV_Inventario.MVCController
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@usuario";
                 parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 20;
-                parParameter[1].SqlValue = objUsuarios.Nombre;
+                parParameter[1].Size = 50;
+                parParameter[1].SqlValue = objUsuarios.Usuario;
 
                 parParameter[2] = new SqlParameter();
                 parParameter[2].ParameterName = "@clave";
                 parParameter[2].SqlDbType = SqlDbType.VarChar;
-                parParameter[2].Size = 20;
+                parParameter[2].Size = 50;
                 parParameter[2].SqlValue = objUsuarios.Clave;
-
+                
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@activo";
                 parParameter[3].SqlDbType = SqlDbType.Bit;
@@ -85,22 +85,21 @@ namespace CNV_Inventario.MVCController
 
                 parParameter[4] = new SqlParameter();
                 parParameter[4].ParameterName = "@rol";
-                parParameter[4].SqlDbType = SqlDbType.VarChar;
-                parParameter[4].Size = 20;
+                parParameter[4].SqlDbType = SqlDbType.Int;
                 parParameter[4].SqlValue = objUsuarios.Rol;
 
                 parParameter[5] = new SqlParameter();
                 parParameter[5].ParameterName = "@nombre";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
-                parParameter[5].Size = 20;
+                parParameter[5].Size = 50;
                 parParameter[5].SqlValue = objUsuarios.Nombre;
 
                 parParameter[6] = new SqlParameter();
                 parParameter[6].ParameterName = "@apellido";
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 30;
+                parParameter[6].Size = 50;
                 parParameter[6].SqlValue = objUsuarios.Apellido;
-
+                
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
 
 

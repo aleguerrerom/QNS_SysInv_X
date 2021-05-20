@@ -51,11 +51,12 @@ namespace CNV_Inventario.MVCView
                     {
                         DataRow fila = table.Rows[0];
                         this.user.Nombre = fila["nombre"].ToString();
-                        this.user.Rol = fila["rol"].ToString();
+                        //this.user.Rol = fila["rol"].ToString();
                         Principal inicio = new Principal(user);
-
+ 
                         inicio.Show();
                         this.Hide();
+                        
                     }
                     else MessageBox.Show("Datos de inicio de sesión incorrectos");
                 }
