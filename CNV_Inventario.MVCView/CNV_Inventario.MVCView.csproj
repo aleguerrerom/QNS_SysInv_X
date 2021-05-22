@@ -53,6 +53,12 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiodeClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiodeClave.Designer.cs">
+      <DependentUpon>CambiodeClave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entrega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     <Compile Include="GestorUsuarios.Designer.cs">
       <DependentUpon>GestorUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestorRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestorRoles.Designer.cs">
+      <DependentUpon>GestorRoles.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="GestorRoles.resx">
+      <DependentUpon>GestorRoles.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

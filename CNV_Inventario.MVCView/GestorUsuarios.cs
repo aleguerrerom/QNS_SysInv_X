@@ -15,6 +15,7 @@ namespace CNV_Inventario.MVCView.Resources
     {
         private Usuarios user;
         private UsuariosHelper userHelper;
+        private DataTable table;
         public GestorUsuarios()
         {
             InitializeComponent();
@@ -28,6 +29,32 @@ namespace CNV_Inventario.MVCView.Resources
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listar()
+        {
+            try
+            {
+                this.user = new Usuarios();
+                this.user.opc = 1;
+
+                this.userHelper = new UsuariosHelper(user);
+
+
+                this.table = new DataTable();
+                this.table = this.userHelper.Listar();
+
+                if (this.table.Rows.Count > 0)
+                {
+                    this.dgvListar.DataSource = this.table;
+                    this.dgvListar.ReadOnly = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void guardar()
@@ -74,7 +101,7 @@ namespace CNV_Inventario.MVCView.Resources
                     if (this.txtClave.Text == this.txtConfirmar.Text)
                     {
                         //actualizar();
-                        //listar();
+                        listar();
                         //limpiarCeldas();
                     }
                     else MessageBox.Show("Las claves deben ser iguales");
@@ -84,12 +111,22 @@ namespace CNV_Inventario.MVCView.Resources
                     if (this.txtClave.Text == this.txtConfirmar.Text)
                     {
                         guardar();
-                        //listar();
+                        listar();
                         //limpiarCeldas();
                     }
                     else MessageBox.Show("Las claven deben ser iguales");
                 }
             }
+        }
+
+        private void GestorUsuarios_Load(object sender, EventArgs e)
+        {
+            listar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

@@ -22,7 +22,7 @@ namespace CNV_Inventario.MVCController
             objUsuarios = parObjUsuarios;
         }
         //RETORA TABLA CON LOS USUARIOS
-        /*
+        
         public DataTable Listar()
         {
 
@@ -50,7 +50,7 @@ namespace CNV_Inventario.MVCController
 
             return tblDatos;
         }
-        */
+        
         //GUARDA USUARIOS
         public void Guardar()
         {
