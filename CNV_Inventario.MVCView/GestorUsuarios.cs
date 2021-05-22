@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNV_Inventario.MVCController;
+using System.Security.Cryptography;
 
 namespace CNV_Inventario.MVCView.Resources
 {
@@ -30,6 +31,7 @@ namespace CNV_Inventario.MVCView.Resources
         {
 
         }
+       
 
         private void listar()
         {
@@ -61,9 +63,10 @@ namespace CNV_Inventario.MVCView.Resources
         {
             try
             {
+               
                 this.user = new Usuarios();
                 this.user.Usuario = this.txtUsuario.Text;
-                this.user.Clave = this.txtClave.Text;
+                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
                 //this.user.Rol = int.Parse(this.textBox1.Text);
                 //this.user.Activo = int.Parse(this.textBox2.Text);
                 if (this.chckbxActivo.Checked)
@@ -100,9 +103,9 @@ namespace CNV_Inventario.MVCView.Resources
                 {
                     if (this.txtClave.Text == this.txtConfirmar.Text)
                     {
-                        //actualizar();
+                        actualizar();
                         listar();
-                        //limpiarCeldas();
+                        limpiar();
                     }
                     else MessageBox.Show("Las claves deben ser iguales");
                 }
@@ -112,12 +115,24 @@ namespace CNV_Inventario.MVCView.Resources
                     {
                         guardar();
                         listar();
-                        //limpiarCeldas();
+                        limpiar();
                     }
                     else MessageBox.Show("Las claven deben ser iguales");
                 }
             }
         }
+
+        public void limpiar()
+        {
+            this.txtApellido.Clear();
+            this.txtClave.Clear();
+            this.txtUsuario.Clear();
+            this.txtConfirmar.Clear();
+            this.txtNombre.Clear();
+            this.chckbxActivo.Checked = false;
+            this.btnAdd.Text = "AGREGAR";
+        }
+
 
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
@@ -126,7 +141,101 @@ namespace CNV_Inventario.MVCView.Resources
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            limpiar();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.table = (DataTable)this.dgvListar.DataSource;
+                if (table == null)
+                {
+                    MessageBox.Show("No hay Usuarios para eliminar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.user = new Usuarios();
+                    this.user.Usuario = fila["usuario"].ToString();
+                    this.user.opc = 3;
+                    this.userHelper = new UsuariosHelper(user);
+                    this.userHelper.Eliminar();
+                    MessageBox.Show("Usuario Eliminado Eliminado");
+                    listar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void actualizar()
+        {
+                        this.user = new Usuarios();
+            this.user.Usuario = this.txtUsuario.Text;
+            this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
+            //this.user.Rol = int.Parse(this.textBox1.Text);
+            //this.user.Activo = int.Parse(this.textBox2.Text);
+            if (this.chckbxActivo.Checked)
+            {
+                this.user.Activo = true;
+            }
+            else this.user.Activo = false;
+            this.user.Rol = int.Parse(this.cmbRol.Text);
+            this.user.Nombre = this.txtNombre.Text;
+            this.user.Apellido = this.txtApellido.Text;
+            this.user.opc = 4;
+
+
+            this.userHelper = new UsuariosHelper(user);
+            this.userHelper.Actualizar();
+            MessageBox.Show("Datos del Estudiante actualizados");
+    }
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvListar_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                this.table = (DataTable)this.dgvListar.DataSource;
+                if (table == null)
+                {
+                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.txtUsuario.Text = fila["usuario"].ToString();
+                    this.txtClave.Text = EncryptionHelper.Encrypt(fila["clave"].ToString());
+                    this.chckbxActivo.Text = fila["activo"].ToString();
+                    this.txtConfirmar.Text = "";
+                    this.cmbRol.Text = fila["rol"].ToString();
+                    this.txtNombre.Text = fila["nombre"].ToString();
+                    this.txtApellido.Text = fila["apellido"].ToString();
+                    this.txtUsuario.ReadOnly = true;
+                    this.btnAdd.Text = "ACTUALIZAR";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
     }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNV_Inventario.MVCController;
+using System.Security.Cryptography;
 
 namespace CNV_Inventario.MVCView
 {
@@ -31,15 +32,18 @@ namespace CNV_Inventario.MVCView
             this.Close();
         }
 
+        
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
             {
+               
                 if (this.txtUsuarioLogin.Text != "" && this.txtClaveLogin.Text != "")
                 {
                     this.user = new Usuarios();
                     this.user.Usuario = this.txtUsuarioLogin.Text;
-                    this.user.Clave = this.txtClaveLogin.Text;
+                    this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text);
                     this.user.opc = 5;
 
                     this.userHelper = new UsuariosHelper(user);
@@ -51,17 +55,16 @@ namespace CNV_Inventario.MVCView
                     {
                         DataRow fila = table.Rows[0];
                         this.user.Nombre = fila["nombre"].ToString();
-                        //this.user.Rol = fila["rol"].ToString();
+                        //this.user.Rol = fila[""].ToString();
                         Principal inicio = new Principal(user);
  
                         inicio.Show();
                         this.Hide();
                         
                     }
-                    else MessageBox.Show("Datos de inicio de sesión incorrectos");
+                    else MessageBox.Show("Datos de inicio de sesión incorrectos o Usuario Inactivo");
                 }
-
-
+                
             }
             catch (Exception ex)
             {
