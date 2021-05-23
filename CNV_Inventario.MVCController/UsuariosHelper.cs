@@ -116,9 +116,7 @@ namespace CNV_Inventario.MVCController
         
         public void Actualizar()
         {
-
-
-
+           
             try
             {
                 cnGeneral = new Datos();
@@ -180,9 +178,6 @@ namespace CNV_Inventario.MVCController
         
         public void Eliminar()
         {
-
-
-
             try
             {
                 cnGeneral = new Datos();

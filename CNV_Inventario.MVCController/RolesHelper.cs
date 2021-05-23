@@ -74,6 +74,89 @@ namespace CNV_Inventario.MVCController
 
         }
 
+        public void Eliminar()
+        {
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objRoles.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 20;
+                parParameter[1].SqlValue = objRoles.Nombre;
+
+                cnGeneral.EjecutarSP(parParameter, "SPUsuario");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+
+        }
+
+
+        public void ActualizarRol()
+        {
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[7];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objRoles.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
+                parParameter[1].SqlValue = objRoles.Nombre;
+
+                parParameter[2] = new SqlParameter();
+                parParameter[2].ParameterName = "@inventario";
+                parParameter[2].SqlDbType = SqlDbType.Bit;
+                parParameter[2].SqlValue = objRoles.Inventario;
+
+                parParameter[3] = new SqlParameter();
+                parParameter[3].ParameterName = "@usuarios";
+                parParameter[3].SqlDbType = SqlDbType.Bit;
+                parParameter[3].SqlValue = objRoles.Usuarios;
+
+                parParameter[4] = new SqlParameter();
+                parParameter[4].ParameterName = "@prestamo";
+                parParameter[4].SqlDbType = SqlDbType.Bit;
+                parParameter[4].SqlValue = objRoles.Prestamo;
+
+                parParameter[5] = new SqlParameter();
+                parParameter[5].ParameterName = "@entrega";
+                parParameter[5].SqlDbType = SqlDbType.Bit;
+                parParameter[5].SqlValue = objRoles.Entrega;
+
+                parParameter[6] = new SqlParameter();
+                parParameter[6].ParameterName = "@roles";
+                parParameter[6].SqlDbType = SqlDbType.Bit;
+                parParameter[6].SqlValue = objRoles.Roless;
+
+                cnGeneral.EjecutarSP(parParameter, "SPRoles");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public DataTable ListarRol()
         {
 

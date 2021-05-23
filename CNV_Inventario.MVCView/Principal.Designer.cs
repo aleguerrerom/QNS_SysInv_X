@@ -36,13 +36,13 @@
             this.tsPrestamo = new System.Windows.Forms.ToolStripLabel();
             this.tsUsuarios = new System.Windows.Forms.ToolStripLabel();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripLabel();
-            this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsRoles = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripInventario = new System.Windows.Forms.ToolStripLabel();
+            this.tsrEntrega = new System.Windows.Forms.ToolStripLabel();
+            this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripInventario = new System.Windows.Forms.ToolStripLabel();
-            this.tsrEntrega = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -120,19 +120,33 @@
             this.aboutUsToolStripMenuItem.Text = "Acerca De";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
-            // tsAboutUs
-            // 
-            this.tsAboutUs.Name = "tsAboutUs";
-            this.tsAboutUs.Size = new System.Drawing.Size(57, 22);
-            this.tsAboutUs.Text = "AcercaDe";
-            this.tsAboutUs.Click += new System.EventHandler(this.tsAboutUs_Click);
-            // 
             // tsRoles
             // 
             this.tsRoles.Name = "tsRoles";
             this.tsRoles.Size = new System.Drawing.Size(35, 22);
             this.tsRoles.Text = "Roles";
             this.tsRoles.Click += new System.EventHandler(this.toolStripLabel5_Click);
+            // 
+            // toolStripInventario
+            // 
+            this.toolStripInventario.Name = "toolStripInventario";
+            this.toolStripInventario.Size = new System.Drawing.Size(60, 22);
+            this.toolStripInventario.Text = "Inventario";
+            this.toolStripInventario.Click += new System.EventHandler(this.toolStripInventario_Click);
+            // 
+            // tsrEntrega
+            // 
+            this.tsrEntrega.Name = "tsrEntrega";
+            this.tsrEntrega.Size = new System.Drawing.Size(47, 22);
+            this.tsrEntrega.Text = "Entrega";
+            this.tsrEntrega.Click += new System.EventHandler(this.tsrEntrega_Click);
+            // 
+            // tsAboutUs
+            // 
+            this.tsAboutUs.Name = "tsAboutUs";
+            this.tsAboutUs.Size = new System.Drawing.Size(57, 22);
+            this.tsAboutUs.Text = "AcercaDe";
+            this.tsAboutUs.Click += new System.EventHandler(this.tsAboutUs_Click);
             // 
             // tsAyuda
             // 
@@ -157,20 +171,6 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
-            // toolStripInventario
-            // 
-            this.toolStripInventario.Name = "toolStripInventario";
-            this.toolStripInventario.Size = new System.Drawing.Size(60, 22);
-            this.toolStripInventario.Text = "Inventario";
-            this.toolStripInventario.Click += new System.EventHandler(this.toolStripInventario_Click);
-            // 
-            // tsrEntrega
-            // 
-            this.tsrEntrega.Name = "tsrEntrega";
-            this.tsrEntrega.Size = new System.Drawing.Size(47, 22);
-            this.tsrEntrega.Text = "Entrega";
-            this.tsrEntrega.Click += new System.EventHandler(this.tsrEntrega_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +181,7 @@
             this.MinimizeBox = false;
             this.Name = "Principal";
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

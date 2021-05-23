@@ -16,8 +16,10 @@ namespace CNV_Inventario.MVCView
     public partial class Principal : Form
     {
         private Usuarios user;
-        private object wbrPdf;
-
+        private Roles roles;
+        private DataTable table;
+        private RolesHelper rolesH;
+        
         public Principal()
         {
             InitializeComponent();
@@ -27,12 +29,40 @@ namespace CNV_Inventario.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusUsuario.Text = "Usuario: " /*+ this.user.Nombre*/;
+            this.statusUsuario.Text = "Bienvenid@ " + this.user.Usuario;
             validarPerfil();
         }
-
         private void validarPerfil()
         {
+           
+            roles = new Roles();
+            //roles.ID = user.Rol;
+            roles.opc = 1;
+
+            rolesH = new RolesHelper(roles);
+            table = rolesH.ListarRol();
+            DataRow fila = table.Rows[0];
+            
+            if(bool.Parse(fila["usuarios"].ToString())==true)
+            {
+                tsUsuarios.Visible = true;
+            }
+            if (bool.Parse(fila["entrega"].ToString()) == true)
+            {
+                tsrEntrega.Visible = true;
+            }
+            if (bool.Parse(fila["inventario"].ToString()) == true)
+            {
+                toolStripInventario.Visible = true;
+            }
+            if(bool.Parse(fila["roles"].ToString()) == true)
+            {
+                tsRoles.Visible = true;
+            }
+            if (bool.Parse(fila["prestamo"].ToString()) == true)
+            {
+                tsPrestamo.Visible = true;
+            }
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +167,11 @@ namespace CNV_Inventario.MVCView
         private void tsAyuda_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\images\guia.pdf");
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            validarPerfil();
         }
     }
 }

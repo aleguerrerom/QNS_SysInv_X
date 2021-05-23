@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNV_Inventario.MVCController;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace CNV_Inventario.MVCView.Resources
 {
     public partial class GestorUsuarios : Form
     {
         private Usuarios user;
+        private RolesHelper rolH;
+        private Roles roles;
         private UsuariosHelper userHelper;
         private DataTable table;
         public GestorUsuarios()
@@ -26,17 +29,12 @@ namespace CNV_Inventario.MVCView.Resources
         {
             this.Close();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-       
-
+        
         private void listar()
         {
             try
             {
+                cargarCombo();
                 this.user = new Usuarios();
                 this.user.opc = 1;
 
@@ -59,6 +57,29 @@ namespace CNV_Inventario.MVCView.Resources
             }
         }
 
+        private void cargarCombo()
+        {
+            try
+            {
+
+                this.roles = new Roles();
+                this.roles.opc = 5;
+                this.rolH = new RolesHelper(roles);
+                this.table = new DataTable();
+                this.table = this.userHelper.Listar();
+
+                if (this.table.Rows.Count > 0)
+                {
+                    this.cmbRol.DataSource = table.DefaultView.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void guardar()
         {
             try
@@ -67,8 +88,6 @@ namespace CNV_Inventario.MVCView.Resources
                 this.user = new Usuarios();
                 this.user.Usuario = this.txtUsuario.Text;
                 this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
-                //this.user.Rol = int.Parse(this.textBox1.Text);
-                //this.user.Activo = int.Parse(this.textBox2.Text);
                 if (this.chckbxActivo.Checked)
                 {
                     this.user.Activo = true;
@@ -131,12 +150,14 @@ namespace CNV_Inventario.MVCView.Resources
             this.txtNombre.Clear();
             this.chckbxActivo.Checked = false;
             this.btnAdd.Text = "AGREGAR";
+            this.txtUsuario.ReadOnly = false;
         }
 
 
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
             listar();
+            cargarCombo();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -176,11 +197,10 @@ namespace CNV_Inventario.MVCView.Resources
 
         private void actualizar()
         {
-                        this.user = new Usuarios();
+            this.user = new Usuarios();
             this.user.Usuario = this.txtUsuario.Text;
             this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
-            //this.user.Rol = int.Parse(this.textBox1.Text);
-            //this.user.Activo = int.Parse(this.textBox2.Text);
+           
             if (this.chckbxActivo.Checked)
             {
                 this.user.Activo = true;
@@ -194,18 +214,12 @@ namespace CNV_Inventario.MVCView.Resources
 
             this.userHelper = new UsuariosHelper(user);
             this.userHelper.Actualizar();
-            MessageBox.Show("Datos del Estudiante actualizados");
+            MessageBox.Show("Datos del Usuario actualizados");
     }
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void dgvListar_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -221,7 +235,7 @@ namespace CNV_Inventario.MVCView.Resources
                     DataRow fila = table.Rows[indice];
                     this.txtUsuario.Text = fila["usuario"].ToString();
                     this.txtClave.Text = EncryptionHelper.Encrypt(fila["clave"].ToString());
-                    this.chckbxActivo.Text = fila["activo"].ToString();
+                    this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.txtConfirmar.Text = "";
                     this.cmbRol.Text = fila["rol"].ToString();
                     this.txtNombre.Text = fila["nombre"].ToString();

@@ -91,7 +91,7 @@
                 roless = value;
             }
         }
-
+        
 
         public Roles(string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless)
         {
