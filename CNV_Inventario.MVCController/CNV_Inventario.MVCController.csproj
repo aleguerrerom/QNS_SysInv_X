@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
+    <Compile Include="BitacoraHelper.cs" />
     <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="RolesHelper.cs" />

@@ -17,6 +17,8 @@ namespace CNV_Inventario.MVCView
         private Usuarios user;
         private UsuariosHelper userHelper;
         private DataTable table;
+        private Bitacora bitacora;
+        private BitacoraHelper bitH;
         public Login()
         {
             InitializeComponent();
@@ -32,7 +34,22 @@ namespace CNV_Inventario.MVCView
             this.Close();
         }
 
-        
+        private void LogInicioSesion()
+        {
+            try
+            {
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.txtUsuarioLogin.Text;
+                this.bitacora.opc = 2;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogSesion();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -55,9 +72,9 @@ namespace CNV_Inventario.MVCView
                     {
                         DataRow fila = table.Rows[0];
                         this.user.Nombre = fila["nombre"].ToString();
-                        //this.user.Rol = fila[""].ToString();
+                        //this.user.Rol = (fila["nombre"].ToString;
                         Principal inicio = new Principal(user);
- 
+                        LogInicioSesion();
                         inicio.Show();
                         this.Hide();
                         

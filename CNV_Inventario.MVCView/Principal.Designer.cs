@@ -43,6 +43,7 @@
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslBitacora = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,8 @@
             this.toolStripInventario,
             this.tsrEntrega,
             this.tsAboutUs,
-            this.tsAyuda});
+            this.tsAyuda,
+            this.tslBitacora});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(586, 25);
@@ -171,6 +173,13 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
+            // tslBitacora
+            // 
+            this.tslBitacora.Name = "tslBitacora";
+            this.tslBitacora.Size = new System.Drawing.Size(50, 22);
+            this.tslBitacora.Text = "Bitacora";
+            this.tslBitacora.Click += new System.EventHandler(this.tslBitacora_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,5 +217,6 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarClaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStripInventario;
         private System.Windows.Forms.ToolStripLabel tsrEntrega;
+        private System.Windows.Forms.ToolStripLabel tslBitacora;
     }
 }

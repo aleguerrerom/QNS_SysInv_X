@@ -13,6 +13,7 @@
         private bool prestamo;
         private bool entrega;
         private bool roless;
+        private bool bitacora;
 
         public string Nombre
         {
@@ -91,9 +92,22 @@
                 roless = value;
             }
         }
-        
 
-        public Roles(string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless)
+        public bool Bitacora
+        {
+            get
+            {
+                return bitacora;
+            }
+            
+            set
+            {
+                bitacora = value;
+            }
+        }
+
+
+        public Roles(string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless, bool bitacora)
         {
             this.Nombre = nombre;
             this.Inventario = inventario;
@@ -101,6 +115,7 @@
             this.Prestamo = prestamo;
             this.Entrega = entrega;
             this.Roless = roless;
+            this.bitacora = bitacora;
         }
         public Roles()
         {
@@ -110,6 +125,7 @@
             this.Prestamo = true;
             this.Entrega = true;
             this.Roless = true;
+            this.bitacora = true;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CNV_Inventario.MVCView
 {
-    partial class Inventario
+    partial class GestorInventario
     {
         /// <summary>
         /// Required designer variable.

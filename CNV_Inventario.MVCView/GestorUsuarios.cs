@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNV_Inventario.MVCController;
-using System.Security.Cryptography;
-using System.Data.SqlClient;
 
 namespace CNV_Inventario.MVCView.Resources
 {
@@ -20,16 +15,48 @@ namespace CNV_Inventario.MVCView.Resources
         private Roles roles;
         private UsuariosHelper userHelper;
         private DataTable table;
+        private Bitacora bitacora;
+        private BitacoraHelper bitH;
+
         public GestorUsuarios()
         {
             InitializeComponent();
         }
+        
+        public GestorUsuarios(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+        }
+
+        #region LOGS MOVIMIENTO
+        /*
+        private void LogMovimientos()
+        {
+            try
+            {
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Movimiento = "Agregar";
+                this.bitacora.Detalle = "Se agrego un nuevo usuario";
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }*/
+        #endregion
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
+
+        #region LISTAR USUARIOS
         private void listar()
         {
             try
@@ -39,8 +66,7 @@ namespace CNV_Inventario.MVCView.Resources
                 this.user.opc = 1;
 
                 this.userHelper = new UsuariosHelper(user);
-
-
+            
                 this.table = new DataTable();
                 this.table = this.userHelper.Listar();
 
@@ -49,7 +75,6 @@ namespace CNV_Inventario.MVCView.Resources
                     this.dgvListar.DataSource = this.table;
                     this.dgvListar.ReadOnly = true;
                 }
-
             }
             catch (Exception ex)
             {
@@ -57,11 +82,13 @@ namespace CNV_Inventario.MVCView.Resources
             }
         }
 
+        #endregion
+
+        #region CARGAR COMBO BOX DE ROL
         private void cargarCombo()
         {
             try
             {
-
                 this.roles = new Roles();
                 this.roles.opc = 5;
                 this.rolH = new RolesHelper(roles);
@@ -80,11 +107,15 @@ namespace CNV_Inventario.MVCView.Resources
             }
         }
 
+        #endregion
+
+        #region GUARDAR USUARIO
+        //FUNCION AGREGAR NUEVO USUARIO
         private void guardar()
         {
             try
             {
-               
+                //AGREGAR NUEVO USUARIO
                 this.user = new Usuarios();
                 this.user.Usuario = this.txtUsuario.Text;
                 this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
@@ -97,10 +128,20 @@ namespace CNV_Inventario.MVCView.Resources
                 this.user.Nombre = this.txtNombre.Text;
                 this.user.Apellido = this.txtApellido.Text;
                 this.user.opc = 2;
-
                 this.userHelper = new UsuariosHelper(user);
+                ///LOG PARA USUARIOS
+                ///
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Movimiento = "Agregar";
+                this.bitacora.Detalle = "Se agrego un nuevo usuario " + this.txtUsuario.Text;
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+                //
                 this.userHelper.Guardar();
                 MessageBox.Show("Usuario Almacenado");
+
             }
             catch (Exception ex)
             {
@@ -108,9 +149,11 @@ namespace CNV_Inventario.MVCView.Resources
             }
         }
 
+        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
+            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtUsuario.Text == "" || this.txtNombre.Text == ""
              && this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
@@ -139,8 +182,10 @@ namespace CNV_Inventario.MVCView.Resources
                     else MessageBox.Show("Las claven deben ser iguales");
                 }
             }
+            #endregion
         }
 
+        #region LIMPIAR CAMPOS
         public void limpiar()
         {
             this.txtApellido.Clear();
@@ -152,12 +197,12 @@ namespace CNV_Inventario.MVCView.Resources
             this.btnAdd.Text = "AGREGAR";
             this.txtUsuario.ReadOnly = false;
         }
-
+        #endregion
 
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
             listar();
-            cargarCombo();
+           // cargarCombo();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -166,6 +211,12 @@ namespace CNV_Inventario.MVCView.Resources
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        #region ELIMINAR USUARIO
+        private void eliminar()
         {
             try
             {
@@ -182,22 +233,33 @@ namespace CNV_Inventario.MVCView.Resources
                     this.user.Usuario = fila["usuario"].ToString();
                     this.user.opc = 3;
                     this.userHelper = new UsuariosHelper(user);
+                    ///LOG PARA ELIMINAR
+                    ///
+                    this.bitacora = new Bitacora();
+                    this.bitacora.Usuario = this.user.Usuario;
+                    this.bitacora.Movimiento = "Eliminar";
+                    this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
+                    this.bitacora.opc = 5;
+                    this.bitH = new BitacoraHelper(bitacora);
+                    this.bitH.LogMovimientos();
                     this.userHelper.Eliminar();
                     MessageBox.Show("Usuario Eliminado Eliminado");
                     listar();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
+        #region ACTUALIZAR USUARIO
         private void actualizar()
         {
-            this.user = new Usuarios();
+            try
+            {
+                this.user = new Usuarios();
             this.user.Usuario = this.txtUsuario.Text;
             this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
            
@@ -210,17 +272,39 @@ namespace CNV_Inventario.MVCView.Resources
             this.user.Nombre = this.txtNombre.Text;
             this.user.Apellido = this.txtApellido.Text;
             this.user.opc = 4;
-
-
+            
             this.userHelper = new UsuariosHelper(user);
+
+            //LOG ACTUALIZAR
+            this.bitacora = new Bitacora();
+            this.bitacora.Usuario = this.user.Usuario;
+            this.bitacora.Movimiento = "Actualizar";
+            this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
+            this.bitacora.opc = 5;
+            this.bitH = new BitacoraHelper(bitacora);
+            this.bitH.LogMovimientos();
+
             this.userHelper.Actualizar();
             MessageBox.Show("Datos del Usuario actualizados");
-    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+      
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
         private void dgvListar_DoubleClick(object sender, EventArgs e)
+        {
+            CargarFromTable();
+            }
+
+        #region CARGAR DE TABLA
+        private void CargarFromTable()
         {
             try
             {
@@ -251,5 +335,12 @@ namespace CNV_Inventario.MVCView.Resources
             }
 
         }
+        #endregion
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            UsuariosReport report = new UsuariosReport();
+            report.Show();
+        }
     }
-    }
+}

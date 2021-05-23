@@ -27,7 +27,7 @@ namespace CNV_Inventario.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -64,6 +64,11 @@ namespace CNV_Inventario.MVCController
                 parParameter[6].ParameterName = "@roles";
                 parParameter[6].SqlDbType = SqlDbType.Bit;
                 parParameter[6].SqlValue = objRoles.Roless;
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@bitacora";
+                parParameter[7].SqlDbType = SqlDbType.Bit;
+                parParameter[7].SqlValue = objRoles.Bitacora;
 
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");
             }
@@ -111,7 +116,7 @@ namespace CNV_Inventario.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -148,6 +153,11 @@ namespace CNV_Inventario.MVCController
                 parParameter[6].ParameterName = "@roles";
                 parParameter[6].SqlDbType = SqlDbType.Bit;
                 parParameter[6].SqlValue = objRoles.Roless;
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@bitacora";
+                parParameter[7].SqlDbType = SqlDbType.Bit;
+                parParameter[7].SqlValue = objRoles.Bitacora;
 
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");
             }

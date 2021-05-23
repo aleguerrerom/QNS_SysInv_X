@@ -61,6 +61,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
+            this.btnReport = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -124,7 +125,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(197, 13);
-            this.txtClave.TabIndex = 32;
+            this.txtClave.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -186,7 +187,7 @@
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(194, 21);
-            this.cmbRol.TabIndex = 4;
+            this.cmbRol.TabIndex = 3;
             // 
             // label1
             // 
@@ -237,7 +238,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
-            this.txtNombre.TabIndex = 32;
+            this.txtNombre.TabIndex = 4;
             // 
             // groupBox5
             // 
@@ -271,7 +272,7 @@
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
-            this.txtApellido.TabIndex = 32;
+            this.txtApellido.TabIndex = 5;
             // 
             // toolStrip1
             // 
@@ -312,7 +313,7 @@
             this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chckbxActivo.Name = "chckbxActivo";
             this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
-            this.chckbxActivo.TabIndex = 4;
+            this.chckbxActivo.TabIndex = 6;
             this.chckbxActivo.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -334,11 +335,11 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(514, 342);
+            this.btnAdd.Location = new System.Drawing.Point(358, 342);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 42;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -349,11 +350,11 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(642, 342);
+            this.btnCancel.Location = new System.Drawing.Point(486, 342);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 43;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -367,7 +368,7 @@
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.Size = new System.Drawing.Size(734, 155);
-            this.dgvListar.TabIndex = 44;
+            this.dgvListar.TabIndex = 9;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip2
@@ -428,7 +429,20 @@
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(197, 13);
-            this.txtConfirmar.TabIndex = 32;
+            this.txtConfirmar.TabIndex = 2;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(623, 342);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(96, 33);
+            this.btnReport.TabIndex = 42;
+            this.btnReport.Text = "REPORTES";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // GestorUsuarios
             // 
@@ -436,6 +450,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(762, 558);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.dgvListar);
@@ -509,5 +524,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.Button btnReport;
     }
 }

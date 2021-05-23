@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CNV_Inventario.MVCView
 {
-    public partial class Inventario : Form
+    public partial class GestorInventario : Form
     {
-        public Inventario()
+        public GestorInventario()
         {
             InitializeComponent();
         }

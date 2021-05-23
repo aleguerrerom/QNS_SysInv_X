@@ -19,7 +19,9 @@ namespace CNV_Inventario.MVCView
         private Roles roles;
         private DataTable table;
         private RolesHelper rolesH;
-        
+        private Bitacora bitacora;
+        private BitacoraHelper bitH;
+
         public Principal()
         {
             InitializeComponent();
@@ -32,6 +34,25 @@ namespace CNV_Inventario.MVCView
             this.statusUsuario.Text = "Bienvenid@ " + this.user.Usuario;
             validarPerfil();
         }
+
+        private void LogCierreSesion()
+        {
+            try
+            {
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.statusUsuario.Text;
+                this.bitacora.opc = 3;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogSesion();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
         private void validarPerfil()
         {
            
@@ -85,7 +106,7 @@ namespace CNV_Inventario.MVCView
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            Inventario inve = new Inventario();
+            GestorInventario inve = new GestorInventario();
             inve.Show();
         }
 
@@ -121,7 +142,7 @@ namespace CNV_Inventario.MVCView
 
         private void tsInventario(object sender, EventArgs e)
         {
-            Inventario inve = new Inventario();
+            GestorInventario inve = new GestorInventario();
             inve.Show();
         }
 
@@ -134,6 +155,7 @@ namespace CNV_Inventario.MVCView
         private void ingresarConOtroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogCierreSesion();
             Login login = new Login();
             login.Show();
         }
@@ -141,6 +163,7 @@ namespace CNV_Inventario.MVCView
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            LogCierreSesion();
             Login login = new Login();
             login.Show();
         }
@@ -154,7 +177,7 @@ namespace CNV_Inventario.MVCView
         private void toolStripInventario_Click(object sender, EventArgs e)
         {
 
-            Inventario inve = new Inventario();
+            GestorInventario inve = new GestorInventario();
             inve.Show();
         }
 
@@ -172,6 +195,12 @@ namespace CNV_Inventario.MVCView
         private void Principal_Load(object sender, EventArgs e)
         {
             validarPerfil();
+        }
+
+        private void tslBitacora_Click(object sender, EventArgs e)
+        {
+            VerBitacora bitacora = new VerBitacora();
+            bitacora.Show();
         }
     }
 }

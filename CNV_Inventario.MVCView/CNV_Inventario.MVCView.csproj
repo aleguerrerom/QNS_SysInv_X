@@ -34,8 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +56,18 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosReport.Designer.cs">
+      <DependentUpon>UsuariosReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerBitacora.Designer.cs">
+      <DependentUpon>VerBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="CambiodeClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +80,11 @@
     <Compile Include="Entrega.Designer.cs">
       <DependentUpon>Entrega.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inventario.cs">
+    <Compile Include="GestorInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario.Designer.cs">
-      <DependentUpon>Inventario.cs</DependentUpon>
+    <Compile Include="GestorInventario.Designer.cs">
+      <DependentUpon>GestorInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -106,14 +121,20 @@
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosReport.resx">
+      <DependentUpon>UsuariosReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerBitacora.resx">
+      <DependentUpon>VerBitacora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entrega.resx">
       <DependentUpon>Entrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestorUsuarios.resx">
       <DependentUpon>GestorUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventario.resx">
-      <DependentUpon>Inventario.cs</DependentUpon>
+    <EmbeddedResource Include="GestorInventario.resx">
+      <DependentUpon>GestorInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

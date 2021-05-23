@@ -164,9 +164,6 @@ namespace CNV_Inventario.MVCController
                 parParameter[6].SqlValue = objUsuarios.Apellido;
 
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
-
-
-
             }
             catch (Exception ex)
             {
