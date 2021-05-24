@@ -22,6 +22,7 @@ namespace CNV_Inventario.MVCModel
         {
             // modificar el string de coneccion en gestinar cursos en linea 262, para poder buscar esrudiantes y verificar estado...
             strCadenaConexion = @"Data Source= DESKTOP-5O1V857\SQLEXPRESS;  Initial Catalog = DB_CNV; Integrated Security=SSPI";
+           // strCadenaConexion = @"Data Source =192.168.50.15; initial catalog=DB_CNV; user id=sa; password=1234QWer; Integrated Security = False; Connect Timeout=30";
         }
 
 

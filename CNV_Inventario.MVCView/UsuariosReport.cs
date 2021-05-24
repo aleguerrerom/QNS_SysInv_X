@@ -28,31 +28,7 @@ namespace CNV_Inventario.MVCView
 
             this.reportViewer1.RefreshReport();
         }
-
-        private void listar()
-        {
-            try
-            {
-
-                this.user = new Usuarios();
-                this.user.opc = 1;
-
-                this.userHelper = new UsuariosHelper(user);
-                this.table = new DataTable();
-                this.table = this.userHelper.Listar();
-                
-                if (this.table.Rows.Count > 0)
-                {
-
-                   
-
-                  
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
+        
     }
 }

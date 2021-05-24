@@ -2,6 +2,7 @@ C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVCModel
 C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVCModel\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.csproj.GenerateResource.Cache
 C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.Properties.Resources.resources
 C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.csprojResolveAssemblyReference.cache
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.Properties.Resources.resources
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.csproj.GenerateResource.Cache
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\Datos.cs
@@ -12,4 +13,3 @@ C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\CNV_I
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\CNV_Inventario.MVCController.pdb
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\CNV_Inventario.MVCModel.dll
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\CNV_Inventario.MVCModel.pdb
-C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.csprojResolveAssemblyReference.cache

@@ -231,7 +231,7 @@ namespace CNV_Inventario.MVCController
                 parParameter[2].Size = 50;
                 parParameter[2].SqlValue = objUsuarios.Clave;
 
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "[dbo].[SPUsuario]");
 
             }
             catch (Exception ex)
