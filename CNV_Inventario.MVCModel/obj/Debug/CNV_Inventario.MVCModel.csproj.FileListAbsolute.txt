@@ -1,0 +1,13 @@
+C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVCModel\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.Properties.Resources.resources
+C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVCModel\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.Properties.Resources.resources
+C:\Users\Alejandro\Documents\Visual Studio 2015\Projects\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\bin\Debug\Datos.cs
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\bin\Debug\CNV_Inventario.MVCModel.dll.config
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\bin\Debug\CNV_Inventario.MVCModel.dll
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\bin\Debug\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.dll
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csprojResolveAssemblyReference.cache
