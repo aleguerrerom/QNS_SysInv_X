@@ -10,3 +10,4 @@ C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csproj.GenerateResource.Cache
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.dll
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCModel\obj\Debug\CNV_Inventario.MVCModel.csprojResolveAssemblyReference.cache

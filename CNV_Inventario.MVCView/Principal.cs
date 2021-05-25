@@ -62,7 +62,7 @@ namespace CNV_Inventario.MVCView
 
             rolesH = new RolesHelper(roles);
             table = rolesH.ListarRol();
-            DataRow fila = table.Rows[0];
+            /*DataRow fila = table.Rows[0];
             
             if(bool.Parse(fila["usuarios"].ToString())==true)
             {
@@ -83,7 +83,7 @@ namespace CNV_Inventario.MVCView
             if (bool.Parse(fila["prestamo"].ToString()) == true)
             {
                 tsPrestamo.Visible = true;
-            }
+            }*/
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

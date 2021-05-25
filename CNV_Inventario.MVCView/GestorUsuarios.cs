@@ -30,7 +30,7 @@ namespace CNV_Inventario.MVCView.Resources
         }
 
         #region LOGS MOVIMIENTO
-        /*
+        
         private void LogMovimientos()
         {
             try
@@ -48,7 +48,7 @@ namespace CNV_Inventario.MVCView.Resources
             {
                 MessageBox.Show(ex.Message);
             }
-        }*/
+        }
         #endregion
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -130,15 +130,8 @@ namespace CNV_Inventario.MVCView.Resources
                 this.user.opc = 2;
                 this.userHelper = new UsuariosHelper(user);
                 ///LOG PARA USUARIOS
-                ///
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.Movimiento = "Agregar";
-                this.bitacora.Detalle = "Se agrego un nuevo usuario " + this.txtUsuario.Text;
-                this.bitacora.opc = 5;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
-                //
+                LogMovimientos();
+                
                 this.userHelper.Guardar();
                 MessageBox.Show("Usuario Almacenado");
 
@@ -235,6 +228,7 @@ namespace CNV_Inventario.MVCView.Resources
                     this.userHelper = new UsuariosHelper(user);
                     ///LOG PARA ELIMINAR
                     ///
+                    /*
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Eliminar";
@@ -242,6 +236,7 @@ namespace CNV_Inventario.MVCView.Resources
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
+                    */
                     this.userHelper.Eliminar();
                     MessageBox.Show("Usuario Eliminado Eliminado");
                     listar();
@@ -275,7 +270,7 @@ namespace CNV_Inventario.MVCView.Resources
             
             this.userHelper = new UsuariosHelper(user);
 
-            //LOG ACTUALIZAR
+            /*
             this.bitacora = new Bitacora();
             this.bitacora.Usuario = this.user.Usuario;
             this.bitacora.Movimiento = "Actualizar";
@@ -283,7 +278,7 @@ namespace CNV_Inventario.MVCView.Resources
             this.bitacora.opc = 5;
             this.bitH = new BitacoraHelper(bitacora);
             this.bitH.LogMovimientos();
-
+            */
             this.userHelper.Actualizar();
             MessageBox.Show("Datos del Usuario actualizados");
             }

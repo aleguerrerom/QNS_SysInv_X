@@ -55,30 +55,29 @@ namespace CNV_Inventario.MVCView
         {
             try
             {
-               
+              
                 if (this.txtUsuarioLogin.Text != "" && this.txtClaveLogin.Text != "")
                 {
                     this.user = new Usuarios();
                     this.user.Usuario = this.txtUsuarioLogin.Text;
                     this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text);
-                    //this.user.Clave = this.txtClaveLogin.Text;
+                   // this.user.Clave = this.txtClaveLogin.Text;
                     this.user.opc = 5;
 
                     this.userHelper = new UsuariosHelper(user);
                     this.table = new DataTable();
                     this.table = this.userHelper.ValidarLogin();
 
-
+                    
                     if (table.Rows.Count > 0)
                     {
                         DataRow fila = table.Rows[0];
-                        //this.user.Nombre = fila["nombre"].ToString();
-                        //this.user.Rol = (fila["nombre"].ToString;
+                        this.user.Usuario = fila["usuario"].ToString();
+                        this.user.Clave = fila["clave"].ToString();
                         Principal inicio = new Principal(user);
                         LogInicioSesion();
                         inicio.Show();
                         this.Hide();
-                        
                     }
                     else MessageBox.Show("Datos de inicio de sesión incorrectos o Usuario Inactivo");
                 }

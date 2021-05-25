@@ -96,6 +96,7 @@ namespace CNV_Inventario.MVCView
             this.rolH = new RolesHelper(roles);
                 ///LOG PARA ROLES
                 ///
+                /*
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "actualizo";
@@ -103,6 +104,7 @@ namespace CNV_Inventario.MVCView
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
+                */
                 //
 
                 this.rolH.ActualizarRol();
@@ -161,13 +163,14 @@ namespace CNV_Inventario.MVCView
                     this.rolH = new RolesHelper(roles);
                     ///LOG PARA ROLES
                     ///
+                    /*
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Agregar";
                     this.bitacora.Detalle = "Se agrego nuevoS el rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
+                    this.bitH.LogMovimientos();*/
                     //
 
                     this.rolH.GuardarRol();
@@ -254,14 +257,14 @@ namespace CNV_Inventario.MVCView
                     this.roles.opc = 3;
                     this.rolH = new RolesHelper(roles);
 ///LOG PARA USUARIOS
-
+/*
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Eliminar";
                     this.bitacora.Detalle = "Se agrego nuevoS el rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
+                    this.bitH.LogMovimientos();*/
                     //
                     this.rolH.Eliminar();
                     MessageBox.Show("Usuario Eliminado Eliminado");
