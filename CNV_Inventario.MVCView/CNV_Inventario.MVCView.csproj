@@ -136,6 +136,9 @@
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CambiodeClave.resx">
+      <DependentUpon>CambiodeClave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuariosReport.resx">
       <DependentUpon>UsuariosReport.cs</DependentUpon>
     </EmbeddedResource>

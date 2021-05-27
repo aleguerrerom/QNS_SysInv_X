@@ -86,13 +86,7 @@ namespace CNV_Inventario.MVCView
             }*/
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GestorUsuarios gu = new GestorUsuarios();
-            
-            gu.Show();
-        }
-
+      
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
             AcercaDe about = new AcercaDe();
@@ -115,19 +109,7 @@ namespace CNV_Inventario.MVCView
             Entrega entr = new Entrega();
             entr.Show();
         }
-
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-            Prestamo pres = new Prestamo();
-            pres.Show();
-        }
-
-        private void toolStripLabel5_Click(object sender, EventArgs e)
-        {
-            GestorRoles role = new GestorRoles();
-                role.Show();
-        }
-
+        
         private void toolStripLabel3_Click(object sender, EventArgs e)
         {
 
@@ -201,6 +183,36 @@ namespace CNV_Inventario.MVCView
         {
             VerBitacora bitacora = new VerBitacora();
             bitacora.Show();
+        }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorRoles role = new GestorRoles();
+            role.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            GestorUsuarios gu = new GestorUsuarios();
+            gu.Show();
+        }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorInventario inve = new GestorInventario();
+            inve.Show();
+        }
+
+        private void entregaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Entrega entr = new Entrega();
+            entr.Show();
+        }
+
+        private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Prestamo prestamo = new Prestamo();
+            prestamo.Show();
         }
     }
 }

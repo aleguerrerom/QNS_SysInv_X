@@ -33,17 +33,19 @@
             this.ingresarConOtroUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarClaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsPrestamo = new System.Windows.Forms.ToolStripLabel();
-            this.tsUsuarios = new System.Windows.Forms.ToolStripLabel();
+            this.tsPrestamo = new System.Windows.Forms.ToolStripSplitButton();
+            this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripLabel();
-            this.tsRoles = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripInventario = new System.Windows.Forms.ToolStripLabel();
-            this.tsrEntrega = new System.Windows.Forms.ToolStripLabel();
+            this.tsrEntrega = new System.Windows.Forms.ToolStripSplitButton();
+            this.entregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tslBitacora = new System.Windows.Forms.ToolStripLabel();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslBitacora = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,14 +55,11 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsArchivo,
             this.tsPrestamo,
-            this.tsUsuarios,
             this.aboutUsToolStripMenuItem,
-            this.tsRoles,
-            this.toolStripInventario,
             this.tsrEntrega,
+            this.tslBitacora,
             this.tsAboutUs,
-            this.tsAyuda,
-            this.tslBitacora});
+            this.tsAyuda});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(586, 25);
@@ -101,17 +100,34 @@
             // 
             // tsPrestamo
             // 
+            this.tsPrestamo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rolesToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.inventarioToolStripMenuItem});
             this.tsPrestamo.Name = "tsPrestamo";
-            this.tsPrestamo.Size = new System.Drawing.Size(57, 22);
-            this.tsPrestamo.Text = "Prestamo";
-            this.tsPrestamo.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            this.tsPrestamo.Size = new System.Drawing.Size(105, 22);
+            this.tsPrestamo.Text = "Mantenimiento";
             // 
-            // tsUsuarios
+            // rolesToolStripMenuItem
             // 
-            this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(52, 22);
-            this.tsUsuarios.Text = "Usuarios";
-            this.tsUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click_1);
+            // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
@@ -122,26 +138,35 @@
             this.aboutUsToolStripMenuItem.Text = "Acerca De";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
-            // tsRoles
-            // 
-            this.tsRoles.Name = "tsRoles";
-            this.tsRoles.Size = new System.Drawing.Size(35, 22);
-            this.tsRoles.Text = "Roles";
-            this.tsRoles.Click += new System.EventHandler(this.toolStripLabel5_Click);
-            // 
-            // toolStripInventario
-            // 
-            this.toolStripInventario.Name = "toolStripInventario";
-            this.toolStripInventario.Size = new System.Drawing.Size(60, 22);
-            this.toolStripInventario.Text = "Inventario";
-            this.toolStripInventario.Click += new System.EventHandler(this.toolStripInventario_Click);
-            // 
             // tsrEntrega
             // 
+            this.tsrEntrega.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.entregaToolStripMenuItem,
+            this.prestamoToolStripMenuItem});
             this.tsrEntrega.Name = "tsrEntrega";
-            this.tsrEntrega.Size = new System.Drawing.Size(47, 22);
-            this.tsrEntrega.Text = "Entrega";
-            this.tsrEntrega.Click += new System.EventHandler(this.tsrEntrega_Click);
+            this.tsrEntrega.Size = new System.Drawing.Size(67, 22);
+            this.tsrEntrega.Text = "Tramites";
+            // 
+            // entregaToolStripMenuItem
+            // 
+            this.entregaToolStripMenuItem.Name = "entregaToolStripMenuItem";
+            this.entregaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entregaToolStripMenuItem.Text = "Entrega";
+            this.entregaToolStripMenuItem.Click += new System.EventHandler(this.entregaToolStripMenuItem_Click);
+            // 
+            // prestamoToolStripMenuItem
+            // 
+            this.prestamoToolStripMenuItem.Name = "prestamoToolStripMenuItem";
+            this.prestamoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prestamoToolStripMenuItem.Text = "Prestamo";
+            this.prestamoToolStripMenuItem.Click += new System.EventHandler(this.prestamoToolStripMenuItem_Click);
+            // 
+            // tslBitacora
+            // 
+            this.tslBitacora.Name = "tslBitacora";
+            this.tslBitacora.Size = new System.Drawing.Size(50, 22);
+            this.tslBitacora.Text = "Bitacora";
+            this.tslBitacora.Click += new System.EventHandler(this.tslBitacora_Click);
             // 
             // tsAboutUs
             // 
@@ -173,13 +198,6 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
-            // tslBitacora
-            // 
-            this.tslBitacora.Name = "tslBitacora";
-            this.tslBitacora.Size = new System.Drawing.Size(50, 22);
-            this.tslBitacora.Text = "Bitacora";
-            this.tslBitacora.Click += new System.EventHandler(this.tslBitacora_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,15 +226,17 @@
         private System.Windows.Forms.ToolStripDropDownButton tsArchivo;
         private System.Windows.Forms.ToolStripMenuItem ingresarConOtroUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel tsPrestamo;
-        private System.Windows.Forms.ToolStripLabel tsUsuarios;
         private System.Windows.Forms.ToolStripLabel aboutUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel tsAboutUs;
-        private System.Windows.Forms.ToolStripLabel tsRoles;
         private System.Windows.Forms.ToolStripLabel tsAyuda;
         private System.Windows.Forms.ToolStripMenuItem cambiarClaveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel toolStripInventario;
-        private System.Windows.Forms.ToolStripLabel tsrEntrega;
         private System.Windows.Forms.ToolStripLabel tslBitacora;
+        private System.Windows.Forms.ToolStripSplitButton tsPrestamo;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSplitButton tsrEntrega;
+        private System.Windows.Forms.ToolStripMenuItem entregaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prestamoToolStripMenuItem;
     }
 }
