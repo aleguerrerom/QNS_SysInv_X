@@ -160,9 +160,6 @@
         Z7PLt3+xqrz+eGzBvwGP30bfqfUqT0LuAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="cmbRol.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
@@ -181,6 +178,12 @@
         qG3dUQ9HQRHafUyBUjiJ+IJxkG++dksfZxbxeDykpaX5PLvDAyD9AcstvDv6FFrnAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="rolBindingSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>466, 49</value>
+  </metadata>
+  <metadata name="rolBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>169, 49</value>
+  </metadata>
   <data name="label4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
@@ -294,8 +297,30 @@
         AqywYDDIVrfbDa/XC0EQmgEURBo07D5x//DehybjHjPb6Epcz18PLdZkzUMLgQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="label8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJUSURBVDhPpZLLTxNRFIfn/3HFzgULgvGBSlJjYkwI
+        iVHjVhYGYlBjAEF51LiwGKOGKIlKjangI0ZKpaVAocRG5NlSKFNe0ylt6WNmOnPvzzMDMZJ0YePiS27O
+        zfnOPfccAcB/UTJYDsKtp5Oetv65dENvSL/6MMgu24Pskn2a1XdPsbquALvYOcku3J9g59vHma3Nz2pb
+        xoza1lHl1M1B8cg5u0d45FyIqEXGM3kDmoFDFP9CN2GAQWQLOqSUyo41OcNC8/NZvkcBx0cRkW0Nu3mO
+        5R2GiMQQlRliSYZ4imMrw1EoAmuShnsD61iKZ2DrnuRCgyMEjdQfZjJwfBIR3dGQUfihRCnLoVCyKGvo
+        fL+Ox8NpyDnVFEC4Zg9agtkNhsHgvsSsktdgJSZznO6BjaSGHpeIF6NpfFkwkMweCOraA5ZgYZvh1yaD
+        czyJBwMRq5qZaPa/uauh400EzzxJfA8bFn8Ettt+S7BIfYdiGoamEnjtl/Hks4iVLQXRbQW9dO73yXjr
+        l+BdVjG+eiDoIcGJRi9UEvwUNXz9IZNExfwWg3suhz7PDl4S7tmc9bpAVIGLCoyFVch75gsCECqvj/A8
+        zWw4JGM+rmFV5lhNcESJMBEhViQ601QWqc2ZNRVD0xLERBa2rgkuVNS/iu5mVRaX8zyd12kCOrJETtXp
+        Iw2LAqGY0IeYyBmFBZckpbrRuSKY21RxxZU62vCtWNk0olc1j+rVd7z68bte/WSLT69p9+mniTMd+5zt
+        8BVrWt25qhvvYtYmltrvcigZLIeSwX8Hwm8wfz8n7AHIugAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="rolBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>513, 10</value>
+  </metadata>
+  <metadata name="rolBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 49</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>44</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

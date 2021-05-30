@@ -59,7 +59,7 @@ namespace CNV_Inventario.MVCController
 
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -99,7 +99,13 @@ namespace CNV_Inventario.MVCController
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
                 parParameter[6].Size = 50;
                 parParameter[6].SqlValue = objUsuarios.Apellido;
-                
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@correo";
+                parParameter[7].SqlDbType = SqlDbType.VarChar;
+                parParameter[7].Size = 50;
+                parParameter[7].SqlValue = objUsuarios.Correo;
+
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
 
 
@@ -122,7 +128,7 @@ namespace CNV_Inventario.MVCController
                 cnGeneral = new Datos();
 
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -162,6 +168,12 @@ namespace CNV_Inventario.MVCController
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
                 parParameter[6].Size = 50;
                 parParameter[6].SqlValue = objUsuarios.Apellido;
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@correo";
+                parParameter[7].SqlDbType = SqlDbType.VarChar;
+                parParameter[7].Size = 50;
+                parParameter[7].SqlValue = objUsuarios.Correo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
             }

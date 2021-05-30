@@ -15,6 +15,7 @@ namespace CNV_Inventario.MVCController
             private int rol;
             private string nombre;
             private string apellido;
+        private string correo;
             
             public string Usuario
             {
@@ -95,8 +96,21 @@ namespace CNV_Inventario.MVCController
                     apellido = value;
                 }
             }
-            
-            public Usuarios(string usuario, string clave, bool activo, int rol, string nombre, string apellido)
+
+        public string Correo
+        {
+            get
+            {
+                return correo;
+            }
+
+            set
+            {
+                correo = value;
+            }
+        }
+
+        public Usuarios(string usuario, string clave, bool activo, int rol, string nombre, string apellido, string correo)
             {
                 this.Usuario = usuario;
                 this.Clave = clave;
@@ -104,6 +118,7 @@ namespace CNV_Inventario.MVCController
                 this.Rol = rol;
                 this.Nombre = nombre;
                 this.Apellido = apellido;
+            this.Correo = correo;
      
             }
 
@@ -115,6 +130,7 @@ namespace CNV_Inventario.MVCController
                 this.Rol = 0;
                 this.nombre = "";
                 this.clave = "";
+            this.correo = "";
             }
         }
     }

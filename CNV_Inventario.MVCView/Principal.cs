@@ -25,14 +25,15 @@ namespace CNV_Inventario.MVCView
         public Principal()
         {
             InitializeComponent();
+            
         }
 
         public Principal(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusUsuario.Text = "Bienvenid@ " + this.user.Usuario;
-            validarPerfil();
+            this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre + " " + this.user.Apellido + " "+ this.user.Rol +" Usuario "+ this.user.Usuario ;
+            
         }
 
         private void LogCierreSesion()
@@ -57,33 +58,42 @@ namespace CNV_Inventario.MVCView
         {
            
             roles = new Roles();
-            //roles.ID = user.Rol;
-            roles.opc = 1;
-
-            rolesH = new RolesHelper(roles);
-            table = rolesH.ListarRol();
-            /*DataRow fila = table.Rows[0];
             
-            if(bool.Parse(fila["usuarios"].ToString())==true)
+            roles.opc = 6;
+            this.roles.ID1 = user.Rol;
+            rolesH = new RolesHelper(roles);
+
+            table = rolesH.BusquedaPermisoRol();
+            DataRow fila = table.Rows[0];
+
+            if (bool.Parse(fila["usuarios"].ToString())==true)
             {
-                tsUsuarios.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["entrega"].ToString()) == true)
             {
-                tsrEntrega.Visible = true;
+                entregaToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["inventario"].ToString()) == true)
             {
-                toolStripInventario.Visible = true;
+                inventarioToolStripMenuItem.Visible = true;
             }
             if(bool.Parse(fila["roles"].ToString()) == true)
             {
-                tsRoles.Visible = true;
+                rolesToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["prestamo"].ToString()) == true)
             {
-                tsPrestamo.Visible = true;
-            }*/
+                prestamoToolStripMenuItem.Visible = true;
+            }
+            if (bool.Parse(fila["bitacora"].ToString()) == true)
+            {
+                tslBitacora.Visible = true;
+            }
+
+
+
+
         }
 
       
@@ -176,7 +186,8 @@ namespace CNV_Inventario.MVCView
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            validarPerfil();
+                validarPerfil();
+
         }
 
         private void tslBitacora_Click(object sender, EventArgs e)
@@ -213,6 +224,11 @@ namespace CNV_Inventario.MVCView
         {
             Prestamo prestamo = new Prestamo();
             prestamo.Show();
+        }
+
+        private void tsPrestamo_ButtonClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,7 +73,9 @@ namespace CNV_Inventario.MVCView
                     {
                         DataRow fila = table.Rows[0];
                         this.user.Usuario = fila["usuario"].ToString();
-                        this.user.Clave = fila["clave"].ToString();
+                        this.user.Rol = int.Parse(fila["rol"].ToString());
+                        this.user.Nombre = fila["nombre"].ToString();
+                        this.user.Apellido = fila["apellido"].ToString();
                         Principal inicio = new Principal(user);
                         LogInicioSesion();
                         inicio.Show();

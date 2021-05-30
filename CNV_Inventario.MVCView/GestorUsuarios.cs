@@ -61,7 +61,7 @@ namespace CNV_Inventario.MVCView.Resources
         {
             try
             {
-                cargarCombo();
+                //cargarCombo();
                 this.user = new Usuarios();
                 this.user.opc = 1;
 
@@ -93,11 +93,14 @@ namespace CNV_Inventario.MVCView.Resources
                 this.roles.opc = 5;
                 this.rolH = new RolesHelper(roles);
                 this.table = new DataTable();
-                this.table = this.userHelper.Listar();
+                this.table = this.rolH.ListarRol();
+
 
                 if (this.table.Rows.Count > 0)
                 {
-                    this.cmbRol.DataSource = table.DefaultView.ToString();
+                    this.cmbRol.DataSource = this.table;
+                    cmbRol.ValueMember = "nombre";
+                    cmbRol.DisplayMember = "nombre";
                 }
 
             }
@@ -124,9 +127,16 @@ namespace CNV_Inventario.MVCView.Resources
                     this.user.Activo = true;
                 }
                 else this.user.Activo = false;
-                this.user.Rol = int.Parse(this.cmbRol.Text);
+                if (this.cmbRol.SelectedIndex==0)
+                { this.user.Rol = 1; }
+                else if (this.cmbRol.SelectedIndex == 1)
+                { this.user.Rol = 2; }
+                else if (this.cmbRol.SelectedIndex == 2)
+                { this.user.Rol = 3; }
+                //this.user.Rol = int.Parse(this.cmbRol.Text);
                 this.user.Nombre = this.txtNombre.Text;
                 this.user.Apellido = this.txtApellido.Text;
+                this.user.Correo = this.txtCorreo.Text;
                 this.user.opc = 2;
                 this.userHelper = new UsuariosHelper(user);
                 ///LOG PARA USUARIOS
@@ -147,7 +157,7 @@ namespace CNV_Inventario.MVCView.Resources
         private void button1_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtUsuario.Text == "" || this.txtNombre.Text == ""
+            if (this.txtUsuario.Text == "" || this.txtNombre.Text == "" ||  this.txtCorreo.Text == "" 
              && this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
@@ -186,16 +196,20 @@ namespace CNV_Inventario.MVCView.Resources
             this.txtUsuario.Clear();
             this.txtConfirmar.Clear();
             this.txtNombre.Clear();
+            this.cmbRol.SelectedIndex = -1;
             this.chckbxActivo.Checked = false;
             this.btnAdd.Text = "AGREGAR";
             this.txtUsuario.ReadOnly = false;
+            this.txtCorreo.Clear();
         }
         #endregion
 
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dB_CNVDataSet1.Rol' table. You can move, or remove it, as needed.
+            
             listar();
-           // cargarCombo();
+            cargarCombo();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -263,10 +277,16 @@ namespace CNV_Inventario.MVCView.Resources
                 this.user.Activo = true;
             }
             else this.user.Activo = false;
-            this.user.Rol = int.Parse(this.cmbRol.Text);
-            this.user.Nombre = this.txtNombre.Text;
+                if (this.cmbRol.SelectedIndex == 0)
+                { this.user.Rol = 1; }
+                else if (this.cmbRol.SelectedIndex == 1)
+                { this.user.Rol = 2; }
+                else if (this.cmbRol.SelectedIndex == 2)
+                { this.user.Rol = 3; }
+                this.user.Nombre = this.txtNombre.Text;
             this.user.Apellido = this.txtApellido.Text;
-            this.user.opc = 4;
+            this.user.Correo = this.txtCorreo.Text;
+                this.user.opc = 4;
             
             this.userHelper = new UsuariosHelper(user);
 
@@ -316,10 +336,24 @@ namespace CNV_Inventario.MVCView.Resources
                     this.txtClave.Text = EncryptionHelper.Encrypt(fila["clave"].ToString());
                     this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.txtConfirmar.Text = "";
+                    
                     this.cmbRol.Text = fila["rol"].ToString();
+                    if (this.cmbRol.Text == "1")
+                    {
+                        this.cmbRol.SelectedIndex = 0;
+                    }
+                    else if (this.cmbRol.Text == "2")
+                    {
+                        this.cmbRol.SelectedIndex = 1;
+                    }
+                    else if (this.cmbRol.Text == "3")
+                    {
+                        this.cmbRol.SelectedIndex = 2;
+                    }
                     this.txtNombre.Text = fila["nombre"].ToString();
                     this.txtApellido.Text = fila["apellido"].ToString();
                     this.txtUsuario.ReadOnly = true;
+                    this.txtCorreo.Text = fila["correo"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -336,6 +370,11 @@ namespace CNV_Inventario.MVCView.Resources
         {
             UsuariosReport report = new UsuariosReport();
             report.Show();
+        }
+
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

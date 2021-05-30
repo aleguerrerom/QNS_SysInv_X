@@ -42,3 +42,4 @@ C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\bin\Debug\p
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.CambiodeClave.resources

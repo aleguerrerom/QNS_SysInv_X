@@ -22,5 +22,16 @@ namespace CNV_Inventario.MVCView.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.50.15,51688;Initial Catalog=DB_CNV;Persist Security Info=True" +
+            ";User ID=sa;Password=1234QWer")]
+        public string DB_CNVConnectionString {
+            get {
+                return ((string)(this["DB_CNVConnectionString"]));
+            }
+        }
     }
 }

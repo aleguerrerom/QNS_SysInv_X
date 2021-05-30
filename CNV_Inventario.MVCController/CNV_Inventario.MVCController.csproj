@@ -53,6 +53,8 @@
     <Compile Include="Bitacora.cs" />
     <Compile Include="BitacoraHelper.cs" />
     <Compile Include="EncryptionHelper.cs" />
+    <Compile Include="Inventario.cs" />
+    <Compile Include="InventarioHelper.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="RolesHelper.cs" />
     <Compile Include="Usuarios.cs" />
