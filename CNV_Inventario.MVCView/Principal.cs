@@ -16,6 +16,7 @@ namespace CNV_Inventario.MVCView
     public partial class Principal : Form
     {
         private Usuarios user;
+        private UsuariosHelper userHelper;
         private Roles roles;
         private DataTable table;
         private RolesHelper rolesH;
@@ -41,7 +42,7 @@ namespace CNV_Inventario.MVCView
             try
             {
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.statusUsuario.Text;
+                this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.opc = 3;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogSesion();
@@ -90,10 +91,7 @@ namespace CNV_Inventario.MVCView
             {
                 tslBitacora.Visible = true;
             }
-
-
-
-
+            
         }
 
       
@@ -103,10 +101,7 @@ namespace CNV_Inventario.MVCView
             about.Show();
         }
 
-        private void toolStripLabel4_Click_1(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
@@ -164,6 +159,7 @@ namespace CNV_Inventario.MVCView
         {
             CambiodeClave cambio = new CambiodeClave();
             cambio.Show();
+        
         }
 
         private void toolStripInventario_Click(object sender, EventArgs e)
@@ -204,7 +200,7 @@ namespace CNV_Inventario.MVCView
 
         private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            GestorUsuarios gu = new GestorUsuarios();
+            GestorUsuarios gu = new GestorUsuarios(user);
             gu.Show();
         }
 
@@ -226,9 +222,21 @@ namespace CNV_Inventario.MVCView
             prestamo.Show();
         }
 
-        private void tsPrestamo_ButtonClick(object sender, EventArgs e)
+       private void tsPrestamo_ButtonClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void Principal_Leave(object sender, EventArgs e)
+        {
+            LogCierreSesion();
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            GestorRespaldos res = new GestorRespaldos();
+            res.Show();
         }
     }
 }

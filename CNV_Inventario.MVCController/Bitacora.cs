@@ -17,7 +17,7 @@ namespace CNV_Inventario.MVCController
         private string usuario;
         private string movimiento;
         private string detalle;
-
+      
 
         public string Usuario
         {

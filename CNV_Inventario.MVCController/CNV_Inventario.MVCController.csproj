@@ -55,6 +55,8 @@
     <Compile Include="EncryptionHelper.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="InventarioHelper.cs" />
+    <Compile Include="Respaldos.cs" />
+    <Compile Include="RespaldosHelper.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="RolesHelper.cs" />
     <Compile Include="Usuarios.cs" />

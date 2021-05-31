@@ -92,11 +92,5 @@ namespace CNV_Inventario.MVCView
             }
 
         }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            CambiodeClave clave = new CambiodeClave();
-            clave.Show();
-        }
     }
 }

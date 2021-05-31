@@ -27,6 +27,7 @@ namespace CNV_Inventario.MVCView.Resources
         {
             InitializeComponent();
             this.user = usuario;
+            this.stsUsuario.Text = this.user.Usuario;
         }
 
         #region LOGS MOVIMIENTO
@@ -61,7 +62,7 @@ namespace CNV_Inventario.MVCView.Resources
         {
             try
             {
-                //cargarCombo();
+                
                 this.user = new Usuarios();
                 this.user.opc = 1;
 
@@ -134,7 +135,7 @@ namespace CNV_Inventario.MVCView.Resources
                 else if (this.cmbRol.SelectedIndex == 2)
                 { this.user.Rol = 3; }
                 //this.user.Rol = int.Parse(this.cmbRol.Text);
-                this.user.Nombre = this.txtNombre.Text;
+                this.user.Nombre = this.stsUsuario.Text;
                 this.user.Apellido = this.txtApellido.Text;
                 this.user.Correo = this.txtCorreo.Text;
                 this.user.opc = 2;
@@ -143,7 +144,7 @@ namespace CNV_Inventario.MVCView.Resources
                 LogMovimientos();
                 
                 this.userHelper.Guardar();
-                MessageBox.Show("Usuario Almacenado");
+                MessageBox.Show("Usuario "+this.user.Usuario+" Almacenado");
 
             }
             catch (Exception ex)
@@ -242,17 +243,17 @@ namespace CNV_Inventario.MVCView.Resources
                     this.userHelper = new UsuariosHelper(user);
                     ///LOG PARA ELIMINAR
                     ///
-                    /*
+                    
                     this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
+                    this.bitacora.Usuario = this.stsUsuario.Text;
                     this.bitacora.Movimiento = "Eliminar";
                     this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
-                    */
+                    
                     this.userHelper.Eliminar();
-                    MessageBox.Show("Usuario Eliminado Eliminado");
+                    MessageBox.Show("Usuario "+this.user.Usuario+" Eliminado");
                     listar();
                 }
             }
@@ -290,17 +291,17 @@ namespace CNV_Inventario.MVCView.Resources
             
             this.userHelper = new UsuariosHelper(user);
 
-            /*
+            
             this.bitacora = new Bitacora();
-            this.bitacora.Usuario = this.user.Usuario;
-            this.bitacora.Movimiento = "Actualizar";
+            this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Movimiento = "Actualizar";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;
             this.bitH = new BitacoraHelper(bitacora);
             this.bitH.LogMovimientos();
-            */
+            
             this.userHelper.Actualizar();
-            MessageBox.Show("Datos del Usuario actualizados");
+            MessageBox.Show("Datos del Usuario " + this.user.Usuario + " actualizados");
             }
             catch (Exception ex)
             {

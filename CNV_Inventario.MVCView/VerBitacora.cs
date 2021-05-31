@@ -16,11 +16,13 @@ namespace CNV_Inventario.MVCView
         private Bitacora bitacora;
         private BitacoraHelper bitH;
         private DataTable table;
+       
 
         public VerBitacora()
         {
             InitializeComponent();
         }
+        
         private void listadoLogsUsuarios()
         {
 

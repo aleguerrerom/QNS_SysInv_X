@@ -46,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkBitacora = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.chckRoles = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.chkEntrega = new System.Windows.Forms.CheckBox();
@@ -56,8 +58,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label9 = new System.Windows.Forms.Label();
-            this.chkBitacora = new System.Windows.Forms.CheckBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -84,6 +84,7 @@
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListar.Location = new System.Drawing.Point(8, 266);
             this.dgvListar.Name = "dgvListar";
+            this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(629, 120);
             this.dgvListar.TabIndex = 49;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
@@ -268,6 +269,28 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
+            // chkBitacora
+            // 
+            this.chkBitacora.AutoSize = true;
+            this.chkBitacora.Location = new System.Drawing.Point(205, 148);
+            this.chkBitacora.Name = "chkBitacora";
+            this.chkBitacora.Size = new System.Drawing.Size(15, 14);
+            this.chkBitacora.TabIndex = 13;
+            this.chkBitacora.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Location = new System.Drawing.Point(1, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 16);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "BITACORA:      ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // chckRoles
             // 
             this.chckRoles.AutoSize = true;
@@ -352,28 +375,6 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(1, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 16);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "BITACORA:      ";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chkBitacora
-            // 
-            this.chkBitacora.AutoSize = true;
-            this.chkBitacora.Location = new System.Drawing.Point(205, 148);
-            this.chkBitacora.Name = "chkBitacora";
-            this.chkBitacora.Size = new System.Drawing.Size(15, 14);
-            this.chkBitacora.TabIndex = 13;
-            this.chkBitacora.UseVisualStyleBackColor = true;
             // 
             // GestorRoles
             // 

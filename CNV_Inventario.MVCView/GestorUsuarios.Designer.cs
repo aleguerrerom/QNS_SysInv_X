@@ -40,8 +40,8 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.rolBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.rolBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,6 +69,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,6 +88,7 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -200,10 +203,6 @@
             this.cmbRol.TabIndex = 3;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
-            // rolBindingSource3
-            // 
-            this.rolBindingSource3.DataMember = "Rol";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -217,6 +216,10 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ROL:      ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // rolBindingSource3
+            // 
+            this.rolBindingSource3.DataMember = "Rol";
             // 
             // rolBindingSource2
             // 
@@ -381,11 +384,14 @@
             // 
             // dgvListar
             // 
+            this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListar.ContextMenuStrip = this.contextMenuStrip2;
             this.dgvListar.Location = new System.Drawing.Point(14, 388);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
+            this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(734, 155);
             this.dgvListar.TabIndex = 9;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
@@ -508,12 +514,29 @@
             // 
             this.rolBindingSource1.DataMember = "Rol";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsuario});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 536);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(762, 22);
+            this.statusStrip1.TabIndex = 43;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // stsUsuario
+            // 
+            this.stsUsuario.Name = "stsUsuario";
+            this.stsUsuario.Size = new System.Drawing.Size(118, 17);
+            this.stsUsuario.Text = "toolStripStatusLabel1";
+            // 
             // GestorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(762, 558);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
@@ -559,6 +582,8 @@
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,5 +631,7 @@
         private System.Windows.Forms.BindingSource rolBindingSource2;
    
         private System.Windows.Forms.BindingSource rolBindingSource3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
     }
 }
