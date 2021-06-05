@@ -71,6 +71,18 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestorClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestorClientes.Designer.cs">
+      <DependentUpon>GestorClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestorOportunidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestorOportunidades.Designer.cs">
+      <DependentUpon>GestorOportunidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorRespaldos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CambiodeClave.resx">
       <DependentUpon>CambiodeClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestorClientes.resx">
+      <DependentUpon>GestorClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestorOportunidades.resx">
+      <DependentUpon>GestorOportunidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestorRespaldos.resx">
       <DependentUpon>GestorRespaldos.cs</DependentUpon>
