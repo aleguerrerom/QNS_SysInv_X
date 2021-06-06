@@ -44,3 +44,7 @@ C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\C
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.exe
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.pdb
 C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.GestorRespaldos.resources
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.GestorClientes.resources
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\CNV_Inventario.MVCView.GestorOportunidades.resources
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\RdlCompile.cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\obj\Debug\RdlCompile.compiled

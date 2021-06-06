@@ -375,7 +375,7 @@ namespace CNV_Inventario.MVCView.Resources
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
