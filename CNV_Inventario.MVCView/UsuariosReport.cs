@@ -18,12 +18,14 @@ namespace CNV_Inventario.MVCView
             InitializeComponent();
         }
 
-        private void UsuariosReport_Load(object sender, EventArgs e)
-        {
-           // reportViewer1.LocalReport.ReportPath = "C:/Users/Alejandro/Desktop/CNV_Inventario.MVC/CNV_Inventario.MVCView/ReportUsuario.rdlc";
-            this.usuariosTableAdapter1.Fill(this.DSUsuarios.Usuarios);
-            this.reportViewer1.RefreshReport();
-        }
 
-}
+        private void UsuariosReport_Load_1(object sender, EventArgs e)
+        {
+            //  reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.RefreshReport();
+            reportViewer1.LocalReport.ReportPath = "C:/Users/Alejandro/Desktop/CNV_Inventario.MVC/CNV_Inventario.MVCView/ReportUser.rdlc";
+           this.usuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
+           this.reportViewer1.RefreshReport();
+        }
+    }
 }

@@ -94,6 +94,12 @@
     <Compile Include="GestorRespaldos.Designer.cs">
       <DependentUpon>GestorRespaldos.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryReport.Designer.cs">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuariosReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,7 +177,10 @@
     <EmbeddedResource Include="GestorRespaldos.resx">
       <DependentUpon>GestorRespaldos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportUsuario.rdlc" />
+    <EmbeddedResource Include="InventoryReport.resx">
+      <DependentUpon>InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportUser.rdlc" />
     <EmbeddedResource Include="UsuariosReport.resx">
       <DependentUpon>UsuariosReport.cs</DependentUpon>
     </EmbeddedResource>

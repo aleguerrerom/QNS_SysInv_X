@@ -278,5 +278,11 @@ namespace CNV_Inventario.MVCView
         {
             CargarFromTable();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            InventoryReport invR = new InventoryReport();
+            invR.Show();
+        }
     }
 }
