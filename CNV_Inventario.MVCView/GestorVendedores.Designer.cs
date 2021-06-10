@@ -1,6 +1,6 @@
 ﻿namespace CNV_Inventario.MVCView
 {
-    partial class GestorRespaldos
+    partial class GestorVendedores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorRespaldos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorVendedores));
             this.txtBrowse = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -207,7 +207,7 @@
             this.abrirArchivoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.abrirArchivoToolStripMenuItem.Text = "Abrir Archivo";
             // 
-            // GestorRespaldos
+            // GestorVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,8 +219,8 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "GestorRespaldos";
-            this.Text = "GestorRespaldos";
+            this.Name = "GestorVendedores";
+            this.Text = "Gestor Vendedores";
             this.Load += new System.EventHandler(this.GestorRespaldos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -12,14 +12,14 @@ using System.IO;
 
 namespace CNV_Inventario.MVCView
 {
-    public partial class GestorRespaldos : Form
+    public partial class GestorVendedores : Form
     {
 
         private Respaldos res;
         private RespaldosHelper resh;
         private DataTable table;
 
-        public GestorRespaldos()
+        public GestorVendedores()
         {
             InitializeComponent();
         }

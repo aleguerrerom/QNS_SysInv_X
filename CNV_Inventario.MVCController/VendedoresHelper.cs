@@ -6,19 +6,18 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace CNV_Inventario.MVCController
 {
-    public class ClientesHelper
+    class VendedoresHelper
     {
         Datos cnGeneral = null;
-        Clientes objClientes = null;
+        Vendedores objVendedores = null;
         DataTable tblDatos = null;
 
 
-        public ClientesHelper(Clientes parObjClientes)
+        public VendedoresHelper(Vendedores parObjVendedores)
         {
-            objClientes = parObjClientes;
+            objVendedores = parObjVendedores;
         }
         //RETORA TABLA CON LOS USUARIOS
 
@@ -36,10 +35,10 @@ namespace CNV_Inventario.MVCController
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objClientes.opc;
+                parParameter[0].SqlValue = objVendedores.opc;
 
 
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPClientes");
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedores");
 
             }
             catch (Exception ex)
@@ -63,49 +62,49 @@ namespace CNV_Inventario.MVCController
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objClientes.opc;
+                parParameter[0].SqlValue = objVendedores.opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@tipo";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 50;
-                parParameter[1].SqlValue = objClientes.Tipo;
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objVendedores.Cedula;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@cedula";
-                parParameter[2].SqlDbType = SqlDbType.Int;
-                parParameter[2].SqlValue = objClientes.Cedula;
+                parParameter[2].ParameterName = "@nombre";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = objVendedores.Nombre;
 
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@acontacto";
+                parParameter[3].ParameterName = "@apellido1";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 50;
-                parParameter[3].SqlValue = objClientes.Contacto;
+                parParameter[3].SqlValue = objVendedores.Apellido1;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@telefono";
-                parParameter[4].SqlDbType = SqlDbType.Int;
-                parParameter[4].SqlValue = objClientes.Telefono;
+                parParameter[4].ParameterName = "@apellido2";
+                parParameter[4].SqlDbType = SqlDbType.VarChar;
+                parParameter[4].Size = 50;
+                parParameter[4].SqlValue = objVendedores.Apellido2;
 
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@correo";
+                parParameter[5].ParameterName = "@genero";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
                 parParameter[5].Size = 50;
-                parParameter[5].SqlValue = objClientes.Correo;
+                parParameter[5].SqlValue = objVendedores.Genero;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@direccion";
-                parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 200;
-                parParameter[6].SqlValue = objClientes.Direccion;
+                parParameter[6].ParameterName = "@fechanacimiento";
+                parParameter[6].SqlDbType = SqlDbType.Date;
+                parParameter[6].SqlValue = objVendedores.Fechanacimiento;
 
                 parParameter[7] = new SqlParameter();
-                parParameter[7].ParameterName = "@agente";
+                parParameter[7].ParameterName = "@correo";
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
-                parParameter[7].SqlValue = objClientes.Agente;
+                parParameter[7].SqlValue = objVendedores.Correo;
 
-                cnGeneral.EjecutarSP(parParameter, "SPClientes");
+                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
 
 
 
@@ -128,52 +127,55 @@ namespace CNV_Inventario.MVCController
 
 
                 SqlParameter[] parParameter = new SqlParameter[8];
-
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objClientes.opc;
+                parParameter[0].SqlValue = objVendedores.opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@tipo";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 50;
-                parParameter[1].SqlValue = objClientes.Tipo;
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objVendedores.Cedula;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@cedula";
-                parParameter[2].SqlDbType = SqlDbType.Int;
-                parParameter[2].SqlValue = objClientes.Cedula;
+                parParameter[2].ParameterName = "@nombre";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = objVendedores.Nombre;
 
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@acontacto";
+                parParameter[3].ParameterName = "@apellido1";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 50;
-                parParameter[3].SqlValue = objClientes.Contacto;
+                parParameter[3].SqlValue = objVendedores.Apellido1;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@telefono";
-                parParameter[4].SqlDbType = SqlDbType.Int;
-                parParameter[4].SqlValue = objClientes.Telefono;
+                parParameter[4].ParameterName = "@apellido2";
+                parParameter[4].SqlDbType = SqlDbType.VarChar;
+                parParameter[4].Size = 50;
+                parParameter[4].SqlValue = objVendedores.Apellido2;
 
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@correo";
+                parParameter[5].ParameterName = "@genero";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
                 parParameter[5].Size = 50;
-                parParameter[5].SqlValue = objClientes.Correo;
+                parParameter[5].SqlValue = objVendedores.Genero;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@direccion";
-                parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 200;
-                parParameter[6].SqlValue = objClientes.Direccion;
+                parParameter[6].ParameterName = "@fechanacimiento";
+                parParameter[6].SqlDbType = SqlDbType.Date;
+                parParameter[6].SqlValue = objVendedores.Fechanacimiento;
 
                 parParameter[7] = new SqlParameter();
-                parParameter[7].ParameterName = "@agente";
+                parParameter[7].ParameterName = "@correo";
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
-                parParameter[7].SqlValue = objClientes.Agente;
-                cnGeneral.EjecutarSP(parParameter, "SPClientes");
+                parParameter[7].SqlValue = objVendedores.Correo;
+
+                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
+
+
+                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
             }
             catch (Exception ex)
             {
@@ -194,14 +196,15 @@ namespace CNV_Inventario.MVCController
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objClientes.opc;
+                parParameter[0].SqlValue = objVendedores.opc;
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@cedula";
-                parParameter[1].SqlDbType = SqlDbType.Int;
-                parParameter[1].SqlValue = objClientes.Cedula;
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 20;
+                parParameter[1].SqlValue = objVendedores.Cedula;
 
-                cnGeneral.EjecutarSP(parParameter, "SPClientes");
+                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
 
             }
             catch (Exception ex)

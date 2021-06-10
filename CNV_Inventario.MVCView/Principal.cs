@@ -235,7 +235,7 @@ namespace CNV_Inventario.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            GestorRespaldos res = new GestorRespaldos();
+            GestorVendedores res = new GestorVendedores();
             res.Show();
         }
     }

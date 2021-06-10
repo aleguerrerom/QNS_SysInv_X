@@ -88,11 +88,11 @@
     <Compile Include="GestorOportunidades.Designer.cs">
       <DependentUpon>GestorOportunidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestorRespaldos.cs">
+    <Compile Include="GestorVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestorRespaldos.Designer.cs">
-      <DependentUpon>GestorRespaldos.cs</DependentUpon>
+    <Compile Include="GestorVendedores.Designer.cs">
+      <DependentUpon>GestorVendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryReport.cs">
       <SubType>Form</SubType>
@@ -174,8 +174,8 @@
     <EmbeddedResource Include="GestorOportunidades.resx">
       <DependentUpon>GestorOportunidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestorRespaldos.resx">
-      <DependentUpon>GestorRespaldos.cs</DependentUpon>
+    <EmbeddedResource Include="GestorVendedores.resx">
+      <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryReport.resx">
       <DependentUpon>InventoryReport.cs</DependentUpon>
