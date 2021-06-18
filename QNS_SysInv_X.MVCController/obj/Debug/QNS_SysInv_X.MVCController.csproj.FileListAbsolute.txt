@@ -1,0 +1,12 @@
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC - copia\CNV_Inventario.MVCController\obj\Debug\QNS_SysInv_X.MVCController.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC - copia\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC - copia\CNV_Inventario.MVCController\obj\Debug\QNS_SysInv_X.MVCController.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC - copia\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.dll
+C:\Users\Alejandro\Desktop\CNV_Inventario.MVC - copia\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCController\obj\Debug\QNS_SysInv_X.MVCController.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCController\obj\Debug\QNS_SysInv_X.MVCController.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCController\obj\Debug\CNV_Inventario.MVCController.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Debug\CNV_Inventario.MVCController.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Debug\QNS_SysInv_X.MVCController.csproj.GenerateResource.Cache
