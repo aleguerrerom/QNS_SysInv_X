@@ -91,7 +91,19 @@ namespace QNS_SysInv_X.MVCView
             {
                 tslBitacora.Visible = true;
             }
-            
+            if (bool.Parse(fila["oportunidades"].ToString()) == true)
+            {
+                oportunidadesToolStripMenuItem.Visible = true;
+            }
+            if (bool.Parse(fila["vendedores"].ToString()) == true)
+            {
+                clientesToolStripMenuItem.Visible = true;
+            }
+            if (bool.Parse(fila["clientes"].ToString()) == true)
+            {
+                vendedoresToolStripMenuItem.Visible = true;
+            }
+
         }
 
       
@@ -237,6 +249,24 @@ namespace QNS_SysInv_X.MVCView
         {
             GestorVendedores res = new GestorVendedores();
             res.Show();
+        }
+
+        private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorVendedores res = new GestorVendedores();
+            res.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorClientes clientes = new GestorClientes();
+            clientes.Show();
+        }
+
+        private void oportunidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestorOportunidades oportunidades = new GestorOportunidades();
+            oportunidades.Show();
         }
     }
 }

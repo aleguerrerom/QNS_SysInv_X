@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CNV_Inventario.MVCModel
+namespace QNS_SysInv_X.MVCModel
 {
     class Respaldo_BD
     {

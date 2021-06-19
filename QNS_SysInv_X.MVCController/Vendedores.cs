@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QNS_SysInv_X.MVCController
 {
-    class Vendedores
+    public class Vendedores
     {
         public int opc
         {

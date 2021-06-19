@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace CNV_Inventario.MVCModel
+namespace QNS_SysInv_X.MVCModel
 {
     public class Datos
     {

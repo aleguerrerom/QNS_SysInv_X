@@ -32,29 +32,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorClientes));
             this.btnReport = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.Label();
             this.txtSerialNumber = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.cmbMarca = new System.Windows.Forms.Label();
+            this.cmbVendedor = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombreActivo = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -95,7 +94,7 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.txtCorreo);
             this.groupBox7.Controls.Add(this.txtSerialNumber);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(30, 116);
@@ -106,19 +105,19 @@
             this.groupBox7.TabIndex = 60;
             this.groupBox7.TabStop = false;
             // 
-            // label7
+            // txtCorreo
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(7, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "SERIAL NUMBER:      ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtCorreo.AutoSize = true;
+            this.txtCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Image = ((System.Drawing.Image)(resources.GetObject("txtCorreo.Image")));
+            this.txtCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtCorreo.Location = new System.Drawing.Point(7, 16);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(76, 16);
+            this.txtCorreo.TabIndex = 3;
+            this.txtCorreo.Text = "CORREO:      ";
+            this.txtCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSerialNumber
             // 
@@ -173,7 +172,7 @@
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.dtpFecha);
-            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.txtDireccion);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(401, 116);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -191,24 +190,24 @@
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
             this.dtpFecha.TabIndex = 4;
             // 
-            // label6
+            // txtDireccion
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(7, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "FECHA DE MODIFICACION:      ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtDireccion.AutoSize = true;
+            this.txtDireccion.BackColor = System.Drawing.Color.Transparent;
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Image = ((System.Drawing.Image)(resources.GetObject("txtDireccion.Image")));
+            this.txtDireccion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtDireccion.Location = new System.Drawing.Point(7, 16);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(92, 16);
+            this.txtDireccion.TabIndex = 3;
+            this.txtDireccion.Text = "DIRECCION:      ";
+            this.txtDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
-            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.txtTelefono);
             this.groupBox5.Controls.Add(this.txtEstado);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(401, 65);
@@ -219,17 +218,17 @@
             this.groupBox5.TabIndex = 64;
             this.groupBox5.TabStop = false;
             // 
-            // label5
+            // txtTelefono
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(8, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "ESTADO:     ";
+            this.txtTelefono.AutoSize = true;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Image = ((System.Drawing.Image)(resources.GetObject("txtTelefono.Image")));
+            this.txtTelefono.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTelefono.Location = new System.Drawing.Point(8, 18);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(84, 16);
+            this.txtTelefono.TabIndex = 33;
+            this.txtTelefono.Text = "TELEFONO:     ";
             // 
             // txtEstado
             // 
@@ -243,8 +242,8 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.cmbModelo);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.txtModelo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(401, 13);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -263,25 +262,16 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(7, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(104, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "MODELO:      ";
+            this.label4.Text = "TIPO CEDULA:      ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(159, 18);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 4;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.cmbRol);
-            this.groupBox3.Controls.Add(this.cmbMarca);
+            this.groupBox3.Controls.Add(this.cmbVendedor);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(31, 168);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -303,25 +293,24 @@
             this.cmbRol.Size = new System.Drawing.Size(194, 21);
             this.cmbRol.TabIndex = 3;
             // 
-            // cmbMarca
+            // cmbVendedor
             // 
-            this.cmbMarca.AutoSize = true;
-            this.cmbMarca.BackColor = System.Drawing.Color.Transparent;
-            this.cmbMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMarca.Image = ((System.Drawing.Image)(resources.GetObject("cmbMarca.Image")));
-            this.cmbMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmbMarca.Location = new System.Drawing.Point(7, 16);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(71, 16);
-            this.cmbMarca.TabIndex = 3;
-            this.cmbMarca.Text = "MARCA:      ";
-            this.cmbMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmbVendedor.AutoSize = true;
+            this.cmbVendedor.BackColor = System.Drawing.Color.Transparent;
+            this.cmbVendedor.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVendedor.Image = ((System.Drawing.Image)(resources.GetObject("cmbVendedor.Image")));
+            this.cmbVendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmbVendedor.Location = new System.Drawing.Point(7, 16);
+            this.cmbVendedor.Name = "cmbVendedor";
+            this.cmbVendedor.Size = new System.Drawing.Size(93, 16);
+            this.cmbVendedor.TabIndex = 3;
+            this.cmbVendedor.Text = "VENDEDOR:      ";
+            this.cmbVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtTipo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(31, 65);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -340,25 +329,16 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(7, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 3;
-            this.label3.Text = "TIPO:      ";
+            this.label3.Text = "CONTACTO:      ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Location = new System.Drawing.Point(159, 18);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNombreActivo);
+            this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Location = new System.Drawing.Point(30, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
@@ -376,19 +356,27 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(8, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "NOMBRE  DE ACTIVO:      ";
+            this.label2.Text = "CEDULA:      ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtNombreActivo
+            // txtCedula
             // 
-            this.txtNombreActivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreActivo.Location = new System.Drawing.Point(156, 20);
-            this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNombreActivo.Name = "txtNombreActivo";
-            this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
-            this.txtNombreActivo.TabIndex = 0;
+            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Location = new System.Drawing.Point(156, 20);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(197, 13);
+            this.txtCedula.TabIndex = 0;
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(198, 16);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(121, 21);
+            this.cmbModelo.TabIndex = 34;
             // 
             // GestorClientes
             // 
@@ -433,28 +421,27 @@
 
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtCorreo;
         private System.Windows.Forms.TextBox txtSerialNumber;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txtDireccion;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtTelefono;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.Label cmbMarca;
+        private System.Windows.Forms.Label cmbVendedor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombreActivo;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.ComboBox cmbModelo;
     }
 }

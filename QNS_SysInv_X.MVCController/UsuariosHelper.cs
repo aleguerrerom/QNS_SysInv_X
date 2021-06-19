@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-using QNS_SysInv_X.MVCModel;
 using System.Data;
-
+using QNS_SysInv_X.MVCModel;
 
 namespace QNS_SysInv_X.MVCController
 {

@@ -225,12 +225,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QNS_SysInv_X.MVCController\QNS_SysInv_X.MVCController.csproj">
-      <Project>{008b11c9-1e18-40d7-a018-0544db96d132}</Project>
-      <Name>QNS_SysInv_X.MVCController</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\logo-quicknet-f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QNS_SysInv_X.MVCController\QNS_SysInv_X.MVCController.csproj">
+      <Project>{008b11c9-1e18-40d7-a018-0544db96d132}</Project>
+      <Name>QNS_SysInv_X.MVCController</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

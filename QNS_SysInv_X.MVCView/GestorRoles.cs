@@ -91,6 +91,18 @@ namespace QNS_SysInv_X.MVCView
                 roles.Bitacora = true;
             else
                 roles.Bitacora = false;
+            if (chkOportunidades.Checked)
+                roles.Oportunidades = true;
+            else
+                roles.Oportunidades = false;
+            if (chkVendedores.Checked)
+                roles.Vendedores = true;
+            else
+                roles.Vendedores = false;
+            if (chkClientesx.Checked)
+                roles.Clientes = true;
+            else
+                roles.Clientes = false;
                 roles.opc = 4;
                 
             this.rolH = new RolesHelper(roles);
@@ -156,6 +168,18 @@ namespace QNS_SysInv_X.MVCView
                     roles.Bitacora = true;
                 else
                     roles.Bitacora = false;
+                if (chkOportunidades.Checked)
+                    roles.Oportunidades = true;
+                else
+                    roles.Oportunidades = false;
+                if (chkVendedores.Checked)
+                    roles.Vendedores = true;
+                else
+                    roles.Vendedores = false;
+                if (chkClientesx.Checked)
+                    roles.Clientes = true;
+                else
+                    roles.Clientes = false;
                 roles.opc = 2;
                 //roles.id_username_bitacora = Principal.id_username_bitacora;
                 if (this.txtRol.Text != "")
@@ -198,6 +222,9 @@ namespace QNS_SysInv_X.MVCView
             this.chkInventario.Checked = false;
             this.chkPrestamo.Checked = false;
             this.chkBitacora.Checked = false;
+            this.chkOportunidades.Checked = false;
+            this.chkClientesx.Checked = false;
+            this.chkVendedores.Checked = false;
             this.btnAdd.Text = "AGREGAR";
             this.txtRol.ReadOnly = false;
         }
@@ -326,6 +353,11 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

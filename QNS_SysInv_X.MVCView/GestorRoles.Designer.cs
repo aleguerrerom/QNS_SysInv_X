@@ -60,6 +60,12 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chkClientesx = new System.Windows.Forms.CheckBox();
+            this.chkVendedores = new System.Windows.Forms.CheckBox();
+            this.chkOportunidades = new System.Windows.Forms.CheckBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -67,7 +73,6 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,7 +80,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(12, 61);
+            pictureBox1.Location = new System.Drawing.Point(21, 111);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(293, 137);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,7 +90,7 @@
             // dgvListar
             // 
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.Location = new System.Drawing.Point(8, 266);
+            this.dgvListar.Location = new System.Drawing.Point(8, 343);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(629, 120);
@@ -130,7 +135,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(543, 233);
+            this.btnCancel.Location = new System.Drawing.Point(543, 310);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 27);
             this.btnCancel.TabIndex = 48;
@@ -144,7 +149,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(435, 233);
+            this.btnAdd.Location = new System.Drawing.Point(432, 310);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 27);
             this.btnAdd.TabIndex = 47;
@@ -166,9 +171,10 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(321, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(307, 206);
+            this.groupBox2.Size = new System.Drawing.Size(307, 292);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label7
             // 
@@ -258,6 +264,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkOportunidades);
+            this.groupBox3.Controls.Add(this.chkVendedores);
+            this.groupBox3.Controls.Add(this.chkClientesx);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.chkBitacora);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.chckRoles);
@@ -268,7 +280,7 @@
             this.groupBox3.Controls.Add(this.chkInventario);
             this.groupBox3.Location = new System.Drawing.Point(4, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(290, 168);
+            this.groupBox3.Size = new System.Drawing.Size(297, 254);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
@@ -395,11 +407,77 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Location = new System.Drawing.Point(1, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(178, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "GESTOR OPORTUNIDADES:      ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Location = new System.Drawing.Point(2, 201);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 16);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "GESTOR VENDEDORES:      ";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Location = new System.Drawing.Point(1, 226);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "GESTOR CLIENTES:      ";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkClientesx
+            // 
+            this.chkClientesx.AutoSize = true;
+            this.chkClientesx.Location = new System.Drawing.Point(204, 226);
+            this.chkClientesx.Name = "chkClientesx";
+            this.chkClientesx.Size = new System.Drawing.Size(15, 14);
+            this.chkClientesx.TabIndex = 17;
+            this.chkClientesx.UseVisualStyleBackColor = true;
+            // 
+            // chkVendedores
+            // 
+            this.chkVendedores.AutoSize = true;
+            this.chkVendedores.Location = new System.Drawing.Point(204, 201);
+            this.chkVendedores.Name = "chkVendedores";
+            this.chkVendedores.Size = new System.Drawing.Size(15, 14);
+            this.chkVendedores.TabIndex = 18;
+            this.chkVendedores.UseVisualStyleBackColor = true;
+            // 
+            // chkOportunidades
+            // 
+            this.chkOportunidades.AutoSize = true;
+            this.chkOportunidades.Location = new System.Drawing.Point(204, 177);
+            this.chkOportunidades.Name = "chkOportunidades";
+            this.chkOportunidades.Size = new System.Drawing.Size(15, 14);
+            this.chkOportunidades.TabIndex = 19;
+            this.chkOportunidades.UseVisualStyleBackColor = true;
+            // 
             // GestorRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 398);
+            this.ClientSize = new System.Drawing.Size(649, 477);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(pictureBox1);
@@ -419,8 +497,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +533,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.CheckBox chkOportunidades;
+        private System.Windows.Forms.CheckBox chkVendedores;
+        private System.Windows.Forms.CheckBox chkClientesx;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

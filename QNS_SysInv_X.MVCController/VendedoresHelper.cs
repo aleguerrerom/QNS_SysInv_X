@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace QNS_SysInv_X.MVCController
 {
-    class VendedoresHelper
+    public class VendedoresHelper
     {
         Datos cnGeneral = null;
         Vendedores objVendedores = null;

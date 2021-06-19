@@ -92,7 +92,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CNV_Inventario.MVCModel\QNS_SysInv_X.MVCModel.csproj">
+    <ProjectReference Include="..\QNS_SysInv_X.MVCModel\QNS_SysInv_X.MVCModel.csproj">
       <Project>{f6799244-2dad-4ae8-adaa-a6d19ff23e35}</Project>
       <Name>QNS_SysInv_X.MVCModel</Name>
     </ProjectReference>

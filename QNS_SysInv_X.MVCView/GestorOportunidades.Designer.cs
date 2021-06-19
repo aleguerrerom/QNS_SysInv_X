@@ -32,29 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorOportunidades));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSerialNumber = new System.Windows.Forms.TextBox();
+            this.txtPresupuesto = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtDetalles = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
-            this.cmbMarca = new System.Windows.Forms.Label();
+            this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombreActivo = new System.Windows.Forms.TextBox();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -62,7 +60,6 @@
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +68,7 @@
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(34, 226);
+            pictureBox1.Location = new System.Drawing.Point(23, 168);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(293, 119);
@@ -84,7 +81,7 @@
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
             this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.txtSerialNumber);
+            this.groupBox7.Controls.Add(this.txtPresupuesto);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(22, 116);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -103,37 +100,38 @@
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(7, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 16);
+            this.label7.Size = new System.Drawing.Size(111, 16);
             this.label7.TabIndex = 3;
-            this.label7.Text = "SERIAL NUMBER:      ";
+            this.label7.Text = "PRESUPUESTO:      ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtSerialNumber
+            // txtPresupuesto
             // 
-            this.txtSerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerialNumber.Location = new System.Drawing.Point(159, 18);
-            this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
-            this.txtSerialNumber.TabIndex = 2;
+            this.txtPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPresupuesto.Location = new System.Drawing.Point(159, 18);
+            this.txtPresupuesto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPresupuesto.Name = "txtPresupuesto";
+            this.txtPresupuesto.Size = new System.Drawing.Size(197, 13);
+            this.txtPresupuesto.TabIndex = 2;
             // 
             // dgvListar
             // 
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.Location = new System.Drawing.Point(22, 358);
+            this.dgvListar.Location = new System.Drawing.Point(22, 311);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
-            this.dgvListar.Size = new System.Drawing.Size(734, 307);
+            this.dgvListar.Size = new System.Drawing.Size(747, 231);
             this.dgvListar.TabIndex = 57;
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.dtpFecha);
+            this.groupBox6.Controls.Add(this.cmbVendedor);
             this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.txtModelo);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(393, 116);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -146,7 +144,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(198, 17);
+            this.dtpFecha.Location = new System.Drawing.Point(179, 14);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
             this.dtpFecha.TabIndex = 4;
@@ -160,16 +158,16 @@
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label6.Location = new System.Drawing.Point(7, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 16);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 3;
-            this.label6.Text = "FECHA DE MODIFICACION:      ";
+            this.label6.Text = "VENDEDOR:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.txtEstado);
+            this.groupBox5.Controls.Add(this.txtDetalles);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(393, 65);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -187,24 +185,24 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(8, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 33;
-            this.label5.Text = "ESTADO:     ";
+            this.label5.Text = "DETALLES:     ";
             // 
-            // txtEstado
+            // txtDetalles
             // 
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Location = new System.Drawing.Point(159, 18);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(197, 13);
-            this.txtEstado.TabIndex = 5;
+            this.txtDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetalles.Location = new System.Drawing.Point(159, 18);
+            this.txtDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDetalles.Name = "txtDetalles";
+            this.txtDetalles.Size = new System.Drawing.Size(197, 13);
+            this.txtDetalles.TabIndex = 5;
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.dtpFecha);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.txtModelo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(393, 13);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -223,65 +221,38 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(7, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(125, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "MODELO:      ";
+            this.label4.Text = "FECHA DE CIERRE:      ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(159, 18);
+            this.txtModelo.Location = new System.Drawing.Point(179, 18);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
             this.txtModelo.TabIndex = 4;
+            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
             // 
-            // groupBox3
+            // cmbVendedor
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.cmbRol);
-            this.groupBox3.Controls.Add(this.cmbMarca);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(23, 168);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(363, 50);
-            this.groupBox3.TabIndex = 62;
-            this.groupBox3.TabStop = false;
-            // 
-            // cmbRol
-            // 
-            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Items.AddRange(new object[] {
+            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVendedor.FormattingEnabled = true;
+            this.cmbVendedor.Items.AddRange(new object[] {
             "Cisco"});
-            this.cmbRol.Location = new System.Drawing.Point(162, 16);
-            this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(194, 21);
-            this.cmbRol.TabIndex = 3;
-            // 
-            // cmbMarca
-            // 
-            this.cmbMarca.AutoSize = true;
-            this.cmbMarca.BackColor = System.Drawing.Color.Transparent;
-            this.cmbMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMarca.Image = ((System.Drawing.Image)(resources.GetObject("cmbMarca.Image")));
-            this.cmbMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmbMarca.Location = new System.Drawing.Point(7, 16);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(71, 16);
-            this.cmbMarca.TabIndex = 3;
-            this.cmbMarca.Text = "MARCA:      ";
-            this.cmbMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmbVendedor.Location = new System.Drawing.Point(141, 11);
+            this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbVendedor.Name = "cmbVendedor";
+            this.cmbVendedor.Size = new System.Drawing.Size(194, 21);
+            this.cmbVendedor.TabIndex = 3;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtTipo);
+            this.groupBox2.Controls.Add(this.txtMarca);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(23, 65);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -300,25 +271,25 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(7, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 3;
-            this.label3.Text = "TIPO:      ";
+            this.label3.Text = "MARCA:      ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtTipo
+            // txtMarca
             // 
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Location = new System.Drawing.Point(159, 18);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 1;
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Location = new System.Drawing.Point(159, 18);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(197, 13);
+            this.txtMarca.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.cmbNombre);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNombreActivo);
             this.groupBox1.Location = new System.Drawing.Point(22, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
@@ -334,28 +305,20 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(8, 17);
+            this.label2.Location = new System.Drawing.Point(8, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
+            this.label2.Size = new System.Drawing.Size(146, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "NOMBRE  DE ACTIVO:      ";
+            this.label2.Text = "NOMBRE DE CLIENTE:      ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtNombreActivo
-            // 
-            this.txtNombreActivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreActivo.Location = new System.Drawing.Point(156, 20);
-            this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNombreActivo.Name = "txtNombreActivo";
-            this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
-            this.txtNombreActivo.TabIndex = 0;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnReport
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(631, 312);
+            this.btnReport.Location = new System.Drawing.Point(632, 243);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
             this.btnReport.TabIndex = 66;
@@ -368,7 +331,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(494, 312);
+            this.btnCancel.Location = new System.Drawing.Point(494, 243);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
@@ -382,7 +345,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(366, 312);
+            this.btnAdd.Location = new System.Drawing.Point(361, 243);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
@@ -390,6 +353,14 @@
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // cmbNombre
+            // 
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(184, 14);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(121, 21);
+            this.cmbNombre.TabIndex = 4;
             // 
             // GestorOportunidades
             // 
@@ -405,7 +376,6 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorOportunidades";
@@ -420,8 +390,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -435,7 +403,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSerialNumber;
+        private System.Windows.Forms.TextBox txtPresupuesto;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
@@ -444,18 +412,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtDetalles;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbRol;
-        private System.Windows.Forms.Label cmbMarca;
+        private System.Windows.Forms.ComboBox cmbVendedor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombreActivo;
+        private System.Windows.Forms.ComboBox cmbNombre;
     }
 }

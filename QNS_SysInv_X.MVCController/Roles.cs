@@ -111,6 +111,44 @@
             }
         }
 
+        public bool Oportunidades
+        {
+            get
+            {
+                return oportunidades;
+            }
+
+            set
+            {
+                oportunidades = value;
+            }
+        }
+        public bool Vendedores
+        {
+            get
+            {
+                return vendedores;
+            }
+
+            set
+            {
+                vendedores = value;
+            }
+        }
+        public bool Clientes
+        {
+            get
+            {
+                return clientes;
+            }
+
+            set
+            {
+                clientes = value;
+            }
+        }
+
+
         private int ID;
         private string nombre;
         private bool inventario;
@@ -119,9 +157,11 @@
         private bool entrega;
         private bool roless;
         private bool bitacora;
+        private bool oportunidades;
+        private bool vendedores;
+        private bool clientes;
 
 
-        
         public Roles()
         {
             this.ID = 0;
@@ -132,9 +172,13 @@
             this.Entrega = true;
             this.Roless = true;
             this.Bitacora = true;
+            this.Clientes = true;
+            this.Oportunidades = true;
+            this.Vendedores = true;
+
         }
 
-        public Roles(int iD, string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless, bool bitacora)
+        public Roles(int iD, string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless, bool bitacora, bool oportunidades, bool vendedores, bool clientes)
         {
             ID1 = iD;
             this.Nombre = nombre;
@@ -144,6 +188,9 @@
             this.Entrega = entrega;
             this.Roless = roless;
             this.Bitacora = bitacora;
+            this.Oportunidades = oportunidades;
+            this.Clientes = clientes;
+            this.Vendedores = vendedores;
         }
     }
 }
