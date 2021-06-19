@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\logo-quicknet-f.png" />
+    <Content Include="images\qns.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QNS_SysInv_X.MVCController\QNS_SysInv_X.MVCController.csproj">

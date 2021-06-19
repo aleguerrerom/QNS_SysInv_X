@@ -32,15 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prestamo));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
-            this.dgvListar = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,11 +54,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -97,21 +93,10 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // btnReport
-            // 
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(621, 328);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 54;
-            this.btnReport.Text = "REPORTES";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReport.UseVisualStyleBackColor = true;
-            // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
+            this.groupBox7.Controls.Add(this.dateTimePicker1);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Controls.Add(this.txtConfirmar);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,9 +117,9 @@
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(7, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 16);
+            this.label7.Size = new System.Drawing.Size(149, 16);
             this.label7.TabIndex = 3;
-            this.label7.Text = "CONFIRMAR:      ";
+            this.label7.Text = "FECHA DE PRESTAMO:      ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtConfirmar
@@ -146,15 +131,6 @@
             this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(197, 13);
             this.txtConfirmar.TabIndex = 2;
-            // 
-            // dgvListar
-            // 
-            this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.Location = new System.Drawing.Point(12, 374);
-            this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvListar.Name = "dgvListar";
-            this.dgvListar.Size = new System.Drawing.Size(734, 155);
-            this.dgvListar.TabIndex = 45;
             // 
             // btnCancel
             // 
@@ -180,14 +156,13 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
             this.btnAdd.TabIndex = 43;
-            this.btnAdd.Text = "AGREGAR";
+            this.btnAdd.Text = "IMPRIMIR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.chckbxActivo);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(383, 132);
@@ -197,16 +172,6 @@
             this.groupBox6.Size = new System.Drawing.Size(363, 44);
             this.groupBox6.TabIndex = 51;
             this.groupBox6.TabStop = false;
-            // 
-            // chckbxActivo
-            // 
-            this.chckbxActivo.AutoSize = true;
-            this.chckbxActivo.Location = new System.Drawing.Point(204, 16);
-            this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chckbxActivo.Name = "chckbxActivo";
-            this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
-            this.chckbxActivo.TabIndex = 6;
-            this.chckbxActivo.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -243,9 +208,9 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(8, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 33;
-            this.label5.Text = "APELLIDO:     ";
+            this.label5.Text = "MARCA:     ";
             // 
             // txtApellido
             // 
@@ -279,9 +244,9 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(7, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
+            this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 3;
-            this.label4.Text = "NOMBRE:      ";
+            this.label4.Text = "CONTACTO:      ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNombre
@@ -356,9 +321,9 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(7, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 16);
+            this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 3;
-            this.label3.Text = "CONTRASEÑA:      ";
+            this.label3.Text = "EQUIPO:      ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtClave
@@ -393,9 +358,9 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(8, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "USUARIO:      ";
+            this.label2.Text = "CLIENTE:      ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtUsuario
@@ -407,15 +372,22 @@
             this.txtUsuario.Size = new System.Drawing.Size(197, 13);
             this.txtUsuario.TabIndex = 0;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(232, 16);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
             // Prestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 452);
-            this.Controls.Add(this.btnReport);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(814, 394);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox6);
@@ -428,11 +400,8 @@
             this.Name = "Prestamo";
             this.Text = "Prestamo";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -454,15 +423,12 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtConfirmar;
-        private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox chckbxActivo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
@@ -479,5 +445,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

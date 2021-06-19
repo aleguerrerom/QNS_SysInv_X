@@ -141,7 +141,7 @@
             // 
             // stsUser
             // 
-            this.stsUser.Location = new System.Drawing.Point(0, 313);
+            this.stsUser.Location = new System.Drawing.Point(0, 319);
             this.stsUser.Name = "stsUser";
             this.stsUser.Size = new System.Drawing.Size(382, 22);
             this.stsUser.TabIndex = 42;
@@ -173,7 +173,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(92, 233);
+            this.btnIngresar.Location = new System.Drawing.Point(92, 236);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 37;
@@ -187,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(382, 335);
+            this.ClientSize = new System.Drawing.Size(382, 341);
             this.Controls.Add(this.stsUser);
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox1);

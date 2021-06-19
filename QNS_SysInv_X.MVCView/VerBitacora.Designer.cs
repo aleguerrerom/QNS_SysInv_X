@@ -48,6 +48,7 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 52;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dgvListar
             // 
@@ -62,22 +63,25 @@
             // 
             // btnChange
             // 
+            this.btnChange.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnChange.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChange.Location = new System.Drawing.Point(210, 155);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(212, 27);
             this.btnChange.TabIndex = 53;
             this.btnChange.Text = "VER LOGS DE MOVIMIENTOS";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.UseVisualStyleBackColor = false;
             this.btnChange.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // LabelDescription
             // 
             this.LabelDescription.AutoSize = true;
+            this.LabelDescription.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelDescription.Location = new System.Drawing.Point(12, 9);
             this.LabelDescription.Name = "LabelDescription";
-            this.LabelDescription.Size = new System.Drawing.Size(139, 13);
+            this.LabelDescription.Size = new System.Drawing.Size(153, 16);
             this.LabelDescription.TabIndex = 56;
             this.LabelDescription.Text = "Logs de Usuarios Logeados";
             // 
@@ -85,7 +89,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 364);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(667, 372);
             this.Controls.Add(this.LabelDescription);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.dgvListar);

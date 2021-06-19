@@ -63,7 +63,6 @@
             this.txtNombreActivo = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.cmsInventario.SuspendLayout();
@@ -463,8 +462,6 @@
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.GestorInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();

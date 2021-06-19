@@ -17,5 +17,10 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

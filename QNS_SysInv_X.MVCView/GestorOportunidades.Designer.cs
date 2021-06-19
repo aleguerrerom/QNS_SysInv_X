@@ -35,24 +35,24 @@
             this.txtPresupuesto = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDetalles = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cmbNombre = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -141,13 +141,17 @@
             this.groupBox6.TabIndex = 63;
             this.groupBox6.TabStop = false;
             // 
-            // dtpFecha
+            // cmbVendedor
             // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(179, 14);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 4;
+            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVendedor.FormattingEnabled = true;
+            this.cmbVendedor.Items.AddRange(new object[] {
+            "Cisco"});
+            this.cmbVendedor.Location = new System.Drawing.Point(141, 11);
+            this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbVendedor.Name = "cmbVendedor";
+            this.cmbVendedor.Size = new System.Drawing.Size(194, 21);
+            this.cmbVendedor.TabIndex = 3;
             // 
             // label6
             // 
@@ -162,6 +166,24 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "VENDEDOR:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Location = new System.Drawing.Point(179, 18);
+            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(197, 13);
+            this.txtModelo.TabIndex = 4;
+            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(179, 14);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
+            this.dtpFecha.TabIndex = 4;
             // 
             // groupBox5
             // 
@@ -226,28 +248,6 @@
             this.label4.Text = "FECHA DE CIERRE:      ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtModelo
-            // 
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(179, 18);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 4;
-            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
-            // 
-            // cmbVendedor
-            // 
-            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Items.AddRange(new object[] {
-            "Cisco"});
-            this.cmbVendedor.Location = new System.Drawing.Point(141, 11);
-            this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbVendedor.Name = "cmbVendedor";
-            this.cmbVendedor.Size = new System.Drawing.Size(194, 21);
-            this.cmbVendedor.TabIndex = 3;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
@@ -297,6 +297,14 @@
             this.groupBox1.Size = new System.Drawing.Size(363, 44);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbNombre
+            // 
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(184, 14);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(121, 21);
+            this.cmbNombre.TabIndex = 4;
             // 
             // label2
             // 
@@ -354,18 +362,11 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // cmbNombre
-            // 
-            this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(184, 14);
-            this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(121, 21);
-            this.cmbNombre.TabIndex = 4;
-            // 
             // GestorOportunidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(835, 555);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);

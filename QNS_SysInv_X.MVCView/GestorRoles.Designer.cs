@@ -46,6 +46,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkOportunidades = new System.Windows.Forms.CheckBox();
+            this.chkVendedores = new System.Windows.Forms.CheckBox();
+            this.chkClientesx = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.chkBitacora = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chckRoles = new System.Windows.Forms.CheckBox();
@@ -60,12 +66,6 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.chkClientesx = new System.Windows.Forms.CheckBox();
-            this.chkVendedores = new System.Windows.Forms.CheckBox();
-            this.chkOportunidades = new System.Windows.Forms.CheckBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -284,6 +284,72 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
+            // chkOportunidades
+            // 
+            this.chkOportunidades.AutoSize = true;
+            this.chkOportunidades.Location = new System.Drawing.Point(204, 177);
+            this.chkOportunidades.Name = "chkOportunidades";
+            this.chkOportunidades.Size = new System.Drawing.Size(15, 14);
+            this.chkOportunidades.TabIndex = 19;
+            this.chkOportunidades.UseVisualStyleBackColor = true;
+            // 
+            // chkVendedores
+            // 
+            this.chkVendedores.AutoSize = true;
+            this.chkVendedores.Location = new System.Drawing.Point(204, 201);
+            this.chkVendedores.Name = "chkVendedores";
+            this.chkVendedores.Size = new System.Drawing.Size(15, 14);
+            this.chkVendedores.TabIndex = 18;
+            this.chkVendedores.UseVisualStyleBackColor = true;
+            // 
+            // chkClientesx
+            // 
+            this.chkClientesx.AutoSize = true;
+            this.chkClientesx.Location = new System.Drawing.Point(204, 226);
+            this.chkClientesx.Name = "chkClientesx";
+            this.chkClientesx.Size = new System.Drawing.Size(15, 14);
+            this.chkClientesx.TabIndex = 17;
+            this.chkClientesx.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Location = new System.Drawing.Point(1, 226);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "GESTOR CLIENTES:      ";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Location = new System.Drawing.Point(2, 201);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 16);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "GESTOR VENDEDORES:      ";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Location = new System.Drawing.Point(1, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(178, 16);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "GESTOR OPORTUNIDADES:      ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // chkBitacora
             // 
             this.chkBitacora.AutoSize = true;
@@ -407,76 +473,11 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(1, 175);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(178, 16);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "GESTOR OPORTUNIDADES:      ";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label11.Location = new System.Drawing.Point(2, 201);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 16);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "GESTOR VENDEDORES:      ";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label12.Location = new System.Drawing.Point(1, 226);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "GESTOR CLIENTES:      ";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chkClientesx
-            // 
-            this.chkClientesx.AutoSize = true;
-            this.chkClientesx.Location = new System.Drawing.Point(204, 226);
-            this.chkClientesx.Name = "chkClientesx";
-            this.chkClientesx.Size = new System.Drawing.Size(15, 14);
-            this.chkClientesx.TabIndex = 17;
-            this.chkClientesx.UseVisualStyleBackColor = true;
-            // 
-            // chkVendedores
-            // 
-            this.chkVendedores.AutoSize = true;
-            this.chkVendedores.Location = new System.Drawing.Point(204, 201);
-            this.chkVendedores.Name = "chkVendedores";
-            this.chkVendedores.Size = new System.Drawing.Size(15, 14);
-            this.chkVendedores.TabIndex = 18;
-            this.chkVendedores.UseVisualStyleBackColor = true;
-            // 
-            // chkOportunidades
-            // 
-            this.chkOportunidades.AutoSize = true;
-            this.chkOportunidades.Location = new System.Drawing.Point(204, 177);
-            this.chkOportunidades.Name = "chkOportunidades";
-            this.chkOportunidades.Size = new System.Drawing.Size(15, 14);
-            this.chkOportunidades.TabIndex = 19;
-            this.chkOportunidades.UseVisualStyleBackColor = true;
-            // 
             // GestorRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 477);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
