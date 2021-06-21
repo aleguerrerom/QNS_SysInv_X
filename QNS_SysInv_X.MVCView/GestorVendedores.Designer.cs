@@ -430,7 +430,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 602);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(776, 573);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.groupBox7);

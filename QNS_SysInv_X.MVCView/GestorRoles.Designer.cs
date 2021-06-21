@@ -317,7 +317,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label12.Location = new System.Drawing.Point(1, 226);
+            this.label12.Location = new System.Drawing.Point(1, 235);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 16);
             this.label12.TabIndex = 16;
@@ -330,7 +330,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label11.Location = new System.Drawing.Point(2, 201);
+            this.label11.Location = new System.Drawing.Point(1, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(154, 16);
             this.label11.TabIndex = 15;
@@ -343,7 +343,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(1, 175);
+            this.label10.Location = new System.Drawing.Point(1, 178);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(178, 16);
             this.label10.TabIndex = 14;

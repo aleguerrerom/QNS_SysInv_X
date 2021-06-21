@@ -10,16 +10,19 @@ using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class Prestamo : Form
+    public partial class ReporteInventario : Form
     {
-        public Prestamo()
+        public ReporteInventario()
         {
             InitializeComponent();
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
+        private void ReporteInventario_Load(object sender, EventArgs e)
         {
-            this.Close();
+            // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
+            this.inventarioTableAdapter.Fill(this.dS_QNS.Inventario);
+
+            this.reportViewer1.RefreshReport();
         }
 
         private void label1_Click(object sender, EventArgs e)

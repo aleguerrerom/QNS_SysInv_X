@@ -338,6 +338,9 @@ namespace QNS_SysInv_X.MVCView
                     this.chkInventario.Checked = bool.Parse(fila["inventario"].ToString());
                     this.chkPrestamo.Checked = bool.Parse(fila["prestamo"].ToString());
                     this.chkBitacora.Checked = bool.Parse(fila["bitacora"].ToString());
+                    this.chkInventario.Checked = bool.Parse(fila["oportunidades"].ToString());
+                    this.chkPrestamo.Checked = bool.Parse(fila["vendedores"].ToString());
+                    this.chkBitacora.Checked = bool.Parse(fila["clientes"].ToString());
                     this.txtRol.ReadOnly = true;
                     this.btnAdd.Text = "ACTUALIZAR";
                 }

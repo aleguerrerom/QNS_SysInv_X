@@ -70,6 +70,7 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["usuarios"].ToString())==true)
             {
                 usuariosToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem1.Visible = true;
             }
             if (bool.Parse(fila["entrega"].ToString()) == true)
             {
@@ -78,6 +79,7 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["inventario"].ToString()) == true)
             {
                 inventarioToolStripMenuItem.Visible = true;
+                tsmReporteInv.Visible = true;
             }
             if(bool.Parse(fila["roles"].ToString()) == true)
             {
@@ -89,11 +91,12 @@ namespace QNS_SysInv_X.MVCView
             }
             if (bool.Parse(fila["bitacora"].ToString()) == true)
             {
-                tslBitacora.Visible = true;
+                verBitacoraToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["oportunidades"].ToString()) == true)
             {
                 oportunidadesToolStripMenuItem.Visible = true;
+                tsmReporteOpo.Visible = true;
             }
             if (bool.Parse(fila["vendedores"].ToString()) == true)
             {
@@ -102,6 +105,7 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["clientes"].ToString()) == true)
             {
                 vendedoresToolStripMenuItem.Visible = true;
+                clmReporteCli.Visible = true;
             }
 
         }
@@ -189,7 +193,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsAyuda_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\Alejandro\Desktop\CNV_Inventario.MVC\CNV_Inventario.MVCView\images\guia.pdf");
+            System.Diagnostics.Process.Start(@"C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\images\guia.pdf");
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -267,6 +271,36 @@ namespace QNS_SysInv_X.MVCView
         {
             GestorOportunidades oportunidades = new GestorOportunidades();
             oportunidades.Show();
+        }
+
+        private void tsmReporteInv_Click(object sender, EventArgs e)
+        {
+            ReporteInventario entr = new ReporteInventario();
+            entr.Show();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReporteUsuarios repU = new ReporteUsuarios();
+            repU.Show();
+        }
+
+        private void tsBitacora_Click(object sender, EventArgs e)
+        {
+            VerBitacora bitacora = new VerBitacora();
+            bitacora.Show();
+        }
+
+        private void toolStripLabel1_Click_1(object sender, EventArgs e)
+        {
+            VerBitacora bitacora = new VerBitacora();
+            bitacora.Show();
+        }
+
+        private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerBitacora bitacora = new VerBitacora();
+            bitacora.Show();
         }
     }
 }

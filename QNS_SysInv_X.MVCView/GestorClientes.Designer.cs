@@ -39,11 +39,13 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rtbDireccion = new System.Windows.Forms.RichTextBox();
             this.txtDireccion = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbRol = new System.Windows.Forms.ComboBox();
@@ -53,9 +55,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.rtbDireccion = new System.Windows.Forms.RichTextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -135,11 +135,11 @@
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.Location = new System.Drawing.Point(23, 353);
+            this.dgvListar.Location = new System.Drawing.Point(12, 354);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
-            this.dgvListar.Size = new System.Drawing.Size(734, 307);
+            this.dgvListar.Size = new System.Drawing.Size(734, 172);
             this.dgvListar.TabIndex = 57;
             // 
             // btnCancel
@@ -183,6 +183,15 @@
             this.groupBox6.Size = new System.Drawing.Size(363, 102);
             this.groupBox6.TabIndex = 63;
             this.groupBox6.TabStop = false;
+            // 
+            // rtbDireccion
+            // 
+            this.rtbDireccion.Location = new System.Drawing.Point(118, 14);
+            this.rtbDireccion.Name = "rtbDireccion";
+            this.rtbDireccion.Size = new System.Drawing.Size(222, 75);
+            this.rtbDireccion.TabIndex = 68;
+            this.rtbDireccion.Text = "";
+            this.rtbDireccion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // txtDireccion
             // 
@@ -246,6 +255,18 @@
             this.groupBox4.Size = new System.Drawing.Size(363, 44);
             this.groupBox4.TabIndex = 61;
             this.groupBox4.TabStop = false;
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Items.AddRange(new object[] {
+            "Juridica",
+            "Fisica"});
+            this.cmbModelo.Location = new System.Drawing.Point(130, 16);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(210, 21);
+            this.cmbModelo.TabIndex = 34;
             // 
             // label4
             // 
@@ -364,38 +385,17 @@
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
             // 
-            // cmbModelo
-            // 
-            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Items.AddRange(new object[] {
-            "Juridica",
-            "Fisica"});
-            this.cmbModelo.Location = new System.Drawing.Point(130, 16);
-            this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(210, 21);
-            this.cmbModelo.TabIndex = 34;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // rtbDireccion
-            // 
-            this.rtbDireccion.Location = new System.Drawing.Point(118, 14);
-            this.rtbDireccion.Name = "rtbDireccion";
-            this.rtbDireccion.Size = new System.Drawing.Size(222, 75);
-            this.rtbDireccion.TabIndex = 68;
-            this.rtbDireccion.Text = "";
-            this.rtbDireccion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(769, 677);
+            this.ClientSize = new System.Drawing.Size(769, 532);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox7);

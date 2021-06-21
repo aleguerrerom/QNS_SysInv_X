@@ -369,7 +369,8 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-          
+            ReporteUsuarios repU = new ReporteUsuarios();
+            repU.Show();
         }
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)

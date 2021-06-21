@@ -281,7 +281,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-          
+            ReporteInventario entr = new ReporteInventario();
+            entr.Show();
         }
     }
 }
