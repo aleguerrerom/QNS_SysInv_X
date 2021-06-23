@@ -1,7 +1,7 @@
 ﻿using System;
+using QNS_SysInv_X.MVCModel;
 using System.Data.SqlClient;
 using System.Data;
-using QNS_SysInv_X.MVCModel;
 
 namespace QNS_SysInv_X.MVCController
 {

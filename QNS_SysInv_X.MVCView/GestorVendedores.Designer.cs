@@ -36,7 +36,6 @@
             this.opdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.abrirArchivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReport = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
@@ -61,6 +60,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -108,24 +108,20 @@
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListar.Location = new System.Drawing.Point(31, 378);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.Size = new System.Drawing.Size(705, 190);
             this.dgvListar.TabIndex = 67;
+            this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirArchivoToolStripMenuItem});
+            this.eliminarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 26);
-            // 
-            // abrirArchivoToolStripMenuItem
-            // 
-            this.abrirArchivoToolStripMenuItem.Name = "abrirArchivoToolStripMenuItem";
-            this.abrirArchivoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.abrirArchivoToolStripMenuItem.Text = "Abrir Archivo";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // btnReport
             // 
@@ -158,6 +154,9 @@
             // 
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Items.AddRange(new object[] {
+            "masculino",
+            "femenino"});
             this.cmbGenero.Location = new System.Drawing.Point(159, 16);
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbGenero.Name = "cmbGenero";
@@ -201,6 +200,7 @@
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -215,6 +215,7 @@
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // groupBox6
             // 
@@ -426,6 +427,13 @@
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
             // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
             // GestorVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,7 +486,6 @@
         private System.Windows.Forms.OpenFileDialog opdBrowse;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem abrirArchivoToolStripMenuItem;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label7;
@@ -503,5 +510,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.DateTimePicker dtpFechaAnace;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

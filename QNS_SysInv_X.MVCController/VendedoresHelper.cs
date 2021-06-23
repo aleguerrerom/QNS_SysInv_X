@@ -38,7 +38,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlValue = objVendedores.opc;
 
 
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedores");
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedor");
 
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[5].SqlValue = objVendedores.Genero;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@fechanacimiento";
+                parParameter[6].ParameterName = "@fechaNacimiento";
                 parParameter[6].SqlDbType = SqlDbType.Date;
                 parParameter[6].SqlValue = objVendedores.Fechanacimiento;
 
@@ -104,7 +104,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objVendedores.Correo;
 
-                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
+                cnGeneral.EjecutarSP(parParameter, "SPVendedor");
 
 
 
@@ -162,7 +162,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[5].SqlValue = objVendedores.Genero;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@fechanacimiento";
+                parParameter[6].ParameterName = "@fechaNacimiento";
                 parParameter[6].SqlDbType = SqlDbType.Date;
                 parParameter[6].SqlValue = objVendedores.Fechanacimiento;
 
@@ -172,10 +172,8 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objVendedores.Correo;
 
-                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
-
-
-                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
+                cnGeneral.EjecutarSP(parParameter, "SPVendedor");
+                
             }
             catch (Exception ex)
             {
@@ -200,11 +198,11 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@cedula";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 20;
+                parParameter[1].SqlDbType = SqlDbType.Int;
+
                 parParameter[1].SqlValue = objVendedores.Cedula;
 
-                cnGeneral.EjecutarSP(parParameter, "SPVendedores");
+                cnGeneral.EjecutarSP(parParameter, "SPVendedor");
 
             }
             catch (Exception ex)
