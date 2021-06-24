@@ -18,8 +18,6 @@ namespace QNS_SysInv_X.MVCView
         private Vendedores vendedor;
         private VendedoresHelper vendedorH;
         private Usuarios user;
-        private RolesHelper rolH;
-        private Roles roles;
         private UsuariosHelper userHelper;
         private DataTable table;
         private Bitacora bitacora;

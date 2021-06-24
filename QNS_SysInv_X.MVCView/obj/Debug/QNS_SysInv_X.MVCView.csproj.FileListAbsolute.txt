@@ -97,7 +97,6 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCView\obj\Debug\QNS_Sys
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCView\obj\Debug\QNS_SysInv_X.MVCView.Principal.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\CNV_Inventario.MVCView\obj\Debug\QNS_SysInv_X.MVCView.GestorRoles.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inventario.MVCView.exe.config
-C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\Datos.cs
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inventario.MVCView.exe
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inventario.MVCView.pdb
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inventario.MVCController.dll

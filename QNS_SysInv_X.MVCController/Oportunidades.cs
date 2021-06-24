@@ -13,14 +13,14 @@ namespace QNS_SysInv_X.MVCController
         {
             get; set;
         }
-        string nombrecliente;
+        int nombrecliente;
         DateTime fechacierre;
         string marca;
         string detalles;
         int presupuesto;
-        string vendedor;
+        int vendedor;
 
-        public string Nombrecliente
+        public int Nombrecliente
         {
             get
             {
@@ -85,7 +85,7 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public string Vendedor
+        public int Vendedor
         {
             get
             {
@@ -98,7 +98,7 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public Oportunidades(string nombrecliente, DateTime fechacierre, string marca, string detalles, int presupuesto, string vendedor)
+        public Oportunidades(int nombrecliente, DateTime fechacierre, string marca, string detalles, int presupuesto, int vendedor)
         {
             this.Nombrecliente = nombrecliente;
             this.Fechacierre = fechacierre;
@@ -109,12 +109,12 @@ namespace QNS_SysInv_X.MVCController
         }
         public Oportunidades()
         {
-            this.Nombrecliente = "";
+            this.Nombrecliente = 0;
             this.Fechacierre = DateTime.Today;
             this.Marca = "";
             this.Detalles = "";
             this.Presupuesto = 0;
-            this.Vendedor = "";
+            this.Vendedor = 0;
         }
     }
 }

@@ -36,8 +36,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@nombrecliente";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 150;
+                parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objOportunidades.Nombrecliente;
 
                 parParameter[2] = new SqlParameter();
@@ -64,8 +63,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[6] = new SqlParameter();
                 parParameter[6].ParameterName = "@vendedor";
-                parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 200;
+                parParameter[6].SqlDbType = SqlDbType.Int;
                 parParameter[6].SqlValue = objOportunidades.Vendedor;
 
 
@@ -142,7 +140,7 @@ namespace QNS_SysInv_X.MVCController
         }
 
 
-        public void ActualizarRol()
+        public void Actualizar()
         {
             try
             {
@@ -157,8 +155,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@nombrecliente";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 150;
+                parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objOportunidades.Nombrecliente;
 
                 parParameter[2] = new SqlParameter();
@@ -185,8 +182,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[6] = new SqlParameter();
                 parParameter[6].ParameterName = "@vendedor";
-                parParameter[6].SqlDbType = SqlDbType.VarChar;
-                parParameter[6].Size = 200;
+                parParameter[6].SqlDbType = SqlDbType.Int;
                 parParameter[6].SqlValue = objOportunidades.Vendedor;
 
 
