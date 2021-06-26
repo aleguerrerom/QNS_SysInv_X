@@ -102,11 +102,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteOpor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteOpor.Designer.cs">
+      <DependentUpon>ReporteOpor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteInventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteInventario.Designer.cs">
       <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteClientes.Designer.cs">
+      <DependentUpon>ReporteClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteUsuarios.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,14 @@
     <EmbeddedResource Include="GestorVendedores.resx">
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteOpor.resx">
+      <DependentUpon>ReporteOpor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportOportunidades.rdlc" />
+    <EmbeddedResource Include="ReportClientes.rdlc" />
     <EmbeddedResource Include="ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>

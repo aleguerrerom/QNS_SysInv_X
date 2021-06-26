@@ -23,6 +23,15 @@ namespace QNS_SysInv_X.MVCView
         private Bitacora bitacora;
         private BitacoraHelper bitH;
 
+
+        public GestorVendedores(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+            this.stsUsuario.Text = this.user.Usuario;
+        }
+
+
         public GestorVendedores()
         {
             InitializeComponent();
@@ -71,9 +80,16 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
                 this.vendedor.Correo = this.txtCorreo.Text;
                 this.vendedor.opc = 2;
-                this.userHelper = new UsuariosHelper(user);
+                this.vendedorH = new VendedoresHelper(vendedor);
                 ///LOG PARA USUARIOS
-              // LogMovimientos();
+                ///
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Movimiento = "Ingreso vendedor";
+                this.bitacora.Detalle = "Se agrego el vendedor correctamente " + this.txtNombre.Text + " " + this.txtApellido.Text;
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
 
                 this.vendedorH.Guardar();
                 MessageBox.Show("Vendedor  " + this.vendedor.Nombre + " Almacenado");
@@ -188,13 +204,13 @@ namespace QNS_SysInv_X.MVCView
                     ///LOG PARA ELIMINAR
                     ///
 
-                   /* this.bitacora = new Bitacora();
+                    this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.stsUsuario.Text;
-                    this.bitacora.Movimiento = "Eliminar";
-                    this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
+                    this.bitacora.Movimiento = "Eliminar Vendedor";
+                    this.bitacora.Detalle = "Se elimino el vendedor " + fila["nombre"].ToString();
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();*/
+                    this.bitH.LogMovimientos();
 
                     this.vendedorH.Eliminar();
                     MessageBox.Show("Vendedor " + this.vendedor.Nombre + " Eliminado");
@@ -221,19 +237,19 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
                 this.vendedor.Correo = this.txtCorreo.Text;
-                
+
                 this.vendedor.opc = 4;
 
                 this.vendedorH = new VendedoresHelper(vendedor);
 
 
-               /* this.bitacora = new Bitacora();
+                this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
-                this.bitacora.Movimiento = "Actualizar";
-                this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
+                this.bitacora.Movimiento = "Actualizar Vendedor";
+                this.bitacora.Detalle = "Se actualizo el vendedor correctamente " + this.txtNombre.Text + " " + this.txtApellido.Text ;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();*/
+                this.bitH.LogMovimientos();
 
                 this.vendedorH.Actualizar();
                 MessageBox.Show("Datos del Vendedor " + this.vendedor.Nombre + " actualizados");
@@ -288,6 +304,11 @@ namespace QNS_SysInv_X.MVCView
         {
             eliminar();
             listar();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

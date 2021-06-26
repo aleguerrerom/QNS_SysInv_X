@@ -58,7 +58,7 @@ namespace QNS_SysInv_X.MVCController
 
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[8];
+                SqlParameter[] parParameter = new SqlParameter[9];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -77,7 +77,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[2].SqlValue = objClientes.Cedula;
 
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@acontacto";
+                parParameter[3].ParameterName = "@contacto";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 50;
                 parParameter[3].SqlValue = objClientes.Contacto;
@@ -94,7 +94,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[5].SqlValue = objClientes.Correo;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@direccion";
+                parParameter[6].ParameterName = "@direcion";
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
                 parParameter[6].Size = 200;
                 parParameter[6].SqlValue = objClientes.Direccion;
@@ -104,6 +104,13 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objClientes.Agente;
+
+
+                parParameter[8] = new SqlParameter();
+                parParameter[8].ParameterName = "@nombre";
+                parParameter[8].SqlDbType = SqlDbType.VarChar;
+                parParameter[8].Size = 50;
+                parParameter[8].SqlValue = objClientes.Nombre;
 
                 cnGeneral.EjecutarSP(parParameter, "SPClientes");
 
@@ -127,7 +134,7 @@ namespace QNS_SysInv_X.MVCController
                 cnGeneral = new Datos();
 
 
-                SqlParameter[] parParameter = new SqlParameter[8];
+                SqlParameter[] parParameter = new SqlParameter[9];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -146,7 +153,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[2].SqlValue = objClientes.Cedula;
 
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@acontacto";
+                parParameter[3].ParameterName = "@contacto";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 50;
                 parParameter[3].SqlValue = objClientes.Contacto;
@@ -163,7 +170,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[5].SqlValue = objClientes.Correo;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@direccion";
+                parParameter[6].ParameterName = "@direcion";
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
                 parParameter[6].Size = 200;
                 parParameter[6].SqlValue = objClientes.Direccion;
@@ -173,6 +180,13 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objClientes.Agente;
+
+                parParameter[8] = new SqlParameter();
+                parParameter[8].ParameterName = "@nombre";
+                parParameter[8].SqlDbType = SqlDbType.VarChar;
+                parParameter[8].Size = 50;
+                parParameter[8].SqlValue = objClientes.Nombre;
+
                 cnGeneral.EjecutarSP(parParameter, "SPClientes");
             }
             catch (Exception ex)

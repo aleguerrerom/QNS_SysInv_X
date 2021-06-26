@@ -19,8 +19,8 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Debug\Datos.cs
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Debug\CNV_Inventario.MVCModel.dll.config
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Debug\CNV_Inventario.MVCModel.dll
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Debug\CNV_Inventario.MVCModel.pdb
-C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\QNS_SysInv_X.MVCModel.csprojResolveAssemblyReference.cache
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\CNV_Inventario.MVCModel.Properties.Resources.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\QNS_SysInv_X.MVCModel.csproj.GenerateResource.Cache
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\CNV_Inventario.MVCModel.dll
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Debug\QNS_SysInv_X.MVCModel.csprojResolveAssemblyReference.cache

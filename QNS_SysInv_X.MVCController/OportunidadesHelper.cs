@@ -146,7 +146,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -184,6 +184,11 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[6].ParameterName = "@vendedor";
                 parParameter[6].SqlDbType = SqlDbType.Int;
                 parParameter[6].SqlValue = objOportunidades.Vendedor;
+
+                parParameter[7] = new SqlParameter();
+                parParameter[7].ParameterName = "@id";
+                parParameter[7].SqlDbType = SqlDbType.Int;
+                parParameter[7].SqlValue = objOportunidades.Id;
 
 
                 cnGeneral.EjecutarSP(parParameter, "SPOportunidades");

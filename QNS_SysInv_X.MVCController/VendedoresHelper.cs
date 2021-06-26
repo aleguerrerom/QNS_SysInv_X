@@ -199,7 +199,6 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@cedula";
                 parParameter[1].SqlDbType = SqlDbType.Int;
-
                 parParameter[1].SqlValue = objVendedores.Cedula;
 
                 cnGeneral.EjecutarSP(parParameter, "SPVendedor");

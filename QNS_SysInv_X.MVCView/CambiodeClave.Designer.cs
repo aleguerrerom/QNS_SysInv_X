@@ -90,7 +90,7 @@
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(169, 13);
-            this.txtConfirmar.TabIndex = 32;
+            this.txtConfirmar.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -157,7 +157,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(142, 284);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(92, 236);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
-            this.btnIngresar.TabIndex = 37;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "CAMBIAR";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.UseVisualStyleBackColor = false;

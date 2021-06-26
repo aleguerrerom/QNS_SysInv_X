@@ -13,12 +13,13 @@ namespace QNS_SysInv_X.MVCController
             get; set;
         }
         string tipo;
+        string nombre;
         int cedula;
         string contacto;
         int telefono;
         string correo;
         string direccion;
-        string agente;
+        int agente;
 
         public string Tipo
         {
@@ -98,7 +99,7 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public string Agente
+        public int Agente
         {
             get
             {
@@ -111,7 +112,20 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public Clientes(string tipo, int cedula, string contacto, int telefono, string correo, string direccion, string agente)
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        public Clientes(string tipo, int cedula, string contacto, int telefono, string correo, string direccion, int agente, string nombre)
         {
             this.Tipo = tipo;
             this.Cedula = cedula;
@@ -120,6 +134,7 @@ namespace QNS_SysInv_X.MVCController
             this.Correo = correo;
             this.Direccion = direccion;
             this.Agente = agente;
+            this.Nombre = nombre;
         }
         public Clientes()
         {
@@ -129,7 +144,8 @@ namespace QNS_SysInv_X.MVCController
             this.Telefono = 0;
             this.Correo = "";
             this.Direccion = "";
-            this.Agente = "";
+            this.Nombre = "";
+            this.Agente = 0;
         }
     }
 

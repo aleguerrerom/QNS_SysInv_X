@@ -34,8 +34,9 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.Label();
-            this.txtSerialNumber = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -43,19 +44,26 @@
             this.txtDireccion = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cmbModelo = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.cmbVende = new System.Windows.Forms.ComboBox();
             this.cmbVendedor = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtContacto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtNomb = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -66,6 +74,9 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -88,16 +99,17 @@
             this.btnReport.Location = new System.Drawing.Point(661, 313);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 66;
+            this.btnReport.TabIndex = 11;
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
             this.groupBox7.Controls.Add(this.txtCorreo);
-            this.groupBox7.Controls.Add(this.txtSerialNumber);
+            this.groupBox7.Controls.Add(this.txtMail);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(30, 116);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -121,26 +133,33 @@
             this.txtCorreo.Text = "CORREO:      ";
             this.txtCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtSerialNumber
+            // txtMail
             // 
-            this.txtSerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerialNumber.Location = new System.Drawing.Point(159, 18);
-            this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
-            this.txtSerialNumber.TabIndex = 2;
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMail.Location = new System.Drawing.Point(159, 18);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(197, 13);
+            this.txtMail.TabIndex = 5;
             // 
             // dgvListar
             // 
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListar.Location = new System.Drawing.Point(12, 354);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(734, 172);
             this.dgvListar.TabIndex = 57;
+            this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // btnCancel
             // 
@@ -151,10 +170,11 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -165,10 +185,11 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 55;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox6
             // 
@@ -176,11 +197,11 @@
             this.groupBox6.Controls.Add(this.rtbDireccion);
             this.groupBox6.Controls.Add(this.txtDireccion);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(401, 116);
+            this.groupBox6.Location = new System.Drawing.Point(400, 168);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Size = new System.Drawing.Size(363, 102);
+            this.groupBox6.Size = new System.Drawing.Size(363, 119);
             this.groupBox6.TabIndex = 63;
             this.groupBox6.TabStop = false;
             // 
@@ -189,7 +210,7 @@
             this.rtbDireccion.Location = new System.Drawing.Point(118, 14);
             this.rtbDireccion.Name = "rtbDireccion";
             this.rtbDireccion.Size = new System.Drawing.Size(222, 75);
-            this.rtbDireccion.TabIndex = 68;
+            this.rtbDireccion.TabIndex = 8;
             this.rtbDireccion.Text = "";
             this.rtbDireccion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
@@ -211,9 +232,9 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.txtTelefono);
-            this.groupBox5.Controls.Add(this.txtEstado);
+            this.groupBox5.Controls.Add(this.txtTel);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(401, 65);
+            this.groupBox5.Location = new System.Drawing.Point(401, 116);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -233,19 +254,19 @@
             this.txtTelefono.TabIndex = 33;
             this.txtTelefono.Text = "TELEFONO:     ";
             // 
-            // txtEstado
+            // txtTel
             // 
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Location = new System.Drawing.Point(159, 18);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(197, 13);
-            this.txtEstado.TabIndex = 5;
+            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTel.Location = new System.Drawing.Point(130, 17);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(197, 13);
+            this.txtTel.TabIndex = 6;
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.cmbModelo);
+            this.groupBox4.Controls.Add(this.cmbTipo);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(401, 13);
@@ -256,17 +277,17 @@
             this.groupBox4.TabIndex = 61;
             this.groupBox4.TabStop = false;
             // 
-            // cmbModelo
+            // cmbTipo
             // 
-            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Items.AddRange(new object[] {
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
             "Juridica",
             "Fisica"});
-            this.cmbModelo.Location = new System.Drawing.Point(130, 16);
-            this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(210, 21);
-            this.cmbModelo.TabIndex = 34;
+            this.cmbTipo.Location = new System.Drawing.Point(130, 16);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(210, 21);
+            this.cmbTipo.TabIndex = 2;
             // 
             // label4
             // 
@@ -285,7 +306,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.cmbRol);
+            this.groupBox3.Controls.Add(this.cmbVende);
             this.groupBox3.Controls.Add(this.cmbVendedor);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(31, 168);
@@ -296,17 +317,16 @@
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
             // 
-            // cmbRol
+            // cmbVende
             // 
-            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Items.AddRange(new object[] {
-            "Cisco"});
-            this.cmbRol.Location = new System.Drawing.Point(162, 16);
-            this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(194, 21);
-            this.cmbRol.TabIndex = 3;
+            this.cmbVende.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVende.FormattingEnabled = true;
+            this.cmbVende.ItemHeight = 13;
+            this.cmbVende.Location = new System.Drawing.Point(162, 16);
+            this.cmbVende.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbVende.Name = "cmbVende";
+            this.cmbVende.Size = new System.Drawing.Size(194, 21);
+            this.cmbVende.TabIndex = 3;
             // 
             // cmbVendedor
             // 
@@ -325,6 +345,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.txtContacto);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(31, 65);
@@ -334,6 +355,15 @@
             this.groupBox2.Size = new System.Drawing.Size(363, 44);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
+            // 
+            // txtContacto
+            // 
+            this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContacto.Location = new System.Drawing.Point(155, 17);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(197, 13);
+            this.txtContacto.TabIndex = 3;
             // 
             // label3
             // 
@@ -385,17 +415,85 @@
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
             // 
-            // contextMenuStrip1
+            // groupBox8
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.groupBox8.BackColor = System.Drawing.Color.White;
+            this.groupBox8.Controls.Add(this.txtNomb);
+            this.groupBox8.Controls.Add(this.txtNombre);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(401, 65);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox8.Size = new System.Drawing.Size(363, 44);
+            this.groupBox8.TabIndex = 60;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
+            // 
+            // txtNomb
+            // 
+            this.txtNomb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomb.Location = new System.Drawing.Point(130, 19);
+            this.txtNomb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNomb.Name = "txtNomb";
+            this.txtNomb.Size = new System.Drawing.Size(197, 13);
+            this.txtNomb.TabIndex = 4;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.AutoSize = true;
+            this.txtNombre.BackColor = System.Drawing.Color.Transparent;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Image = ((System.Drawing.Image)(resources.GetObject("txtNombre.Image")));
+            this.txtNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtNombre.Location = new System.Drawing.Point(7, 16);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(80, 16);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.Text = "NOMBRE:      ";
+            this.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(769, 25);
+            this.toolStrip1.TabIndex = 66;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripLabel1.Text = "Salir";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsuario});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(769, 22);
+            this.statusStrip1.TabIndex = 67;
+            this.statusStrip1.Text = "stsUsuario";
+            // 
+            // stsUsuario
+            // 
+            this.stsUsuario.Name = "stsUsuario";
+            this.stsUsuario.Size = new System.Drawing.Size(0, 17);
             // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(769, 532);
+            this.ClientSize = new System.Drawing.Size(769, 553);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox7);
@@ -410,6 +508,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorClientes";
             this.Text = "GestorClientes";
+            this.Load += new System.EventHandler(this.GestorClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -426,7 +525,14 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -435,7 +541,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label txtCorreo;
-        private System.Windows.Forms.TextBox txtSerialNumber;
+        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
@@ -443,19 +549,27 @@
         private System.Windows.Forms.Label txtDireccion;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label txtTelefono;
-        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbRol;
+        private System.Windows.Forms.ComboBox cmbVende;
         private System.Windows.Forms.Label cmbVendedor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.ComboBox cmbModelo;
+        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.RichTextBox rtbDireccion;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label txtNombre;
+        private System.Windows.Forms.TextBox txtContacto;
+        private System.Windows.Forms.TextBox txtNomb;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
     }
 }

@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class ReporteInventario : Form
+    public partial class ReporteOpor : Form
     {
-        public ReporteInventario()
+        public ReporteOpor()
         {
             InitializeComponent();
         }
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
-            this.inventarioTableAdapter.Fill(this.dS_QNS.Inventario);
+            // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
+            this.oportunidadesTableAdapter.Fill(this.dS_QNS.Oportunidades);
+            // TODO: This line of code loads data into the 'dS_QNS.Clientes' table. You can move, or remove it, as needed.
+           
 
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 
@@ -39,14 +42,7 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                if (cmbFiltro.SelectedIndex == 0)
-                {
-                    this.inventarioTableAdapter.FillBy(this.dS_QNS.Inventario, int.Parse(txtFiltro.Text));
-                }
-                else if (cmbFiltro.SelectedIndex == 1)
-                {
-                    this.inventarioTableAdapter.FillBy1(this.dS_QNS.Inventario,txtFiltro.Text);
-                }
+                this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
@@ -57,7 +53,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.inventarioTableAdapter.Fill(this.dS_QNS.Inventario);
+            this.oportunidadesTableAdapter.Fill(this.dS_QNS.Oportunidades);
 
             this.reportViewer1.RefreshReport();
         }

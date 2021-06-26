@@ -1,6 +1,6 @@
 ﻿namespace QNS_SysInv_X.MVCView
 {
-    partial class ReporteUsuarios
+    partial class RerporteClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RerporteClientes));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.usuariosTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -91,18 +96,6 @@
             this.label1.Text = "FILTRAR POR USUARIO:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSUsuarios";
-            reportDataSource1.Value = this.usuariosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportUsuarios.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 102);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(971, 391);
-            this.reportViewer1.TabIndex = 62;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -127,24 +120,51 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // ReporteUsuarios
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DSClientes";
+            reportDataSource1.Value = this.clientesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportClientes.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(22, 115);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(832, 467);
+            this.reportViewer1.TabIndex = 65;
+            // 
+            // ClientesBindingSource
+            // 
+            this.ClientesBindingSource.DataMember = "Clientes";
+            this.ClientesBindingSource.DataSource = this.dS_QNS;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.dS_QNS;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // RerporteClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1003, 605);
+            this.ClientSize = new System.Drawing.Size(870, 605);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox2);
-            this.Name = "ReporteUsuarios";
+            this.Name = "RerporteClientes";
             this.Text = "ReporteUsuarios";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,11 +174,14 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private CNV_Inventario.MVCView.DS_QNS dS_QNS;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnLimpiar;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource ClientesBindingSource;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter clientesTableAdapter;
     }
 }

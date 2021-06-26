@@ -4,6 +4,9 @@
 
     partial class DS_QNS
     {
+        partial class DataTable1DataTable
+        {
+        }
     }
 }
 

@@ -11,18 +11,21 @@ using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class ReporteUsuarios : Form
+    public partial class RerporteClientes : Form
     {
-        public ReporteUsuarios()
+        public RerporteClientes()
         {
             InitializeComponent();
         }
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_QNS.Clientes' table. You can move, or remove it, as needed.
+            this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
             // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
 
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 
@@ -30,7 +33,7 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                this.usuariosTableAdapter.FillBy(this.dS_QNS.Usuarios, txtFiltro.Text);
+                this.clientesTableAdapter.FillBy(this.dS_QNS.Clientes, int.Parse(txtFiltro.Text));
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
@@ -53,7 +56,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
+            this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
 
             this.reportViewer1.RefreshReport();
         }

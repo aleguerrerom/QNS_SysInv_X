@@ -66,6 +66,9 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -73,6 +76,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -138,7 +142,7 @@
             this.btnCancel.Location = new System.Drawing.Point(543, 310);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 27);
-            this.btnCancel.TabIndex = 48;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "CANCELAR:";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -152,7 +156,7 @@
             this.btnAdd.Location = new System.Drawing.Point(432, 310);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 27);
-            this.btnAdd.TabIndex = 47;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "ACEPTAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -290,7 +294,7 @@
             this.chkOportunidades.Location = new System.Drawing.Point(204, 177);
             this.chkOportunidades.Name = "chkOportunidades";
             this.chkOportunidades.Size = new System.Drawing.Size(15, 14);
-            this.chkOportunidades.TabIndex = 19;
+            this.chkOportunidades.TabIndex = 7;
             this.chkOportunidades.UseVisualStyleBackColor = true;
             // 
             // chkVendedores
@@ -299,7 +303,7 @@
             this.chkVendedores.Location = new System.Drawing.Point(204, 201);
             this.chkVendedores.Name = "chkVendedores";
             this.chkVendedores.Size = new System.Drawing.Size(15, 14);
-            this.chkVendedores.TabIndex = 18;
+            this.chkVendedores.TabIndex = 8;
             this.chkVendedores.UseVisualStyleBackColor = true;
             // 
             // chkClientesx
@@ -308,7 +312,7 @@
             this.chkClientesx.Location = new System.Drawing.Point(204, 226);
             this.chkClientesx.Name = "chkClientesx";
             this.chkClientesx.Size = new System.Drawing.Size(15, 14);
-            this.chkClientesx.TabIndex = 17;
+            this.chkClientesx.TabIndex = 9;
             this.chkClientesx.UseVisualStyleBackColor = true;
             // 
             // label12
@@ -356,7 +360,7 @@
             this.chkBitacora.Location = new System.Drawing.Point(205, 148);
             this.chkBitacora.Name = "chkBitacora";
             this.chkBitacora.Size = new System.Drawing.Size(15, 14);
-            this.chkBitacora.TabIndex = 13;
+            this.chkBitacora.TabIndex = 6;
             this.chkBitacora.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -378,7 +382,7 @@
             this.chckRoles.Location = new System.Drawing.Point(204, 123);
             this.chckRoles.Name = "chckRoles";
             this.chckRoles.Size = new System.Drawing.Size(15, 14);
-            this.chckRoles.TabIndex = 11;
+            this.chckRoles.TabIndex = 5;
             this.chckRoles.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -400,7 +404,7 @@
             this.chkEntrega.Location = new System.Drawing.Point(204, 96);
             this.chkEntrega.Name = "chkEntrega";
             this.chkEntrega.Size = new System.Drawing.Size(15, 14);
-            this.chkEntrega.TabIndex = 3;
+            this.chkEntrega.TabIndex = 4;
             this.chkEntrega.UseVisualStyleBackColor = true;
             // 
             // chkPrestamo
@@ -409,7 +413,7 @@
             this.chkPrestamo.Location = new System.Drawing.Point(204, 67);
             this.chkPrestamo.Name = "chkPrestamo";
             this.chkPrestamo.Size = new System.Drawing.Size(15, 14);
-            this.chkPrestamo.TabIndex = 2;
+            this.chkPrestamo.TabIndex = 3;
             this.chkPrestamo.UseVisualStyleBackColor = true;
             // 
             // chckUsuarios
@@ -418,7 +422,7 @@
             this.chckUsuarios.Location = new System.Drawing.Point(204, 40);
             this.chckUsuarios.Name = "chckUsuarios";
             this.chckUsuarios.Size = new System.Drawing.Size(15, 14);
-            this.chckUsuarios.TabIndex = 1;
+            this.chckUsuarios.TabIndex = 2;
             this.chckUsuarios.UseVisualStyleBackColor = true;
             // 
             // chkInventario
@@ -427,7 +431,7 @@
             this.chkInventario.Location = new System.Drawing.Point(204, 11);
             this.chkInventario.Name = "chkInventario";
             this.chkInventario.Size = new System.Drawing.Size(15, 14);
-            this.chkInventario.TabIndex = 0;
+            this.chkInventario.TabIndex = 1;
             this.chkInventario.UseVisualStyleBackColor = true;
             // 
             // cmsOpciones
@@ -473,12 +477,35 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsuario,
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 455);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip1.TabIndex = 51;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // stsUsuario
+            // 
+            this.stsUsuario.Name = "stsUsuario";
+            this.stsUsuario.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // GestorRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 477);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(pictureBox1);
@@ -498,6 +525,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,5 +569,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

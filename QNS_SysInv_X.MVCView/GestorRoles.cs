@@ -36,6 +36,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
+            this.statusStrip1.Text = this.user.Usuario;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -184,19 +185,17 @@ namespace QNS_SysInv_X.MVCView
                 //roles.id_username_bitacora = Principal.id_username_bitacora;
                 if (this.txtRol.Text != "")
                 {
-                    this.rolH = new RolesHelper(roles);
+                   this.rolH = new RolesHelper(roles);
                     ///LOG PARA ROLES
-                    ///
                     /*
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Agregar";
-                    this.bitacora.Detalle = "Se agrego nuevoS el rol " + this.txtRol.Text;
+                    this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();*/
-                    //
-
+                    this.bitH.LogMovimientos();
+                    */ 
                     this.rolH.GuardarRol();
                     MessageBox.Show("Rol almacenado");
                     limpiar();
@@ -287,12 +286,12 @@ namespace QNS_SysInv_X.MVCView
 /*
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.user.Usuario;
-                    this.bitacora.Movimiento = "Eliminar";
-                    this.bitacora.Detalle = "Se agrego nuevoS el rol " + this.txtRol.Text;
+                    this.bitacora.Movimiento = "Eliminar Rol";
+                    this.bitacora.Detalle = "Se elimino el rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();*/
-                    //
+                    this.bitH.LogMovimientos();
+  */                  
                     this.rolH.Eliminar();
                     MessageBox.Show("Usuario Eliminado Eliminado");
                     listar();
@@ -330,7 +329,7 @@ namespace QNS_SysInv_X.MVCView
                 else
                 {
                     int indice = dgvListar.CurrentRow.Index;
-    DataRow fila = table.Rows[indice];
+                    DataRow fila = table.Rows[indice];
                     this.txtRol.Text = fila["nombre"].ToString();
                     this.chckRoles.Checked = bool.Parse(fila["roles"].ToString());
                     this.chckUsuarios.Checked = bool.Parse(fila["usuarios"].ToString());
@@ -338,11 +337,12 @@ namespace QNS_SysInv_X.MVCView
                     this.chkInventario.Checked = bool.Parse(fila["inventario"].ToString());
                     this.chkPrestamo.Checked = bool.Parse(fila["prestamo"].ToString());
                     this.chkBitacora.Checked = bool.Parse(fila["bitacora"].ToString());
-                    this.chkInventario.Checked = bool.Parse(fila["oportunidades"].ToString());
-                    this.chkPrestamo.Checked = bool.Parse(fila["vendedores"].ToString());
-                    this.chkBitacora.Checked = bool.Parse(fila["clientes"].ToString());
+                    this.chkOportunidades.Checked = bool.Parse(fila["oportunidades"].ToString());
+                    this.chkVendedores.Checked = bool.Parse(fila["vendedores"].ToString());
+                    this.chkClientesx.Checked = bool.Parse(fila["clientes"].ToString());
                     this.txtRol.ReadOnly = true;
                     this.btnAdd.Text = "ACTUALIZAR";
+                
                 }
 }
             catch (Exception ex)

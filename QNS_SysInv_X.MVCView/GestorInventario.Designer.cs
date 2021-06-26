@@ -61,6 +61,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreActivo = new System.Windows.Forms.TextBox();
+            this.idl = new System.Windows.Forms.Label();
+            this.stsUsu = new System.Windows.Forms.StatusStrip();
+            this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -72,6 +75,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.stsUsu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -110,7 +114,7 @@
             this.btnReport.Location = new System.Drawing.Point(621, 328);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 54;
+            this.btnReport.TabIndex = 9;
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
@@ -151,7 +155,7 @@
             this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
-            this.txtSerialNumber.TabIndex = 2;
+            this.txtSerialNumber.TabIndex = 4;
             // 
             // dgvListar
             // 
@@ -198,7 +202,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 44;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -213,7 +217,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 43;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -239,7 +243,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(198, 17);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 4;
+            this.dtpFecha.TabIndex = 5;
             // 
             // label6
             // 
@@ -288,7 +292,7 @@
             this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(197, 13);
-            this.txtEstado.TabIndex = 5;
+            this.txtEstado.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -325,7 +329,7 @@
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 4;
+            this.txtModelo.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -346,12 +350,19 @@
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Items.AddRange(new object[] {
-            "Cisco"});
+            "Cisco",
+            "Aruba",
+            "Fortinet",
+            "Sophos",
+            "Dell",
+            "HPe",
+            "Palo Alto",
+            "Unify"});
             this.cmbRol.Location = new System.Drawing.Point(162, 16);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(194, 21);
-            this.cmbRol.TabIndex = 3;
+            this.cmbRol.TabIndex = 6;
             // 
             // cmbMarca
             // 
@@ -402,7 +413,7 @@
             this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 1;
+            this.txtTipo.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -440,11 +451,37 @@
             this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
             this.txtNombreActivo.TabIndex = 0;
             // 
+            // idl
+            // 
+            this.idl.AutoSize = true;
+            this.idl.Location = new System.Drawing.Point(431, 231);
+            this.idl.Name = "idl";
+            this.idl.Size = new System.Drawing.Size(0, 13);
+            this.idl.TabIndex = 55;
+            this.idl.Visible = false;
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsuario});
+            this.stsUsu.Location = new System.Drawing.Point(0, 567);
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(796, 22);
+            this.stsUsu.TabIndex = 56;
+            this.stsUsu.Text = "statusStrip1";
+            // 
+            // stsUsuario
+            // 
+            this.stsUsuario.Name = "stsUsuario";
+            this.stsUsuario.Size = new System.Drawing.Size(0, 17);
+            // 
             // GestorInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 577);
+            this.ClientSize = new System.Drawing.Size(796, 589);
+            this.Controls.Add(this.stsUsu);
+            this.Controls.Add(this.idl);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox7);
@@ -478,6 +515,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.stsUsu.ResumeLayout(false);
+            this.stsUsu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,5 +554,8 @@
         private System.Windows.Forms.ContextMenuStrip cmsInventario;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.Label idl;
+        private System.Windows.Forms.StatusStrip stsUsu;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
     }
 }

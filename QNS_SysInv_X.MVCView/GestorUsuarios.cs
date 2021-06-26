@@ -128,7 +128,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.user.Activo = true;
                 }
                 else this.user.Activo = false;
-                if (this.cmbRol.SelectedIndex==0)
+                if (this.cmbRol.SelectedIndex == 0)
                 { this.user.Rol = 1; }
                 else if (this.cmbRol.SelectedIndex == 1)
                 { this.user.Rol = 2; }
@@ -141,8 +141,15 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.user.opc = 2;
                 this.userHelper = new UsuariosHelper(user);
                 ///LOG PARA USUARIOS
-                LogMovimientos();
-                
+
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Movimiento = "Agregar";
+                this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+
                 this.userHelper.Guardar();
                 MessageBox.Show("Usuario "+this.user.Usuario+" Almacenado");
 
@@ -247,7 +254,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.stsUsuario.Text;
                     this.bitacora.Movimiento = "Eliminar";
-                    this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
+                    this.bitacora.Detalle = "Se elimino el usuario " + fila["usuario"].ToString();
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
@@ -371,6 +378,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             ReporteUsuarios repU = new ReporteUsuarios();
             repU.Show();
+            this.Close();
         }
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace QNS_SysInv_X.MVCView
 {
-    partial class ReporteInventario
+    partial class ReporteOpor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,42 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.PictureBox pictureBox2;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteInventario));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteOpor));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
-            this.inventarioTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.OportunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oportunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.oportunidadesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.OportunidadesTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OportunidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oportunidadesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // pictureBox2
             // 
-            this.reportViewer1.AutoSize = true;
-            reportDataSource3.Name = "DSInventario";
-            reportDataSource3.Value = this.inventarioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportInv.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(14, 133);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(945, 402);
-            this.reportViewer1.TabIndex = 0;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(14, 5);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(303, 121);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 54;
+            pictureBox2.TabStop = false;
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 19);
+            this.label1.Location = new System.Drawing.Point(370, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -95,85 +100,71 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(527, 15);
+            this.txtFiltro.Location = new System.Drawing.Point(512, 13);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 22);
             this.txtFiltro.TabIndex = 59;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
-            // pictureBox2
+            // reportViewer1
             // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(14, 5);
-            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(303, 121);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 54;
-            pictureBox2.TabStop = false;
+            reportDataSource1.Name = "DSOportunidades";
+            reportDataSource1.Value = this.oportunidadesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportOportunidades.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 133);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(838, 349);
+            this.reportViewer1.TabIndex = 60;
             // 
-            // inventarioBindingSource
+            // OportunidadesBindingSource
             // 
-            this.inventarioBindingSource.DataMember = "Inventario";
-            this.inventarioBindingSource.DataSource = this.dS_QNS;
+            this.OportunidadesBindingSource.DataMember = "Oportunidades";
+            this.OportunidadesBindingSource.DataSource = this.dS_QNS;
             // 
-            // dS_QNS
+            // oportunidadesBindingSource1
             // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.oportunidadesBindingSource1.DataMember = "Oportunidades";
+            this.oportunidadesBindingSource1.DataSource = this.dS_QNS;
             // 
-            // inventarioTableAdapter
+            // oportunidadesTableAdapter
             // 
-            this.inventarioTableAdapter.ClearBeforeFill = true;
+            this.oportunidadesTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbFiltro
-            // 
-            this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "ID",
-            "Marca"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 13);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
-            this.cmbFiltro.TabIndex = 60;
-            // 
-            // ReporteInventario
+            // ReporteOpor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(959, 494);
-            this.Controls.Add(this.cmbFiltro);
+            this.ClientSize = new System.Drawing.Size(862, 494);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox2);
-            this.Controls.Add(this.reportViewer1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ReporteInventario";
+            this.Name = "ReporteOpor";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OportunidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oportunidadesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private CNV_Inventario.MVCView.DS_QNS dS_QNS;
-        private System.Windows.Forms.BindingSource inventarioBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter inventarioTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.ComboBox cmbFiltro;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource OportunidadesBindingSource;
+        private System.Windows.Forms.BindingSource oportunidadesBindingSource1;
+        private CNV_Inventario.MVCView.DS_QNSTableAdapters.OportunidadesTableAdapter oportunidadesTableAdapter;
     }
 }

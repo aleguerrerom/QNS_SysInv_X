@@ -52,12 +52,12 @@
             this.tsmReporteOpo = new System.Windows.Forms.ToolStripMenuItem();
             this.clmReporteCli = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBita = new System.Windows.Forms.ToolStripSplitButton();
+            this.verBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsBita = new System.Windows.Forms.ToolStripSplitButton();
-            this.verBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
@@ -257,12 +257,14 @@
             this.tsmReporteOpo.Size = new System.Drawing.Size(153, 22);
             this.tsmReporteOpo.Text = "Oportunidades";
             this.tsmReporteOpo.Visible = false;
+            this.tsmReporteOpo.Click += new System.EventHandler(this.tsmReporteOpo_Click);
             // 
             // clmReporteCli
             // 
             this.clmReporteCli.Name = "clmReporteCli";
             this.clmReporteCli.Size = new System.Drawing.Size(153, 22);
             this.clmReporteCli.Text = "Clientes";
+            this.clmReporteCli.Click += new System.EventHandler(this.clmReporteCli_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
@@ -270,6 +272,22 @@
             this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
+            // 
+            // tsBita
+            // 
+            this.tsBita.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verBitacoraToolStripMenuItem});
+            this.tsBita.Name = "tsBita";
+            this.tsBita.Size = new System.Drawing.Size(66, 22);
+            this.tsBita.Text = "Bitacora";
+            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
+            // 
+            // verBitacoraToolStripMenuItem
+            // 
+            this.verBitacoraToolStripMenuItem.Name = "verBitacoraToolStripMenuItem";
+            this.verBitacoraToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.verBitacoraToolStripMenuItem.Text = "Ver Bitacora";
+            this.verBitacoraToolStripMenuItem.Click += new System.EventHandler(this.verBitacoraToolStripMenuItem_Click);
             // 
             // tsAboutUs
             // 
@@ -300,22 +318,6 @@
             this.statusUsuario.Name = "statusUsuario";
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
-            // 
-            // tsBita
-            // 
-            this.tsBita.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verBitacoraToolStripMenuItem});
-            this.tsBita.Name = "tsBita";
-            this.tsBita.Size = new System.Drawing.Size(66, 22);
-            this.tsBita.Text = "Bitacora";
-            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
-            // 
-            // verBitacoraToolStripMenuItem
-            // 
-            this.verBitacoraToolStripMenuItem.Name = "verBitacoraToolStripMenuItem";
-            this.verBitacoraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verBitacoraToolStripMenuItem.Text = "Ver Bitacora";
-            this.verBitacoraToolStripMenuItem.Click += new System.EventHandler(this.verBitacoraToolStripMenuItem_Click);
             // 
             // Principal
             // 

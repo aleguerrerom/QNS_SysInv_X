@@ -134,7 +134,7 @@ namespace QNS_SysInv_X.MVCController
                 cnGeneral = new Datos();
 
 
-                SqlParameter[] parParameter = new SqlParameter[9];
+                SqlParameter[] parParameter = new SqlParameter[10];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -187,6 +187,11 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[8].SqlDbType = SqlDbType.VarChar;
                 parParameter[8].Size = 50;
                 parParameter[8].SqlValue = objInventario.Usuario;
+
+                parParameter[9] = new SqlParameter();
+                parParameter[9].ParameterName = "@id";
+                parParameter[9].SqlDbType = SqlDbType.Int;
+                parParameter[9].SqlValue = objInventario.Id;
 
 
                 cnGeneral.EjecutarSP(parParameter, "SPInventario");

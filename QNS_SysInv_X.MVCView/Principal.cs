@@ -33,7 +33,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre + " " + this.user.Apellido + " "+ this.user.Rol +" Usuario "+ this.user.Usuario ;
+            this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre + " " + this.user.Apellido + " Usuario "+ this.user.Usuario ;
             
         }
 
@@ -301,6 +301,18 @@ namespace QNS_SysInv_X.MVCView
         {
             VerBitacora bitacora = new VerBitacora();
             bitacora.Show();
+        }
+
+        private void tsmReporteOpo_Click(object sender, EventArgs e)
+        {
+           ReporteOpor RedOpo = new ReporteOpor();
+            RedOpo.Show();
+        }
+
+        private void clmReporteCli_Click(object sender, EventArgs e)
+        {
+            RerporteClientes RepoClientes = new RerporteClientes();
+             RepoClientes.Show();
         }
     }
 }

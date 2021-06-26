@@ -29,6 +29,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
 
         #region LISTAR INVENTARIO
@@ -76,8 +77,16 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.opc = 2;
                 this.invH = new InventarioHelper(inventario);
                 ///LOG PARA USUARIOS
-                //LogMovimientos();
-
+                ////
+                /*
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Movimiento = "Inventario Agregado";
+                this.bitacora.Detalle = "Se agrego el articulo al inventario correctamente ";
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+                */
                 this.invH.Guardar();
                 MessageBox.Show("Registro Almacenado");
 
@@ -106,7 +115,7 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-                if (this.txtNombreActivo.ReadOnly)
+                if (this.txtNombreActivo.Enabled == false)
                 {
                    
                         actualizar();
@@ -135,6 +144,7 @@ namespace QNS_SysInv_X.MVCView
             this.cmbRol.SelectedIndex = - 1;
             this.txtModelo.Clear();
             this.dtpFecha.Value = DateTime.Today;
+            this.txtNombreActivo.Enabled = true;
             this.btnAdd.Text = "AGREGAR";  
            
         }
@@ -193,7 +203,8 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Modelo = this.txtModelo.Text;
                 this.inventario.Estado = this.txtEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
-                this.inventario.Usuario = this.user.Usuario;
+                this.inventario.Usuario = this.txtModelo.Text;
+                this.inventario.Id = int.Parse(this.idl.Text);
                 this.inventario.opc = 4;
 
                 this.invH = new InventarioHelper(inventario);
@@ -201,8 +212,8 @@ namespace QNS_SysInv_X.MVCView
                 /*
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.Movimiento = "Actualizar";
-                this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
+                this.bitacora.Movimiento = "Actualizar Inventario";
+                this.bitacora.Detalle = "Se actualizo el inventario correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
@@ -235,10 +246,11 @@ namespace QNS_SysInv_X.MVCView
                     this.txtTipo.Text = fila["tipo"].ToString();
                     this.txtSerialNumber.Text = fila["serialnumber"].ToString();
                     this.cmbRol.Text = fila["marca"].ToString();
-        
+                    this.txtNombreActivo.Enabled = false;
                     this.txtModelo.Text = fila["modelo"].ToString();
                     this.txtEstado.Text = fila["estado"].ToString();
                     this.dtpFecha.Text = fila["fechamodificacion"].ToString();
+                    this.idl.Text = fila["id"].ToString();
                     //this.txtCorreo.Text = fila["correo"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
