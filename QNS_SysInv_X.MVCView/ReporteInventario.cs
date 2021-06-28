@@ -47,6 +47,23 @@ namespace QNS_SysInv_X.MVCView
                 {
                     this.inventarioTableAdapter.FillBy1(this.dS_QNS.Inventario,txtFiltro.Text);
                 }
+                else if (cmbFiltro.SelectedIndex == 2)
+                {
+                    this.inventarioTableAdapter.FillByEstado(this.dS_QNS.Inventario, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 3)
+                {
+                    this.inventarioTableAdapter.FillByModelo(this.dS_QNS.Inventario, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 4)
+                {
+                    this.inventarioTableAdapter.FillBySN(this.dS_QNS.Inventario, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 5)
+                {
+                    this.inventarioTableAdapter.FillByTipo(this.dS_QNS.Inventario, txtFiltro.Text);
+                }
+
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
@@ -60,6 +77,11 @@ namespace QNS_SysInv_X.MVCView
             this.inventarioTableAdapter.Fill(this.dS_QNS.Inventario);
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

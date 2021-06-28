@@ -78,9 +78,9 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label3.Location = new System.Drawing.Point(6, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.Size = new System.Drawing.Size(120, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "CONFIRMAR:      ";
+            this.label3.Text = "CONFIRMAR:         ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtConfirmar
@@ -132,7 +132,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(33, 123);
+            this.label1.Location = new System.Drawing.Point(33, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 13);
             this.label1.TabIndex = 34;
@@ -141,9 +141,9 @@
             // 
             // stsUser
             // 
-            this.stsUser.Location = new System.Drawing.Point(0, 319);
+            this.stsUser.Location = new System.Drawing.Point(0, 339);
             this.stsUser.Name = "stsUser";
-            this.stsUser.Size = new System.Drawing.Size(382, 22);
+            this.stsUser.Size = new System.Drawing.Size(384, 22);
             this.stsUser.TabIndex = 42;
             this.stsUser.Text = "statusStrip1";
             // 
@@ -173,7 +173,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(92, 236);
+            this.btnIngresar.Location = new System.Drawing.Point(103, 233);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 3;
@@ -186,8 +186,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(382, 341);
+            this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.stsUser);
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox1);
@@ -195,8 +196,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(400, 400);
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "CambiodeClave";
-            this.Text = "CambiodeClave";
+            this.Text = "CAMBIO DE CLAVE";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

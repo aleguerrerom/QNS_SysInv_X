@@ -91,7 +91,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (bool.Parse(fila["bitacora"].ToString()) == true)
             {
-                verBitacoraToolStripMenuItem.Visible = true;
+                tsBita.Visible = true;
             }
             if (bool.Parse(fila["oportunidades"].ToString()) == true)
             {
@@ -100,11 +100,12 @@ namespace QNS_SysInv_X.MVCView
             }
             if (bool.Parse(fila["vendedores"].ToString()) == true)
             {
-                clientesToolStripMenuItem.Visible = true;
+                vendedoresToolStripMenuItem.Visible = true;
+                vendedoresToolStripMenuItem1.Visible = true;
             }
             if (bool.Parse(fila["clientes"].ToString()) == true)
             {
-                vendedoresToolStripMenuItem.Visible = true;
+                clientesToolStripMenuItem.Visible = true;
                 clmReporteCli.Visible = true;
             }
 
@@ -313,6 +314,12 @@ namespace QNS_SysInv_X.MVCView
         {
             RerporteClientes RepoClientes = new RerporteClientes();
              RepoClientes.Show();
+        }
+
+        private void vendedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReporteVendedores repoVendedores = new ReporteVendedores();
+            repoVendedores.Show();
         }
     }
 }

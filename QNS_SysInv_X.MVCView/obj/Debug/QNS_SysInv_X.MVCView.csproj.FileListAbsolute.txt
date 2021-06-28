@@ -139,3 +139,6 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\zh-Hans\M
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inventario.MVCView.exe
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inventario.MVCView.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteVendedores.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteMovimientos.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteLogsInicio.resources

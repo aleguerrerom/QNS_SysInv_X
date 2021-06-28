@@ -143,9 +143,10 @@
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
             this.btnReport.TabIndex = 78;
-            this.btnReport.Text = "REPORTES";
+            this.btnReport.Text = "GESTOR VENDEDORES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
             // 
             // groupBox7
             // 

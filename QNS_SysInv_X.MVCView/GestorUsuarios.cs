@@ -385,5 +385,37 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             
         }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.user = new Usuarios();
+                this.user.opc = 7;
+                this.user.Usuario = txtBuscar.Text;
+                this.userHelper = new UsuariosHelper(user);
+
+                this.table = new DataTable();
+                dgvListar.DataSource = table;
+                this.table = this.userHelper.Buscar();
+                
+                if (this.table.Rows.Count > 0)
+                {
+                    this.dgvListar.DataSource = this.table;
+                    this.dgvListar.ReadOnly = true;
+                }
+
+                else listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -260,7 +260,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Eliminar();
+            listar();
 
         }
 
@@ -361,6 +362,11 @@ namespace QNS_SysInv_X.MVCView
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

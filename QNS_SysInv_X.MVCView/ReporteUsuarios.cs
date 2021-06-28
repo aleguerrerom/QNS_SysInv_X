@@ -30,7 +30,22 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                this.usuariosTableAdapter.FillBy(this.dS_QNS.Usuarios, txtFiltro.Text);
+                if (cmbFiltro.SelectedIndex == 0)
+                {
+                    this.usuariosTableAdapter.FillBy(this.dS_QNS.Usuarios, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 1)
+                {
+                    this.usuariosTableAdapter.FillByApellido(this.dS_QNS.Usuarios, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 2)
+                {
+                    this.usuariosTableAdapter.FillByCorreo(this.dS_QNS.Usuarios, txtFiltro.Text);
+                }
+                else if (cmbFiltro.SelectedIndex == 3)
+                {
+                    this.usuariosTableAdapter.FillByNombre(this.dS_QNS.Usuarios, txtFiltro.Text);
+                }
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
@@ -59,6 +74,16 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

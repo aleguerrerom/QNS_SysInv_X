@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             System.Windows.Forms.PictureBox pictureBox2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txtUsuarioLogin = new System.Windows.Forms.TextBox();
             this.txtClaveLogin = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,10 +39,21 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(41, 11);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(260, 98);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 53;
+            pictureBox2.TabStop = false;
             // 
             // txtUsuarioLogin
             // 
@@ -81,9 +92,9 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(7, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(115, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "USUARIO:      ";
+            this.label2.Text = "USUARIO:            ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
@@ -147,17 +158,6 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(41, 11);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(260, 98);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 53;
-            pictureBox2.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,14 +170,17 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(355, 369);
+            this.MinimumSize = new System.Drawing.Size(355, 369);
             this.Name = "Login";
             this.Text = "INGRESO";
             this.TransparencyKey = System.Drawing.Color.Purple;
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

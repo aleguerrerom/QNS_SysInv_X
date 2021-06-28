@@ -69,9 +69,9 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Nombre1 = this.txtModelo.Text;
                 this.inventario.Tipo = this.txtTipo.Text;
                 this.inventario.Serialnumber = this.txtSerialNumber.Text;
-                this.inventario.Marca = this.cmbRol.Text;
+                this.inventario.Marca = this.cmbBrand.Text;
                 this.inventario.Modelo = this.txtModelo.Text;
-                this.inventario.Estado = this.txtEstado.Text;
+                this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
                 this.inventario.Usuario = this.txtModelo.Text;
                 this.inventario.opc = 2;
@@ -109,7 +109,7 @@ namespace QNS_SysInv_X.MVCView
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtNombreActivo.Text == "" || this.txtModelo.Text == "" || this.txtSerialNumber.Text == ""
-             && this.txtEstado.Text == "" || this.txtEstado.Text == "" || this.txtTipo.Text == "")
+             || this.cmbEstado.Text == "" || this.txtTipo.Text == "" || this.cmbBrand.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
@@ -140,8 +140,8 @@ namespace QNS_SysInv_X.MVCView
             this.txtNombreActivo.Clear();
             this.txtSerialNumber.Clear();
             this.txtTipo.Clear();
-            this.txtEstado.Clear();
-            this.cmbRol.SelectedIndex = - 1;
+            this.cmbEstado.SelectedIndex = -1;
+            this.cmbBrand.SelectedIndex = - 1;
             this.txtModelo.Clear();
             this.dtpFecha.Value = DateTime.Today;
             this.txtNombreActivo.Enabled = true;
@@ -164,7 +164,7 @@ namespace QNS_SysInv_X.MVCView
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.inventario = new Inventario();
-                    this.inventario.Nombre1 = fila["nombre"].ToString();
+                    this.inventario.Id = int.Parse(fila["id"].ToString());
                     this.inventario.opc = 3;
                     this.invH = new InventarioHelper(inventario);
                     ///LOG PARA ELIMINAR
@@ -199,9 +199,9 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Nombre1 = this.txtModelo.Text;
                 this.inventario.Tipo = this.txtTipo.Text;
                 this.inventario.Serialnumber = this.txtSerialNumber.Text;
-                this.inventario.Marca = this.cmbRol.Text;
+                this.inventario.Marca = this.cmbBrand.Text;
                 this.inventario.Modelo = this.txtModelo.Text;
-                this.inventario.Estado = this.txtEstado.Text;
+                this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
                 this.inventario.Usuario = this.txtModelo.Text;
                 this.inventario.Id = int.Parse(this.idl.Text);
@@ -245,10 +245,10 @@ namespace QNS_SysInv_X.MVCView
                     this.txtNombreActivo.Text = fila["nombre"].ToString();
                     this.txtTipo.Text = fila["tipo"].ToString();
                     this.txtSerialNumber.Text = fila["serialnumber"].ToString();
-                    this.cmbRol.Text = fila["marca"].ToString();
+                    this.cmbBrand.Text = fila["marca"].ToString();
                     this.txtNombreActivo.Enabled = false;
                     this.txtModelo.Text = fila["modelo"].ToString();
-                    this.txtEstado.Text = fila["estado"].ToString();
+                    this.cmbEstado.Text = fila["estado"].ToString();
                     this.dtpFecha.Text = fila["fechamodificacion"].ToString();
                     this.idl.Text = fila["id"].ToString();
                     //this.txtCorreo.Text = fila["correo"].ToString();
@@ -295,6 +295,12 @@ namespace QNS_SysInv_X.MVCView
         {
             ReporteInventario entr = new ReporteInventario();
             entr.Show();
+            this.Close();
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -507,7 +507,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorClientes";
-            this.Text = "GestorClientes";
+            this.Text = "GESTOR CLIENTES";
             this.Load += new System.EventHandler(this.GestorClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);

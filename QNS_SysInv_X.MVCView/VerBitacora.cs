@@ -101,5 +101,27 @@ namespace QNS_SysInv_X.MVCView
         {
 
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            if (btnChange.Text == "VER LOGS DE LOG IN")
+            {
+                ReporteLogsInicio reporte = new ReporteLogsInicio();
+                reporte.Show();
+            }
+
+            else
+            {
+                ReporteMovimientos reportem = new ReporteMovimientos();
+                reportem.Show();
+            }
+
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -52,12 +52,12 @@
             this.tsmReporteOpo = new System.Windows.Forms.ToolStripMenuItem();
             this.clmReporteCli = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsBita = new System.Windows.Forms.ToolStripSplitButton();
-            this.verBitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBita = new System.Windows.Forms.ToolStripLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
@@ -238,7 +238,8 @@
             this.tsmReporteInv,
             this.tsmReporteOpo,
             this.clmReporteCli,
-            this.usuariosToolStripMenuItem1});
+            this.usuariosToolStripMenuItem1,
+            this.vendedoresToolStripMenuItem1});
             this.tstripReportes.Name = "tstripReportes";
             this.tstripReportes.Size = new System.Drawing.Size(69, 22);
             this.tstripReportes.Text = "Reportes";
@@ -273,22 +274,6 @@
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
-            // tsBita
-            // 
-            this.tsBita.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verBitacoraToolStripMenuItem});
-            this.tsBita.Name = "tsBita";
-            this.tsBita.Size = new System.Drawing.Size(66, 22);
-            this.tsBita.Text = "Bitacora";
-            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
-            // 
-            // verBitacoraToolStripMenuItem
-            // 
-            this.verBitacoraToolStripMenuItem.Name = "verBitacoraToolStripMenuItem";
-            this.verBitacoraToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.verBitacoraToolStripMenuItem.Text = "Ver Bitacora";
-            this.verBitacoraToolStripMenuItem.Click += new System.EventHandler(this.verBitacoraToolStripMenuItem_Click);
-            // 
             // tsAboutUs
             // 
             this.tsAboutUs.Name = "tsAboutUs";
@@ -319,6 +304,20 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
+            // vendedoresToolStripMenuItem1
+            // 
+            this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
+            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.vendedoresToolStripMenuItem1.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
+            // 
+            // tsBita
+            // 
+            this.tsBita.Name = "tsBita";
+            this.tsBita.Size = new System.Drawing.Size(50, 22);
+            this.tsBita.Text = "Bitacora";
+            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,7 +330,7 @@
             this.Controls.Add(this.toolStrip1);
             this.MinimizeBox = false;
             this.Name = "Principal";
-            this.Text = "Principal";
+            this.Text = "PRINCIPAL";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Leave += new System.EventHandler(this.Principal_Leave);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
@@ -372,7 +371,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmReporteOpo;
         private System.Windows.Forms.ToolStripMenuItem clmReporteCli;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSplitButton tsBita;
-        private System.Windows.Forms.ToolStripMenuItem verBitacoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripLabel tsBita;
     }
 }

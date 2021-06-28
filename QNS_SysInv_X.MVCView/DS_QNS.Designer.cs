@@ -46,11 +46,11 @@ namespace CNV_Inventario.MVCView {
         
         private global::System.Data.DataRelation relationFK_Prestamo_Inventario;
         
-        private global::System.Data.DataRelation relationFK_Usuarios_Rol;
-        
         private global::System.Data.DataRelation relationFK_Clientes_Vendedores;
         
         private global::System.Data.DataRelation relationFK_Oportunidades_Vendedores1;
+        
+        private global::System.Data.DataRelation relationFK_Usuarios_Rol;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -398,9 +398,9 @@ namespace CNV_Inventario.MVCView {
             }
             this.relationFK_Prestamo_Clientes = this.Relations["FK_Prestamo_Clientes"];
             this.relationFK_Prestamo_Inventario = this.Relations["FK_Prestamo_Inventario"];
-            this.relationFK_Usuarios_Rol = this.Relations["FK_Usuarios_Rol"];
             this.relationFK_Clientes_Vendedores = this.Relations["FK_Clientes_Vendedores"];
             this.relationFK_Oportunidades_Vendedores1 = this.Relations["FK_Oportunidades_Vendedores1"];
+            this.relationFK_Usuarios_Rol = this.Relations["FK_Usuarios_Rol"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -437,10 +437,6 @@ namespace CNV_Inventario.MVCView {
                         this.tableInventario.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tablePrestamo.ID_ArticuloColumn}, false);
             this.Relations.Add(this.relationFK_Prestamo_Inventario);
-            this.relationFK_Usuarios_Rol = new global::System.Data.DataRelation("FK_Usuarios_Rol", new global::System.Data.DataColumn[] {
-                        this.tableRol.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableUsuarios.rolColumn}, false);
-            this.Relations.Add(this.relationFK_Usuarios_Rol);
             this.relationFK_Clientes_Vendedores = new global::System.Data.DataRelation("FK_Clientes_Vendedores", new global::System.Data.DataColumn[] {
                         this.tableVendedores.cedulaColumn}, new global::System.Data.DataColumn[] {
                         this.tableClientes.agenteColumn}, false);
@@ -449,6 +445,10 @@ namespace CNV_Inventario.MVCView {
                         this.tableVendedores.cedulaColumn}, new global::System.Data.DataColumn[] {
                         this.tableOportunidades.vendedorColumn}, false);
             this.Relations.Add(this.relationFK_Oportunidades_Vendedores1);
+            this.relationFK_Usuarios_Rol = new global::System.Data.DataRelation("FK_Usuarios_Rol", new global::System.Data.DataColumn[] {
+                        this.tableRol.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUsuarios.rolColumn}, false);
+            this.Relations.Add(this.relationFK_Usuarios_Rol);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -600,13 +600,13 @@ namespace CNV_Inventario.MVCView {
             
             private global::System.Data.DataColumn columnactivo;
             
-            private global::System.Data.DataColumn columnrol;
-            
-            private global::System.Data.DataColumn columnnombre;
-            
             private global::System.Data.DataColumn columnapellido;
             
             private global::System.Data.DataColumn columncorreo;
+            
+            private global::System.Data.DataColumn columnNombre;
+            
+            private global::System.Data.DataColumn columnrol;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -667,22 +667,6 @@ namespace CNV_Inventario.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn rolColumn {
-                get {
-                    return this.columnrol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
-                get {
-                    return this.columnnombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn apellidoColumn {
                 get {
                     return this.columnapellido;
@@ -694,6 +678,22 @@ namespace CNV_Inventario.MVCView {
             public global::System.Data.DataColumn correoColumn {
                 get {
                     return this.columncorreo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreColumn {
+                get {
+                    return this.columnNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn rolColumn {
+                get {
+                    return this.columnrol;
                 }
             }
             
@@ -734,18 +734,18 @@ namespace CNV_Inventario.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsuariosRow AddUsuariosRow(string usuario, string clave, bool activo, RolRow parentRolRowByFK_Usuarios_Rol, string nombre, string apellido, string correo) {
+            public UsuariosRow AddUsuariosRow(string usuario, string clave, bool activo, string apellido, string correo, string Nombre, RolRow parentRolRowByFK_Usuarios_Rol) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         usuario,
                         clave,
                         activo,
-                        null,
-                        nombre,
                         apellido,
-                        correo};
+                        correo,
+                        Nombre,
+                        null};
                 if ((parentRolRowByFK_Usuarios_Rol != null)) {
-                    columnValuesArray[3] = parentRolRowByFK_Usuarios_Rol[0];
+                    columnValuesArray[6] = parentRolRowByFK_Usuarios_Rol[0];
                 }
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
@@ -779,10 +779,10 @@ namespace CNV_Inventario.MVCView {
                 this.columnusuario = base.Columns["usuario"];
                 this.columnclave = base.Columns["clave"];
                 this.columnactivo = base.Columns["activo"];
-                this.columnrol = base.Columns["rol"];
-                this.columnnombre = base.Columns["nombre"];
                 this.columnapellido = base.Columns["apellido"];
                 this.columncorreo = base.Columns["correo"];
+                this.columnNombre = base.Columns["Nombre"];
+                this.columnrol = base.Columns["rol"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -794,14 +794,14 @@ namespace CNV_Inventario.MVCView {
                 base.Columns.Add(this.columnclave);
                 this.columnactivo = new global::System.Data.DataColumn("activo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactivo);
-                this.columnrol = new global::System.Data.DataColumn("rol", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrol);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
                 this.columnapellido = new global::System.Data.DataColumn("apellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnapellido);
                 this.columncorreo = new global::System.Data.DataColumn("correo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncorreo);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
+                this.columnrol = new global::System.Data.DataColumn("rol", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrol);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusuario}, true));
                 this.columnusuario.AllowDBNull = false;
@@ -810,12 +810,12 @@ namespace CNV_Inventario.MVCView {
                 this.columnclave.AllowDBNull = false;
                 this.columnclave.MaxLength = 50;
                 this.columnactivo.AllowDBNull = false;
-                this.columnrol.AllowDBNull = false;
-                this.columnnombre.AllowDBNull = false;
-                this.columnnombre.MaxLength = 50;
                 this.columnapellido.AllowDBNull = false;
                 this.columnapellido.MaxLength = 50;
                 this.columncorreo.MaxLength = 50;
+                this.columnNombre.AllowDBNull = false;
+                this.columnNombre.MaxLength = 30;
+                this.columnrol.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3816,28 +3816,6 @@ namespace CNV_Inventario.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int rol {
-                get {
-                    return ((int)(this[this.tableUsuarios.rolColumn]));
-                }
-                set {
-                    this[this.tableUsuarios.rolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre {
-                get {
-                    return ((string)(this[this.tableUsuarios.nombreColumn]));
-                }
-                set {
-                    this[this.tableUsuarios.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string apellido {
                 get {
                     return ((string)(this[this.tableUsuarios.apellidoColumn]));
@@ -3860,6 +3838,28 @@ namespace CNV_Inventario.MVCView {
                 }
                 set {
                     this[this.tableUsuarios.correoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nombre {
+                get {
+                    return ((string)(this[this.tableUsuarios.NombreColumn]));
+                }
+                set {
+                    this[this.tableUsuarios.NombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int rol {
+                get {
+                    return ((int)(this[this.tableUsuarios.rolColumn]));
+                }
+                set {
+                    this[this.tableUsuarios.rolColumn] = value;
                 }
             }
             
@@ -5264,55 +5264,11 @@ namespace CNV_Inventario.MVCView.DS_QNSTableAdapters {
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("clave", "clave");
             tableMapping.ColumnMappings.Add("activo", "activo");
-            tableMapping.ColumnMappings.Add("rol", "rol");
-            tableMapping.ColumnMappings.Add("nombre", "nombre");
             tableMapping.ColumnMappings.Add("apellido", "apellido");
             tableMapping.ColumnMappings.Add("correo", "correo");
+            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("rol", "rol");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Usuarios] WHERE (([usuario] = @Original_usuario) AND ([clave] = @Original_clave) AND ([activo] = @Original_activo) AND ([rol] = @Original_rol) AND ([nombre] = @Original_nombre) AND ([apellido] = @Original_apellido) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_clave", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_correo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Usuarios] ([usuario], [clave], [activo], [rol], [nombre], [apellido], [correo]) VALUES (@usuario, @clave, @activo, @rol, @nombre, @apellido, @correo);
-SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM Usuarios WHERE (usuario = @usuario)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Usuarios] SET [usuario] = @usuario, [clave] = @clave, [activo] = @activo, [rol] = @rol, [nombre] = @nombre, [apellido] = @apellido, [correo] = @correo WHERE (([usuario] = @Original_usuario) AND ([clave] = @Original_clave) AND ([activo] = @Original_activo) AND ([rol] = @Original_rol) AND ([nombre] = @Original_nombre) AND ([apellido] = @Original_apellido) AND ((@IsNull_correo = 1 AND [correo] IS NULL) OR ([correo] = @Original_correo)));
-SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM Usuarios WHERE (usuario = @usuario)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_clave", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_correo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5325,17 +5281,35 @@ SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM Usuarios WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM dbo.Usuarios";
+            this._commandCollection[0].CommandText = "SELECT usuario, clave, activo, Nombre, rol, apellido, correo FROM dbo.Usuarios ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM dbo.Usuarios\r\n\r" +
-                "\nwhere usuario=@usuario";
+            this._commandCollection[1].CommandText = "SELECT activo, apellido, clave, correo, nombre, rol, usuario FROM Usuarios WHERE " +
+                "(usuario = @usuario)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT activo, apellido, clave, correo, nombre, rol, usuario FROM Usuarios WHERE " +
+                "(apellido = @apellido)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT activo, apellido, clave, correo, nombre, rol, usuario FROM Usuarios WHERE " +
+                "(correo = @correo)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT activo, apellido, clave, correo, nombre, rol, usuario FROM Usuarios WHERE " +
+                "(nombre = @nombre)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5384,233 +5358,109 @@ SELECT usuario, clave, activo, rol, nombre, apellido, correo FROM Usuarios WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_QNS.UsuariosDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_QNS dataSet) {
-            return this.Adapter.Update(dataSet, "Usuarios");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_usuario, string Original_clave, bool Original_activo, int Original_rol, string Original_nombre, string Original_apellido, string Original_correo) {
-            if ((Original_usuario == null)) {
-                throw new global::System.ArgumentNullException("Original_usuario");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_usuario));
-            }
-            if ((Original_clave == null)) {
-                throw new global::System.ArgumentNullException("Original_clave");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_clave));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_activo));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_rol));
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_nombre));
-            }
-            if ((Original_apellido == null)) {
-                throw new global::System.ArgumentNullException("Original_apellido");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_apellido));
-            }
-            if ((Original_correo == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_correo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string usuario, string clave, bool activo, int rol, string nombre, string apellido, string correo) {
-            if ((usuario == null)) {
-                throw new global::System.ArgumentNullException("usuario");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(usuario));
-            }
-            if ((clave == null)) {
-                throw new global::System.ArgumentNullException("clave");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(clave));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(activo));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(rol));
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(nombre));
-            }
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByApellido(DS_QNS.UsuariosDataTable dataTable, string apellido) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((apellido == null)) {
                 throw new global::System.ArgumentNullException("apellido");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(apellido));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(apellido));
             }
-            if ((correo == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(correo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string usuario, string clave, bool activo, int rol, string nombre, string apellido, string correo, string Original_usuario, string Original_clave, bool Original_activo, int Original_rol, string Original_nombre, string Original_apellido, string Original_correo) {
-            if ((usuario == null)) {
-                throw new global::System.ArgumentNullException("usuario");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(usuario));
-            }
-            if ((clave == null)) {
-                throw new global::System.ArgumentNullException("clave");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(clave));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(activo));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(rol));
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(nombre));
-            }
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.UsuariosDataTable GetDataByApellido(string apellido) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((apellido == null)) {
                 throw new global::System.ArgumentNullException("apellido");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(apellido));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(apellido));
             }
-            if ((correo == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(correo));
-            }
-            if ((Original_usuario == null)) {
-                throw new global::System.ArgumentNullException("Original_usuario");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_usuario));
-            }
-            if ((Original_clave == null)) {
-                throw new global::System.ArgumentNullException("Original_clave");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_clave));
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_activo));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_rol));
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_nombre));
-            }
-            if ((Original_apellido == null)) {
-                throw new global::System.ArgumentNullException("Original_apellido");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_apellido));
-            }
-            if ((Original_correo == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_correo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
+            DS_QNS.UsuariosDataTable dataTable = new DS_QNS.UsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string clave, bool activo, int rol, string nombre, string apellido, string correo, string Original_usuario, string Original_clave, bool Original_activo, int Original_rol, string Original_nombre, string Original_apellido, string Original_correo) {
-            return this.Update(Original_usuario, clave, activo, rol, nombre, apellido, correo, Original_usuario, Original_clave, Original_activo, Original_rol, Original_nombre, Original_apellido, Original_correo);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCorreo(DS_QNS.UsuariosDataTable dataTable, string correo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((correo == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(correo));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.UsuariosDataTable GetDataByCorreo(string correo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((correo == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(correo));
+            }
+            DS_QNS.UsuariosDataTable dataTable = new DS_QNS.UsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombre(DS_QNS.UsuariosDataTable dataTable, string nombre) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombre));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.UsuariosDataTable GetDataByNombre(string nombre) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombre));
+            }
+            DS_QNS.UsuariosDataTable dataTable = new DS_QNS.UsuariosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -5806,7 +5656,7 @@ SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion, " +
@@ -5824,6 +5674,30 @@ SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion,
                 "usuario FROM dbo.Inventario\r\nwhere marca=@marca";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion, " +
+                "usuario FROM dbo.Inventario\r\nwhere estado=@estado";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion, " +
+                "usuario FROM dbo.Inventario where\r\nmodelo=@modelo";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@modelo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "modelo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion, " +
+                "usuario FROM dbo.Inventario\r\nwhere serialnumber=@serialnumber";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serialnumber", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serialnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion, " +
+                "usuario FROM dbo.Inventario\r\nwhere tipo=@tipo";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5906,6 +5780,150 @@ SELECT ID, nombre, tipo, serialnumber, marca, modelo, estado, fechamodificacion,
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(marca));
+            }
+            DS_QNS.InventarioDataTable dataTable = new DS_QNS.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByEstado(DS_QNS.InventarioDataTable dataTable, string estado) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((estado == null)) {
+                throw new global::System.ArgumentNullException("estado");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(estado));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.InventarioDataTable GetDataByEstado(string estado) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((estado == null)) {
+                throw new global::System.ArgumentNullException("estado");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(estado));
+            }
+            DS_QNS.InventarioDataTable dataTable = new DS_QNS.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByModelo(DS_QNS.InventarioDataTable dataTable, string modelo) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((modelo == null)) {
+                throw new global::System.ArgumentNullException("modelo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(modelo));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.InventarioDataTable GetDataByModelo(string modelo) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((modelo == null)) {
+                throw new global::System.ArgumentNullException("modelo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(modelo));
+            }
+            DS_QNS.InventarioDataTable dataTable = new DS_QNS.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySN(DS_QNS.InventarioDataTable dataTable, string serialnumber) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((serialnumber == null)) {
+                throw new global::System.ArgumentNullException("serialnumber");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(serialnumber));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.InventarioDataTable GetDataBySN(string serialnumber) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((serialnumber == null)) {
+                throw new global::System.ArgumentNullException("serialnumber");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(serialnumber));
+            }
+            DS_QNS.InventarioDataTable dataTable = new DS_QNS.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTipo(DS_QNS.InventarioDataTable dataTable, string tipo) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((tipo == null)) {
+                throw new global::System.ArgumentNullException("tipo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tipo));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.InventarioDataTable GetDataByTipo(string tipo) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((tipo == null)) {
+                throw new global::System.ArgumentNullException("tipo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tipo));
             }
             DS_QNS.InventarioDataTable dataTable = new DS_QNS.InventarioDataTable();
             this.Adapter.Fill(dataTable);
@@ -6411,7 +6429,7 @@ SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM db" +
@@ -6420,9 +6438,15 @@ SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM C
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM db" +
-                "o.Clientes\r\nWHERE cedula=@cedula";
+                "o.Clientes\r\nwhere cedula=@cedula";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "cedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM db" +
+                "o.Clientes where nombre=@nombre";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6453,7 +6477,7 @@ SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DS_QNS.ClientesDataTable dataTable, int cedula) {
+        public virtual int FillByCedula(DS_QNS.ClientesDataTable dataTable, int cedula) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(cedula));
             if ((this.ClearBeforeFill == true)) {
@@ -6467,9 +6491,45 @@ SELECT cedula, tipo, contacto, telefono, correo, direcion, agente, nombre FROM C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS_QNS.ClientesDataTable GetDataBy(int cedula) {
+        public virtual DS_QNS.ClientesDataTable GetDataByCedula(int cedula) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(cedula));
+            DS_QNS.ClientesDataTable dataTable = new DS_QNS.ClientesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombre(DS_QNS.ClientesDataTable dataTable, string nombre) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombre));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_QNS.ClientesDataTable GetDataByNombre(string nombre) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombre));
+            }
             DS_QNS.ClientesDataTable dataTable = new DS_QNS.ClientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9255,8 +9315,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         
         private UpdateOrderOption _updateOrder;
         
-        private UsuariosTableAdapter _usuariosTableAdapter;
-        
         private InventarioTableAdapter _inventarioTableAdapter;
         
         private ClientesTableAdapter _clientesTableAdapter;
@@ -9285,20 +9343,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public UsuariosTableAdapter UsuariosTableAdapter {
-            get {
-                return this._usuariosTableAdapter;
-            }
-            set {
-                this._usuariosTableAdapter = value;
             }
         }
         
@@ -9433,10 +9477,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._usuariosTableAdapter != null) 
-                            && (this._usuariosTableAdapter.Connection != null))) {
-                    return this._usuariosTableAdapter.Connection;
-                }
                 if (((this._inventarioTableAdapter != null) 
                             && (this._inventarioTableAdapter.Connection != null))) {
                     return this._inventarioTableAdapter.Connection;
@@ -9482,9 +9522,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._usuariosTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._inventarioTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -9553,15 +9590,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._rolTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._usuariosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Usuarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._usuariosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9643,14 +9671,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._usuariosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Usuarios.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._usuariosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._movimientosLogTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MovimientosLog.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -9725,14 +9745,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._usuariosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Usuarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._usuariosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._rolTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -9803,11 +9815,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._usuariosTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._usuariosTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             if (((this._inventarioTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._inventarioTableAdapter.Connection) == false))) {
@@ -9881,15 +9888,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._usuariosTableAdapter != null)) {
-                    revertConnections.Add(this._usuariosTableAdapter, this._usuariosTableAdapter.Connection);
-                    this._usuariosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._usuariosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._usuariosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._usuariosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._usuariosTableAdapter.Adapter);
-                    }
-                }
                 if ((this._inventarioTableAdapter != null)) {
                     revertConnections.Add(this._inventarioTableAdapter, this._inventarioTableAdapter.Connection);
                     this._inventarioTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -10019,10 +10017,6 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._usuariosTableAdapter != null)) {
-                    this._usuariosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usuariosTableAdapter]));
-                    this._usuariosTableAdapter.Transaction = null;
                 }
                 if ((this._inventarioTableAdapter != null)) {
                     this._inventarioTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._inventarioTableAdapter]));

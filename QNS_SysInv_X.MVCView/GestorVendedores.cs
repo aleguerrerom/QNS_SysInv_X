@@ -310,6 +310,14 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-    }
+
+        private void btnReport_Click_1(object sender, EventArgs e)
+        {
+            ReporteVendedores repoVendedores = new ReporteVendedores();
+            repoVendedores.Show();
+            this.Close();
+        }
+}
+
 
 }

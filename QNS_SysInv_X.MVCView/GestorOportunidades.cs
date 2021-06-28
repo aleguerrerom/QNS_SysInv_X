@@ -342,7 +342,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                    MessageBox.Show("No hay Registros de Oportunidades");
                 }
                 else
                 {
@@ -395,6 +395,17 @@ namespace QNS_SysInv_X.MVCView
         {
             ReporteOpor RedOpo = new ReporteOpor();
             RedOpo.Show();
+            this.Close();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

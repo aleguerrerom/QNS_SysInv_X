@@ -102,6 +102,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVendedores.Designer.cs">
+      <DependentUpon>ReporteVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMovimientos.Designer.cs">
+      <DependentUpon>ReporteMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteLogsInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteLogsInicio.Designer.cs">
+      <DependentUpon>ReporteLogsInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteOpor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +214,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestorVendedores.resx">
       <DependentUpon>GestorVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportVendedores.rdlc" />
+    <EmbeddedResource Include="ReportMovimientos.rdlc" />
+    <EmbeddedResource Include="ReportLogsInicio.rdlc" />
+    <EmbeddedResource Include="ReporteVendedores.resx">
+      <DependentUpon>ReporteVendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMovimientos.resx">
+      <DependentUpon>ReporteMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteLogsInicio.resx">
+      <DependentUpon>ReporteLogsInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteOpor.resx">
       <DependentUpon>ReporteOpor.cs</DependentUpon>

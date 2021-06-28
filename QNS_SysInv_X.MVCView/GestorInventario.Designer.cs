@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorInventario));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnReport = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -48,12 +47,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.cmbBrand = new System.Windows.Forms.ComboBox();
             this.cmbMarca = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,6 +62,9 @@
             this.idl = new System.Windows.Forms.Label();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -76,6 +77,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.stsUsu.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -89,14 +91,6 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 53;
             pictureBox1.TabStop = false;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(796, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
@@ -262,8 +256,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.cmbEstado);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.txtEstado);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(383, 81);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -284,15 +278,6 @@
             this.label5.Size = new System.Drawing.Size(72, 16);
             this.label5.TabIndex = 33;
             this.label5.Text = "ESTADO:     ";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Location = new System.Drawing.Point(159, 18);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(197, 13);
-            this.txtEstado.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -334,7 +319,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.cmbRol);
+            this.groupBox3.Controls.Add(this.cmbBrand);
             this.groupBox3.Controls.Add(this.cmbMarca);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 184);
@@ -345,11 +330,11 @@
             this.groupBox3.TabIndex = 50;
             this.groupBox3.TabStop = false;
             // 
-            // cmbRol
+            // cmbBrand
             // 
-            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Items.AddRange(new object[] {
+            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBrand.FormattingEnabled = true;
+            this.cmbBrand.Items.AddRange(new object[] {
             "Cisco",
             "Aruba",
             "Fortinet",
@@ -358,11 +343,11 @@
             "HPe",
             "Palo Alto",
             "Unify"});
-            this.cmbRol.Location = new System.Drawing.Point(162, 16);
-            this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(194, 21);
-            this.cmbRol.TabIndex = 6;
+            this.cmbBrand.Location = new System.Drawing.Point(162, 16);
+            this.cmbBrand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbBrand.Name = "cmbBrand";
+            this.cmbBrand.Size = new System.Drawing.Size(194, 21);
+            this.cmbBrand.TabIndex = 6;
             // 
             // cmbMarca
             // 
@@ -475,11 +460,42 @@
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(796, 25);
+            this.toolStrip1.TabIndex = 67;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
+            this.toolStripLabel2.Text = "Salir";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Bodega",
+            "Prestado",
+            "Produccion"});
+            this.cmbEstado.Location = new System.Drawing.Point(198, 14);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(147, 21);
+            this.cmbEstado.TabIndex = 34;
+            // 
             // GestorInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 589);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.stsUsu);
             this.Controls.Add(this.idl);
             this.Controls.Add(this.btnReport);
@@ -494,9 +510,8 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "GestorInventario";
-            this.Text = "Inventario";
+            this.Text = "GESTOR INVENTARIO";
             this.Load += new System.EventHandler(this.GestorInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);
@@ -517,14 +532,14 @@
             this.groupBox1.PerformLayout();
             this.stsUsu.ResumeLayout(false);
             this.stsUsu.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -537,12 +552,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbRol;
+        private System.Windows.Forms.ComboBox cmbBrand;
         private System.Windows.Forms.Label cmbMarca;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
@@ -557,5 +571,8 @@
         private System.Windows.Forms.Label idl;
         private System.Windows.Forms.StatusStrip stsUsu;
         private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ComboBox cmbEstado;
     }
 }

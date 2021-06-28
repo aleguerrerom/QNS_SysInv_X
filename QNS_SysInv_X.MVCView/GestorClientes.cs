@@ -340,6 +340,7 @@ namespace QNS_SysInv_X.MVCView
         {
             RerporteClientes RepoClientes = new RerporteClientes();
             RepoClientes.Show();
+            this.Close();
         }
 
         private void dgvListar_DoubleClick(object sender, EventArgs e)
