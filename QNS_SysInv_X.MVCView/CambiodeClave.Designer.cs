@@ -40,6 +40,8 @@
             this.stsUser = new System.Windows.Forms.StatusStrip();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.chckView = new System.Windows.Forms.CheckBox();
+            this.lblShow = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,9 +90,9 @@
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmar.Location = new System.Drawing.Point(136, 13);
             this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(169, 13);
             this.txtConfirmar.TabIndex = 2;
+            this.txtConfirmar.UseSystemPasswordChar = true;
             // 
             // groupBox1
             // 
@@ -122,9 +124,9 @@
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Location = new System.Drawing.Point(134, 16);
             this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(169, 13);
             this.txtClave.TabIndex = 0;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -154,7 +156,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(142, 284);
+            this.btnCancelar.Location = new System.Drawing.Point(145, 306);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
             this.btnCancelar.TabIndex = 4;
@@ -173,7 +175,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(103, 233);
+            this.btnIngresar.Location = new System.Drawing.Point(101, 255);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 3;
@@ -182,6 +184,26 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // chckView
+            // 
+            this.chckView.AutoSize = true;
+            this.chckView.Location = new System.Drawing.Point(255, 238);
+            this.chckView.Name = "chckView";
+            this.chckView.Size = new System.Drawing.Size(15, 14);
+            this.chckView.TabIndex = 57;
+            this.chckView.UseVisualStyleBackColor = true;
+            this.chckView.CheckedChanged += new System.EventHandler(this.chckView_CheckedChanged);
+            // 
+            // lblShow
+            // 
+            this.lblShow.AutoSize = true;
+            this.lblShow.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShow.Location = new System.Drawing.Point(113, 236);
+            this.lblShow.Name = "lblShow";
+            this.lblShow.Size = new System.Drawing.Size(111, 16);
+            this.lblShow.TabIndex = 56;
+            this.lblShow.Text = "VER CONTRASEÑA";
+            // 
             // CambiodeClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +211,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(384, 361);
+            this.Controls.Add(this.chckView);
+            this.Controls.Add(this.lblShow);
             this.Controls.Add(this.stsUser);
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox1);
@@ -222,5 +246,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip stsUser;
+        private System.Windows.Forms.CheckBox chckView;
+        private System.Windows.Forms.Label lblShow;
     }
 }

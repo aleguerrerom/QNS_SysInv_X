@@ -92,5 +92,21 @@ namespace QNS_SysInv_X.MVCView
             }
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckView.Checked)
+            {
+                txtClaveLogin.UseSystemPasswordChar = false;
+                var checkBox = (CheckBox)sender;
+                lblShow.Text = "OCULTAR CONTRASEÑA";
+            }
+           else
+            {
+                txtClaveLogin.UseSystemPasswordChar = true;
+                var checkBox = (CheckBox)sender;
+                lblShow.Text = "VER CONTRASEÑA";
+            }
+        }
     }
 }

@@ -231,9 +231,9 @@
             this.txtClave.Location = new System.Drawing.Point(159, 18);
             this.txtClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(197, 13);
             this.txtClave.TabIndex = 1;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -446,9 +446,9 @@
             this.txtConfirmar.Location = new System.Drawing.Point(159, 18);
             this.txtConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(197, 13);
             this.txtConfirmar.TabIndex = 2;
+            this.txtConfirmar.UseSystemPasswordChar = true;
             // 
             // label7
             // 

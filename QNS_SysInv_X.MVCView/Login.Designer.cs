@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lblShow = new System.Windows.Forms.Label();
+            this.chckView = new System.Windows.Forms.CheckBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,9 +70,9 @@
             this.txtClaveLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClaveLogin.Location = new System.Drawing.Point(136, 15);
             this.txtClaveLogin.Name = "txtClaveLogin";
-            this.txtClaveLogin.PasswordChar = '*';
             this.txtClaveLogin.Size = new System.Drawing.Size(169, 13);
             this.txtClaveLogin.TabIndex = 32;
+            this.txtClaveLogin.UseSystemPasswordChar = true;
             // 
             // groupBox1
             // 
@@ -129,7 +131,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(121, 274);
+            this.btnCancelar.Location = new System.Drawing.Point(121, 288);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
             this.btnCancelar.TabIndex = 3;
@@ -149,7 +151,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(74, 223);
+            this.btnIngresar.Location = new System.Drawing.Point(74, 237);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 2;
@@ -158,12 +160,34 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lblShow
+            // 
+            this.lblShow.AutoSize = true;
+            this.lblShow.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShow.Location = new System.Drawing.Point(83, 218);
+            this.lblShow.Name = "lblShow";
+            this.lblShow.Size = new System.Drawing.Size(111, 16);
+            this.lblShow.TabIndex = 54;
+            this.lblShow.Text = "VER CONTRASEÑA";
+            // 
+            // chckView
+            // 
+            this.chckView.AutoSize = true;
+            this.chckView.Location = new System.Drawing.Point(225, 220);
+            this.chckView.Name = "chckView";
+            this.chckView.Size = new System.Drawing.Size(15, 14);
+            this.chckView.TabIndex = 55;
+            this.chckView.UseVisualStyleBackColor = true;
+            this.chckView.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(339, 330);
+            this.Controls.Add(this.chckView);
+            this.Controls.Add(this.lblShow);
             this.Controls.Add(pictureBox2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -182,6 +206,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,6 +220,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblShow;
+        private System.Windows.Forms.CheckBox chckView;
     }
 }
 
