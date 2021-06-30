@@ -39,6 +39,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -69,10 +70,10 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(499, 125);
+            this.btnCancel.Location = new System.Drawing.Point(470, 128);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 33);
+            this.btnCancel.Size = new System.Drawing.Size(113, 30);
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,10 +85,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(338, 125);
+            this.btnAdd.Location = new System.Drawing.Point(338, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 33);
+            this.btnAdd.Size = new System.Drawing.Size(112, 30);
             this.btnAdd.TabIndex = 43;
             this.btnAdd.Text = "PROCESAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -102,7 +103,7 @@
             this.dgvListar.Location = new System.Drawing.Point(12, 174);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
-            this.dgvListar.Size = new System.Drawing.Size(772, 208);
+            this.dgvListar.Size = new System.Drawing.Size(697, 208);
             this.dgvListar.TabIndex = 56;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
@@ -111,9 +112,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(335, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Seleccione Articulo y Cliente a prestar";
+            this.label1.Text = "Seleccione Articulo:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // toolStrip1
@@ -122,7 +123,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(814, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(719, 25);
             this.toolStrip1.TabIndex = 58;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -135,7 +136,9 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(338, 76);
+            this.txtID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtID.Location = new System.Drawing.Point(438, 47);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(112, 20);
@@ -145,17 +148,27 @@
             // 
             this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(492, 76);
+            this.cmbCliente.Location = new System.Drawing.Point(437, 73);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(113, 21);
             this.cmbCliente.TabIndex = 60;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(335, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Seleccione Cliente:";
             // 
             // Prestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(814, 394);
+            this.ClientSize = new System.Drawing.Size(719, 394);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.toolStrip1);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.Label label2;
     }
 }

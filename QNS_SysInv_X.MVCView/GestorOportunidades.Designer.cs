@@ -174,7 +174,7 @@
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(194, 21);
-            this.cmbVendedor.TabIndex = 3;
+            this.cmbVendedor.TabIndex = 5;
             // 
             // label6
             // 
@@ -206,7 +206,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(179, 14);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 4;
+            this.dtpFecha.TabIndex = 1;
             // 
             // groupBox5
             // 
@@ -241,7 +241,7 @@
             this.txtDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDetalles.Name = "txtDetalles";
             this.txtDetalles.Size = new System.Drawing.Size(197, 13);
-            this.txtDetalles.TabIndex = 5;
+            this.txtDetalles.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -302,11 +302,11 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.Location = new System.Drawing.Point(159, 18);
+            this.txtMarca.Location = new System.Drawing.Point(165, 16);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(197, 13);
-            this.txtMarca.TabIndex = 1;
+            this.txtMarca.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -328,7 +328,7 @@
             this.cmbNombre.Location = new System.Drawing.Point(184, 14);
             this.cmbNombre.Name = "cmbNombre";
             this.cmbNombre.Size = new System.Drawing.Size(121, 21);
-            this.cmbNombre.TabIndex = 4;
+            this.cmbNombre.TabIndex = 0;
             // 
             // label2
             // 
@@ -343,7 +343,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "NOMBRE DE CLIENTE:      ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnReport
             // 
@@ -368,7 +367,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -383,7 +382,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 55;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -403,7 +402,7 @@
             // 
             this.stsUsuario.Location = new System.Drawing.Point(0, 547);
             this.stsUsuario.Name = "stsUsuario";
-            this.stsUsuario.Size = new System.Drawing.Size(835, 22);
+            this.stsUsuario.Size = new System.Drawing.Size(792, 22);
             this.stsUsuario.TabIndex = 68;
             this.stsUsuario.Text = "statusStrip1";
             // 
@@ -413,10 +412,9 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(835, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(792, 25);
             this.toolStrip1.TabIndex = 69;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripLabel1
             // 
@@ -430,7 +428,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(835, 569);
+            this.ClientSize = new System.Drawing.Size(792, 569);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.idl);

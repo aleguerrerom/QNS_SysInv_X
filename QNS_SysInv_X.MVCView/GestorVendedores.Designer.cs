@@ -143,7 +143,7 @@
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
             this.btnReport.TabIndex = 78;
-            this.btnReport.Text = "GESTOR VENDEDORES";
+            this.btnReport.Text = "REPORTE";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
@@ -173,7 +173,7 @@
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(194, 21);
-            this.cmbGenero.TabIndex = 3;
+            this.cmbGenero.TabIndex = 4;
             // 
             // label7
             // 
@@ -196,8 +196,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
-            this.txtCorreo.TabIndex = 2;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtConfirmar_TextChanged);
+            this.txtCorreo.TabIndex = 6;
             // 
             // btnCancel
             // 
@@ -223,7 +222,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 68;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -249,7 +248,7 @@
             this.dtpFechaAnace.Location = new System.Drawing.Point(192, 16);
             this.dtpFechaAnace.Name = "dtpFechaAnace";
             this.dtpFechaAnace.Size = new System.Drawing.Size(122, 20);
-            this.dtpFechaAnace.TabIndex = 4;
+            this.dtpFechaAnace.TabIndex = 5;
             // 
             // label6
             // 
@@ -298,7 +297,7 @@
             this.txtApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(197, 13);
-            this.txtApellido2.TabIndex = 5;
+            this.txtApellido2.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -311,7 +310,7 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Size = new System.Drawing.Size(363, 44);
-            this.groupBox4.TabIndex = 73;
+            this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
             // label4
@@ -335,7 +334,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -378,7 +377,6 @@
             this.groupBox2.Size = new System.Drawing.Size(363, 44);
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label3
             // 
@@ -401,7 +399,7 @@
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
-            this.txtApellido.TabIndex = 1;
+            this.txtApellido.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -475,7 +473,7 @@
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.toolStrip1);
             this.Name = "GestorVendedores";
-            this.Text = "Gestor Vendedores";
+            this.Text = "GESTOR VENDEDORES";
             this.Load += new System.EventHandler(this.GestorRespaldos_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);

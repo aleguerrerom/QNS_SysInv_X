@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -24,6 +25,12 @@ namespace QNS_SysInv_X.MVCView
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
+
+        static Regex validate_emailaddress = RegexExpression.email_validation();
+
+        static Regex validate_letter = RegexExpression.letter_validation();
+
+        static Regex validate_number = RegexExpression.number_validation();
 
         public GestorOportunidades()
         {
@@ -178,12 +185,7 @@ namespace QNS_SysInv_X.MVCView
         {
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void txtModelo_TextChanged(object sender, EventArgs e)
         {
 
@@ -196,6 +198,13 @@ namespace QNS_SysInv_X.MVCView
              && this.txtDetalles.Text == "" || this.txtPresupuesto.Text == "" || this.txtDetalles.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+            }
+            
+            else if (validate_number.IsMatch(txtPresupuesto.Text) != true)
+            {
+                MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPresupuesto.Text.Remove(txtPresupuesto.Text.Length - 1);
+                txtPresupuesto.Focus();
             }
             else
             {
@@ -397,12 +406,7 @@ namespace QNS_SysInv_X.MVCView
             RedOpo.Show();
             this.Close();
         }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+        
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();

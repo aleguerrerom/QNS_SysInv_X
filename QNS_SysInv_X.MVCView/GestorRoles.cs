@@ -309,7 +309,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            cargardatosSeleccionado();
         }
 
         private void dgvListar_DoubleClick(object sender, EventArgs e)
@@ -357,11 +357,6 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)

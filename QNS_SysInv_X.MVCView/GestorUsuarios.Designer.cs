@@ -286,7 +286,6 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(194, 21);
             this.cmbRol.TabIndex = 3;
-            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // groupBox3
             // 

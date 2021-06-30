@@ -180,7 +180,6 @@
             this.groupBox2.Size = new System.Drawing.Size(307, 292);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label7
             // 

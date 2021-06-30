@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView.Resources
 {
@@ -17,6 +18,12 @@ namespace QNS_SysInv_X.MVCView.Resources
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
+        
+        static Regex validate_emailaddress = RegexExpression.email_validation();
+
+        static Regex validate_letter = RegexExpression.letter_validation();
+
+        static Regex validate_number = RegexExpression.number_validation();
 
         public GestorUsuarios()
         {
@@ -169,6 +176,26 @@ namespace QNS_SysInv_X.MVCView.Resources
              && this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+            }
+            else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
+            {
+                MessageBox.Show("Correo Invalido", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCorreo.Focus();
+                return;
+            }
+
+            else if (validate_letter.IsMatch(txtApellido.Text) != true)
+            {
+                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtApellido.Text.Remove(txtApellido.Text.Length - 1);
+                txtApellido.Focus();
+            }
+
+            else if (validate_letter.IsMatch(txtNombre.Text) != true)
+            {
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNombre.Text.Remove(txtNombre.Text.Length - 1);
+                txtNombre.Focus();
             }
             else
             {
@@ -381,11 +408,6 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.Close();
         }
 
-        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -417,5 +439,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }

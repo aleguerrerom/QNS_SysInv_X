@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -19,6 +20,8 @@ namespace QNS_SysInv_X.MVCView
         private InventarioHelper invH;
         private DataTable table;
         private Usuarios user;
+
+        static Regex validate_letter = RegexExpression.letter_validation();
 
         public GestorInventario()
         {
@@ -112,6 +115,12 @@ namespace QNS_SysInv_X.MVCView
              || this.cmbEstado.Text == "" || this.txtTipo.Text == "" || this.cmbBrand.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+            }
+            else if (validate_letter.IsMatch(txtTipo.Text) != true)
+            {
+                MessageBox.Show("El campo TIPO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTipo.Text.Remove(txtTipo.Text.Length - 1);
+                txtTipo.Focus();
             }
             else
             {

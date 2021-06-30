@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -19,10 +20,16 @@ namespace QNS_SysInv_X.MVCView
         private VendedoresHelper vendedorH;
         private Usuarios user;
         private UsuariosHelper userHelper;
+        private RegexExpression regexEx;
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
 
+        static Regex validate_emailaddress = RegexExpression.email_validation();
+
+        static Regex validate_letter = RegexExpression.letter_validation();
+
+        static Regex validate_number = RegexExpression.number_validation();
 
         public GestorVendedores(Usuarios usuario)
         {
@@ -102,36 +109,30 @@ namespace QNS_SysInv_X.MVCView
         }
 
         #endregion
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-
-            
-
-        }
-        
+      
         private void GestorRespaldos_Load(object sender, EventArgs e)
         {
             listar();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void dgvListar_DoubleClick(object sender, EventArgs e)
         {
             CargarFromTable();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtConfirmar_TextChanged(object sender, EventArgs e)
         {
-
+            if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
+            {
+                MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCorreo.Focus();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Email Address is valid.");
+            }
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
@@ -141,6 +142,38 @@ namespace QNS_SysInv_X.MVCView
              && this.txtApellido.Text == "" || this.txtApellido2.Text == "" || this.cmbGenero.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+            }
+            else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
+            {
+                MessageBox.Show("Correo Invalido", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCorreo.Focus();
+                return;
+            }
+
+            else  if (validate_letter.IsMatch(txtApellido.Text) != true)
+            {
+                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtApellido.Text.Remove(txtApellido.Text.Length - 1);
+                txtApellido.Focus();
+            }
+
+            else if (validate_letter.IsMatch(txtNombre.Text) != true)
+            {
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNombre.Text.Remove(txtNombre.Text.Length - 1);
+                txtNombre.Focus();
+            }
+            else if (validate_letter.IsMatch(txtApellido2.Text) != true)
+            {
+                MessageBox.Show("El campo SEGUNDO APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtApellido2.Text.Remove(txtApellido2.Text.Length - 1);
+                txtApellido2.Focus();
+            }
+            else if (validate_number.IsMatch(txtCedula.Text) != true)
+            {
+                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCedula.Text.Remove(txtCedula.Text.Length - 1);
+                txtCedula.Focus();
             }
             else
             {
@@ -317,7 +350,8 @@ namespace QNS_SysInv_X.MVCView
             repoVendedores.Show();
             this.Close();
         }
-}
 
+       
+    }
 
 }

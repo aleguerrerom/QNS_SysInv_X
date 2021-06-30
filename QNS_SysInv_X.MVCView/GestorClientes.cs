@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -24,9 +25,7 @@ namespace QNS_SysInv_X.MVCView
             this.user = usuario;
             this.stsUsuario.Text = this.user.Usuario;
         }
-
-
-           
+        
         private Clientes clientes;
         private ClientesHelper clientesH;
         private Usuarios user;
@@ -36,8 +35,14 @@ namespace QNS_SysInv_X.MVCView
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
+        
+        static Regex validate_emailaddress = RegexExpression.email_validation();
 
-       private void cargarComboVendedor()
+        static Regex validate_letter = RegexExpression.letter_validation();
+
+        static Regex validate_number = RegexExpression.number_validation();
+
+        private void cargarComboVendedor()
         {
             try
             {
@@ -161,6 +166,42 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
+            else if (validate_emailaddress.IsMatch(txtMail.Text) != true)
+            {
+                MessageBox.Show("Correo Invalido", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTel.Focus();
+                return;
+            }
+
+            else if (validate_letter.IsMatch(txtContacto.Text) != true)
+            {
+                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtContacto.Text.Remove(txtContacto.Text.Length - 1);
+                txtContacto.Focus();
+            }
+
+            else if (validate_letter.IsMatch(txtNombre.Text) != true)
+            {
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNombre.Text.Remove(txtNombre.Text.Length - 1);
+                txtNombre.Focus();
+            }
+
+            else if (validate_number.IsMatch(txtTel.Text) != true)
+            {
+                MessageBox.Show("El campo TELÉFONO solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTel.Text.Remove(txtTel.Text.Length - 1);
+                txtTel.Focus();
+            }
+
+
+            else if (validate_number.IsMatch(txtCedula.Text) != true)
+            {
+                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCedula.Text.Remove(txtCedula.Text.Length - 1);
+                txtCedula.Focus();
+            }
+
             else
             {
                 if (this.txtCedula.ReadOnly == true)
