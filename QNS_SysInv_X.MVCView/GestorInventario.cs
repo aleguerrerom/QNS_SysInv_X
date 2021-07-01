@@ -81,15 +81,15 @@ namespace QNS_SysInv_X.MVCView
                 this.invH = new InventarioHelper(inventario);
                 ///LOG PARA USUARIOS
                 ////
-                /*
+                
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+                //this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "Inventario Agregado";
                 this.bitacora.Detalle = "Se agrego el articulo al inventario correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-                */
+                
                 this.invH.Guardar();
                 MessageBox.Show("Registro Almacenado");
 
@@ -178,15 +178,15 @@ namespace QNS_SysInv_X.MVCView
                     this.invH = new InventarioHelper(inventario);
                     ///LOG PARA ELIMINAR
                     ///
-                    /*
+                    
                     this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
+                    //this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Eliminar";
                     this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
-                    */
+                    
                     this.invH.Eliminar();
                     MessageBox.Show("Registro Eliminado correctamente");
                     listar();
@@ -260,7 +260,6 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbEstado.Text = fila["estado"].ToString();
                     this.dtpFecha.Text = fila["fechamodificacion"].ToString();
                     this.idl.Text = fila["id"].ToString();
-                    //this.txtCorreo.Text = fila["correo"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }

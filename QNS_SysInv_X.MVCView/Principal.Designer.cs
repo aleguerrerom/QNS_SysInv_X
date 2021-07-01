@@ -52,12 +52,12 @@
             this.tsmReporteOpo = new System.Windows.Forms.ToolStripMenuItem();
             this.clmReporteCli = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBita = new System.Windows.Forms.ToolStripLabel();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsBita = new System.Windows.Forms.ToolStripLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
@@ -274,6 +274,20 @@
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
+            // vendedoresToolStripMenuItem1
+            // 
+            this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
+            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.vendedoresToolStripMenuItem1.Text = "Vendedores";
+            this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
+            // 
+            // tsBita
+            // 
+            this.tsBita.Name = "tsBita";
+            this.tsBita.Size = new System.Drawing.Size(50, 22);
+            this.tsBita.Text = "Bitacora";
+            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
+            // 
             // tsAboutUs
             // 
             this.tsAboutUs.Name = "tsAboutUs";
@@ -304,20 +318,6 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
-            // vendedoresToolStripMenuItem1
-            // 
-            this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
-            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
-            this.vendedoresToolStripMenuItem1.Text = "Vendedores";
-            this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
-            // 
-            // tsBita
-            // 
-            this.tsBita.Name = "tsBita";
-            this.tsBita.Size = new System.Drawing.Size(50, 22);
-            this.tsBita.Text = "Bitacora";
-            this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,7 +328,7 @@
             this.Controls.Add(pictureBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.Text = "PRINCIPAL";
             this.Load += new System.EventHandler(this.Principal_Load);

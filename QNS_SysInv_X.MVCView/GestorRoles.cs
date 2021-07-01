@@ -109,15 +109,15 @@ namespace QNS_SysInv_X.MVCView
             this.rolH = new RolesHelper(roles);
                 ///LOG PARA ROLES
                 ///
-                /*
+                
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+               // this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "actualizo";
                 this.bitacora.Detalle = "Se actualizo el rol " + this.txtRol.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-                */
+                
                 //
 
                 this.rolH.ActualizarRol();
@@ -187,15 +187,15 @@ namespace QNS_SysInv_X.MVCView
                 {
                    this.rolH = new RolesHelper(roles);
                     ///LOG PARA ROLES
-                    /*
+                    
                     this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
+                    //this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Agregar";
                     this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
-                    */ 
+                    
                     this.rolH.GuardarRol();
                     MessageBox.Show("Rol almacenado");
                     limpiar();
@@ -284,15 +284,15 @@ namespace QNS_SysInv_X.MVCView
                     this.roles.opc = 3;
                     this.rolH = new RolesHelper(roles);
 ///LOG PARA USUARIOS
-/*
+
                     this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
+                   // this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Eliminar Rol";
                     this.bitacora.Detalle = "Se elimino el rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);
                     this.bitH.LogMovimientos();
-  */                  
+                   
                     this.rolH.Eliminar();
                     MessageBox.Show("Usuario Eliminado Eliminado");
                     listar();

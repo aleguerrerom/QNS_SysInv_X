@@ -39,7 +39,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.clientesTableAdapter.FillByNombre(this.dS_QNS.Clientes, txtFiltro.Text);
             }
-
+            this.reportViewer1.RefreshReport();
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)

@@ -40,17 +40,15 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.auditLogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
-            this.auditLogBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuditLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource2)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +87,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(642, 42);
+            this.button1.Location = new System.Drawing.Point(671, 39);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
@@ -100,7 +98,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(750, 42);
+            this.button2.Location = new System.Drawing.Point(764, 39);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
@@ -113,7 +111,7 @@
             // 
             this.txtFiltro.Location = new System.Drawing.Point(527, 45);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(138, 22);
             this.txtFiltro.TabIndex = 59;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
@@ -122,12 +120,14 @@
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
-            "ID",
-            "Marca"});
+            "Usuario",
+            "Fecha de Inicio",
+            "Fecha de Salida"});
             this.cmbFiltro.Location = new System.Drawing.Point(414, 43);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 60;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
@@ -140,20 +140,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(825, 315);
             this.reportViewer1.TabIndex = 61;
-            // 
-            // auditLogBindingSource1
-            // 
-            this.auditLogBindingSource1.DataMember = "AuditLog";
-            this.auditLogBindingSource1.DataSource = this.dS_QNS;
-            // 
-            // auditLogTableAdapter
-            // 
-            this.auditLogTableAdapter.ClearBeforeFill = true;
-            // 
-            // auditLogBindingSource2
-            // 
-            this.auditLogBindingSource2.DataMember = "AuditLog";
-            this.auditLogBindingSource2.DataSource = this.dS_QNS;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // toolStrip1
             // 
@@ -172,12 +159,35 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecha.Location = new System.Drawing.Point(527, 45);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(138, 22);
+            this.dtpFecha.TabIndex = 63;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(536, 181);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(8, 22);
+            this.dateTimePicker1.TabIndex = 64;
+            // 
+            // auditLogTableAdapter
+            // 
+            this.auditLogTableAdapter.ClearBeforeFill = true;
+            // 
             // ReporteLogsInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(850, 494);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cmbFiltro);
@@ -194,8 +204,6 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuditLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,10 +220,10 @@
         private System.Windows.Forms.ComboBox cmbFiltro;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource AuditLogBindingSource;
-        private System.Windows.Forms.BindingSource auditLogBindingSource1;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter auditLogTableAdapter;
-        private System.Windows.Forms.BindingSource auditLogBindingSource2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

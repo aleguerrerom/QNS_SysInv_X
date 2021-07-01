@@ -151,7 +151,6 @@
                                 <Value>apellido1</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
-                                  <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>White</Color>
                                 </Style>
@@ -295,7 +294,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>2.5cm</Size>
+                                    <Size>3.66417cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox3">
                                         <CanGrow>true</CanGrow>
@@ -597,7 +596,7 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>2.5cm</Size>
+                                    <Size>3.66417cm</Size>
                                     <CellContents>
                                       <Textbox Name="correo">
                                         <CanGrow>true</CanGrow>
@@ -651,7 +650,7 @@
         <DataSetName>DSVendedores</DataSetName>
         <Top>2.27542cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.5cm</Width>
+        <Width>18.66417cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -695,8 +694,8 @@
         <Source>Embedded</Source>
         <Value>Screenshot_1</Value>
         <Sizing>FitProportional</Sizing>
-        <Height>1.47849cm</Height>
-        <Width>3.7225cm</Width>
+        <Height>1.68479cm</Height>
+        <Width>4.19875cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -738,7 +737,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.88976in</Width>
+  <Width>7.3481in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

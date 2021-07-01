@@ -139,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.10724cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox11">
                         <CanGrow>true</CanGrow>
@@ -217,7 +217,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>2.97625cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox7">
                                 <CanGrow>true</CanGrow>
@@ -256,7 +256,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.97625cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
                                     <CanGrow>true</CanGrow>
@@ -405,7 +405,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.10724cm</Size>
                     <CellContents>
                       <Textbox Name="fechaCierre">
                         <CanGrow>true</CanGrow>
@@ -501,7 +501,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>2.97625cm</Size>
                             <CellContents>
                               <Textbox Name="detalles">
                                 <CanGrow>true</CanGrow>
@@ -549,7 +549,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.97625cm</Size>
                                 <CellContents>
                                   <Textbox Name="presupuesto">
                                     <CanGrow>true</CanGrow>
@@ -651,7 +651,7 @@
         <DataSetName>DSOportunidades</DataSetName>
         <Top>2.19604cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.5cm</Width>
+        <Width>19.05974cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -738,7 +738,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.88976in</Width>
+  <Width>7.50383in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

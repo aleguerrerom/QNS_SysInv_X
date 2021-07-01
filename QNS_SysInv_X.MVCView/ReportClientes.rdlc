@@ -112,7 +112,6 @@
                             <Value>tipo</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
                             </Style>
@@ -217,7 +216,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>3.08208cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
@@ -256,7 +255,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>3.10724cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox7">
                                     <CanGrow>true</CanGrow>
@@ -542,7 +541,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>3.08208cm</Size>
                             <CellContents>
                               <Textbox Name="correo">
                                 <CanGrow>true</CanGrow>
@@ -590,7 +589,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>3.10724cm</Size>
                                 <CellContents>
                                   <Textbox Name="direcion">
                                     <CanGrow>true</CanGrow>
@@ -742,7 +741,7 @@
         <DataSetName>DSClientes</DataSetName>
         <Top>2.69875cm</Top>
         <Height>1.2cm</Height>
-        <Width>20cm</Width>
+        <Width>21.18932cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -770,7 +769,7 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Left>6.16162cm</Left>
         <Height>0.97896cm</Height>
-        <Width>9.44562cm</Width>
+        <Width>6.69395cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -786,8 +785,8 @@
         <Source>Embedded</Source>
         <Value>Screenshot_1</Value>
         <Sizing>FitProportional</Sizing>
-        <Height>1.47849cm</Height>
-        <Width>3.7225cm</Width>
+        <Height>0.97896cm</Height>
+        <Width>4.09787cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -810,10 +809,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.08479cm</Top>
+        <Top>1.12007cm</Top>
         <Left>6.16162cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.44562cm</Width>
+        <Width>6.69395cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -829,7 +828,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.87402in</Width>
+  <Width>8.34225in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

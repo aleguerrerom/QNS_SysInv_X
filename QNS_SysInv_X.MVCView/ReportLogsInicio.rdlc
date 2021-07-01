@@ -100,7 +100,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>3.00271cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox7">
                     <CanGrow>true</CanGrow>
@@ -139,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.98167cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox5">
                         <CanGrow>true</CanGrow>
@@ -178,7 +178,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>4.96062cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox3">
                             <CanGrow>true</CanGrow>
@@ -234,7 +234,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>3.00271cm</Size>
                 <CellContents>
                   <Textbox Name="usuario">
                     <CanGrow>true</CanGrow>
@@ -282,7 +282,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.98167cm</Size>
                     <CellContents>
                       <Textbox Name="fechaInicio">
                         <CanGrow>true</CanGrow>
@@ -330,7 +330,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>4.96062cm</Size>
                         <CellContents>
                           <Textbox Name="fechaSalida">
                             <CanGrow>true</CanGrow>
@@ -378,7 +378,7 @@
         <DataSetName>DSLogInicio</DataSetName>
         <Top>2.30188cm</Top>
         <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Width>14.445cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -395,7 +395,7 @@
                 <Value>REPORTE CONTROL DE INICIO DE SESIÓN</Value>
                 <Style>
                   <FontFamily>Microsoft JhengHei</FontFamily>
-                  <FontSize>20pt</FontSize>
+                  <FontSize>12pt</FontSize>
                   <Color>Blue</Color>
                 </Style>
               </TextRun>
@@ -406,7 +406,7 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Left>3.89889cm</Left>
         <Height>0.97896cm</Height>
-        <Width>14.35736cm</Width>
+        <Width>8.77465cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -449,7 +449,7 @@
         <Top>1.08479cm</Top>
         <Left>6.16162cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.44562cm</Width>
+        <Width>3.41312cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>

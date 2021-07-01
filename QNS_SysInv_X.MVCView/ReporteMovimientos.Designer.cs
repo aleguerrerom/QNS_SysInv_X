@@ -32,27 +32,28 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMovimientos));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
-            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.inventarioTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.movimientosLogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.movimientosLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.MovimientosLogTableAdapter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventarioTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
+            this.movimientosLogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.movimientosLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.MovimientosLogTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimientosLogBindingSource1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -67,21 +68,6 @@
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
             // 
-            // MovimientosLogBindingSource
-            // 
-            this.MovimientosLogBindingSource.DataMember = "MovimientosLog";
-            this.MovimientosLogBindingSource.DataSource = this.dS_QNS;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inventarioBindingSource
-            // 
-            this.inventarioBindingSource.DataMember = "Inventario";
-            this.inventarioBindingSource.DataSource = this.dS_QNS;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -95,7 +81,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(642, 35);
+            this.button1.Location = new System.Drawing.Point(675, 36);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
@@ -106,7 +92,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(750, 35);
+            this.button2.Location = new System.Drawing.Point(768, 36);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
@@ -119,25 +105,22 @@
             // 
             this.txtFiltro.Location = new System.Drawing.Point(527, 38);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(142, 22);
             this.txtFiltro.TabIndex = 59;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
-            // 
-            // inventarioTableAdapter
-            // 
-            this.inventarioTableAdapter.ClearBeforeFill = true;
             // 
             // cmbFiltro
             // 
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
             this.cmbFiltro.Items.AddRange(new object[] {
-            "ID",
-            "Marca"});
+            "Usuario",
+            "Fecha de Modificación"});
             this.cmbFiltro.Location = new System.Drawing.Point(414, 36);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 60;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
@@ -146,19 +129,10 @@
             reportDataSource1.Value = this.MovimientosLogBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportMovimientos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 144);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 152);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(825, 335);
+            this.reportViewer1.Size = new System.Drawing.Size(843, 335);
             this.reportViewer1.TabIndex = 61;
-            // 
-            // movimientosLogBindingSource1
-            // 
-            this.movimientosLogBindingSource1.DataMember = "MovimientosLog";
-            this.movimientosLogBindingSource1.DataSource = this.dS_QNS;
-            // 
-            // movimientosLogTableAdapter
-            // 
-            this.movimientosLogTableAdapter.ClearBeforeFill = true;
             // 
             // toolStrip1
             // 
@@ -177,12 +151,50 @@
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecha.Location = new System.Drawing.Point(528, 38);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(141, 22);
+            this.dtpFecha.TabIndex = 63;
+            // 
+            // MovimientosLogBindingSource
+            // 
+            this.MovimientosLogBindingSource.DataMember = "MovimientosLog";
+            this.MovimientosLogBindingSource.DataSource = this.dS_QNS;
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inventarioBindingSource
+            // 
+            this.inventarioBindingSource.DataMember = "Inventario";
+            this.inventarioBindingSource.DataSource = this.dS_QNS;
+            // 
+            // inventarioTableAdapter
+            // 
+            this.inventarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // movimientosLogBindingSource1
+            // 
+            this.movimientosLogBindingSource1.DataMember = "MovimientosLog";
+            this.movimientosLogBindingSource1.DataSource = this.dS_QNS;
+            // 
+            // movimientosLogTableAdapter
+            // 
+            this.movimientosLogTableAdapter.ClearBeforeFill = true;
+            // 
             // ReporteMovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(867, 494);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cmbFiltro);
@@ -197,12 +209,12 @@
             this.Text = "REPORTE MOVIMIENTOS";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimientosLogBindingSource1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +235,6 @@
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.MovimientosLogTableAdapter movimientosLogTableAdapter;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

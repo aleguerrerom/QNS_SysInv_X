@@ -104,7 +104,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            if (btnChange.Text == "VER LOGS DE LOG IN")
+            if (btnChange.Text == "VER LOGS DE MOVIMIENTOS")
             {
                 ReporteLogsInicio reporte = new ReporteLogsInicio();
                 reporte.Show();

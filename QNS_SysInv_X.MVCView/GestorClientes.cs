@@ -117,6 +117,17 @@ namespace QNS_SysInv_X.MVCView
                 { this.clientes.Agente = 4; }
                 else if (this.cmbVende.SelectedIndex == 4)
                 { this.clientes.Agente = 5; }
+                else if (this.cmbVende.SelectedIndex == 5)
+                { this.clientes.Agente = 6; }
+                else if (this.cmbVende.SelectedIndex == 6)
+                { this.clientes.Agente = 7; }
+                else if (this.cmbVende.SelectedIndex == 7)
+                { this.clientes.Agente = 8; }
+                else if (this.cmbVende.SelectedIndex == 8)
+                { this.clientes.Agente = 9; }
+                else if (this.cmbVende.SelectedIndex == 9)
+
+                { this.clientes.Agente = 10; }
                 this.clientes.Direccion = this.rtbDireccion.Text;
                 this.clientes.opc = 2;
                 this.clientesH = new ClientesHelper(clientes);

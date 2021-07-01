@@ -40,9 +40,17 @@ namespace QNS_SysInv_X.MVCView
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
-                this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
+                if (cmbFiltro.SelectedIndex == 0)
+                {
+                    this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
+                }
+                else if (cmbFiltro.SelectedIndex == 1)
+                {
+                    this.oportunidadesTableAdapter.FillByFecha(this.dS_QNS.Oportunidades, dtpFecha.Value);
+                }
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
@@ -61,6 +69,23 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cmbFiltro.SelectedIndex == 0)
+            {
+                txtFiltro.Visible = true;
+                dtpFecha.Visible = false;
+
+            }
+            else if (cmbFiltro.SelectedIndex == 1)
+            {
+                dtpFecha.Visible = true;
+                txtFiltro.Visible = false;
+
+            }
         }
     }
 }

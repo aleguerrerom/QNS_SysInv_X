@@ -42,11 +42,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
-                    this.inventarioTableAdapter.FillBy(this.dS_QNS.Inventario, int.Parse(txtFiltro.Text));
+                    this.movimientosLogTableAdapter.FillByUsuario(this.dS_QNS.MovimientosLog, txtFiltro.Text);
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
-                    this.inventarioTableAdapter.FillBy1(this.dS_QNS.Inventario,txtFiltro.Text);
+                    this.movimientosLogTableAdapter.FillByFecha(this.dS_QNS.MovimientosLog, dtpFecha.Value);
                 }
                 this.reportViewer1.RefreshReport();
             }
@@ -66,6 +66,22 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFiltro.SelectedIndex == 0)
+            {
+                txtFiltro.Visible = true;
+                dtpFecha.Visible = false;
+
+            }
+            else if (cmbFiltro.SelectedIndex == 1)
+            {
+                dtpFecha.Visible = true;
+                txtFiltro.Visible = false;
+
+            }
         }
     }
 }

@@ -139,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.77cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox7">
                         <CanGrow>true</CanGrow>
@@ -178,7 +178,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>3.46412cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox5">
                             <CanGrow>true</CanGrow>
@@ -217,7 +217,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>4.64312cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox3">
                                 <CanGrow>true</CanGrow>
@@ -323,7 +323,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>3.77cm</Size>
                     <CellContents>
                       <Textbox Name="fecha">
                         <CanGrow>true</CanGrow>
@@ -371,7 +371,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>3.46412cm</Size>
                         <CellContents>
                           <Textbox Name="movimiento">
                             <CanGrow>true</CanGrow>
@@ -419,7 +419,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>4.64312cm</Size>
                             <CellContents>
                               <Textbox Name="detalle">
                                 <CanGrow>true</CanGrow>
@@ -469,7 +469,7 @@
         <DataSetName>DSMovimientos</DataSetName>
         <Top>2.03729cm</Top>
         <Height>1.2cm</Height>
-        <Width>12.5cm</Width>
+        <Width>16.87724cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -556,7 +556,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.64458in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
