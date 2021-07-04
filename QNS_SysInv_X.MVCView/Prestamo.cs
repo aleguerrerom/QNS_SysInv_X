@@ -26,6 +26,9 @@ namespace QNS_SysInv_X.MVCView
         private Clientes clientes;
         private ClientesHelper clientesH;
         private DataTable table;
+
+        private Bitacora bitacora;
+        private BitacoraHelper bitH;
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -200,6 +203,14 @@ namespace QNS_SysInv_X.MVCView
 
                 this.prestamos.opc = 7;
                 this.presH = new PrestamoHelper(prestamos);
+
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Movimiento = "Prestamo ";
+                this.bitacora.Detalle = "Se proceso el prestamo correctamente";
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
                 ///LOG PARA USUARIOS
 
 

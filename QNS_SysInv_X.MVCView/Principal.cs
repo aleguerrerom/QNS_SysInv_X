@@ -16,7 +16,6 @@ namespace QNS_SysInv_X.MVCView
     public partial class Principal : Form
     {
         private Usuarios user;
-        private UsuariosHelper userHelper;
         private Roles roles;
         private DataTable table;
         private RolesHelper rolesH;
@@ -174,7 +173,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void cambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CambiodeClave cambio = new CambiodeClave();
+            CambiodeClave cambio = new CambiodeClave(user);
             cambio.Show();
         
         }
@@ -182,7 +181,7 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripInventario_Click(object sender, EventArgs e)
         {
 
-            GestorInventario inve = new GestorInventario();
+            GestorInventario inve = new GestorInventario(user);
             inve.Show();
         }
 
@@ -211,7 +210,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorRoles role = new GestorRoles();
+            GestorRoles role = new GestorRoles(user);
             role.Show();
         }
 
@@ -223,7 +222,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorInventario inve = new GestorInventario();
+            GestorInventario inve = new GestorInventario(user);
             inve.Show();
         }
 
@@ -252,25 +251,25 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            GestorVendedores res = new GestorVendedores();
+            GestorVendedores res = new GestorVendedores(user);
             res.Show();
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorVendedores res = new GestorVendedores();
+            GestorVendedores res = new GestorVendedores(user);
             res.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorClientes clientes = new GestorClientes();
+            GestorClientes clientes = new GestorClientes(user);
             clientes.Show();
         }
 
         private void oportunidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorOportunidades oportunidades = new GestorOportunidades();
+            GestorOportunidades oportunidades = new GestorOportunidades(user);
             oportunidades.Show();
         }
 

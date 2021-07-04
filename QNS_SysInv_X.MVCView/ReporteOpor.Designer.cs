@@ -88,10 +88,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(670, 36);
+            this.button1.Location = new System.Drawing.Point(670, 43);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 57;
             this.button1.Text = "FILTRO";
             this.button1.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(763, 35);
+            this.button2.Location = new System.Drawing.Point(763, 43);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 28);
+            this.button2.Size = new System.Drawing.Size(87, 22);
             this.button2.TabIndex = 58;
             this.button2.Text = "LIMPIAR";
             this.button2.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(862, 494);
+            this.ClientSize = new System.Drawing.Size(862, 513);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.toolStrip1);

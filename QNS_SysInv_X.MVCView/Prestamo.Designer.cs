@@ -40,6 +40,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.stsUsuario = new System.Windows.Forms.StatusStrip();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -162,12 +163,21 @@
             this.label2.TabIndex = 61;
             this.label2.Text = "Seleccione Cliente:";
             // 
+            // stsUsuario
+            // 
+            this.stsUsuario.Location = new System.Drawing.Point(0, 372);
+            this.stsUsuario.Name = "stsUsuario";
+            this.stsUsuario.Size = new System.Drawing.Size(719, 22);
+            this.stsUsuario.TabIndex = 62;
+            this.stsUsuario.Text = "statusStrip1";
+            // 
             // Prestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(719, 394);
+            this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.txtID);
@@ -200,5 +210,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.StatusStrip stsUsuario;
     }
 }

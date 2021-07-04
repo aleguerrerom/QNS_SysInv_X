@@ -269,25 +269,35 @@ namespace QNS_SysInv_X.MVCView.Resources
                 }
                 else
                 {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.user = new Usuarios();
-                    this.user.Usuario = fila["usuario"].ToString();
-                    this.user.opc = 3;
-                    this.userHelper = new UsuariosHelper(user);
-                    ///LOG PARA ELIMINAR
-                    ///
+
+                    DialogResult dialogResult = MessageBox.Show("Desea eliminar el usuario", "Eliminar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        int indice = dgvListar.CurrentRow.Index;
+                        DataRow fila = table.Rows[indice];
+                        this.user = new Usuarios();
+                        this.user.Usuario = fila["usuario"].ToString();
+                        this.user.opc = 3;
+                        this.userHelper = new UsuariosHelper(user);
+                        ///LOG PARA ELIMINAR
+                        ///
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsuario.Text;
+                        this.bitacora.Movimiento = "Eliminar";
+                        this.bitacora.Detalle = "Se elimino el usuario " + fila["usuario"].ToString();
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+
+                        this.userHelper.Eliminar();
+                        MessageBox.Show("Usuario " + this.user.Usuario + " Eliminado");
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se elimino el usuario");
+                    }
                     
-                    this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.stsUsuario.Text;
-                    this.bitacora.Movimiento = "Eliminar";
-                    this.bitacora.Detalle = "Se elimino el usuario " + fila["usuario"].ToString();
-                    this.bitacora.opc = 5;
-                    this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
-                    
-                    this.userHelper.Eliminar();
-                    MessageBox.Show("Usuario "+this.user.Usuario+" Eliminado");
                     listar();
                 }
             }

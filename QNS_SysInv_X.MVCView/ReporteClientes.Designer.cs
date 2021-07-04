@@ -129,7 +129,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(832, 467);
+            this.reportViewer1.Size = new System.Drawing.Size(832, 431);
             this.reportViewer1.TabIndex = 65;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -186,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(870, 605);
+            this.ClientSize = new System.Drawing.Size(870, 567);
             this.Controls.Add(this.cmbFiltrar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);

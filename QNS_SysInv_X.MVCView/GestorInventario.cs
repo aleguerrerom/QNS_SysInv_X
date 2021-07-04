@@ -83,7 +83,7 @@ namespace QNS_SysInv_X.MVCView
                 ////
                 
                 this.bitacora = new Bitacora();
-                //this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "Inventario Agregado";
                 this.bitacora.Detalle = "Se agrego el articulo al inventario correctamente ";
                 this.bitacora.opc = 5;
@@ -180,7 +180,7 @@ namespace QNS_SysInv_X.MVCView
                     ///
                     
                     this.bitacora = new Bitacora();
-                    //this.bitacora.Usuario = this.user.Usuario;
+                    this.bitacora.Usuario = this.user.Usuario;
                     this.bitacora.Movimiento = "Eliminar";
                     this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
                     this.bitacora.opc = 5;
@@ -218,7 +218,7 @@ namespace QNS_SysInv_X.MVCView
 
                 this.invH = new InventarioHelper(inventario);
 
-                /*
+                
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "Actualizar Inventario";
@@ -226,7 +226,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-                */
+                
                 this.invH.Actualizar();
                 MessageBox.Show("Registro actualizado");
             }

@@ -32,6 +32,8 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMovimientos));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,17 +43,15 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
             this.movimientosLogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.movimientosLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.MovimientosLogTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimientosLogBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,16 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
+            // 
+            // MovimientosLogBindingSource
+            // 
+            this.MovimientosLogBindingSource.DataMember = "MovimientosLog";
+            this.MovimientosLogBindingSource.DataSource = this.dS_QNS;
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -160,16 +170,6 @@
             this.dtpFecha.Size = new System.Drawing.Size(141, 22);
             this.dtpFecha.TabIndex = 63;
             // 
-            // MovimientosLogBindingSource
-            // 
-            this.MovimientosLogBindingSource.DataMember = "MovimientosLog";
-            this.MovimientosLogBindingSource.DataSource = this.dS_QNS;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // inventarioBindingSource
             // 
             this.inventarioBindingSource.DataMember = "Inventario";
@@ -209,10 +209,10 @@
             this.Text = "REPORTE MOVIMIENTOS";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimientosLogBindingSource1)).EndInit();
             this.ResumeLayout(false);

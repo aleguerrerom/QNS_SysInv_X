@@ -66,16 +66,16 @@ namespace QNS_SysInv_X.MVCView
                 this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
                  this.user.opc = 6;
 
-     this.userHelper = new UsuariosHelper(user);
-                /*
+                 this.userHelper = new UsuariosHelper(user);
+                
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+                //this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "Actualizar";
-                this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
+                this.bitacora.Detalle = "Se cambio la clave del usuario correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-                */
+                
                 this.userHelper.CambiarClave();
                 MessageBox.Show("La clave ha sido actualizada");
             }
