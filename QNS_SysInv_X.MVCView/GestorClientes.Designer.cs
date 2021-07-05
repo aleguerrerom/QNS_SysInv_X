@@ -509,6 +509,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorClientes";
             this.Text = "GESTOR CLIENTES";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorClientes_FormClosing);
             this.Load += new System.EventHandler(this.GestorClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);

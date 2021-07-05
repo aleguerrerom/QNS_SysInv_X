@@ -102,6 +102,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportePrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePrestamo.Designer.cs">
+      <DependentUpon>ReportePrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteEntrega.Designer.cs">
+      <DependentUpon>ReporteEntrega.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +168,11 @@
     <Compile Include="CambiodeClave.Designer.cs">
       <DependentUpon>CambiodeClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entrega.cs">
+    <Compile Include="Entregas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrega.Designer.cs">
-      <DependentUpon>Entrega.cs</DependentUpon>
+    <Compile Include="Entregas.Designer.cs">
+      <DependentUpon>Entregas.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorInventario.cs">
       <SubType>Form</SubType>
@@ -215,6 +227,14 @@
     <EmbeddedResource Include="GestorVendedores.resx">
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportEntrega.rdlc" />
+    <EmbeddedResource Include="ReportPrestamo.rdlc" />
+    <EmbeddedResource Include="ReportePrestamo.resx">
+      <DependentUpon>ReportePrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEntrega.resx">
+      <DependentUpon>ReporteEntrega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportVendedores.rdlc" />
     <EmbeddedResource Include="ReportMovimientos.rdlc" />
     <EmbeddedResource Include="ReportLogsInicio.rdlc" />
@@ -246,8 +266,8 @@
     <EmbeddedResource Include="VerBitacora.resx">
       <DependentUpon>VerBitacora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entrega.resx">
-      <DependentUpon>Entrega.cs</DependentUpon>
+    <EmbeddedResource Include="Entregas.resx">
+      <DependentUpon>Entregas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestorUsuarios.resx">
       <DependentUpon>GestorUsuarios.cs</DependentUpon>

@@ -139,7 +139,7 @@ namespace QNS_SysInv_X.MVCView
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtCedula.Text == "" || this.txtNombre.Text == "" || this.txtCorreo.Text == ""
-             && this.txtApellido.Text == "" || this.txtApellido2.Text == "" || this.cmbGenero.Text == "")
+             || this.txtApellido.Text == "" || this.txtApellido2.Text == "" || this.cmbGenero.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
@@ -179,10 +179,17 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtCedula.ReadOnly)
                 {
-
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar datos del vendedor", "Actualizar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
                     actualizar();
                     listar();
                     limpiar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se elimino el vendedor");
+                    }
                 }
                 else
                 {
@@ -218,7 +225,7 @@ namespace QNS_SysInv_X.MVCView
 
         #region ELIMINAR VENDEDOR
         private void eliminar()
-        {
+        {/*
             try
             {
                 this.table = (DataTable)this.dgvListar.DataSource;
@@ -228,32 +235,41 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else
                 {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.vendedor = new Vendedores();
-                    this.vendedor.Cedula = int.Parse(fila["cedula"].ToString());
-                    this.vendedor.opc = 3;
-                    this.vendedorH = new VendedoresHelper(vendedor);
-                    ///LOG PARA ELIMINAR
-                    ///
+                    DialogResult dialogResult = MessageBox.Show("Desea eliminar los datos del vendedor??", "Eliminar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        int indice = dgvListar.CurrentRow.Index;
+                        DataRow fila = table.Rows[indice];
+                        this.vendedor = new Vendedores();
+                        this.vendedor.Cedula = int.Parse(fila["cedula"].ToString());
+                        this.vendedor.opc = 3;
+                        this.vendedorH = new VendedoresHelper(vendedor);
+                        ///LOG PARA ELIMINAR
+                        ///
 
-                    this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.stsUsuario.Text;
-                    this.bitacora.Movimiento = "Eliminar Vendedor";
-                    this.bitacora.Detalle = "Se elimino el vendedor " + fila["nombre"].ToString();
-                    this.bitacora.opc = 5;
-                    this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsuario.Text;
+                        this.bitacora.Movimiento = "Eliminar Vendedor";
+                        this.bitacora.Detalle = "Se elimino el vendedor " + fila["nombre"].ToString();
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
 
-                    this.vendedorH.Eliminar();
-                    MessageBox.Show("Vendedor " + this.vendedor.Nombre + " Eliminado");
-                    listar();
+                        this.vendedorH.Eliminar();
+                        MessageBox.Show("Vendedor " + this.vendedor.Nombre + " Eliminado");
+                        listar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se elimino el vendedor");
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
         #endregion
 
@@ -262,6 +278,7 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
+
                 this.vendedor = new Vendedores();
                 this.vendedor.Cedula = int.Parse(this.txtCedula.Text);
                 this.vendedor.Nombre = this.txtNombre.Text;
@@ -341,7 +358,20 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.txtCedula.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
+             || this.txtApellido.Text != "" || this.txtApellido2.Text != "" || this.cmbGenero.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
+            }
+            else
+                this.Close();
         }
 
         private void btnReport_Click_1(object sender, EventArgs e)
@@ -351,7 +381,28 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
         }
 
-       
+        private void GestorVendedores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+                if (this.txtCedula.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
+                  || this.txtApellido.Text != "" || this.txtApellido2.Text != "" || this.cmbGenero.Text != "")
+                {
+                    DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                    e.Cancel = false;
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                    e.Cancel =true;
+                    }
+                }
+                else
+            {
+                e.Cancel = false;
+            }
+           
+          
+        }
     }
 
 }

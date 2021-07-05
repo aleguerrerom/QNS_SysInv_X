@@ -74,6 +74,7 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["entrega"].ToString()) == true)
             {
                 entregaToolStripMenuItem.Visible = true;
+                entregaToolStripMenuItem1.Visible = true;
             }
             if (bool.Parse(fila["inventario"].ToString()) == true)
             {
@@ -87,6 +88,7 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["prestamo"].ToString()) == true)
             {
                 prestamoToolStripMenuItem.Visible = true;
+                prestamosToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["bitacora"].ToString()) == true)
             {
@@ -127,7 +129,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void Entrega_Click(object sender, EventArgs e)
         {
-            Entrega entr = new Entrega();
+            Entregas entr = new Entregas();
             entr.Show();
         }
         
@@ -151,43 +153,53 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsEntrega(object sender, EventArgs e)
         {
-            Entrega entr = new Entrega();
+            Entregas entr = new Entregas();
             entr.Show();
         }
 
         private void ingresarConOtroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Desea salir e ingresar con otro usuario?", "Ingresar con otro usuario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
             this.Close();
             LogCierreSesion();
             Login login = new Login();
             login.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            { }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Desea salir?", "Salir", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
             LogCierreSesion();
             Login login = new Login();
             login.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            { }   
         }
 
         private void cambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CambiodeClave cambio = new CambiodeClave(user);
             cambio.Show();
-        
         }
 
         private void toolStripInventario_Click(object sender, EventArgs e)
         {
-
             GestorInventario inve = new GestorInventario(user);
             inve.Show();
         }
 
         private void tsrEntrega_Click(object sender, EventArgs e)
         {
-            Entrega entr = new Entrega();
+            Entregas entr = new Entregas();
             entr.Show();
         }
 
@@ -199,7 +211,6 @@ namespace QNS_SysInv_X.MVCView
         private void Principal_Load(object sender, EventArgs e)
         {
                 validarPerfil();
-
         }
 
         private void tslBitacora_Click(object sender, EventArgs e)
@@ -228,7 +239,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void entregaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Entrega entr = new Entrega();
+            Entregas entr = new Entregas();
             entr.Show();
         }
 
@@ -319,6 +330,19 @@ namespace QNS_SysInv_X.MVCView
         {
             ReporteVendedores repoVendedores = new ReporteVendedores();
             repoVendedores.Show();
+        }
+
+        private void entregaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReporteEntrega repoPrestamo = new ReporteEntrega();
+            repoPrestamo.Show();
+        }
+
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportePrestamo repoPrestamo = new ReportePrestamo();
+            repoPrestamo.Show();
+
         }
     }
 }

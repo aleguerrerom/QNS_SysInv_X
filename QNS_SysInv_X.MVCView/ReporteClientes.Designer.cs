@@ -196,7 +196,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox2);
             this.Name = "RerporteClientes";
-            this.Text = "REPORTE USUARIOS";
+            this.Text = "REPORTE CLIENTES";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();

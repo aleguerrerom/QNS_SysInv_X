@@ -31,34 +31,22 @@
             System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambiodeClave));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stsUser = new System.Windows.Forms.StatusStrip();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
             this.chckView = new System.Windows.Forms.CheckBox();
             this.lblShow = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(67, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(241, 108);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 41;
-            pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -71,19 +59,6 @@
             this.groupBox2.Size = new System.Drawing.Size(311, 36);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(6, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "CONFIRMAR:         ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtConfirmar
             // 
@@ -104,20 +79,6 @@
             this.groupBox1.Size = new System.Drawing.Size(311, 36);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "CONTRASEÑA:      ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtClave
             // 
@@ -148,6 +109,65 @@
             this.stsUser.Size = new System.Drawing.Size(384, 22);
             this.stsUser.TabIndex = 42;
             this.stsUser.Text = "statusStrip1";
+            // 
+            // chckView
+            // 
+            this.chckView.AutoSize = true;
+            this.chckView.Location = new System.Drawing.Point(255, 238);
+            this.chckView.Name = "chckView";
+            this.chckView.Size = new System.Drawing.Size(15, 14);
+            this.chckView.TabIndex = 57;
+            this.chckView.UseVisualStyleBackColor = true;
+            this.chckView.CheckedChanged += new System.EventHandler(this.chckView_CheckedChanged);
+            // 
+            // lblShow
+            // 
+            this.lblShow.AutoSize = true;
+            this.lblShow.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShow.Location = new System.Drawing.Point(113, 236);
+            this.lblShow.Name = "lblShow";
+            this.lblShow.Size = new System.Drawing.Size(111, 16);
+            this.lblShow.TabIndex = 56;
+            this.lblShow.Text = "VER CONTRASEÑA";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(67, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(241, 108);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 41;
+            pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Location = new System.Drawing.Point(6, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "CONFIRMAR:         ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "CONTRASEÑA:      ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCancelar
             // 
@@ -184,26 +204,6 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // chckView
-            // 
-            this.chckView.AutoSize = true;
-            this.chckView.Location = new System.Drawing.Point(255, 238);
-            this.chckView.Name = "chckView";
-            this.chckView.Size = new System.Drawing.Size(15, 14);
-            this.chckView.TabIndex = 57;
-            this.chckView.UseVisualStyleBackColor = true;
-            this.chckView.CheckedChanged += new System.EventHandler(this.chckView_CheckedChanged);
-            // 
-            // lblShow
-            // 
-            this.lblShow.AutoSize = true;
-            this.lblShow.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShow.Location = new System.Drawing.Point(113, 236);
-            this.lblShow.Name = "lblShow";
-            this.lblShow.Size = new System.Drawing.Size(111, 16);
-            this.lblShow.TabIndex = 56;
-            this.lblShow.Text = "VER CONTRASEÑA";
-            // 
             // CambiodeClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,11 +225,11 @@
             this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "CambiodeClave";
             this.Text = "CAMBIO DE CLAVE";
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -217,10 +217,18 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtCedula.ReadOnly == true)
                 {
-
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar los datos del cliente?", "Eliminar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
                     actualizar();
                     listar();
                     limpiar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se actualizaron los datos del cliente");
+                    }
+
                 }
                 else
                 {
@@ -252,7 +260,7 @@ namespace QNS_SysInv_X.MVCView
 
         #region ELIMINAR CLIENTE
         private void eliminar()
-        {
+        {/*
             try
             {
                 this.table = (DataTable)this.dgvListar.DataSource;
@@ -288,7 +296,7 @@ namespace QNS_SysInv_X.MVCView
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
         #endregion
 
@@ -402,7 +410,44 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            if (this.cmbVendedor.Text != "" || this.txtCedula.Text != "" || this.txtContacto.Text != "" ||
+                   this.txtContacto.Text != "" || this.txtMail.Text != "" ||
+                     this.cmbTipo.Text != "" || this.txtTel.Text != "" || this.txtNomb.Text == "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
+            }
+            else
+                this.Close();
+        }
+
+        private void GestorClientes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cmbVendedor.Text != "" || this.txtCedula.Text != "" || this.txtContacto.Text != "" ||
+                   this.txtContacto.Text != "" || this.txtMail.Text != "" ||
+                     this.cmbTipo.Text != "" || this.txtTel.Text != "" || this.txtNomb.Text == "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = false;
+            }
         }
     }
 }

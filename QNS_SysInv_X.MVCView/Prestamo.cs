@@ -19,6 +19,13 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
 
+        public Prestamo(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+            this.stsUsuario.Text = this.user.Usuario;
+        }
+
         private Prestamos prestamos;
         private PrestamoHelper presH;
         private Inventario inventario;
@@ -26,6 +33,7 @@ namespace QNS_SysInv_X.MVCView
         private Clientes clientes;
         private ClientesHelper clientesH;
         private DataTable table;
+        private Usuarios user;
 
         private Bitacora bitacora;
         private BitacoraHelper bitH;
@@ -227,6 +235,12 @@ namespace QNS_SysInv_X.MVCView
         private void btnCancel_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportePrestamo repoPrestamo = new ReportePrestamo();
+            repoPrestamo.Show();
         }
     }
 }

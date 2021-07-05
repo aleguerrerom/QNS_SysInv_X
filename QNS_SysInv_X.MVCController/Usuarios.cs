@@ -15,7 +15,7 @@ namespace QNS_SysInv_X.MVCController
             private int rol;
             private string nombre;
             private string apellido;
-        private string correo;
+            private string correo;
             
             public string Usuario
             {
@@ -114,12 +114,11 @@ namespace QNS_SysInv_X.MVCController
             {
                 this.Usuario = usuario;
                 this.Clave = clave;
-               this.Activo = activo;
+                this.Activo = activo;
                 this.Rol = rol;
                 this.Nombre = nombre;
                 this.Apellido = apellido;
-            this.Correo = correo;
-     
+                this.Correo = correo;
             }
 
             public Usuarios()
@@ -130,7 +129,7 @@ namespace QNS_SysInv_X.MVCController
                 this.Rol = 0;
                 this.nombre = "";
                 this.clave = "";
-            this.correo = "";
+                this.correo = "";
             }
         }
     }

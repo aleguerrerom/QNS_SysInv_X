@@ -33,7 +33,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUser.Text = this.user.Nombre;
+            this.stsUser.Text = this.user.Usuario;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -48,9 +48,17 @@ namespace QNS_SysInv_X.MVCView
 
                 if (this.txtClave.Text == this.txtConfirmar.Text)
                 {
-                    CambiarClave();
-                    limpiar();
-                }
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar la Clave?", "Cambio de Clave", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        CambiarClave();
+                        limpiar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                    MessageBox.Show("No se actualizo la clave");
+                    }
+            }
                 else MessageBox.Show("Las claven deben ser iguales");
 
             }

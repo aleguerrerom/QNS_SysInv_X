@@ -151,7 +151,7 @@ namespace QNS_SysInv_X.MVCView.Resources
 
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.Movimiento = "Agregar";
+                this.bitacora.Movimiento = "Agregar Usuario";
                 this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
@@ -172,8 +172,8 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void button1_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtUsuario.Text == "" || this.txtNombre.Text == "" ||  this.txtCorreo.Text == "" 
-             && this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
+            if (this.txtUsuario.Text == "" || this.txtNombre.Text == "" ||  this.txtCorreo.Text == ""
+             || this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
@@ -203,10 +203,20 @@ namespace QNS_SysInv_X.MVCView.Resources
                 {
                     if (this.txtClave.Text == this.txtConfirmar.Text)
                     {
-                        actualizar();
-                        listar();
-                        limpiar();
-                    }
+
+                        DialogResult dialogResult = MessageBox.Show("Desea actualizar el usuario?", "Actualizar", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            actualizar();
+                            listar();
+                            limpiar();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            MessageBox.Show("No se actualizo el usuario");
+                        }
+                    
+                }
                     else MessageBox.Show("Las claves deben ser iguales");
                 }
                 else
@@ -259,7 +269,7 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         #region ELIMINAR USUARIO
         private void eliminar()
-        {
+        {/*
             try
             {
                 this.table = (DataTable)this.dgvListar.DataSource;
@@ -284,7 +294,7 @@ namespace QNS_SysInv_X.MVCView.Resources
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsuario.Text;
-                        this.bitacora.Movimiento = "Eliminar";
+                        this.bitacora.Movimiento = "Eliminar Usuario";
                         this.bitacora.Detalle = "Se elimino el usuario " + fila["usuario"].ToString();
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
@@ -304,7 +314,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
         #endregion
 
@@ -338,7 +348,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             
             this.bitacora = new Bitacora();
             this.bitacora.Usuario = this.stsUsuario.Text;
-                this.bitacora.Movimiento = "Actualizar";
+                this.bitacora.Movimiento = "Actualizar Usuario";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;
             this.bitH = new BitacoraHelper(bitacora);
@@ -421,7 +431,20 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            this.Close();
+             if (this.txtUsuario.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
+             || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
+            }
+            else
+                this.Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -450,6 +473,26 @@ namespace QNS_SysInv_X.MVCView.Resources
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void GestorUsuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.txtUsuario.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
+            || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != "")
+            { 
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = false;
+            }
+        }
     }
 }

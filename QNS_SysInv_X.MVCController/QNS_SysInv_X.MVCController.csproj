@@ -55,6 +55,8 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="ClientesHelper.cs" />
     <Compile Include="EncryptionHelper.cs" />
+    <Compile Include="Entrega.cs" />
+    <Compile Include="EntregaHelper.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="InventarioHelper.cs" />
     <Compile Include="Oportunidades.cs" />

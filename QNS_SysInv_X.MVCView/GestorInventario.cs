@@ -126,12 +126,19 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtNombreActivo.Enabled == false)
                 {
-                   
+                    DialogResult dialogResult = MessageBox.Show("Desea actualiar el articulo?", "Actualizar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+
                         actualizar();
                         listar();
                         limpiar();
-                    
                 }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("No se actualizo el articulo");
+                }
+            }
                 else
                 {
                     
@@ -160,7 +167,7 @@ namespace QNS_SysInv_X.MVCView
 
         #region ELIMINAR USUARIO
         private void eliminar()
-        {
+        {/*
             try
             {
                 this.table = (DataTable)this.dgvListar.DataSource;
@@ -195,7 +202,7 @@ namespace QNS_SysInv_X.MVCView
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
         #endregion
 
@@ -308,7 +315,41 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.txtNombreActivo.Text != "" || this.txtModelo.Text != "" || this.txtSerialNumber.Text != ""
+            || this.cmbEstado.Text != "" || this.txtTipo.Text != "" || this.cmbBrand.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                }
+            }
+            else
+                this.Close();
+        }
+
+        private void GestorInventario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.txtNombreActivo.Text != "" || this.txtModelo.Text != "" || this.txtSerialNumber.Text != ""
+            || this.cmbEstado.Text != "" || this.txtTipo.Text != "" || this.cmbBrand.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = false;
+            }
         }
     }
 }

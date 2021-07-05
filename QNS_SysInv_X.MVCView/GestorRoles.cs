@@ -46,12 +46,20 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-                if (this.txtRol.ReadOnly)
+                DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Eliminar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (this.txtRol.ReadOnly)
                 {
                     actualizar();
                         listar();
                         limpiar();
                 }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("No se elimino el rol");
+                }
+            }
                 else
                 {
                         guardar();
@@ -267,7 +275,7 @@ namespace QNS_SysInv_X.MVCView
 
         #region ELIMINAR ROLES
         private void Eliminar()
-        {
+        {/*
             try
             {
                 this.table = (DataTable)this.dgvListar.DataSource;
@@ -303,7 +311,7 @@ namespace QNS_SysInv_X.MVCView
             {
 
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
     #endregion
 

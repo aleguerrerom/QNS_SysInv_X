@@ -41,6 +41,7 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
+            this.btnReport = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -165,18 +166,33 @@
             // 
             // stsUsuario
             // 
-            this.stsUsuario.Location = new System.Drawing.Point(0, 372);
+            this.stsUsuario.Location = new System.Drawing.Point(0, 400);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(719, 22);
             this.stsUsuario.TabIndex = 62;
             this.stsUsuario.Text = "statusStrip1";
+            // 
+            // btnReport
+            // 
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(602, 127);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(96, 30);
+            this.btnReport.TabIndex = 63;
+            this.btnReport.Text = "REPORTES";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Prestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(719, 394);
+            this.ClientSize = new System.Drawing.Size(719, 422);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCliente);
@@ -211,5 +227,6 @@
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip stsUsuario;
+        private System.Windows.Forms.Button btnReport;
     }
 }
