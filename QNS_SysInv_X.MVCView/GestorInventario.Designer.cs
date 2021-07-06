@@ -491,7 +491,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorInventario";
-            this.Text = "GESTOR INVENTARIO";
+            this.Text = "GESTOR INVENTARIOS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorInventario_FormClosing);
             this.Load += new System.EventHandler(this.GestorInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

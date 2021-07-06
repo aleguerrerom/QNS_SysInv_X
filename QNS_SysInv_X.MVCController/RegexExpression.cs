@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QNS_SysInv_X.MVCController
 {
-   public class RegexExpression
+    public class RegexExpression
     {
         public static Regex email_validation()
         {
@@ -26,6 +26,18 @@ namespace QNS_SysInv_X.MVCController
         public static Regex number_validation()
         {
             string pattern = "^[0-9]";
+            return new Regex(pattern, RegexOptions.IgnoreCase);
+        }
+
+        public static Regex numberANDletter_validation()
+        {
+            string pattern = @"^\w+$";
+            return new Regex(pattern, RegexOptions.IgnoreCase);
+        }
+
+        public static Regex AvoidSpaces_validation()
+        {
+            string pattern = @"^\S+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 

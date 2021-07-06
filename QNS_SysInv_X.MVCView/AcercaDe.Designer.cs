@@ -146,7 +146,7 @@
             this.Controls.Add(this.CNV_Inventario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AcercaDe";
-            this.Text = "ACERCA DE";
+            this.Text = "ACERCA DE  | QNS_SysInv_X";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

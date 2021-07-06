@@ -20,6 +20,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_QNS.Rol' table. You can move, or remove it, as needed.
+            this.rolTableAdapter.Fill(this.dS_QNS.Rol);
             // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
 

@@ -53,20 +53,44 @@
             this.clmReporteCli = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.entregaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBita = new System.Windows.Forms.ToolStripLabel();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
             this.tsAyuda = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.entregaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(0, 28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(251, 97);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 40;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(524, 175);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(175, 201);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 39;
+            pictureBox2.TabStop = false;
             // 
             // toolStrip1
             // 
@@ -261,6 +285,20 @@
             this.vendedoresToolStripMenuItem1.Text = "Vendedores";
             this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
             // 
+            // entregaToolStripMenuItem1
+            // 
+            this.entregaToolStripMenuItem1.Name = "entregaToolStripMenuItem1";
+            this.entregaToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.entregaToolStripMenuItem1.Text = "Entrega";
+            this.entregaToolStripMenuItem1.Click += new System.EventHandler(this.entregaToolStripMenuItem1_Click);
+            // 
+            // prestamosToolStripMenuItem
+            // 
+            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.prestamosToolStripMenuItem.Text = "Prestamos";
+            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
+            // 
             // tsBita
             // 
             this.tsBita.Name = "tsBita";
@@ -298,44 +336,6 @@
             this.statusUsuario.Size = new System.Drawing.Size(78, 17);
             this.statusUsuario.Text = "statusUsuario";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(0, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(251, 97);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 40;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.ErrorImage = null;
-            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(524, 175);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(175, 201);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 39;
-            pictureBox2.TabStop = false;
-            // 
-            // entregaToolStripMenuItem1
-            // 
-            this.entregaToolStripMenuItem1.Name = "entregaToolStripMenuItem1";
-            this.entregaToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
-            this.entregaToolStripMenuItem1.Text = "Entrega";
-            this.entregaToolStripMenuItem1.Click += new System.EventHandler(this.entregaToolStripMenuItem1_Click);
-            // 
-            // prestamosToolStripMenuItem
-            // 
-            this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.prestamosToolStripMenuItem.Text = "Prestamos";
-            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,15 +348,15 @@
             this.Controls.Add(this.toolStrip1);
             this.MaximizeBox = false;
             this.Name = "Principal";
-            this.Text = "PRINCIPAL";
+            this.Text = "PRINCIPAL  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Leave += new System.EventHandler(this.Principal_Leave);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

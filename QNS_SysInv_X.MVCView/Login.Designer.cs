@@ -198,7 +198,7 @@
             this.MaximumSize = new System.Drawing.Size(355, 369);
             this.MinimumSize = new System.Drawing.Size(355, 369);
             this.Name = "Login";
-            this.Text = "INGRESO";
+            this.Text = "INGRESO | QNS_SysInv_X";
             this.TransparencyKey = System.Drawing.Color.Purple;
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -204,7 +204,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Name = "Prestamo";
-            this.Text = "PRESTAMO";
+            this.Text = "PRESTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Prestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();

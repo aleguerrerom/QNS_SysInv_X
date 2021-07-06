@@ -34,6 +34,8 @@ namespace QNS_SysInv_X.MVCView
         private RegexExpression regexEx;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
+        
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
         static Regex validate_letter = RegexExpression.letter_validation();
 
@@ -215,7 +217,13 @@ namespace QNS_SysInv_X.MVCView
                 txtCantidad.Text.Remove(txtCantidad.Text.Length - 1);
                 txtCantidad.Focus();
                 }
-                else
+                  else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
+                {
+                MessageBox.Show("No se permiten espacios en el campo cantidad", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCantidad.Focus();
+                return;
+                }
+            else
                 {
                     guardar();
                     // procesarPrestamo();

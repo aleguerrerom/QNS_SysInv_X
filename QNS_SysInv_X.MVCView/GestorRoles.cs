@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -27,6 +28,8 @@ namespace QNS_SysInv_X.MVCView
         public static string roless;
 
 
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+
         public GestorRoles()
         {
             InitializeComponent();
@@ -43,6 +46,12 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtRol.Text == "")
             {
                 MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar");
+            }
+            else if (validate_Spaces.IsMatch(txtRol.Text) != true)
+            {
+                MessageBox.Show("No se permiten espacios en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtRol.Focus();
+                return;
             }
             else
             {

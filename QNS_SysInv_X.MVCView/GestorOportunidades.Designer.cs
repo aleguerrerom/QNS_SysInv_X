@@ -434,7 +434,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorOportunidades";
-            this.Text = "GESTOR OPORTUNIDADES";
+            this.Text = "GESTOR OPORTUNIDADES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorOportunidades_FormClosing);
             this.Load += new System.EventHandler(this.GestorOportunidades_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

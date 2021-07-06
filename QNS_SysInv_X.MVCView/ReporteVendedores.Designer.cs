@@ -194,7 +194,7 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReporteVendedores";
-            this.Text = "REPORTE VENDEDORES";
+            this.Text = "REPORTE VENDEDORES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).EndInit();

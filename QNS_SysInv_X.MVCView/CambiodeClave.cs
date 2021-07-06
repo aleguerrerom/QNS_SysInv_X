@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCView.Resources;
 using QNS_SysInv_X.MVCController;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -29,6 +30,8 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
 
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+
         public CambiodeClave(Usuarios usuario)
         {
             InitializeComponent();
@@ -43,11 +46,23 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
+
+            else if (validate_Spaces.IsMatch(txtClave.Text) != true)
+            {
+                MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtClave.Focus();
+                return;
+            }
             else
             {
 
-                if (this.txtClave.Text == this.txtConfirmar.Text)
+                if (this.txtClave.Text != this.txtConfirmar.Text)
                 {
+                      MessageBox.Show("Las claven deben ser iguales");
+
+                }
+                
+                else {
                     DialogResult dialogResult = MessageBox.Show("Desea actualizar la Clave?", "Cambio de Clave", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -56,12 +71,10 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                    MessageBox.Show("No se actualizo la clave");
+                        MessageBox.Show("No se actualizo la clave");
                     }
-            }
-                else MessageBox.Show("Las claven deben ser iguales");
-
-            }
+                } }
+               
         }
 
         private void CambiarClave()

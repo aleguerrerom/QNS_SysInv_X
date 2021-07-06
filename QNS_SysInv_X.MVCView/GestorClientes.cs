@@ -29,7 +29,6 @@ namespace QNS_SysInv_X.MVCView
         private Clientes clientes;
         private ClientesHelper clientesH;
         private Usuarios user;
-        private UsuariosHelper userHelper;
         private Vendedores vendedores;
         private VendedoresHelper vendedoresH;
         private DataTable table;

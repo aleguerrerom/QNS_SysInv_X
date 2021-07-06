@@ -25,6 +25,11 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         static Regex validate_number = RegexExpression.number_validation();
 
+        static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
+
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+
+
         public GestorUsuarios()
         {
             InitializeComponent();
@@ -172,7 +177,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void button1_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtUsuario.Text == "" || this.txtNombre.Text == "" ||  this.txtCorreo.Text == ""
+            if (this.txtUsuario.Text == "" || this.txtNombre.Text == "" || this.txtCorreo.Text == ""
              || this.txtApellido.Text == "" || this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
@@ -197,6 +202,25 @@ namespace QNS_SysInv_X.MVCView.Resources
                 txtNombre.Text.Remove(txtNombre.Text.Length - 1);
                 txtNombre.Focus();
             }
+            else if (validate_numberANDletter.IsMatch(txtUsuario.Text) != true)
+            {
+                MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUsuario.Focus();
+                return;
+            }
+            else if (validate_Spaces.IsMatch(txtClave.Text) != true)
+            {
+                MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtClave.Focus();
+                return;
+            }
+            else if (validate_numberANDletter.IsMatch(txtUsuario.Text) != true)
+            {
+                MessageBox.Show("Solo letras y numeros son permitios en campo de Usuario", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUsuario.Focus();
+                return;
+            }
+
             else
             {
                 if (this.txtUsuario.ReadOnly)

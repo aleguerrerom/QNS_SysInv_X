@@ -217,7 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox2);
             this.Name = "ReporteEntrega";
-            this.Text = "REPORTE ENTREGA";
+            this.Text = "REPORTE ENTREGA  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntregaBindingSource)).EndInit();

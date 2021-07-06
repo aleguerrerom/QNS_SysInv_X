@@ -32,6 +32,8 @@ namespace QNS_SysInv_X.MVCView
 
         static Regex validate_number = RegexExpression.number_validation();
 
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+
         public GestorOportunidades()
         {
             InitializeComponent();
@@ -199,7 +201,14 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
             }
-            
+
+            else if (validate_Spaces.IsMatch(txtPresupuesto.Text) != true)
+            {
+                MessageBox.Show("No se permiten espacios en el campo presupuesto", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPresupuesto.Focus();
+                return;
+            }
+
             else if (validate_number.IsMatch(txtPresupuesto.Text) != true)
             {
                 MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

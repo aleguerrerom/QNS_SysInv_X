@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -24,6 +25,16 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
 
+        static Regex validate_emailaddress = RegexExpression.email_validation();
+
+        static Regex validate_letter = RegexExpression.letter_validation();
+
+        static Regex validate_number = RegexExpression.number_validation();
+
+        static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
+
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -55,9 +66,24 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-              
-                if (this.txtUsuarioLogin.Text != "" && this.txtClaveLogin.Text != "")
+                if (this.txtUsuarioLogin.Text == "" && this.txtClaveLogin.Text == "")
                 {
+                      MessageBox.Show("Campos vacios favor ingresar datos en ambos campos");
+                }
+                else if (validate_Spaces.IsMatch(txtClaveLogin.Text) != true)
+                {
+                    MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtClaveLogin.Focus();
+                    return;
+                }
+                else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
+                {
+                    MessageBox.Show("Solo letras y numeros son permitios en campo de Usuario", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
+                    return;
+                }
+               
+                else { 
                     this.user = new Usuarios();
                     this.user.Usuario = this.txtUsuarioLogin.Text;
                     this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text);
@@ -83,7 +109,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else MessageBox.Show("Datos de inicio de sesión incorrectos o Usuario Inactivo");
                 }
-                else MessageBox.Show("Campos vacios favor ingresar datos en ambos campos");
+              
 
             }
             catch (Exception ex)

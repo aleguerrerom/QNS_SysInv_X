@@ -462,7 +462,7 @@
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.toolStrip1);
             this.Name = "GestorVendedores";
-            this.Text = "GESTOR VENDEDORES";
+            this.Text = "GESTOR VENDEDORES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorVendedores_FormClosing);
             this.Load += new System.EventHandler(this.GestorRespaldos_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
