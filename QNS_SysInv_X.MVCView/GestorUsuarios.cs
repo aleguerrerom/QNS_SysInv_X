@@ -28,8 +28,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
-
-
+        
         public GestorUsuarios()
         {
             InitializeComponent();
@@ -74,15 +73,12 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             try
             {
-                
                 this.user = new Usuarios();
-                this.user.opc = 1;
-
+                //this.user.opc = 1;
+                this.user.opc = 8;
                 this.userHelper = new UsuariosHelper(user);
-            
                 this.table = new DataTable();
                 this.table = this.userHelper.Listar();
-
                 if (this.table.Rows.Count > 0)
                 {
                     this.dgvListar.DataSource = this.table;
@@ -107,8 +103,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.rolH = new RolesHelper(roles);
                 this.table = new DataTable();
                 this.table = this.rolH.ListarRol();
-
-
+                
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbRol.DataSource = this.table;
@@ -140,12 +135,13 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.user.Activo = true;
                 }
                 else this.user.Activo = false;
-                if (this.cmbRol.SelectedIndex == 0)
-                { this.user.Rol = 1; }
-                else if (this.cmbRol.SelectedIndex == 1)
-                { this.user.Rol = 2; }
-                else if (this.cmbRol.SelectedIndex == 2)
-                { this.user.Rol = 3; }
+                this.user.Rol = this.cmbRol.SelectedIndex + 1;
+                //if (this.cmbRol.SelectedIndex == 0)
+                //{ this.user.Rol = 1; }
+                //else if (this.cmbRol.SelectedIndex == 1)
+                //{ this.user.Rol = 2; }
+                //else if (this.cmbRol.SelectedIndex == 2)
+                //{ this.user.Rol = 3; }
                 //this.user.Rol = int.Parse(this.cmbRol.Text);
                 this.user.Nombre = this.stsUsuario.Text;
                 this.user.Apellido = this.txtApellido.Text;
@@ -347,29 +343,21 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             try
             {
-                this.user = new Usuarios();
+            this.user = new Usuarios();
             this.user.Usuario = this.txtUsuario.Text;
             this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
-           
-            if (this.chckbxActivo.Checked)
-            {
-                this.user.Activo = true;
-            }
-            else this.user.Activo = false;
-                if (this.cmbRol.SelectedIndex == 0)
-                { this.user.Rol = 1; }
-                else if (this.cmbRol.SelectedIndex == 1)
-                { this.user.Rol = 2; }
-                else if (this.cmbRol.SelectedIndex == 2)
-                { this.user.Rol = 3; }
-                this.user.Nombre = this.txtNombre.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.user.Activo = true;
+                }
+                else { this.user.Activo = false; }
+            this.user.Rol = this.cmbRol.SelectedIndex +1;
+            this.user.Nombre = this.txtNombre.Text;
             this.user.Apellido = this.txtApellido.Text;
             this.user.Correo = this.txtCorreo.Text;
-                this.user.opc = 4;
-            
+            this.user.opc = 4;
             this.userHelper = new UsuariosHelper(user);
-
-            
+            //Bitacora 
             this.bitacora = new Bitacora();
             this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Actualizar Usuario";
@@ -416,20 +404,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.txtConfirmar.Text = EncryptionHelper.Decrypt(fila["clave"].ToString());
                     this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.txtConfirmar.Text = "";
-                    
-                    this.cmbRol.Text = fila["rol"].ToString();
-                    if (this.cmbRol.Text == "1")
-                    {
-                        this.cmbRol.SelectedIndex = 0;
-                    }
-                    else if (this.cmbRol.Text == "2")
-                    {
-                        this.cmbRol.SelectedIndex = 1;
-                    }
-                    else if (this.cmbRol.Text == "3")
-                    {
-                        this.cmbRol.SelectedIndex = 2;
-                    }
+                    this.cmbRol.Text = fila["Nombre_Rol"].ToString();
                     this.txtNombre.Text = fila["nombre"].ToString();
                     this.txtApellido.Text = fila["apellido"].ToString();
                     this.txtUsuario.ReadOnly = true;
@@ -458,7 +433,7 @@ namespace QNS_SysInv_X.MVCView.Resources
              if (this.txtUsuario.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
              || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.Close();
@@ -517,6 +492,11 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 e.Cancel = false;
             }
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

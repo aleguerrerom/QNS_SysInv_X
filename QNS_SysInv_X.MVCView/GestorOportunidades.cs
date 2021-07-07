@@ -103,7 +103,7 @@ namespace QNS_SysInv_X.MVCView
             {
 
                 this.oportunidades = new Oportunidades();
-                this.oportunidades.opc = 1;
+                this.oportunidades.opc = 5;
 
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
 
@@ -132,11 +132,12 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO USUARIO
                 this.oportunidades = new Oportunidades();
-                this.oportunidades.Nombrecliente = int.Parse(this.cmbNombre.Text);
+                this.oportunidades.Nombrecliente = (this.cmbNombre.Text);
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
                 this.oportunidades.Marca = this.txtMarca.Text;
                 this.oportunidades.Detalles = this.txtDetalles.Text;
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
+                //this.oportunidades.Vendedor = this.cmbVendedor.SelectedIndex + 1;
                 if (this.cmbVendedor.SelectedIndex == 0)
                 { this.oportunidades.Vendedor = 1; }
                 else if (this.cmbVendedor.SelectedIndex == 1)
@@ -147,18 +148,18 @@ namespace QNS_SysInv_X.MVCView
                 { this.oportunidades.Vendedor = 4; }
                 else if (this.cmbVendedor.SelectedIndex == 4)
                 { this.oportunidades.Vendedor = 5; }
+                this.oportunidades.Nombrecliente = this.cmbNombre.Text;
+                //if (this.cmbNombre.SelectedIndex == 0)
+                //{ this.oportunidades.Nombrecliente = 1; }
+                //else if (this.cmbNombre.SelectedIndex == 1)
+                //{ this.oportunidades.Nombrecliente = 2; }
+                //else if (this.cmbNombre.SelectedIndex == 2)
+                //{ this.oportunidades.Nombrecliente = 3; }
+                //else if (this.cmbNombre.SelectedIndex == 3)
+                //{ this.oportunidades.Nombrecliente = 4; }
+                //else if (this.cmbNombre.SelectedIndex == 4)
+                //{ this.oportunidades.Nombrecliente = 5; }
 
-                if (this.cmbNombre.SelectedIndex == 0)
-                { this.oportunidades.Nombrecliente = 1; }
-                else if (this.cmbNombre.SelectedIndex == 1)
-                { this.oportunidades.Nombrecliente = 2; }
-                else if (this.cmbNombre.SelectedIndex == 2)
-                { this.oportunidades.Nombrecliente = 3; }
-                else if (this.cmbNombre.SelectedIndex == 3)
-                { this.oportunidades.Nombrecliente = 4; }
-                else if (this.cmbNombre.SelectedIndex == 4)
-                { this.oportunidades.Nombrecliente = 5; }
-               
                 this.oportunidades.opc = 2;
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
                 ///LOG PARA USUARIOS
@@ -307,34 +308,34 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.oportunidades = new Oportunidades();
 
-                this.oportunidades.Nombrecliente = int.Parse(this.cmbNombre.Text);
+                this.oportunidades.Nombrecliente = (this.cmbNombre.Text);
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
                 this.oportunidades.Marca = this.txtMarca.Text;
                 this.oportunidades.Detalles = this.txtDetalles.Text;
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
                 this.oportunidades.Id = int.Parse(this.idl.Text);
-                if (this.cmbVendedor.SelectedIndex == 0)
-                { this.oportunidades.Vendedor = 1; }
-                else if (this.cmbVendedor.SelectedIndex == 1)
-                { this.oportunidades.Vendedor = 2; }
-                else if (this.cmbVendedor.SelectedIndex == 2)
-                { this.oportunidades.Vendedor = 3; }
-                else if (this.cmbVendedor.SelectedIndex == 3)
-                { this.oportunidades.Vendedor = 4; }
-                else if (this.cmbVendedor.SelectedIndex == 4)
-                { this.oportunidades.Vendedor = 5; }
-
-                if (this.cmbNombre.SelectedIndex == 0)
-                { this.oportunidades.Nombrecliente = 1; }
-                else if (this.cmbNombre.SelectedIndex == 1)
-                { this.oportunidades.Nombrecliente = 2; }
-                else if (this.cmbNombre.SelectedIndex == 2)
-                { this.oportunidades.Nombrecliente = 3; }
-                else if (this.cmbNombre.SelectedIndex == 3)
-                { this.oportunidades.Nombrecliente = 4; }
-                else if (this.cmbNombre.SelectedIndex == 4)
-                { this.oportunidades.Nombrecliente = 5; }
-
+                this.oportunidades.Vendedor = this.cmbVendedor.SelectedIndex + 1;
+                //if (this.cmbVendedor.SelectedIndex == 0)
+                //{ this.oportunidades.Vendedor = 1; }
+                //else if (this.cmbVendedor.SelectedIndex == 1)
+                //{ this.oportunidades.Vendedor = 2; }
+                //else if (this.cmbVendedor.SelectedIndex == 2)
+                //{ this.oportunidades.Vendedor = 3; }
+                //else if (this.cmbVendedor.SelectedIndex == 3)
+                //{ this.oportunidades.Vendedor = 4; }
+                //else if (this.cmbVendedor.SelectedIndex == 4)
+                //{ this.oportunidades.Vendedor = 5; }
+               // this.oportunidades.Nombrecliente = this.cmbNombre.SelectedIndex + 1;
+                //if (this.cmbNombre.SelectedIndex == 0)
+                //{ this.oportunidades.Nombrecliente = 1; }
+                //else if (this.cmbNombre.SelectedIndex == 1)
+                //{ this.oportunidades.Nombrecliente = 2; }
+                //else if (this.cmbNombre.SelectedIndex == 2)
+                //{ this.oportunidades.Nombrecliente = 3; }
+                //else if (this.cmbNombre.SelectedIndex == 3)
+                //{ this.oportunidades.Nombrecliente = 4; }
+                //else if (this.cmbNombre.SelectedIndex == 4)
+                //{ this.oportunidades.Nombrecliente = 5; }
 
                 this.oportunidades.opc = 4;
 
@@ -373,14 +374,14 @@ namespace QNS_SysInv_X.MVCView
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    this.cmbNombre.Text = fila["nombreCliente"].ToString();
+                    this.cmbNombre.Text = fila["Nombre_Cliente"].ToString();
                     this.txtMarca.Text = fila["marca"].ToString();
                     this.txtDetalles.Text = fila["detalles"].ToString();
                     this.txtPresupuesto.Text = fila["presupuesto"].ToString();
-                    this.cmbVendedor.Text = fila["vendedor"].ToString();
+                    this.cmbVendedor.Text = fila["Nombre_Vendedor"].ToString();
                     this.cmbNombre.Enabled = false;
-                    this.dtpFecha.Text = fila["fechaCierre"].ToString();
-                    this.idl.Text = fila["id"].ToString();
+                    this.dtpFecha.Text = fila["Fecha_de_Cierre"].ToString();
+                    this.idl.Text = fila["Cedula"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }

@@ -66,6 +66,31 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
+        private void cargarComboCedula()
+        {
+            try
+            {
+                this.vendedores = new Vendedores();
+                this.vendedores.opc = 6;
+                this.vendedoresH = new VendedoresHelper(vendedores);
+                this.table = new DataTable();
+                this.table = this.vendedoresH.Listar();
+
+
+                if (this.table.Rows.Count > 0)
+                {
+                    this.cmbCed.DataSource = this.table;
+                    cmbCed.ValueMember = "cedula";
+                    cmbCed.DisplayMember = "cedula";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         #region LISTAR CLientes
         private void listar()
         {
@@ -73,7 +98,7 @@ namespace QNS_SysInv_X.MVCView
             {
 
                 this.clientes = new Clientes();
-                this.clientes.opc = 1;
+                this.clientes.opc = 6;
 
                 this.clientesH = new ClientesHelper(clientes);
 
@@ -106,8 +131,7 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Contacto = this.txtContacto.Text;
                 this.clientes.Nombre = this.txtNomb.Text;
                 this.clientes.Correo = this.txtMail.Text;
-                if (this.cmbVende.SelectedIndex == 0)
-                { this.clientes.Agente = 1; }
+
                 else if (this.cmbVende.SelectedIndex == 1)
                 { this.clientes.Agente = 2; }
                 else if (this.cmbVende.SelectedIndex == 2)
@@ -164,6 +188,7 @@ namespace QNS_SysInv_X.MVCView
         private void GestorClientes_Load(object sender, EventArgs e)
         {
             cargarComboVendedor();
+            cargarComboCedula();
             listar();
         }
 
@@ -311,24 +336,25 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Contacto = this.txtContacto.Text;
                 this.clientes.Nombre= this.txtNomb.Text;
                 this.clientes.Correo = this.txtMail.Text;
-                if (this.cmbVende.SelectedIndex == 0)
-                { this.clientes.Agente = 1; }
-                else if (this.cmbVende.SelectedIndex == 1)
-                { this.clientes.Agente = 2; }
-                else if (this.cmbVende.SelectedIndex == 2)
-                { this.clientes.Agente = 3; }
-                else if (this.cmbVende.SelectedIndex == 3)
-                { this.clientes.Agente = 4; }
-                else if (this.cmbVende.SelectedIndex == 4)
-                { this.clientes.Agente = 5; }
-                 else if (this.cmbVende.SelectedIndex == 4)
-                { this.clientes.Agente = 5; }
-                else if (this.cmbVende.SelectedIndex == 5)
-                { this.clientes.Agente = 6; }
-                else if (this.cmbVende.SelectedIndex == 6)
-                { this.clientes.Agente = 7; }
-                else if (this.cmbVende.SelectedIndex == 7)
-                { this.clientes.Agente = 8; }
+                this.clientes.Agente = this.cmbVende.SelectedIndex + 1;
+                //if (this.cmbVende.SelectedIndex == 0)
+                //{ this.clientes.Agente = 1; }
+                //else if (this.cmbVende.SelectedIndex == 1)
+                //{ this.clientes.Agente = 2; }
+                //else if (this.cmbVende.SelectedIndex == 2)
+                //{ this.clientes.Agente = 3; }
+                //else if (this.cmbVende.SelectedIndex == 3)
+                //{ this.clientes.Agente = 4; }
+                //else if (this.cmbVende.SelectedIndex == 4)
+                //{ this.clientes.Agente = 5; }
+                // else if (this.cmbVende.SelectedIndex == 4)
+                //{ this.clientes.Agente = 5; }
+                //else if (this.cmbVende.SelectedIndex == 5)
+                //{ this.clientes.Agente = 6; }
+                //else if (this.cmbVende.SelectedIndex == 6)
+                //{ this.clientes.Agente = 7; }
+                //else if (this.cmbVende.SelectedIndex == 7)
+                //{ this.clientes.Agente = 8; }
 
                 this.clientes.Direccion = this.rtbDireccion.Text;
 
@@ -375,7 +401,7 @@ namespace QNS_SysInv_X.MVCView
                     this.txtTel.Text = fila["telefono"].ToString();
                     this.txtMail.Text = fila["correo"].ToString();
                     this.txtCedula.ReadOnly = true;
-                    this.cmbVende.Text = fila["agente"].ToString();
+                    this.cmbVende.Text = fila["Nombre_Cliente"].ToString();
                     this.rtbDireccion.Text = fila["direcion"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
@@ -447,6 +473,15 @@ namespace QNS_SysInv_X.MVCView
             {
                 e.Cancel = false;
             }
+        }
+
+        private void cmbVende_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cmbCedula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

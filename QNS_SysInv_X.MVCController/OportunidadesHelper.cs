@@ -36,7 +36,8 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@nombrecliente";
-                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
                 parParameter[1].SqlValue = objOportunidades.Nombrecliente;
 
                 parParameter[2] = new SqlParameter();

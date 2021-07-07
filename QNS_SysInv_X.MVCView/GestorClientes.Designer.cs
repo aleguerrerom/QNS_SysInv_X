@@ -64,6 +64,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cmbCed = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -327,6 +328,7 @@
             this.cmbVende.Name = "cmbVende";
             this.cmbVende.Size = new System.Drawing.Size(194, 21);
             this.cmbVende.TabIndex = 3;
+            this.cmbVende.SelectedIndexChanged += new System.EventHandler(this.cmbVende_SelectedIndexChanged);
             // 
             // cmbVendedor
             // 
@@ -486,12 +488,24 @@
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(0, 17);
             // 
+            // cmbCed
+            // 
+            this.cmbCed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCed.FormattingEnabled = true;
+            this.cmbCed.ItemHeight = 13;
+            this.cmbCed.Location = new System.Drawing.Point(189, 229);
+            this.cmbCed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCed.Name = "cmbCed";
+            this.cmbCed.Size = new System.Drawing.Size(194, 21);
+            this.cmbCed.TabIndex = 4;
+            // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(769, 553);
+            this.Controls.Add(this.cmbCed);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox8);
@@ -573,5 +587,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
+        private System.Windows.Forms.ComboBox cmbCed;
     }
 }
