@@ -264,6 +264,40 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+
+        public DataTable Buscar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objRoles.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@ID";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objRoles.ID1;
+
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPRoles");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
     }
 
 

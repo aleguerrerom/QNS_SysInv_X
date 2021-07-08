@@ -84,7 +84,8 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[4] = new SqlParameter();
                 parParameter[4].ParameterName = "@telefono";
-                parParameter[4].SqlDbType = SqlDbType.Int;
+                parParameter[4].SqlDbType = SqlDbType.VarChar;
+                parParameter[4].Size = 50;
                 parParameter[4].SqlValue = objClientes.Telefono;
 
                 parParameter[5] = new SqlParameter();
@@ -101,8 +102,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[7] = new SqlParameter();
                 parParameter[7].ParameterName = "@agente";
-                parParameter[7].SqlDbType = SqlDbType.VarChar;
-                parParameter[7].Size = 50;
+                parParameter[7].SqlDbType = SqlDbType.Int;
                 parParameter[7].SqlValue = objClientes.Agente;
 
 
@@ -160,7 +160,8 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[4] = new SqlParameter();
                 parParameter[4].ParameterName = "@telefono";
-                parParameter[4].SqlDbType = SqlDbType.Int;
+                parParameter[4].SqlDbType = SqlDbType.VarChar;
+                parParameter[4].Size = 50;
                 parParameter[4].SqlValue = objClientes.Telefono;
 
                 parParameter[5] = new SqlParameter();
@@ -177,8 +178,7 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[7] = new SqlParameter();
                 parParameter[7].ParameterName = "@agente";
-                parParameter[7].SqlDbType = SqlDbType.VarChar;
-                parParameter[7].Size = 50;
+                parParameter[7].SqlDbType = SqlDbType.Int;
                 parParameter[7].SqlValue = objClientes.Agente;
 
                 parParameter[8] = new SqlParameter();
@@ -226,7 +226,39 @@ namespace QNS_SysInv_X.MVCController
 
         }
 
-     
+        public DataTable Buscar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objClientes.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objClientes.Cedula;
+
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPClientes");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
 
     }
 }

@@ -195,7 +195,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (validate_letter.IsMatch(txtContacto.Text) != true)
                 {
                     MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtContacto.Text.Remove(txtCliente.Text.Length - 1);
+                txtContacto.Text.Remove(txtContacto.Text.Length - 1);
                 txtContacto.Focus();
                 }
 
@@ -258,6 +258,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 e.Cancel = false;
             }
+        }
+
+        private void Entregas_Load(object sender, EventArgs e)
+        {
+            listar();
         }
     }
 }

@@ -467,5 +467,40 @@ namespace QNS_SysInv_X.MVCView
                 e.Cancel = false;
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text == "")
+                {
+                    listar();
+                }
+                else
+                {
+                    this.oportunidades = new Oportunidades();
+                    this.oportunidades.opc = 6;
+                    this.oportunidades.Id = int.Parse(txtBuscar.Text);
+                    this.oportunidadesH = new OportunidadesHelper(oportunidades);
+
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.oportunidadesH.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+
+                    else listar();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

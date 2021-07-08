@@ -65,6 +65,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.cmbCed = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -84,7 +86,7 @@
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(33, 242);
+            pictureBox1.Location = new System.Drawing.Point(12, 241);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(335, 120);
@@ -97,7 +99,7 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(661, 329);
+            this.btnReport.Location = new System.Drawing.Point(595, 328);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
             this.btnReport.TabIndex = 11;
@@ -153,7 +155,7 @@
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
-            this.dgvListar.Size = new System.Drawing.Size(734, 172);
+            this.dgvListar.Size = new System.Drawing.Size(776, 172);
             this.dgvListar.TabIndex = 57;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
@@ -167,7 +169,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(519, 328);
+            this.btnCancel.Location = new System.Drawing.Point(474, 328);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
@@ -182,7 +184,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(374, 328);
+            this.btnAdd.Location = new System.Drawing.Point(353, 328);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
@@ -210,7 +212,7 @@
             // 
             this.rtbDireccion.Location = new System.Drawing.Point(118, 14);
             this.rtbDireccion.Name = "rtbDireccion";
-            this.rtbDireccion.Size = new System.Drawing.Size(222, 75);
+            this.rtbDireccion.Size = new System.Drawing.Size(222, 94);
             this.rtbDireccion.TabIndex = 8;
             this.rtbDireccion.Text = "";
             this.rtbDireccion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -222,7 +224,7 @@
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Image = ((System.Drawing.Image)(resources.GetObject("txtDireccion.Image")));
             this.txtDireccion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.txtDireccion.Location = new System.Drawing.Point(8, 41);
+            this.txtDireccion.Location = new System.Drawing.Point(9, 58);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(92, 16);
             this.txtDireccion.TabIndex = 3;
@@ -357,7 +359,6 @@
             this.groupBox2.Size = new System.Drawing.Size(363, 44);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "º";
             // 
             // txtContacto
             // 
@@ -462,7 +463,7 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(769, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 66;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -479,7 +480,7 @@
             this.stsUsuario});
             this.statusStrip1.Location = new System.Drawing.Point(0, 531);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(769, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 67;
             this.statusStrip1.Text = "stsUsuario";
             // 
@@ -493,18 +494,39 @@
             this.cmbCed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCed.FormattingEnabled = true;
             this.cmbCed.ItemHeight = 13;
-            this.cmbCed.Location = new System.Drawing.Point(189, 229);
+            this.cmbCed.Location = new System.Drawing.Point(386, 299);
             this.cmbCed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCed.Name = "cmbCed";
             this.cmbCed.Size = new System.Drawing.Size(194, 21);
             this.cmbCed.TabIndex = 4;
+            this.cmbCed.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(694, 322);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.TabIndex = 73;
+            this.label9.Text = "Buscar por ID:";
+            this.label9.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(697, 341);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
+            this.txtBuscar.TabIndex = 72;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(769, 553);
+            this.ClientSize = new System.Drawing.Size(800, 553);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbCed);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -588,5 +610,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
         private System.Windows.Forms.ComboBox cmbCed;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

@@ -403,6 +403,40 @@ namespace QNS_SysInv_X.MVCView
            
           
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text == "")
+                {
+                    listar();
+                }
+                else
+                {
+                    this.vendedor = new Vendedores();
+                    this.vendedor.opc = 6;
+                    this.vendedor.Cedula = int.Parse(txtBuscar.Text);
+                    this.vendedorH = new VendedoresHelper(vendedor);
+
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.vendedorH.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+
+                    else listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 
 }

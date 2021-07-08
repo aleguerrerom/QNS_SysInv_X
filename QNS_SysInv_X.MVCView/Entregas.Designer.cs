@@ -576,6 +576,7 @@
             this.Name = "Entregas";
             this.Text = "ENTREGA  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Entregas_FormClosing);
+            this.Load += new System.EventHandler(this.Entregas_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();

@@ -20,12 +20,16 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
+            //TODO: esta línea de código carga datos en la tabla 'DataSet_ReporteInventarios.SPReporte_inventarios_totales_generales' Puede moverla o quitarla según sea necesario.
+            //this.SPReporte_inventarios_totales_generalesTableAdapter.Fill(this.DataSet_ReporteInventarios.SPReporte_inventarios_totales_generales);
+            //TODO: esta línea de código carga datos en la tabla 'DataSet_ReporteInventarios.SPReporteIventarios' Puede moverla o quitarla según sea necesario.
+            //this.SPReporteIventariosTableAdapter.Fill(this.DataSet_ReporteInventarios.SPReporteIventarios);
+
+
+            //this.reportViewer1.RefreshReport();
+
             // TODO: This line of code loads data into the 'dS_QNS.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
-            // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
-
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 

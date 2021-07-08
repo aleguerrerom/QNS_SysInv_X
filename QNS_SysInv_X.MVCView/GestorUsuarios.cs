@@ -450,22 +450,29 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             try
             {
-                this.user = new Usuarios();
-                this.user.opc = 7;
-                this.user.Usuario = txtBuscar.Text;
-                this.userHelper = new UsuariosHelper(user);
-
-                this.table = new DataTable();
-                dgvListar.DataSource = table;
-                this.table = this.userHelper.Buscar();
-                
-                if (this.table.Rows.Count > 0)
+                if (txtBuscar.Text == "")
                 {
-                    this.dgvListar.DataSource = this.table;
-                    this.dgvListar.ReadOnly = true;
+                    listar();
                 }
+                else
+                {
+                    this.user = new Usuarios();
+                    this.user.opc = 7;
+                    this.user.Usuario = txtBuscar.Text;
+                    this.userHelper = new UsuariosHelper(user);
 
-                else listar();
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.userHelper.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+
+                    else listar();
+                }
             }
             catch (Exception ex)
             {

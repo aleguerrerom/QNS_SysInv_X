@@ -380,5 +380,39 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text == "")
+                {
+                    listar();
+                }
+                else
+                {
+                    this.roles = new Roles();
+                    this.roles.opc = 6;
+                    this.roles.ID1 = int.Parse(txtBuscar.Text);
+                    this.rolH = new RolesHelper(roles);
+
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.rolH.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+
+                    else listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

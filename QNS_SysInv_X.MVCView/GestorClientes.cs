@@ -57,28 +57,6 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbVende.DataSource = this.table;
                     cmbVende.ValueMember = "nombre";
                     cmbVende.DisplayMember = "nombre";
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void cargarComboCedula()
-        {
-            try
-            {
-                this.vendedores = new Vendedores();
-                this.vendedores.opc = 6;
-                this.vendedoresH = new VendedoresHelper(vendedores);
-                this.table = new DataTable();
-                this.table = this.vendedoresH.Listar();
-
-
-                if (this.table.Rows.Count > 0)
-                {
                     this.cmbCed.DataSource = this.table;
                     cmbCed.ValueMember = "cedula";
                     cmbCed.DisplayMember = "cedula";
@@ -91,6 +69,7 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
+     
         #region LISTAR CLientes
         private void listar()
         {
@@ -131,27 +110,9 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Contacto = this.txtContacto.Text;
                 this.clientes.Nombre = this.txtNomb.Text;
                 this.clientes.Correo = this.txtMail.Text;
-
-                else if (this.cmbVende.SelectedIndex == 1)
-                { this.clientes.Agente = 2; }
-                else if (this.cmbVende.SelectedIndex == 2)
-                { this.clientes.Agente = 3; }
-                else if (this.cmbVende.SelectedIndex == 3)
-                { this.clientes.Agente = 4; }
-                else if (this.cmbVende.SelectedIndex == 4)
-                { this.clientes.Agente = 5; }
-                else if (this.cmbVende.SelectedIndex == 5)
-                { this.clientes.Agente = 6; }
-                else if (this.cmbVende.SelectedIndex == 6)
-                { this.clientes.Agente = 7; }
-                else if (this.cmbVende.SelectedIndex == 7)
-                { this.clientes.Agente = 8; }
-                else if (this.cmbVende.SelectedIndex == 8)
-                { this.clientes.Agente = 9; }
-                else if (this.cmbVende.SelectedIndex == 9)
-
-                { this.clientes.Agente = 10; }
+                this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
+                this.clientes.Telefono = this.txtTelefono.Text;
                 this.clientes.opc = 2;
                 this.clientesH = new ClientesHelper(clientes);
                 ///LOG PARA USUARIOS
@@ -188,7 +149,6 @@ namespace QNS_SysInv_X.MVCView
         private void GestorClientes_Load(object sender, EventArgs e)
         {
             cargarComboVendedor();
-            cargarComboCedula();
             listar();
         }
 
@@ -336,30 +296,11 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Contacto = this.txtContacto.Text;
                 this.clientes.Nombre= this.txtNomb.Text;
                 this.clientes.Correo = this.txtMail.Text;
-                this.clientes.Agente = this.cmbVende.SelectedIndex + 1;
-                //if (this.cmbVende.SelectedIndex == 0)
-                //{ this.clientes.Agente = 1; }
-                //else if (this.cmbVende.SelectedIndex == 1)
-                //{ this.clientes.Agente = 2; }
-                //else if (this.cmbVende.SelectedIndex == 2)
-                //{ this.clientes.Agente = 3; }
-                //else if (this.cmbVende.SelectedIndex == 3)
-                //{ this.clientes.Agente = 4; }
-                //else if (this.cmbVende.SelectedIndex == 4)
-                //{ this.clientes.Agente = 5; }
-                // else if (this.cmbVende.SelectedIndex == 4)
-                //{ this.clientes.Agente = 5; }
-                //else if (this.cmbVende.SelectedIndex == 5)
-                //{ this.clientes.Agente = 6; }
-                //else if (this.cmbVende.SelectedIndex == 6)
-                //{ this.clientes.Agente = 7; }
-                //else if (this.cmbVende.SelectedIndex == 7)
-                //{ this.clientes.Agente = 8; }
-
+                this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
-
+                this.clientes.Telefono = this.txtTelefono.Text;
                 this.clientes.opc = 4;
-
+         
                 this.clientesH = new ClientesHelper(clientes);
                 
                  this.bitacora = new Bitacora();
@@ -397,11 +338,11 @@ namespace QNS_SysInv_X.MVCView
                     this.txtCedula.Text = fila["cedula"].ToString();
                     this.cmbTipo.Text = fila["tipo"].ToString();
                     this.txtContacto.Text = fila["contacto"].ToString();
-                    this.txtNomb.Text = fila["nombre"].ToString();
+                    this.txtNomb.Text = fila["Nombre_Cliente"].ToString();
                     this.txtTel.Text = fila["telefono"].ToString();
                     this.txtMail.Text = fila["correo"].ToString();
                     this.txtCedula.ReadOnly = true;
-                    this.cmbVende.Text = fila["Nombre_Cliente"].ToString();
+                    this.cmbVende.Text = fila["Nombre_Vendedor"].ToString();
                     this.rtbDireccion.Text = fila["direcion"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
@@ -435,22 +376,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-
-            if (this.cmbVendedor.Text != "" || this.txtCedula.Text != "" || this.txtContacto.Text != "" ||
-                   this.txtContacto.Text != "" || this.txtMail.Text != "" ||
-                     this.cmbTipo.Text != "" || this.txtTel.Text != "" || this.txtNomb.Text == "")
-            {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                }
-            }
-            else
-                this.Close();
+            this.Close();
         }
 
         private void GestorClientes_FormClosing(object sender, FormClosingEventArgs e)
@@ -482,6 +408,39 @@ namespace QNS_SysInv_X.MVCView
         private void cmbCedula_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text == "")
+                {
+                    listar();
+                }
+                else {
+                    this.clientes = new Clientes();
+                    this.clientes.opc = 7;
+                    this.clientes.Cedula = int.Parse(txtBuscar.Text);
+                    this.clientesH = new ClientesHelper(clientes);
+
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.clientesH.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+                
+                else listar();
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
