@@ -347,6 +347,8 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(715, 436);
+            this.MinimumSize = new System.Drawing.Size(715, 436);
             this.Name = "Principal";
             this.Text = "PRINCIPAL  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Principal_Load);

@@ -35,11 +35,6 @@ namespace QNS_SysInv_X.MVCView
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,7 +49,6 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora.opc = 2;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogSesion();
-               
             }
             catch (Exception ex)
             {
@@ -78,8 +72,7 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
                 {
-                    MessageBox.Show("Solo letras y numeros son permitios en campo de Usuario", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    
+                    MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                
@@ -89,11 +82,9 @@ namespace QNS_SysInv_X.MVCView
                     this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text);
                    // this.user.Clave = this.txtClaveLogin.Text;
                     this.user.opc = 5;
-
                     this.userHelper = new UsuariosHelper(user);
                     this.table = new DataTable();
                     this.table = this.userHelper.ValidarLogin();
-
                     
                     if (table.Rows.Count > 0)
                     {
@@ -109,14 +100,11 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else MessageBox.Show("Datos de inicio de sesión incorrectos o Usuario Inactivo");
                 }
-              
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

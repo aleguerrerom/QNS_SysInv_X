@@ -342,7 +342,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                    MessageBox.Show("No hay Registros de roles para actualizar");
                 }
                 else
                 {

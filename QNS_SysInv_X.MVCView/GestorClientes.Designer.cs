@@ -215,7 +215,6 @@
             this.rtbDireccion.Size = new System.Drawing.Size(222, 94);
             this.rtbDireccion.TabIndex = 8;
             this.rtbDireccion.Text = "";
-            this.rtbDireccion.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // txtDireccion
             // 
@@ -330,7 +329,6 @@
             this.cmbVende.Name = "cmbVende";
             this.cmbVende.Size = new System.Drawing.Size(194, 21);
             this.cmbVende.TabIndex = 3;
-            this.cmbVende.SelectedIndexChanged += new System.EventHandler(this.cmbVende_SelectedIndexChanged);
             // 
             // cmbVendedor
             // 
@@ -432,7 +430,6 @@
             this.groupBox8.Size = new System.Drawing.Size(363, 44);
             this.groupBox8.TabIndex = 60;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
             // txtNomb
             // 
@@ -506,9 +503,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(694, 322);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.Size = new System.Drawing.Size(97, 13);
             this.label9.TabIndex = 73;
-            this.label9.Text = "Buscar por ID:";
+            this.label9.Text = "Buscar por Cedula:";
             this.label9.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtBuscar

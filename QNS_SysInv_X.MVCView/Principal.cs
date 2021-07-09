@@ -25,7 +25,6 @@ namespace QNS_SysInv_X.MVCView
         public Principal()
         {
             InitializeComponent();
-            
         }
 
         public Principal(Usuarios usuario)
@@ -33,7 +32,6 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
             this.user = usuario;
             this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre + " " + this.user.Apellido + " Usuario "+ this.user.Usuario ;
-            
         }
 
         private void LogCierreSesion()
@@ -45,15 +43,13 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora.opc = 3;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogSesion();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-
+        
         private void validarPerfil()
         {
            
@@ -109,18 +105,14 @@ namespace QNS_SysInv_X.MVCView
                 clientesToolStripMenuItem.Visible = true;
                 clmReporteCli.Visible = true;
             }
-
         }
-
-      
+        
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
             AcercaDe about = new AcercaDe();
             about.Show();
         }
-
         
-
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
             GestorInventario inve = new GestorInventario();
@@ -129,7 +121,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void Entrega_Click(object sender, EventArgs e)
         {
-            Entregas entr = new Entregas();
+            GestorEntregas entr = new GestorEntregas();
             entr.Show();
         }
         
@@ -153,7 +145,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsEntrega(object sender, EventArgs e)
         {
-            Entregas entr = new Entregas();
+            GestorEntregas entr = new GestorEntregas();
             entr.Show();
         }
 
@@ -199,7 +191,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsrEntrega_Click(object sender, EventArgs e)
         {
-            Entregas entr = new Entregas();
+            GestorEntregas entr = new GestorEntregas();
             entr.Show();
         }
 
@@ -210,7 +202,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void Principal_Load(object sender, EventArgs e)
         {
-                validarPerfil();
+            validarPerfil();
         }
 
         private void tslBitacora_Click(object sender, EventArgs e)
@@ -239,13 +231,13 @@ namespace QNS_SysInv_X.MVCView
 
         private void entregaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Entregas entr = new Entregas();
+            GestorEntregas entr = new GestorEntregas(user);
             entr.Show();
         }
 
         private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Prestamo prestamo = new Prestamo();
+            GestorPrestamo prestamo = new GestorPrestamo(user);
             prestamo.Show();
         }
 
@@ -257,7 +249,6 @@ namespace QNS_SysInv_X.MVCView
         private void Principal_Leave(object sender, EventArgs e)
         {
             LogCierreSesion();
-
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -342,7 +333,6 @@ namespace QNS_SysInv_X.MVCView
         {
             ReportePrestamo repoPrestamo = new ReportePrestamo();
             repoPrestamo.Show();
-
         }
     }
 }

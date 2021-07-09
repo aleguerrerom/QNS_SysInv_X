@@ -26,7 +26,6 @@ namespace QNS_SysInv_X.MVCController
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[11];

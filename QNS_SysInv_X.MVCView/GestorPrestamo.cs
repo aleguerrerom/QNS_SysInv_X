@@ -12,14 +12,14 @@ using QNS_SysInv_X.MVCController;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class Prestamo : Form
+    public partial class GestorPrestamo : Form
     {
-        public Prestamo()
+        public GestorPrestamo()
         {
             InitializeComponent();
         }
 
-        public Prestamo(Usuarios usuario)
+        public GestorPrestamo(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;
@@ -66,12 +66,7 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -129,7 +124,6 @@ namespace QNS_SysInv_X.MVCView
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             
@@ -150,16 +144,11 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-
                 procesarPrestamo();
                 AlmacenarPrestamo();
                 limpiar();
                 listar();
-            
             }
-            
-                  
-            
             #endregion
         }
 
@@ -180,8 +169,8 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.opc = 6;
                 this.invH = new InventarioHelper(inventario);
                 ///LOG PARA USUARIOS
-
-             
+                ///
+                
                 this.invH.CambioDeEstado();
                 MessageBox.Show("El articulo fue procesado para prestamo correctamente");
 
@@ -208,7 +197,6 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.cmbCliente.SelectedIndex == 2)
                 { this.prestamos.Id_cliente = 3; }
                
-
                 this.prestamos.opc = 7;
                 this.presH = new PrestamoHelper(prestamos);
 
@@ -219,9 +207,8 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-                ///LOG PARA USUARIOS
-
-
+                ///LOG PARA PRESTAMOS
+                
                 this.presH.Prestamo();
                 MessageBox.Show("El articulo fue procesado para prestamo correctamente");
 

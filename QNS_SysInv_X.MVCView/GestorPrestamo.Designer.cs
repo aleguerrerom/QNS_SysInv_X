@@ -1,6 +1,6 @@
 ﻿namespace QNS_SysInv_X.MVCView
 {
-    partial class Prestamo
+    partial class GestorPrestamo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.PictureBox pictureBox1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prestamo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorPrestamo));
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -117,7 +117,6 @@
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 57;
             this.label1.Text = "Seleccione Articulo:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // toolStrip1
             // 

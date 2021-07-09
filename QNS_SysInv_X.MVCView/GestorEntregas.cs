@@ -12,14 +12,14 @@ using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class Entregas : Form
+    public partial class GestorEntregas : Form
     {
-        public Entregas()
+        public GestorEntregas()
         {
             InitializeComponent();
         }
 
-        public Entregas(Usuarios usuario)
+        public GestorEntregas(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;
@@ -51,9 +51,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtCliente.Text != "" || this.txtTipo.Text != "" || this.txtSN.Text != "" || this.txtMarca.Text != "" || this.txtDireccion.Text != ""
                  || this.txtCantidad.Text != "" || this.txtDescripcion.Text != "" || this.txtEntregadoPor.Text != "" || this.txtContacto.Text != "")
             {
-                
-
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.Close();
@@ -71,12 +69,9 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-
                 this.entrega = new Entrega();
                 this.entrega.Opc = 1;
-
                 this.entregaH = new EntregaHelper(entrega);
-
                 this.table = new DataTable();
                 this.table = this.entregaH.Listar();
 
@@ -117,7 +112,7 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA USUARIOS
                 ///
                 this.bitacora = new Bitacora();
-               // this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Ingreso entrega";
                 this.bitacora.Detalle = "Se proceso la entrega correctamente";
                 this.bitacora.opc = 5;
@@ -125,7 +120,51 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.entregaH.Entrega();
-                MessageBox.Show("entrega Almacenado");
+                MessageBox.Show("Entrega almacenada");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region GUARDAR entrega
+        //FUNCION AGREGAR NUEVO USUARIO
+        private void actualizar()
+        {
+            try
+            {
+                //AGREGAR NUEVO USUARIO int.Parse(
+                this.entrega = new Entrega();
+                this.entrega.Cliente = this.txtCliente.Text;
+                this.entrega.Tipo = this.txtTipo.Text;
+                this.entrega.NumeroDeSerie = this.txtSN.Text;
+                this.entrega.Marca = this.txtMarca.Text;
+                this.entrega.Fecha = this.dtpFecha.Value;
+                this.entrega.Contacto = this.txtContacto.Text;
+                this.entrega.Dirrecion = this.txtDireccion.Text;
+                this.entrega.Cantidad = int.Parse(this.txtCantidad.Text);
+                this.entrega.Descripcion = this.txtDescripcion.Text;
+                this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
+                this.entrega.Id = int.Parse(this.txtID.Text);
+
+                this.entrega.Opc = 3;
+                this.entregaH = new EntregaHelper(entrega);
+                ///LOG PARA USUARIOS
+                ///
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Movimiento = "Actualización de entrega";
+                this.bitacora.Detalle = "Se actualizo la entrega correctamente";
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+
+                this.entregaH.Entrega();
+                MessageBox.Show("Entrega actualizada");
 
             }
             catch (Exception ex)
@@ -148,26 +187,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtDescripcion.Text = "";
             this.txtEntregadoPor.Text = "";
             this.txtContacto.Text = "";
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            this.txtID.ReadOnly = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -225,19 +245,71 @@ namespace QNS_SysInv_X.MVCView
                 }
             else
                 {
-                    guardar();
-                    // procesarPrestamo();
-                    // AlmacenarPrestamo();
-                    limpiar();
-                    listar();
+                if (this.txtID.ReadOnly == true)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Desea actualiar el articulo?", "Actualizar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+
+                        actualizar();
+                        listar();
+                        limpiar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se actualizo el articulo");
+                    }
                 }
+                else
+                {
 
-            
+                    guardar();
+                    listar();
+                    limpiar();
 
-
-
+                }
+            }
+          
             #endregion
         }
+
+
+        #region CARGAR DE TABLA
+        private void CargarFromTable()
+        {
+            try
+            {
+                this.table = (DataTable)this.dgvListar.DataSource;
+                if (table == null)
+                {
+                    MessageBox.Show("No hay Entregas para actualizar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.txtCliente.Text = fila["cliente"].ToString();
+                    this.txtTipo.Text = fila["tipo"].ToString();
+                    this.dtpFecha.Text = fila["fecha"].ToString();
+                    this.txtContacto.Text = fila["contacto"].ToString();
+                    this.txtDireccion.Text = fila["direccion"].ToString();
+                    this.txtID.ReadOnly = true;
+                    this.txtMarca.Text = fila["marca"].ToString();
+                    this.txtSN.Text = fila["numeroDeSerie"].ToString();
+                    this.txtCantidad.Text = fila["cantidad"].ToString();
+                    this.txtDescripcion.Text = fila["descripcion"].ToString();
+                    this.txtEntregadoPor.Text = fila["entregadoPor"].ToString();
+                    this.btnAdd.Text = "ACTUALIZAR";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        #endregion
 
         private void Entregas_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -262,6 +334,16 @@ namespace QNS_SysInv_X.MVCView
 
         private void Entregas_Load(object sender, EventArgs e)
         {
+            listar();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvListar_DoubleClick(object sender, EventArgs e)
+        {
+            CargarFromTable();
             listar();
         }
     }

@@ -206,7 +206,7 @@ namespace QNS_SysInv_X.MVCView
         }
         #endregion
 
-        #region ACTUALIZAR USUARIO
+        #region ACTUALIZAR ARTICULO
         private void actualizar()
         {
             try
@@ -235,7 +235,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
                 
                 this.invH.Actualizar();
-                MessageBox.Show("Registro actualizado");
+                MessageBox.Show("Registro de articulo actualizado");
             }
             catch (Exception ex)
             {
@@ -318,7 +318,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtNombreActivo.Text != "" || this.txtModelo.Text != "" || this.txtSerialNumber.Text != ""
             || this.cmbEstado.Text != "" || this.txtTipo.Text != "" || this.cmbBrand.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.Close();

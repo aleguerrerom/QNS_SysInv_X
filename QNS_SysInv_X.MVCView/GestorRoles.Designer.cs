@@ -140,7 +140,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(352, 316);
+            this.btnCancel.Location = new System.Drawing.Point(337, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 27);
             this.btnCancel.TabIndex = 11;
@@ -154,7 +154,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(245, 316);
+            this.btnAdd.Location = new System.Drawing.Point(230, 313);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 27);
             this.btnAdd.TabIndex = 10;
@@ -494,15 +494,15 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(452, 322);
+            this.label13.Location = new System.Drawing.Point(437, 322);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.Size = new System.Drawing.Size(94, 13);
             this.label13.TabIndex = 71;
-            this.label13.Text = "Buscar por Rol:";
+            this.label13.Text = "Buscar por ID Rol:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(538, 319);
+            this.txtBuscar.Location = new System.Drawing.Point(537, 319);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 70;

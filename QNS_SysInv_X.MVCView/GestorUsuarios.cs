@@ -40,28 +40,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.user = usuario;
             this.stsUsuario.Text = this.user.Usuario;
         }
-
-        #region LOGS MOVIMIENTO
         
-        private void LogMovimientos()
-        {
-            try
-            {
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.Movimiento = "Agregar";
-                this.bitacora.Detalle = "Se agrego un nuevo usuario";
-                this.bitacora.opc = 5;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        #endregion
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
@@ -110,7 +89,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                     cmbRol.ValueMember = "nombre";
                     cmbRol.DisplayMember = "nombre";
                 }
-
             }
             catch (Exception ex)
             {
@@ -136,13 +114,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                 }
                 else this.user.Activo = false;
                 this.user.Rol = this.cmbRol.SelectedIndex + 1;
-                //if (this.cmbRol.SelectedIndex == 0)
-                //{ this.user.Rol = 1; }
-                //else if (this.cmbRol.SelectedIndex == 1)
-                //{ this.user.Rol = 2; }
-                //else if (this.cmbRol.SelectedIndex == 2)
-                //{ this.user.Rol = 3; }
-                //this.user.Rol = int.Parse(this.cmbRol.Text);
                 this.user.Nombre = this.stsUsuario.Text;
                 this.user.Apellido = this.txtApellido.Text;
                 this.user.Correo = this.txtCorreo.Text;
@@ -160,7 +131,6 @@ namespace QNS_SysInv_X.MVCView.Resources
 
                 this.userHelper.Guardar();
                 MessageBox.Show("Usuario "+this.user.Usuario+" Almacenado");
-
             }
             catch (Exception ex)
             {
@@ -187,14 +157,14 @@ namespace QNS_SysInv_X.MVCView.Resources
 
             else if (validate_letter.IsMatch(txtApellido.Text) != true)
             {
-                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtApellido.Text.Remove(txtApellido.Text.Length - 1);
                 txtApellido.Focus();
             }
 
             else if (validate_letter.IsMatch(txtNombre.Text) != true)
             {
-                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNombre.Text.Remove(txtNombre.Text.Length - 1);
                 txtNombre.Focus();
             }
@@ -360,7 +330,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             //Bitacora 
             this.bitacora = new Bitacora();
             this.bitacora.Usuario = this.stsUsuario.Text;
-                this.bitacora.Movimiento = "Actualizar Usuario";
+            this.bitacora.Movimiento = "Actualizar Usuario";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;
             this.bitH = new BitacoraHelper(bitacora);
@@ -499,11 +469,6 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 e.Cancel = false;
             }
-        }
-
-        private void txtClave_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

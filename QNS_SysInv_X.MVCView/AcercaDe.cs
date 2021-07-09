@@ -24,11 +24,6 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
            
         }
-
-        private void AcercaDe_Load(object sender, EventArgs e)
-        {
-           
-
-        }
+        
     }
 }

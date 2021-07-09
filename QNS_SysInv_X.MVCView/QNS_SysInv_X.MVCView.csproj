@@ -168,11 +168,11 @@
     <Compile Include="CambiodeClave.Designer.cs">
       <DependentUpon>CambiodeClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entregas.cs">
+    <Compile Include="GestorEntregas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entregas.Designer.cs">
-      <DependentUpon>Entregas.cs</DependentUpon>
+    <Compile Include="GestorEntregas.Designer.cs">
+      <DependentUpon>GestorEntregas.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorInventario.cs">
       <SubType>Form</SubType>
@@ -186,11 +186,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prestamo.cs">
+    <Compile Include="GestorPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prestamo.Designer.cs">
-      <DependentUpon>Prestamo.cs</DependentUpon>
+    <Compile Include="GestorPrestamo.Designer.cs">
+      <DependentUpon>GestorPrestamo.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -266,8 +266,8 @@
     <EmbeddedResource Include="VerBitacora.resx">
       <DependentUpon>VerBitacora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entregas.resx">
-      <DependentUpon>Entregas.cs</DependentUpon>
+    <EmbeddedResource Include="GestorEntregas.resx">
+      <DependentUpon>GestorEntregas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestorUsuarios.resx">
       <DependentUpon>GestorUsuarios.cs</DependentUpon>
@@ -278,8 +278,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prestamo.resx">
-      <DependentUpon>Prestamo.cs</DependentUpon>
+    <EmbeddedResource Include="GestorPrestamo.resx">
+      <DependentUpon>GestorPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

@@ -25,16 +25,6 @@ namespace QNS_SysInv_X.MVCView
             this.reportViewer1.RefreshReport();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try

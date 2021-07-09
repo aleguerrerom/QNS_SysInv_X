@@ -136,16 +136,6 @@ namespace QNS_SysInv_X.MVCView
         }
         #endregion
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox8_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void GestorClientes_Load(object sender, EventArgs e)
         {
             cargarComboVendedor();
@@ -400,15 +390,7 @@ namespace QNS_SysInv_X.MVCView
                 e.Cancel = false;
             }
         }
-
-        private void cmbVende_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void cmbCedula_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {

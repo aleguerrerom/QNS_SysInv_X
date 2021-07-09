@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteInventario));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,10 +81,11 @@
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
             this.label1.Text = "FILTRAR POR:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(642, 33);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
@@ -96,12 +97,15 @@
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(751, 33);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
             this.button2.TabIndex = 58;
             this.button2.Text = "LIMPIAR";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -111,7 +115,6 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 22);
             this.txtFiltro.TabIndex = 59;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // inventarioTableAdapter
             // 
@@ -136,9 +139,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSInventario";
-            reportDataSource1.Value = this.inventarioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "DSInventario";
+            reportDataSource4.Value = this.inventarioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportInv.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(14, 153);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

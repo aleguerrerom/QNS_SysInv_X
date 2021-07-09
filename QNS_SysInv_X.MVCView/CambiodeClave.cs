@@ -15,8 +15,6 @@ namespace QNS_SysInv_X.MVCView
 {
     public partial class CambiodeClave : Form
     {
-
-
         private Usuarios user;
         private UsuariosHelper userHelper;
         private RolesHelper rolH;

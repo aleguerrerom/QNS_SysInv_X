@@ -212,7 +212,7 @@ namespace QNS_SysInv_X.MVCView
 
             else if (validate_number.IsMatch(txtPresupuesto.Text) != true)
             {
-                MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtPresupuesto.Text.Remove(txtPresupuesto.Text.Length - 1);
                 txtPresupuesto.Focus();
             }
@@ -315,33 +315,10 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
                 this.oportunidades.Id = int.Parse(this.idl.Text);
                 this.oportunidades.Vendedor = this.cmbVendedor.SelectedIndex + 1;
-                //if (this.cmbVendedor.SelectedIndex == 0)
-                //{ this.oportunidades.Vendedor = 1; }
-                //else if (this.cmbVendedor.SelectedIndex == 1)
-                //{ this.oportunidades.Vendedor = 2; }
-                //else if (this.cmbVendedor.SelectedIndex == 2)
-                //{ this.oportunidades.Vendedor = 3; }
-                //else if (this.cmbVendedor.SelectedIndex == 3)
-                //{ this.oportunidades.Vendedor = 4; }
-                //else if (this.cmbVendedor.SelectedIndex == 4)
-                //{ this.oportunidades.Vendedor = 5; }
-               // this.oportunidades.Nombrecliente = this.cmbNombre.SelectedIndex + 1;
-                //if (this.cmbNombre.SelectedIndex == 0)
-                //{ this.oportunidades.Nombrecliente = 1; }
-                //else if (this.cmbNombre.SelectedIndex == 1)
-                //{ this.oportunidades.Nombrecliente = 2; }
-                //else if (this.cmbNombre.SelectedIndex == 2)
-                //{ this.oportunidades.Nombrecliente = 3; }
-                //else if (this.cmbNombre.SelectedIndex == 3)
-                //{ this.oportunidades.Nombrecliente = 4; }
-                //else if (this.cmbNombre.SelectedIndex == 4)
-                //{ this.oportunidades.Nombrecliente = 5; }
-
                 this.oportunidades.opc = 4;
 
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
-
-
+                
                  this.bitacora = new Bitacora();
                  this.bitacora.Usuario = this.stsUsuario.Text;
                  this.bitacora.Movimiento = "Actualizar Oportunidad";
@@ -429,7 +406,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.cmbVendedor.Text != "" || this.cmbNombre.Text != "" || this.txtMarca.Text != ""
                || this.txtDetalles.Text != "" || this.txtPresupuesto.Text != "" || this.txtDetalles.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.Close();

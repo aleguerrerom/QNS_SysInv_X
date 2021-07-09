@@ -22,20 +22,9 @@ namespace QNS_SysInv_X.MVCView
             // TODO: This line of code loads data into the 'dS_QNS.AuditLog' table. You can move, or remove it, as needed.
             this.auditLogTableAdapter.Fill(this.dS_QNS.AuditLog);
             // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
-           
             this.reportViewer1.RefreshReport();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             if (cmbFiltro.SelectedIndex == 0)
@@ -69,33 +58,7 @@ namespace QNS_SysInv_X.MVCView
         {
 
         }
-
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbFiltro.SelectedIndex == 0)
-            {
-                txtFiltro.Visible = true;
-                dtpFecha.Visible = false;
-              
-            }
-            else if (cmbFiltro.SelectedIndex == 1)
-            {
-                dtpFecha.Visible = true;
-                txtFiltro.Visible = false;
-               
-            }
-            else if (cmbFiltro.SelectedIndex == 2)
-            {
-                dtpFecha.Visible = true;
-                txtFiltro.Visible = false;
-                
-            }
-
-        }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+        
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteEntrega));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EntregaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -92,12 +92,13 @@
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(640, 30);
+            this.button1.Location = new System.Drawing.Point(648, 29);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 28);
+            this.button1.Size = new System.Drawing.Size(88, 28);
             this.button1.TabIndex = 61;
             this.button1.Text = "FILTRO";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -105,32 +106,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(276, 31);
+            this.label1.Location = new System.Drawing.Point(277, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 60;
             this.label1.Text = "FILTRAR POR:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(494, 34);
+            this.txtFiltro.Location = new System.Drawing.Point(495, 34);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(130, 20);
             this.txtFiltro.TabIndex = 63;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(757, 30);
+            this.btnLimpiar.Location = new System.Drawing.Point(767, 30);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(101, 28);
+            this.btnLimpiar.Size = new System.Drawing.Size(91, 28);
             this.btnLimpiar.TabIndex = 64;
             this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -174,19 +174,18 @@
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
             this.cmbFiltrar.Items.AddRange(new object[] {
-            "Cedula",
-            "Nombre"});
+            "ID",
+            "Cedula"});
             this.cmbFiltrar.Location = new System.Drawing.Point(368, 33);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(121, 21);
             this.cmbFiltrar.TabIndex = 67;
-            this.cmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrar_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DSEntrega";
-            reportDataSource1.Value = this.EntregaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource7.Name = "DSEntrega";
+            reportDataSource7.Value = this.EntregaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportEntrega.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 128);
             this.reportViewer1.Name = "reportViewer1";

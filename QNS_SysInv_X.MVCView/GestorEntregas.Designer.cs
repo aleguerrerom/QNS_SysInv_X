@@ -1,6 +1,6 @@
 ﻿namespace QNS_SysInv_X.MVCView
 {
-    partial class Entregas
+    partial class GestorEntregas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entregas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorEntregas));
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListar = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,6 +70,7 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -95,7 +98,6 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 53;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // toolStripLabel1
             // 
@@ -143,11 +145,18 @@
             // dgvListar
             // 
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListar.Location = new System.Drawing.Point(9, 391);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.Size = new System.Drawing.Size(734, 155);
             this.dgvListar.TabIndex = 45;
+            this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
             // 
             // groupBox6
             // 
@@ -256,7 +265,6 @@
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
             this.txtTipo.TabIndex = 4;
-            this.txtTipo.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // groupBox3
             // 
@@ -280,7 +288,6 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(197, 13);
             this.txtSN.TabIndex = 5;
-            this.txtSN.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -309,7 +316,6 @@
             this.groupBox2.Size = new System.Drawing.Size(363, 44);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label3
             // 
@@ -550,12 +556,20 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // Entregas
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(413, 305);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(105, 20);
+            this.txtID.TabIndex = 69;
+            // 
+            // GestorEntregas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(761, 564);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
@@ -573,7 +587,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Entregas";
+            this.Name = "GestorEntregas";
             this.Text = "ENTREGA  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Entregas_FormClosing);
             this.Load += new System.EventHandler(this.Entregas_Load);
@@ -645,5 +659,7 @@
         private System.Windows.Forms.TextBox txtEntregadoPor;
         private System.Windows.Forms.Label lblEntregado;
         private System.Windows.Forms.StatusStrip stsUsuario;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteLogsInicio));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AuditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,27 +83,32 @@
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
             this.label1.Text = "FILTRAR POR:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(671, 39);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
             this.button1.TabIndex = 57;
             this.button1.Text = "FILTRO";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(764, 39);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
             this.button2.TabIndex = 58;
             this.button2.Text = "LIMPIAR";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -113,7 +118,6 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(138, 22);
             this.txtFiltro.TabIndex = 59;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // cmbFiltro
             // 
@@ -127,14 +131,13 @@
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 60;
-            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSLogInicio";
-            reportDataSource1.Value = this.AuditLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSLogInicio";
+            reportDataSource2.Value = this.AuditLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportLogsInicio.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 167);
             this.reportViewer1.Name = "reportViewer1";
@@ -167,7 +170,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(138, 22);
             this.dtpFecha.TabIndex = 63;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // dateTimePicker1
             // 

@@ -125,13 +125,12 @@ namespace QNS_SysInv_X.MVCView
         {
             if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
             {
-                MessageBox.Show("Invalid Email Address!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Formato de Correo incorrecto!", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCorreo.Focus();
                 return;
             }
             else
             {
-                MessageBox.Show("Email Address is valid.");
             }
         }
 
@@ -145,33 +144,33 @@ namespace QNS_SysInv_X.MVCView
             }
             else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
             {
-                MessageBox.Show("Correo Invalido", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCorreo.Focus();
                 return;
             }
 
             else  if (validate_letter.IsMatch(txtApellido.Text) != true)
             {
-                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtApellido.Text.Remove(txtApellido.Text.Length - 1);
                 txtApellido.Focus();
             }
 
             else if (validate_letter.IsMatch(txtNombre.Text) != true)
             {
-                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNombre.Text.Remove(txtNombre.Text.Length - 1);
                 txtNombre.Focus();
             }
             else if (validate_letter.IsMatch(txtApellido2.Text) != true)
             {
-                MessageBox.Show("El campo SEGUNDO APELLIDO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo SEGUNDO APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtApellido2.Text.Remove(txtApellido2.Text.Length - 1);
                 txtApellido2.Focus();
             }
             else if (validate_number.IsMatch(txtCedula.Text) != true)
             {
-                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCedula.Text.Remove(txtCedula.Text.Length - 1);
                 txtCedula.Focus();
             }
@@ -188,7 +187,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se elimino el vendedor");
+                        MessageBox.Show("No se eliminó el vendedor");
                     }
                 }
                 else
@@ -196,7 +195,6 @@ namespace QNS_SysInv_X.MVCView
                         guardar();
                         listar();
                         limpiar();
-                   
                 }
             }
             #endregion
@@ -214,7 +212,6 @@ namespace QNS_SysInv_X.MVCView
             this.txtCedula.ReadOnly = false;
             this.dtpFechaAnace.Value = DateTime.Today;
             this.btnAdd.Text = "AGREGAR";
-            
         }
         #endregion
 
@@ -278,7 +275,6 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-
                 this.vendedor = new Vendedores();
                 this.vendedor.Cedula = int.Parse(this.txtCedula.Text);
                 this.vendedor.Nombre = this.txtNombre.Text;
@@ -287,12 +283,10 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
                 this.vendedor.Correo = this.txtCorreo.Text;
-
                 this.vendedor.opc = 4;
 
                 this.vendedorH = new VendedoresHelper(vendedor);
-
-
+                ///LOGS ACTUALIZAR USUARIO
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Actualizar Vendedor";
@@ -319,7 +313,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                    MessageBox.Show("No hay Registros de Vendedor para actualizar");
                 }
                 else
                 {
@@ -341,14 +335,9 @@ namespace QNS_SysInv_X.MVCView
 
                 MessageBox.Show(ex.Message);
             }
-
         }
         #endregion
-
-        private void dgvListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -361,7 +350,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtCedula.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
              || this.txtApellido.Text != "" || this.txtApellido2.Text != "" || this.cmbGenero.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.Close();
@@ -386,7 +375,7 @@ namespace QNS_SysInv_X.MVCView
                 if (this.txtCedula.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
                   || this.txtApellido.Text != "" || this.txtApellido2.Text != "" || this.cmbGenero.Text != "")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderán lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                     e.Cancel = false;

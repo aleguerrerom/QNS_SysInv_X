@@ -129,7 +129,6 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysIn
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteUsuarios.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteInventario.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.VerBitacora.resources
-C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.Entregas.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.Resources.GestorUsuarios.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.GestorInventario.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.Login.resources
@@ -144,3 +143,5 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inven
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inventario.MVCView.pdb
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReportePrestamo.resources
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.ReporteEntrega.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\QNS_SysInv_X.MVCView.GestorEntregas.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\Datos.cs

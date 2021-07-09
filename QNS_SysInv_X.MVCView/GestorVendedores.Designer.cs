@@ -117,7 +117,6 @@
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.Size = new System.Drawing.Size(752, 190);
             this.dgvListar.TabIndex = 67;
-            this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip1

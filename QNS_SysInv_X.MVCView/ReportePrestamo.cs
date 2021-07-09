@@ -51,21 +51,11 @@ namespace QNS_SysInv_X.MVCView
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
 
             this.reportViewer1.RefreshReport();
-        }
-
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -74,11 +64,6 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

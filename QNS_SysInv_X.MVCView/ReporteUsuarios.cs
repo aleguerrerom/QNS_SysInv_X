@@ -63,11 +63,6 @@ namespace QNS_SysInv_X.MVCView
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
@@ -75,19 +70,9 @@ namespace QNS_SysInv_X.MVCView
             this.reportViewer1.RefreshReport();
         }
 
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

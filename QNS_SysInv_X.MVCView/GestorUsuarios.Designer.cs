@@ -213,7 +213,6 @@
             this.txtClave.Size = new System.Drawing.Size(197, 13);
             this.txtClave.TabIndex = 1;
             this.txtClave.UseSystemPasswordChar = true;
-            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             // 
             // label3
             // 
