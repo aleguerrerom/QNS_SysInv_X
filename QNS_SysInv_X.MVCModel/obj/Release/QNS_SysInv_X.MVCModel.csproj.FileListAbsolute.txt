@@ -1,0 +1,8 @@
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Release\Datos.cs
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Release\CNV_Inventario.MVCModel.dll.config
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Release\CNV_Inventario.MVCModel.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\bin\Release\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Release\CNV_Inventario.MVCModel.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Release\QNS_SysInv_X.MVCModel.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Release\CNV_Inventario.MVCModel.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCModel\obj\Release\CNV_Inventario.MVCModel.pdb

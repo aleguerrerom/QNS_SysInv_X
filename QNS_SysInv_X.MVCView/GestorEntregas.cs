@@ -192,7 +192,14 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            limpiar();
+            DialogResult dialogResult = MessageBox.Show("Desea borrar los datos ingresados?", "SALIR", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                limpiar();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -294,6 +301,7 @@ namespace QNS_SysInv_X.MVCView
                     this.txtContacto.Text = fila["contacto"].ToString();
                     this.txtDireccion.Text = fila["direccion"].ToString();
                     this.txtID.ReadOnly = true;
+                    this.txtID.Text = fila["ID"].ToString();
                     this.txtMarca.Text = fila["marca"].ToString();
                     this.txtSN.Text = fila["numeroDeSerie"].ToString();
                     this.txtCantidad.Text = fila["cantidad"].ToString();

@@ -127,4 +127,9 @@ namespace QNS_SysInv_X.MVCView
                 lblShow.Text = "VER CONTRASEÑA";
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
     } }

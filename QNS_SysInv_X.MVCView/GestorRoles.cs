@@ -151,7 +151,14 @@ namespace QNS_SysInv_X.MVCView
         #endregion
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            limpiar();
+            DialogResult dialogResult = MessageBox.Show("Desea borrar los datos ingresados?", "SALIR", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                limpiar();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+            }
         }
 
         #region GUARDAR ROL

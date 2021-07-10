@@ -1,0 +1,11 @@
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\Datos.cs
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\CNV_Inventario.MVCController.dll.config
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\CNV_Inventario.MVCController.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\CNV_Inventario.MVCController.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\CNV_Inventario.MVCModel.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\bin\Release\CNV_Inventario.MVCModel.pdb
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Release\QNS_SysInv_X.MVCController.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Release\CNV_Inventario.MVCController.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Release\QNS_SysInv_X.MVCController.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Release\CNV_Inventario.MVCController.dll
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCController\obj\Release\CNV_Inventario.MVCController.pdb
