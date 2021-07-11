@@ -131,8 +131,8 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel2.Text = "Salir";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // txtID
@@ -185,7 +185,7 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // Prestamo
+            // GestorPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Prestamo";
+            this.Name = "GestorPrestamo";
             this.Text = "PRESTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Prestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

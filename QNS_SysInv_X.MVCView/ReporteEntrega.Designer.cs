@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteEntrega));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EntregaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -147,8 +147,8 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel1.Text = "Salir";
+            this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel1.Text = "SALIR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // usuariosBindingSource
@@ -183,9 +183,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource7.Name = "DSEntrega";
-            reportDataSource7.Value = this.EntregaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource1.Name = "DSEntrega";
+            reportDataSource1.Value = this.EntregaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportEntrega.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 128);
             this.reportViewer1.Name = "reportViewer1";

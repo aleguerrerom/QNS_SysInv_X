@@ -48,20 +48,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            if (this.txtCliente.Text != "" || this.txtTipo.Text != "" || this.txtSN.Text != "" || this.txtMarca.Text != "" || this.txtDireccion.Text != ""
-                 || this.txtCantidad.Text != "" || this.txtDescripcion.Text != "" || this.txtEntregadoPor.Text != "" || this.txtContacto.Text != "")
-            {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
                     this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                }
-            }
-            else
-                this.Close();
         }
 
         #region LISTAR entrega
@@ -188,6 +175,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtEntregadoPor.Text = "";
             this.txtContacto.Text = "";
             this.txtID.ReadOnly = false;
+            limpiarAlertas();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -208,56 +196,187 @@ namespace QNS_SysInv_X.MVCView
             repoPrestamo.Show();
         }
 
+        private void limpiarAlertas()
+        {
+            lblCliente.BackColor = System.Drawing.Color.White;
+            lblCliente.ForeColor = System.Drawing.Color.Black;
+            gbCliente.BackColor = System.Drawing.Color.White;
+            lblDireccion.BackColor = System.Drawing.Color.White;
+            lblDireccion.ForeColor = System.Drawing.Color.Black;
+            gbDireccion.BackColor = System.Drawing.Color.White;
+            lblNS.BackColor = System.Drawing.Color.White;
+            lblNS.ForeColor = System.Drawing.Color.Black;
+            gpSN.BackColor = System.Drawing.Color.White;
+            lblDescripcion.BackColor = System.Drawing.Color.White;
+            lblDescripcion.ForeColor = System.Drawing.Color.Black;
+            gpDescripcion.BackColor = System.Drawing.Color.White;
+            lblTipo.BackColor = System.Drawing.Color.White;
+            lblTipo.ForeColor = System.Drawing.Color.Black;
+            gpTipo.BackColor = System.Drawing.Color.White;
+            lblMarca.BackColor = System.Drawing.Color.White;
+            lblMarca.ForeColor = System.Drawing.Color.Black;
+            gpMarca.BackColor = System.Drawing.Color.White;
+            lblContacto.BackColor = System.Drawing.Color.White;
+            lblContacto.ForeColor = System.Drawing.Color.Black;
+            gpContacto.BackColor = System.Drawing.Color.White;
+            lblCantidad.BackColor = System.Drawing.Color.White;
+            lblCantidad.ForeColor = System.Drawing.Color.Black;
+            gpCantidad.BackColor = System.Drawing.Color.White;
+            lblEntregado.BackColor = System.Drawing.Color.White;
+            lblEntregado.ForeColor = System.Drawing.Color.Black;
+            gpEntregado.BackColor = System.Drawing.Color.White;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtCliente.Text == "" || this.txtTipo.Text == "" || this.txtSN.Text == "" || this.txtMarca.Text == "" || this.txtDireccion.Text == ""
-                || this.txtCantidad.Text == "" || this.txtDescripcion.Text == "" || this.txtEntregadoPor.Text == "" || this.txtContacto.Text == "")
-            {
-            
-            MessageBox.Show("Tienes que completar todos los campos, para procesar la entrega");
+            if (this.txtCliente.Text == "" ) {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CLIENTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCliente.BackColor = System.Drawing.Color.DarkRed;
+                lblCliente.ForeColor = System.Drawing.Color.White;
+                gbCliente.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCliente;
+                return;
             }
-                
-
-                else if (validate_letter.IsMatch(txtContacto.Text) != true)
-                {
-                    MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtContacto.Text.Remove(txtContacto.Text.Length - 1);
-                txtContacto.Focus();
-                }
-
-                else if (validate_letter.IsMatch(txtTipo.Text) != true)
-                {
-                    MessageBox.Show("El campo TIPO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtTipo.Text.Remove(txtTipo.Text.Length - 1);
-                txtTipo.Focus();
-                }
+            else if (this.txtDireccion.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de DIRECCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblDireccion.BackColor = System.Drawing.Color.DarkRed;
+                lblDireccion.ForeColor = System.Drawing.Color.White;
+                gbDireccion.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtDireccion;
+            }
+            else if ( this.txtSN.Text == "" ) {
+                limpiarAlertas();
+                MessageBox.Show("El campo de Numero de Serie esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblNS.BackColor = System.Drawing.Color.DarkRed;
+                lblNS.ForeColor = System.Drawing.Color.White;
+                gpSN.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtSN;
+            }
+            
+            else if ( this.txtDescripcion.Text == "" ) {
+                limpiarAlertas();
+                MessageBox.Show("El campo de DESCRIPCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblDescripcion.BackColor = System.Drawing.Color.DarkRed;
+                lblDescripcion.ForeColor = System.Drawing.Color.White;
+                gpDescripcion.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtDescripcion;
+            }
+            else if (this.txtTipo.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de TIPO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTipo.BackColor = System.Drawing.Color.DarkRed;
+                lblTipo.ForeColor = System.Drawing.Color.White;
+                gpTipo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTipo;
+            }
+            else if (validate_letter.IsMatch(txtTipo.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo TIPO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTipo.BackColor = System.Drawing.Color.DarkRed;
+                lblTipo.ForeColor = System.Drawing.Color.White;
+                gpTipo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTipo;
+            }
+            else if (this.txtMarca.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de MARCA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblMarca.BackColor = System.Drawing.Color.DarkRed;
+                lblMarca.ForeColor = System.Drawing.Color.White;
+                gpMarca.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTipo;
+            }
+            else if (this.txtContacto.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                lblContacto.ForeColor = System.Drawing.Color.White;
+                gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtContacto;
+            }
+            else if (validate_letter.IsMatch(txtContacto.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                lblContacto.ForeColor = System.Drawing.Color.White;
+                gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtContacto;
+            }
+            else if (this.txtCantidad.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CANTIDAD esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCantidad;
+            }
+            else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CANTIDAD no puede tener espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCantidad;
+            }
+            else if (validate_number.IsMatch(txtCantidad.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CANTIDAD solo puede tener números", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCantidad;
+            }
+            else if (validate_number.IsMatch(txtCantidad.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCantidad;
+            }
+            else if (this.txtEntregadoPor.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de ENTREGADO POR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblEntregado.BackColor = System.Drawing.Color.DarkRed;
+                lblEntregado.ForeColor = System.Drawing.Color.White;
+                gpEntregado.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtEntregadoPor;
+            }
                 else if (validate_letter.IsMatch(txtEntregadoPor.Text) != true)
                 {
-                    MessageBox.Show("El campo ENTREGADO POR solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtEntregadoPor.Text.Remove(txtEntregadoPor.Text.Length - 1);
-                txtEntregadoPor.Focus();
-                }
-                else if (validate_number.IsMatch(txtCantidad.Text) != true)
-                {
-                    MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCantidad.Text.Remove(txtCantidad.Text.Length - 1);
-                txtCantidad.Focus();
-                }
+                limpiarAlertas();
+                MessageBox.Show("El campo ENTREGADO POR solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblEntregado.BackColor = System.Drawing.Color.DarkRed;
+                lblEntregado.ForeColor = System.Drawing.Color.White;
+                gpEntregado.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtEntregadoPor;
+            }
                   else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
                 {
                 MessageBox.Show("No se permiten espacios en el campo cantidad", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCantidad.Focus();
                 return;
                 }
-            else
+                     else
                 {
                 if (this.txtID.ReadOnly == true)
                 {
                     DialogResult dialogResult = MessageBox.Show("Desea actualiar el articulo?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-
                         actualizar();
                         listar();
                         limpiar();
@@ -269,18 +388,14 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else
                 {
-
                     guardar();
                     listar();
                     limpiar();
-
                 }
             }
-          
             #endregion
         }
-
-
+        
         #region CARGAR DE TABLA
         private void CargarFromTable()
         {
@@ -312,10 +427,8 @@ namespace QNS_SysInv_X.MVCView
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
         #endregion
 
@@ -353,6 +466,11 @@ namespace QNS_SysInv_X.MVCView
         {
             CargarFromTable();
             listar();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

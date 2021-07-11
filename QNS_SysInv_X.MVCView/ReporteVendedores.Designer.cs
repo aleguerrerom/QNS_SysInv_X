@@ -32,6 +32,8 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVendedores));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.VendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,16 +42,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.vendedoresBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.vendedoresTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.VendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -63,6 +63,16 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
+            // 
+            // VendedoresBindingSource
+            // 
+            this.VendedoresBindingSource.DataMember = "Vendedores";
+            this.VendedoresBindingSource.DataSource = this.dS_QNS;
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -135,19 +145,14 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel1.Text = "Salir";
+            this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel1.Text = "SALIR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // vendedoresBindingSource2
             // 
             this.vendedoresBindingSource2.DataMember = "Vendedores";
             this.vendedoresBindingSource2.DataSource = this.dS_QNS;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vendedoresTableAdapter
             // 
@@ -164,11 +169,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(834, 326);
             this.reportViewer1.TabIndex = 63;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // VendedoresBindingSource
-            // 
-            this.VendedoresBindingSource.DataMember = "Vendedores";
-            this.VendedoresBindingSource.DataSource = this.dS_QNS;
             // 
             // ReporteVendedores
             // 
@@ -190,11 +190,11 @@
             this.Text = "REPORTE VENDEDORES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteVendedores_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

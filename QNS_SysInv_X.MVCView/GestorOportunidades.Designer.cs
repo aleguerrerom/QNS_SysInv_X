@@ -31,27 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorOportunidades));
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.gbPresupuesto = new System.Windows.Forms.GroupBox();
+            this.lblPresupuesto = new System.Windows.Forms.Label();
             this.txtPresupuesto = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gbVendedor = new System.Windows.Forms.GroupBox();
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.lblVendedor = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.gbDetalles = new System.Windows.Forms.GroupBox();
+            this.lblDetalles = new System.Windows.Forms.Label();
             this.txtDetalles = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.gpFecha = new System.Windows.Forms.GroupBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.gbMarca = new System.Windows.Forms.GroupBox();
+            this.lblMarca = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbClienteN = new System.Windows.Forms.GroupBox();
             this.cmbNombre = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -63,13 +62,13 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.gbPresupuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbVendedor.SuspendLayout();
+            this.gbDetalles.SuspendLayout();
+            this.gpFecha.SuspendLayout();
+            this.gbMarca.SuspendLayout();
+            this.gbClienteN.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,43 +83,42 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 65;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // groupBox7
+            // gbPresupuesto
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.txtPresupuesto);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(22, 126);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Size = new System.Drawing.Size(363, 44);
-            this.groupBox7.TabIndex = 60;
-            this.groupBox7.TabStop = false;
+            this.gbPresupuesto.BackColor = System.Drawing.Color.White;
+            this.gbPresupuesto.Controls.Add(this.lblPresupuesto);
+            this.gbPresupuesto.Controls.Add(this.txtPresupuesto);
+            this.gbPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPresupuesto.Location = new System.Drawing.Point(22, 126);
+            this.gbPresupuesto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbPresupuesto.Name = "gbPresupuesto";
+            this.gbPresupuesto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbPresupuesto.Size = new System.Drawing.Size(363, 44);
+            this.gbPresupuesto.TabIndex = 60;
+            this.gbPresupuesto.TabStop = false;
             // 
-            // label7
+            // lblPresupuesto
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(7, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "PRESUPUESTO:      ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPresupuesto.AutoSize = true;
+            this.lblPresupuesto.BackColor = System.Drawing.Color.Transparent;
+            this.lblPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresupuesto.Image = ((System.Drawing.Image)(resources.GetObject("lblPresupuesto.Image")));
+            this.lblPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPresupuesto.Location = new System.Drawing.Point(7, 16);
+            this.lblPresupuesto.Name = "lblPresupuesto";
+            this.lblPresupuesto.Size = new System.Drawing.Size(111, 16);
+            this.lblPresupuesto.TabIndex = 3;
+            this.lblPresupuesto.Text = "PRESUPUESTO:      ";
+            this.lblPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPresupuesto
             // 
             this.txtPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPresupuesto.Location = new System.Drawing.Point(159, 18);
+            this.txtPresupuesto.Location = new System.Drawing.Point(166, 18);
             this.txtPresupuesto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPresupuesto.Name = "txtPresupuesto";
-            this.txtPresupuesto.Size = new System.Drawing.Size(197, 13);
+            this.txtPresupuesto.Size = new System.Drawing.Size(180, 13);
             this.txtPresupuesto.TabIndex = 2;
             // 
             // dgvListar
@@ -143,88 +141,77 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // groupBox6
+            // gbVendedor
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.cmbVendedor);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.txtModelo);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(393, 126);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Size = new System.Drawing.Size(363, 44);
-            this.groupBox6.TabIndex = 63;
-            this.groupBox6.TabStop = false;
+            this.gbVendedor.BackColor = System.Drawing.Color.White;
+            this.gbVendedor.Controls.Add(this.cmbVendedor);
+            this.gbVendedor.Controls.Add(this.lblVendedor);
+            this.gbVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbVendedor.Location = new System.Drawing.Point(393, 126);
+            this.gbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbVendedor.Name = "gbVendedor";
+            this.gbVendedor.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbVendedor.Size = new System.Drawing.Size(363, 44);
+            this.gbVendedor.TabIndex = 63;
+            this.gbVendedor.TabStop = false;
             // 
             // cmbVendedor
             // 
             this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(141, 11);
+            this.cmbVendedor.Location = new System.Drawing.Point(159, 11);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
-            this.cmbVendedor.Size = new System.Drawing.Size(194, 21);
+            this.cmbVendedor.Size = new System.Drawing.Size(176, 21);
             this.cmbVendedor.TabIndex = 5;
             // 
-            // label6
+            // lblVendedor
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(7, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "VENDEDOR:      ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(179, 18);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 4;
-            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
+            this.lblVendedor.AutoSize = true;
+            this.lblVendedor.BackColor = System.Drawing.Color.Transparent;
+            this.lblVendedor.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendedor.Image = ((System.Drawing.Image)(resources.GetObject("lblVendedor.Image")));
+            this.lblVendedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVendedor.Location = new System.Drawing.Point(7, 16);
+            this.lblVendedor.Name = "lblVendedor";
+            this.lblVendedor.Size = new System.Drawing.Size(93, 16);
+            this.lblVendedor.TabIndex = 3;
+            this.lblVendedor.Text = "VENDEDOR:      ";
+            this.lblVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(179, 14);
+            this.dtpFecha.Location = new System.Drawing.Point(159, 14);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 1;
+            this.dtpFecha.Size = new System.Drawing.Size(177, 20);
+            this.dtpFecha.TabIndex = 3;
             // 
-            // groupBox5
+            // gbDetalles
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.White;
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.txtDetalles);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(393, 75);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(363, 44);
-            this.groupBox5.TabIndex = 64;
-            this.groupBox5.TabStop = false;
+            this.gbDetalles.BackColor = System.Drawing.Color.White;
+            this.gbDetalles.Controls.Add(this.lblDetalles);
+            this.gbDetalles.Controls.Add(this.txtDetalles);
+            this.gbDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDetalles.Location = new System.Drawing.Point(393, 75);
+            this.gbDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbDetalles.Name = "gbDetalles";
+            this.gbDetalles.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbDetalles.Size = new System.Drawing.Size(363, 44);
+            this.gbDetalles.TabIndex = 64;
+            this.gbDetalles.TabStop = false;
             // 
-            // label5
+            // lblDetalles
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(8, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 16);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "DETALLES:     ";
+            this.lblDetalles.AutoSize = true;
+            this.lblDetalles.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalles.Image = ((System.Drawing.Image)(resources.GetObject("lblDetalles.Image")));
+            this.lblDetalles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDetalles.Location = new System.Drawing.Point(8, 18);
+            this.lblDetalles.Name = "lblDetalles";
+            this.lblDetalles.Size = new System.Drawing.Size(81, 16);
+            this.lblDetalles.TabIndex = 33;
+            this.lblDetalles.Text = "DETALLES:     ";
             // 
             // txtDetalles
             // 
@@ -232,64 +219,64 @@
             this.txtDetalles.Location = new System.Drawing.Point(159, 18);
             this.txtDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDetalles.Name = "txtDetalles";
-            this.txtDetalles.Size = new System.Drawing.Size(197, 13);
-            this.txtDetalles.TabIndex = 3;
+            this.txtDetalles.Size = new System.Drawing.Size(177, 13);
+            this.txtDetalles.TabIndex = 4;
             // 
-            // groupBox4
+            // gpFecha
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.dtpFecha);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(393, 23);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(363, 44);
-            this.groupBox4.TabIndex = 61;
-            this.groupBox4.TabStop = false;
+            this.gpFecha.BackColor = System.Drawing.Color.White;
+            this.gpFecha.Controls.Add(this.dtpFecha);
+            this.gpFecha.Controls.Add(this.lblFecha);
+            this.gpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpFecha.Location = new System.Drawing.Point(393, 23);
+            this.gpFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpFecha.Name = "gpFecha";
+            this.gpFecha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpFecha.Size = new System.Drawing.Size(363, 44);
+            this.gpFecha.TabIndex = 61;
+            this.gpFecha.TabStop = false;
             // 
-            // label4
+            // lblFecha
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(7, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "FECHA DE CIERRE:      ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Image = ((System.Drawing.Image)(resources.GetObject("lblFecha.Image")));
+            this.lblFecha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFecha.Location = new System.Drawing.Point(7, 16);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(125, 16);
+            this.lblFecha.TabIndex = 3;
+            this.lblFecha.Text = "FECHA DE CIERRE:      ";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // groupBox2
+            // gbMarca
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtMarca);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(23, 75);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(363, 44);
-            this.groupBox2.TabIndex = 59;
-            this.groupBox2.TabStop = false;
+            this.gbMarca.BackColor = System.Drawing.Color.White;
+            this.gbMarca.Controls.Add(this.lblMarca);
+            this.gbMarca.Controls.Add(this.txtMarca);
+            this.gbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMarca.Location = new System.Drawing.Point(23, 75);
+            this.gbMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbMarca.Name = "gbMarca";
+            this.gbMarca.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbMarca.Size = new System.Drawing.Size(363, 44);
+            this.gbMarca.TabIndex = 59;
+            this.gbMarca.TabStop = false;
             // 
-            // label3
+            // lblMarca
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(7, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "MARCA:      ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Image = ((System.Drawing.Image)(resources.GetObject("lblMarca.Image")));
+            this.lblMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMarca.Location = new System.Drawing.Point(7, 16);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(71, 16);
+            this.lblMarca.TabIndex = 3;
+            this.lblMarca.Text = "MARCA:      ";
+            this.lblMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtMarca
             // 
@@ -297,44 +284,44 @@
             this.txtMarca.Location = new System.Drawing.Point(165, 16);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(197, 13);
-            this.txtMarca.TabIndex = 2;
+            this.txtMarca.Size = new System.Drawing.Size(180, 13);
+            this.txtMarca.TabIndex = 1;
             // 
-            // groupBox1
+            // gbClienteN
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.cmbNombre);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(22, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(363, 44);
-            this.groupBox1.TabIndex = 58;
-            this.groupBox1.TabStop = false;
+            this.gbClienteN.BackColor = System.Drawing.Color.White;
+            this.gbClienteN.Controls.Add(this.cmbNombre);
+            this.gbClienteN.Controls.Add(this.lblNombreCliente);
+            this.gbClienteN.Location = new System.Drawing.Point(22, 23);
+            this.gbClienteN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbClienteN.Name = "gbClienteN";
+            this.gbClienteN.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbClienteN.Size = new System.Drawing.Size(363, 44);
+            this.gbClienteN.TabIndex = 58;
+            this.gbClienteN.TabStop = false;
             // 
             // cmbNombre
             // 
             this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(184, 14);
+            this.cmbNombre.Location = new System.Drawing.Point(166, 14);
             this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(121, 21);
+            this.cmbNombre.Size = new System.Drawing.Size(180, 21);
             this.cmbNombre.TabIndex = 0;
             // 
-            // label2
+            // lblNombreCliente
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(8, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "NOMBRE DE CLIENTE:      ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Image = ((System.Drawing.Image)(resources.GetObject("lblNombreCliente.Image")));
+            this.lblNombreCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombreCliente.Location = new System.Drawing.Point(8, 20);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(146, 16);
+            this.lblNombreCliente.TabIndex = 3;
+            this.lblNombreCliente.Text = "NOMBRE DE CLIENTE:      ";
+            this.lblNombreCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnReport
             // 
@@ -344,7 +331,7 @@
             this.btnReport.Location = new System.Drawing.Point(552, 264);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 66;
+            this.btnReport.TabIndex = 8;
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
@@ -411,8 +398,8 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel1.Text = "Salir";
+            this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel1.Text = "SALIR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // label9
@@ -430,7 +417,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(657, 270);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
-            this.txtBuscar.TabIndex = 70;
+            this.txtBuscar.TabIndex = 9;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // GestorOportunidades
@@ -446,33 +433,33 @@
             this.Controls.Add(this.idl);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
-            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.gbPresupuesto);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbVendedor);
+            this.Controls.Add(this.gbDetalles);
+            this.Controls.Add(this.gpFecha);
+            this.Controls.Add(this.gbMarca);
+            this.Controls.Add(this.gbClienteN);
             this.Name = "GestorOportunidades";
             this.Text = "GESTOR OPORTUNIDADES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorOportunidades_FormClosing);
             this.Load += new System.EventHandler(this.GestorOportunidades_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gbPresupuesto.ResumeLayout(false);
+            this.gbPresupuesto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbVendedor.ResumeLayout(false);
+            this.gbVendedor.PerformLayout();
+            this.gbDetalles.ResumeLayout(false);
+            this.gbDetalles.PerformLayout();
+            this.gpFecha.ResumeLayout(false);
+            this.gpFecha.PerformLayout();
+            this.gbMarca.ResumeLayout(false);
+            this.gbMarca.PerformLayout();
+            this.gbClienteN.ResumeLayout(false);
+            this.gbClienteN.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -483,27 +470,26 @@
         #endregion
 
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox gbPresupuesto;
+        private System.Windows.Forms.Label lblPresupuesto;
         private System.Windows.Forms.TextBox txtPresupuesto;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbVendedor;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblVendedor;
+        private System.Windows.Forms.GroupBox gbDetalles;
+        private System.Windows.Forms.Label lblDetalles;
         private System.Windows.Forms.TextBox txtDetalles;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.GroupBox gpFecha;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.ComboBox cmbVendedor;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox gbMarca;
+        private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbClienteN;
+        private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.ComboBox cmbNombre;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label idl;

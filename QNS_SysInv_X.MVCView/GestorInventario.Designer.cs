@@ -33,30 +33,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorInventario));
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnReport = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.gbSN = new System.Windows.Forms.GroupBox();
+            this.lblSN = new System.Windows.Forms.Label();
             this.txtSerialNumber = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.cmsInventario = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gpFecha = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.gbEstado = new System.Windows.Forms.GroupBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.gbModelo = new System.Windows.Forms.GroupBox();
+            this.lblModelo = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbMarca = new System.Windows.Forms.GroupBox();
             this.cmbBrand = new System.Windows.Forms.ComboBox();
-            this.cmbMarca = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.gbTipo = new System.Windows.Forms.GroupBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.txtTipo = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gbNombre = new System.Windows.Forms.GroupBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombreActivo = new System.Windows.Forms.TextBox();
             this.idl = new System.Windows.Forms.Label();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
@@ -67,14 +67,14 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.gbSN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gpFecha.SuspendLayout();
+            this.gbEstado.SuspendLayout();
+            this.gbModelo.SuspendLayout();
+            this.gbMarca.SuspendLayout();
+            this.gbTipo.SuspendLayout();
+            this.gbNombre.SuspendLayout();
             this.stsUsu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -113,33 +113,33 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // groupBox7
+            // gbSN
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.txtSerialNumber);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(12, 132);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox7.Size = new System.Drawing.Size(363, 44);
-            this.groupBox7.TabIndex = 48;
-            this.groupBox7.TabStop = false;
+            this.gbSN.BackColor = System.Drawing.Color.White;
+            this.gbSN.Controls.Add(this.lblSN);
+            this.gbSN.Controls.Add(this.txtSerialNumber);
+            this.gbSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSN.Location = new System.Drawing.Point(12, 132);
+            this.gbSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbSN.Name = "gbSN";
+            this.gbSN.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbSN.Size = new System.Drawing.Size(363, 44);
+            this.gbSN.TabIndex = 48;
+            this.gbSN.TabStop = false;
             // 
-            // label7
+            // lblSN
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(7, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "SERIAL NUMBER:      ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSN.AutoSize = true;
+            this.lblSN.BackColor = System.Drawing.Color.Transparent;
+            this.lblSN.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSN.Image = ((System.Drawing.Image)(resources.GetObject("lblSN.Image")));
+            this.lblSN.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSN.Location = new System.Drawing.Point(7, 16);
+            this.lblSN.Name = "lblSN";
+            this.lblSN.Size = new System.Drawing.Size(122, 16);
+            this.lblSN.TabIndex = 3;
+            this.lblSN.Text = "SERIAL NUMBER:      ";
+            this.lblSN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSerialNumber
             // 
@@ -148,7 +148,7 @@
             this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
-            this.txtSerialNumber.TabIndex = 4;
+            this.txtSerialNumber.TabIndex = 2;
             // 
             // dgvListar
             // 
@@ -199,19 +199,19 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // groupBox6
+            // gpFecha
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.dtpFecha);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(383, 132);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Size = new System.Drawing.Size(363, 44);
-            this.groupBox6.TabIndex = 51;
-            this.groupBox6.TabStop = false;
+            this.gpFecha.BackColor = System.Drawing.Color.White;
+            this.gpFecha.Controls.Add(this.dtpFecha);
+            this.gpFecha.Controls.Add(this.lblFecha);
+            this.gpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpFecha.Location = new System.Drawing.Point(383, 132);
+            this.gpFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpFecha.Name = "gpFecha";
+            this.gpFecha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpFecha.Size = new System.Drawing.Size(363, 44);
+            this.gpFecha.TabIndex = 51;
+            this.gpFecha.TabStop = false;
             // 
             // dtpFecha
             // 
@@ -219,35 +219,35 @@
             this.dtpFecha.Location = new System.Drawing.Point(198, 17);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 5;
+            this.dtpFecha.TabIndex = 6;
             // 
-            // label6
+            // lblFecha
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(7, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "FECHA DE MODIFICACION:      ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Image = ((System.Drawing.Image)(resources.GetObject("lblFecha.Image")));
+            this.lblFecha.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFecha.Location = new System.Drawing.Point(7, 16);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(173, 16);
+            this.lblFecha.TabIndex = 3;
+            this.lblFecha.Text = "FECHA DE MODIFICACION:      ";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // groupBox5
+            // gbEstado
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.White;
-            this.groupBox5.Controls.Add(this.cmbEstado);
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(383, 81);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(363, 44);
-            this.groupBox5.TabIndex = 52;
-            this.groupBox5.TabStop = false;
+            this.gbEstado.BackColor = System.Drawing.Color.White;
+            this.gbEstado.Controls.Add(this.cmbEstado);
+            this.gbEstado.Controls.Add(this.lblEstado);
+            this.gbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstado.Location = new System.Drawing.Point(383, 81);
+            this.gbEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbEstado.Name = "gbEstado";
+            this.gbEstado.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbEstado.Size = new System.Drawing.Size(363, 44);
+            this.gbEstado.TabIndex = 52;
+            this.gbEstado.TabStop = false;
             // 
             // cmbEstado
             // 
@@ -260,47 +260,47 @@
             this.cmbEstado.Location = new System.Drawing.Point(198, 14);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(147, 21);
-            this.cmbEstado.TabIndex = 34;
+            this.cmbEstado.TabIndex = 5;
             // 
-            // label5
+            // lblEstado
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(8, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "ESTADO:     ";
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Image = ((System.Drawing.Image)(resources.GetObject("lblEstado.Image")));
+            this.lblEstado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblEstado.Location = new System.Drawing.Point(8, 18);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(72, 16);
+            this.lblEstado.TabIndex = 33;
+            this.lblEstado.Text = "ESTADO:     ";
             // 
-            // groupBox4
+            // gbModelo
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.txtModelo);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(383, 29);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(363, 44);
-            this.groupBox4.TabIndex = 49;
-            this.groupBox4.TabStop = false;
+            this.gbModelo.BackColor = System.Drawing.Color.White;
+            this.gbModelo.Controls.Add(this.lblModelo);
+            this.gbModelo.Controls.Add(this.txtModelo);
+            this.gbModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbModelo.Location = new System.Drawing.Point(383, 29);
+            this.gbModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbModelo.Name = "gbModelo";
+            this.gbModelo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbModelo.Size = new System.Drawing.Size(363, 44);
+            this.gbModelo.TabIndex = 49;
+            this.gbModelo.TabStop = false;
             // 
-            // label4
+            // lblModelo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(7, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "MODELO:      ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.BackColor = System.Drawing.Color.Transparent;
+            this.lblModelo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Image = ((System.Drawing.Image)(resources.GetObject("lblModelo.Image")));
+            this.lblModelo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblModelo.Location = new System.Drawing.Point(7, 16);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(79, 16);
+            this.lblModelo.TabIndex = 3;
+            this.lblModelo.Text = "MODELO:      ";
+            this.lblModelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtModelo
             // 
@@ -309,21 +309,21 @@
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 1;
+            this.txtModelo.TabIndex = 4;
             // 
-            // groupBox3
+            // gbMarca
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.cmbBrand);
-            this.groupBox3.Controls.Add(this.cmbMarca);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 184);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(363, 50);
-            this.groupBox3.TabIndex = 50;
-            this.groupBox3.TabStop = false;
+            this.gbMarca.BackColor = System.Drawing.Color.White;
+            this.gbMarca.Controls.Add(this.cmbBrand);
+            this.gbMarca.Controls.Add(this.lblMarca);
+            this.gbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMarca.Location = new System.Drawing.Point(13, 184);
+            this.gbMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbMarca.Name = "gbMarca";
+            this.gbMarca.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbMarca.Size = new System.Drawing.Size(363, 50);
+            this.gbMarca.TabIndex = 50;
+            this.gbMarca.TabStop = false;
             // 
             // cmbBrand
             // 
@@ -342,49 +342,49 @@
             this.cmbBrand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(194, 21);
-            this.cmbBrand.TabIndex = 6;
+            this.cmbBrand.TabIndex = 3;
             // 
-            // cmbMarca
+            // lblMarca
             // 
-            this.cmbMarca.AutoSize = true;
-            this.cmbMarca.BackColor = System.Drawing.Color.Transparent;
-            this.cmbMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMarca.Image = ((System.Drawing.Image)(resources.GetObject("cmbMarca.Image")));
-            this.cmbMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmbMarca.Location = new System.Drawing.Point(7, 16);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(71, 16);
-            this.cmbMarca.TabIndex = 3;
-            this.cmbMarca.Text = "MARCA:      ";
-            this.cmbMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Image = ((System.Drawing.Image)(resources.GetObject("lblMarca.Image")));
+            this.lblMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMarca.Location = new System.Drawing.Point(7, 16);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(71, 16);
+            this.lblMarca.TabIndex = 3;
+            this.lblMarca.Text = "MARCA:      ";
+            this.lblMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // groupBox2
+            // gbTipo
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtTipo);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 81);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(363, 44);
-            this.groupBox2.TabIndex = 47;
-            this.groupBox2.TabStop = false;
+            this.gbTipo.BackColor = System.Drawing.Color.White;
+            this.gbTipo.Controls.Add(this.lblTipo);
+            this.gbTipo.Controls.Add(this.txtTipo);
+            this.gbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbTipo.Location = new System.Drawing.Point(13, 81);
+            this.gbTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbTipo.Name = "gbTipo";
+            this.gbTipo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbTipo.Size = new System.Drawing.Size(363, 44);
+            this.gbTipo.TabIndex = 47;
+            this.gbTipo.TabStop = false;
             // 
-            // label3
+            // lblTipo
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(7, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "TIPO:      ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Image = ((System.Drawing.Image)(resources.GetObject("lblTipo.Image")));
+            this.lblTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTipo.Location = new System.Drawing.Point(7, 16);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(56, 16);
+            this.lblTipo.TabIndex = 3;
+            this.lblTipo.Text = "TIPO:      ";
+            this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTipo
             // 
@@ -393,34 +393,34 @@
             this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 2;
+            this.txtTipo.TabIndex = 1;
             // 
-            // groupBox1
+            // gbNombre
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtNombreActivo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(363, 44);
-            this.groupBox1.TabIndex = 46;
-            this.groupBox1.TabStop = false;
+            this.gbNombre.BackColor = System.Drawing.Color.White;
+            this.gbNombre.Controls.Add(this.lblNombre);
+            this.gbNombre.Controls.Add(this.txtNombreActivo);
+            this.gbNombre.Location = new System.Drawing.Point(12, 29);
+            this.gbNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbNombre.Name = "gbNombre";
+            this.gbNombre.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbNombre.Size = new System.Drawing.Size(363, 44);
+            this.gbNombre.TabIndex = 46;
+            this.gbNombre.TabStop = false;
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(8, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "NOMBRE  DE ACTIVO:      ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Image = ((System.Drawing.Image)(resources.GetObject("lblNombre.Image")));
+            this.lblNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombre.Location = new System.Drawing.Point(8, 17);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(147, 16);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "NOMBRE  DE ACTIVO:      ";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNombreActivo
             // 
@@ -468,8 +468,8 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel2.Text = "Salir";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // label9
@@ -487,7 +487,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(669, 341);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
-            this.txtBuscar.TabIndex = 70;
+            this.txtBuscar.TabIndex = 10;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // GestorInventario
@@ -503,36 +503,36 @@
             this.Controls.Add(this.idl);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
-            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.gbSN);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpFecha);
+            this.Controls.Add(this.gbEstado);
+            this.Controls.Add(this.gbModelo);
+            this.Controls.Add(this.gbMarca);
+            this.Controls.Add(this.gbTipo);
+            this.Controls.Add(this.gbNombre);
             this.Name = "GestorInventario";
             this.Text = "GESTOR INVENTARIOS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorInventario_FormClosing);
             this.Load += new System.EventHandler(this.GestorInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gbSN.ResumeLayout(false);
+            this.gbSN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpFecha.ResumeLayout(false);
+            this.gpFecha.PerformLayout();
+            this.gbEstado.ResumeLayout(false);
+            this.gbEstado.PerformLayout();
+            this.gbModelo.ResumeLayout(false);
+            this.gbModelo.PerformLayout();
+            this.gbMarca.ResumeLayout(false);
+            this.gbMarca.PerformLayout();
+            this.gbTipo.ResumeLayout(false);
+            this.gbTipo.PerformLayout();
+            this.gbNombre.ResumeLayout(false);
+            this.gbNombre.PerformLayout();
             this.stsUsu.ResumeLayout(false);
             this.stsUsu.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -545,27 +545,27 @@
         #endregion
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox gbSN;
+        private System.Windows.Forms.Label lblSN;
         private System.Windows.Forms.TextBox txtSerialNumber;
         private System.Windows.Forms.DataGridView dgvListar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox gpFecha;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.GroupBox gbEstado;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.GroupBox gbModelo;
+        private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbMarca;
         private System.Windows.Forms.ComboBox cmbBrand;
-        private System.Windows.Forms.Label cmbMarca;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.GroupBox gbTipo;
+        private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.TextBox txtTipo;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbNombre;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombreActivo;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ContextMenuStrip cmsInventario;

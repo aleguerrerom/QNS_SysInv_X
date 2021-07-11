@@ -132,4 +132,9 @@ namespace QNS_SysInv_X.MVCView
         {
             limpiar();
         }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     } }

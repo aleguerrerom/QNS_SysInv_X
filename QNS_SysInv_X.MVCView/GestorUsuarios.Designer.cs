@@ -43,19 +43,19 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblClave = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
@@ -63,9 +63,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblConfirmar = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnReport = new System.Windows.Forms.Button();
@@ -73,6 +73,8 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource3)).BeginInit();
@@ -131,7 +133,7 @@
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(769, 211);
-            this.dgvListar.TabIndex = 9;
+            this.dgvListar.TabIndex = 12;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip2
@@ -177,24 +179,24 @@
             this.txtUsuario.Size = new System.Drawing.Size(197, 15);
             this.txtUsuario.TabIndex = 0;
             // 
-            // label2
+            // lblUsuario
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(8, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "USUARIO:      ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Location = new System.Drawing.Point(8, 17);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(83, 16);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "USUARIO:      ";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblUsuario);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Location = new System.Drawing.Point(14, 43);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -210,28 +212,29 @@
             this.txtClave.Location = new System.Drawing.Point(159, 18);
             this.txtClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(197, 13);
+            this.txtClave.Size = new System.Drawing.Size(174, 13);
             this.txtClave.TabIndex = 1;
             this.txtClave.UseSystemPasswordChar = true;
             // 
-            // label3
+            // lblClave
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(7, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "CONTRASEÑA:      ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblClave.AutoSize = true;
+            this.lblClave.BackColor = System.Drawing.Color.Transparent;
+            this.lblClave.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Image = ((System.Drawing.Image)(resources.GetObject("lblClave.Image")));
+            this.lblClave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblClave.Location = new System.Drawing.Point(7, 16);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(107, 16);
+            this.lblClave.TabIndex = 3;
+            this.lblClave.Text = "CONTRASEÑA:      ";
+            this.lblClave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblClave);
             this.groupBox2.Controls.Add(this.txtClave);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(15, 95);
@@ -242,19 +245,19 @@
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             // 
-            // label1
+            // lblRol
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(7, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ROL:      ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRol.AutoSize = true;
+            this.lblRol.BackColor = System.Drawing.Color.Transparent;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
+            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRol.Location = new System.Drawing.Point(7, 16);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(52, 16);
+            this.lblRol.TabIndex = 3;
+            this.lblRol.Text = "ROL:      ";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbRol
             // 
@@ -270,7 +273,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.cmbRol);
-            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.lblRol);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(14, 198);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -289,24 +292,24 @@
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
             this.txtNombre.TabIndex = 4;
             // 
-            // label4
+            // lblNombre
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(7, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "NOMBRE:      ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Image = ((System.Drawing.Image)(resources.GetObject("lblNombre.Image")));
+            this.lblNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombre.Location = new System.Drawing.Point(7, 16);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(80, 16);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "NOMBRE:      ";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.lblNombre);
             this.groupBox4.Controls.Add(this.txtNombre);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(385, 43);
@@ -326,21 +329,21 @@
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
             this.txtApellido.TabIndex = 5;
             // 
-            // label5
+            // lblApellido
             // 
-            this.label5.AutoSize = true;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(8, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "APELLIDO:     ";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Image = ((System.Drawing.Image)(resources.GetObject("lblApellido.Image")));
+            this.lblApellido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblApellido.Location = new System.Drawing.Point(8, 18);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(91, 13);
+            this.lblApellido.TabIndex = 33;
+            this.lblApellido.Text = "APELLIDO:     ";
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
-            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.lblApellido);
             this.groupBox5.Controls.Add(this.txtApellido);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(385, 95);
@@ -398,7 +401,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 7;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -413,7 +416,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -425,28 +428,29 @@
             this.txtConfirmar.Location = new System.Drawing.Point(159, 18);
             this.txtConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.Size = new System.Drawing.Size(197, 13);
+            this.txtConfirmar.Size = new System.Drawing.Size(175, 13);
             this.txtConfirmar.TabIndex = 2;
             this.txtConfirmar.UseSystemPasswordChar = true;
             // 
-            // label7
+            // lblConfirmar
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(7, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 16);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "CONFIRMAR:      ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblConfirmar.AutoSize = true;
+            this.lblConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("lblConfirmar.Image")));
+            this.lblConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblConfirmar.Location = new System.Drawing.Point(7, 16);
+            this.lblConfirmar.Name = "lblConfirmar";
+            this.lblConfirmar.Size = new System.Drawing.Size(99, 16);
+            this.lblConfirmar.TabIndex = 3;
+            this.lblConfirmar.Text = "CONFIRMAR:      ";
+            this.lblConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.label2);
+            this.groupBox7.Controls.Add(this.lblConfirmar);
             this.groupBox7.Controls.Add(this.txtConfirmar);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(14, 146);
@@ -457,19 +461,19 @@
             this.groupBox7.TabIndex = 37;
             this.groupBox7.TabStop = false;
             // 
-            // label8
+            // lblCorreo
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(7, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 16);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "CORREO:      ";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Image = ((System.Drawing.Image)(resources.GetObject("lblCorreo.Image")));
+            this.lblCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCorreo.Location = new System.Drawing.Point(7, 16);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(76, 16);
+            this.lblCorreo.TabIndex = 3;
+            this.lblCorreo.Text = "CORREO:      ";
+            this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCorreo
             // 
@@ -478,13 +482,13 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
-            this.txtCorreo.TabIndex = 4;
+            this.txtCorreo.TabIndex = 7;
             // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.White;
             this.groupBox8.Controls.Add(this.txtCorreo);
-            this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.Controls.Add(this.lblCorreo);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(387, 198);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -501,7 +505,7 @@
             this.btnReport.Location = new System.Drawing.Point(547, 342);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 42;
+            this.btnReport.TabIndex = 10;
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
@@ -520,8 +524,8 @@
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripLabel2.Text = "Salir";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // txtBuscar
@@ -529,7 +533,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(649, 347);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 22);
-            this.txtBuscar.TabIndex = 68;
+            this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label9
@@ -540,6 +544,30 @@
             this.label9.Size = new System.Drawing.Size(112, 16);
             this.label9.TabIndex = 69;
             this.label9.Text = "Buscar por Usuario";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(332, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "    ";
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(334, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "    ";
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
             // 
             // GestorUsuarios
             // 
@@ -617,19 +645,19 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.ComboBox cmbRol;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chckbxActivo;
@@ -637,9 +665,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtConfirmar;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblConfirmar;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button btnReport;
@@ -648,5 +676,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

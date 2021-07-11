@@ -42,10 +42,13 @@
             this.lblShow = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -53,7 +56,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(67, 12);
+            pictureBox1.Location = new System.Drawing.Point(67, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(241, 108);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,7 +69,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtConfirmar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(36, 191);
+            this.groupBox2.Location = new System.Drawing.Point(36, 198);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(311, 36);
             this.groupBox2.TabIndex = 40;
@@ -99,7 +102,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtClave);
-            this.groupBox1.Location = new System.Drawing.Point(36, 149);
+            this.groupBox1.Location = new System.Drawing.Point(36, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(311, 36);
             this.groupBox1.TabIndex = 39;
@@ -134,7 +137,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(33, 133);
+            this.label1.Location = new System.Drawing.Point(33, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 13);
             this.label1.TabIndex = 34;
@@ -143,16 +146,16 @@
             // 
             // stsUser
             // 
-            this.stsUser.Location = new System.Drawing.Point(0, 339);
+            this.stsUser.Location = new System.Drawing.Point(0, 343);
             this.stsUser.Name = "stsUser";
-            this.stsUser.Size = new System.Drawing.Size(384, 22);
+            this.stsUser.Size = new System.Drawing.Size(367, 22);
             this.stsUser.TabIndex = 42;
             this.stsUser.Text = "statusStrip1";
             // 
             // chckView
             // 
             this.chckView.AutoSize = true;
-            this.chckView.Location = new System.Drawing.Point(255, 238);
+            this.chckView.Location = new System.Drawing.Point(255, 245);
             this.chckView.Name = "chckView";
             this.chckView.Size = new System.Drawing.Size(15, 14);
             this.chckView.TabIndex = 57;
@@ -163,7 +166,7 @@
             // 
             this.lblShow.AutoSize = true;
             this.lblShow.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShow.Location = new System.Drawing.Point(113, 236);
+            this.lblShow.Location = new System.Drawing.Point(113, 243);
             this.lblShow.Name = "lblShow";
             this.lblShow.Size = new System.Drawing.Size(111, 16);
             this.lblShow.TabIndex = 56;
@@ -176,7 +179,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(145, 306);
+            this.btnCancelar.Location = new System.Drawing.Point(145, 313);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
             this.btnCancelar.TabIndex = 4;
@@ -196,7 +199,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(101, 255);
+            this.btnIngresar.Location = new System.Drawing.Point(83, 266);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 3;
@@ -205,6 +208,23 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(367, 25);
+            this.toolStrip1.TabIndex = 68;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel2.Text = "SALIR";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
+            // 
             // CambiodeClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +232,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(384, 361);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.chckView);
             this.Controls.Add(this.lblShow);
             this.Controls.Add(this.stsUser);
@@ -231,6 +252,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +272,7 @@
         private System.Windows.Forms.StatusStrip stsUser;
         private System.Windows.Forms.CheckBox chckView;
         private System.Windows.Forms.Label lblShow;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

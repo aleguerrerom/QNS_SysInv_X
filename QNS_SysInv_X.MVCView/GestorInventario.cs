@@ -108,20 +108,101 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
         }
 
+        private void limpiarAlertas()
+        {
+            lblNombre.BackColor = System.Drawing.Color.White;
+            lblNombre.ForeColor = System.Drawing.Color.Black;
+            gbNombre.BackColor = System.Drawing.Color.White;
+            lblTipo.BackColor = System.Drawing.Color.White;
+            lblTipo.ForeColor = System.Drawing.Color.Black;
+            gbTipo.BackColor = System.Drawing.Color.White;
+            lblSN.BackColor = System.Drawing.Color.White;
+            lblSN.ForeColor = System.Drawing.Color.Black;
+            gbSN.BackColor = System.Drawing.Color.White;
+            lblMarca.BackColor = System.Drawing.Color.White;
+            lblMarca.ForeColor = System.Drawing.Color.Black;
+            gbMarca.BackColor = System.Drawing.Color.White;
+            lblModelo.BackColor = System.Drawing.Color.White;
+            lblModelo.ForeColor = System.Drawing.Color.Black;
+            gbModelo.BackColor = System.Drawing.Color.White;
+            lblEstado.BackColor = System.Drawing.Color.White;
+            lblEstado.ForeColor = System.Drawing.Color.Black;
+            gbEstado.BackColor = System.Drawing.Color.White;
+            lblFecha.BackColor = System.Drawing.Color.White;
+            lblFecha.ForeColor = System.Drawing.Color.Black;
+            gpFecha.BackColor = System.Drawing.Color.White;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtNombreActivo.Text == "" || this.txtModelo.Text == "" || this.txtSerialNumber.Text == ""
-             || this.cmbEstado.Text == "" || this.txtTipo.Text == "" || this.cmbBrand.Text == "")
+            if (this.txtNombreActivo.Text == "" ){
+                limpiarAlertas();
+                MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                lblNombre.ForeColor = System.Drawing.Color.White;
+                gbNombre.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtNombreActivo;
+                return;
+            }
+            else if (this.txtTipo.Text == "")
             {
-                MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+                limpiarAlertas();
+                MessageBox.Show("El campo de TIPO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTipo.BackColor = System.Drawing.Color.DarkRed;
+                lblTipo.ForeColor = System.Drawing.Color.White;
+                gbTipo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTipo;
+                return;
             }
             else if (validate_letter.IsMatch(txtTipo.Text) != true)
             {
-                MessageBox.Show("El campo TIPO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtTipo.Text.Remove(txtTipo.Text.Length - 1);
-                txtTipo.Focus();
+                limpiarAlertas();
+                MessageBox.Show("El campo TIPO solo permite letras", "InvalidO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTipo.BackColor = System.Drawing.Color.DarkRed;
+                lblTipo.ForeColor = System.Drawing.Color.White;
+                gbTipo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTipo;
+                return;
             }
+            else if (this.txtSerialNumber.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de NUMERO DE SERIE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblSN.BackColor = System.Drawing.Color.DarkRed;
+                lblSN.ForeColor = System.Drawing.Color.White;
+                gbSN.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtSerialNumber;
+                return;
+            }
+            else if (this.cmbBrand.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de MARCA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblMarca.BackColor = System.Drawing.Color.DarkRed;
+                lblMarca.ForeColor = System.Drawing.Color.White;
+                gbMarca.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = cmbBrand;
+                return;
+            }
+            else if( this.txtModelo.Text == "" ){
+                limpiarAlertas();
+                MessageBox.Show("El campo de MODELO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblModelo.BackColor = System.Drawing.Color.DarkRed;
+                lblModelo.ForeColor = System.Drawing.Color.White;
+                gbModelo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtModelo;
+                return;
+            }
+            else if( this.cmbEstado.Text == "" ){
+                limpiarAlertas();
+                MessageBox.Show("El campo de ESTADO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblEstado.BackColor = System.Drawing.Color.DarkRed;
+                lblEstado.ForeColor = System.Drawing.Color.White;
+                gbEstado.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = cmbEstado;
+                return;
+            }
+            
             else
             {
                 if (this.txtNombreActivo.Enabled == false)
@@ -129,11 +210,10 @@ namespace QNS_SysInv_X.MVCView
                     DialogResult dialogResult = MessageBox.Show("Desea actualiar el articulo?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-
                         actualizar();
                         listar();
                         limpiar();
-                }
+                    }
                 else if (dialogResult == DialogResult.No)
                 {
                     MessageBox.Show("No se actualizo el articulo");
@@ -141,11 +221,9 @@ namespace QNS_SysInv_X.MVCView
             }
                 else
                 {
-                    
                         guardar();
                         listar();
                         limpiar();
-                   
                 }
             }
             #endregion
@@ -161,8 +239,8 @@ namespace QNS_SysInv_X.MVCView
             this.txtModelo.Clear();
             this.dtpFecha.Value = DateTime.Today;
             this.txtNombreActivo.Enabled = true;
-            this.btnAdd.Text = "AGREGAR";  
-           
+            this.btnAdd.Text = "AGREGAR";
+            limpiarAlertas();
         }
 
         #region ELIMINAR USUARIO
@@ -225,7 +303,6 @@ namespace QNS_SysInv_X.MVCView
 
                 this.invH = new InventarioHelper(inventario);
 
-                
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.user.Usuario;
                 this.bitacora.Movimiento = "Actualizar Inventario";
@@ -272,10 +349,8 @@ namespace QNS_SysInv_X.MVCView
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
         #endregion
 
@@ -322,20 +397,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            if (this.txtNombreActivo.Text != "" || this.txtModelo.Text != "" || this.txtSerialNumber.Text != ""
-            || this.cmbEstado.Text != "" || this.txtTipo.Text != "" || this.cmbBrand.Text != "")
-            {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se eliminaran lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                }
-            }
-            else
-                this.Close();
+             this.Close();
         }
 
         private void GestorInventario_FormClosing(object sender, FormClosingEventArgs e)
