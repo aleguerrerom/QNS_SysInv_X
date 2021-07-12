@@ -96,27 +96,43 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReport_Click(object sender, EventArgs e)
         {
             if (btnChange.Text == "VER LOGS DE MOVIMIENTOS")
             {
-                ReporteLogsInicio reporte = new ReporteLogsInicio();
-                reporte.Show();
+                bool IsOpen = false;
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f.Text == "REPORTES DE LOGS  | QNS_SysInv_X")
+                    {
+                        IsOpen = true;
+                        f.BringToFront();
+                    }
+                }
+                if (IsOpen == false)
+                {
+                    ReporteLogsInicio reporte = new ReporteLogsInicio();
+                    reporte.Show();
+                }
             }
 
             else
             {
-                ReporteMovimientos reportem = new ReporteMovimientos();
-                reportem.Show();
+                bool IsOpen = false;
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f.Text == "REPORTE MOVIMIENTOS  | QNS_SysInv_X")
+                    {
+                        IsOpen = true;
+                        f.BringToFront();
+                    }
+                }
+                if (IsOpen == false)
+                {
+                    ReporteMovimientos reportem = new ReporteMovimientos();
+                    reportem.Show();
+                }
             }
-
-
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

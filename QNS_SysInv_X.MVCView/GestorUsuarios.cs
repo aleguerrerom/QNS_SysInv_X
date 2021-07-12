@@ -521,9 +521,21 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReporteUsuarios repU = new ReporteUsuarios();
-            repU.Show();
-            this.Close();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE USUARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteUsuarios repU = new ReporteUsuarios();
+                repU.Show();
+                this.Close();
+            }
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)

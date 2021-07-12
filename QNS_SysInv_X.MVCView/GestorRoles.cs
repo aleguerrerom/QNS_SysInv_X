@@ -20,13 +20,6 @@ namespace QNS_SysInv_X.MVCView
         private Bitacora bitacora;
         private BitacoraHelper bitH;
         private Usuarios user;
-        private UsuariosHelper userHelper;
-        public static string inventario;
-        public static string usuarios;
-        public static string prestamo;
-        public static string entrega;
-        public static string roless;
-
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
@@ -55,26 +48,27 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Eliminar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (this.txtID.ReadOnly)
                 {
-                    if (this.txtRol.ReadOnly)
-                {
-                    actualizar();
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Eliminar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+
+                        actualizar();
                         listar();
                         limpiar();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se actualizo el rol");
+                    }
                 }
-                else if (dialogResult == DialogResult.No)
-                {
-                    MessageBox.Show("No se elimino el rol");
-                }
-            }
                 else
-                {
+                    {
                         guardar();
                         listar();
                         limpiar();
-                }
+                    }
             }
         }
 
@@ -355,6 +349,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
+                    this.txtID.Text = fila["ID"].ToString();
                     this.txtRol.Text = fila["nombre"].ToString();
                     this.chckRoles.Checked = bool.Parse(fila["roles"].ToString());
                     this.chckUsuarios.Checked = bool.Parse(fila["usuarios"].ToString());
@@ -365,7 +360,7 @@ namespace QNS_SysInv_X.MVCView
                     this.chkOportunidades.Checked = bool.Parse(fila["oportunidades"].ToString());
                     this.chkVendedores.Checked = bool.Parse(fila["vendedores"].ToString());
                     this.chkClientesx.Checked = bool.Parse(fila["clientes"].ToString());
-                    this.txtRol.ReadOnly = true;
+                    this.txtID.ReadOnly = true;
                     this.btnAdd.Text = "ACTUALIZAR";
                 
                 }

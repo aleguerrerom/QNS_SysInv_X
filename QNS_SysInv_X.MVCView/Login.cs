@@ -122,5 +122,10 @@ namespace QNS_SysInv_X.MVCView
                 lblShow.Text = "VER CONTRASEÑA";
             }
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

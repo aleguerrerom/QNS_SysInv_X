@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -47,6 +47,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -102,14 +103,14 @@
               <TablixHeader>
                 <Size>2.5cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox19">
+                  <Textbox Name="Textbox15">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>ID</Value>
+                            <Value>tipo</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -121,7 +122,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox19</rd:DefaultName>
+                    <rd:DefaultName>Textbox15</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>#7292cc</Color>
@@ -141,14 +142,14 @@
                   <TablixHeader>
                     <Size>2.5cm</Size>
                     <CellContents>
-                      <Textbox Name="Textbox17">
+                      <Textbox Name="Textbox13">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>nombre</Value>
+                                <Value>serialnumber</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -160,7 +161,7 @@
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox17</rd:DefaultName>
+                        <rd:DefaultName>Textbox13</rd:DefaultName>
                         <Style>
                           <Border>
                             <Color>#7292cc</Color>
@@ -180,14 +181,14 @@
                       <TablixHeader>
                         <Size>2.5cm</Size>
                         <CellContents>
-                          <Textbox Name="Textbox15">
+                          <Textbox Name="Textbox11">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>tipo</Value>
+                                    <Value>marca</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -199,7 +200,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox15</rd:DefaultName>
+                            <rd:DefaultName>Textbox11</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>#7292cc</Color>
@@ -219,14 +220,14 @@
                           <TablixHeader>
                             <Size>2.5cm</Size>
                             <CellContents>
-                              <Textbox Name="Textbox13">
+                              <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>serialnumber</Value>
+                                        <Value>modelo</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -238,7 +239,7 @@
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Textbox13</rd:DefaultName>
+                                <rd:DefaultName>Textbox9</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>#7292cc</Color>
@@ -258,14 +259,14 @@
                               <TablixHeader>
                                 <Size>2.5cm</Size>
                                 <CellContents>
-                                  <Textbox Name="Textbox11">
+                                  <Textbox Name="Textbox7">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>marca</Value>
+                                            <Value>estado</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>11pt</FontSize>
@@ -277,7 +278,7 @@
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>Textbox11</rd:DefaultName>
+                                    <rd:DefaultName>Textbox7</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>#7292cc</Color>
@@ -297,14 +298,14 @@
                                   <TablixHeader>
                                     <Size>2.5cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox9">
+                                      <Textbox Name="Textbox3">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>modelo</Value>
+                                                <Value>usuario</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
                                                   <FontSize>11pt</FontSize>
@@ -316,7 +317,7 @@
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox9</rd:DefaultName>
+                                        <rd:DefaultName>Textbox3</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>#7292cc</Color>
@@ -332,130 +333,7 @@
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
-                                    <TablixMember>
-                                      <TablixHeader>
-                                        <Size>2.5cm</Size>
-                                        <CellContents>
-                                          <Textbox Name="Textbox7">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>estado</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>11pt</FontSize>
-                                                      <FontWeight>Bold</FontWeight>
-                                                      <Color>White</Color>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>Textbox7</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Color>#7292cc</Color>
-                                                <Style>Solid</Style>
-                                              </Border>
-                                              <BackgroundColor>#4c68a2</BackgroundColor>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                        </CellContents>
-                                      </TablixHeader>
-                                      <TablixMembers>
-                                        <TablixMember>
-                                          <TablixHeader>
-                                            <Size>2.5cm</Size>
-                                            <CellContents>
-                                              <Textbox Name="Textbox5">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>fechamodificacion</Value>
-                                                        <Style>
-                                                          <FontFamily>Tahoma</FontFamily>
-                                                          <FontSize>11pt</FontSize>
-                                                          <FontWeight>Bold</FontWeight>
-                                                          <Color>White</Color>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>Textbox5</rd:DefaultName>
-                                                <Style>
-                                                  <Border>
-                                                    <Color>#7292cc</Color>
-                                                    <Style>Solid</Style>
-                                                  </Border>
-                                                  <BackgroundColor>#4c68a2</BackgroundColor>
-                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                  <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                            </CellContents>
-                                          </TablixHeader>
-                                          <TablixMembers>
-                                            <TablixMember>
-                                              <TablixHeader>
-                                                <Size>2.5cm</Size>
-                                                <CellContents>
-                                                  <Textbox Name="Textbox3">
-                                                    <CanGrow>true</CanGrow>
-                                                    <KeepTogether>true</KeepTogether>
-                                                    <Paragraphs>
-                                                      <Paragraph>
-                                                        <TextRuns>
-                                                          <TextRun>
-                                                            <Value>usuario</Value>
-                                                            <Style>
-                                                              <FontFamily>Tahoma</FontFamily>
-                                                              <FontSize>11pt</FontSize>
-                                                              <FontWeight>Bold</FontWeight>
-                                                              <Color>White</Color>
-                                                            </Style>
-                                                          </TextRun>
-                                                        </TextRuns>
-                                                        <Style />
-                                                      </Paragraph>
-                                                    </Paragraphs>
-                                                    <rd:DefaultName>Textbox3</rd:DefaultName>
-                                                    <Style>
-                                                      <Border>
-                                                        <Color>#7292cc</Color>
-                                                        <Style>Solid</Style>
-                                                      </Border>
-                                                      <BackgroundColor>#4c68a2</BackgroundColor>
-                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                      <PaddingRight>2pt</PaddingRight>
-                                                      <PaddingTop>2pt</PaddingTop>
-                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                    </Style>
-                                                  </Textbox>
-                                                </CellContents>
-                                              </TablixHeader>
-                                              <TablixMembers>
-                                                <TablixMember />
-                                              </TablixMembers>
-                                            </TablixMember>
-                                          </TablixMembers>
-                                        </TablixMember>
-                                      </TablixMembers>
-                                    </TablixMember>
+                                    <TablixMember />
                                   </TablixMembers>
                                 </TablixMember>
                               </TablixMembers>
@@ -469,45 +347,44 @@
               </TablixMembers>
             </TablixMember>
             <TablixMember>
-              <Group Name="ID">
+              <Group Name="tipo">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!ID.Value</GroupExpression>
+                  <GroupExpression>=Fields!tipo.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!ID.Value</Value>
+                  <Value>=Fields!tipo.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
                 <Size>2.5cm</Size>
                 <CellContents>
-                  <Textbox Name="ID1">
+                  <Textbox Name="tipo">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!ID.Value</Value>
+                            <Value>=Fields!tipo.Value</Value>
                             <Style>
-                              <FontFamily>Microsoft YaHei</FontFamily>
-                              <FontSize>8pt</FontSize>
+                              <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#465678</Color>
+                              <Color>#4c68a2</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>ID1</rd:DefaultName>
+                    <rd:DefaultName>tipo</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>#c6daf8</Color>
+                        <Color>White</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#9eb6e4</BackgroundColor>
+                      <BackgroundColor>#e6eefc</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -518,27 +395,27 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="nombre">
+                  <Group Name="serialnumber">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                      <GroupExpression>=Fields!serialnumber.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombre.Value</Value>
+                      <Value>=Fields!serialnumber.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
                     <Size>2.5cm</Size>
                     <CellContents>
-                      <Textbox Name="nombre">
+                      <Textbox Name="serialnumber">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!nombre.Value</Value>
+                                <Value>=Fields!serialnumber.Value</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -549,13 +426,13 @@
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>nombre</rd:DefaultName>
+                        <rd:DefaultName>serialnumber</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>#e6eefc</Color>
+                            <Color>White</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>#c6daf8</BackgroundColor>
+                          <BackgroundColor>#e6eefc</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -566,27 +443,27 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="tipo">
+                      <Group Name="marca">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!tipo.Value</GroupExpression>
+                          <GroupExpression>=Fields!marca.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!tipo.Value</Value>
+                          <Value>=Fields!marca.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
                         <Size>2.5cm</Size>
                         <CellContents>
-                          <Textbox Name="tipo">
+                          <Textbox Name="marca">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!tipo.Value</Value>
+                                    <Value>=Fields!marca.Value</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -597,7 +474,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>tipo</rd:DefaultName>
+                            <rd:DefaultName>marca</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>White</Color>
@@ -614,27 +491,27 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="serialnumber">
+                          <Group Name="modelo">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!serialnumber.Value</GroupExpression>
+                              <GroupExpression>=Fields!modelo.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!serialnumber.Value</Value>
+                              <Value>=Fields!modelo.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
                             <Size>2.5cm</Size>
                             <CellContents>
-                              <Textbox Name="serialnumber">
+                              <Textbox Name="modelo">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!serialnumber.Value</Value>
+                                        <Value>=Fields!modelo.Value</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -645,7 +522,7 @@
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>serialnumber</rd:DefaultName>
+                                <rd:DefaultName>modelo</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>White</Color>
@@ -662,27 +539,27 @@
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="marca">
+                              <Group Name="estado">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!marca.Value</GroupExpression>
+                                  <GroupExpression>=Fields!estado.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!marca.Value</Value>
+                                  <Value>=Fields!estado.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
                                 <Size>2.5cm</Size>
                                 <CellContents>
-                                  <Textbox Name="marca">
+                                  <Textbox Name="estado">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!marca.Value</Value>
+                                            <Value>=Fields!estado.Value</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -693,7 +570,7 @@
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>marca</rd:DefaultName>
+                                    <rd:DefaultName>estado</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>White</Color>
@@ -710,27 +587,27 @@
                               </TablixHeader>
                               <TablixMembers>
                                 <TablixMember>
-                                  <Group Name="modelo">
+                                  <Group Name="usuario">
                                     <GroupExpressions>
-                                      <GroupExpression>=Fields!modelo.Value</GroupExpression>
+                                      <GroupExpression>=Fields!usuario.Value</GroupExpression>
                                     </GroupExpressions>
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
-                                      <Value>=Fields!modelo.Value</Value>
+                                      <Value>=Fields!usuario.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
                                     <Size>2.5cm</Size>
                                     <CellContents>
-                                      <Textbox Name="modelo">
+                                      <Textbox Name="usuario">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!modelo.Value</Value>
+                                                <Value>=Fields!usuario.Value</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
                                                   <FontWeight>Bold</FontWeight>
@@ -741,7 +618,7 @@
                                             <Style />
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>modelo</rd:DefaultName>
+                                        <rd:DefaultName>usuario</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Color>White</Color>
@@ -757,157 +634,7 @@
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
-                                    <TablixMember>
-                                      <Group Name="estado">
-                                        <GroupExpressions>
-                                          <GroupExpression>=Fields!estado.Value</GroupExpression>
-                                        </GroupExpressions>
-                                      </Group>
-                                      <SortExpressions>
-                                        <SortExpression>
-                                          <Value>=Fields!estado.Value</Value>
-                                        </SortExpression>
-                                      </SortExpressions>
-                                      <TablixHeader>
-                                        <Size>2.5cm</Size>
-                                        <CellContents>
-                                          <Textbox Name="estado">
-                                            <CanGrow>true</CanGrow>
-                                            <KeepTogether>true</KeepTogether>
-                                            <Paragraphs>
-                                              <Paragraph>
-                                                <TextRuns>
-                                                  <TextRun>
-                                                    <Value>=Fields!estado.Value</Value>
-                                                    <Style>
-                                                      <FontFamily>Tahoma</FontFamily>
-                                                      <FontWeight>Bold</FontWeight>
-                                                      <Color>#4c68a2</Color>
-                                                    </Style>
-                                                  </TextRun>
-                                                </TextRuns>
-                                                <Style />
-                                              </Paragraph>
-                                            </Paragraphs>
-                                            <rd:DefaultName>estado</rd:DefaultName>
-                                            <Style>
-                                              <Border>
-                                                <Color>White</Color>
-                                                <Style>Solid</Style>
-                                              </Border>
-                                              <BackgroundColor>#e6eefc</BackgroundColor>
-                                              <PaddingLeft>2pt</PaddingLeft>
-                                              <PaddingRight>2pt</PaddingRight>
-                                              <PaddingTop>2pt</PaddingTop>
-                                              <PaddingBottom>2pt</PaddingBottom>
-                                            </Style>
-                                          </Textbox>
-                                        </CellContents>
-                                      </TablixHeader>
-                                      <TablixMembers>
-                                        <TablixMember>
-                                          <Group Name="fechamodificacion">
-                                            <GroupExpressions>
-                                              <GroupExpression>=Fields!fechamodificacion.Value</GroupExpression>
-                                            </GroupExpressions>
-                                          </Group>
-                                          <SortExpressions>
-                                            <SortExpression>
-                                              <Value>=Fields!fechamodificacion.Value</Value>
-                                            </SortExpression>
-                                          </SortExpressions>
-                                          <TablixHeader>
-                                            <Size>2.5cm</Size>
-                                            <CellContents>
-                                              <Textbox Name="fechamodificacion">
-                                                <CanGrow>true</CanGrow>
-                                                <KeepTogether>true</KeepTogether>
-                                                <Paragraphs>
-                                                  <Paragraph>
-                                                    <TextRuns>
-                                                      <TextRun>
-                                                        <Value>=Fields!fechamodificacion.Value</Value>
-                                                        <Style>
-                                                          <FontFamily>Tahoma</FontFamily>
-                                                          <FontWeight>Bold</FontWeight>
-                                                          <Color>#4c68a2</Color>
-                                                        </Style>
-                                                      </TextRun>
-                                                    </TextRuns>
-                                                    <Style />
-                                                  </Paragraph>
-                                                </Paragraphs>
-                                                <rd:DefaultName>fechamodificacion</rd:DefaultName>
-                                                <Style>
-                                                  <Border>
-                                                    <Color>White</Color>
-                                                    <Style>Solid</Style>
-                                                  </Border>
-                                                  <BackgroundColor>#e6eefc</BackgroundColor>
-                                                  <PaddingLeft>2pt</PaddingLeft>
-                                                  <PaddingRight>2pt</PaddingRight>
-                                                  <PaddingTop>2pt</PaddingTop>
-                                                  <PaddingBottom>2pt</PaddingBottom>
-                                                </Style>
-                                              </Textbox>
-                                            </CellContents>
-                                          </TablixHeader>
-                                          <TablixMembers>
-                                            <TablixMember>
-                                              <Group Name="usuario">
-                                                <GroupExpressions>
-                                                  <GroupExpression>=Fields!usuario.Value</GroupExpression>
-                                                </GroupExpressions>
-                                              </Group>
-                                              <SortExpressions>
-                                                <SortExpression>
-                                                  <Value>=Fields!usuario.Value</Value>
-                                                </SortExpression>
-                                              </SortExpressions>
-                                              <TablixHeader>
-                                                <Size>2.5cm</Size>
-                                                <CellContents>
-                                                  <Textbox Name="usuario">
-                                                    <CanGrow>true</CanGrow>
-                                                    <KeepTogether>true</KeepTogether>
-                                                    <Paragraphs>
-                                                      <Paragraph>
-                                                        <TextRuns>
-                                                          <TextRun>
-                                                            <Value>=Fields!usuario.Value</Value>
-                                                            <Style>
-                                                              <FontFamily>Tahoma</FontFamily>
-                                                              <FontWeight>Bold</FontWeight>
-                                                              <Color>#4c68a2</Color>
-                                                            </Style>
-                                                          </TextRun>
-                                                        </TextRuns>
-                                                        <Style />
-                                                      </Paragraph>
-                                                    </Paragraphs>
-                                                    <rd:DefaultName>usuario</rd:DefaultName>
-                                                    <Style>
-                                                      <Border>
-                                                        <Color>White</Color>
-                                                        <Style>Solid</Style>
-                                                      </Border>
-                                                      <BackgroundColor>#e6eefc</BackgroundColor>
-                                                      <PaddingLeft>2pt</PaddingLeft>
-                                                      <PaddingRight>2pt</PaddingRight>
-                                                      <PaddingTop>2pt</PaddingTop>
-                                                      <PaddingBottom>2pt</PaddingBottom>
-                                                    </Style>
-                                                  </Textbox>
-                                                </CellContents>
-                                              </TablixHeader>
-                                              <TablixMembers>
-                                                <TablixMember />
-                                              </TablixMembers>
-                                            </TablixMember>
-                                          </TablixMembers>
-                                        </TablixMember>
-                                      </TablixMembers>
-                                    </TablixMember>
+                                    <TablixMember />
                                   </TablixMembers>
                                 </TablixMember>
                               </TablixMembers>
@@ -925,7 +652,7 @@
         <DataSetName>DSInventario</DataSetName>
         <Top>1.75535cm</Top>
         <Height>1.2cm</Height>
-        <Width>25cm</Width>
+        <Width>16cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

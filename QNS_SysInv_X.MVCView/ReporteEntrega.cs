@@ -22,13 +22,6 @@ namespace QNS_SysInv_X.MVCView
         {
             // TODO: This line of code loads data into the 'dS_QNS.Entrega' table. You can move, or remove it, as needed.
             this.entregaTableAdapter.Fill(this.dS_QNS.Entrega);
-            // TODO: This line of code loads data into the 'dS_QNS.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
-            // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
-
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 

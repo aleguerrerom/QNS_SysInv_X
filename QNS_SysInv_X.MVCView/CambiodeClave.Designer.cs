@@ -146,9 +146,10 @@
             // 
             // stsUser
             // 
-            this.stsUser.Location = new System.Drawing.Point(0, 343);
+            this.stsUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUser.Location = new System.Drawing.Point(0, 344);
             this.stsUser.Name = "stsUser";
-            this.stsUser.Size = new System.Drawing.Size(367, 22);
+            this.stsUser.Size = new System.Drawing.Size(389, 22);
             this.stsUser.TabIndex = 42;
             this.stsUser.Text = "statusStrip1";
             // 
@@ -199,7 +200,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(83, 266);
+            this.btnIngresar.Location = new System.Drawing.Point(85, 269);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 3;
@@ -210,11 +211,12 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(367, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(389, 25);
             this.toolStrip1.TabIndex = 68;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -231,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(389, 366);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.chckView);
             this.Controls.Add(this.lblShow);
@@ -243,8 +245,8 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(400, 400);
-            this.MinimumSize = new System.Drawing.Size(400, 400);
+            this.MaximumSize = new System.Drawing.Size(405, 405);
+            this.MinimumSize = new System.Drawing.Size(405, 405);
             this.Name = "CambiodeClave";
             this.Text = "CAMBIO DE CLAVE  | QNS_SysInv_X";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

@@ -48,6 +48,7 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -65,6 +66,7 @@
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.lblConfirmar = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -73,8 +75,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource3)).BeginInit();
@@ -151,6 +151,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 618);
@@ -244,6 +245,18 @@
             this.groupBox2.Size = new System.Drawing.Size(363, 44);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(332, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "    ";
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
             // 
             // lblRol
             // 
@@ -461,6 +474,18 @@
             this.groupBox7.TabIndex = 37;
             this.groupBox7.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(334, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "    ";
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
+            // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
@@ -513,6 +538,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -544,30 +570,6 @@
             this.label9.Size = new System.Drawing.Size(112, 16);
             this.label9.TabIndex = 69;
             this.label9.Text = "Buscar por Usuario";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(332, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "    ";
-            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(334, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "    ";
-            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
-            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
             // 
             // GestorUsuarios
             // 

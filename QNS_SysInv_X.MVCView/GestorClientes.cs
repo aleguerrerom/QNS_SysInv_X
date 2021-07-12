@@ -106,17 +106,18 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Correo = this.txtMail.Text;
                 this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
-                this.clientes.Telefono = this.lblTelefono.Text;
+                this.clientes.Telefono = this.txtTel.Text;
                 this.clientes.opc = 2;
                 this.clientesH = new ClientesHelper(clientes);
                 ///LOG PARA USUARIOS
+                /*
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Agregar Cliente";
                 this.bitacora.Detalle = "Se agrego el cliente correctamente " + this.txtNomb.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
+                this.bitH.LogMovimientos();*/
 
                 this.clientesH.Guardar();
                 MessageBox.Show("Datos de Cliente Almacenado");
@@ -394,7 +395,7 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Correo = this.txtMail.Text;
                 this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
-                this.clientes.Telefono = this.lblTelefono.Text;
+                this.clientes.Telefono = this.txtTel.Text;
                 this.clientes.opc = 4;
                 this.clientesH = new ClientesHelper(clientes);
                  this.bitacora = new Bitacora();
@@ -465,9 +466,21 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            RerporteClientes RepoClientes = new RerporteClientes();
-            RepoClientes.Show();
-            this.Close();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE CLIENTES | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                RerporteClientes RepoClientes = new RerporteClientes();
+                RepoClientes.Show();
+                this.Close();
+            }
         }
 
         private void dgvListar_DoubleClick(object sender, EventArgs e)

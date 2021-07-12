@@ -44,9 +44,9 @@
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -59,6 +59,18 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 53;
             pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(260, 212);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(79, 118);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 56;
+            pictureBox1.TabStop = false;
             // 
             // txtUsuarioLogin
             // 
@@ -183,18 +195,6 @@
             this.chckView.UseVisualStyleBackColor = true;
             this.chckView.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(260, 212);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(79, 118);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 56;
-            pictureBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,12 +216,13 @@
             this.Name = "Login";
             this.Text = "INGRESO | QNS_SysInv_X";
             this.TransparencyKey = System.Drawing.Color.Purple;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

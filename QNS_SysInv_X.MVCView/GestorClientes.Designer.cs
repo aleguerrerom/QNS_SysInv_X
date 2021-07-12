@@ -259,7 +259,7 @@
             // txtTel
             // 
             this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTel.Location = new System.Drawing.Point(130, 17);
+            this.txtTel.Location = new System.Drawing.Point(153, 16);
             this.txtTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(197, 13);
@@ -287,7 +287,7 @@
             this.cmbTipo.Items.AddRange(new object[] {
             "Juridica",
             "Fisica"});
-            this.cmbTipo.Location = new System.Drawing.Point(130, 16);
+            this.cmbTipo.Location = new System.Drawing.Point(140, 16);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(210, 21);
             this.cmbTipo.TabIndex = 4;
@@ -412,6 +412,7 @@
             // txtCedula
             // 
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(156, 20);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedula.Name = "txtCedula";
@@ -435,10 +436,10 @@
             // txtNomb
             // 
             this.txtNomb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomb.Location = new System.Drawing.Point(130, 19);
+            this.txtNomb.Location = new System.Drawing.Point(159, 19);
             this.txtNomb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNomb.Name = "txtNomb";
-            this.txtNomb.Size = new System.Drawing.Size(197, 13);
+            this.txtNomb.Size = new System.Drawing.Size(198, 13);
             this.txtNomb.TabIndex = 5;
             // 
             // lblNombre
@@ -450,13 +451,14 @@
             this.lblNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblNombre.Location = new System.Drawing.Point(7, 16);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(80, 16);
+            this.lblNombre.Size = new System.Drawing.Size(146, 16);
             this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "NOMBRE:      ";
+            this.lblNombre.Text = "NOMBRE DE CLIENTE:      ";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -474,9 +476,10 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 531);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 560);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(830, 22);
             this.statusStrip1.TabIndex = 67;
@@ -497,6 +500,7 @@
             this.cmbCed.Name = "cmbCed";
             this.cmbCed.Size = new System.Drawing.Size(194, 21);
             this.cmbCed.TabIndex = 4;
+            this.cmbCed.Visible = false;
             // 
             // label9
             // 
@@ -522,7 +526,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(830, 553);
+            this.ClientSize = new System.Drawing.Size(830, 582);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbCed);

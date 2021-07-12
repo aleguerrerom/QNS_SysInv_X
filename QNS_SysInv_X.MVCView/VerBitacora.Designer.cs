@@ -52,7 +52,6 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 52;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dgvListar
             // 

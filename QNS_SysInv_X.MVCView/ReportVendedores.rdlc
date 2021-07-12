@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.19006cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -100,7 +100,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.19006cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox13">
                     <CanGrow>true</CanGrow>
@@ -139,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.19006cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox11">
                         <CanGrow>true</CanGrow>
@@ -177,7 +177,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.19006cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox9">
                             <CanGrow>true</CanGrow>
@@ -216,7 +216,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>2.19006cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox7">
                                 <CanGrow>true</CanGrow>
@@ -255,7 +255,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.19006cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
                                     <CanGrow>true</CanGrow>
@@ -294,7 +294,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>3.66417cm</Size>
+                                    <Size>3.35423cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox3">
                                         <CanGrow>true</CanGrow>
@@ -356,7 +356,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.19006cm</Size>
                 <CellContents>
                   <Textbox Name="nombre">
                     <CanGrow>true</CanGrow>
@@ -404,7 +404,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.19006cm</Size>
                     <CellContents>
                       <Textbox Name="apellido1">
                         <CanGrow>true</CanGrow>
@@ -452,7 +452,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.19006cm</Size>
                         <CellContents>
                           <Textbox Name="apellido2">
                             <CanGrow>true</CanGrow>
@@ -500,7 +500,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.5cm</Size>
+                            <Size>2.19006cm</Size>
                             <CellContents>
                               <Textbox Name="genero">
                                 <CanGrow>true</CanGrow>
@@ -548,7 +548,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>2.19006cm</Size>
                                 <CellContents>
                                   <Textbox Name="fechaNacimiento">
                                     <CanGrow>true</CanGrow>
@@ -596,7 +596,7 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>3.66417cm</Size>
+                                    <Size>3.35423cm</Size>
                                     <CellContents>
                                       <Textbox Name="correo">
                                         <CanGrow>true</CanGrow>
@@ -650,11 +650,16 @@
         <DataSetName>DSVendedores</DataSetName>
         <Top>2.27542cm</Top>
         <Height>1.2cm</Height>
-        <Width>18.66417cm</Width>
+        <Width>16.49459cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <FontStyle>Normal</FontStyle>
+          <FontFamily>Microsoft JhengHei</FontFamily>
+          <FontSize>8pt</FontSize>
+          <FontWeight>Normal</FontWeight>
+          <TextDecoration>None</TextDecoration>
         </Style>
       </Tablix>
       <Textbox Name="Textbox1">
@@ -734,10 +739,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.96875in</Height>
     <Style />
   </Body>
-  <Width>7.3481in</Width>
+  <Width>6.56685in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

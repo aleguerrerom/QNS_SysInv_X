@@ -233,8 +233,20 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReportePrestamo repoPrestamo = new ReportePrestamo();
-            repoPrestamo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE PRESTAMO  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReportePrestamo repoPrestamo = new ReportePrestamo();
+                repoPrestamo.Show();
+            }
         }
     }
 }

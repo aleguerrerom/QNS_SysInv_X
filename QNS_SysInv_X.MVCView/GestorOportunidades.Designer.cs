@@ -60,6 +60,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -379,6 +380,7 @@
             // 
             // stsUsuario
             // 
+            this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsuario.Location = new System.Drawing.Point(0, 547);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(792, 22);
@@ -387,6 +389,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -420,12 +423,22 @@
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // cmbCedVendedor
+            // 
+            this.cmbCedVendedor.FormattingEnabled = true;
+            this.cmbCedVendedor.Location = new System.Drawing.Point(618, 177);
+            this.cmbCedVendedor.Name = "cmbCedVendedor";
+            this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
+            this.cmbCedVendedor.TabIndex = 73;
+            this.cmbCedVendedor.Visible = false;
+            // 
             // GestorOportunidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(792, 569);
+            this.Controls.Add(this.cmbCedVendedor);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
@@ -498,5 +511,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ComboBox cmbCedVendedor;
     }
 }

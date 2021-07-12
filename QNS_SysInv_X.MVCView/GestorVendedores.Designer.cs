@@ -83,7 +83,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(21, 235);
+            pictureBox1.Location = new System.Drawing.Point(12, 235);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(293, 137);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,6 +92,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -235,9 +236,9 @@
             // dtpFechaAnace
             // 
             this.dtpFechaAnace.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAnace.Location = new System.Drawing.Point(192, 16);
+            this.dtpFechaAnace.Location = new System.Drawing.Point(173, 16);
             this.dtpFechaAnace.Name = "dtpFechaAnace";
-            this.dtpFechaAnace.Size = new System.Drawing.Size(122, 20);
+            this.dtpFechaAnace.Size = new System.Drawing.Size(183, 20);
             this.dtpFechaAnace.TabIndex = 6;
             // 
             // lblFecha
@@ -283,10 +284,10 @@
             // txtApellido2
             // 
             this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido2.Location = new System.Drawing.Point(159, 18);
+            this.txtApellido2.Location = new System.Drawing.Point(173, 18);
             this.txtApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.Size = new System.Drawing.Size(197, 13);
+            this.txtApellido2.Size = new System.Drawing.Size(183, 13);
             this.txtApellido2.TabIndex = 5;
             // 
             // gbNombre
@@ -421,6 +422,7 @@
             // txtCedula
             // 
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(156, 20);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedula.Name = "txtCedula";
@@ -429,6 +431,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsuario});
             this.statusStrip1.Location = new System.Drawing.Point(0, 585);

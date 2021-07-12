@@ -78,6 +78,9 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbVendedor.DataSource = this.table;
                     cmbVendedor.ValueMember = "nombre";
                     cmbVendedor.DisplayMember = "nombre";
+                    this.cmbCedVendedor.DataSource = this.table;
+                    cmbCedVendedor.ValueMember = "cedula";
+                    cmbCedVendedor.DisplayMember = "cedula";
                 }
             }
             catch (Exception ex)
@@ -145,34 +148,13 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO USUARIO
                 this.oportunidades = new Oportunidades();
-                this.oportunidades.Nombrecliente = (this.cmbNombre.Text);
+                this.oportunidades.Nombrecliente = this.cmbNombre.Text;
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
                 this.oportunidades.Marca = this.txtMarca.Text;
                 this.oportunidades.Detalles = this.txtDetalles.Text;
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
-                //this.oportunidades.Vendedor = this.cmbVendedor.SelectedIndex + 1;
-                if (this.cmbVendedor.SelectedIndex == 0)
-                { this.oportunidades.Vendedor = 1; }
-                else if (this.cmbVendedor.SelectedIndex == 1)
-                { this.oportunidades.Vendedor = 2; }
-                else if (this.cmbVendedor.SelectedIndex == 2)
-                { this.oportunidades.Vendedor = 3; }
-                else if (this.cmbVendedor.SelectedIndex == 3)
-                { this.oportunidades.Vendedor = 4; }
-                else if (this.cmbVendedor.SelectedIndex == 4)
-                { this.oportunidades.Vendedor = 5; }
-                this.oportunidades.Nombrecliente = this.cmbNombre.Text;
-                //if (this.cmbNombre.SelectedIndex == 0)
-                //{ this.oportunidades.Nombrecliente = 1; }
-                //else if (this.cmbNombre.SelectedIndex == 1)
-                //{ this.oportunidades.Nombrecliente = 2; }
-                //else if (this.cmbNombre.SelectedIndex == 2)
-                //{ this.oportunidades.Nombrecliente = 3; }
-                //else if (this.cmbNombre.SelectedIndex == 3)
-                //{ this.oportunidades.Nombrecliente = 4; }
-                //else if (this.cmbNombre.SelectedIndex == 4)
-                //{ this.oportunidades.Nombrecliente = 5; }
-
+                this.oportunidades.Vendedor = int.Parse(this.cmbCedVendedor.Text);
+               
                 this.oportunidades.opc = 2;
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
                 ///LOG PARA USUARIOS
@@ -364,13 +346,13 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.oportunidades = new Oportunidades();
 
-                this.oportunidades.Nombrecliente = (this.cmbNombre.Text);
+                this.oportunidades.Nombrecliente = this.cmbNombre.Text;
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
                 this.oportunidades.Marca = this.txtMarca.Text;
                 this.oportunidades.Detalles = this.txtDetalles.Text;
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
                 this.oportunidades.Id = int.Parse(this.idl.Text);
-                this.oportunidades.Vendedor = this.cmbVendedor.SelectedIndex + 1;
+                this.oportunidades.Vendedor = int.Parse(this.cmbCedVendedor.Text);
                 this.oportunidades.opc = 4;
 
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
@@ -457,9 +439,21 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReporteOpor RedOpo = new ReporteOpor();
-            RedOpo.Show();
-            this.Close();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE OPORTUNIDADES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteOpor RedOpo = new ReporteOpor();
+                RedOpo.Show();
+                this.Close();
+            }
         }
         
         private void toolStripLabel1_Click(object sender, EventArgs e)

@@ -418,14 +418,14 @@ namespace QNS_SysInv_X.MVCView
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    this.txtCedula.Text = fila["cedula"].ToString();
-                    this.txtNombre.Text = fila["nombre"].ToString();
-                    this.txtApellido.Text = fila["apellido1"].ToString();
-                    this.txtApellido2.Text = fila["apellido2"].ToString();
-                    this.txtCorreo.Text = fila["correo"].ToString();
-                    this.cmbGenero.Text = fila["genero"].ToString();
+                    this.txtCedula.Text = fila["Cedula"].ToString();
+                    this.txtNombre.Text = fila["Nombre"].ToString();
+                    this.txtApellido.Text = fila["Primer_Apellido"].ToString();
+                    this.txtApellido2.Text = fila["Segundo_Apellido"].ToString();
+                    this.txtCorreo.Text = fila["Correo"].ToString();
+                    this.cmbGenero.Text = fila["Genero"].ToString();
                     this.txtCedula.ReadOnly = true;
-                    this.dtpFechaAnace.Text = fila["fechaNacimiento"].ToString();
+                    this.dtpFechaAnace.Text = fila["Fecha_de_nacimiento"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -451,9 +451,21 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click_1(object sender, EventArgs e)
         {
-            ReporteVendedores repoVendedores = new ReporteVendedores();
-            repoVendedores.Show();
-            this.Close();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE VENDEDORES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteVendedores repoVendedores = new ReporteVendedores();
+                repoVendedores.Show();
+                this.Close();
+            }
         }
 
         private void GestorVendedores_FormClosing(object sender, FormClosingEventArgs e)

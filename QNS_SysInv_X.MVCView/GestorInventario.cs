@@ -69,7 +69,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO REGISTRO
                 this.inventario = new Inventario();
-                this.inventario.Nombre1 = this.txtModelo.Text;
+                this.inventario.Nombre1 = this.txtNombreActivo.Text;
                 this.inventario.Tipo = this.txtTipo.Text;
                 this.inventario.Serialnumber = this.txtSerialNumber.Text;
                 this.inventario.Marca = this.cmbBrand.Text;
@@ -205,7 +205,7 @@ namespace QNS_SysInv_X.MVCView
             
             else
             {
-                if (this.txtNombreActivo.Enabled == false)
+                if (this.txtID.Enabled == false)
                 {
                     DialogResult dialogResult = MessageBox.Show("Desea actualiar el articulo?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -234,11 +234,12 @@ namespace QNS_SysInv_X.MVCView
             this.txtNombreActivo.Clear();
             this.txtSerialNumber.Clear();
             this.txtTipo.Clear();
+            this.txtID.Clear();
             this.cmbEstado.SelectedIndex = -1;
             this.cmbBrand.SelectedIndex = - 1;
             this.txtModelo.Clear();
             this.dtpFecha.Value = DateTime.Today;
-            this.txtNombreActivo.Enabled = true;
+            this.txtID.Enabled = true;
             this.btnAdd.Text = "AGREGAR";
             limpiarAlertas();
         }
@@ -290,7 +291,7 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 this.inventario = new Inventario();
-                this.inventario.Nombre1 = this.txtModelo.Text;
+                this.inventario.Nombre1 = this.txtNombreActivo.Text;
                 this.inventario.Tipo = this.txtTipo.Text;
                 this.inventario.Serialnumber = this.txtSerialNumber.Text;
                 this.inventario.Marca = this.cmbBrand.Text;
@@ -335,11 +336,12 @@ namespace QNS_SysInv_X.MVCView
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
+                    this.txtID.Text = fila["ID"].ToString();
                     this.txtNombreActivo.Text = fila["nombre"].ToString();
                     this.txtTipo.Text = fila["tipo"].ToString();
                     this.txtSerialNumber.Text = fila["serialnumber"].ToString();
                     this.cmbBrand.Text = fila["marca"].ToString();
-                    this.txtNombreActivo.Enabled = false;
+                    this.txtID.Enabled = false;
                     this.txtModelo.Text = fila["modelo"].ToString();
                     this.cmbEstado.Text = fila["estado"].ToString();
                     this.dtpFecha.Text = fila["fechamodificacion"].ToString();
@@ -390,9 +392,21 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReporteInventario entr = new ReporteInventario();
-            entr.Show();
-            this.Close();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE INVENTARIO  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteInventario entr = new ReporteInventario();
+                entr.Show();
+                this.Close();
+            }
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)

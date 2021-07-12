@@ -49,7 +49,7 @@ namespace QNS_SysInv_X.MVCController
             return tblDatos;
         }
 
-        //GUARDA USUARIOS
+        //GUARDA Venndedores
         public void Guardar()
         {
             try
@@ -105,9 +105,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlValue = objVendedores.Correo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPVendedor");
-
-
-
+                
             }
             catch (Exception ex)
             {

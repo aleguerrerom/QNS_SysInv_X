@@ -109,20 +109,56 @@ namespace QNS_SysInv_X.MVCView
         
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-            AcercaDe about = new AcercaDe();
-            about.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "ACERCA DE  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                AcercaDe about = new AcercaDe();
+                about.Show();
+            }
         }
         
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            GestorInventario inve = new GestorInventario();
-            inve.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR INVENTARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorInventario inve = new GestorInventario();
+                inve.Show();
+            }
         }
 
         private void Entrega_Click(object sender, EventArgs e)
         {
-            GestorEntregas entr = new GestorEntregas();
-            entr.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ENTREGAS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorEntregas entr = new GestorEntregas();
+                entr.Show();
+            }
         }
         
         private void toolStripLabel3_Click(object sender, EventArgs e)
@@ -132,67 +168,122 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsAboutUs_Click(object sender, EventArgs e)
         {
-            AcercaDe about = new AcercaDe();
-            about.Show();
-
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "ACERCA DE  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                AcercaDe about = new AcercaDe();
+                about.Show();
+            }
         }
 
         private void tsInventario(object sender, EventArgs e)
         {
-            GestorInventario inve = new GestorInventario();
-            inve.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR INVENTARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorInventario inve = new GestorInventario();
+                inve.Show();
+            }
         }
 
         private void tsEntrega(object sender, EventArgs e)
         {
-            GestorEntregas entr = new GestorEntregas();
-            entr.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ENTREGAS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorEntregas entr = new GestorEntregas();
+                entr.Show();
+            }
         }
-
         private void ingresarConOtroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Desea salir e ingresar con otro usuario?", "Ingresar con otro usuario", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
             this.Close();
-            LogCierreSesion();
-            Login login = new Login();
-            login.Show();
-            }
-            else if (dialogResult == DialogResult.No)
-            { }
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Desea salir?", "Salir", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
                 this.Close();
-            LogCierreSesion();
-            Login login = new Login();
-            login.Show();
-            }
-            else if (dialogResult == DialogResult.No)
-            { }   
         }
 
         private void cambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CambiodeClave cambio = new CambiodeClave(user);
-            cambio.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "CAMBIO DE CLAVE  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+
+            }
+            if (IsOpen == false)
+            {
+                CambiodeClave cambio = new CambiodeClave(user);
+                cambio.Show();
+            }
+           
         }
 
         private void toolStripInventario_Click(object sender, EventArgs e)
         {
-            GestorInventario inve = new GestorInventario(user);
-            inve.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR INVENTARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+
+            }
+            if (IsOpen == false)
+            {
+                GestorInventario inve = new GestorInventario(user);
+                inve.Show();
+            }
         }
 
         private void tsrEntrega_Click(object sender, EventArgs e)
         {
-            GestorEntregas entr = new GestorEntregas();
-            entr.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ENTREGAS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorEntregas entr = new GestorEntregas();
+                entr.Show();
+            }
         }
 
         private void tsAyuda_Click(object sender, EventArgs e)
@@ -207,38 +298,154 @@ namespace QNS_SysInv_X.MVCView
 
         private void tslBitacora_Click(object sender, EventArgs e)
         {
-            VerBitacora bitacora = new VerBitacora();
-            bitacora.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                VerBitacora bitacora = new VerBitacora();
+                bitacora.Show();
+            }
+        }
+
+        private void cerrarTodo()
+        {
+           // Application.Exit();
+            //VerBitacora bitacora = new VerBitacora();
+            //bitacora.Close();
+            //ReporteVendedores repV = new ReporteVendedores();
+            //repV.Close();
+            //ReporteUsuarios repU = new ReporteUsuarios();
+            //repU.Close();
+            //ReportePrestamo repP = new ReportePrestamo();
+            //repP.Close();
+            //ReporteOpor repO = new ReporteOpor();
+            //repO.Close();
+            //ReporteMovimientos repM = new ReporteMovimientos();
+            //repM.Close();
+            //ReporteLogsInicio repL = new ReporteLogsInicio();
+            //repL.Close();
+            //ReporteInventario repI = new ReporteInventario();
+            //repI.Close();
+            //ReporteEntrega repE = new ReporteEntrega();
+            //repE.Close();
+            //RerporteClientes repC = new RerporteClientes();
+            //repC.Close();
+            //GestorVendedores gesV = new GestorVendedores();
+            //gesV.Close();
+            //GestorUsuarios gesU = new GestorUsuarios();
+            //gesU.Close();
+            //GestorRoles gesR = new GestorRoles();
+            //gesR.Close();
+            //GestorPrestamo gesP = new GestorPrestamo();
+            //gesP.Close();
+            //GestorOportunidades gesO = new GestorOportunidades();
+            //gesO.Close();
+            //GestorInventario gesI = new GestorInventario();
+            //gesI.Close();
+            //GestorEntregas gesE = new GestorEntregas();
+            //gesE.Close();
+            //GestorClientes gesC = new GestorClientes();
+            //gesC.Close();
+
+            //AcercaDe aboutus = new AcercaDe();
+            //CambiodeClave camdClave = new CambiodeClave();
+            //camdClave.Close();
+            //aboutus.Close();
         }
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorRoles role = new GestorRoles(user);
-            role.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ROLES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorRoles role = new GestorRoles(user);
+                role.Show();
+            }
         }
 
         private void usuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            GestorUsuarios gu = new GestorUsuarios(user);
-            gu.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE USUARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorUsuarios gu = new GestorUsuarios(user);
+                gu.Show();
+            }
         }
-
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorInventario inve = new GestorInventario(user);
-            inve.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR INVENTARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorInventario inve = new GestorInventario(user);
+                inve.Show();
+            }
         }
-
         private void entregaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorEntregas entr = new GestorEntregas(user);
-            entr.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ENTREGAS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorEntregas entr = new GestorEntregas(user);
+                entr.Show();
+            }
         }
 
         private void prestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorPrestamo prestamo = new GestorPrestamo(user);
-            prestamo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE PRESTAMOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorPrestamo prestamo = new GestorPrestamo(user);
+                prestamo.Show();
+            }
         }
 
        private void tsPrestamo_ButtonClick(object sender, EventArgs e)
@@ -253,86 +460,270 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            GestorVendedores res = new GestorVendedores(user);
-            res.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR VENDEDORES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorVendedores res = new GestorVendedores(user);
+                res.Show();
+            }
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorVendedores res = new GestorVendedores(user);
-            res.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR VENDEDORES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorVendedores res = new GestorVendedores(user);
+                res.Show();
+            }
         }
-
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorClientes clientes = new GestorClientes(user);
-            clientes.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR CLIENTES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorClientes clientes = new GestorClientes(user);
+                clientes.Show();
+            }
         }
 
         private void oportunidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestorOportunidades oportunidades = new GestorOportunidades(user);
-            oportunidades.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR OPORTUNIDADES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                GestorOportunidades oportunidades = new GestorOportunidades(user);
+                oportunidades.Show();
+            }
         }
 
         private void tsmReporteInv_Click(object sender, EventArgs e)
         {
-            ReporteInventario entr = new ReporteInventario();
-            entr.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE INVENTARIO  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteInventario entr = new ReporteInventario();
+                entr.Show();
+            }
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ReporteUsuarios repU = new ReporteUsuarios();
-            repU.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE USUARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteUsuarios repU = new ReporteUsuarios();
+                repU.Show();
+            }
         }
 
         private void tsBitacora_Click(object sender, EventArgs e)
         {
-            VerBitacora bitacora = new VerBitacora();
-            bitacora.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                VerBitacora bitacora = new VerBitacora();
+                bitacora.Show();
+            }
         }
 
         private void toolStripLabel1_Click_1(object sender, EventArgs e)
         {
-            VerBitacora bitacora = new VerBitacora();
-            bitacora.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                VerBitacora bitacora = new VerBitacora();
+                bitacora.Show();
+            }
         }
 
         private void verBitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerBitacora bitacora = new VerBitacora();
-            bitacora.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                VerBitacora bitacora = new VerBitacora();
+                bitacora.Show();
+            }
         }
 
         private void tsmReporteOpo_Click(object sender, EventArgs e)
         {
-           ReporteOpor RedOpo = new ReporteOpor();
-            RedOpo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE OPORTUNIDADES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteOpor RedOpo = new ReporteOpor();
+                RedOpo.Show();
+            }
         }
 
         private void clmReporteCli_Click(object sender, EventArgs e)
         {
-            RerporteClientes RepoClientes = new RerporteClientes();
-             RepoClientes.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE CLIENTES | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                RerporteClientes RepoClientes = new RerporteClientes();
+                RepoClientes.Show();
+            }
         }
 
         private void vendedoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ReporteVendedores repoVendedores = new ReporteVendedores();
-            repoVendedores.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE VENDEDORES  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteVendedores repoVendedores = new ReporteVendedores();
+                repoVendedores.Show();
+            }
         }
 
         private void entregaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ReporteEntrega repoPrestamo = new ReporteEntrega();
-            repoPrestamo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE USUARIOS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteEntrega repoPrestamo = new ReporteEntrega();
+                repoPrestamo.Show();
+            }
         }
 
         private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportePrestamo repoPrestamo = new ReportePrestamo();
-            repoPrestamo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "REPORTE PRESTAMO  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReportePrestamo repoPrestamo = new ReportePrestamo();
+                repoPrestamo.Show();
+            }
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Desea cerrar la sesión?", "SALIR", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                LogCierreSesion();
+                Login login = new Login();
+                login.Show();
+                cerrarTodo();
+                e.Cancel = false;
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

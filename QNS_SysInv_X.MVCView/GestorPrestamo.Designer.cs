@@ -112,14 +112,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(335, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 57;
             this.label1.Text = "Seleccione Articulo:";
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -139,7 +141,7 @@
             // 
             this.txtID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtID.Location = new System.Drawing.Point(438, 47);
+            this.txtID.Location = new System.Drawing.Point(470, 47);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(112, 20);
@@ -149,7 +151,7 @@
             // 
             this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(437, 73);
+            this.cmbCliente.Location = new System.Drawing.Point(469, 73);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(113, 21);
             this.cmbCliente.TabIndex = 60;
@@ -157,14 +159,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(335, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 61;
             this.label2.Text = "Seleccione Cliente:";
             // 
             // stsUsuario
             // 
+            this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsuario.Location = new System.Drawing.Point(0, 400);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(719, 22);
@@ -173,7 +177,7 @@
             // 
             // btnReport
             // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.Location = new System.Drawing.Point(602, 127);
@@ -203,7 +207,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Name = "GestorPrestamo";
-            this.Text = "PRESTAMO  | QNS_SysInv_X";
+            this.Text = "GESTOR DE PRESTAMOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Prestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();

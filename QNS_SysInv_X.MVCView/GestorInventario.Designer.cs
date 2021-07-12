@@ -65,6 +65,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
@@ -425,6 +426,7 @@
             // txtNombreActivo
             // 
             this.txtNombreActivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreActivo.Location = new System.Drawing.Point(156, 20);
             this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreActivo.Name = "txtNombreActivo";
@@ -442,6 +444,7 @@
             // 
             // stsUsu
             // 
+            this.stsUsu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsuario});
             this.stsUsu.Location = new System.Drawing.Point(0, 567);
@@ -457,6 +460,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -490,12 +494,21 @@
             this.txtBuscar.TabIndex = 10;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(542, 213);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 72;
+            this.txtID.Visible = false;
+            // 
             // GestorInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(796, 589);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
@@ -577,5 +590,6 @@
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

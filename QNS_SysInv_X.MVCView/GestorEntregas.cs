@@ -192,8 +192,21 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ReporteEntrega repoPrestamo = new ReporteEntrega();
-            repoPrestamo.Show();
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Text == "GESTOR DE ENTREGAS  | QNS_SysInv_X")
+                {
+                    IsOpen = true;
+                    f.BringToFront();
+                }
+            }
+            if (IsOpen == false)
+            {
+                ReporteEntrega repoPrestamo = new ReporteEntrega();
+                repoPrestamo.Show();
+                this.Close();
+            }
         }
 
         private void limpiarAlertas()

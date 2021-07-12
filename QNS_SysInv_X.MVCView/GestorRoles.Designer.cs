@@ -70,6 +70,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label13 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -454,6 +455,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsuario,
             this.toolStripStatusLabel1});
@@ -476,6 +478,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -509,12 +512,21 @@
             this.txtBuscar.TabIndex = 70;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(146, 256);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 73;
+            this.txtID.Visible = false;
+            // 
             // GestorRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 555);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
@@ -586,5 +598,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

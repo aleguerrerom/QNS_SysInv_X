@@ -380,6 +380,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -508,7 +509,8 @@
             // 
             // stsUsuario
             // 
-            this.stsUsuario.Location = new System.Drawing.Point(0, 542);
+            this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUsuario.Location = new System.Drawing.Point(0, 555);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(761, 22);
             this.stsUsuario.TabIndex = 68;
@@ -516,7 +518,7 @@
             // 
             // btnReport
             // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.Location = new System.Drawing.Point(546, 348);
@@ -589,7 +591,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(761, 564);
+            this.ClientSize = new System.Drawing.Size(761, 577);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.txtID);
@@ -611,7 +613,7 @@
             this.Controls.Add(this.gbDireccion);
             this.Controls.Add(this.gbCliente);
             this.Name = "GestorEntregas";
-            this.Text = "ENTREGA  | QNS_SysInv_X";
+            this.Text = "GESTOR DE ENTREGAS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Entregas_FormClosing);
             this.Load += new System.EventHandler(this.Entregas_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
