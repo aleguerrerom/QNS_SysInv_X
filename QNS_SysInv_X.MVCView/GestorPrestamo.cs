@@ -58,6 +58,9 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbCliente.DataSource = this.table;
                     cmbCliente.ValueMember = "nombre";
                     cmbCliente.DisplayMember = "nombre";
+                    this.cmbCedula.DataSource = this.table;
+                    cmbCedula.ValueMember = "cedula";
+                    cmbCedula.DisplayMember = "cedula";
                 }
 
             }
@@ -189,13 +192,7 @@ namespace QNS_SysInv_X.MVCView
                 //AGREGAR NUEVO USUARIO
                 this.prestamos = new Prestamos();
                 this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
-                
-                if (this.cmbCliente.SelectedIndex == 0)
-                { this.prestamos.Id_cliente = 1; }
-                else if (this.cmbCliente.SelectedIndex == 1)
-                { this.prestamos.Id_cliente = 2; }
-                else if (this.cmbCliente.SelectedIndex == 2)
-                { this.prestamos.Id_cliente = 3; }
+                this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
                
                 this.prestamos.opc = 7;
                 this.presH = new PrestamoHelper(prestamos);
@@ -210,7 +207,6 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA PRESTAMOS
                 
                 this.presH.Prestamo();
-                MessageBox.Show("El articulo fue procesado para prestamo correctamente");
 
             }
             catch (Exception ex)

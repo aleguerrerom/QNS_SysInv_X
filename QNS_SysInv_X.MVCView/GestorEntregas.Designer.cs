@@ -372,6 +372,7 @@
             // txtCliente
             // 
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(156, 20);
             this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCliente.Name = "txtCliente";

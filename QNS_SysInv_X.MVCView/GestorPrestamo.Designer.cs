@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
             this.btnReport = new System.Windows.Forms.Button();
+            this.cmbCedula = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -189,12 +190,21 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
+            // cmbCedula
+            // 
+            this.cmbCedula.FormattingEnabled = true;
+            this.cmbCedula.Location = new System.Drawing.Point(602, 74);
+            this.cmbCedula.Name = "cmbCedula";
+            this.cmbCedula.Size = new System.Drawing.Size(96, 21);
+            this.cmbCedula.TabIndex = 64;
+            // 
             // GestorPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(719, 422);
+            this.Controls.Add(this.cmbCedula);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.label2);
@@ -231,5 +241,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip stsUsuario;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.ComboBox cmbCedula;
     }
 }

@@ -58,7 +58,21 @@ namespace QNS_SysInv_X.MVCView
         {
 
         }
-        
-        
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFiltro.SelectedIndex == 0)
+            {
+                txtFiltro.Visible = true;
+                dtpFecha.Visible = false;
+
+            }
+            else if (cmbFiltro.SelectedIndex == 1 || cmbFiltro.SelectedIndex == 2)
+            {
+                dtpFecha.Visible = true;
+                txtFiltro.Visible = false;
+
+            }
+        }
     }
 }

@@ -46,15 +46,15 @@ namespace CNV_Inventario.MVCView {
         
         private SPPrestamosDataTable tableSPPrestamos;
         
-        private global::System.Data.DataRelation relationFK_Prestamo_Clientes;
-        
-        private global::System.Data.DataRelation relationFK_Prestamo_Inventario;
-        
         private global::System.Data.DataRelation relationFK_Clientes_Vendedores;
         
         private global::System.Data.DataRelation relationFK_Oportunidades_Vendedores1;
         
         private global::System.Data.DataRelation relationFK_Usuarios_Rol;
+        
+        private global::System.Data.DataRelation relationFK_Prestamo_Clientes;
+        
+        private global::System.Data.DataRelation relationFK_Prestamo_Inventario;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -444,11 +444,11 @@ namespace CNV_Inventario.MVCView {
                     this.tableSPPrestamos.InitVars();
                 }
             }
-            this.relationFK_Prestamo_Clientes = this.Relations["FK_Prestamo_Clientes"];
-            this.relationFK_Prestamo_Inventario = this.Relations["FK_Prestamo_Inventario"];
             this.relationFK_Clientes_Vendedores = this.Relations["FK_Clientes_Vendedores"];
             this.relationFK_Oportunidades_Vendedores1 = this.Relations["FK_Oportunidades_Vendedores1"];
             this.relationFK_Usuarios_Rol = this.Relations["FK_Usuarios_Rol"];
+            this.relationFK_Prestamo_Clientes = this.Relations["FK_Prestamo_Clientes"];
+            this.relationFK_Prestamo_Inventario = this.Relations["FK_Prestamo_Inventario"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -481,14 +481,6 @@ namespace CNV_Inventario.MVCView {
             base.Tables.Add(this.tableEntrega);
             this.tableSPPrestamos = new SPPrestamosDataTable();
             base.Tables.Add(this.tableSPPrestamos);
-            this.relationFK_Prestamo_Clientes = new global::System.Data.DataRelation("FK_Prestamo_Clientes", new global::System.Data.DataColumn[] {
-                        this.tableClientes.cedulaColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePrestamo.IDClienteColumn}, false);
-            this.Relations.Add(this.relationFK_Prestamo_Clientes);
-            this.relationFK_Prestamo_Inventario = new global::System.Data.DataRelation("FK_Prestamo_Inventario", new global::System.Data.DataColumn[] {
-                        this.tableInventario.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePrestamo.ID_ArticuloColumn}, false);
-            this.Relations.Add(this.relationFK_Prestamo_Inventario);
             this.relationFK_Clientes_Vendedores = new global::System.Data.DataRelation("FK_Clientes_Vendedores", new global::System.Data.DataColumn[] {
                         this.tableVendedores.cedulaColumn}, new global::System.Data.DataColumn[] {
                         this.tableClientes.agenteColumn}, false);
@@ -501,6 +493,14 @@ namespace CNV_Inventario.MVCView {
                         this.tableRol.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsuarios.rolColumn}, false);
             this.Relations.Add(this.relationFK_Usuarios_Rol);
+            this.relationFK_Prestamo_Clientes = new global::System.Data.DataRelation("FK_Prestamo_Clientes", new global::System.Data.DataColumn[] {
+                        this.tableClientes.cedulaColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePrestamo.IDClienteColumn}, false);
+            this.Relations.Add(this.relationFK_Prestamo_Clientes);
+            this.relationFK_Prestamo_Inventario = new global::System.Data.DataRelation("FK_Prestamo_Inventario", new global::System.Data.DataColumn[] {
+                        this.tableInventario.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePrestamo.ID_ArticuloColumn}, false);
+            this.Relations.Add(this.relationFK_Prestamo_Inventario);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2639,7 +2639,6 @@ namespace CNV_Inventario.MVCView {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnID_Articulo.AllowDBNull = false;
-                this.columnfechaPrestamo.AllowDBNull = false;
                 this.columnIDCliente.AllowDBNull = false;
             }
             
@@ -5282,7 +5281,12 @@ namespace CNV_Inventario.MVCView {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime fechaPrestamo {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePrestamo.fechaPrestamoColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePrestamo.fechaPrestamoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fechaPrestamo\' in table \'Prestamo\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePrestamo.fechaPrestamoColumn] = value;
@@ -5320,6 +5324,18 @@ namespace CNV_Inventario.MVCView {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Prestamo_Inventario"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfechaPrestamoNull() {
+                return this.IsNull(this.tablePrestamo.fechaPrestamoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfechaPrestamoNull() {
+                this[this.tablePrestamo.fechaPrestamoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9149,38 +9165,6 @@ SELECT ID, nombreCliente, fechaCierre, marca, detalles, presupuesto, vendedor FR
             tableMapping.ColumnMappings.Add("fechaPrestamo", "fechaPrestamo");
             tableMapping.ColumnMappings.Add("IDCliente", "IDCliente");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Prestamo] WHERE (([ID] = @Original_ID) AND ([ID_Articulo] = @O" +
-                "riginal_ID_Articulo) AND ([fechaPrestamo] = @Original_fechaPrestamo) AND ([IDCli" +
-                "ente] = @Original_IDCliente))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Articulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Articulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaPrestamo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Prestamo] ([ID_Articulo], [fechaPrestamo], [IDCliente]) VALUES" +
-                " (@ID_Articulo, @fechaPrestamo, @IDCliente);\r\nSELECT ID, ID_Articulo, fechaPrest" +
-                "amo, IDCliente FROM Prestamo WHERE (ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Articulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Articulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrestamo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Prestamo] SET [ID_Articulo] = @ID_Articulo, [fechaPrestamo] = @fechaPrestamo, [IDCliente] = @IDCliente WHERE (([ID] = @Original_ID) AND ([ID_Articulo] = @Original_ID_Articulo) AND ([fechaPrestamo] = @Original_fechaPrestamo) AND ([IDCliente] = @Original_IDCliente));
-SELECT ID, ID_Articulo, fechaPrestamo, IDCliente FROM Prestamo WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Articulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Articulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrestamo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Articulo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Articulo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaPrestamo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9196,7 +9180,7 @@ SELECT ID, ID_Articulo, fechaPrestamo, IDCliente FROM Prestamo WHERE (ID = @ID)"
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_Articulo, fechaPrestamo, IDCliente FROM dbo.Prestamo";
+            this._commandCollection[0].CommandText = "SELECT        * from\r\n                         Prestamo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9222,121 +9206,6 @@ SELECT ID, ID_Articulo, fechaPrestamo, IDCliente FROM Prestamo WHERE (ID = @ID)"
             DS_QNS.PrestamoDataTable dataTable = new DS_QNS.PrestamoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_QNS.PrestamoDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_QNS dataSet) {
-            return this.Adapter.Update(dataSet, "Prestamo");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_ID_Articulo, System.DateTime Original_fechaPrestamo, int Original_IDCliente) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID_Articulo));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fechaPrestamo));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_IDCliente));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Articulo, System.DateTime fechaPrestamo, int IDCliente) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Articulo));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fechaPrestamo));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IDCliente));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Articulo, System.DateTime fechaPrestamo, int IDCliente, int Original_ID, int Original_ID_Articulo, System.DateTime Original_fechaPrestamo, int Original_IDCliente, int ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Articulo));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fechaPrestamo));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IDCliente));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Articulo));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fechaPrestamo));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IDCliente));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Articulo, System.DateTime fechaPrestamo, int IDCliente, int Original_ID, int Original_ID_Articulo, System.DateTime Original_fechaPrestamo, int Original_IDCliente) {
-            return this.Update(ID_Articulo, fechaPrestamo, IDCliente, Original_ID, Original_ID_Articulo, Original_fechaPrestamo, Original_IDCliente, Original_ID);
         }
     }
     
@@ -11779,8 +11648,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
         
         private OportunidadesTableAdapter _oportunidadesTableAdapter;
         
-        private PrestamoTableAdapter _prestamoTableAdapter;
-        
         private RolTableAdapter _rolTableAdapter;
         
         private VendedoresTableAdapter _vendedoresTableAdapter;
@@ -11857,20 +11724,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
             }
             set {
                 this._oportunidadesTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PrestamoTableAdapter PrestamoTableAdapter {
-            get {
-                return this._prestamoTableAdapter;
-            }
-            set {
-                this._prestamoTableAdapter = value;
             }
         }
         
@@ -11965,10 +11818,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                             && (this._oportunidadesTableAdapter.Connection != null))) {
                     return this._oportunidadesTableAdapter.Connection;
                 }
-                if (((this._prestamoTableAdapter != null) 
-                            && (this._prestamoTableAdapter.Connection != null))) {
-                    return this._prestamoTableAdapter.Connection;
-                }
                 if (((this._rolTableAdapter != null) 
                             && (this._rolTableAdapter.Connection != null))) {
                     return this._rolTableAdapter.Connection;
@@ -12008,9 +11857,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                     count = (count + 1);
                 }
                 if ((this._oportunidadesTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._prestamoTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._rolTableAdapter != null)) {
@@ -12090,15 +11936,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._prestamoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Prestamo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._prestamoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._auditLogTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AuditLog.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12175,14 +12012,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._prestamoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Prestamo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._prestamoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._auditLogTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AuditLog.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12222,14 +12051,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._auditLogTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._prestamoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Prestamo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._prestamoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12340,11 +12161,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._prestamoTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._prestamoTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._rolTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._rolTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -12431,15 +12247,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                     if (this._oportunidadesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._oportunidadesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._oportunidadesTableAdapter.Adapter);
-                    }
-                }
-                if ((this._prestamoTableAdapter != null)) {
-                    revertConnections.Add(this._prestamoTableAdapter, this._prestamoTableAdapter.Connection);
-                    this._prestamoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._prestamoTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._prestamoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._prestamoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._prestamoTableAdapter.Adapter);
                     }
                 }
                 if ((this._rolTableAdapter != null)) {
@@ -12551,10 +12358,6 @@ SELECT ID, cliente, tipo, numeroDeSerie, marca, fecha, contacto, direccion, cant
                 if ((this._oportunidadesTableAdapter != null)) {
                     this._oportunidadesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._oportunidadesTableAdapter]));
                     this._oportunidadesTableAdapter.Transaction = null;
-                }
-                if ((this._prestamoTableAdapter != null)) {
-                    this._prestamoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._prestamoTableAdapter]));
-                    this._prestamoTableAdapter.Transaction = null;
                 }
                 if ((this._rolTableAdapter != null)) {
                     this._rolTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rolTableAdapter]));

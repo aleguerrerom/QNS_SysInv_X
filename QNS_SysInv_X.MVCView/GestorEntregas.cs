@@ -483,7 +483,36 @@ namespace QNS_SysInv_X.MVCView
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtBuscar.Text == "")
+                {
+                    listar();
+                }
+                else
+                {
+                    this.entrega = new Entrega();
+                    this.entrega.Opc = 4;
+                    this.entrega.Id = int.Parse(txtBuscar.Text);
+                    this.entregaH = new EntregaHelper(entrega);
 
+                    this.table = new DataTable();
+                    dgvListar.DataSource = table;
+                    this.table = this.entregaH.Buscar();
+
+                    if (this.table.Rows.Count > 0)
+                    {
+                        this.dgvListar.DataSource = this.table;
+                        this.dgvListar.ReadOnly = true;
+                    }
+
+                    else listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -225,6 +225,8 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].ParameterName = "@cedula";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objClientes.Cedula;
+                
+
 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPClientes");
             }
