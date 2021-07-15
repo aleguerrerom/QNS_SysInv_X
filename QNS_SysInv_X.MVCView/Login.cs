@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
-using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
 namespace QNS_SysInv_X.MVCView
@@ -20,26 +13,23 @@ namespace QNS_SysInv_X.MVCView
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
+
         public Login()
         {
             InitializeComponent();
         }
 
-        static Regex validate_emailaddress = RegexExpression.email_validation();
-
-        static Regex validate_letter = RegexExpression.letter_validation();
-
-        static Regex validate_number = RegexExpression.number_validation();
-
+        #region Expresiones Regulares
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
-
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
-        
+        #endregion
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        #region LogsIniciode Sesion
         private void LogInicioSesion()
         {
             try
@@ -55,24 +45,33 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            #region Validaciones de Login y Proceso de Login
             try
             {
                 if (this.txtUsuarioLogin.Text == "" && this.txtClaveLogin.Text == "")
                 {
                       MessageBox.Show("Campos vacios favor ingresar datos en ambos campos");
                 }
+
+                else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
+                {
+                    MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtUsuarioLogin.Text) != true)
+                {
+                    MessageBox.Show("No se permiten espacios en el espacio de USuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtUsuarioLogin.Focus();
+                    return;
+                }
                 else if (validate_Spaces.IsMatch(txtClaveLogin.Text) != true)
                 {
                     MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtClaveLogin.Focus();
-                    return;
-                }
-                else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
-                {
-                    MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                
@@ -106,7 +105,9 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
+        #region Funcion ver contrasena 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (chckView.Checked)
@@ -122,6 +123,7 @@ namespace QNS_SysInv_X.MVCView
                 lblShow.Text = "VER CONTRASEÑA";
             }
         }
+        #endregion
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {

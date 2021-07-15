@@ -31,28 +31,30 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre + " " + this.user.Apellido + " Usuario "+ this.user.Usuario ;
+            this.statusUsuario.Text = "Bienvenid@ " + this.user.Nombre; //+ " " + this.user.Apellido + " Usuario "+ this.user.Usuario ;
         }
 
-        private void LogCierreSesion()
-        {
-            try
-            {
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.opc = 3;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogSesion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        
+            #region log cierre de sesion
+                    private void LogCierreSesion()
+                    {
+                        try
+                        {
+                            this.bitacora = new Bitacora();
+                            this.bitacora.Usuario = this.user.Usuario;
+                            this.bitacora.opc = 3;
+                            this.bitH = new BitacoraHelper(bitacora);
+                            this.bitH.LogSesion();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    #endregion
+
         private void validarPerfil()
         {
-           
+            #region Validar Perfil
             roles = new Roles();
             
             roles.opc = 6;
@@ -105,8 +107,9 @@ namespace QNS_SysInv_X.MVCView
                 clientesToolStripMenuItem.Visible = true;
                 clmReporteCli.Visible = true;
             }
+            #endregion
         }
-        
+
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
@@ -161,11 +164,6 @@ namespace QNS_SysInv_X.MVCView
             }
         }
         
-        private void toolStripLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsAboutUs_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
@@ -446,11 +444,6 @@ namespace QNS_SysInv_X.MVCView
                 GestorPrestamo prestamo = new GestorPrestamo(user);
                 prestamo.Show();
             }
-        }
-
-       private void tsPrestamo_ButtonClick(object sender, EventArgs e)
-        {
-
         }
 
         private void Principal_Leave(object sender, EventArgs e)

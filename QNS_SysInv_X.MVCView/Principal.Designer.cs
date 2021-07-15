@@ -120,7 +120,7 @@
             this.tsArchivo.Name = "tsArchivo";
             this.tsArchivo.Size = new System.Drawing.Size(63, 22);
             this.tsArchivo.Text = "Archivo";
-            this.tsArchivo.Click += new System.EventHandler(this.toolStripLabel3_Click);
+           
             // 
             // ingresarConOtroUsuarioToolStripMenuItem
             // 
@@ -158,7 +158,6 @@
             this.tsMantenimiento.Name = "tsMantenimiento";
             this.tsMantenimiento.Size = new System.Drawing.Size(109, 22);
             this.tsMantenimiento.Text = "Mantenimiento";
-            this.tsMantenimiento.ButtonClick += new System.EventHandler(this.tsPrestamo_ButtonClick);
             // 
             // rolesToolStripMenuItem
             // 
