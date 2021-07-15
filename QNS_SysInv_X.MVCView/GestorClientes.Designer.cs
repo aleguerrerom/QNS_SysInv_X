@@ -351,7 +351,7 @@
             this.gpContacto.Controls.Add(this.txtContacto);
             this.gpContacto.Controls.Add(this.lblContacto);
             this.gpContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpContacto.Location = new System.Drawing.Point(15, 81);
+            this.gpContacto.Location = new System.Drawing.Point(455, 81);
             this.gpContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpContacto.Name = "gpContacto";
             this.gpContacto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -366,7 +366,7 @@
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
-            this.txtContacto.TabIndex = 1;
+            this.txtContacto.TabIndex = 5;
             // 
             // lblContacto
             // 
@@ -425,7 +425,7 @@
             this.gpNombre.Controls.Add(this.txtNomb);
             this.gpNombre.Controls.Add(this.lblNombre);
             this.gpNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpNombre.Location = new System.Drawing.Point(455, 81);
+            this.gpNombre.Location = new System.Drawing.Point(12, 81);
             this.gpNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpNombre.Name = "gpNombre";
             this.gpNombre.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -440,7 +440,7 @@
             this.txtNomb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNomb.Name = "txtNomb";
             this.txtNomb.Size = new System.Drawing.Size(198, 13);
-            this.txtNomb.TabIndex = 5;
+            this.txtNomb.TabIndex = 1;
             // 
             // lblNombre
             // 
@@ -528,6 +528,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(830, 582);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.gpContacto);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbCed);
             this.Controls.Add(this.statusStrip1);
@@ -543,8 +544,10 @@
             this.Controls.Add(this.gpTelefono);
             this.Controls.Add(this.gbCedula);
             this.Controls.Add(this.gpVendedor);
-            this.Controls.Add(this.gpContacto);
             this.Controls.Add(this.gpCedula);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(846, 621);
+            this.MinimumSize = new System.Drawing.Size(846, 621);
             this.Name = "GestorClientes";
             this.Text = "GESTOR CLIENTES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorClientes_FormClosing);

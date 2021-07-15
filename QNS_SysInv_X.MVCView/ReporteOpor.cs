@@ -60,6 +60,10 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-        
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

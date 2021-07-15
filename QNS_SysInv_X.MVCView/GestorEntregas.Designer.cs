@@ -613,6 +613,9 @@
             this.Controls.Add(this.gpSN);
             this.Controls.Add(this.gbDireccion);
             this.Controls.Add(this.gbCliente);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(777, 616);
+            this.MinimumSize = new System.Drawing.Size(777, 616);
             this.Name = "GestorEntregas";
             this.Text = "GESTOR DE ENTREGAS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Entregas_FormClosing);

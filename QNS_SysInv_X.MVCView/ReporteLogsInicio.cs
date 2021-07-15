@@ -54,11 +54,6 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbFiltro.SelectedIndex == 0)
@@ -73,6 +68,11 @@ namespace QNS_SysInv_X.MVCView
                 txtFiltro.Visible = false;
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

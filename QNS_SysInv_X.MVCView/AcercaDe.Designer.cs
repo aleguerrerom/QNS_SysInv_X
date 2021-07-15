@@ -146,6 +146,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CNV_Inventario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(300, 304);
+            this.MinimumSize = new System.Drawing.Size(300, 304);
             this.Name = "AcercaDe";
             this.Text = "ACERCA DE  | QNS_SysInv_X";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

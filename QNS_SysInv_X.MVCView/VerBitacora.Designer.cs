@@ -131,6 +131,9 @@
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnChange);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(683, 542);
+            this.MinimumSize = new System.Drawing.Size(683, 542);
             this.Name = "VerBitacora";
             this.Text = "BITACORA  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Bitacora_Load);

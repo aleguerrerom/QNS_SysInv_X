@@ -186,26 +186,27 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtCedula;
                 return;
             }
-            else if (this.txtContacto.Text == "")
+            else if (this.txtNomb.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblContacto.BackColor = System.Drawing.Color.DarkRed;
-                lblContacto.ForeColor = System.Drawing.Color.White;
-                gpContacto.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtContacto;
+                MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                lblNombre.ForeColor = System.Drawing.Color.White;
+                gpNombre.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtNomb;
                 return;
             }
-            else if (validate_letter.IsMatch(txtContacto.Text) != true)
+            else if (validate_letter.IsMatch(txtNomb.Text) != true)
             {
-                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarAlertas();
-                lblContacto.BackColor = System.Drawing.Color.DarkRed;
-                lblContacto.ForeColor = System.Drawing.Color.White;
-                gpContacto.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtContacto;
+                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                lblNombre.ForeColor = System.Drawing.Color.White;
+                gpNombre.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtNomb;
                 return;
             }
+            
             else if (this.txtMail.Text == "")
             {
                 limpiarAlertas();
@@ -246,24 +247,24 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtMail;
                 return;
             }
-            else if ( this.txtNomb.Text == "")
+            else if (this.txtContacto.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                gpNombre.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNomb;
+                MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                lblContacto.ForeColor = System.Drawing.Color.White;
+                gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtContacto;
                 return;
             }
-            else if (validate_letter.IsMatch(txtNomb.Text) != true)
+            else if (validate_letter.IsMatch(txtContacto.Text) != true)
             {
+                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                gpNombre.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNomb;
+                lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                lblContacto.ForeColor = System.Drawing.Color.White;
+                gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtContacto;
                 return;
             }
             else if (this.txtTel.Text == "")

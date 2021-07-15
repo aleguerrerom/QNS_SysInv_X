@@ -14,9 +14,7 @@ namespace QNS_SysInv_X.MVCController
 
         Datos cnGeneral = null;
         Prestamos objPrestamo = null;
-        DataTable tblDatos = null;
-
-
+  
         public PrestamoHelper(Prestamos parObjPrestamo)
         {
             objPrestamo = parObjPrestamo;
@@ -26,7 +24,6 @@ namespace QNS_SysInv_X.MVCController
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[3];

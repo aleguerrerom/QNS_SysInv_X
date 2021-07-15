@@ -526,6 +526,9 @@
             this.Controls.Add(this.gbMarca);
             this.Controls.Add(this.gbTipo);
             this.Controls.Add(this.gbNombre);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(812, 628);
+            this.MinimumSize = new System.Drawing.Size(812, 628);
             this.Name = "GestorInventario";
             this.Text = "GESTOR INVENTARIOS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorInventario_FormClosing);

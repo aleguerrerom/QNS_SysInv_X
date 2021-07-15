@@ -53,6 +53,10 @@ namespace QNS_SysInv_X.MVCView
             listadoLogsUsuarios();
             LabelDescription.Text = "Logs de Usuarios Logeados";
             btnChange.Text = "VER LOGS DE MOVIMIENTOS";
+            dgvListar.Height = 279;
+            dgvListar.Width = 380;
+            dgvListar.Left = 130;
+            dgvListar.Top = 215;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -62,21 +66,27 @@ namespace QNS_SysInv_X.MVCView
                 listadoLogsUsuarios();
                 LabelDescription.Text = "Logs de Usuarios Logeados";
                 btnChange.Text = "VER LOGS DE MOVIMIENTOS";
+                dgvListar.Height = 279;
+                dgvListar.Width = 380;
+                dgvListar.Left = 130;
+                dgvListar.Top = 215;
             }
             else
             {
                 listadoLogsMovimientos();
                 LabelDescription.Text = "Detalle de Logs de Movimientos en la Aplicacion";
                 btnChange.Text = "VER LOGS DE LOG IN";
+                dgvListar.Height = 279;
+                dgvListar.Width = 643;
+                dgvListar.Left = 12;
+                dgvListar.Top = 215;
             }
         }
 
         private void listadoLogsMovimientos()
         {
-
             try
             {
-
                 this.bitacora = new Bitacora();
                 this.bitacora.opc = 4;
 
@@ -92,10 +102,10 @@ namespace QNS_SysInv_X.MVCView
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnReport_Click(object sender, EventArgs e)
         {
             if (btnChange.Text == "VER LOGS DE MOVIMIENTOS")

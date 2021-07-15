@@ -82,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 42);
+            this.label1.Location = new System.Drawing.Point(323, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -92,11 +92,11 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(675, 36);
+            this.button1.Location = new System.Drawing.Point(675, 64);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 57;
+            this.button1.TabIndex = 3;
             this.button1.Text = "FILTRO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -106,11 +106,11 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(768, 36);
+            this.button2.Location = new System.Drawing.Point(768, 64);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
-            this.button2.TabIndex = 58;
+            this.button2.TabIndex = 4;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(527, 38);
+            this.txtFiltro.Location = new System.Drawing.Point(527, 66);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(142, 22);
-            this.txtFiltro.TabIndex = 59;
+            this.txtFiltro.TabIndex = 2;
             // 
             // cmbFiltro
             // 
@@ -130,10 +130,10 @@
             this.cmbFiltro.Items.AddRange(new object[] {
             "Usuario",
             "Fecha de Modificación"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 36);
+            this.cmbFiltro.Location = new System.Drawing.Point(414, 64);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
-            this.cmbFiltro.TabIndex = 60;
+            this.cmbFiltro.TabIndex = 0;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
@@ -169,10 +169,10 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(527, 38);
+            this.dtpFecha.Location = new System.Drawing.Point(527, 66);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(142, 22);
-            this.dtpFecha.TabIndex = 63;
+            this.dtpFecha.TabIndex = 1;
             // 
             // inventarioBindingSource
             // 
@@ -209,6 +209,9 @@
             this.Controls.Add(pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(883, 533);
+            this.MinimumSize = new System.Drawing.Size(883, 533);
             this.Name = "ReporteMovimientos";
             this.Text = "REPORTE MOVIMIENTOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);

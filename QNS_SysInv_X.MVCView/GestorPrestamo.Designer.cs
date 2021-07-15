@@ -216,6 +216,9 @@
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(735, 461);
+            this.MinimumSize = new System.Drawing.Size(735, 461);
             this.Name = "GestorPrestamo";
             this.Text = "GESTOR DE PRESTAMOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Prestamo_Load);

@@ -537,6 +537,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(665, 594);
+            this.MinimumSize = new System.Drawing.Size(665, 594);
             this.Name = "GestorRoles";
             this.Text = "GESTOR DE ROLES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.GestorRoles_Load);

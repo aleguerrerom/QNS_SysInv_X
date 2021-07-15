@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteOpor));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.oportunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,21 +79,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(339, 48);
+            this.label1.Location = new System.Drawing.Point(339, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 0;
             this.label1.Text = "FILTRAR POR:";
             // 
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(670, 43);
+            this.button1.Location = new System.Drawing.Point(670, 66);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 57;
+            this.button1.TabIndex = 4;
             this.button1.Text = "FILTRO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -103,11 +103,11 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(763, 43);
+            this.button2.Location = new System.Drawing.Point(763, 66);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 22);
-            this.button2.TabIndex = 58;
+            this.button2.TabIndex = 5;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -115,17 +115,17 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(550, 42);
+            this.txtFiltro.Location = new System.Drawing.Point(550, 65);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 22);
-            this.txtFiltro.TabIndex = 59;
+            this.txtFiltro.TabIndex = 2;
             // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSOportunidades";
-            reportDataSource1.Value = this.oportunidadesBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "DSOportunidades";
+            reportDataSource4.Value = this.oportunidadesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportOportunidades.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 156);
             this.reportViewer1.Name = "reportViewer1";
@@ -162,10 +162,11 @@
             // 
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.ItemHeight = 16;
             this.cmbFiltro.Items.AddRange(new object[] {
             "ID",
             "Fecha de Cierre"});
-            this.cmbFiltro.Location = new System.Drawing.Point(430, 42);
+            this.cmbFiltro.Location = new System.Drawing.Point(430, 65);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 62;
@@ -174,10 +175,11 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(550, 43);
+            this.dtpFecha.Location = new System.Drawing.Point(550, 65);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(100, 22);
-            this.dtpFecha.TabIndex = 64;
+            this.dtpFecha.TabIndex = 3;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // ReporteOpor
             // 
@@ -196,6 +198,9 @@
             this.Controls.Add(pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(878, 552);
+            this.MinimumSize = new System.Drawing.Size(878, 552);
             this.Name = "ReporteOpor";
             this.Text = "REPORTE OPORTUNIDADES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);

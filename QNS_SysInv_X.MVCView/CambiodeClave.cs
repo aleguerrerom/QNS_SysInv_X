@@ -17,9 +17,6 @@ namespace QNS_SysInv_X.MVCView
     {
         private Usuarios user;
         private UsuariosHelper userHelper;
-        private RolesHelper rolH;
-        private Roles roles;
-        private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
 

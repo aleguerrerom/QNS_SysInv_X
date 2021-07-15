@@ -485,6 +485,9 @@
             this.Controls.Add(this.gbCedula);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.toolStrip1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(792, 646);
+            this.MinimumSize = new System.Drawing.Size(792, 646);
             this.Name = "GestorVendedores";
             this.Text = "GESTOR VENDEDORES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorVendedores_FormClosing);

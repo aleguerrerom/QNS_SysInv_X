@@ -18,8 +18,6 @@ namespace QNS_SysInv_X.MVCView
         private Vendedores vendedor;
         private VendedoresHelper vendedorH;
         private Usuarios user;
-        private UsuariosHelper userHelper;
-        private RegexExpression regexEx;
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;

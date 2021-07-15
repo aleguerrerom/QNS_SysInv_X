@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVendedores));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.VendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             pictureBox2.Location = new System.Drawing.Point(14, 27);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(303, 121);
+            pictureBox2.Size = new System.Drawing.Size(278, 97);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 41);
+            this.label1.Location = new System.Drawing.Point(323, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -88,11 +88,11 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(642, 34);
+            this.button1.Location = new System.Drawing.Point(642, 58);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 57;
+            this.button1.TabIndex = 2;
             this.button1.Text = "FILTRO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -102,11 +102,11 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(750, 34);
+            this.button2.Location = new System.Drawing.Point(750, 58);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
-            this.button2.TabIndex = 58;
+            this.button2.TabIndex = 3;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -114,10 +114,10 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(527, 37);
+            this.txtFiltro.Location = new System.Drawing.Point(527, 61);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 22);
-            this.txtFiltro.TabIndex = 59;
+            this.txtFiltro.TabIndex = 1;
             // 
             // cmbFiltro
             // 
@@ -127,10 +127,10 @@
             "Correo",
             "Nombre ",
             "Cedula"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 35);
+            this.cmbFiltro.Location = new System.Drawing.Point(414, 59);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
-            this.cmbFiltro.TabIndex = 60;
+            this.cmbFiltro.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -160,14 +160,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DSVendedores";
-            reportDataSource1.Value = this.VendedoresBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSVendedores";
+            reportDataSource2.Value = this.VendedoresBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportVendedores.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(14, 156);
+            this.reportViewer1.Location = new System.Drawing.Point(14, 131);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(834, 326);
-            this.reportViewer1.TabIndex = 63;
+            this.reportViewer1.Size = new System.Drawing.Size(834, 342);
+            this.reportViewer1.TabIndex = 4;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // ReporteVendedores
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(860, 494);
+            this.ClientSize = new System.Drawing.Size(860, 485);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cmbFiltro);
@@ -186,6 +186,9 @@
             this.Controls.Add(pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(876, 524);
+            this.MinimumSize = new System.Drawing.Size(876, 524);
             this.Name = "ReporteVendedores";
             this.Text = "REPORTE VENDEDORES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteVendedores_Load);

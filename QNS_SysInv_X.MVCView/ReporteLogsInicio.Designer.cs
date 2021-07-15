@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteLogsInicio));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AuditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +43,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
@@ -59,7 +58,7 @@
             pictureBox2.Location = new System.Drawing.Point(14, 35);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(303, 121);
+            pictureBox2.Size = new System.Drawing.Size(266, 79);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
@@ -78,21 +77,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 49);
+            this.label1.Location = new System.Drawing.Point(322, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
             this.label1.Text = "FILTRAR POR:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(671, 39);
+            this.button1.Location = new System.Drawing.Point(670, 74);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 57;
+            this.button1.TabIndex = 3;
             this.button1.Text = "FILTRO";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -102,11 +102,11 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(764, 39);
+            this.button2.Location = new System.Drawing.Point(763, 74);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
-            this.button2.TabIndex = 58;
+            this.button2.TabIndex = 4;
             this.button2.Text = "LIMPIAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -114,10 +114,10 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(527, 45);
+            this.txtFiltro.Location = new System.Drawing.Point(526, 78);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(138, 22);
-            this.txtFiltro.TabIndex = 59;
+            this.txtFiltro.TabIndex = 2;
             // 
             // cmbFiltro
             // 
@@ -127,24 +127,23 @@
             "Usuario",
             "Fecha de Inicio",
             "Fecha de Salida"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 43);
+            this.cmbFiltro.Location = new System.Drawing.Point(413, 76);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
-            this.cmbFiltro.TabIndex = 60;
+            this.cmbFiltro.TabIndex = 0;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource3.Name = "DSLogInicio";
-            reportDataSource3.Value = this.AuditLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource2.Name = "DSLogInicio";
+            reportDataSource2.Value = this.AuditLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportLogsInicio.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 167);
+            this.reportViewer1.Location = new System.Drawing.Point(14, 131);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(825, 315);
+            this.reportViewer1.Size = new System.Drawing.Size(838, 315);
             this.reportViewer1.TabIndex = 61;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // toolStrip1
             // 
@@ -152,7 +151,7 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(850, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(862, 25);
             this.toolStrip1.TabIndex = 62;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -167,17 +166,10 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(527, 45);
+            this.dtpFecha.Location = new System.Drawing.Point(526, 78);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(138, 22);
-            this.dtpFecha.TabIndex = 63;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(536, 181);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(8, 22);
-            this.dateTimePicker1.TabIndex = 64;
+            this.dtpFecha.TabIndex = 1;
             // 
             // auditLogTableAdapter
             // 
@@ -188,8 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(850, 494);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(862, 464);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);
@@ -201,6 +192,9 @@
             this.Controls.Add(pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(878, 503);
+            this.MinimumSize = new System.Drawing.Size(878, 503);
             this.Name = "ReporteLogsInicio";
             this.Text = "REPORTES DE LOGS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
@@ -227,6 +221,5 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
