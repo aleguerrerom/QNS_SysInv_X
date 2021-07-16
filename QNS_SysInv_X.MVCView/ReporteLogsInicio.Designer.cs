@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteLogsInicio));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AuditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,11 +44,14 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuditLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -136,9 +139,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource2.Name = "DSLogInicio";
-            reportDataSource2.Value = this.AuditLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DSLogInicio";
+            reportDataSource1.Value = this.AuditLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportLogsInicio.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(14, 131);
             this.reportViewer1.Name = "reportViewer1";
@@ -175,12 +178,29 @@
             // 
             this.auditLogTableAdapter.ClearBeforeFill = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsu});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 442);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(862, 22);
+            this.statusStrip1.TabIndex = 63;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
+            // 
             // ReporteLogsInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(862, 464);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);
@@ -203,6 +223,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +243,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RerporteClientes));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.clientesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.stsStrip = new System.Windows.Forms.StatusStrip();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
@@ -54,6 +55,7 @@
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
+            this.stsStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -128,9 +130,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource4.Name = "DSClientes";
-            reportDataSource4.Value = this.clientesBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DSClientes";
+            reportDataSource1.Value = this.clientesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
@@ -186,11 +188,19 @@
             // 
             // stsStrip
             // 
+            this.stsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsu});
             this.stsStrip.Location = new System.Drawing.Point(0, 545);
             this.stsStrip.Name = "stsStrip";
             this.stsStrip.Size = new System.Drawing.Size(855, 22);
             this.stsStrip.TabIndex = 67;
             this.stsStrip.Text = "statusStrip1";
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // RerporteClientes
             // 
@@ -220,6 +230,8 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
+            this.stsStrip.ResumeLayout(false);
+            this.stsStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +254,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private System.Windows.Forms.StatusStrip stsStrip;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
     }
 }

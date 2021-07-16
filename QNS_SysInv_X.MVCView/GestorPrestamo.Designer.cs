@@ -43,10 +43,12 @@
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
             this.btnReport = new System.Windows.Forms.Button();
             this.cmbCedula = new System.Windows.Forms.ComboBox();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.stsUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -170,6 +172,8 @@
             // stsUsuario
             // 
             this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsu});
             this.stsUsuario.Location = new System.Drawing.Point(0, 400);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(719, 22);
@@ -197,6 +201,12 @@
             this.cmbCedula.Name = "cmbCedula";
             this.cmbCedula.Size = new System.Drawing.Size(96, 21);
             this.cmbCedula.TabIndex = 64;
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // GestorPrestamo
             // 
@@ -226,6 +236,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.stsUsuario.ResumeLayout(false);
+            this.stsUsuario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +257,6 @@
         private System.Windows.Forms.StatusStrip stsUsuario;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.ComboBox cmbCedula;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
     }
 }

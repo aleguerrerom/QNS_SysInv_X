@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QNS_SysInv_X.MVCController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,14 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
 
+        private Usuarios user;
+
+        public ReporteInventario(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+            this.stsUsu.Text = this.user.Usuario;
+        }
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
@@ -24,6 +33,7 @@ namespace QNS_SysInv_X.MVCView
 
             this.reportViewer1.RefreshReport();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

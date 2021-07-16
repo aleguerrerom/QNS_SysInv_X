@@ -16,13 +16,22 @@ namespace QNS_SysInv_X.MVCView
         private Bitacora bitacora;
         private BitacoraHelper bitH;
         private DataTable table;
-       
+        private Usuarios user;
 
         public VerBitacora()
         {
             InitializeComponent();
         }
         
+        
+
+        public VerBitacora(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+            this.stsUsu.Text = this.user.Usuario;
+        }
+
         private void listadoLogsUsuarios()
         {
 

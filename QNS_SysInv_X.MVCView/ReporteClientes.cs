@@ -24,7 +24,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsStrip.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)

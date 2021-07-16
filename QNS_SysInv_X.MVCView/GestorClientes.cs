@@ -110,14 +110,14 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.opc = 2;
                 this.clientesH = new ClientesHelper(clientes);
                 ///LOG PARA USUARIOS
-                /*
+                
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Agregar Cliente";
                 this.bitacora.Detalle = "Se agrego el cliente correctamente " + this.txtNomb.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();*/
+                this.bitH.LogMovimientos();
 
                 this.clientesH.Guardar();
                 MessageBox.Show("Datos de Cliente Almacenado");

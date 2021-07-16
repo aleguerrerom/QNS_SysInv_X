@@ -141,7 +141,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                GestorInventario inve = new GestorInventario();
+                GestorInventario inve = new GestorInventario(user);
                 inve.Show();
             }
         }
@@ -159,7 +159,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                GestorEntregas entr = new GestorEntregas();
+                GestorEntregas entr = new GestorEntregas(user);
                 entr.Show();
             }
         }
@@ -177,7 +177,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                AcercaDe about = new AcercaDe();
+                AcercaDe about = new AcercaDe(user);
                 about.Show();
             }
         }
@@ -195,7 +195,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                GestorInventario inve = new GestorInventario();
+                GestorInventario inve = new GestorInventario(user);
                 inve.Show();
             }
         }
@@ -213,7 +213,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                GestorEntregas entr = new GestorEntregas();
+                GestorEntregas entr = new GestorEntregas(user);
                 entr.Show();
             }
         }
@@ -279,7 +279,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                GestorEntregas entr = new GestorEntregas();
+                GestorEntregas entr = new GestorEntregas(user);
                 entr.Show();
             }
         }
@@ -307,7 +307,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                VerBitacora bitacora = new VerBitacora();
+                VerBitacora bitacora = new VerBitacora(user);
                 bitacora.Show();
             }
         }
@@ -535,7 +535,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteInventario entr = new ReporteInventario();
+                ReporteInventario entr = new ReporteInventario(user);
                 entr.Show();
             }
         }
@@ -553,7 +553,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteUsuarios repU = new ReporteUsuarios();
+                ReporteUsuarios repU = new ReporteUsuarios(user);
                 repU.Show();
             }
         }
@@ -571,7 +571,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                VerBitacora bitacora = new VerBitacora();
+                VerBitacora bitacora = new VerBitacora(user);
                 bitacora.Show();
             }
         }
@@ -589,7 +589,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                VerBitacora bitacora = new VerBitacora();
+                VerBitacora bitacora = new VerBitacora(user);
                 bitacora.Show();
             }
         }
@@ -607,7 +607,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                VerBitacora bitacora = new VerBitacora();
+                VerBitacora bitacora = new VerBitacora(user);
                 bitacora.Show();
             }
         }
@@ -625,7 +625,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteOpor RedOpo = new ReporteOpor();
+                ReporteOpor RedOpo = new ReporteOpor(user);
                 RedOpo.Show();
             }
         }
@@ -643,7 +643,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                RerporteClientes RepoClientes = new RerporteClientes();
+                RerporteClientes RepoClientes = new RerporteClientes(user);
                 RepoClientes.Show();
             }
         }
@@ -661,7 +661,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteVendedores repoVendedores = new ReporteVendedores();
+                ReporteVendedores repoVendedores = new ReporteVendedores(user);
                 repoVendedores.Show();
             }
         }
@@ -679,7 +679,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteEntrega repoPrestamo = new ReporteEntrega();
+                ReporteEntrega repoPrestamo = new ReporteEntrega(user);
                 repoPrestamo.Show();
             }
         }
@@ -697,7 +697,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReportePrestamo repoPrestamo = new ReportePrestamo();
+                ReportePrestamo repoPrestamo = new ReportePrestamo(user);
                 repoPrestamo.Show();
             }
         }

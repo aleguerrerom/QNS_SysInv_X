@@ -61,6 +61,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -70,6 +71,7 @@
             this.gpFecha.SuspendLayout();
             this.gbMarca.SuspendLayout();
             this.gbClienteN.SuspendLayout();
+            this.stsUsuario.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -381,6 +383,8 @@
             // stsUsuario
             // 
             this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsu});
             this.stsUsuario.Location = new System.Drawing.Point(0, 547);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(792, 22);
@@ -430,7 +434,12 @@
             this.cmbCedVendedor.Name = "cmbCedVendedor";
             this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
             this.cmbCedVendedor.TabIndex = 73;
-            this.cmbCedVendedor.Visible = false;
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // GestorOportunidades
             // 
@@ -476,6 +485,8 @@
             this.gbMarca.PerformLayout();
             this.gbClienteN.ResumeLayout(false);
             this.gbClienteN.PerformLayout();
+            this.stsUsuario.ResumeLayout(false);
+            this.stsUsuario.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -515,5 +526,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cmbCedVendedor;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
     }
 }

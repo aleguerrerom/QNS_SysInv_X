@@ -66,6 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
@@ -446,7 +447,8 @@
             // 
             this.stsUsu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsUsuario});
+            this.stsUsuario,
+            this.stsUsua});
             this.stsUsu.Location = new System.Drawing.Point(0, 567);
             this.stsUsu.Name = "stsUsu";
             this.stsUsu.Size = new System.Drawing.Size(796, 22);
@@ -501,6 +503,12 @@
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 72;
             this.txtID.Visible = false;
+            // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
             // 
             // GestorInventario
             // 
@@ -594,5 +602,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsua;
     }
 }

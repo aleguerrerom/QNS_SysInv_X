@@ -31,7 +31,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUser.Text = this.user.Usuario;
+            this.stsUsua.Text = this.user.Usuario;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace QNS_SysInv_X.MVCView
                  this.userHelper = new UsuariosHelper(user);
                 
                 this.bitacora = new Bitacora();
-                //this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Actualizar";
                 this.bitacora.Detalle = "Se cambio la clave del usuario correctamente ";
                 this.bitacora.opc = 5;

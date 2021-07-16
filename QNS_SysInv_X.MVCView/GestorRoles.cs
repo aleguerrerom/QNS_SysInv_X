@@ -32,7 +32,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.statusStrip1.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -122,8 +122,8 @@ namespace QNS_SysInv_X.MVCView
                 ///
                 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
-                this.bitacora.Movimiento = "actualizo";
+                this.bitacora.Usuario = this.stsUsu.Text;
+                this.bitacora.Movimiento = "Actualizar";
                 this.bitacora.Detalle = "Se actualizo el rol " + this.txtRol.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
@@ -207,7 +207,7 @@ namespace QNS_SysInv_X.MVCView
                     ///LOG PARA ROLES
                     
                     this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
+                    this.bitacora.Usuario = this.stsUsu.Text;
                     this.bitacora.Movimiento = "Agregar";
                     this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;

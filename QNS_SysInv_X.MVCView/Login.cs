@@ -52,29 +52,16 @@ namespace QNS_SysInv_X.MVCView
             #region Validaciones de Login y Proceso de Login
             try
             {
-                if (this.txtUsuarioLogin.Text == "" && this.txtClaveLogin.Text == "")
+                if (this.txtUsuarioLogin.Text == "")
                 {
-                      MessageBox.Show("Campos vacios favor ingresar datos en ambos campos");
-                }
-
-                else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
-                {
-                    MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Campos de usuario no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                else if (validate_Spaces.IsMatch(txtUsuarioLogin.Text) != true)
+                else if (this.txtClaveLogin.Text == "")
                 {
-                    MessageBox.Show("No se permiten espacios en el espacio de USuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtUsuarioLogin.Focus();
+                    MessageBox.Show("El campo de contraseña no pudes estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                else if (validate_Spaces.IsMatch(txtClaveLogin.Text) != true)
-                {
-                    MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtClaveLogin.Focus();
-                    return;
-                }
-               
                 else { 
                     this.user = new Usuarios();
                     this.user.Usuario = this.txtUsuarioLogin.Text;
@@ -97,7 +84,22 @@ namespace QNS_SysInv_X.MVCView
                         inicio.Show();
                         this.Hide();
                     }
-                    else MessageBox.Show("Datos de inicio de sesión incorrectos o Usuario Inactivo");
+                    else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
+                    {
+                        MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else if (validate_Spaces.IsMatch(txtUsuarioLogin.Text) != true)
+                    {
+                        MessageBox.Show("No se permiten espacios en el campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else if (validate_Spaces.IsMatch(txtClaveLogin.Text) != true)
+                    {
+                        MessageBox.Show("No se permiten espacios en el campo constraseña.", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario se encuentra inactivo.");
                 }
             }
             catch (Exception ex)

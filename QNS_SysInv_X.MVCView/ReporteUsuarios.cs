@@ -1,4 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,15 @@ namespace QNS_SysInv_X.MVCView
         public ReporteUsuarios()
         {
             InitializeComponent();
+        }
+
+        private Usuarios user;
+
+        public ReporteUsuarios(Usuarios usuario)
+        {
+            InitializeComponent();
+            this.user = usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)

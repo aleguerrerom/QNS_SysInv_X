@@ -23,7 +23,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsuario.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
 
         private Prestamos prestamos;
@@ -198,7 +198,7 @@ namespace QNS_SysInv_X.MVCView
                 this.presH = new PrestamoHelper(prestamos);
 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Prestamo ";
                 this.bitacora.Detalle = "Se proceso el prestamo correctamente";
                 this.bitacora.opc = 5;

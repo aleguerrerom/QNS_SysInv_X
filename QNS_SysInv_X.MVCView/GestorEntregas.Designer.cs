@@ -73,6 +73,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpFecha.SuspendLayout();
@@ -87,6 +88,7 @@
             this.gpCantidad.SuspendLayout();
             this.gpDescripcion.SuspendLayout();
             this.gpEntregado.SuspendLayout();
+            this.stsUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -511,6 +513,8 @@
             // stsUsuario
             // 
             this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsua});
             this.stsUsuario.Location = new System.Drawing.Point(0, 555);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(761, 22);
@@ -587,6 +591,12 @@
             this.txtBuscar.TabIndex = 74;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
+            // 
             // GestorEntregas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +654,8 @@
             this.gpDescripcion.PerformLayout();
             this.gpEntregado.ResumeLayout(false);
             this.gpEntregado.PerformLayout();
+            this.stsUsuario.ResumeLayout(false);
+            this.stsUsuario.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,5 +704,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsua;
     }
 }

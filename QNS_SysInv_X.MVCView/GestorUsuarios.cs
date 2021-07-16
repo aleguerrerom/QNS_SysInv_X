@@ -38,7 +38,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsuario.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
         
 
@@ -114,7 +114,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 }
                 else this.user.Activo = false;
                 this.user.Rol = this.cmbRol.SelectedIndex + 1;
-                this.user.Nombre = this.stsUsuario.Text;
+                this.user.Nombre = this.txtNombre.Text;
                 this.user.Apellido = this.txtApellido.Text;
                 this.user.Correo = this.txtCorreo.Text;
                 this.user.opc = 2;
@@ -122,7 +122,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 ///LOG PARA USUARIOS
 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Agregar Usuario";
                 this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
                 this.bitacora.opc = 5;
@@ -457,7 +457,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.userHelper = new UsuariosHelper(user);
             //Bitacora 
             this.bitacora = new Bitacora();
-            this.bitacora.Usuario = this.stsUsuario.Text;
+            this.bitacora.Usuario = this.stsUsu.Text;
             this.bitacora.Movimiento = "Actualizar Usuario";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;

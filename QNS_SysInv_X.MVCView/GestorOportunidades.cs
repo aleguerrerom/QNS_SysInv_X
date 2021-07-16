@@ -42,7 +42,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsuario.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
         private void limpiarAlertas()
         {
@@ -158,10 +158,9 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidades.opc = 2;
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
                 ///LOG PARA USUARIOS
-
-
+                
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Oportunidad Insertada";
                 this.bitacora.Detalle = "Se agrego la oportunidad correctamente ";
                 this.bitacora.opc = 5;
@@ -358,7 +357,7 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
                 
                  this.bitacora = new Bitacora();
-                 this.bitacora.Usuario = this.stsUsuario.Text;
+                 this.bitacora.Usuario = this.stsUsu.Text;
                  this.bitacora.Movimiento = "Actualizar Oportunidad";
                  this.bitacora.Detalle = "Se actualizo la oportunidad correctamente ";
                  this.bitacora.opc = 5;

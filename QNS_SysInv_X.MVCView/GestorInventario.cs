@@ -32,7 +32,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.stsUsua.Text = this.user.Usuario;
         }
 
         #region LISTAR INVENTARIO
@@ -83,7 +83,7 @@ namespace QNS_SysInv_X.MVCView
                 ////
                 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Inventario Agregado";
                 this.bitacora.Detalle = "Se agrego el articulo al inventario correctamente ";
                 this.bitacora.opc = 5;
@@ -305,7 +305,7 @@ namespace QNS_SysInv_X.MVCView
                 this.invH = new InventarioHelper(inventario);
 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.user.Usuario;
+                this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Actualizar Inventario";
                 this.bitacora.Detalle = "Se actualizo el inventario correctamente ";
                 this.bitacora.opc = 5;

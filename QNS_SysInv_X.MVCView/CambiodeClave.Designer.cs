@@ -44,10 +44,12 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.stsUser.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +149,8 @@
             // stsUser
             // 
             this.stsUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.stsUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsUsua});
             this.stsUser.Location = new System.Drawing.Point(0, 344);
             this.stsUser.Name = "stsUser";
             this.stsUser.Size = new System.Drawing.Size(389, 22);
@@ -227,6 +231,12 @@
             this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
+            // 
             // CambiodeClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +264,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.stsUser.ResumeLayout(false);
+            this.stsUser.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,5 +288,6 @@
         private System.Windows.Forms.Label lblShow;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsua;
     }
 }

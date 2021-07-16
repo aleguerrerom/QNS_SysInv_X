@@ -23,7 +23,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsuario.Text = this.user.Usuario;
+            this.stsUsua.Text = this.user.Usuario;
         }
         private DataTable table;
         private Bitacora bitacora;
@@ -99,7 +99,7 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA USUARIOS
                 ///
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Ingreso entrega";
                 this.bitacora.Detalle = "Se proceso la entrega correctamente";
                 this.bitacora.opc = 5;
@@ -143,7 +143,7 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA USUARIOS
                 ///
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Actualización de entrega";
                 this.bitacora.Detalle = "Se actualizo la entrega correctamente";
                 this.bitacora.opc = 5;
