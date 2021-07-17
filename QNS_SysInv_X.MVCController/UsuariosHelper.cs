@@ -10,8 +10,7 @@ namespace QNS_SysInv_X.MVCController
         Datos cnGeneral = null;
         Usuarios objUsuarios = null;
         DataTable tblDatos = null;
-
-
+        
         public UsuariosHelper(Usuarios parObjUsuarios)
         {
             objUsuarios = parObjUsuarios;

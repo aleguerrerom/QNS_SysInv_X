@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
@@ -31,7 +25,6 @@ namespace QNS_SysInv_X.MVCView
         private Entrega entrega;
         private EntregaHelper entregaH;
         private Usuarios user;
-        private RegexExpression regexEx;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
         

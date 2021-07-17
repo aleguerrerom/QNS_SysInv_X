@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
@@ -188,7 +183,7 @@ namespace QNS_SysInv_X.MVCView
              if (this.cmbNombre.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes de seleccionar un NOMBRE DE CLIENTE", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNombreCliente.BackColor = System.Drawing.Color.DarkRed;
                 lblNombreCliente.ForeColor = System.Drawing.Color.White;
                 gbClienteN.BackColor = System.Drawing.Color.DarkRed;
@@ -248,7 +243,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.cmbVendedor.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo VENDEDOR no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes de seleccionar VENDEDOR", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblVendedor.BackColor = System.Drawing.Color.DarkRed;
                 lblVendedor.ForeColor = System.Drawing.Color.White;
                 gbVendedor.BackColor = System.Drawing.Color.DarkRed;
@@ -434,6 +429,9 @@ namespace QNS_SysInv_X.MVCView
             listar();
             cargarComboVendedor();
             cargarComboCliente();
+            this.cmbNombre.SelectedIndex = -1;
+            this.cmbCedVendedor.SelectedIndex = -1;
+            this.cmbVendedor.SelectedIndex = -1;
         }
 
         private void btnReport_Click(object sender, EventArgs e)

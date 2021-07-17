@@ -1,13 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
-using QNS_SysInv_X.MVCController;
+﻿using QNS_SysInv_X.MVCController;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView

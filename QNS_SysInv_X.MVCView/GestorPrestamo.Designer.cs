@@ -41,9 +41,9 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnReport = new System.Windows.Forms.Button();
             this.cmbCedula = new System.Windows.Forms.ComboBox();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -116,11 +116,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 49);
+            this.label1.Location = new System.Drawing.Point(331, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 16);
+            this.label1.Size = new System.Drawing.Size(139, 16);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Seleccione Articulo:";
+            this.label1.Text = "SELECCIONE ARTICULO:";
             // 
             // toolStrip1
             // 
@@ -163,11 +163,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(335, 76);
+            this.label2.Location = new System.Drawing.Point(333, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 61;
-            this.label2.Text = "Seleccione Cliente:";
+            this.label2.Text = "SELECCIONE CLIENTE:";
             // 
             // stsUsuario
             // 
@@ -179,6 +179,12 @@
             this.stsUsuario.Size = new System.Drawing.Size(719, 22);
             this.stsUsuario.TabIndex = 62;
             this.stsUsuario.Text = "statusStrip1";
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // btnReport
             // 
@@ -201,12 +207,7 @@
             this.cmbCedula.Name = "cmbCedula";
             this.cmbCedula.Size = new System.Drawing.Size(96, 21);
             this.cmbCedula.TabIndex = 64;
-            // 
-            // stsUsu
-            // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel1";
+            this.cmbCedula.Visible = false;
             // 
             // GestorPrestamo
             // 

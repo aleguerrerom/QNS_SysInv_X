@@ -1,11 +1,7 @@
 ﻿using QNS_SysInv_X.MVCModel;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QNS_SysInv_X.MVCController
 {
@@ -156,7 +152,8 @@ namespace QNS_SysInv_X.MVCController
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@nombrecliente";
-                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
                 parParameter[1].SqlValue = objOportunidades.Nombrecliente;
 
                 parParameter[2] = new SqlParameter();

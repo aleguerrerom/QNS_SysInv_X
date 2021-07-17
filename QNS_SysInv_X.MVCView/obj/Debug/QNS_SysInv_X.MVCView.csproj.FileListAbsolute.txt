@@ -148,3 +148,4 @@ C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inven
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\CNV_Inventario.MVCView.application
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inventario.MVCView.exe.manifest
 C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\obj\Debug\CNV_Inventario.MVCView.application
+C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\bin\Debug\Datos.cs

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
@@ -133,6 +127,7 @@ namespace QNS_SysInv_X.MVCView
         {
             cargarComboVendedor();
             listar();
+            this.cmbVende.SelectedIndex = -1;
         }
 
         private void limpiarAlertas()
@@ -230,7 +225,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.cmbVende.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de VENDEDOR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes de seleccionar VENDEDOR", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblVendedor.BackColor = System.Drawing.Color.DarkRed;
                 lblVendedor.ForeColor = System.Drawing.Color.White;
                 gpVendedor.BackColor = System.Drawing.Color.DarkRed;

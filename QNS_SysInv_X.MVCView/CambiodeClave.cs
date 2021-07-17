@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using QNS_SysInv_X.MVCView.Resources;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
 
@@ -45,16 +37,20 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_Spaces.IsMatch(txtClave.Text) != true)
             {
                 MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtClave.Focus();
+                this.ActiveControl = txtClave;
+                return;
+            }
+            else if (validate_Spaces.IsMatch(txtConfirmar.Text) != true)
+            {
+                MessageBox.Show("No se permiten espacios en el espacio Confirmar", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.ActiveControl = txtConfirmar;
                 return;
             }
             else
             {
-
                 if (this.txtClave.Text != this.txtConfirmar.Text)
                 {
                       MessageBox.Show("Las claven deben ser iguales");
-
                 }
                 
                 else {

@@ -1,11 +1,8 @@
 ﻿using QNS_SysInv_X.MVCModel;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace QNS_SysInv_X.MVCController
 {
     public class VendedoresHelper
@@ -13,8 +10,7 @@ namespace QNS_SysInv_X.MVCController
         Datos cnGeneral = null;
         Vendedores objVendedores = null;
         DataTable tblDatos = null;
-
-
+        
         public VendedoresHelper(Vendedores parObjVendedores)
         {
             objVendedores = parObjVendedores;
@@ -23,7 +19,6 @@ namespace QNS_SysInv_X.MVCController
 
         public DataTable Listar()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -36,16 +31,12 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objVendedores.opc;
-
-
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedor");
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
             return tblDatos;
         }
 
@@ -54,7 +45,6 @@ namespace QNS_SysInv_X.MVCController
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[8];
@@ -118,12 +108,10 @@ namespace QNS_SysInv_X.MVCController
 
         public void Actualizar()
         {
-
             try
             {
                 cnGeneral = new Datos();
-
-
+                
                 SqlParameter[] parParameter = new SqlParameter[8];
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -171,14 +159,11 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlValue = objVendedores.Correo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPVendedor");
-                
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
 
         public void Eliminar()
@@ -206,9 +191,8 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+
         public DataTable Buscar()
         {
 
@@ -229,11 +213,8 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].ParameterName = "@cedula";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objVendedores.Cedula;
-
-
-
+                
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedor");
-
             }
             catch (Exception ex)
             {
@@ -242,7 +223,5 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-
-
     }
 }

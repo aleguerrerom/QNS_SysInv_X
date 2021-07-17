@@ -87,16 +87,19 @@ namespace QNS_SysInv_X.MVCView
                     else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
                     {
                         MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.ActiveControl = txtUsuarioLogin;
                         return;
                     }
                     else if (validate_Spaces.IsMatch(txtUsuarioLogin.Text) != true)
                     {
                         MessageBox.Show("No se permiten espacios en el campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.ActiveControl = txtUsuarioLogin;
                         return;
                     }
                     else if (validate_Spaces.IsMatch(txtClaveLogin.Text) != true)
                     {
                         MessageBox.Show("No se permiten espacios en el campo constraseña.", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.ActiveControl = txtClaveLogin;
                         return;
                     }
                     else MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario se encuentra inactivo.");

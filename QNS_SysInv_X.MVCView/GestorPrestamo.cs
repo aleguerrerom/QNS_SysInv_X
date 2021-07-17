@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
-
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -34,9 +27,9 @@ namespace QNS_SysInv_X.MVCView
         private ClientesHelper clientesH;
         private DataTable table;
         private Usuarios user;
-
         private Bitacora bitacora;
         private BitacoraHelper bitH;
+
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -141,9 +134,15 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtID.Text == "" || this.cmbCliente.Text == "")
+            if (this.txtID.Text == "" )
             {
-                MessageBox.Show("Tienes que completar todos los campos, para procesar el prestamo");
+                MessageBox.Show("Selecciona un articulo para procesar prestamo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.ActiveControl = txtID;
+            }
+            else if (this.cmbCliente.Text == "")
+            {
+                MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.ActiveControl = cmbCliente;
             }
             else
             {

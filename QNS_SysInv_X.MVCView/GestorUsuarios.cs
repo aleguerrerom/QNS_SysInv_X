@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
@@ -189,6 +186,16 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblRol.BackColor = System.Drawing.Color.DarkRed;
+                lblRol.ForeColor = System.Drawing.Color.White;
+                groupBox3.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = cmbRol;
+                return;
+            }
+            else if (this.cmbRol.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
                 lblConfirmar.ForeColor = System.Drawing.Color.White;
                 groupBox7.BackColor = System.Drawing.Color.DarkRed;
@@ -358,6 +365,9 @@ namespace QNS_SysInv_X.MVCView.Resources
             cmbRol.BackColor = System.Drawing.Color.White;
             cmbRol.ForeColor = System.Drawing.Color.Black;
             groupBox3.BackColor = System.Drawing.Color.White;
+            lblRol.BackColor = System.Drawing.Color.White;
+            lblRol.ForeColor = System.Drawing.Color.Black;
+            groupBox3.BackColor = System.Drawing.Color.White;
         }
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
@@ -365,7 +375,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.ActiveControl = txtUsuario;
             listar();
             cargarCombo();
-            this.cmbRol.Text = "";
+            this.cmbRol.SelectedIndex = -1;
         }
 
         private void button2_Click(object sender, EventArgs e)
