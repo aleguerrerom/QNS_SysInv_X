@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.99729cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -25,7 +25,7 @@
                               <Value>cedula</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -66,6 +66,7 @@
                               <Value>=Sum(Fields!cedula.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -100,7 +101,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>1.32104cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox15">
                     <CanGrow>true</CanGrow>
@@ -112,6 +113,7 @@
                             <Value>tipo</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>White</Color>
                             </Style>
@@ -138,7 +140,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>1.98438cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox13">
                         <CanGrow>true</CanGrow>
@@ -150,7 +152,7 @@
                                 <Value>contacto</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
-                                  <FontSize>11pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>White</Color>
                                 </Style>
@@ -177,7 +179,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>1.46875cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox11">
                             <CanGrow>true</CanGrow>
@@ -189,7 +191,7 @@
                                     <Value>telefono</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
-                                      <FontSize>11pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Color>White</Color>
                                     </Style>
@@ -216,7 +218,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.08208cm</Size>
+                            <Size>3.16271cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
@@ -228,7 +230,7 @@
                                         <Value>correo</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
-                                          <FontSize>11pt</FontSize>
+                                          <FontSize>8pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                           <Color>White</Color>
                                         </Style>
@@ -267,7 +269,7 @@
                                             <Value>direcion</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
-                                              <FontSize>11pt</FontSize>
+                                              <FontSize>8pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                               <Color>White</Color>
                                             </Style>
@@ -294,7 +296,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>2.5cm</Size>
+                                    <Size>1.86692cm</Size>
                                     <CellContents>
                                       <Textbox Name="Textbox5">
                                         <CanGrow>true</CanGrow>
@@ -306,7 +308,7 @@
                                                 <Value>agente</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
-                                                  <FontSize>11pt</FontSize>
+                                                  <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                   <Color>White</Color>
                                                 </Style>
@@ -333,7 +335,7 @@
                                   <TablixMembers>
                                     <TablixMember>
                                       <TablixHeader>
-                                        <Size>2.5cm</Size>
+                                        <Size>4.32312cm</Size>
                                         <CellContents>
                                           <Textbox Name="Textbox3">
                                             <CanGrow>true</CanGrow>
@@ -345,7 +347,7 @@
                                                     <Value>nombre</Value>
                                                     <Style>
                                                       <FontFamily>Tahoma</FontFamily>
-                                                      <FontSize>11pt</FontSize>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <Color>White</Color>
                                                     </Style>
@@ -397,7 +399,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>1.32104cm</Size>
                 <CellContents>
                   <Textbox Name="tipo">
                     <CanGrow>true</CanGrow>
@@ -409,6 +411,7 @@
                             <Value>=Fields!tipo.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
                               <Color>#465678</Color>
                             </Style>
@@ -445,7 +448,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>1.98438cm</Size>
                     <CellContents>
                       <Textbox Name="contacto">
                         <CanGrow>true</CanGrow>
@@ -457,6 +460,7 @@
                                 <Value>=Fields!contacto.Value</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>#4c68a2</Color>
                                 </Style>
@@ -493,7 +497,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>1.46875cm</Size>
                         <CellContents>
                           <Textbox Name="telefono">
                             <CanGrow>true</CanGrow>
@@ -505,6 +509,7 @@
                                     <Value>=Fields!telefono.Value</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Color>#4c68a2</Color>
                                     </Style>
@@ -541,7 +546,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>3.08208cm</Size>
+                            <Size>3.16271cm</Size>
                             <CellContents>
                               <Textbox Name="correo">
                                 <CanGrow>true</CanGrow>
@@ -553,6 +558,7 @@
                                         <Value>=Fields!correo.Value</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
+                                          <FontSize>8pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                           <Color>#4c68a2</Color>
                                         </Style>
@@ -601,6 +607,7 @@
                                             <Value>=Fields!direcion.Value</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
+                                              <FontSize>8pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                               <Color>#4c68a2</Color>
                                             </Style>
@@ -637,7 +644,7 @@
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>2.5cm</Size>
+                                    <Size>1.86692cm</Size>
                                     <CellContents>
                                       <Textbox Name="agente">
                                         <CanGrow>true</CanGrow>
@@ -649,6 +656,7 @@
                                                 <Value>=Fields!agente.Value</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
                                                   <Color>#4c68a2</Color>
                                                 </Style>
@@ -685,7 +693,7 @@
                                         </SortExpression>
                                       </SortExpressions>
                                       <TablixHeader>
-                                        <Size>2.5cm</Size>
+                                        <Size>4.32312cm</Size>
                                         <CellContents>
                                           <Textbox Name="nombre">
                                             <CanGrow>true</CanGrow>
@@ -697,6 +705,7 @@
                                                     <Value>=Fields!nombre.Value</Value>
                                                     <Style>
                                                       <FontFamily>Tahoma</FontFamily>
+                                                      <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
                                                       <Color>#4c68a2</Color>
                                                     </Style>
@@ -739,134 +748,327 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSClientes</DataSetName>
-        <Top>2.69875cm</Top>
+        <Top>0.17639cm</Top>
         <Height>1.2cm</Height>
-        <Width>21.18932cm</Width>
+        <Width>19.23145cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <FontSize>5pt</FontSize>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>REPORTE CLIENTES</Value>
-                <Style>
-                  <FontFamily>Microsoft JhengHei</FontFamily>
-                  <FontSize>20pt</FontSize>
-                  <Color>Blue</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>6.16162cm</Left>
-        <Height>0.97896cm</Height>
-        <Width>6.69395cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Image Name="Image2">
-        <Source>Embedded</Source>
-        <Value>Screenshot_1</Value>
-        <Sizing>FitProportional</Sizing>
-        <Height>1.72007cm</Height>
-        <Width>5cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>="Current Date:-"&amp;Format(Now,"dd/MM/yyyy hh:mm tt")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.12007cm</Top>
-        <Left>6.16162cm</Left>
-        <Height>0.6cm</Height>
-        <Width>6.69395cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox19">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Label>anyPara</Label>
-                <Value>=Parameters!anyPara.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>1.18745cm</Top>
-        <Left>13.54349cm</Left>
-        <Height>0.53262cm</Height>
-        <Width>4.10104cm</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>3.32292in</Height>
+    <Height>2.13373in</Height>
     <Style />
   </Body>
-  <Width>8.34225in</Width>
+  <Width>7.57144in</Width>
   <Page>
+    <PageHeader>
+      <Height>2.09021cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>REPORTE CLIENTES</Value>
+                  <Style>
+                    <FontFamily>Microsoft JhengHei</FontFamily>
+                    <FontSize>20pt</FontSize>
+                    <Color>Blue</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Left>6.21709cm</Left>
+          <Height>1.01424cm</Height>
+          <Width>6.69395cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>Screenshot_1</Value>
+          <Sizing>FitProportional</Sizing>
+          <Height>1.97556cm</Height>
+          <Width>5.37042cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Current Date:-"&amp;Format(Now,"dd/MM/yyyy hh:mm tt")</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.08479cm</Top>
+          <Left>6.21709cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>6.69395cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox25">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals.PageNumber &amp; " de" &amp; Globals.TotalPages</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox25</rd:DefaultName>
+          <Top>0.9937cm</Top>
+          <Left>15.90021cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>2.77812cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Página:</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox27</rd:DefaultName>
+          <Top>0.9937cm</Top>
+          <Left>13.81881cm</Left>
+          <Height>0.91158cm</Height>
+          <Width>1.79035cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox34">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Usuario:</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox34</rd:DefaultName>
+          <Top>0.17349cm</Top>
+          <Left>13.81881cm</Left>
+          <Height>0.64382cm</Height>
+          <Width>1.79035cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Usuario.Value, "DSClientesLocal")</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox25</rd:DefaultName>
+          <Top>0.18203cm</Top>
+          <Left>15.90021cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>2.77812cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.89958cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals.PageNumber &amp; " de" &amp; Globals.TotalPages</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox25</rd:DefaultName>
+          <Top>0.11783cm</Top>
+          <Left>9.10514cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>2.77812cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Página:</Value>
+                  <Style>
+                    <FontFamily>Microsoft YaHei</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox27</rd:DefaultName>
+          <Top>0.14111cm</Top>
+          <Left>7.31479cm</Left>
+          <Height>0.612cm</Height>
+          <Width>1.79035cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -878,6 +1080,20 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>b8bb4154-dab8-4bcc-a5a5-51e892c0b32c</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="QNS_SysInv_XMVCController">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>57e0b55b-f31e-4751-b265-233d1a8e83be</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="QNS_SysInv_XMVCController1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>1b30aebe-a545-49ce-a1e6-d87d396f2c27</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -929,6 +1145,59 @@
         <rd:TableAdapterName>ClientesTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="DSClientesLocal">
+      <Query>
+        <DataSourceName>QNS_SysInv_XMVCController1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Agente">
+          <DataField>Agente</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cedula">
+          <DataField>Cedula</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Contacto">
+          <DataField>Contacto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Correo">
+          <DataField>Correo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion">
+          <DataField>Direccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="opc">
+          <DataField>opc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Telefono">
+          <DataField>Telefono</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tipo">
+          <DataField>Tipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Usuario">
+          <DataField>Usuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>QNS_SysInv_X.MVCController</rd:DataSetName>
+        <rd:TableName>Clientes</rd:TableName>
+        <rd:ObjectDataSourceType>QNS_SysInv_X.MVCController.Clientes, CNV_Inventario.MVCController, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="anyPara">
@@ -954,6 +1223,11 @@ LG7zL1FlNy+JT1n5aHbhzSU6ehOOdrLxxhfduei6XGo3MCjmHKGFzc+AsoYjLV+SrgXRuG1sGPosikeP
 HFujs1Hb0Pqtkbp0uasrBgz2+tsOZuDRiXvR3/xYHls4+J/XDPpwN/48KwohpwtQ36hDoat9dMWAoSlH8gU+K/epL/fh1iHiId71xk3v+eCOYf54YXYU1kacR4E+ZqGrnXXFgWGtKlM9Moqq1X9eU1Orz6DVdfl0RYOhS1dHSQdDly470sHQpcuOdDB06bpEwP8D9aJkPAHdVtsAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <Variables>
+    <Variable Name="PageCount">
+      <Value>0</Value>
+    </Variable>
+  </Variables>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>d8c2742b-43dd-43e0-9697-a85dd9c325f3</rd:ReportID>
 </Report>

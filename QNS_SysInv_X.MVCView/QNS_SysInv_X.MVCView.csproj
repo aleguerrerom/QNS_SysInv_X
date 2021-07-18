@@ -246,6 +246,7 @@
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportEntrega.rdlc" />
+    <EmbeddedResource Include="ReporteEntregas.rdlc" />
     <EmbeddedResource Include="ReportPrestamo.rdlc" />
     <EmbeddedResource Include="ReportePrestamo.resx">
       <DependentUpon>ReportePrestamo.cs</DependentUpon>
@@ -321,6 +322,8 @@
     <None Include="DS_QNS.xss">
       <DependentUpon>DS_QNS.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\QNS_SysInv_X.MVCController.Clientes.datasource" />
+    <None Include="Properties\DataSources\QNS_SysInv_X.MVCController.Entrega.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

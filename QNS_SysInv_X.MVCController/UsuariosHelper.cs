@@ -33,9 +33,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objUsuarios.opc;
 
-
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
-
             }
             catch (Exception ex)
             {

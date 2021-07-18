@@ -491,7 +491,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void dgvListar_DoubleClick(object sender, EventArgs e)
         {
             CargarFromTable();
-            }
+        }
 
         #region CARGAR DE TABLA
         private void CargarFromTable()
@@ -627,6 +627,20 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             txtConfirmar.UseSystemPasswordChar = true;
+        }
+
+        private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.table = (DataTable)this.dgvListar.DataSource;
+            //int indice = dgvListar.CurrentRow.Index;
+            //DataRow fila = table.Rows[indice];
+            //if (bool.Parse(fila["activo"].ToString())==true) {
+            //    lblUsuario.Text = "pruena";
+            //}
+            //else 
+            //        { 
+            //    lblUsuario.Text = "damn";
+            //}
         }
     }
 }

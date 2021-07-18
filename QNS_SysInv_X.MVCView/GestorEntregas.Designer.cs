@@ -42,10 +42,7 @@
             this.lblContacto = new System.Windows.Forms.Label();
             this.gpMarca = new System.Windows.Forms.GroupBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.gpTipo = new System.Windows.Forms.GroupBox();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.txtNumParte = new System.Windows.Forms.TextBox();
             this.gpSN = new System.Windows.Forms.GroupBox();
             this.txtSN = new System.Windows.Forms.TextBox();
             this.lblNS = new System.Windows.Forms.Label();
@@ -67,20 +64,28 @@
             this.txtEntregadoPor = new System.Windows.Forms.TextBox();
             this.lblEntregado = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
+            this.gpNumFactura = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumFactura = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbTelefono = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.NºParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nº_de_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpFecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.gpContacto.SuspendLayout();
             this.gpMarca.SuspendLayout();
-            this.gpTipo.SuspendLayout();
             this.gpSN.SuspendLayout();
             this.gbDireccion.SuspendLayout();
             this.gbCliente.SuspendLayout();
@@ -89,16 +94,20 @@
             this.gpDescripcion.SuspendLayout();
             this.gpEntregado.SuspendLayout();
             this.stsUsuario.SuspendLayout();
+            this.gpNumFactura.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.gbTelefono.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(13, 285);
+            pictureBox1.Location = new System.Drawing.Point(9, 389);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(293, 97);
+            pictureBox1.Size = new System.Drawing.Size(293, 74);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 53;
             pictureBox1.TabStop = false;
@@ -116,7 +125,7 @@
             this.gpFecha.Controls.Add(this.dtpFecha);
             this.gpFecha.Controls.Add(this.lblFecha);
             this.gpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpFecha.Location = new System.Drawing.Point(12, 132);
+            this.gpFecha.Location = new System.Drawing.Point(7, 119);
             this.gpFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpFecha.Name = "gpFecha";
             this.gpFecha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -130,7 +139,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(160, 16);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(193, 20);
-            this.dtpFecha.TabIndex = 2;
+            this.dtpFecha.TabIndex = 4;
             // 
             // lblFecha
             // 
@@ -149,12 +158,18 @@
             // dgvListar
             // 
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NºParte,
+            this.Cantidad,
+            this.Descripción,
+            this.Nº_de_Serie});
             this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvListar.Location = new System.Drawing.Point(9, 391);
+            this.dgvListar.Location = new System.Drawing.Point(9, 469);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
-            this.dgvListar.Size = new System.Drawing.Size(734, 155);
+            this.dgvListar.Size = new System.Drawing.Size(734, 122);
             this.dgvListar.TabIndex = 45;
+            this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip1
@@ -168,7 +183,7 @@
             this.gpContacto.Controls.Add(this.txtContacto);
             this.gpContacto.Controls.Add(this.lblContacto);
             this.gpContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpContacto.Location = new System.Drawing.Point(383, 132);
+            this.gpContacto.Location = new System.Drawing.Point(380, 16);
             this.gpContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpContacto.Name = "gpContacto";
             this.gpContacto.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -183,7 +198,7 @@
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
-            this.txtContacto.TabIndex = 7;
+            this.txtContacto.TabIndex = 1;
             // 
             // lblContacto
             // 
@@ -203,9 +218,9 @@
             // 
             this.gpMarca.BackColor = System.Drawing.Color.White;
             this.gpMarca.Controls.Add(this.lblMarca);
-            this.gpMarca.Controls.Add(this.txtMarca);
+            this.gpMarca.Controls.Add(this.txtNumParte);
             this.gpMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpMarca.Location = new System.Drawing.Point(383, 81);
+            this.gpMarca.Location = new System.Drawing.Point(375, 76);
             this.gpMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpMarca.Name = "gpMarca";
             this.gpMarca.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -216,59 +231,23 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.Image = ((System.Drawing.Image)(resources.GetObject("lblMarca.Image")));
             this.lblMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblMarca.Location = new System.Drawing.Point(8, 18);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(74, 13);
+            this.lblMarca.Size = new System.Drawing.Size(135, 16);
             this.lblMarca.TabIndex = 33;
-            this.lblMarca.Text = "MARCA:     ";
+            this.lblMarca.Text = "NUMERO DE PARTE:     ";
             // 
-            // txtMarca
+            // txtNumParte
             // 
-            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.Location = new System.Drawing.Point(159, 18);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(197, 13);
-            this.txtMarca.TabIndex = 6;
-            // 
-            // gpTipo
-            // 
-            this.gpTipo.BackColor = System.Drawing.Color.White;
-            this.gpTipo.Controls.Add(this.lblTipo);
-            this.gpTipo.Controls.Add(this.txtTipo);
-            this.gpTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpTipo.Location = new System.Drawing.Point(383, 29);
-            this.gpTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gpTipo.Name = "gpTipo";
-            this.gpTipo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gpTipo.Size = new System.Drawing.Size(363, 44);
-            this.gpTipo.TabIndex = 49;
-            this.gpTipo.TabStop = false;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTipo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Image = ((System.Drawing.Image)(resources.GetObject("lblTipo.Image")));
-            this.lblTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTipo.Location = new System.Drawing.Point(7, 16);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(56, 16);
-            this.lblTipo.TabIndex = 3;
-            this.lblTipo.Text = "TIPO:      ";
-            this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Location = new System.Drawing.Point(159, 18);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 5;
+            this.txtNumParte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumParte.Location = new System.Drawing.Point(159, 18);
+            this.txtNumParte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumParte.Name = "txtNumParte";
+            this.txtNumParte.Size = new System.Drawing.Size(197, 13);
+            this.txtNumParte.TabIndex = 10;
             // 
             // gpSN
             // 
@@ -276,7 +255,7 @@
             this.gpSN.Controls.Add(this.txtSN);
             this.gpSN.Controls.Add(this.lblNS);
             this.gpSN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpSN.Location = new System.Drawing.Point(12, 184);
+            this.gpSN.Location = new System.Drawing.Point(3, 20);
             this.gpSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpSN.Name = "gpSN";
             this.gpSN.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -291,7 +270,7 @@
             this.txtSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(197, 13);
-            this.txtSN.TabIndex = 3;
+            this.txtSN.TabIndex = 7;
             // 
             // lblNS
             // 
@@ -313,7 +292,7 @@
             this.gbDireccion.Controls.Add(this.lblDireccion);
             this.gbDireccion.Controls.Add(this.txtDireccion);
             this.gbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDireccion.Location = new System.Drawing.Point(13, 81);
+            this.gbDireccion.Location = new System.Drawing.Point(7, 68);
             this.gbDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbDireccion.Name = "gbDireccion";
             this.gbDireccion.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -342,14 +321,14 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(193, 13);
-            this.txtDireccion.TabIndex = 1;
+            this.txtDireccion.TabIndex = 2;
             // 
             // gbCliente
             // 
             this.gbCliente.BackColor = System.Drawing.Color.White;
             this.gbCliente.Controls.Add(this.lblCliente);
             this.gbCliente.Controls.Add(this.txtCliente);
-            this.gbCliente.Location = new System.Drawing.Point(12, 29);
+            this.gbCliente.Location = new System.Drawing.Point(6, 16);
             this.gbCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbCliente.Name = "gbCliente";
             this.gbCliente.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -405,7 +384,7 @@
             this.gpCantidad.Controls.Add(this.txtCantidad);
             this.gpCantidad.Controls.Add(this.lblCantidad);
             this.gpCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpCantidad.Location = new System.Drawing.Point(383, 184);
+            this.gpCantidad.Location = new System.Drawing.Point(373, 20);
             this.gpCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpCantidad.Name = "gpCantidad";
             this.gpCantidad.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -429,7 +408,7 @@
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidad.Image = ((System.Drawing.Image)(resources.GetObject("lblCantidad.Image")));
             this.lblCantidad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCantidad.Location = new System.Drawing.Point(7, 16);
+            this.lblCantidad.Location = new System.Drawing.Point(9, 16);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(90, 16);
             this.lblCantidad.TabIndex = 3;
@@ -442,7 +421,7 @@
             this.gpDescripcion.Controls.Add(this.txtDescripcion);
             this.gpDescripcion.Controls.Add(this.lblDescripcion);
             this.gpDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpDescripcion.Location = new System.Drawing.Point(12, 236);
+            this.gpDescripcion.Location = new System.Drawing.Point(2, 76);
             this.gpDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpDescripcion.Name = "gpDescripcion";
             this.gpDescripcion.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -457,7 +436,7 @@
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 13);
-            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.TabIndex = 9;
             // 
             // lblDescripcion
             // 
@@ -479,7 +458,7 @@
             this.gpEntregado.Controls.Add(this.txtEntregadoPor);
             this.gpEntregado.Controls.Add(this.lblEntregado);
             this.gpEntregado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpEntregado.Location = new System.Drawing.Point(386, 236);
+            this.gpEntregado.Location = new System.Drawing.Point(380, 68);
             this.gpEntregado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpEntregado.Name = "gpEntregado";
             this.gpEntregado.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -494,7 +473,7 @@
             this.txtEntregadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEntregadoPor.Name = "txtEntregadoPor";
             this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
-            this.txtEntregadoPor.TabIndex = 9;
+            this.txtEntregadoPor.TabIndex = 3;
             // 
             // lblEntregado
             // 
@@ -521,16 +500,22 @@
             this.stsUsuario.TabIndex = 68;
             this.stsUsuario.Text = "statusStrip1";
             // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
+            // 
             // btnReport
             // 
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(546, 348);
+            this.btnReport.Location = new System.Drawing.Point(548, 429);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(96, 33);
+            this.btnReport.Size = new System.Drawing.Size(148, 33);
             this.btnReport.TabIndex = 12;
-            this.btnReport.Text = "REPORTES";
+            this.btnReport.Text = "IMPRIMIR REPORTE";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -540,7 +525,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(424, 349);
+            this.btnCancel.Location = new System.Drawing.Point(383, 429);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
@@ -555,47 +540,138 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(312, 349);
+            this.btnAdd.Location = new System.Drawing.Point(375, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "PROCESAR";
+            this.btnAdd.Size = new System.Drawing.Size(106, 32);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "AGREGAR ARTICULO";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtID
+            // gpNumFactura
             // 
-            this.txtID.Location = new System.Drawing.Point(413, 305);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(105, 20);
-            this.txtID.TabIndex = 69;
-            this.txtID.Visible = false;
+            this.gpNumFactura.BackColor = System.Drawing.Color.White;
+            this.gpNumFactura.Controls.Add(this.label1);
+            this.gpNumFactura.Controls.Add(this.txtNumFactura);
+            this.gpNumFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpNumFactura.Location = new System.Drawing.Point(382, 120);
+            this.gpNumFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpNumFactura.Name = "gpNumFactura";
+            this.gpNumFactura.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gpNumFactura.Size = new System.Drawing.Size(363, 44);
+            this.gpNumFactura.TabIndex = 53;
+            this.gpNumFactura.TabStop = false;
             // 
-            // label9
+            // label1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(647, 342);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 16);
-            this.label9.TabIndex = 75;
-            this.label9.Text = "BUSCAR POR ID:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(8, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 16);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "NUMERO DE FACTURA:     ";
             // 
-            // txtBuscar
+            // txtNumFactura
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(650, 361);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
-            this.txtBuscar.TabIndex = 74;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtNumFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumFactura.Location = new System.Drawing.Point(181, 18);
+            this.txtNumFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumFactura.Name = "txtNumFactura";
+            this.txtNumFactura.Size = new System.Drawing.Size(169, 13);
+            this.txtNumFactura.TabIndex = 5;
             // 
-            // stsUsua
+            // groupBox2
             // 
-            this.stsUsua.Name = "stsUsua";
-            this.stsUsua.Size = new System.Drawing.Size(118, 17);
-            this.stsUsua.Text = "toolStripStatusLabel1";
+            this.groupBox2.Controls.Add(this.gbTelefono);
+            this.groupBox2.Controls.Add(this.gpNumFactura);
+            this.groupBox2.Controls.Add(this.gpEntregado);
+            this.groupBox2.Controls.Add(this.gpFecha);
+            this.groupBox2.Controls.Add(this.gpContacto);
+            this.groupBox2.Controls.Add(this.gbDireccion);
+            this.groupBox2.Controls.Add(this.gbCliente);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(9, 34);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(751, 221);
+            this.groupBox2.TabIndex = 69;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "DATOS DE ENTREGA";
+            // 
+            // gbTelefono
+            // 
+            this.gbTelefono.BackColor = System.Drawing.Color.White;
+            this.gbTelefono.Controls.Add(this.label2);
+            this.gbTelefono.Controls.Add(this.txtTelefono);
+            this.gbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbTelefono.Location = new System.Drawing.Point(7, 169);
+            this.gbTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbTelefono.Name = "gbTelefono";
+            this.gbTelefono.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbTelefono.Size = new System.Drawing.Size(363, 44);
+            this.gbTelefono.TabIndex = 54;
+            this.gbTelefono.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(8, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "TELEFONO:           ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefono.Location = new System.Drawing.Point(159, 18);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(191, 13);
+            this.txtTelefono.TabIndex = 6;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.gpMarca);
+            this.groupBox3.Controls.Add(this.gpDescripcion);
+            this.groupBox3.Controls.Add(this.btnAdd);
+            this.groupBox3.Controls.Add(this.gpCantidad);
+            this.groupBox3.Controls.Add(this.gpSN);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(8, 261);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(752, 167);
+            this.groupBox3.TabIndex = 70;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ARTICULOS A ENTREGAR";
+            // 
+            // NºParte
+            // 
+            this.NºParte.HeaderText = "NºParte";
+            this.NºParte.Name = "NºParte";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            // 
+            // Nº_de_Serie
+            // 
+            this.Nº_de_Serie.HeaderText = "Nº_de_Serie";
+            this.Nº_de_Serie.Name = "Nº_de_Serie";
             // 
             // GestorEntregas
             // 
@@ -603,26 +679,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(761, 577);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(pictureBox1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.stsUsuario);
-            this.Controls.Add(this.gpEntregado);
-            this.Controls.Add(this.gpDescripcion);
-            this.Controls.Add(this.gpCantidad);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnReport);
-            this.Controls.Add(pictureBox1);
-            this.Controls.Add(this.gpFecha);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.gpContacto);
-            this.Controls.Add(this.gpMarca);
-            this.Controls.Add(this.gpTipo);
-            this.Controls.Add(this.gpSN);
-            this.Controls.Add(this.gbDireccion);
-            this.Controls.Add(this.gbCliente);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(777, 616);
             this.MinimumSize = new System.Drawing.Size(777, 616);
@@ -638,8 +702,6 @@
             this.gpContacto.PerformLayout();
             this.gpMarca.ResumeLayout(false);
             this.gpMarca.PerformLayout();
-            this.gpTipo.ResumeLayout(false);
-            this.gpTipo.PerformLayout();
             this.gpSN.ResumeLayout(false);
             this.gpSN.PerformLayout();
             this.gbDireccion.ResumeLayout(false);
@@ -656,6 +718,12 @@
             this.gpEntregado.PerformLayout();
             this.stsUsuario.ResumeLayout(false);
             this.stsUsuario.PerformLayout();
+            this.gpNumFactura.ResumeLayout(false);
+            this.gpNumFactura.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.gbTelefono.ResumeLayout(false);
+            this.gbTelefono.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,10 +741,7 @@
         private System.Windows.Forms.Label lblContacto;
         private System.Windows.Forms.GroupBox gpMarca;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.GroupBox gpTipo;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.TextBox txtNumParte;
         private System.Windows.Forms.GroupBox gpSN;
         private System.Windows.Forms.Label lblNS;
         private System.Windows.Forms.GroupBox gbDireccion;
@@ -700,10 +765,19 @@
         private System.Windows.Forms.TextBox txtEntregadoPor;
         private System.Windows.Forms.Label lblEntregado;
         private System.Windows.Forms.StatusStrip stsUsuario;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ToolStripStatusLabel stsUsua;
+        private System.Windows.Forms.GroupBox gpNumFactura;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNumFactura;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbTelefono;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NºParte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nº_de_Serie;
     }
 }

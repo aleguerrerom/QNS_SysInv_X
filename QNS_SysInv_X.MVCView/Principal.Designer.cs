@@ -53,7 +53,6 @@
             this.clmReporteCli = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.entregaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBita = new System.Windows.Forms.ToolStripLabel();
             this.tsAboutUs = new System.Windows.Forms.ToolStripLabel();
@@ -120,7 +119,6 @@
             this.tsArchivo.Name = "tsArchivo";
             this.tsArchivo.Size = new System.Drawing.Size(63, 22);
             this.tsArchivo.Text = "Archivo";
-           
             // 
             // ingresarConOtroUsuarioToolStripMenuItem
             // 
@@ -257,7 +255,6 @@
             this.clmReporteCli,
             this.usuariosToolStripMenuItem1,
             this.vendedoresToolStripMenuItem1,
-            this.entregaToolStripMenuItem1,
             this.prestamosToolStripMenuItem});
             this.tstripReportes.Name = "tstripReportes";
             this.tstripReportes.Size = new System.Drawing.Size(74, 22);
@@ -307,14 +304,6 @@
             this.vendedoresToolStripMenuItem1.Text = "Vendedores";
             this.vendedoresToolStripMenuItem1.Visible = false;
             this.vendedoresToolStripMenuItem1.Click += new System.EventHandler(this.vendedoresToolStripMenuItem1_Click);
-            // 
-            // entregaToolStripMenuItem1
-            // 
-            this.entregaToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.entregaToolStripMenuItem1.Name = "entregaToolStripMenuItem1";
-            this.entregaToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
-            this.entregaToolStripMenuItem1.Text = "Entrega";
-            this.entregaToolStripMenuItem1.Click += new System.EventHandler(this.entregaToolStripMenuItem1_Click);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -422,7 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vendedoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripLabel tsBita;
-        private System.Windows.Forms.ToolStripMenuItem entregaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
     }
 }

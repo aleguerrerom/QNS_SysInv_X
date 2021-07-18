@@ -65,7 +65,6 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["entrega"].ToString()) == true)
             {
                 entregaToolStripMenuItem.Visible = true;
-                entregaToolStripMenuItem1.Visible = true;
             }
             if (bool.Parse(fila["inventario"].ToString()) == true)
             {

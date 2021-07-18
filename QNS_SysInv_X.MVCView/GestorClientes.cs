@@ -440,13 +440,10 @@ namespace QNS_SysInv_X.MVCView
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
         #endregion
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -473,9 +470,11 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                RerporteClientes RepoClientes = new RerporteClientes();
-                RepoClientes.Show();
-                this.Close();
+                Clientes clientess = new Clientes();
+                RerporteClientes RepoClientes = new RerporteClientes(user);
+                clientess.Usuario = stsUsuario.Text;
+                RepoClientes.clientes.Add(clientess);
+                RepoClientes.ShowDialog();
             }
         }
 

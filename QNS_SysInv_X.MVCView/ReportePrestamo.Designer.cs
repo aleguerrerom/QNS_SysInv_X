@@ -50,6 +50,9 @@
             this.PrestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamoTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
+            this.prestamoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.InventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).BeginInit();
@@ -59,6 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -183,12 +189,12 @@
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.prestamoBindingSource1;
+            reportDataSource1.Value = this.prestamoBindingSource3;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportPrestamo.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(833, 414);
+            this.reportViewer1.Size = new System.Drawing.Size(823, 414);
             this.reportViewer1.TabIndex = 4;
             // 
             // PrestamoBindingSource
@@ -202,18 +208,33 @@
             // 
             // stsUsu
             // 
-            this.stsUsu.Location = new System.Drawing.Point(0, 545);
+            this.stsUsu.Location = new System.Drawing.Point(0, 565);
             this.stsUsu.Name = "stsUsu";
             this.stsUsu.Size = new System.Drawing.Size(858, 22);
             this.stsUsu.TabIndex = 67;
             this.stsUsu.Text = "statusStrip1";
+            // 
+            // prestamoBindingSource2
+            // 
+            this.prestamoBindingSource2.DataMember = "Prestamo";
+            this.prestamoBindingSource2.DataSource = this.dS_QNS;
+            // 
+            // InventarioBindingSource
+            // 
+            this.InventarioBindingSource.DataMember = "Inventario";
+            this.InventarioBindingSource.DataSource = this.dS_QNS;
+            // 
+            // prestamoBindingSource3
+            // 
+            this.prestamoBindingSource3.DataMember = "Prestamo";
+            this.prestamoBindingSource3.DataSource = this.dS_QNS;
             // 
             // ReportePrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(858, 567);
+            this.ClientSize = new System.Drawing.Size(858, 587);
             this.Controls.Add(this.stsUsu);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.cmbFiltrar);
@@ -224,8 +245,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(pictureBox2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(874, 606);
-            this.MinimumSize = new System.Drawing.Size(874, 606);
+            this.MaximumSize = new System.Drawing.Size(874, 626);
+            this.MinimumSize = new System.Drawing.Size(874, 626);
             this.Name = "ReportePrestamo";
             this.Text = "REPORTE PRESTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
@@ -238,6 +259,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrestamoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InventarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +287,8 @@
         private System.Windows.Forms.BindingSource prestamoBindingSource1;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter prestamoTableAdapter;
         private System.Windows.Forms.StatusStrip stsUsu;
+        private System.Windows.Forms.BindingSource prestamoBindingSource2;
+        private System.Windows.Forms.BindingSource InventarioBindingSource;
+        private System.Windows.Forms.BindingSource prestamoBindingSource3;
     }
 }

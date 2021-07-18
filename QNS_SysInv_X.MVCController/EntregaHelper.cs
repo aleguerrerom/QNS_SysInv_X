@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 namespace QNS_SysInv_X.MVCController
-{
+{/*
    public class EntregaHelper
     {
 
@@ -19,7 +19,7 @@ namespace QNS_SysInv_X.MVCController
         }
 
         public void Entrega()
-        {
+        {/*
             try
             {
                 cnGeneral = new Datos();
@@ -97,14 +97,14 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
 
-
-        }
+          
+}
 
         public DataTable Listar()
         {
-
+            
             tblDatos = new DataTable();
-
+            /*
             try
             {
                 cnGeneral = new Datos();
@@ -243,5 +243,5 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-    }
-}
+    }*/
+        }

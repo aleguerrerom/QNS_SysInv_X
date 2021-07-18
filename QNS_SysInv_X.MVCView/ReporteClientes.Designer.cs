@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RerporteClientes));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -43,19 +45,22 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
-            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.stsStrip = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             this.stsStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -70,15 +75,20 @@
             pictureBox2.TabIndex = 58;
             pictureBox2.TabStop = false;
             // 
-            // clientesBindingSource1
+            // ClientesBindingSource
             // 
-            this.clientesBindingSource1.DataMember = "Clientes";
-            this.clientesBindingSource1.DataSource = this.dS_QNS;
+            this.ClientesBindingSource.DataMember = "Clientes";
+            this.ClientesBindingSource.DataSource = this.dS_QNS;
             // 
             // dS_QNS
             // 
             this.dS_QNS.DataSetName = "DS_QNS";
             this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.dS_QNS;
             // 
             // button1
             // 
@@ -130,9 +140,12 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSClientes";
-            reportDataSource1.Value = this.clientesBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DSClientes";
+            reportDataSource3.Value = this.ClientesBindingSource;
+            reportDataSource4.Name = "DSClientesLocal";
+            reportDataSource4.Value = this.clientesBindingSource3;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
@@ -165,11 +178,6 @@
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
-            // ClientesBindingSource
-            // 
-            this.ClientesBindingSource.DataMember = "Clientes";
-            this.ClientesBindingSource.DataSource = this.dS_QNS;
-            // 
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
@@ -201,6 +209,15 @@
             this.stsUsu.Name = "stsUsu";
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
+            this.stsUsu.Click += new System.EventHandler(this.stsUsu_Click);
+            // 
+            // clientesBindingSource2
+            // 
+            this.clientesBindingSource2.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
+            // 
+            // clientesBindingSource3
+            // 
+            this.clientesBindingSource3.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
             // 
             // RerporteClientes
             // 
@@ -224,14 +241,16 @@
             this.Text = "REPORTE CLIENTES | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             this.stsStrip.ResumeLayout(false);
             this.stsStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +274,7 @@
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private System.Windows.Forms.StatusStrip stsStrip;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.BindingSource clientesBindingSource2;
+        private System.Windows.Forms.BindingSource clientesBindingSource3;
     }
 }
