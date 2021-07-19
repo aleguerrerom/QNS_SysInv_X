@@ -38,7 +38,6 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.stsUsu.Text = this.user.Usuario;
         }
         
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();

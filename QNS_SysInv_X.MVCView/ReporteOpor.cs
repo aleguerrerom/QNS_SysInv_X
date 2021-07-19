@@ -1,4 +1,5 @@
-﻿using QNS_SysInv_X.MVCController;
+﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Windows.Forms;
 
@@ -22,12 +23,12 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
+            this.reportViewer1.LocalReport.Refresh();
             // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
             this.oportunidadesTableAdapter.Fill(this.dS_QNS.Oportunidades);
-            // TODO: This line of code loads data into the 'dS_QNS.Clientes' table. You can move, or remove it, as needed.
-           
-
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 
@@ -67,6 +68,20 @@ namespace QNS_SysInv_X.MVCView
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFiltro.SelectedIndex == 0)
+            {
+                txtFiltro.Visible = true;
+                dtpFecha.Visible = false;
+            }
+            else if (cmbFiltro.SelectedIndex == 1 || cmbFiltro.SelectedIndex == 2)
+            {
+                dtpFecha.Visible = true;
+                txtFiltro.Visible = false;
+            }
         }
     }
 }

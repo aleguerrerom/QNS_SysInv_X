@@ -35,6 +35,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.clientesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,17 +51,18 @@
             this.stsStrip = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.stsStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -84,6 +86,10 @@
             // 
             this.dS_QNS.DataSetName = "DS_QNS";
             this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource3
+            // 
+            this.clientesBindingSource3.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
             // 
             // clientesBindingSource1
             // 
@@ -143,7 +149,7 @@
             reportDataSource3.Name = "DSClientes";
             reportDataSource3.Value = this.ClientesBindingSource;
             reportDataSource4.Name = "DSClientesLocal";
-            reportDataSource4.Value = this.clientesBindingSource3;
+            reportDataSource4.Value = this.clientesBindingSource4;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportClientes.rdlc";
@@ -154,6 +160,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -196,6 +203,7 @@
             // 
             // stsStrip
             // 
+            this.stsStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsu});
             this.stsStrip.Location = new System.Drawing.Point(0, 545);
@@ -215,9 +223,9 @@
             // 
             this.clientesBindingSource2.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
             // 
-            // clientesBindingSource3
+            // clientesBindingSource4
             // 
-            this.clientesBindingSource3.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
+            this.clientesBindingSource4.DataSource = typeof(QNS_SysInv_X.MVCController.Clientes);
             // 
             // RerporteClientes
             // 
@@ -243,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -250,7 +259,7 @@
             this.stsStrip.ResumeLayout(false);
             this.stsStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +285,6 @@
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
         private System.Windows.Forms.BindingSource clientesBindingSource2;
         private System.Windows.Forms.BindingSource clientesBindingSource3;
+        private System.Windows.Forms.BindingSource clientesBindingSource4;
     }
 }

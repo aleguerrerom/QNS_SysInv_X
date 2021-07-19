@@ -10,9 +10,16 @@
     }
 }
 
-namespace CNV_Inventario.MVCView.DS_QNSTableAdapters {
-    
-    
+namespace CNV_Inventario.MVCView.DS_QNSTableAdapters
+{
+    partial class MovimientosLogTableAdapter
+    {
+    }
+
+    partial class VendedoresTableAdapter
+    {
+    }
+
     public partial class UsuariosTableAdapter {
     }
 }

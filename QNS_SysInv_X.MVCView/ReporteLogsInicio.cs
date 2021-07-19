@@ -1,4 +1,5 @@
-﻿using QNS_SysInv_X.MVCController;
+﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Windows.Forms;
 
@@ -22,6 +23,10 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
+            this.reportViewer1.LocalReport.Refresh();
             // TODO: This line of code loads data into the 'dS_QNS.AuditLog' table. You can move, or remove it, as needed.
             this.auditLogTableAdapter.Fill(this.dS_QNS.AuditLog);
             // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
@@ -63,13 +68,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 txtFiltro.Visible = true;
                 dtpFecha.Visible = false;
-
             }
             else if (cmbFiltro.SelectedIndex == 1 || cmbFiltro.SelectedIndex == 2)
             {
                 dtpFecha.Visible = true;
                 txtFiltro.Visible = false;
-
             }
         }
 

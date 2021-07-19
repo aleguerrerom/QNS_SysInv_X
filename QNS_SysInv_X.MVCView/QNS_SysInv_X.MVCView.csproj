@@ -245,7 +245,6 @@
     <EmbeddedResource Include="GestorVendedores.resx">
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportEntrega.rdlc" />
     <EmbeddedResource Include="ReporteEntregas.rdlc" />
     <EmbeddedResource Include="ReportPrestamo.rdlc" />
     <EmbeddedResource Include="ReportePrestamo.resx">

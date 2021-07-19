@@ -28,8 +28,7 @@ namespace QNS_SysInv_X.MVCView
             reportViewer2.LocalReport.DataSources.Clear();
             reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("DSEntrega",entrega));
             // TODO: This line of code loads data into the 'dS_QNS.Entrega' table. You can move, or remove it, as needed.
-            this.entregaTableAdapter.Fill(this.dS_QNS.Entrega);
-            this.reportViewer1.RefreshReport();
+            
             this.reportViewer2.RefreshReport();
         }
         

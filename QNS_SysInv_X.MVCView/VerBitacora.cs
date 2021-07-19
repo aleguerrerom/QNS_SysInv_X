@@ -17,13 +17,11 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
         
-        
-
         public VerBitacora(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.stsUsuarios.Text = this.user.Usuario;
         }
 
         private void listadoLogsUsuarios()
@@ -124,7 +122,7 @@ namespace QNS_SysInv_X.MVCView
                 }
                 if (IsOpen == false)
                 {
-                    ReporteLogsInicio reporte = new ReporteLogsInicio();
+                    ReporteLogsInicio reporte = new ReporteLogsInicio(user);
                     reporte.Show();
                 }
             }
@@ -142,7 +140,7 @@ namespace QNS_SysInv_X.MVCView
                 }
                 if (IsOpen == false)
                 {
-                    ReporteMovimientos reportem = new ReporteMovimientos();
+                    ReporteMovimientos reportem = new ReporteMovimientos(user);
                     reportem.Show();
                 }
             }

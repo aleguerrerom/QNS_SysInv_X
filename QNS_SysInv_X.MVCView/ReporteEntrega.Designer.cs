@@ -34,6 +34,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EntregaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.entregaBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -50,9 +51,9 @@
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.entregaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.entregaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.entregaBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.EntregaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
@@ -61,7 +62,6 @@
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // EntregaBindingSource
@@ -73,6 +73,10 @@
             // 
             this.dS_QNS.DataSetName = "DS_QNS";
             this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // entregaBindingSource4
+            // 
+            this.entregaBindingSource4.DataSource = typeof(QNS_SysInv_X.MVCController.Entrega);
             // 
             // clientesBindingSource1
             // 
@@ -96,6 +100,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -152,6 +157,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsu});
             this.statusStrip1.Location = new System.Drawing.Point(0, 545);
@@ -186,10 +192,6 @@
             // 
             this.entregaBindingSource3.DataSource = typeof(QNS_SysInv_X.MVCController.Entrega);
             // 
-            // entregaBindingSource4
-            // 
-            this.entregaBindingSource4.DataSource = typeof(QNS_SysInv_X.MVCController.Entrega);
-            // 
             // ReporteEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +211,7 @@
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EntregaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -219,7 +222,6 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

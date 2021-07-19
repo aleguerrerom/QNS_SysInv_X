@@ -32,39 +32,23 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportePrestamo));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.prestamoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
-            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
-            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PrestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamoTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
-            this.prestamoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.InventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrestamoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -79,20 +63,10 @@
             pictureBox2.TabIndex = 58;
             pictureBox2.TabStop = false;
             // 
-            // prestamoBindingSource1
-            // 
-            this.prestamoBindingSource1.DataMember = "Prestamo";
-            this.prestamoBindingSource1.DataSource = this.dS_QNS;
-            // 
             // dS_QNS
             // 
             this.dS_QNS.DataSetName = "DS_QNS";
             this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesBindingSource1
-            // 
-            this.clientesBindingSource1.DataMember = "Clientes";
-            this.clientesBindingSource1.DataSource = this.dS_QNS;
             // 
             // button1
             // 
@@ -142,6 +116,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -157,23 +132,9 @@
             this.toolStripLabel1.Text = "SALIR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.dS_QNS;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // ClientesBindingSource
-            // 
-            this.ClientesBindingSource.DataMember = "Clientes";
-            this.ClientesBindingSource.DataSource = this.dS_QNS;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
             // 
             // cmbFiltrar
             // 
@@ -189,18 +150,14 @@
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.prestamoBindingSource3;
+            reportDataSource2.Name = "DataSet2";
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportPrestamo.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(823, 414);
             this.reportViewer1.TabIndex = 4;
-            // 
-            // PrestamoBindingSource
-            // 
-            this.PrestamoBindingSource.DataMember = "Prestamo";
-            this.PrestamoBindingSource.DataSource = this.dS_QNS;
             // 
             // prestamoTableAdapter
             // 
@@ -208,26 +165,12 @@
             // 
             // stsUsu
             // 
+            this.stsUsu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsu.Location = new System.Drawing.Point(0, 565);
             this.stsUsu.Name = "stsUsu";
             this.stsUsu.Size = new System.Drawing.Size(858, 22);
             this.stsUsu.TabIndex = 67;
             this.stsUsu.Text = "statusStrip1";
-            // 
-            // prestamoBindingSource2
-            // 
-            this.prestamoBindingSource2.DataMember = "Prestamo";
-            this.prestamoBindingSource2.DataSource = this.dS_QNS;
-            // 
-            // InventarioBindingSource
-            // 
-            this.InventarioBindingSource.DataMember = "Inventario";
-            this.InventarioBindingSource.DataSource = this.dS_QNS;
-            // 
-            // prestamoBindingSource3
-            // 
-            this.prestamoBindingSource3.DataMember = "Prestamo";
-            this.prestamoBindingSource3.DataSource = this.dS_QNS;
             // 
             // ReportePrestamo
             // 
@@ -251,17 +194,9 @@
             this.Text = "REPORTE PRESTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrestamoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,23 +207,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private CNV_Inventario.MVCView.DS_QNS dS_QNS;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.BindingSource ClientesBindingSource;
-        private System.Windows.Forms.BindingSource clientesBindingSource1;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource PrestamoBindingSource;
-        private System.Windows.Forms.BindingSource prestamoBindingSource1;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter prestamoTableAdapter;
         private System.Windows.Forms.StatusStrip stsUsu;
-        private System.Windows.Forms.BindingSource prestamoBindingSource2;
-        private System.Windows.Forms.BindingSource InventarioBindingSource;
-        private System.Windows.Forms.BindingSource prestamoBindingSource3;
     }
 }

@@ -1,4 +1,5 @@
-﻿using QNS_SysInv_X.MVCController;
+﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Windows.Forms;
 
@@ -17,11 +18,16 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.stsUsuarios.Text = this.user.Usuario;
         }
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Parameter2", this.stsUsuarios.Text));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
+            this.reportViewer1.LocalReport.Refresh();
+
             // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
             this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
             this.reportViewer1.RefreshReport();
@@ -54,7 +60,6 @@ namespace QNS_SysInv_X.MVCView
         private void button2_Click(object sender, EventArgs e)
         {
             this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
-
             this.reportViewer1.RefreshReport();
         }
 
@@ -67,7 +72,6 @@ namespace QNS_SysInv_X.MVCView
         {
             // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
             this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
-
             this.reportViewer1.RefreshReport();
         }
 

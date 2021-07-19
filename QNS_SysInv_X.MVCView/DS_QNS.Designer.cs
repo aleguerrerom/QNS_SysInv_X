@@ -8263,8 +8263,8 @@ SELECT ID, usuario, fecha, movimiento, detalle FROM MovimientosLog WHERE (ID = @
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ID, usuario, fecha, movimiento, detalle FROM dbo.MovimientosLog where fech" +
-                "a like @fecha";
+            this._commandCollection[1].CommandText = "SELECT        ID, usuario, fecha, movimiento, detalle\r\nFROM            Movimiento" +
+                "sLog\r\nWHERE        (fecha LIKE @fecha)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -9937,7 +9937,7 @@ SELECT cedula, nombre, apellido1, apellido2, genero, fechaNacimiento, correo FRO
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT apellido1, apellido2, cedula, correo, fechaNacimiento, genero, nombre FROM" +
-                " Vendedores WHERE (cedula = @cedula)";
+                " Vendedores WHERE (cedula = @cedula)\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cedula", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "cedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

@@ -1,4 +1,5 @@
-﻿using QNS_SysInv_X.MVCController;
+﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Windows.Forms;
 
@@ -21,10 +22,12 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
+            this.reportViewer1.LocalReport.Refresh();
             // TODO: This line of code loads data into the 'dS_QNS.MovimientosLog' table. You can move, or remove it, as needed.
             this.movimientosLogTableAdapter.Fill(this.dS_QNS.MovimientosLog);
-            // TODO: This line of code loads data into the 'dS_QNS.Inventario' table. You can move, or remove it, as needed.
-          
             this.reportViewer1.RefreshReport();
         }
 

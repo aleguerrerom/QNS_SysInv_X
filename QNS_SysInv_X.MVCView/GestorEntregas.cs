@@ -23,7 +23,7 @@ namespace QNS_SysInv_X.MVCView
         private Bitacora bitacora;
         private BitacoraHelper bitH;
         private Entrega entrega;
-       // private EntregaHelper entregaH;
+        private EntregaHelper entregaH;
         private Usuarios user;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
@@ -71,23 +71,20 @@ namespace QNS_SysInv_X.MVCView
         #region GUARDAR entrega
         //FUNCION AGREGAR NUEVO USUARIO
         private void guardar()
-        {/*
+        {
             try
             {
                 //AGREGAR NUEVO USUARIO int.Parse(
                 this.entrega = new Entrega();
                 this.entrega.Cliente = this.txtCliente.Text;
-                this.entrega.Tipo = this.txtTipo.Text;
-                this.entrega.NumeroDeSerie = this.txtSN.Text;
-                this.entrega.Marca = this.txtMarca.Text;
                 this.entrega.Fecha = this.dtpFecha.Value;
                 this.entrega.Contacto = this.txtContacto.Text;
                 this.entrega.Dirrecion = this.txtDireccion.Text;
-                this.entrega.Cantidad = int.Parse(this.txtCantidad.Text);
-                this.entrega.Descripcion = this.txtDescripcion.Text;
                 this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
-                
-                this.entrega.Opc = 2;
+                this.entrega.Telefono = this.txtTelefono.Text;
+                this.entrega.NumeroFactura = this.txtNumFactura.Text;
+
+                this.entrega.opc = 2;
                 this.entregaH = new EntregaHelper(entrega);
                 ///LOG PARA USUARIOS
                 ///
@@ -100,13 +97,12 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.entregaH.Entrega();
-                MessageBox.Show("Entrega almacenada");
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         #endregion
@@ -274,8 +270,10 @@ namespace QNS_SysInv_X.MVCView
                     this.ActiveControl = txtSN;
                 }
                 
-            else { 
-                Entrega entrega = new Entrega();
+            else {
+
+                    guardar();
+                    Entrega entrega = new Entrega();
                 ReporteEntrega repoEntrega = new ReporteEntrega();
                 entrega.Cliente = txtEntregadoPor.Text;
                 entrega.EntregadoPor = txtEntregadoPor.Text;

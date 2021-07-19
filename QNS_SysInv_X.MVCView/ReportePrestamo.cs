@@ -1,4 +1,5 @@
-﻿using QNS_SysInv_X.MVCController;
+﻿using Microsoft.Reporting.WinForms;
+using QNS_SysInv_X.MVCController;
 using System;
 using System.Windows.Forms;
 
@@ -22,11 +23,10 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
-            //TODO: esta línea de código carga datos en la tabla 'DataSet_ReporteInventarios.SPReporte_inventarios_totales_generales' Puede moverla o quitarla según sea necesario.
-            //this.SPReporte_inventarios_totales_generalesTableAdapter.Fill(this.DataSet_ReporteInventarios.SPReporte_inventarios_totales_generales);
-            //TODO: esta línea de código carga datos en la tabla 'DataSet_ReporteInventarios.SPReporteIventarios' Puede moverla o quitarla según sea necesario.
-            //this.SPReporteIventariosTableAdapter.Fill(this.DataSet_ReporteInventarios.SPReporteIventarios);
-            
+            ReportParameterCollection reportParameters = new ReportParameterCollection();
+            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            this.reportViewer1.LocalReport.SetParameters(reportParameters);
+            this.reportViewer1.LocalReport.Refresh();
             // TODO: This line of code loads data into the 'dS_QNS.Prestamo' table. You can move, or remove it, as needed.
             this.prestamoTableAdapter.Fill(dS_QNS.Prestamo);
             this.reportViewer1.RefreshReport();

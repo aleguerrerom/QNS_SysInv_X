@@ -45,7 +45,7 @@
             this.vendedoresTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsUsuarios = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).BeginInit();
@@ -137,6 +137,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -175,19 +176,20 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsUsu});
+            this.stsUsuarios});
             this.statusStrip1.Location = new System.Drawing.Point(0, 463);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(860, 22);
             this.statusStrip1.TabIndex = 63;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // stsUsu
+            // stsUsuarios
             // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel1";
+            this.stsUsuarios.Name = "stsUsuarios";
+            this.stsUsuarios.Size = new System.Drawing.Size(118, 17);
+            this.stsUsuarios.Text = "toolStripStatusLabel1";
             // 
             // ReporteVendedores
             // 
@@ -239,6 +241,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource VendedoresBindingSource;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuarios;
     }
 }

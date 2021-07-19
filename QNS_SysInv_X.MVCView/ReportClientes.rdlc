@@ -765,7 +765,7 @@
   <Width>7.57144in</Width>
   <Page>
     <PageHeader>
-      <Height>2.09021cm</Height>
+      <Height>2.2666cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -865,7 +865,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.9937cm</Top>
+          <Top>1.1818cm</Top>
           <Left>15.90021cm</Left>
           <Height>0.63528cm</Height>
           <Width>2.77812cm</Width>
@@ -898,9 +898,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>0.9937cm</Top>
+          <Top>1.22562cm</Top>
           <Left>13.81881cm</Left>
-          <Height>0.91158cm</Height>
+          <Height>0.59146cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
@@ -953,7 +953,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Usuario.Value, "DSClientesLocal")</Value>
+                  <Value>=Parameters!Parameter1.Value</Value>
                   <Style>
                     <FontFamily>Microsoft YaHei</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -964,9 +964,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.18203cm</Top>
-          <Left>15.90021cm</Left>
-          <Height>0.63528cm</Height>
+          <Top>0.17349cm</Top>
+          <Left>15.75027cm</Left>
+          <Height>0.64382cm</Height>
           <Width>2.77812cm</Width>
           <ZIndex>6</ZIndex>
           <Style>
@@ -1145,65 +1145,10 @@
         <rd:TableAdapterName>ClientesTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DSClientesLocal">
-      <Query>
-        <DataSourceName>QNS_SysInv_XMVCController1</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Agente">
-          <DataField>Agente</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Cedula">
-          <DataField>Cedula</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Contacto">
-          <DataField>Contacto</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Correo">
-          <DataField>Correo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Direccion">
-          <DataField>Direccion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="opc">
-          <DataField>opc</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Telefono">
-          <DataField>Telefono</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Tipo">
-          <DataField>Tipo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Usuario">
-          <DataField>Usuario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>QNS_SysInv_X.MVCController</rd:DataSetName>
-        <rd:TableName>Clientes</rd:TableName>
-        <rd:ObjectDataSourceType>QNS_SysInv_X.MVCController.Clientes, CNV_Inventario.MVCController, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="anyPara">
+    <ReportParameter Name="Parameter1">
       <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

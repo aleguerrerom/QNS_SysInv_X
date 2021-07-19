@@ -18,6 +18,10 @@ namespace QNS_SysInv_X.MVCController
         private string usuario;
         private int linea;
 
+        public int opc
+        {
+            get; set;
+        }
         public Entrega(string cliente,string numeroDeSerie, DateTime fecha, string contacto, string dirrecion, string cantidad, string descripcion, string entregadoPor,string numeroFactura, string telefono, string numeroDeParte, string usuario, int linea)
         {
             this.cliente = cliente;
