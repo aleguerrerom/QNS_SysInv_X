@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>1.26117cm</Top>
-        <Left>2.71708cm</Left>
+        <Top>1.3141cm</Top>
+        <Left>2.6818cm</Left>
         <Height>0.6cm</Height>
         <Width>5.60445cm</Width>
         <Style>
@@ -155,7 +155,7 @@
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
         <Top>2.03756cm</Top>
-        <Left>2.77cm</Left>
+        <Left>2.74354cm</Left>
         <Height>0.6cm</Height>
         <Width>5.60445cm</Width>
         <ZIndex>4</ZIndex>
@@ -324,7 +324,7 @@
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
         <Top>2.89334cm</Top>
-        <Left>2.84937cm</Left>
+        <Left>2.81409cm</Left>
         <Height>0.6cm</Height>
         <Width>5.60445cm</Width>
         <ZIndex>9</ZIndex>
@@ -449,7 +449,7 @@
               <Width>1.28292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.14198cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.95002cm</Width>
@@ -502,7 +502,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
+                    <Textbox Name="Textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -520,7 +520,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -822,7 +822,7 @@
         <Top>4.64785cm</Top>
         <Left>0.30937cm</Left>
         <Height>2.14312cm</Height>
-        <Width>19.1981cm</Width>
+        <Width>17.55612cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -834,7 +834,7 @@
     <Height>4.09375in</Height>
     <Style />
   </Body>
-  <Width>7.73727in</Width>
+  <Width>8.66436in</Width>
   <Page>
     <PageHeader>
       <Height>2.49682cm</Height>
@@ -1157,48 +1157,13 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>860a7f17-7674-4d1d-98ba-86eb157b9a44</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="QNS_SysInv_XMVCController1">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>3983dff5-a19a-44d7-a41c-98142245030c</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="QNS_SysInv_XMVCController2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>a2acc5f0-5660-4ca8-a8d3-18bb1a513670</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="QNS_SysInv_XMVCController3">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>9569ba58-20eb-40a4-87f3-72130aabb540</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="QNS_SysInv_XMVCController4">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>703e997c-0bcf-4aad-9f63-2d295fdac9cf</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="QNS_SysInv_XMVCController5">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>0b5a58a9-b6d2-4995-a60b-0f444da3fc63</rd:DataSourceID>
+      <rd:DataSourceID>2323a330-5027-4d8d-8444-9591fa98eb8f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DSEntrega">
       <Query>
-        <DataSourceName>QNS_SysInv_XMVCController5</DataSourceName>
+        <DataSourceName>QNS_SysInv_XMVCController</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1245,6 +1210,10 @@
         <Field Name="NumeroFactura">
           <DataField>NumeroFactura</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="opc">
+          <DataField>opc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Telefono">
           <DataField>Telefono</DataField>

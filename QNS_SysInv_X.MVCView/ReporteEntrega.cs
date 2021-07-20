@@ -40,8 +40,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
-            this.reportViewer1.RefreshReport();
+            
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

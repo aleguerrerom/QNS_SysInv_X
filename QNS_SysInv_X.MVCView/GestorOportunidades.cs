@@ -93,7 +93,7 @@ namespace QNS_SysInv_X.MVCView
                 this.clientesH = new ClientesHelper(clientes);
                 this.table = new DataTable();
                 this.table = this.clientesH.Listar();
-                
+
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbNombre.DataSource = this.table;
@@ -112,7 +112,6 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-
                 this.oportunidades = new Oportunidades();
                 this.oportunidades.opc = 5;
 
@@ -149,11 +148,11 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidades.Detalles = this.txtDetalles.Text;
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
                 this.oportunidades.Vendedor = int.Parse(this.cmbCedVendedor.Text);
-               
+
                 this.oportunidades.opc = 2;
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
                 ///LOG PARA USUARIOS
-                
+
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Oportunidad Insertada";
@@ -172,7 +171,7 @@ namespace QNS_SysInv_X.MVCView
             }
         }
         #endregion
-        
+
         private void txtModelo_TextChanged(object sender, EventArgs e)
         {
         }
@@ -180,7 +179,7 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-             if (this.cmbNombre.Text == "")
+            if (this.cmbNombre.Text == "")
             {
                 limpiarAlertas();
                 MessageBox.Show("Debes de seleccionar un NOMBRE DE CLIENTE", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -252,14 +251,14 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-                if (this.cmbNombre.Enabled == false)
+                if (this.cmbCedVendedor.Enabled == false)
                 {
                     DialogResult dialogResult = MessageBox.Show("Desea actualziar la oportunidad?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                    actualizar();
-                    listar();
-                    limpiar();
+                        actualizar();
+                        listar();
+                        limpiar();
                     }
                     else if (dialogResult == DialogResult.No)
                     {
@@ -284,7 +283,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtPresupuesto.Clear();
             this.cmbNombre.SelectedIndex = -1;
             this.cmbVendedor.SelectedIndex = -1;
-            this.cmbNombre.Enabled = true;
+            this.cmbCedVendedor.Enabled = true;
             this.dtpFecha.Value = DateTime.Today;
             this.btnAdd.Text = "AGREGAR";
             limpiarAlertas();
@@ -312,7 +311,6 @@ namespace QNS_SysInv_X.MVCView
                     this.oportunidadesH = new OportunidadesHelper(oportunidades);
                     ///LOG PARA ELIMINAR
                     ///
-
                      this.bitacora = new Bitacora();
                      this.bitacora.Usuario = this.stsUsuario.Text;
                      this.bitacora.Movimiento = "Eliminar Oportunidad";
@@ -320,7 +318,6 @@ namespace QNS_SysInv_X.MVCView
                      this.bitacora.opc = 5;
                      this.bitH = new BitacoraHelper(bitacora);
                      this.bitH.LogMovimientos();
-
                     this.oportunidadesH.Eliminar();
                     MessageBox.Show("Oportunidad Eliminada");
                     listar();
@@ -350,14 +347,14 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidades.opc = 4;
 
                 this.oportunidadesH = new OportunidadesHelper(oportunidades);
-                
-                 this.bitacora = new Bitacora();
-                 this.bitacora.Usuario = this.stsUsu.Text;
-                 this.bitacora.Movimiento = "Actualizar Oportunidad";
-                 this.bitacora.Detalle = "Se actualizo la oportunidad correctamente ";
-                 this.bitacora.opc = 5;
-                 this.bitH = new BitacoraHelper(bitacora);
-                 this.bitH.LogMovimientos();
+
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.stsUsu.Text;
+                this.bitacora.Movimiento = "Actualizar Oportunidad";
+                this.bitacora.Detalle = "Se actualizo la oportunidad correctamente ";
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
 
                 this.oportunidadesH.Actualizar();
                 MessageBox.Show("Datos de oportunidad actualizados");
@@ -388,7 +385,8 @@ namespace QNS_SysInv_X.MVCView
                     this.txtDetalles.Text = fila["detalles"].ToString();
                     this.txtPresupuesto.Text = fila["presupuesto"].ToString();
                     this.cmbVendedor.Text = fila["Nombre_Vendedor"].ToString();
-                    this.cmbNombre.Enabled = false;
+                    this.cmbCedVendedor.Text = fila["Cedula_Vendedor"].ToString();
+                    this.cmbCedVendedor.Enabled = false;
                     this.dtpFecha.Text = fila["Fecha_de_Cierre"].ToString();
                     this.idl.Text = fila["Cedula"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
@@ -427,6 +425,8 @@ namespace QNS_SysInv_X.MVCView
         private void GestorOportunidades_Load(object sender, EventArgs e)
         {
             listar();
+            this.ActiveControl = cmbNombre;
+            dgvListar.AllowUserToAddRows = false;
             cargarComboVendedor();
             cargarComboCliente();
             this.cmbNombre.SelectedIndex = -1;
@@ -452,7 +452,7 @@ namespace QNS_SysInv_X.MVCView
                 this.Close();
             }
         }
-        
+
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -515,6 +515,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void idl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

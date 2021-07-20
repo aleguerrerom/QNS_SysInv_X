@@ -66,12 +66,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label13 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -100,6 +100,8 @@
             this.dgvListar.Location = new System.Drawing.Point(12, 357);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
+            this.dgvListar.ShowCellErrors = false;
+            this.dgvListar.ShowRowErrors = false;
             this.dgvListar.Size = new System.Drawing.Size(625, 173);
             this.dgvListar.TabIndex = 49;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
@@ -477,6 +479,12 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel2";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -520,12 +528,6 @@
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 73;
             this.txtID.Visible = false;
-            // 
-            // stsUsu
-            // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel2";
             // 
             // GestorRoles
             // 

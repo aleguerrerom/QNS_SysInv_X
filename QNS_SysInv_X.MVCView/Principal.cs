@@ -57,44 +57,44 @@ namespace QNS_SysInv_X.MVCView
             table = rolesH.BusquedaPermisoRol();
             DataRow fila = table.Rows[0];
 
-            if (bool.Parse(fila["usuarios"].ToString())==true)
+            if (bool.Parse(fila["Usuarios"].ToString())==true)
             {
                 usuariosToolStripMenuItem.Visible = true;
                 usuariosToolStripMenuItem1.Visible = true;
             }
-            if (bool.Parse(fila["entrega"].ToString()) == true)
+            if (bool.Parse(fila["Entregas"].ToString()) == true)
             {
                 entregaToolStripMenuItem.Visible = true;
             }
-            if (bool.Parse(fila["inventario"].ToString()) == true)
+            if (bool.Parse(fila["Inventarios"].ToString()) == true)
             {
                 inventarioToolStripMenuItem.Visible = true;
                 tsmReporteInv.Visible = true;
             }
-            if(bool.Parse(fila["roles"].ToString()) == true)
+            if(bool.Parse(fila["Roles"].ToString()) == true)
             {
                 rolesToolStripMenuItem.Visible = true;
             }
-            if (bool.Parse(fila["prestamo"].ToString()) == true)
+            if (bool.Parse(fila["Prestamos"].ToString()) == true)
             {
                 prestamoToolStripMenuItem.Visible = true;
                 prestamosToolStripMenuItem.Visible = true;
             }
-            if (bool.Parse(fila["bitacora"].ToString()) == true)
+            if (bool.Parse(fila["Bitacoras"].ToString()) == true)
             {
                 tsBita.Visible = true;
             }
-            if (bool.Parse(fila["oportunidades"].ToString()) == true)
+            if (bool.Parse(fila["Oportunidades"].ToString()) == true)
             {
                 oportunidadesToolStripMenuItem.Visible = true;
                 tsmReporteOpo.Visible = true;
             }
-            if (bool.Parse(fila["vendedores"].ToString()) == true)
+            if (bool.Parse(fila["Vendedores"].ToString()) == true)
             {
                 vendedoresToolStripMenuItem.Visible = true;
                 vendedoresToolStripMenuItem1.Visible = true;
             }
-            if (bool.Parse(fila["clientes"].ToString()) == true)
+            if (bool.Parse(fila["Clientes"].ToString()) == true)
             {
                 clientesToolStripMenuItem.Visible = true;
                 clmReporteCli.Visible = true;

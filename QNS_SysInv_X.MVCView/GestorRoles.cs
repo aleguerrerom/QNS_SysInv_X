@@ -16,6 +16,7 @@ namespace QNS_SysInv_X.MVCView
         private Usuarios user;
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+        static Regex validate_number = RegexExpression.number_validation();
 
         public GestorRoles()
         {
@@ -266,6 +267,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void GestorRoles_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtRol;
+            dgvListar.AllowUserToAddRows = false;
             limpiar();
             listar();
         }
@@ -344,16 +347,16 @@ namespace QNS_SysInv_X.MVCView
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.txtID.Text = fila["ID"].ToString();
-                    this.txtRol.Text = fila["nombre"].ToString();
-                    this.chckRoles.Checked = bool.Parse(fila["roles"].ToString());
-                    this.chckUsuarios.Checked = bool.Parse(fila["usuarios"].ToString());
-                    this.chkEntrega.Checked = bool.Parse(fila["entrega"].ToString());
-                    this.chkInventario.Checked = bool.Parse(fila["inventario"].ToString());
-                    this.chkPrestamo.Checked = bool.Parse(fila["prestamo"].ToString());
-                    this.chkBitacora.Checked = bool.Parse(fila["bitacora"].ToString());
-                    this.chkOportunidades.Checked = bool.Parse(fila["oportunidades"].ToString());
-                    this.chkVendedores.Checked = bool.Parse(fila["vendedores"].ToString());
-                    this.chkClientesx.Checked = bool.Parse(fila["clientes"].ToString());
+                    this.txtRol.Text = fila["Nombre"].ToString();
+                    this.chckRoles.Checked = bool.Parse(fila["Roles"].ToString());
+                    this.chckUsuarios.Checked = bool.Parse(fila["Usuarios"].ToString());
+                    this.chkEntrega.Checked = bool.Parse(fila["Entregas"].ToString());
+                    this.chkInventario.Checked = bool.Parse(fila["Inventarios"].ToString());
+                    this.chkPrestamo.Checked = bool.Parse(fila["Prestamos"].ToString());
+                    this.chkBitacora.Checked = bool.Parse(fila["Bitacoras"].ToString());
+                    this.chkOportunidades.Checked = bool.Parse(fila["Oportunidades"].ToString());
+                    this.chkVendedores.Checked = bool.Parse(fila["Vendedores"].ToString());
+                    this.chkClientesx.Checked = bool.Parse(fila["Clientes"].ToString());
                     this.txtID.ReadOnly = true;
                     this.btnAdd.Text = "ACTUALIZAR";
                 
@@ -387,22 +390,31 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else
                 {
-                    this.roles = new Roles();
-                    this.roles.opc = 6;
-                    this.roles.ID1 = int.Parse(txtBuscar.Text);
-                    this.rolH = new RolesHelper(roles);
-
-                    this.table = new DataTable();
-                    dgvListar.DataSource = table;
-                    this.table = this.rolH.Buscar();
-
-                    if (this.table.Rows.Count > 0)
+                    if (validate_number.IsMatch(txtBuscar.Text) != true)
                     {
-                        this.dgvListar.DataSource = this.table;
-                        this.dgvListar.ReadOnly = true;
+                        MessageBox.Show("El campo BUSCAR solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.ActiveControl = txtBuscar;
+                        return;
                     }
+                    else
+                    {
+                        this.roles = new Roles();
+                        this.roles.opc = 6;
+                        this.roles.ID1 = int.Parse(txtBuscar.Text);
+                        this.rolH = new RolesHelper(roles);
 
-                    else listar();
+                        this.table = new DataTable();
+                        dgvListar.DataSource = table;
+                        this.table = this.rolH.Buscar();
+
+                        if (this.table.Rows.Count > 0)
+                        {
+                            this.dgvListar.DataSource = this.table;
+                            this.dgvListar.ReadOnly = true;
+                        }
+
+                        else listar();
+                    }
                 }
             }
             catch (Exception ex)

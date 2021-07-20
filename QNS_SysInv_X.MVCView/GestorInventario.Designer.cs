@@ -61,12 +61,12 @@
             this.idl = new System.Windows.Forms.Label();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
@@ -250,6 +250,7 @@
             this.gbEstado.Size = new System.Drawing.Size(363, 44);
             this.gbEstado.TabIndex = 52;
             this.gbEstado.TabStop = false;
+            this.gbEstado.Enter += new System.EventHandler(this.gbEstado_Enter);
             // 
             // cmbEstado
             // 
@@ -257,7 +258,7 @@
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "Bodega",
-            "Prestado",
+            "Prestamo",
             "Produccion"});
             this.cmbEstado.Location = new System.Drawing.Point(198, 14);
             this.cmbEstado.Name = "cmbEstado";
@@ -460,6 +461,12 @@
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(0, 17);
             // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -503,12 +510,6 @@
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 72;
             this.txtID.Visible = false;
-            // 
-            // stsUsua
-            // 
-            this.stsUsua.Name = "stsUsua";
-            this.stsUsua.Size = new System.Drawing.Size(118, 17);
-            this.stsUsua.Text = "toolStripStatusLabel1";
             // 
             // GestorInventario
             // 

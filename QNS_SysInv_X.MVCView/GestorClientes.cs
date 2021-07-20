@@ -125,6 +125,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void GestorClientes_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtCedula;
+            dgvListar.AllowUserToAddRows = false;
             cargarComboVendedor();
             listar();
             this.cmbVende.SelectedIndex = -1;

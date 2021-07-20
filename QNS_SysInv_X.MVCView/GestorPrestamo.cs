@@ -70,6 +70,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void Prestamo_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtID;
+            dgvListar.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
         }
@@ -239,7 +241,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReportePrestamo repoPrestamo = new ReportePrestamo();
+                ReportePrestamo repoPrestamo = new ReportePrestamo(user);
                 repoPrestamo.Show();
             }
         }

@@ -70,7 +70,7 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Modelo = this.txtModelo.Text;
                 this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
-                this.inventario.Usuario = this.txtModelo.Text;
+                this.inventario.Usuario = this.stsUsua.Text;
                 this.inventario.opc = 2;
                 this.invH = new InventarioHelper(inventario);
                 ///LOG PARA USUARIOS
@@ -292,7 +292,7 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Modelo = this.txtModelo.Text;
                 this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
-                this.inventario.Usuario = this.txtModelo.Text;
+                this.inventario.Usuario = this.stsUsua.Text;
                 this.inventario.Id = int.Parse(this.idl.Text);
                 this.inventario.opc = 4;
 
@@ -331,14 +331,14 @@ namespace QNS_SysInv_X.MVCView
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.txtID.Text = fila["ID"].ToString();
-                    this.txtNombreActivo.Text = fila["nombre"].ToString();
-                    this.txtTipo.Text = fila["tipo"].ToString();
-                    this.txtSerialNumber.Text = fila["serialnumber"].ToString();
-                    this.cmbBrand.Text = fila["marca"].ToString();
+                    this.txtNombreActivo.Text = fila["Nombre"].ToString();
+                    this.txtTipo.Text = fila["Tipo"].ToString();
+                    this.txtSerialNumber.Text = fila["Numero_de_Serie"].ToString();
+                    this.cmbBrand.Text = fila["Marca"].ToString();
                     this.txtID.Enabled = false;
-                    this.txtModelo.Text = fila["modelo"].ToString();
-                    this.cmbEstado.Text = fila["estado"].ToString();
-                    this.dtpFecha.Text = fila["fechamodificacion"].ToString();
+                    this.txtModelo.Text = fila["Modelo"].ToString();
+                    this.cmbEstado.Text = fila["Estado"].ToString();
+                    this.dtpFecha.Text = fila["Fecha_Modificación"].ToString();
                     this.idl.Text = fila["id"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
@@ -376,6 +376,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void GestorInventario_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtNombreActivo;
+            dgvListar.AllowUserToAddRows = false;
             listar();
         }
 
@@ -397,7 +399,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteInventario entr = new ReporteInventario();
+                ReporteInventario entr = new ReporteInventario(user);
                 entr.Show();
                 this.Close();
             }
@@ -461,6 +463,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void gbEstado_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

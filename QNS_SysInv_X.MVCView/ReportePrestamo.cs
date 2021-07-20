@@ -23,6 +23,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_QNS.Prestamo' table. You can move, or remove it, as needed.
+            this.prestamoTableAdapter.Fill(this.dS_QNS.Prestamo);
             ReportParameterCollection reportParameters = new ReportParameterCollection();
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
@@ -33,16 +35,16 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {/*
             if (cmbFiltrar.SelectedIndex == 0)
             {
-                this.clientesTableAdapter.FillByCedula(this.dS_QNS.Clientes, int.Parse(txtFiltro.Text));
+                this.prestamoTableAdapter.Fill(this.dS_QNS.Clientes, int.Parse(txtFiltro.Text));
             }
             else if (cmbFiltrar.SelectedIndex == 1)
             {
                 this.clientesTableAdapter.FillByNombre(this.dS_QNS.Clientes, txtFiltro.Text);
             }
-            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();*/
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.Fill(this.dS_QNS.Clientes);
+            this.prestamoTableAdapter.Fill(this.dS_QNS.Prestamo);
 
             this.reportViewer1.RefreshReport();
         }

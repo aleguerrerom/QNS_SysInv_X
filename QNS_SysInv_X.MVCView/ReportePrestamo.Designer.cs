@@ -32,23 +32,23 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportePrestamo));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.usuariosTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.prestamoTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter();
             this.stsUsu = new System.Windows.Forms.StatusStrip();
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamoTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -62,11 +62,6 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 58;
             pictureBox2.TabStop = false;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -132,10 +127,6 @@
             this.toolStripLabel1.Text = "SALIR";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
             // cmbFiltrar
             // 
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -149,19 +140,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource2.Name = "DataSet2";
+            reportDataSource1.Name = "DSPrestamo";
+            reportDataSource1.Value = this.prestamoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportPrestamo.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(823, 414);
             this.reportViewer1.TabIndex = 4;
-            // 
-            // prestamoTableAdapter
-            // 
-            this.prestamoTableAdapter.ClearBeforeFill = true;
             // 
             // stsUsu
             // 
@@ -171,6 +157,20 @@
             this.stsUsu.Size = new System.Drawing.Size(858, 22);
             this.stsUsu.TabIndex = 67;
             this.stsUsu.Text = "statusStrip1";
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prestamoBindingSource
+            // 
+            this.prestamoBindingSource.DataMember = "Prestamo";
+            this.prestamoBindingSource.DataSource = this.dS_QNS;
+            // 
+            // prestamoTableAdapter
+            // 
+            this.prestamoTableAdapter.ClearBeforeFill = true;
             // 
             // ReportePrestamo
             // 
@@ -194,9 +194,10 @@
             this.Text = "REPORTE PRESTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,15 +207,15 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter prestamoTableAdapter;
         private System.Windows.Forms.StatusStrip stsUsu;
+        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
+        private System.Windows.Forms.BindingSource prestamoBindingSource;
+        private CNV_Inventario.MVCView.DS_QNSTableAdapters.PrestamoTableAdapter prestamoTableAdapter;
     }
 }

@@ -27,7 +27,7 @@ namespace QNS_SysInv_X.MVCView
         private Usuarios user;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
-        
+
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
         static Regex validate_letter = RegexExpression.letter_validation();
@@ -41,7 +41,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-                    this.Close();
+            this.Close();
         }
 
         #region LISTAR entrega
@@ -54,7 +54,6 @@ namespace QNS_SysInv_X.MVCView
                 this.entregaH = new EntregaHelper(entrega);
                 this.table = new DataTable();
                 this.table = this.entregaH.Listar();
-
                 if (this.table.Rows.Count > 0)
                 {
                     this.dgvListar.DataSource = this.table;
@@ -126,7 +125,6 @@ namespace QNS_SysInv_X.MVCView
                 this.entrega.Descripcion = this.txtDescripcion.Text;
                 this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
                 this.entrega.Id = int.Parse(this.txtID.Text);
-
                 this.entrega.Opc = 3;
                 this.entregaH = new EntregaHelper(entrega);
                 ///LOG PARA USUARIOS
@@ -138,10 +136,8 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
-
                 this.entregaH.Entrega();
                 MessageBox.Show("Entrega actualizada");
-
             }
             catch (Exception ex)
             {
@@ -162,7 +158,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtDescripcion.Text = "";
             this.txtEntregadoPor.Text = "";
             this.txtContacto.Text = "";
-           // this.txtID.ReadOnly = false;
+            // this.txtID.ReadOnly = false;
             limpiarAlertas();
         }
 
@@ -200,7 +196,9 @@ namespace QNS_SysInv_X.MVCView
                 }
             }
             if (IsOpen == false)
-            {  if (this.txtCliente.Text == "") {
+            {
+                if (this.txtCliente.Text == "")
+                {
                     limpiarAlertas();
                     MessageBox.Show("El campo de CLIENTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblCliente.BackColor = System.Drawing.Color.DarkRed;
@@ -269,21 +267,20 @@ namespace QNS_SysInv_X.MVCView
                     MessageBox.Show("Debes incluir articulos a la entrega", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.ActiveControl = txtSN;
                 }
-                
-            else {
 
-                    guardar();
+                else
+                {
                     Entrega entrega = new Entrega();
-                ReporteEntrega repoEntrega = new ReporteEntrega();
-                entrega.Cliente = txtEntregadoPor.Text;
-                entrega.EntregadoPor = txtEntregadoPor.Text;
-                entrega.Contacto = txtContacto.Text;
-                entrega.Fecha = dtpFecha.Value;
-                entrega.Dirrecion = txtDireccion.Text;
-                entrega.NumeroFactura = txtNumFactura.Text;
-                entrega.Telefono = txtTelefono.Text;
-                entrega.Usuario = stsUsua.Text;
-                    for (int i = 0; i < dgvListar.RowCount-1; i++)
+                    ReporteEntrega repoEntrega = new ReporteEntrega();
+                    entrega.Cliente = txtEntregadoPor.Text;
+                    entrega.EntregadoPor = txtEntregadoPor.Text;
+                    entrega.Contacto = txtContacto.Text;
+                    entrega.Fecha = dtpFecha.Value;
+                    entrega.Dirrecion = txtDireccion.Text;
+                    entrega.NumeroFactura = txtNumFactura.Text;
+                    entrega.Telefono = txtTelefono.Text;
+                    entrega.Usuario = stsUsua.Text;
+                    for (int i = 0; i < dgvListar.RowCount - 1; i++)
                     {
                         entrega.NumeroDeParte = (string)this.dgvListar.Rows[i].Cells[0].Value;
                         entrega.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
@@ -292,7 +289,9 @@ namespace QNS_SysInv_X.MVCView
                         repoEntrega.entrega.Add(entrega);
                     }
                     //repoEntrega.entrega.Add(entrega);
-                //repoEntrega.Show();
+                    //repoEntrega.Show();
+
+                    guardar();
                     repoEntrega.ShowDialog();
                 }
             }
@@ -329,8 +328,9 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-          
-             if ( this.txtSN.Text == "" ) {
+
+            if (this.txtSN.Text == "")
+            {
                 limpiarAlertas();
                 MessageBox.Show("El campo de Numero de Serie esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNS.BackColor = System.Drawing.Color.DarkRed;
@@ -338,7 +338,8 @@ namespace QNS_SysInv_X.MVCView
                 gpSN.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtSN;
             }
-            else if ( this.txtDescripcion.Text == "" ) {
+            else if (this.txtDescripcion.Text == "")
+            {
                 limpiarAlertas();
                 MessageBox.Show("El campo de DESCRIPCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblDescripcion.BackColor = System.Drawing.Color.DarkRed;
@@ -383,19 +384,19 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtCantidad;
             }
             else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
-                {
+            {
                 MessageBox.Show("No se permiten espacios en el campo cantidad", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCantidad.Focus();
                 return;
-                }
+            }
             else
-                {
+            {
                 this.dgvListar.Rows.Add(this.txtNumParte.Text, int.Parse(this.txtCantidad.Text), this.txtDescripcion.Text, this.txtSN.Text);
                 limpiarArticulos();
-                }
+            }
             #endregion
         }
-        
+
         #region CARGAR DE TABLA
         private void CargarFromTable()
         {
@@ -453,6 +454,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void Entregas_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtCliente;
+            dgvListar.AllowUserToAddRows = false;
             listar();
         }
 
@@ -480,17 +483,14 @@ namespace QNS_SysInv_X.MVCView
                     this.entrega.Opc = 4;
                     this.entrega.Id = int.Parse(txtBuscar.Text);
                     this.entregaH = new EntregaHelper(entrega);
-
                     this.table = new DataTable();
                     dgvListar.DataSource = table;
                     this.table = this.entregaH.Buscar();
-
                     if (this.table.Rows.Count > 0)
                     {
                         this.dgvListar.DataSource = this.table;
                         this.dgvListar.ReadOnly = true;
                     }
-
                     else listar();
                 }
                 */

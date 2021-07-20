@@ -56,12 +56,12 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.idl = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -149,6 +149,8 @@
             this.gbVendedor.BackColor = System.Drawing.Color.White;
             this.gbVendedor.Controls.Add(this.cmbVendedor);
             this.gbVendedor.Controls.Add(this.lblVendedor);
+            this.gbVendedor.Controls.Add(this.idl);
+            this.gbVendedor.Controls.Add(this.cmbCedVendedor);
             this.gbVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbVendedor.Location = new System.Drawing.Point(393, 126);
             this.gbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -306,6 +308,7 @@
             // cmbNombre
             // 
             this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Location = new System.Drawing.Point(166, 14);
             this.cmbNombre.Name = "cmbNombre";
@@ -373,12 +376,12 @@
             // idl
             // 
             this.idl.AutoSize = true;
-            this.idl.Location = new System.Drawing.Point(481, 204);
+            this.idl.Location = new System.Drawing.Point(156, 16);
             this.idl.Name = "idl";
-            this.idl.Size = new System.Drawing.Size(35, 13);
+            this.idl.Size = new System.Drawing.Size(41, 13);
             this.idl.TabIndex = 67;
             this.idl.Text = "label1";
-            this.idl.Visible = false;
+            this.idl.Click += new System.EventHandler(this.idl_Click);
             // 
             // stsUsuario
             // 
@@ -390,6 +393,12 @@
             this.stsUsuario.Size = new System.Drawing.Size(792, 22);
             this.stsUsuario.TabIndex = 68;
             this.stsUsuario.Text = "statusStrip1";
+            // 
+            // stsUsu
+            // 
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // toolStrip1
             // 
@@ -430,16 +439,10 @@
             // cmbCedVendedor
             // 
             this.cmbCedVendedor.FormattingEnabled = true;
-            this.cmbCedVendedor.Location = new System.Drawing.Point(618, 177);
+            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 11);
             this.cmbCedVendedor.Name = "cmbCedVendedor";
             this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
             this.cmbCedVendedor.TabIndex = 73;
-            // 
-            // stsUsu
-            // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // GestorOportunidades
             // 
@@ -447,12 +450,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(792, 569);
-            this.Controls.Add(this.cmbCedVendedor);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.stsUsuario);
-            this.Controls.Add(this.idl);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.gbPresupuesto);

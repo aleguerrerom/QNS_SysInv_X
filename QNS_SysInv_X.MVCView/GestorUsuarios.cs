@@ -49,8 +49,8 @@ namespace QNS_SysInv_X.MVCView.Resources
             try
             {
                 this.user = new Usuarios();
-                //this.user.opc = 1;
-                this.user.opc = 8;
+                this.user.opc = 1;
+                //this.user.opc = 8;
                 this.userHelper = new UsuariosHelper(user);
                 this.table = new DataTable();
                 this.table = this.userHelper.Listar();
@@ -371,6 +371,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dB_CNVDataSet1.Rol' table. You can move, or remove it, as needed.
+            dgvListar.AllowUserToAddRows = false;
             this.ActiveControl = txtUsuario;
             listar();
             cargarCombo();
@@ -506,16 +507,16 @@ namespace QNS_SysInv_X.MVCView.Resources
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    this.txtUsuario.Text = fila["usuario"].ToString();
-                    this.txtClave.Text = EncryptionHelper.Decrypt(fila["clave"].ToString());
+                    this.txtUsuario.Text = fila["Usuario"].ToString();
+                    this.txtClave.Text = EncryptionHelper.Decrypt(fila["Clave"].ToString());
                     this.txtConfirmar.Text = this.txtClave.Text;
-                    this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
+                    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     this.txtConfirmar.Text = "";
                     this.cmbRol.Text = fila["Nombre_Rol"].ToString();
-                    this.txtNombre.Text = fila["nombre"].ToString();
-                    this.txtApellido.Text = fila["apellido"].ToString();
+                    this.txtNombre.Text = fila["Nombre"].ToString();
+                    this.txtApellido.Text = fila["Apellido"].ToString();
                     this.txtUsuario.ReadOnly = true;
-                    this.txtCorreo.Text = fila["correo"].ToString();
+                    this.txtCorreo.Text = fila["Correo"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -541,7 +542,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             }
             if (IsOpen == false)
             {
-                ReporteUsuarios repU = new ReporteUsuarios();
+                ReporteUsuarios repU = new ReporteUsuarios(user);
                 repU.Show();
                 this.Close();
             }

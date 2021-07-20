@@ -121,6 +121,8 @@ namespace QNS_SysInv_X.MVCView
       
         private void GestorRespaldos_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtCedula;
+            dgvListar.AllowUserToAddRows = false;
             listar();
         }
         
