@@ -110,6 +110,7 @@
             this.dgvListar.ReadOnly = true;
             this.dgvListar.Size = new System.Drawing.Size(697, 208);
             this.dgvListar.TabIndex = 56;
+            this.dgvListar.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListar_RowHeaderMouseClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // label1

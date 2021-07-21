@@ -264,14 +264,15 @@ namespace QNS_SysInv_X.MVCView
                 else if (dgvListar.RowCount == 0)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("Debes incluir articulos a la entrega", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debes incluir al menos un articulos a la entrega", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.ActiveControl = txtSN;
                 }
-
                 else
                 {
                     Entrega entrega = new Entrega();
-                    ReporteEntrega repoEntrega = new ReporteEntrega();
+                    ReporteEntrega repoEntrega = new ReporteEntrega(user);
+                    for (int i = 0; i < dgvListar.RowCount; i++)
+                    {
                     entrega.Cliente = txtEntregadoPor.Text;
                     entrega.EntregadoPor = txtEntregadoPor.Text;
                     entrega.Contacto = txtContacto.Text;
@@ -279,18 +280,12 @@ namespace QNS_SysInv_X.MVCView
                     entrega.Dirrecion = txtDireccion.Text;
                     entrega.NumeroFactura = txtNumFactura.Text;
                     entrega.Telefono = txtTelefono.Text;
-                    entrega.Usuario = stsUsua.Text;
-                    for (int i = 0; i < dgvListar.RowCount - 1; i++)
-                    {
-                        entrega.NumeroDeParte = (string)this.dgvListar.Rows[i].Cells[0].Value;
-                        entrega.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
-                        entrega.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
-                        entrega.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                        repoEntrega.entrega.Add(entrega);
+                    entrega.NumeroDeParte = (string)this.dgvListar.Rows[i].Cells[0].Value;
+                    entrega.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
+                    entrega.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
+                    entrega.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
+                    repoEntrega.entregaLista.Add(entrega);
                     }
-                    //repoEntrega.entrega.Add(entrega);
-                    //repoEntrega.Show();
-
                     guardar();
                     repoEntrega.ShowDialog();
                 }
@@ -509,6 +504,14 @@ namespace QNS_SysInv_X.MVCView
         private void dgvListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dgvListar.SelectedRows)
+            {
+                dgvListar.Rows.RemoveAt(item.Index);
+            }
         }
     }
 }

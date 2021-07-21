@@ -42,10 +42,13 @@
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.entregaTableAdapter1 = new CNV_Inventario.MVCView.DS_QNSTableAdapters.EntregaTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.entregaBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // entregaBindingSource
@@ -121,6 +124,7 @@
             // 
             // reportViewer2
             // 
+            this.reportViewer2.ContextMenuStrip = this.contextMenuStrip1;
             this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource2.Name = "DSEntrega";
             reportDataSource2.Value = this.entregaBindingSource;
@@ -134,6 +138,20 @@
             // entregaTableAdapter1
             // 
             this.entregaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // ReporteEntrega
             // 
@@ -158,6 +176,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +193,7 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.BindingSource entregaBindingSource;
         private CNV_Inventario.MVCView.DS_QNSTableAdapters.EntregaTableAdapter entregaTableAdapter1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

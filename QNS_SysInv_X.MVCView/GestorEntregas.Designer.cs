@@ -36,6 +36,10 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgvListar = new System.Windows.Forms.DataGridView();
+            this.NºParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nº_de_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gpContacto = new System.Windows.Forms.GroupBox();
             this.txtContacto = new System.Windows.Forms.TextBox();
@@ -76,14 +80,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.NºParte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nº_de_Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpFecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gpContacto.SuspendLayout();
             this.gpMarca.SuspendLayout();
             this.gpSN.SuspendLayout();
@@ -139,7 +141,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(160, 16);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(193, 20);
-            this.dtpFecha.TabIndex = 4;
+            this.dtpFecha.TabIndex = 14;
             // 
             // lblFecha
             // 
@@ -167,15 +169,37 @@
             this.dgvListar.Location = new System.Drawing.Point(9, 469);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.Name = "dgvListar";
-            this.dgvListar.Size = new System.Drawing.Size(734, 122);
+            this.dgvListar.Size = new System.Drawing.Size(734, 82);
             this.dgvListar.TabIndex = 45;
             this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
+            // NºParte
+            // 
+            this.NºParte.HeaderText = "NºParte";
+            this.NºParte.Name = "NºParte";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            // 
+            // Nº_de_Serie
+            // 
+            this.Nº_de_Serie.HeaderText = "Nº_de_Serie";
+            this.Nº_de_Serie.Name = "Nº_de_Serie";
+            // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
             // 
             // gpContacto
             // 
@@ -198,7 +222,7 @@
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
-            this.txtContacto.TabIndex = 1;
+            this.txtContacto.TabIndex = 11;
             // 
             // lblContacto
             // 
@@ -247,7 +271,7 @@
             this.txtNumParte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumParte.Name = "txtNumParte";
             this.txtNumParte.Size = new System.Drawing.Size(197, 13);
-            this.txtNumParte.TabIndex = 10;
+            this.txtNumParte.TabIndex = 21;
             // 
             // gpSN
             // 
@@ -270,7 +294,7 @@
             this.txtSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(197, 13);
-            this.txtSN.TabIndex = 7;
+            this.txtSN.TabIndex = 18;
             // 
             // lblNS
             // 
@@ -321,7 +345,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(193, 13);
-            this.txtDireccion.TabIndex = 2;
+            this.txtDireccion.TabIndex = 12;
             // 
             // gbCliente
             // 
@@ -358,7 +382,7 @@
             this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(197, 13);
-            this.txtCliente.TabIndex = 0;
+            this.txtCliente.TabIndex = 10;
             // 
             // toolStrip1
             // 
@@ -399,7 +423,7 @@
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(197, 13);
-            this.txtCantidad.TabIndex = 8;
+            this.txtCantidad.TabIndex = 19;
             // 
             // lblCantidad
             // 
@@ -436,7 +460,7 @@
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 13);
-            this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.TabIndex = 20;
             // 
             // lblDescripcion
             // 
@@ -473,7 +497,7 @@
             this.txtEntregadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEntregadoPor.Name = "txtEntregadoPor";
             this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
-            this.txtEntregadoPor.TabIndex = 3;
+            this.txtEntregadoPor.TabIndex = 13;
             // 
             // lblEntregado
             // 
@@ -514,7 +538,7 @@
             this.btnReport.Location = new System.Drawing.Point(548, 429);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(148, 33);
-            this.btnReport.TabIndex = 12;
+            this.btnReport.TabIndex = 24;
             this.btnReport.Text = "IMPRIMIR REPORTE";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
@@ -529,7 +553,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -544,7 +568,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 32);
-            this.btnAdd.TabIndex = 11;
+            this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "AGREGAR ARTICULO";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -583,7 +607,7 @@
             this.txtNumFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(169, 13);
-            this.txtNumFactura.TabIndex = 5;
+            this.txtNumFactura.TabIndex = 16;
             // 
             // groupBox2
             // 
@@ -636,7 +660,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(191, 13);
-            this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TabIndex = 17;
             // 
             // groupBox3
             // 
@@ -653,25 +677,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ARTICULOS A ENTREGAR";
             // 
-            // NºParte
+            // eliminarToolStripMenuItem
             // 
-            this.NºParte.HeaderText = "NºParte";
-            this.NºParte.Name = "NºParte";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            // 
-            // Nº_de_Serie
-            // 
-            this.Nº_de_Serie.HeaderText = "Nº_de_Serie";
-            this.Nº_de_Serie.Name = "Nº_de_Serie";
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // GestorEntregas
             // 
@@ -679,6 +690,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(761, 577);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -698,6 +710,7 @@
             this.gpFecha.ResumeLayout(false);
             this.gpFecha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gpContacto.ResumeLayout(false);
             this.gpContacto.PerformLayout();
             this.gpMarca.ResumeLayout(false);
@@ -779,5 +792,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nº_de_Serie;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

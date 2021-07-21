@@ -109,7 +109,7 @@
             this.btnReport.Location = new System.Drawing.Point(558, 329);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 9;
+            this.btnReport.TabIndex = 20;
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
-            this.txtSerialNumber.TabIndex = 2;
+            this.txtSerialNumber.TabIndex = 12;
             // 
             // dgvListar
             // 
@@ -180,7 +180,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -195,7 +195,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
-            this.btnAdd.TabIndex = 7;
+            this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "AGREGAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(198, 17);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
-            this.dtpFecha.TabIndex = 6;
+            this.dtpFecha.TabIndex = 16;
             // 
             // lblFecha
             // 
@@ -256,6 +256,7 @@
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.ItemHeight = 13;
             this.cmbEstado.Items.AddRange(new object[] {
             "Bodega",
             "Prestamo",
@@ -312,7 +313,7 @@
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
-            this.txtModelo.TabIndex = 4;
+            this.txtModelo.TabIndex = 14;
             // 
             // gbMarca
             // 
@@ -345,7 +346,7 @@
             this.cmbBrand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(194, 21);
-            this.cmbBrand.TabIndex = 3;
+            this.cmbBrand.TabIndex = 17;
             // 
             // lblMarca
             // 
@@ -396,7 +397,7 @@
             this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
-            this.txtTipo.TabIndex = 1;
+            this.txtTipo.TabIndex = 11;
             // 
             // gbNombre
             // 
@@ -433,7 +434,7 @@
             this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreActivo.Name = "txtNombreActivo";
             this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
-            this.txtNombreActivo.TabIndex = 0;
+            this.txtNombreActivo.TabIndex = 10;
             // 
             // idl
             // 
@@ -500,7 +501,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(669, 341);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
-            this.txtBuscar.TabIndex = 10;
+            this.txtBuscar.TabIndex = 21;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtID

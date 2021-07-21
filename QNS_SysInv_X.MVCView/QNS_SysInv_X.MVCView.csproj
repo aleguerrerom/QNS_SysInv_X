@@ -28,7 +28,7 @@
     <ProductName>QNS_SysInv_X</ProductName>
     <PublisherName>QNS_SysInv_X</PublisherName>
     <SuiteName>QNS_SysInv_X</SuiteName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="GestorClientes.Designer.cs">
       <DependentUpon>GestorClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestorInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestorInventario.Designer.cs">
+      <DependentUpon>GestorInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorOportunidades.cs">
       <SubType>Form</SubType>
@@ -192,12 +198,6 @@
     <Compile Include="GestorEntregas.Designer.cs">
       <DependentUpon>GestorEntregas.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestorInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestorInventario.Designer.cs">
-      <DependentUpon>GestorInventario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestorClientes.resx">
       <DependentUpon>GestorClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestorInventario.resx">
+      <DependentUpon>GestorInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestorOportunidades.resx">
       <DependentUpon>GestorOportunidades.cs</DependentUpon>
@@ -289,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestorUsuarios.resx">
       <DependentUpon>GestorUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestorInventario.resx">
-      <DependentUpon>GestorInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
+using System.Collections.Generic;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -184,14 +185,21 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-
-
+        
         private void AlmacenarPrestamo()
         {
             try
             {
-                //AGREGAR NUEVO USUARIO
+                //foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+                //{
+                //    //Code to add selected row to new datagrid.
+                //    //Important to note that dataGridView2.Rows.Add(r) will not work 
+                //    //because each row can only belong to one data grid.  You'll have 
+                //    //to create a new Row with the same info for an exact copy
+                //}
+                //AGREGAR NUEVO PRESTAMO
                 this.prestamos = new Prestamos();
+
                 this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
                 this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
                
@@ -208,7 +216,6 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA PRESTAMOS
                 
                 this.presH.Prestamo();
-
             }
             catch (Exception ex)
             {
@@ -244,6 +251,20 @@ namespace QNS_SysInv_X.MVCView
                 ReportePrestamo repoPrestamo = new ReportePrestamo(user);
                 repoPrestamo.Show();
             }
+        }
+
+        List<int> listaPrestamo = new List<int>();
+        private void dgvListar_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int n = dgvListar.CurrentRow.Index;
+            dgvListar.Rows[n].Selected = false;
+            dgvListar.ClearSelection();
+            if (listaPrestamo.Contains(n))
+            listaPrestamo.Remove(n);
+            else
+            listaPrestamo.Add(n);
+            foreach (int i in listaPrestamo)
+            { dgvListar.Rows[i].Selected = true; }
         }
     }
 }
