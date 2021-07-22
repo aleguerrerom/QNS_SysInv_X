@@ -44,6 +44,10 @@
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnReport = new System.Windows.Forms.Button();
             this.cmbCedula = new System.Windows.Forms.ComboBox();
+            this.cmbContacto = new System.Windows.Forms.ComboBox();
+            this.cmbTelefono = new System.Windows.Forms.ComboBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.cmbDireccion = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -208,7 +212,30 @@
             this.cmbCedula.Name = "cmbCedula";
             this.cmbCedula.Size = new System.Drawing.Size(96, 21);
             this.cmbCedula.TabIndex = 64;
-            this.cmbCedula.Visible = false;
+            // 
+            // cmbContacto
+            // 
+            this.cmbContacto.FormattingEnabled = true;
+            this.cmbContacto.Location = new System.Drawing.Point(602, 47);
+            this.cmbContacto.Name = "cmbContacto";
+            this.cmbContacto.Size = new System.Drawing.Size(96, 21);
+            this.cmbContacto.TabIndex = 65;
+            // 
+            // cmbTelefono
+            // 
+            this.cmbTelefono.FormattingEnabled = true;
+            this.cmbTelefono.Location = new System.Drawing.Point(602, 20);
+            this.cmbTelefono.Name = "cmbTelefono";
+            this.cmbTelefono.Size = new System.Drawing.Size(96, 21);
+            this.cmbTelefono.TabIndex = 66;
+            // 
+            // cmbDireccion
+            // 
+            this.cmbDireccion.FormattingEnabled = true;
+            this.cmbDireccion.Location = new System.Drawing.Point(470, 19);
+            this.cmbDireccion.Name = "cmbDireccion";
+            this.cmbDireccion.Size = new System.Drawing.Size(121, 21);
+            this.cmbDireccion.TabIndex = 67;
             // 
             // GestorPrestamo
             // 
@@ -216,6 +243,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(719, 422);
+            this.Controls.Add(this.cmbDireccion);
+            this.Controls.Add(this.cmbTelefono);
+            this.Controls.Add(this.cmbContacto);
             this.Controls.Add(this.cmbCedula);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.stsUsuario);
@@ -260,5 +290,9 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.ComboBox cmbCedula;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.ComboBox cmbContacto;
+        private System.Windows.Forms.ComboBox cmbTelefono;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ComboBox cmbDireccion;
     }
 }

@@ -508,7 +508,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.txtUsuario.Text = fila["Usuario"].ToString();
-                    this.txtClave.Text = EncryptionHelper.Decrypt(fila["Clave"].ToString());
+                    this.txtClave.Text = fila["Clave"].ToString();
                     this.txtConfirmar.Text = this.txtClave.Text;
                     this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     this.txtConfirmar.Text = "";

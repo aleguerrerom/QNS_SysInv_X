@@ -55,6 +55,15 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbCedula.DataSource = this.table;
                     cmbCedula.ValueMember = "cedula";
                     cmbCedula.DisplayMember = "cedula";
+                    this.cmbContacto.DataSource = this.table;
+                    cmbContacto.ValueMember = "contacto";
+                    cmbContacto.DisplayMember = "contacto";
+                    this.cmbTelefono.DataSource = this.table;
+                    cmbTelefono.ValueMember = "telefono";
+                    cmbTelefono.DisplayMember = "telefono";
+                    this.cmbDireccion.DataSource = this.table;
+                    cmbDireccion.ValueMember = "direcion";
+                    cmbDireccion.DisplayMember = "direcion";
                 }
 
             }
@@ -190,13 +199,7 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                //foreach (DataGridViewRow r in dataGridView1.SelectedRows)
-                //{
-                //    //Code to add selected row to new datagrid.
-                //    //Important to note that dataGridView2.Rows.Add(r) will not work 
-                //    //because each row can only belong to one data grid.  You'll have 
-                //    //to create a new Row with the same info for an exact copy
-                //}
+               
                 //AGREGAR NUEVO PRESTAMO
                 this.prestamos = new Prestamos();
 
@@ -248,8 +251,27 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
+                Prestamos prestamos = new Prestamos();
                 ReportePrestamo repoPrestamo = new ReportePrestamo(user);
-                repoPrestamo.Show();
+                
+                        prestamos.Contacto = cmbContacto.Text;
+                        prestamos.Telefono = cmbTelefono.Text;
+                        prestamos.Nombre = cmbCliente.Text;
+                        prestamos.Direcicon = cmbDireccion.Text;
+                repoPrestamo.prestamoLista.Add(prestamos);
+                for (int i = 0; i < dgvListar.RowCount; i++)
+                {
+                        prestamos.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
+                        prestamos.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
+                        prestamos.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
+                        prestamos.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
+                        prestamos.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
+                        prestamos.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
+                        prestamos.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
+                        prestamos.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
+                       repoPrestamo.prestamoLista.Add(prestamos);
+                }
+                repoPrestamo.ShowDialog();
             }
         }
 

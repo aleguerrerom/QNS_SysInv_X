@@ -323,6 +323,7 @@
     </None>
     <None Include="Properties\DataSources\QNS_SysInv_X.MVCController.Clientes.datasource" />
     <None Include="Properties\DataSources\QNS_SysInv_X.MVCController.Entrega.datasource" />
+    <None Include="Properties\DataSources\QNS_SysInv_X.MVCController.Prestamos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

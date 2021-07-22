@@ -105,48 +105,7 @@ namespace QNS_SysInv_X.MVCView
         }
 
         #endregion
-
-        #region GUARDAR entrega
-        //FUNCION AGREGAR NUEVO USUARIO
-        private void actualizar()
-        {/*
-            try
-            {
-                //AGREGAR NUEVO USUARIO int.Parse(
-                this.entrega = new Entrega();
-                this.entrega.Cliente = this.txtCliente.Text;
-                this.entrega.Tipo = this.txtTipo.Text;
-                this.entrega.NumeroDeSerie = this.txtSN.Text;
-                this.entrega.Marca = this.txtMarca.Text;
-                this.entrega.Fecha = this.dtpFecha.Value;
-                this.entrega.Contacto = this.txtContacto.Text;
-                this.entrega.Dirrecion = this.txtDireccion.Text;
-                this.entrega.Cantidad = int.Parse(this.txtCantidad.Text);
-                this.entrega.Descripcion = this.txtDescripcion.Text;
-                this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
-                this.entrega.Id = int.Parse(this.txtID.Text);
-                this.entrega.Opc = 3;
-                this.entregaH = new EntregaHelper(entrega);
-                ///LOG PARA USUARIOS
-                ///
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsua.Text;
-                this.bitacora.Movimiento = "Actualización de entrega";
-                this.bitacora.Detalle = "Se actualizo la entrega correctamente";
-                this.bitacora.opc = 5;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
-                this.entregaH.Entrega();
-                MessageBox.Show("Entrega actualizada");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-
-        #endregion
-
+        
         private void limpiar()
         {
             this.txtCliente.Text = "";
@@ -271,8 +230,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     Entrega entrega = new Entrega();
                     ReporteEntrega repoEntrega = new ReporteEntrega(user);
-                    for (int i = 0; i < dgvListar.RowCount; i++)
-                    {
+                    
                     entrega.Cliente = txtEntregadoPor.Text;
                     entrega.EntregadoPor = txtEntregadoPor.Text;
                     entrega.Contacto = txtContacto.Text;
@@ -280,7 +238,9 @@ namespace QNS_SysInv_X.MVCView
                     entrega.Dirrecion = txtDireccion.Text;
                     entrega.NumeroFactura = txtNumFactura.Text;
                     entrega.Telefono = txtTelefono.Text;
-                    entrega.NumeroDeParte = (string)this.dgvListar.Rows[i].Cells[0].Value;
+                    for (int i = 0; i < dgvListar.RowCount; i++)
+                    {
+                    entrega.NumeroDeParte = this.dgvListar.Rows[i].Cells[0].Value.ToString();
                     entrega.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
                     entrega.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
                     entrega.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
@@ -511,7 +471,13 @@ namespace QNS_SysInv_X.MVCView
             foreach (DataGridViewRow item in this.dgvListar.SelectedRows)
             {
                 dgvListar.Rows.RemoveAt(item.Index);
+                dgvListar.Refresh();
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
