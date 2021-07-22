@@ -238,13 +238,15 @@ namespace QNS_SysInv_X.MVCView
                     entrega.Dirrecion = txtDireccion.Text;
                     entrega.NumeroFactura = txtNumFactura.Text;
                     entrega.Telefono = txtTelefono.Text;
+                    repoEntrega.entregaLista.Add(entrega);
                     for (int i = 0; i < dgvListar.RowCount; i++)
                     {
-                    entrega.NumeroDeParte = this.dgvListar.Rows[i].Cells[0].Value.ToString();
-                    entrega.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
-                    entrega.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
-                    entrega.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                    repoEntrega.entregaLista.Add(entrega);
+                    Entrega loop = new Entrega();
+                        loop.NumeroDeParte = this.dgvListar.Rows[i].Cells[0].Value.ToString();
+                        loop.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
+                        loop.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
+                        loop.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
+                    repoEntrega.entregaLista.Add(loop);
                     }
                     guardar();
                     repoEntrega.ShowDialog();

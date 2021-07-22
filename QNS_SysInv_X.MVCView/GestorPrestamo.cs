@@ -261,15 +261,16 @@ namespace QNS_SysInv_X.MVCView
                 repoPrestamo.prestamoLista.Add(prestamos);
                 for (int i = 0; i < dgvListar.RowCount; i++)
                 {
-                        prestamos.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
-                        prestamos.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
-                        prestamos.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
-                        prestamos.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                        prestamos.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
-                        prestamos.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
-                        prestamos.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
-                        prestamos.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
-                       repoPrestamo.prestamoLista.Add(prestamos);
+                    Prestamos loop = new Prestamos();
+                    loop.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
+                    loop.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
+                    loop.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
+                    loop.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
+                    loop.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
+                    loop.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
+                    loop.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
+                    loop.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
+                        repoPrestamo.prestamoLista.Add(loop);
                 }
                 repoPrestamo.ShowDialog();
             }
