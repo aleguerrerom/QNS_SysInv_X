@@ -39,6 +39,8 @@
             this.gbVendedor = new System.Windows.Forms.GroupBox();
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
+            this.idl = new System.Windows.Forms.Label();
+            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.gbDetalles = new System.Windows.Forms.GroupBox();
             this.lblDetalles = new System.Windows.Forms.Label();
@@ -54,14 +56,12 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.idl = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -184,6 +184,24 @@
             this.lblVendedor.Text = "VENDEDOR:      ";
             this.lblVendedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // idl
+            // 
+            this.idl.AutoSize = true;
+            this.idl.Location = new System.Drawing.Point(156, 16);
+            this.idl.Name = "idl";
+            this.idl.Size = new System.Drawing.Size(41, 13);
+            this.idl.TabIndex = 67;
+            this.idl.Text = "label1";
+            this.idl.Click += new System.EventHandler(this.idl_Click);
+            // 
+            // cmbCedVendedor
+            // 
+            this.cmbCedVendedor.FormattingEnabled = true;
+            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 11);
+            this.cmbCedVendedor.Name = "cmbCedVendedor";
+            this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
+            this.cmbCedVendedor.TabIndex = 73;
+            // 
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -205,6 +223,7 @@
             this.gbDetalles.Size = new System.Drawing.Size(363, 44);
             this.gbDetalles.TabIndex = 64;
             this.gbDetalles.TabStop = false;
+            this.gbDetalles.Enter += new System.EventHandler(this.gbDetalles_Enter);
             // 
             // lblDetalles
             // 
@@ -373,16 +392,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // idl
-            // 
-            this.idl.AutoSize = true;
-            this.idl.Location = new System.Drawing.Point(156, 16);
-            this.idl.Name = "idl";
-            this.idl.Size = new System.Drawing.Size(41, 13);
-            this.idl.TabIndex = 67;
-            this.idl.Text = "label1";
-            this.idl.Click += new System.EventHandler(this.idl_Click);
-            // 
             // stsUsuario
             // 
             this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -435,14 +444,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // cmbCedVendedor
-            // 
-            this.cmbCedVendedor.FormattingEnabled = true;
-            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 11);
-            this.cmbCedVendedor.Name = "cmbCedVendedor";
-            this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
-            this.cmbCedVendedor.TabIndex = 73;
             // 
             // GestorOportunidades
             // 

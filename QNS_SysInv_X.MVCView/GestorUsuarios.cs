@@ -35,7 +35,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.stsUsuar.Text = this.user.Usuario;
         }
         
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 ///LOG PARA USUARIOS
 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsu.Text;
+                this.bitacora.Usuario = this.stsUsuar.Text;
                 this.bitacora.Movimiento = "Agregar Usuario";
                 this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
                 this.bitacora.opc = 5;
@@ -467,7 +467,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.userHelper = new UsuariosHelper(user);
             //Bitacora 
             this.bitacora = new Bitacora();
-            this.bitacora.Usuario = this.stsUsu.Text;
+            this.bitacora.Usuario = this.stsUsuar.Text;
             this.bitacora.Movimiento = "Actualizar Usuario";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;

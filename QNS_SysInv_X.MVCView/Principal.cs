@@ -653,7 +653,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteVendedores repoVendedores = new ReporteVendedores(user);
+                ReporteVendedor repoVendedores = new ReporteVendedor(user);
                 repoVendedores.Show();
             }
         }

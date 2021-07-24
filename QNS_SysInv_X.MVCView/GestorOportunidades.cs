@@ -447,9 +447,8 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteOpor RedOpo = new ReporteOpor();
+                ReporteOpor RedOpo = new ReporteOpor(user);
                 RedOpo.Show();
-                this.Close();
             }
         }
 
@@ -518,6 +517,11 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void idl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbDetalles_Enter(object sender, EventArgs e)
         {
 
         }

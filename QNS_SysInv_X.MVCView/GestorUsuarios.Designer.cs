@@ -37,11 +37,12 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deshabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsUsuar = new System.Windows.Forms.ToolStripStatusLabel();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.deshabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource3)).BeginInit();
@@ -144,7 +144,14 @@
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deshabilitarToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(137, 26);
+            // 
+            // deshabilitarToolStripMenuItem
+            // 
+            this.deshabilitarToolStripMenuItem.Name = "deshabilitarToolStripMenuItem";
+            this.deshabilitarToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.deshabilitarToolStripMenuItem.Text = "Deshabilitar";
+            this.deshabilitarToolStripMenuItem.Click += new System.EventHandler(this.deshabilitarToolStripMenuItem_Click);
             // 
             // rolBindingSource
             // 
@@ -159,7 +166,7 @@
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.stsUsu});
+            this.stsUsuar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 618);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(795, 22);
@@ -171,11 +178,11 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // stsUsu
+            // stsUsuar
             // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel2";
+            this.stsUsuar.Name = "stsUsuar";
+            this.stsUsuar.Size = new System.Drawing.Size(118, 17);
+            this.stsUsuar.Text = "toolStripStatusLabel2";
             // 
             // stsUsuario
             // 
@@ -583,13 +590,6 @@
             this.label9.TabIndex = 69;
             this.label9.Text = "Buscar por Usuario";
             // 
-            // deshabilitarToolStripMenuItem
-            // 
-            this.deshabilitarToolStripMenuItem.Name = "deshabilitarToolStripMenuItem";
-            this.deshabilitarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deshabilitarToolStripMenuItem.Text = "Deshabilitar";
-            this.deshabilitarToolStripMenuItem.Click += new System.EventHandler(this.deshabilitarToolStripMenuItem_Click);
-            // 
             // GestorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -703,7 +703,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsuar;
         private System.Windows.Forms.ToolStripMenuItem deshabilitarToolStripMenuItem;
     }
 }

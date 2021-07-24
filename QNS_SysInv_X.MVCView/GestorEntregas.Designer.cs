@@ -109,7 +109,7 @@
             pictureBox1.Location = new System.Drawing.Point(9, 389);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(293, 74);
+            pictureBox1.Size = new System.Drawing.Size(245, 74);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 53;
             pictureBox1.TabStop = false;
@@ -570,11 +570,11 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(375, 128);
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnAdd.Location = new System.Drawing.Point(375, 125);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 32);
+            this.btnAdd.Size = new System.Drawing.Size(106, 25);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "AGREGAR ARTICULO";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -679,7 +679,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(8, 261);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(752, 167);
+            this.groupBox3.Size = new System.Drawing.Size(752, 153);
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ARTICULOS A ENTREGAR";

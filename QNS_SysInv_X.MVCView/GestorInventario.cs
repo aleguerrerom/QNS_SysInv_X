@@ -401,7 +401,6 @@ namespace QNS_SysInv_X.MVCView
             {
                 ReporteInventario entr = new ReporteInventario(user);
                 entr.Show();
-                this.Close();
             }
         }
 

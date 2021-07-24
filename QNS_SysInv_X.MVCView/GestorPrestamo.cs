@@ -146,22 +146,24 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtID.Text == "" )
+            if (this.txtID.Text == "")
             {
                 MessageBox.Show("Selecciona un articulo para procesar prestamo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.ActiveControl = txtID;
             }
-            else if (this.cmbCliente.Text == "")
+            if (this.cmbCliente.Text == "")
             {
                 MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.ActiveControl = cmbCliente;
             }
             else
             {
-                procesarPrestamo();
-                AlmacenarPrestamo();
-                limpiar();
-                listar();
+                        
+                    procesarPrestamo();
+                    AlmacenarPrestamo();
+                    limpiar();
+                    listar();
+                
             }
             #endregion
         }
@@ -253,25 +255,32 @@ namespace QNS_SysInv_X.MVCView
             {
                 Prestamos prestamos = new Prestamos();
                 ReportePrestamo repoPrestamo = new ReportePrestamo(user);
-                
-                        prestamos.Contacto = cmbContacto.Text;
-                        prestamos.Telefono = cmbTelefono.Text;
-                        prestamos.Nombre = cmbCliente.Text;
-                        prestamos.Direcicon = cmbDireccion.Text;
+
+                prestamos.Contacto = cmbContacto.Text;
+                prestamos.Telefono = cmbTelefono.Text;
+                prestamos.Nombre = cmbCliente.Text;
+                prestamos.Direcicon = cmbDireccion.Text;
                 repoPrestamo.prestamoLista.Add(prestamos);
-                for (int i = 0; i < dgvListar.RowCount; i++)
-                {
-                    Prestamos loop = new Prestamos();
-                    loop.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
-                    loop.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
-                    loop.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
-                    loop.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                    loop.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
-                    loop.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
-                    loop.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
-                    loop.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
-                        repoPrestamo.prestamoLista.Add(loop);
-                }
+
+                //foreach (DataGridViewRow r in dgvListar.Rows)
+                //{
+
+                for (int i = 0; i < dgvListar.RowCount; i = i+ 1)
+                        {
+                        //if (r.Selected == true)
+                        //{
+                            // row is selected
+                            Prestamos loop = new Prestamos();
+                            loop.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
+                            loop.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
+                            loop.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
+                            loop.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
+                            loop.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
+                            loop.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
+                            loop.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
+                            loop.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
+                            repoPrestamo.prestamoLista.Add(loop);
+                    }
                 repoPrestamo.ShowDialog();
             }
         }
@@ -283,9 +292,9 @@ namespace QNS_SysInv_X.MVCView
             dgvListar.Rows[n].Selected = false;
             dgvListar.ClearSelection();
             if (listaPrestamo.Contains(n))
-            listaPrestamo.Remove(n);
+                listaPrestamo.Remove(n);
             else
-            listaPrestamo.Add(n);
+                listaPrestamo.Add(n);
             foreach (int i in listaPrestamo)
             { dgvListar.Rows[i].Selected = true; }
         }

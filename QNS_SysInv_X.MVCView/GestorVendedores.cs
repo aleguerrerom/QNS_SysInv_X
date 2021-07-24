@@ -25,7 +25,7 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.toolStripStatusLabel1.Text = this.user.Usuario;
         }
         private void limpiarAlertas()
         {
@@ -101,7 +101,7 @@ namespace QNS_SysInv_X.MVCView
                 ///LOG PARA USUARIOS
                 ///
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsu.Text;
+                this.bitacora.Usuario = this.toolStripStatusLabel1.Text;
                 this.bitacora.Movimiento = "Ingreso vendedor";
                 this.bitacora.Detalle = "Se agrego el vendedor correctamente " + this.txtNombre.Text + " " + this.txtApellido.Text;
                 this.bitacora.opc = 5;
@@ -380,7 +380,7 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedorH = new VendedoresHelper(vendedor);
                 ///LOGS ACTUALIZAR USUARIO
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsu.Text;
+                this.bitacora.Usuario = this.toolStripStatusLabel1.Text;
                 this.bitacora.Movimiento = "Actualizar Vendedor";
                 this.bitacora.Detalle = "Se actualizo el vendedor correctamente " + this.txtNombre.Text + " " + this.txtApellido.Text ;
                 this.bitacora.opc = 5;
@@ -455,7 +455,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteVendedores repoVendedores = new ReporteVendedores(user);
+                ReporteVendedor repoVendedores = new ReporteVendedor(user);
                 repoVendedores.Show();
                 this.Close();
             }

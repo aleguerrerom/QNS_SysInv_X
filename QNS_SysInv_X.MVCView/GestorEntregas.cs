@@ -228,9 +228,9 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else
                 {
+
                     Entrega entrega = new Entrega();
                     ReporteEntrega repoEntrega = new ReporteEntrega(user);
-                    
                     entrega.Cliente = txtEntregadoPor.Text;
                     entrega.EntregadoPor = txtEntregadoPor.Text;
                     entrega.Contacto = txtContacto.Text;
@@ -239,14 +239,15 @@ namespace QNS_SysInv_X.MVCView
                     entrega.NumeroFactura = txtNumFactura.Text;
                     entrega.Telefono = txtTelefono.Text;
                     repoEntrega.entregaLista.Add(entrega);
+
                     for (int i = 0; i < dgvListar.RowCount; i++)
                     {
-                    Entrega loop = new Entrega();
+                        Entrega loop = new Entrega();
                         loop.NumeroDeParte = this.dgvListar.Rows[i].Cells[0].Value.ToString();
                         loop.Cantidad = this.dgvListar.Rows[i].Cells[1].Value.ToString();
                         loop.Descripcion = this.dgvListar.Rows[i].Cells[2].Value.ToString();
                         loop.NumeroDeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                    repoEntrega.entregaLista.Add(loop);
+                        repoEntrega.entregaLista.Add(loop);
                     }
                     guardar();
                     repoEntrega.ShowDialog();

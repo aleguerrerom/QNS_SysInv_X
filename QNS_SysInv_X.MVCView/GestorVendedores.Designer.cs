@@ -36,37 +36,35 @@
             this.opdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnReport = new System.Windows.Forms.Button();
             this.gbGenero = new System.Windows.Forms.GroupBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
-            this.lblGenero = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.gbFecha = new System.Windows.Forms.GroupBox();
             this.dtpFechaAnace = new System.Windows.Forms.DateTimePicker();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.gbApellido2 = new System.Windows.Forms.GroupBox();
-            this.lblApellido2 = new System.Windows.Forms.Label();
             this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.gbNombre = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.gbCorreo = new System.Windows.Forms.GroupBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
             this.gbApellido1 = new System.Windows.Forms.GroupBox();
-            this.lblApellido1 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.gbCedula = new System.Windows.Forms.GroupBox();
-            this.lblCedula = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblApellido2 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblApellido1 = new System.Windows.Forms.Label();
+            this.lblCedula = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.gbGenero.SuspendLayout();
@@ -76,20 +74,9 @@
             this.gbCorreo.SuspendLayout();
             this.gbApellido1.SuspendLayout();
             this.gbCedula.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(12, 235);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(293, 137);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 48;
-            pictureBox1.TabStop = false;
             // 
             // toolStrip1
             // 
@@ -126,20 +113,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // btnReport
-            // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(535, 328);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(96, 33);
-            this.btnReport.TabIndex = 9;
-            this.btnReport.Text = "REPORTE";
-            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
-            // 
             // gbGenero
             // 
             this.gbGenero.BackColor = System.Drawing.Color.White;
@@ -167,6 +140,187 @@
             this.cmbGenero.Size = new System.Drawing.Size(194, 21);
             this.cmbGenero.TabIndex = 2;
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Location = new System.Drawing.Point(156, 17);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(197, 13);
+            this.txtCorreo.TabIndex = 3;
+            // 
+            // gbFecha
+            // 
+            this.gbFecha.BackColor = System.Drawing.Color.White;
+            this.gbFecha.Controls.Add(this.dtpFechaAnace);
+            this.gbFecha.Controls.Add(this.lblFecha);
+            this.gbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFecha.Location = new System.Drawing.Point(392, 132);
+            this.gbFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbFecha.Name = "gbFecha";
+            this.gbFecha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbFecha.Size = new System.Drawing.Size(363, 44);
+            this.gbFecha.TabIndex = 75;
+            this.gbFecha.TabStop = false;
+            // 
+            // dtpFechaAnace
+            // 
+            this.dtpFechaAnace.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAnace.Location = new System.Drawing.Point(173, 16);
+            this.dtpFechaAnace.Name = "dtpFechaAnace";
+            this.dtpFechaAnace.Size = new System.Drawing.Size(183, 20);
+            this.dtpFechaAnace.TabIndex = 6;
+            // 
+            // gbApellido2
+            // 
+            this.gbApellido2.BackColor = System.Drawing.Color.White;
+            this.gbApellido2.Controls.Add(this.lblApellido2);
+            this.gbApellido2.Controls.Add(this.txtApellido2);
+            this.gbApellido2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApellido2.Location = new System.Drawing.Point(392, 81);
+            this.gbApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbApellido2.Name = "gbApellido2";
+            this.gbApellido2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbApellido2.Size = new System.Drawing.Size(363, 44);
+            this.gbApellido2.TabIndex = 76;
+            this.gbApellido2.TabStop = false;
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido2.Location = new System.Drawing.Point(173, 18);
+            this.txtApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.Size = new System.Drawing.Size(183, 13);
+            this.txtApellido2.TabIndex = 5;
+            // 
+            // gbNombre
+            // 
+            this.gbNombre.BackColor = System.Drawing.Color.White;
+            this.gbNombre.Controls.Add(this.lblNombre);
+            this.gbNombre.Controls.Add(this.txtNombre);
+            this.gbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbNombre.Location = new System.Drawing.Point(392, 29);
+            this.gbNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbNombre.Name = "gbNombre";
+            this.gbNombre.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbNombre.Size = new System.Drawing.Size(363, 44);
+            this.gbNombre.TabIndex = 1;
+            this.gbNombre.TabStop = false;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Location = new System.Drawing.Point(159, 18);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(197, 13);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // gbCorreo
+            // 
+            this.gbCorreo.BackColor = System.Drawing.Color.White;
+            this.gbCorreo.Controls.Add(this.lblCorreo);
+            this.gbCorreo.Controls.Add(this.txtCorreo);
+            this.gbCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCorreo.Location = new System.Drawing.Point(21, 184);
+            this.gbCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbCorreo.Name = "gbCorreo";
+            this.gbCorreo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbCorreo.Size = new System.Drawing.Size(363, 44);
+            this.gbCorreo.TabIndex = 74;
+            this.gbCorreo.TabStop = false;
+            // 
+            // gbApellido1
+            // 
+            this.gbApellido1.BackColor = System.Drawing.Color.White;
+            this.gbApellido1.Controls.Add(this.lblApellido1);
+            this.gbApellido1.Controls.Add(this.txtApellido);
+            this.gbApellido1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbApellido1.Location = new System.Drawing.Point(22, 81);
+            this.gbApellido1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbApellido1.Name = "gbApellido1";
+            this.gbApellido1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbApellido1.Size = new System.Drawing.Size(363, 44);
+            this.gbApellido1.TabIndex = 71;
+            this.gbApellido1.TabStop = false;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Location = new System.Drawing.Point(159, 18);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(197, 13);
+            this.txtApellido.TabIndex = 1;
+            // 
+            // gbCedula
+            // 
+            this.gbCedula.BackColor = System.Drawing.Color.White;
+            this.gbCedula.Controls.Add(this.lblCedula);
+            this.gbCedula.Controls.Add(this.txtCedula);
+            this.gbCedula.Location = new System.Drawing.Point(21, 29);
+            this.gbCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbCedula.Name = "gbCedula";
+            this.gbCedula.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbCedula.Size = new System.Drawing.Size(363, 44);
+            this.gbCedula.TabIndex = 70;
+            this.gbCedula.TabStop = false;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedula.Location = new System.Drawing.Point(156, 20);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(197, 13);
+            this.txtCedula.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(637, 322);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 16);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "BUSCAR POR CEDULA:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(649, 341);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
+            this.txtBuscar.TabIndex = 10;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(12, 235);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(293, 137);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 48;
+            pictureBox1.TabStop = false;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(535, 328);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(96, 33);
+            this.btnReport.TabIndex = 9;
+            this.btnReport.Text = "REPORTE";
+            this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
+            // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
@@ -180,15 +334,6 @@
             this.lblGenero.TabIndex = 3;
             this.lblGenero.Text = "GENERO:      ";
             this.lblGenero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Location = new System.Drawing.Point(156, 17);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(197, 13);
-            this.txtCorreo.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -220,28 +365,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
-            // gbFecha
-            // 
-            this.gbFecha.BackColor = System.Drawing.Color.White;
-            this.gbFecha.Controls.Add(this.dtpFechaAnace);
-            this.gbFecha.Controls.Add(this.lblFecha);
-            this.gbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFecha.Location = new System.Drawing.Point(392, 132);
-            this.gbFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbFecha.Name = "gbFecha";
-            this.gbFecha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbFecha.Size = new System.Drawing.Size(363, 44);
-            this.gbFecha.TabIndex = 75;
-            this.gbFecha.TabStop = false;
-            // 
-            // dtpFechaAnace
-            // 
-            this.dtpFechaAnace.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAnace.Location = new System.Drawing.Point(173, 16);
-            this.dtpFechaAnace.Name = "dtpFechaAnace";
-            this.dtpFechaAnace.Size = new System.Drawing.Size(183, 20);
-            this.dtpFechaAnace.TabIndex = 6;
-            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
@@ -256,20 +379,6 @@
             this.lblFecha.Text = "FECHA DE NACIMIENTO:      ";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // gbApellido2
-            // 
-            this.gbApellido2.BackColor = System.Drawing.Color.White;
-            this.gbApellido2.Controls.Add(this.lblApellido2);
-            this.gbApellido2.Controls.Add(this.txtApellido2);
-            this.gbApellido2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbApellido2.Location = new System.Drawing.Point(392, 81);
-            this.gbApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbApellido2.Name = "gbApellido2";
-            this.gbApellido2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbApellido2.Size = new System.Drawing.Size(363, 44);
-            this.gbApellido2.TabIndex = 76;
-            this.gbApellido2.TabStop = false;
-            // 
             // lblApellido2
             // 
             this.lblApellido2.AutoSize = true;
@@ -281,29 +390,6 @@
             this.lblApellido2.Size = new System.Drawing.Size(141, 16);
             this.lblApellido2.TabIndex = 33;
             this.lblApellido2.Text = "SEGUNDO APELLIDO:     ";
-            // 
-            // txtApellido2
-            // 
-            this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido2.Location = new System.Drawing.Point(173, 18);
-            this.txtApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.Size = new System.Drawing.Size(183, 13);
-            this.txtApellido2.TabIndex = 5;
-            // 
-            // gbNombre
-            // 
-            this.gbNombre.BackColor = System.Drawing.Color.White;
-            this.gbNombre.Controls.Add(this.lblNombre);
-            this.gbNombre.Controls.Add(this.txtNombre);
-            this.gbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbNombre.Location = new System.Drawing.Point(392, 29);
-            this.gbNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbNombre.Name = "gbNombre";
-            this.gbNombre.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbNombre.Size = new System.Drawing.Size(363, 44);
-            this.gbNombre.TabIndex = 1;
-            this.gbNombre.TabStop = false;
             // 
             // lblNombre
             // 
@@ -319,29 +405,6 @@
             this.lblNombre.Text = "NOMBRE:      ";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Location = new System.Drawing.Point(159, 18);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(197, 13);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // gbCorreo
-            // 
-            this.gbCorreo.BackColor = System.Drawing.Color.White;
-            this.gbCorreo.Controls.Add(this.lblCorreo);
-            this.gbCorreo.Controls.Add(this.txtCorreo);
-            this.gbCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCorreo.Location = new System.Drawing.Point(21, 184);
-            this.gbCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCorreo.Name = "gbCorreo";
-            this.gbCorreo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCorreo.Size = new System.Drawing.Size(363, 44);
-            this.gbCorreo.TabIndex = 74;
-            this.gbCorreo.TabStop = false;
-            // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
@@ -355,20 +418,6 @@
             this.lblCorreo.TabIndex = 3;
             this.lblCorreo.Text = "CORREO:      ";
             this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // gbApellido1
-            // 
-            this.gbApellido1.BackColor = System.Drawing.Color.White;
-            this.gbApellido1.Controls.Add(this.lblApellido1);
-            this.gbApellido1.Controls.Add(this.txtApellido);
-            this.gbApellido1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbApellido1.Location = new System.Drawing.Point(22, 81);
-            this.gbApellido1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbApellido1.Name = "gbApellido1";
-            this.gbApellido1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbApellido1.Size = new System.Drawing.Size(363, 44);
-            this.gbApellido1.TabIndex = 71;
-            this.gbApellido1.TabStop = false;
             // 
             // lblApellido1
             // 
@@ -384,28 +433,6 @@
             this.lblApellido1.Text = "PRIMER APELLIDO:      ";
             this.lblApellido1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtApellido
-            // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Location = new System.Drawing.Point(159, 18);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(197, 13);
-            this.txtApellido.TabIndex = 1;
-            // 
-            // gbCedula
-            // 
-            this.gbCedula.BackColor = System.Drawing.Color.White;
-            this.gbCedula.Controls.Add(this.lblCedula);
-            this.gbCedula.Controls.Add(this.txtCedula);
-            this.gbCedula.Location = new System.Drawing.Point(21, 29);
-            this.gbCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCedula.Name = "gbCedula";
-            this.gbCedula.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCedula.Size = new System.Drawing.Size(363, 44);
-            this.gbCedula.TabIndex = 70;
-            this.gbCedula.TabStop = false;
-            // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
@@ -420,56 +447,21 @@
             this.lblCedula.Text = "CEDULA:      ";
             this.lblCedula.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtCedula
-            // 
-            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(156, 20);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(197, 13);
-            this.txtCedula.TabIndex = 0;
-            // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsUsuario,
-            this.stsUsu});
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 585);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(776, 22);
-            this.statusStrip1.TabIndex = 79;
+            this.statusStrip1.TabIndex = 82;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // stsUsuario
+            // toolStripStatusLabel1
             // 
-            this.stsUsuario.Name = "stsUsuario";
-            this.stsUsuario.Size = new System.Drawing.Size(0, 17);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(637, 322);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 16);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "BUSCAR POR CEDULA:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(649, 341);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
-            this.txtBuscar.TabIndex = 10;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // stsUsu
-            // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // GestorVendedores
             // 
@@ -477,9 +469,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(776, 607);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.gbGenero);
@@ -500,7 +492,6 @@
             this.Text = "GESTOR VENDEDORES  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorVendedores_FormClosing);
             this.Load += new System.EventHandler(this.GestorRespaldos_Load);
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
@@ -518,6 +509,7 @@
             this.gbApellido1.PerformLayout();
             this.gbCedula.ResumeLayout(false);
             this.gbCedula.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -555,10 +547,9 @@
         private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.DateTimePicker dtpFechaAnace;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel stsUsuario;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

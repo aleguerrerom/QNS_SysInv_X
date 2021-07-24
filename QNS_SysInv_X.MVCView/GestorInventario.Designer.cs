@@ -341,7 +341,12 @@
             "Dell",
             "HPe",
             "Palo Alto",
-            "Unify"});
+            "Unify",
+            "Hikvision",
+            "Meraki",
+            "Pure Storage",
+            "NetApp",
+            "Microtik"});
             this.cmbBrand.Location = new System.Drawing.Point(162, 16);
             this.cmbBrand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbBrand.Name = "cmbBrand";

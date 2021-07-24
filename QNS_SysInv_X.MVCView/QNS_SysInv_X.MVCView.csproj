@@ -126,6 +126,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVendedor.Designer.cs">
+      <DependentUpon>ReporteVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportePrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +143,6 @@
     </Compile>
     <Compile Include="ReporteEntrega.Designer.cs">
       <DependentUpon>ReporteEntrega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteVendedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteVendedores.Designer.cs">
-      <DependentUpon>ReporteVendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteMovimientos.cs">
       <SubType>Form</SubType>
@@ -248,7 +248,11 @@
     <EmbeddedResource Include="GestorVendedores.resx">
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="ReporteEntregas.rdlc" />
+    <EmbeddedResource Include="ReporteVendedor.resx">
+      <DependentUpon>ReporteVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportPrestamo.rdlc" />
     <EmbeddedResource Include="ReportePrestamo.resx">
       <DependentUpon>ReportePrestamo.cs</DependentUpon>
@@ -256,12 +260,8 @@
     <EmbeddedResource Include="ReporteEntrega.resx">
       <DependentUpon>ReporteEntrega.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportVendedores.rdlc" />
     <EmbeddedResource Include="ReportMovimientos.rdlc" />
     <EmbeddedResource Include="ReportLogsInicio.rdlc" />
-    <EmbeddedResource Include="ReporteVendedores.resx">
-      <DependentUpon>ReporteVendedores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReporteMovimientos.resx">
       <DependentUpon>ReporteMovimientos.cs</DependentUpon>
     </EmbeddedResource>
