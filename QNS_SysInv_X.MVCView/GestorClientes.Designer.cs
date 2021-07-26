@@ -67,6 +67,9 @@
             this.cmbCed = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chckbxActivo = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpCorreo.SuspendLayout();
@@ -80,16 +83,17 @@
             this.gpNombre.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(12, 241);
+            pictureBox1.Location = new System.Drawing.Point(25, 294);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(335, 120);
+            pictureBox1.Size = new System.Drawing.Size(305, 72);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 65;
             pictureBox1.TabStop = false;
@@ -144,6 +148,7 @@
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(197, 13);
             this.txtMail.TabIndex = 2;
+            this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // dgvListar
             // 
@@ -215,6 +220,7 @@
             this.rtbDireccion.Size = new System.Drawing.Size(222, 94);
             this.rtbDireccion.TabIndex = 7;
             this.rtbDireccion.Text = "";
+            this.rtbDireccion.TextChanged += new System.EventHandler(this.rtbDireccion_TextChanged);
             // 
             // lblDireccion
             // 
@@ -264,6 +270,7 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(197, 13);
             this.txtTel.TabIndex = 6;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             // 
             // gbCedula
             // 
@@ -291,6 +298,7 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(210, 21);
             this.cmbTipo.TabIndex = 4;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
             // lblTipo
             // 
@@ -330,6 +338,7 @@
             this.cmbVende.Name = "cmbVende";
             this.cmbVende.Size = new System.Drawing.Size(194, 21);
             this.cmbVende.TabIndex = 3;
+            this.cmbVende.SelectedValueChanged += new System.EventHandler(this.cmbVende_SelectedValueChanged);
             // 
             // lblVendedor
             // 
@@ -367,6 +376,7 @@
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
             this.txtContacto.TabIndex = 5;
+            this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             // 
             // lblContacto
             // 
@@ -418,6 +428,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // gpNombre
             // 
@@ -441,6 +452,7 @@
             this.txtNomb.Name = "txtNomb";
             this.txtNomb.Size = new System.Drawing.Size(198, 13);
             this.txtNomb.TabIndex = 1;
+            this.txtNomb.TextChanged += new System.EventHandler(this.txtNomb_TextChanged);
             // 
             // lblNombre
             // 
@@ -521,12 +533,51 @@
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.chckbxActivo);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(12, 242);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Size = new System.Drawing.Size(363, 44);
+            this.groupBox6.TabIndex = 74;
+            this.groupBox6.TabStop = false;
+            // 
+            // chckbxActivo
+            // 
+            this.chckbxActivo.AutoSize = true;
+            this.chckbxActivo.Location = new System.Drawing.Point(204, 16);
+            this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chckbxActivo.Name = "chckbxActivo";
+            this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
+            this.chckbxActivo.TabIndex = 6;
+            this.chckbxActivo.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "ACTIVO:      ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(830, 582);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.gpContacto);
             this.Controls.Add(this.txtBuscar);
@@ -574,6 +625,8 @@
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,5 +670,8 @@
         private System.Windows.Forms.ComboBox cmbCed;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox chckbxActivo;
+        private System.Windows.Forms.Label label6;
     }
 }

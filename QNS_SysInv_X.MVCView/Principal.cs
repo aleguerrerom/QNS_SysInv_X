@@ -78,7 +78,6 @@ namespace QNS_SysInv_X.MVCView
             if (bool.Parse(fila["Prestamos"].ToString()) == true)
             {
                 prestamoToolStripMenuItem.Visible = true;
-                prestamosToolStripMenuItem.Visible = true;
             }
             if (bool.Parse(fila["Bitacoras"].ToString()) == true)
             {
@@ -617,7 +616,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteOpor RedOpo = new ReporteOpor(user);
+                ReporteUsuario RedOpo = new ReporteUsuario(user);
                 RedOpo.Show();
             }
         }

@@ -18,6 +18,21 @@ namespace QNS_SysInv_X.MVCController
             get; set;
         }
 
+        private bool activo;
+
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
         public string Nombre1
         {
             get
@@ -134,7 +149,7 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public Inventario(string nombre, string tipo, string serialnumber, string marca, string modelo, string estado, DateTime fechamodificacion, string usuario, int id)
+        public Inventario(string nombre, string tipo, string serialnumber, string marca, string modelo, string estado, DateTime fechamodificacion, string usuario, int id, bool activo)
         {
             this.Nombre = nombre;
             this.Tipo = tipo;
@@ -145,6 +160,7 @@ namespace QNS_SysInv_X.MVCController
             this.Fechamodificacion = fechamodificacion;
             this.Usuario = usuario;
             this.Id = id;
+            this.Activo = activo;
         }
 
         public Inventario()
@@ -158,6 +174,7 @@ namespace QNS_SysInv_X.MVCController
             this.Fechamodificacion = DateTime.Today;
             this.Usuario = "";
             this.Id = 0;
+            this.Activo = true;
         }
     }
 }

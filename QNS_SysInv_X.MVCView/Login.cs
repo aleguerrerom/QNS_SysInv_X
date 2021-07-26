@@ -102,7 +102,7 @@ namespace QNS_SysInv_X.MVCView
                         this.ActiveControl = txtClaveLogin;
                         return;
                     }
-                    else MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario se encuentra inactivo.");
+                    else MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario o rol se encuentra inactivo.");
                 }
             }
             catch (Exception ex)

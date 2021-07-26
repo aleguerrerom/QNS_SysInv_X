@@ -72,6 +72,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chckbxActivo = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -80,6 +83,7 @@
             this.groupBox3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -87,7 +91,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(12, 113);
+            pictureBox1.Location = new System.Drawing.Point(21, 154);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(293, 137);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -523,11 +527,49 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(146, 256);
+            this.txtID.Location = new System.Drawing.Point(119, 305);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 73;
             this.txtID.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.chckbxActivo);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(12, 66);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Size = new System.Drawing.Size(293, 44);
+            this.groupBox6.TabIndex = 74;
+            this.groupBox6.TabStop = false;
+            // 
+            // chckbxActivo
+            // 
+            this.chckbxActivo.AutoSize = true;
+            this.chckbxActivo.Location = new System.Drawing.Point(192, 16);
+            this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chckbxActivo.Name = "chckbxActivo";
+            this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
+            this.chckbxActivo.TabIndex = 6;
+            this.chckbxActivo.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Location = new System.Drawing.Point(7, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 16);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "ACTIVO:      ";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GestorRoles
             // 
@@ -535,6 +577,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 555);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtBuscar);
@@ -564,6 +607,8 @@
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +657,8 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox chckbxActivo;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -230,6 +230,7 @@
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
             this.txtContacto.TabIndex = 11;
+            this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             // 
             // lblContacto
             // 
@@ -353,6 +354,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(193, 13);
             this.txtDireccion.TabIndex = 12;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // gbCliente
             // 
@@ -390,6 +392,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(197, 13);
             this.txtCliente.TabIndex = 10;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // toolStrip1
             // 
@@ -505,6 +508,7 @@
             this.txtEntregadoPor.Name = "txtEntregadoPor";
             this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
             this.txtEntregadoPor.TabIndex = 13;
+            this.txtEntregadoPor.TextChanged += new System.EventHandler(this.txtEntregadoPor_TextChanged);
             // 
             // lblEntregado
             // 
@@ -615,6 +619,7 @@
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(169, 13);
             this.txtNumFactura.TabIndex = 16;
+            this.txtNumFactura.TextChanged += new System.EventHandler(this.txtNumFactura_TextChanged);
             // 
             // groupBox2
             // 
@@ -668,6 +673,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(191, 13);
             this.txtTelefono.TabIndex = 17;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // groupBox3
             // 

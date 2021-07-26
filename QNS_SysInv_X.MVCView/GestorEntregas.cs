@@ -482,5 +482,35 @@ namespace QNS_SysInv_X.MVCView
         {
 
         }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtContacto_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtEntregadoPor_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtNumFactura_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
     }
 }

@@ -149,6 +149,21 @@
         }
 
 
+        private bool activo;
+
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
         private int ID;
         private string nombre;
         private bool inventario;
@@ -175,10 +190,10 @@
             this.Clientes = true;
             this.Oportunidades = true;
             this.Vendedores = true;
-
+            this.Activo = true;
         }
 
-        public Roles(int iD, string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless, bool bitacora, bool oportunidades, bool vendedores, bool clientes)
+        public Roles(int iD, string nombre, bool inventario, bool usuarios, bool prestamo, bool entrega, bool roless, bool bitacora, bool oportunidades, bool vendedores, bool clientes, bool activo)
         {
             ID1 = iD;
             this.Nombre = nombre;
@@ -191,6 +206,7 @@
             this.Oportunidades = oportunidades;
             this.Clientes = clientes;
             this.Vendedores = vendedores;
+            this.Activo = activo;
         }
     }
 }

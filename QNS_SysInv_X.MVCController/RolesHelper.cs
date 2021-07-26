@@ -23,7 +23,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[11];
+                SqlParameter[] parParameter = new SqlParameter[12];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -83,6 +83,12 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[10].ParameterName = "@clientes";
                 parParameter[10].SqlDbType = SqlDbType.Bit;
                 parParameter[10].SqlValue = objRoles.Clientes;
+                
+                parParameter[11] = new SqlParameter();
+                parParameter[11].ParameterName = "@activo";
+                parParameter[11].SqlDbType = SqlDbType.Bit;
+                parParameter[11].SqlValue = objRoles.Activo;
+
 
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");
             }
@@ -130,7 +136,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[11];
+                SqlParameter[] parParameter = new SqlParameter[12];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -172,24 +178,27 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].ParameterName = "@bitacora";
                 parParameter[7].SqlDbType = SqlDbType.Bit;
                 parParameter[7].SqlValue = objRoles.Bitacora;
-
-
+                
                 parParameter[8] = new SqlParameter();
                 parParameter[8].ParameterName = "@oportunidades";
                 parParameter[8].SqlDbType = SqlDbType.Bit;
                 parParameter[8].SqlValue = objRoles.Oportunidades;
-
-
+                
                 parParameter[9] = new SqlParameter();
                 parParameter[9].ParameterName = "@vendedores";
                 parParameter[9].SqlDbType = SqlDbType.Bit;
                 parParameter[9].SqlValue = objRoles.Vendedores;
-
-
+                
                 parParameter[10] = new SqlParameter();
                 parParameter[10].ParameterName = "@clientes";
                 parParameter[10].SqlDbType = SqlDbType.Bit;
                 parParameter[10].SqlValue = objRoles.Clientes;
+
+                parParameter[11] = new SqlParameter();
+                parParameter[11].ParameterName = "@activo";
+                parParameter[11].SqlDbType = SqlDbType.Bit;
+                parParameter[11].SqlValue = objRoles.Activo;
+
 
 
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");

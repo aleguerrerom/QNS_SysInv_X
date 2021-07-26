@@ -67,6 +67,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chckbxActivo = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
@@ -79,6 +82,7 @@
             this.gbNombre.SuspendLayout();
             this.stsUsu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -151,6 +155,7 @@
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
             this.txtSerialNumber.TabIndex = 12;
+            this.txtSerialNumber.TextChanged += new System.EventHandler(this.txtSerialNumber_TextChanged);
             // 
             // dgvListar
             // 
@@ -265,6 +270,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(147, 21);
             this.cmbEstado.TabIndex = 5;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // lblEstado
             // 
@@ -314,6 +320,7 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
             this.txtModelo.TabIndex = 14;
+            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
             // 
             // gbMarca
             // 
@@ -352,6 +359,7 @@
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(194, 21);
             this.cmbBrand.TabIndex = 17;
+            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
             // 
             // lblMarca
             // 
@@ -403,6 +411,7 @@
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
             this.txtTipo.TabIndex = 11;
+            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
             // 
             // gbNombre
             // 
@@ -440,6 +449,7 @@
             this.txtNombreActivo.Name = "txtNombreActivo";
             this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
             this.txtNombreActivo.TabIndex = 10;
+            this.txtNombreActivo.TextChanged += new System.EventHandler(this.txtNombreActivo_TextChanged);
             // 
             // idl
             // 
@@ -511,11 +521,49 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(542, 213);
+            this.txtID.Location = new System.Drawing.Point(542, 231);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 72;
             this.txtID.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.chckbxActivo);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(383, 190);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox6.Size = new System.Drawing.Size(363, 44);
+            this.groupBox6.TabIndex = 73;
+            this.groupBox6.TabStop = false;
+            // 
+            // chckbxActivo
+            // 
+            this.chckbxActivo.AutoSize = true;
+            this.chckbxActivo.Location = new System.Drawing.Point(204, 16);
+            this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chckbxActivo.Name = "chckbxActivo";
+            this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
+            this.chckbxActivo.TabIndex = 6;
+            this.chckbxActivo.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "ACTIVO:      ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GestorInventario
             // 
@@ -523,6 +571,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(796, 589);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
@@ -568,6 +617,8 @@
             this.stsUsu.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +661,8 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ToolStripStatusLabel stsUsua;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox chckbxActivo;
+        private System.Windows.Forms.Label label6;
     }
 }

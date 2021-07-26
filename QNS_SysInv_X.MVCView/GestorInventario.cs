@@ -71,6 +71,11 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
                 this.inventario.Usuario = this.stsUsua.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.inventario.Activo = true;
+                }
+                else this.inventario.Activo = false;
                 this.inventario.opc = 2;
                 this.invH = new InventarioHelper(inventario);
                 ///LOG PARA USUARIOS
@@ -227,6 +232,7 @@ namespace QNS_SysInv_X.MVCView
         {
             this.txtNombreActivo.Clear();
             this.txtSerialNumber.Clear();
+            this.chckbxActivo.Checked = false;
             this.txtTipo.Clear();
             this.txtID.Clear();
             this.cmbEstado.SelectedIndex = -1;
@@ -294,6 +300,11 @@ namespace QNS_SysInv_X.MVCView
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
                 this.inventario.Usuario = this.stsUsua.Text;
                 this.inventario.Id = int.Parse(this.idl.Text);
+                if (this.chckbxActivo.Checked)
+                {
+                    this.inventario.Activo = true;
+                }
+                else this.inventario.Activo = false;
                 this.inventario.opc = 4;
 
                 this.invH = new InventarioHelper(inventario);
@@ -340,6 +351,8 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbEstado.Text = fila["Estado"].ToString();
                     this.dtpFecha.Text = fila["Fecha_Modificación"].ToString();
                     this.idl.Text = fila["id"].ToString();
+                    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -467,6 +480,36 @@ namespace QNS_SysInv_X.MVCView
         private void gbEstado_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSerialNumber_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtNombreActivo_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtModelo_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtTipo_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
         }
     }
 }

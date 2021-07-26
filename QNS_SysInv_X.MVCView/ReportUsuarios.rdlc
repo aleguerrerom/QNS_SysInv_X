@@ -852,7 +852,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!Parameter1.Value</Value>
+                  <Value>=Parameters!ParUsuario.Value</Value>
                   <Style>
                     <FontFamily>Microsoft YaHei</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1028,7 +1028,7 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="Parameter1">
+    <ReportParameter Name="ParUsuario">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

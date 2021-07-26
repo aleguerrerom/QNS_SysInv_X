@@ -18,16 +18,15 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.toolStripStatusLabel1.Text = this.user.Usuario;
         }
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
             ReportParameterCollection reportParameters = new ReportParameterCollection();
-            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            reportParameters.Add(new ReportParameter("ParUsuario", toolStripStatusLabel1.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.LocalReport.Refresh();
-            this.rolTableAdapter.Fill(this.dS_QNS.Rol);
             // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
             this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
             this.reportViewer1.RefreshReport();
@@ -81,6 +80,11 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
         }

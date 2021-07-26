@@ -81,7 +81,7 @@ namespace QNS_SysInv_X.MVCView
         private void Prestamo_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtID;
-            dgvListar.AllowUserToAddRows = false;
+       //   dgvListar.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
         }
@@ -157,8 +157,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = cmbCliente;
             }
             else
-            {
-                        
+            {   
                     procesarPrestamo();
                     AlmacenarPrestamo();
                     limpiar();

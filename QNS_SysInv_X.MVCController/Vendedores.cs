@@ -15,6 +15,21 @@ namespace QNS_SysInv_X.MVCController
         string genero;
         DateTime fechanacimiento;
         string correo;
+        private bool activo;
+
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
 
         public int Cedula
         {
@@ -107,7 +122,7 @@ namespace QNS_SysInv_X.MVCController
             }
         }
 
-        public Vendedores(int cedula, string nombre, string apellido1, string apellido2, string genero, DateTime fechanacimiento, string correo)
+        public Vendedores(int cedula, string nombre, string apellido1, string apellido2, string genero, DateTime fechanacimiento, string correo, bool activo)
         {
             this.Cedula = cedula;
             this.Nombre = nombre;
@@ -116,6 +131,7 @@ namespace QNS_SysInv_X.MVCController
             this.Genero = genero;
             this.Fechanacimiento = fechanacimiento;
             this.Correo = correo;
+            this.Activo = activo;
         }
         public Vendedores() { 
             this.Cedula = 0;
@@ -125,6 +141,7 @@ namespace QNS_SysInv_X.MVCController
             this.Genero = "";
             this.Fechanacimiento = DateTime.Today;
             this.Correo = "";
+            this.Activo = true;
         }
     
 }

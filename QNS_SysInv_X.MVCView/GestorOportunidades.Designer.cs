@@ -123,6 +123,7 @@
             this.txtPresupuesto.Name = "txtPresupuesto";
             this.txtPresupuesto.Size = new System.Drawing.Size(180, 13);
             this.txtPresupuesto.TabIndex = 2;
+            this.txtPresupuesto.TextChanged += new System.EventHandler(this.txtPresupuesto_TextChanged);
             // 
             // dgvListar
             // 
@@ -169,6 +170,7 @@
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(176, 21);
             this.cmbVendedor.TabIndex = 5;
+            this.cmbVendedor.SelectedIndexChanged += new System.EventHandler(this.cmbVendedor_SelectedIndexChanged);
             // 
             // lblVendedor
             // 
@@ -245,6 +247,7 @@
             this.txtDetalles.Name = "txtDetalles";
             this.txtDetalles.Size = new System.Drawing.Size(177, 13);
             this.txtDetalles.TabIndex = 4;
+            this.txtDetalles.TextChanged += new System.EventHandler(this.txtDetalles_TextChanged);
             // 
             // gpFecha
             // 
@@ -310,6 +313,7 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(180, 13);
             this.txtMarca.TabIndex = 1;
+            this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
             // 
             // gbClienteN
             // 
@@ -333,6 +337,7 @@
             this.cmbNombre.Name = "cmbNombre";
             this.cmbNombre.Size = new System.Drawing.Size(180, 21);
             this.cmbNombre.TabIndex = 0;
+            this.cmbNombre.SelectedIndexChanged += new System.EventHandler(this.cmbNombre_SelectedIndexChanged);
             // 
             // lblNombreCliente
             // 

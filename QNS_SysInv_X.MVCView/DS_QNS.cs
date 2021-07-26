@@ -4,6 +4,10 @@
 
     partial class DS_QNS
     {
+        partial class MovimientosLog1DataTable
+        {
+        }
+
         partial class DataTable1DataTable
         {
         }

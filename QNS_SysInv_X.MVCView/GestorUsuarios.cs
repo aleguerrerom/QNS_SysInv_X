@@ -35,7 +35,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsuar.Text = this.user.Usuario;
+            this.toolStripStatusLabel2.Text = this.user.Usuario;
         }
         
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 ///LOG PARA USUARIOS
 
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuar.Text;
+                this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
                 this.bitacora.Movimiento = "Agregar Usuario";
                 this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
                 this.bitacora.opc = 5;
@@ -185,9 +185,9 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblRol.BackColor = System.Drawing.Color.DarkRed;
-                lblRol.ForeColor = System.Drawing.Color.White;
-                groupBox3.BackColor = System.Drawing.Color.DarkRed;
+                lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
+                lblConfirmar.ForeColor = System.Drawing.Color.White;
+                groupBox7.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = cmbRol;
                 return;
             }
@@ -467,7 +467,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             this.userHelper = new UsuariosHelper(user);
             //Bitacora 
             this.bitacora = new Bitacora();
-            this.bitacora.Usuario = this.stsUsuar.Text;
+            this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
             this.bitacora.Movimiento = "Actualizar Usuario";
             this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
             this.bitacora.opc = 5;
@@ -641,6 +641,41 @@ namespace QNS_SysInv_X.MVCView.Resources
             //        { 
             //    lblUsuario.Text = "damn";
             //}
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtConfirmar_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
         }
     }
 }

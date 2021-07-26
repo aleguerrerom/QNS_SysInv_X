@@ -28,7 +28,7 @@
     <ProductName>QNS_SysInv_X</ProductName>
     <PublisherName>QNS_SysInv_X</PublisherName>
     <SuiteName>QNS_SysInv_X</SuiteName>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -97,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_QNS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_QNS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_QNS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GestorClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +130,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteUsuarios.Designer.cs">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteVendedor.cs">
       <SubType>Form</SubType>
@@ -173,12 +184,6 @@
     </Compile>
     <Compile Include="ReporteClientes.Designer.cs">
       <DependentUpon>ReporteClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReporteUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReporteUsuarios.Designer.cs">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="VerBitacora.cs">
       <SubType>Form</SubType>
@@ -250,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="ReporteEntregas.rdlc" />
+    <EmbeddedResource Include="ReporteUsuarios.resx">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteVendedor.resx">
       <DependentUpon>ReporteVendedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOportunidades.rdlc" />
     <EmbeddedResource Include="ReportClientes.rdlc" />
-    <EmbeddedResource Include="ReporteUsuarios.resx">
-      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportUsuarios.rdlc" />
     <EmbeddedResource Include="ReportInv.rdlc" />
     <EmbeddedResource Include="ReporteInventario.resx">
@@ -316,7 +321,7 @@
     <None Include="DS_QNS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_QNS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS_QNS1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DS_QNS.xss">
       <DependentUpon>DS_QNS.xsd</DependentUpon>

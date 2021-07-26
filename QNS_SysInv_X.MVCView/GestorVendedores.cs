@@ -59,7 +59,6 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-
                 this.vendedor = new Vendedores();
                 this.vendedor.opc = 1;
 
@@ -96,6 +95,11 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
                 this.vendedor.Correo = this.txtCorreo.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.vendedor.Activo = true;
+                }
+                else this.vendedor.Activo = false;
                 this.vendedor.opc = 2;
                 this.vendedorH = new VendedoresHelper(vendedor);
                 ///LOG PARA USUARIOS
@@ -296,6 +300,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtCedula.ReadOnly = false;
             this.dtpFechaAnace.Value = DateTime.Today;
             this.btnAdd.Text = "AGREGAR";
+            this.chckbxActivo.Checked = false;
             limpiarAlertas();
         }
         #endregion
@@ -375,6 +380,11 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
                 this.vendedor.Correo = this.txtCorreo.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.vendedor.Activo = true;
+                }
+                else this.vendedor.Activo = false;
                 this.vendedor.opc = 4;
 
                 this.vendedorH = new VendedoresHelper(vendedor);
@@ -419,6 +429,7 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbGenero.Text = fila["Genero"].ToString();
                     this.txtCedula.ReadOnly = true;
                     this.dtpFechaAnace.Text = fila["Fecha_de_nacimiento"].ToString();
+                    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -516,6 +527,36 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtApellido2_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbGenero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
         }
     }
 

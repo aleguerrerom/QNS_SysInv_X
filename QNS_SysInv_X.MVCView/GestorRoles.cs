@@ -110,6 +110,11 @@ namespace QNS_SysInv_X.MVCView
                 roles.Clientes = true;
             else
                 roles.Clientes = false;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.roles.Activo = true;
+                }
+                else this.roles.Activo = false;
                 roles.opc = 4;
                 
             this.rolH = new RolesHelper(roles);
@@ -194,6 +199,11 @@ namespace QNS_SysInv_X.MVCView
                     roles.Clientes = true;
                 else
                     roles.Clientes = false;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.roles.Activo = true;
+                }
+                else this.roles.Activo = false;
                 roles.opc = 2;
                 //roles.id_username_bitacora = Principal.id_username_bitacora;
                 if (this.txtRol.Text != "")
@@ -238,7 +248,8 @@ namespace QNS_SysInv_X.MVCView
             this.chkClientesx.Checked = false;
             this.chkVendedores.Checked = false;
             this.btnAdd.Text = "AGREGAR";
-            this.txtRol.ReadOnly = false;
+            this.txtID.ReadOnly = false;
+            this.chckbxActivo.Checked = false;
         }
         #endregion
 
@@ -357,9 +368,9 @@ namespace QNS_SysInv_X.MVCView
                     this.chkOportunidades.Checked = bool.Parse(fila["Oportunidades"].ToString());
                     this.chkVendedores.Checked = bool.Parse(fila["Vendedores"].ToString());
                     this.chkClientesx.Checked = bool.Parse(fila["Clientes"].ToString());
+                    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     this.txtID.ReadOnly = true;
                     this.btnAdd.Text = "ACTUALIZAR";
-                
                 }
 }
             catch (Exception ex)

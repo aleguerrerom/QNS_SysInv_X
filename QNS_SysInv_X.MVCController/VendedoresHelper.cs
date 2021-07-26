@@ -47,7 +47,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[8];
+                SqlParameter[] parParameter = new SqlParameter[9];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -93,6 +93,11 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objVendedores.Correo;
+
+                parParameter[8] = new SqlParameter();
+                parParameter[8].ParameterName = "@activo";
+                parParameter[8].SqlDbType = SqlDbType.Bit;
+                parParameter[8].SqlValue = objVendedores.Activo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPVendedor");
                 
@@ -112,7 +117,8 @@ namespace QNS_SysInv_X.MVCController
             {
                 cnGeneral = new Datos();
                 
-                SqlParameter[] parParameter = new SqlParameter[8];
+                SqlParameter[] parParameter = new SqlParameter[9];
+
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
@@ -157,6 +163,11 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
                 parParameter[7].SqlValue = objVendedores.Correo;
+
+                parParameter[8] = new SqlParameter();
+                parParameter[8].ParameterName = "@activo";
+                parParameter[8].SqlDbType = SqlDbType.Bit;
+                parParameter[8].SqlValue = objVendedores.Activo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPVendedor");
             }

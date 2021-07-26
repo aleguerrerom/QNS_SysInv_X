@@ -17,6 +17,21 @@ namespace QNS_SysInv_X.MVCController
         string direccion;
         int agente;
         string usuario;
+        private bool activo;
+
+        public bool Activo
+        {
+            get
+            {
+                return activo;
+            }
+
+            set
+            {
+                activo = value;
+            }
+        }
+
 
         public string Tipo
         {
@@ -147,6 +162,7 @@ namespace QNS_SysInv_X.MVCController
             this.Agente = agente;
             this.Nombre = nombre;
             this.Usuario = usuario;
+            this.Activo = activo;
         }
         public Clientes()
         {
@@ -159,6 +175,7 @@ namespace QNS_SysInv_X.MVCController
             this.Nombre = "";
             this.Agente = 0;
             this.Usuario = "";
+            this.Activo = true;
         }
     }
 

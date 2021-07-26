@@ -101,6 +101,11 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
                 this.clientes.Telefono = this.txtTel.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.clientes.Activo = true;
+                }
+                else this.clientes.Activo = false;
                 this.clientes.opc = 2;
                 this.clientesH = new ClientesHelper(clientes);
                 ///LOG PARA USUARIOS
@@ -323,6 +328,7 @@ namespace QNS_SysInv_X.MVCView
         #region LIMPIAR CAMPOS
         public void limpiar()
         {
+            this.chckbxActivo.Checked = false;
             this.txtCedula.Clear();
             this.txtContacto.Clear();
             this.txtNomb.Clear();
@@ -394,6 +400,11 @@ namespace QNS_SysInv_X.MVCView
                 this.clientes.Agente = int.Parse(this.cmbCed.Text);
                 this.clientes.Direccion = this.rtbDireccion.Text;
                 this.clientes.Telefono = this.txtTel.Text;
+                if (this.chckbxActivo.Checked)
+                {
+                    this.clientes.Activo = true;
+                }
+                else this.clientes.Activo = false;
                 this.clientes.opc = 4;
                 this.clientesH = new ClientesHelper(clientes);
                  this.bitacora = new Bitacora();
@@ -435,6 +446,7 @@ namespace QNS_SysInv_X.MVCView
                     this.txtTel.Text = fila["telefono"].ToString();
                     this.txtMail.Text = fila["correo"].ToString();
                     this.txtCedula.ReadOnly = true;
+                    this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.cmbVende.Text = fila["Nombre_Vendedor"].ToString();
                     this.rtbDireccion.Text = fila["direcion"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
@@ -544,6 +556,46 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtNomb_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtContacto_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtMail_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void rtbDireccion_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbVende_SelectedValueChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
         }
     }
 }

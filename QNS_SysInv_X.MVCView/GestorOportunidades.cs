@@ -447,7 +447,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteOpor RedOpo = new ReporteOpor(user);
+                ReporteUsuario RedOpo = new ReporteUsuario(user);
                 RedOpo.Show();
             }
         }
@@ -524,6 +524,31 @@ namespace QNS_SysInv_X.MVCView
         private void gbDetalles_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDetalles_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void txtPresupuesto_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbVendedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
         }
     }
 }
