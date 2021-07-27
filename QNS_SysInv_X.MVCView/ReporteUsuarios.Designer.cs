@@ -29,105 +29,93 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteUsuarios));
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
-            this.button1 = new System.Windows.Forms.Button();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dS_QNS1 = new QNS_SysInv_X.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.usuariosTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.RolTableAdapter();
-            this.dS_QNS1 = new CNV_Inventario.MVCView.DS_QNS();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
+            this.UsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.UsuariosTableAdapter = new QNS_SysInv_X.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // usuariosBindingSource
+            // pictureBox2
             // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.dS_QNS;
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(14, 28);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(303, 121);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 54;
+            pictureBox2.TabStop = false;
             // 
-            // dS_QNS
+            // dS_QNS1
             // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(653, 51);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 25);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "FILTRO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dS_QNS1.DataSetName = "DS_QNS";
+            this.dS_QNS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(275, 59);
+            this.label1.Location = new System.Drawing.Point(339, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
-            this.label1.TabIndex = 60;
+            this.label1.TabIndex = 0;
             this.label1.Text = "FILTRAR POR:";
             // 
-            // reportViewer1
+            // button1
             // 
-            this.reportViewer1.AutoSize = true;
-            reportDataSource2.Name = "DSUsuarios";
-            reportDataSource2.Value = this.usuariosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportUsuarios.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 116);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(869, 391);
-            this.reportViewer1.TabIndex = 62;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(670, 66);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "FILTRO";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // usuariosTableAdapter
+            // button2
             // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(763, 66);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 22);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "LIMPIAR";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(507, 54);
+            this.txtFiltro.Location = new System.Drawing.Point(550, 65);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(130, 20);
-            this.txtFiltro.TabIndex = 1;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(752, 51);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(87, 24);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.txtFiltro.Size = new System.Drawing.Size(100, 22);
+            this.txtFiltro.TabIndex = 2;
             // 
             // toolStrip1
             // 
@@ -136,10 +124,9 @@
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(893, 25);
-            this.toolStrip1.TabIndex = 65;
+            this.toolStrip1.Size = new System.Drawing.Size(862, 25);
+            this.toolStrip1.TabIndex = 61;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripLabel1
             // 
@@ -152,112 +139,109 @@
             // 
             this.cmbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.ItemHeight = 16;
             this.cmbFiltro.Items.AddRange(new object[] {
             "Usuario",
-            "Apellido",
-            "Correo",
-            "Nombre"});
-            this.cmbFiltro.Location = new System.Drawing.Point(366, 54);
+            "Correo"});
+            this.cmbFiltro.Location = new System.Drawing.Point(430, 65);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(121, 21);
-            this.cmbFiltro.TabIndex = 0;
+            this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
+            this.cmbFiltro.TabIndex = 62;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
-            // rolBindingSource
+            // reportViewer1
             // 
-            this.rolBindingSource.DataMember = "Rol";
-            this.rolBindingSource.DataSource = this.dS_QNS;
+            this.reportViewer1.AutoSize = true;
+            reportDataSource1.Name = "DSUsuarios";
+            reportDataSource1.Value = this.UsuariosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.Report2.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 156);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(838, 332);
+            this.reportViewer1.TabIndex = 60;
             // 
-            // rolTableAdapter
+            // stsUsu
             // 
-            this.rolTableAdapter.ClearBeforeFill = true;
-            // 
-            // dS_QNS1
-            // 
-            this.dS_QNS1.DataSetName = "DS_QNS";
-            this.dS_QNS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.stsUsu.Name = "stsUsu";
+            this.stsUsu.Size = new System.Drawing.Size(118, 17);
+            this.stsUsu.Text = "toolStripStatusLabel1";
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 516);
+            this.stsUsu});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 491);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(893, 22);
-            this.statusStrip1.TabIndex = 66;
+            this.statusStrip1.Size = new System.Drawing.Size(862, 22);
+            this.statusStrip1.TabIndex = 63;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // pictureBox2
+            // DS_QNS
             // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(21, 29);
-            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(248, 84);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 67;
-            pictureBox2.TabStop = false;
+            this.DS_QNS.DataSetName = "DS_QNS";
+            this.DS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // toolStripStatusLabel1
+            // UsuariosBindingSource
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.UsuariosBindingSource.DataMember = "Usuarios";
+            this.UsuariosBindingSource.DataSource = this.DS_QNS;
+            // 
+            // UsuariosTableAdapter
+            // 
+            this.UsuariosTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(893, 538);
-            this.Controls.Add(pictureBox2);
+            this.ClientSize = new System.Drawing.Size(862, 513);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(pictureBox2);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(909, 577);
-            this.MinimumSize = new System.Drawing.Size(909, 577);
+            this.MaximumSize = new System.Drawing.Size(878, 552);
+            this.MinimumSize = new System.Drawing.Size(878, 552);
             this.Name = "ReporteUsuarios";
             this.Text = "REPORTE USUARIOS  | QNS_SysInv_X";
-            this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            this.Load += new System.EventHandler(this.ReporteInventario_Load);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ComboBox cmbFiltro;
-        private System.Windows.Forms.BindingSource rolBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.RolTableAdapter rolTableAdapter;
-        private CNV_Inventario.MVCView.DS_QNS dS_QNS1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private QNS_SysInv_X.MVCView.DS_QNS dS_QNS1;
+        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.BindingSource UsuariosBindingSource;
+        private DS_QNS DS_QNS;
+        private DS_QNSTableAdapters.UsuariosTableAdapter UsuariosTableAdapter;
     }
 }

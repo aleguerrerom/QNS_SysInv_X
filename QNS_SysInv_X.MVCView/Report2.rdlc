@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.78563cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -100,9 +100,9 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.07667cm</Size>
+                <Size>2.5cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox13">
+                  <Textbox Name="Textbox15">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -121,7 +121,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox13</rd:DefaultName>
+                    <rd:DefaultName>Textbox15</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>#7292cc</Color>
@@ -139,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1.71365cm</Size>
+                    <Size>2.5cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox11">
                         <CanGrow>true</CanGrow>
@@ -178,7 +178,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.15062cm</Size>
+                        <Size>2.5cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox9">
                             <CanGrow>true</CanGrow>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>rol</Value>
+                                    <Value>apellido</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -219,14 +219,14 @@
                           <TablixHeader>
                             <Size>2.5cm</Size>
                             <CellContents>
-                              <Textbox Name="Textbox10">
+                              <Textbox Name="Textbox7">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>nombre</Value>
+                                        <Value>correo</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -238,7 +238,7 @@
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Textbox10</rd:DefaultName>
+                                <rd:DefaultName>Textbox7</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>#7292cc</Color>
@@ -256,7 +256,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.31479cm</Size>
+                                <Size>2.5cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox5">
                                     <CanGrow>true</CanGrow>
@@ -265,7 +265,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>apellido</Value>
+                                            <Value>rol</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>11pt</FontSize>
@@ -293,48 +293,7 @@
                                 </CellContents>
                               </TablixHeader>
                               <TablixMembers>
-                                <TablixMember>
-                                  <TablixHeader>
-                                    <Size>5.77399cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="Textbox3">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>correo</Value>
-                                                <Style>
-                                                  <FontFamily>Tahoma</FontFamily>
-                                                  <FontSize>11pt</FontSize>
-                                                  <FontWeight>Bold</FontWeight>
-                                                  <Color>White</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>Textbox3</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>#7292cc</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>#4c68a2</BackgroundColor>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <TablixMembers>
-                                    <TablixMember />
-                                  </TablixMembers>
-                                </TablixMember>
+                                <TablixMember />
                               </TablixMembers>
                             </TablixMember>
                           </TablixMembers>
@@ -347,18 +306,18 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="clave">
+              <Group Name="usuario">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!clave.Value</GroupExpression>
+                  <GroupExpression>=Fields!usuario.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!clave.Value</Value>
+                  <Value>=Fields!usuario.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.07667cm</Size>
+                <Size>2.5cm</Size>
                 <CellContents>
                   <Textbox Name="usuario1">
                     <CanGrow>true</CanGrow>
@@ -406,7 +365,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.71365cm</Size>
+                    <Size>2.5cm</Size>
                     <CellContents>
                       <Textbox Name="activo">
                         <CanGrow>true</CanGrow>
@@ -429,10 +388,10 @@
                         <rd:DefaultName>activo</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>#e6eefc</Color>
+                            <Color>White</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>#c6daf8</BackgroundColor>
+                          <BackgroundColor>#e6eefc</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -443,27 +402,27 @@
                   </TablixHeader>
                   <TablixMembers>
                     <TablixMember>
-                      <Group Name="rol">
+                      <Group Name="apellido">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!rol.Value</GroupExpression>
+                          <GroupExpression>=Fields!apellido.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!rol.Value</Value>
+                          <Value>=Fields!apellido.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>1.15062cm</Size>
+                        <Size>2.5cm</Size>
                         <CellContents>
-                          <Textbox Name="rol">
+                          <Textbox Name="apellido">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!rol.Value</Value>
+                                    <Value>=Fields!apellido.Value</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -474,7 +433,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>rol</rd:DefaultName>
+                            <rd:DefaultName>apellido</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Color>White</Color>
@@ -491,27 +450,27 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="nombre">
+                          <Group Name="correo">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                              <GroupExpression>=Fields!correo.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!nombre.Value</Value>
+                              <Value>=Fields!correo.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
                             <Size>2.5cm</Size>
                             <CellContents>
-                              <Textbox Name="nombre">
+                              <Textbox Name="correo">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!nombre.Value</Value>
+                                        <Value>=Fields!correo.Value</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontWeight>Bold</FontWeight>
@@ -522,7 +481,7 @@
                                     <Style />
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>nombre</rd:DefaultName>
+                                <rd:DefaultName>correo</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Color>White</Color>
@@ -539,27 +498,27 @@
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="apellido">
+                              <Group Name="rol">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!apellido.Value</GroupExpression>
+                                  <GroupExpression>=Fields!rol.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!apellido.Value</Value>
+                                  <Value>=Fields!rol.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.31479cm</Size>
+                                <Size>2.5cm</Size>
                                 <CellContents>
-                                  <Textbox Name="apellido">
+                                  <Textbox Name="rol">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!apellido.Value</Value>
+                                            <Value>=Fields!rol.Value</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontWeight>Bold</FontWeight>
@@ -570,7 +529,7 @@
                                         <Style />
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>apellido</rd:DefaultName>
+                                    <rd:DefaultName>rol</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Color>White</Color>
@@ -587,57 +546,7 @@
                               </TablixHeader>
                               <TablixMembers>
                                 <TablixMember>
-                                  <Group Name="correo">
-                                    <GroupExpressions>
-                                      <GroupExpression>=Fields!correo.Value</GroupExpression>
-                                    </GroupExpressions>
-                                  </Group>
-                                  <SortExpressions>
-                                    <SortExpression>
-                                      <Value>=Fields!correo.Value</Value>
-                                    </SortExpression>
-                                  </SortExpressions>
-                                  <TablixHeader>
-                                    <Size>5.77399cm</Size>
-                                    <CellContents>
-                                      <Textbox Name="correo">
-                                        <CanGrow>true</CanGrow>
-                                        <KeepTogether>true</KeepTogether>
-                                        <Paragraphs>
-                                          <Paragraph>
-                                            <TextRuns>
-                                              <TextRun>
-                                                <Value>=Fields!correo.Value</Value>
-                                                <Style>
-                                                  <FontFamily>Tahoma</FontFamily>
-                                                  <FontWeight>Bold</FontWeight>
-                                                  <Color>#4c68a2</Color>
-                                                </Style>
-                                              </TextRun>
-                                            </TextRuns>
-                                            <Style />
-                                          </Paragraph>
-                                        </Paragraphs>
-                                        <rd:DefaultName>correo</rd:DefaultName>
-                                        <Style>
-                                          <Border>
-                                            <Color>White</Color>
-                                            <Style>Solid</Style>
-                                          </Border>
-                                          <BackgroundColor>#e6eefc</BackgroundColor>
-                                          <PaddingLeft>2pt</PaddingLeft>
-                                          <PaddingRight>2pt</PaddingRight>
-                                          <PaddingTop>2pt</PaddingTop>
-                                          <PaddingBottom>2pt</PaddingBottom>
-                                        </Style>
-                                      </Textbox>
-                                    </CellContents>
-                                  </TablixHeader>
-                                  <TablixMembers>
-                                    <TablixMember>
-                                      <Group Name="Details" />
-                                    </TablixMember>
-                                  </TablixMembers>
+                                  <Group Name="Details" />
                                 </TablixMember>
                               </TablixMembers>
                             </TablixMember>
@@ -652,9 +561,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSUsuarios</DataSetName>
-        <Top>0.10583cm</Top>
+        <Top>0.07056cm</Top>
+        <Left>1.7866cm</Left>
         <Height>1.2cm</Height>
-        <Width>17.31535cm</Width>
+        <Width>15cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -665,7 +575,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.80132in</Width>
+  <Width>7.87402in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -691,9 +601,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Left>4.1832cm</Left>
+          <Top>0.4276cm</Top>
+          <Left>4.69987cm</Left>
           <Height>0.97896cm</Height>
-          <Width>8.12271cm</Width>
+          <Width>9.44562cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -708,8 +619,9 @@
           <Source>Embedded</Source>
           <Value>Screenshot_1</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.06782cm</Left>
-          <Height>1.61424cm</Height>
+          <Top>0.39232cm</Top>
+          <Left>0.80098cm</Left>
+          <Height>1.47849cm</Height>
           <Width>3.7225cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -718,37 +630,7 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox4">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Current Date:-"&amp;Format(Now,"dd/MM/yyyy hh:mm tt")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>1.12007cm</Top>
-          <Left>4.1832cm</Left>
-          <Height>0.6cm</Height>
-          <Width>8.12271cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox28">
+        <Textbox Name="Textbox27">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -766,10 +648,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Left>14.3873cm</Left>
+          <Top>0.4597cm</Top>
+          <Left>16.40327cm</Left>
           <Height>0.63528cm</Height>
           <Width>2.77812cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -780,7 +663,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox30">
+        <Textbox Name="Textbox29">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -798,9 +681,40 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Left>12.30591cm</Left>
+          <Top>0.4597cm</Top>
+          <Left>14.32188cm</Left>
           <Height>0.70266cm</Height>
           <Width>1.79035cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Current Date:-"&amp;Format(Now,"dd/MM/yyyy hh:mm tt")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>1.54768cm</Top>
+          <Left>4.69987cm</Left>
+          <Height>0.6cm</Height>
+          <Width>9.44562cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -830,8 +744,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox34</rd:DefaultName>
-          <Top>0.93045cm</Top>
-          <Left>12.34119cm</Left>
+          <Top>1.46857cm</Top>
+          <Left>14.2866cm</Left>
           <Height>0.64382cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>5</ZIndex>
@@ -852,7 +766,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!ParUsuario.Value</Value>
+                  <Value>=Parameters!Parameter1.Value</Value>
                   <Style>
                     <FontFamily>Microsoft YaHei</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -863,8 +777,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.96573cm</Top>
-          <Left>14.4755cm</Left>
+          <Top>1.50385cm</Top>
+          <Left>16.42091cm</Left>
           <Height>0.64382cm</Height>
           <Width>2.77812cm</Width>
           <ZIndex>6</ZIndex>
@@ -908,8 +822,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.74546cm</Top>
-          <Left>8.65938cm</Left>
+          <Top>0.91867cm</Top>
+          <Left>9.65164cm</Left>
           <Height>0.63528cm</Height>
           <Width>2.77812cm</Width>
           <Style>
@@ -940,8 +854,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>0.74546cm</Top>
-          <Left>6.57799cm</Left>
+          <Top>0.91867cm</Top>
+          <Left>7.57025cm</Left>
           <Height>0.70266cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>1</ZIndex>
@@ -978,7 +892,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ef6ff1b9-9c15-42e2-a235-809e5e278b7b</rd:DataSourceID>
+      <rd:DataSourceID>c38c9555-173c-49a7-bc88-208b6aa40a77</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1000,20 +914,20 @@
           <DataField>activo</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="rol">
-          <DataField>rol</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="apellido">
           <DataField>apellido</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="correo">
           <DataField>correo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rol">
+          <DataField>rol</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -1028,8 +942,10 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="ParUsuario">
+    <ReportParameter Name="Parameter1">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1050,5 +966,5 @@ HFujs1Hb0Pqtkbp0uasrBgz2+tsOZuDRiXvR3/xYHls4+J/XDPpwN/48KwohpwtQ36hDoat9dMWAoSlH
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>9afac738-ea03-4f4f-a455-cac7d84ee185</rd:ReportID>
+  <rd:ReportID>56bc874d-edb8-4288-b663-e904b844b09e</rd:ReportID>
 </Report>

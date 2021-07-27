@@ -305,48 +305,10 @@ namespace QNS_SysInv_X.MVCView
 
         private void cerrarTodo()
         {
-           // Application.Exit();
-            //VerBitacora bitacora = new VerBitacora();
-            //bitacora.Close();
-            //ReporteVendedores repV = new ReporteVendedores();
-            //repV.Close();
-            //ReporteUsuarios repU = new ReporteUsuarios();
-            //repU.Close();
-            //ReportePrestamo repP = new ReportePrestamo();
-            //repP.Close();
-            //ReporteOpor repO = new ReporteOpor();
-            //repO.Close();
-            //ReporteMovimientos repM = new ReporteMovimientos();
-            //repM.Close();
-            //ReporteLogsInicio repL = new ReporteLogsInicio();
-            //repL.Close();
-            //ReporteInventario repI = new ReporteInventario();
-            //repI.Close();
-            //ReporteEntrega repE = new ReporteEntrega();
-            //repE.Close();
-            //RerporteClientes repC = new RerporteClientes();
-            //repC.Close();
-            //GestorVendedores gesV = new GestorVendedores();
-            //gesV.Close();
-            //GestorUsuarios gesU = new GestorUsuarios();
-            //gesU.Close();
-            //GestorRoles gesR = new GestorRoles();
-            //gesR.Close();
-            //GestorPrestamo gesP = new GestorPrestamo();
-            //gesP.Close();
-            //GestorOportunidades gesO = new GestorOportunidades();
-            //gesO.Close();
-            //GestorInventario gesI = new GestorInventario();
-            //gesI.Close();
-            //GestorEntregas gesE = new GestorEntregas();
-            //gesE.Close();
-            //GestorClientes gesC = new GestorClientes();
-            //gesC.Close();
-
-            //AcercaDe aboutus = new AcercaDe();
-            //CambiodeClave camdClave = new CambiodeClave();
-            //camdClave.Close();
-            //aboutus.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                form.Close();
+            }
         }
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -616,7 +578,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteUsuario RedOpo = new ReporteUsuario(user);
+                ReporteOpor  RedOpo = new ReporteOpor(user);
                 RedOpo.Show();
             }
         }
@@ -700,8 +662,8 @@ namespace QNS_SysInv_X.MVCView
             {
                 LogCierreSesion();
                 Login login = new Login();
-                login.Show();
                 cerrarTodo();
+                login.Show();
                 e.Cancel = false;
             }
             else if (dialogResult == DialogResult.No)

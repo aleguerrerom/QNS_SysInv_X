@@ -61,9 +61,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.prestamoTableAdapter.Fill(this.dS_QNS.Prestamo);
-
-            this.reportViewer1.RefreshReport();
+           
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

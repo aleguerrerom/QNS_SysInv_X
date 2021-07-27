@@ -136,7 +136,7 @@ namespace QNS_SysInv_X.MVCView
             listar();
             this.cmbVende.SelectedIndex = -1;
         }
-
+        #region LIMPIAR ALERTAS
         private void limpiarAlertas()
         {
             lblCedula.BackColor = System.Drawing.Color.White;
@@ -164,6 +164,7 @@ namespace QNS_SysInv_X.MVCView
             lblDireccion.ForeColor = System.Drawing.Color.Black;
             gpDireccion.BackColor = System.Drawing.Color.White;
         }
+        #endregion
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

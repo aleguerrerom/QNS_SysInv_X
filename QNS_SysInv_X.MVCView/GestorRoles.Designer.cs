@@ -91,7 +91,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(21, 154);
+            pictureBox1.Location = new System.Drawing.Point(19, 146);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(293, 137);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,9 +138,10 @@
             // txtRol
             // 
             this.txtRol.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRol.Location = new System.Drawing.Point(134, 16);
+            this.txtRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRol.Location = new System.Drawing.Point(134, 14);
             this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(153, 13);
+            this.txtRol.Size = new System.Drawing.Size(153, 15);
             this.txtRol.TabIndex = 0;
             // 
             // btnCancel
@@ -519,15 +520,16 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(482, 331);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(154, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(154, 22);
             this.txtBuscar.TabIndex = 70;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(119, 305);
+            this.txtID.Location = new System.Drawing.Point(119, 296);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 73;
@@ -550,7 +552,7 @@
             // chckbxActivo
             // 
             this.chckbxActivo.AutoSize = true;
-            this.chckbxActivo.Location = new System.Drawing.Point(192, 16);
+            this.chckbxActivo.Location = new System.Drawing.Point(192, 18);
             this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chckbxActivo.Name = "chckbxActivo";
             this.chckbxActivo.Size = new System.Drawing.Size(15, 14);

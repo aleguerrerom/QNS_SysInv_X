@@ -31,8 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVendedor));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,19 +42,15 @@
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
-            this.vendedoresTableAdapter1 = new CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter();
-            this.VendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.auditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
-            this.vendedoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.vendedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendedoresTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -69,11 +64,6 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -123,11 +113,11 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource5.Name = "DSVendedores";
-            reportDataSource5.Value = this.vendedoresBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource1.Name = "DSVendedores";
+            reportDataSource1.Value = this.vendedoresBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 156);
+            this.reportViewer1.Location = new System.Drawing.Point(14, 156);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(838, 332);
             this.reportViewer1.TabIndex = 60;
@@ -182,28 +172,19 @@
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
             // 
-            // vendedoresTableAdapter1
+            // dS_QNS
             // 
-            this.vendedoresTableAdapter1.ClearBeforeFill = true;
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // VendedoresBindingSource
+            // vendedoresBindingSource
             // 
-            this.VendedoresBindingSource.DataMember = "Vendedores";
-            this.VendedoresBindingSource.DataSource = this.dS_QNS;
+            this.vendedoresBindingSource.DataMember = "Vendedores";
+            this.vendedoresBindingSource.DataSource = this.dS_QNS;
             // 
-            // auditLogBindingSource
+            // vendedoresTableAdapter
             // 
-            this.auditLogBindingSource.DataMember = "AuditLog";
-            this.auditLogBindingSource.DataSource = this.dS_QNS;
-            // 
-            // auditLogTableAdapter
-            // 
-            this.auditLogTableAdapter.ClearBeforeFill = true;
-            // 
-            // vendedoresBindingSource1
-            // 
-            this.vendedoresBindingSource1.DataMember = "Vendedores";
-            this.vendedoresBindingSource1.DataSource = this.dS_QNS;
+            this.vendedoresTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteVendedor
             // 
@@ -229,21 +210,18 @@
             this.Text = "REPORTE VENDEDORES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.auditLogBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -254,10 +232,8 @@
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
-        private System.Windows.Forms.BindingSource VendedoresBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter vendedoresTableAdapter1;
-        private System.Windows.Forms.BindingSource auditLogBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter auditLogTableAdapter;
-        private System.Windows.Forms.BindingSource vendedoresBindingSource1;
+        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
+        private System.Windows.Forms.BindingSource vendedoresBindingSource;
+        private CNV_Inventario.MVCView.DS_QNSTableAdapters.VendedoresTableAdapter vendedoresTableAdapter;
     }
 }

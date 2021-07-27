@@ -28,7 +28,7 @@
     <ProductName>QNS_SysInv_X</ProductName>
     <PublisherName>QNS_SysInv_X</PublisherName>
     <SuiteName>QNS_SysInv_X</SuiteName>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -254,6 +254,7 @@
       <DependentUpon>GestorVendedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="ReporteEntregas.rdlc" />
     <EmbeddedResource Include="ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
@@ -284,7 +285,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportOportunidades.rdlc" />
     <EmbeddedResource Include="ReportClientes.rdlc" />
-    <EmbeddedResource Include="ReportUsuarios.rdlc" />
     <EmbeddedResource Include="ReportInv.rdlc" />
     <EmbeddedResource Include="ReporteInventario.resx">
       <DependentUpon>ReporteInventario.cs</DependentUpon>

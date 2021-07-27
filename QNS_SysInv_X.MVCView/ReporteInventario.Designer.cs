@@ -33,12 +33,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteInventario));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
+            this.dS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.inventarioTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
+            this.inventarioTableAdapter = new QNS_SysInv_X.MVCView.DS_QNSTableAdapters.InventarioTableAdapter();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -224,9 +224,9 @@
         }
 
         #endregion
-        private CNV_Inventario.MVCView.DS_QNS dS_QNS;
+        private QNS_SysInv_X.MVCView.DS_QNS dS_QNS;
         private System.Windows.Forms.BindingSource inventarioBindingSource;
-        private CNV_Inventario.MVCView.DS_QNSTableAdapters.InventarioTableAdapter inventarioTableAdapter;
+        private QNS_SysInv_X.MVCView.DS_QNSTableAdapters.InventarioTableAdapter inventarioTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

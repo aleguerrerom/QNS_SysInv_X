@@ -24,13 +24,17 @@ namespace QNS_SysInv_X.MVCView
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
-            this.vendedoresTableAdapter1.Fill(this.dS_QNS.Vendedores);
+            this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
+            // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
+            this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
+            // TODO: This line of code loads data into the 'dS_QNS.Rol' table. You can move, or remove it, as needed.
+            
             ReportParameterCollection reportParameters = new ReportParameterCollection();
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.LocalReport.Refresh();
             // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
-            this.vendedoresTableAdapter1.Fill(this.dS_QNS.Vendedores);
+            this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
             this.reportViewer1.RefreshReport();
         }
 
@@ -41,15 +45,15 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
-                    this.vendedoresTableAdapter1.FillCedula(this.dS_QNS.Vendedores, int.Parse(txtFiltro.Text));
+                    this.vendedoresTableAdapter.FillCedula(this.dS_QNS.Vendedores, int.Parse(txtFiltro.Text));
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
-                    this.vendedoresTableAdapter1.FillByNombre(this.dS_QNS.Vendedores, txtFiltro.Text);
+                    this.vendedoresTableAdapter.FillByNombre(this.dS_QNS.Vendedores, txtFiltro.Text);
                 }
                 else if (cmbFiltro.SelectedIndex == 2)
                 {
-                    this.vendedoresTableAdapter1.FillByCorreo(this.dS_QNS.Vendedores, txtFiltro.Text);
+                    this.vendedoresTableAdapter.FillByCorreo(this.dS_QNS.Vendedores, txtFiltro.Text);
                 }
                 this.reportViewer1.RefreshReport();
             }
@@ -61,7 +65,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.vendedoresTableAdapter1.Fill(this.dS_QNS.Vendedores);
+            this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
 
             this.reportViewer1.RefreshReport();
         }

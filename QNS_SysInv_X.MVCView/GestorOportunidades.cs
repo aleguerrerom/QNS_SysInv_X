@@ -447,7 +447,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                ReporteUsuario RedOpo = new ReporteUsuario(user);
+                ReporteOpor RedOpo = new ReporteOpor(user);
                 RedOpo.Show();
             }
         }

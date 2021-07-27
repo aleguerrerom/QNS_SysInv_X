@@ -115,7 +115,7 @@ namespace QNS_SysInv_X.MVCView
             else
             {
                 txtClave.UseSystemPasswordChar = true;
-                txtConfirmar.UseSystemPasswordChar = false;
+                txtConfirmar.UseSystemPasswordChar = true;
                 var checkBox = (CheckBox)sender;
                 lblShow.Text = "VER CONTRASEÑA";
             }

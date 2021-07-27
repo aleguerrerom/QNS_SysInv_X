@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace QNS_SysInv_X.MVCView {
+namespace CNV_Inventario.MVCView {
     
     
     /// <summary>
@@ -674,9 +674,9 @@ namespace QNS_SysInv_X.MVCView {
             
             private global::System.Data.DataColumn columncorreo;
             
-            private global::System.Data.DataColumn columnNombre;
-            
             private global::System.Data.DataColumn columnrol;
+            
+            private global::System.Data.DataColumn columnnombre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -753,17 +753,17 @@ namespace QNS_SysInv_X.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
+            public global::System.Data.DataColumn rolColumn {
                 get {
-                    return this.columnNombre;
+                    return this.columnrol;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn rolColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnrol;
+                    return this.columnnombre;
                 }
             }
             
@@ -804,7 +804,7 @@ namespace QNS_SysInv_X.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsuariosRow AddUsuariosRow(string usuario, string clave, bool activo, string apellido, string correo, string Nombre, RolRow parentRolRowByFK_Usuarios_Rol) {
+            public UsuariosRow AddUsuariosRow(string usuario, string clave, bool activo, string apellido, string correo, RolRow parentRolRowByFK_Usuarios_Rol, string nombre) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         usuario,
@@ -812,10 +812,10 @@ namespace QNS_SysInv_X.MVCView {
                         activo,
                         apellido,
                         correo,
-                        Nombre,
-                        null};
+                        null,
+                        nombre};
                 if ((parentRolRowByFK_Usuarios_Rol != null)) {
-                    columnValuesArray[6] = parentRolRowByFK_Usuarios_Rol[0];
+                    columnValuesArray[5] = parentRolRowByFK_Usuarios_Rol[0];
                 }
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
@@ -851,8 +851,8 @@ namespace QNS_SysInv_X.MVCView {
                 this.columnactivo = base.Columns["activo"];
                 this.columnapellido = base.Columns["apellido"];
                 this.columncorreo = base.Columns["correo"];
-                this.columnNombre = base.Columns["Nombre"];
                 this.columnrol = base.Columns["rol"];
+                this.columnnombre = base.Columns["nombre"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -868,10 +868,10 @@ namespace QNS_SysInv_X.MVCView {
                 base.Columns.Add(this.columnapellido);
                 this.columncorreo = new global::System.Data.DataColumn("correo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncorreo);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
                 this.columnrol = new global::System.Data.DataColumn("rol", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrol);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnusuario}, true));
                 this.columnusuario.AllowDBNull = false;
@@ -883,9 +883,9 @@ namespace QNS_SysInv_X.MVCView {
                 this.columnapellido.AllowDBNull = false;
                 this.columnapellido.MaxLength = 50;
                 this.columncorreo.MaxLength = 50;
-                this.columnNombre.AllowDBNull = false;
-                this.columnNombre.MaxLength = 30;
                 this.columnrol.AllowDBNull = false;
+                this.columnnombre.AllowDBNull = false;
+                this.columnnombre.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4723,23 +4723,23 @@ namespace QNS_SysInv_X.MVCView {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nombre {
-                get {
-                    return ((string)(this[this.tableUsuarios.NombreColumn]));
-                }
-                set {
-                    this[this.tableUsuarios.NombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int rol {
                 get {
                     return ((int)(this[this.tableUsuarios.rolColumn]));
                 }
                 set {
                     this[this.tableUsuarios.rolColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre {
+                get {
+                    return ((string)(this[this.tableUsuarios.nombreColumn]));
+                }
+                set {
+                    this[this.tableUsuarios.nombreColumn] = value;
                 }
             }
             
@@ -6380,7 +6380,7 @@ namespace QNS_SysInv_X.MVCView {
         }
     }
 }
-namespace QNS_SysInv_X.MVCView.DS_QNSTableAdapters {
+namespace CNV_Inventario.MVCView.DS_QNSTableAdapters {
     
     
     /// <summary>
@@ -6509,8 +6509,8 @@ namespace QNS_SysInv_X.MVCView.DS_QNSTableAdapters {
             tableMapping.ColumnMappings.Add("activo", "activo");
             tableMapping.ColumnMappings.Add("apellido", "apellido");
             tableMapping.ColumnMappings.Add("correo", "correo");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("rol", "rol");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -6527,7 +6527,7 @@ namespace QNS_SysInv_X.MVCView.DS_QNSTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT usuario, clave, activo, Nombre, rol, apellido, correo FROM dbo.Usuarios ";
+            this._commandCollection[0].CommandText = "SELECT * FROM dbo.Usuarios ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;

@@ -162,7 +162,6 @@ namespace QNS_SysInv_X.MVCView
                     AlmacenarPrestamo();
                     limpiar();
                     listar();
-                
             }
             #endregion
         }

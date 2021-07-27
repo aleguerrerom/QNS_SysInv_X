@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CNV_Inventario.MVCView {
+namespace QNS_SysInv_X.MVCView {
     
     
     /// <summary>
@@ -6380,7 +6380,7 @@ namespace CNV_Inventario.MVCView {
         }
     }
 }
-namespace CNV_Inventario.MVCView.DS_QNSTableAdapters {
+namespace QNS_SysInv_X.MVCView.DS_QNSTableAdapters {
     
     
     /// <summary>

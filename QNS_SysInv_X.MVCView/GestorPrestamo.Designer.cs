@@ -208,9 +208,9 @@
             // cmbCedula
             // 
             this.cmbCedula.FormattingEnabled = true;
-            this.cmbCedula.Location = new System.Drawing.Point(602, 74);
+            this.cmbCedula.Location = new System.Drawing.Point(614, 132);
             this.cmbCedula.Name = "cmbCedula";
-            this.cmbCedula.Size = new System.Drawing.Size(96, 21);
+            this.cmbCedula.Size = new System.Drawing.Size(10, 21);
             this.cmbCedula.TabIndex = 64;
             // 
             // cmbContacto
@@ -220,6 +220,7 @@
             this.cmbContacto.Name = "cmbContacto";
             this.cmbContacto.Size = new System.Drawing.Size(96, 21);
             this.cmbContacto.TabIndex = 65;
+            this.cmbContacto.Visible = false;
             // 
             // cmbTelefono
             // 
@@ -228,6 +229,7 @@
             this.cmbTelefono.Name = "cmbTelefono";
             this.cmbTelefono.Size = new System.Drawing.Size(96, 21);
             this.cmbTelefono.TabIndex = 66;
+            this.cmbTelefono.Visible = false;
             // 
             // cmbDireccion
             // 
@@ -236,6 +238,7 @@
             this.cmbDireccion.Name = "cmbDireccion";
             this.cmbDireccion.Size = new System.Drawing.Size(121, 21);
             this.cmbDireccion.TabIndex = 67;
+            this.cmbDireccion.Visible = false;
             // 
             // GestorPrestamo
             // 
@@ -243,11 +246,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(719, 422);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.cmbDireccion);
             this.Controls.Add(this.cmbTelefono);
             this.Controls.Add(this.cmbContacto);
             this.Controls.Add(this.cmbCedula);
-            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.stsUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCliente);

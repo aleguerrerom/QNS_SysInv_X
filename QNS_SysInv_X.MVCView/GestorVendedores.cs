@@ -275,7 +275,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se eliminó el vendedor");
+                        MessageBox.Show("No se actualizó el vendedor");
                     }
                 }
                 else

@@ -471,8 +471,8 @@
             this.Controls.Add(this.gpFecha);
             this.Controls.Add(this.gbMarca);
             this.Controls.Add(this.gbClienteN);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(808, 608);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(808, 608);
             this.Name = "GestorOportunidades";
             this.Text = "GESTOR OPORTUNIDADES  | QNS_SysInv_X";

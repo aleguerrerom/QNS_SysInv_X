@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambiodeClave));
+            System.Windows.Forms.PictureBox pictureBox2;
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
@@ -38,19 +39,21 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.stsUser = new System.Windows.Forms.StatusStrip();
+            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             this.chckView = new System.Windows.Forms.CheckBox();
             this.lblShow = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.stsUsua = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.stsUser.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -93,7 +96,7 @@
             // txtConfirmar
             // 
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmar.Location = new System.Drawing.Point(136, 13);
+            this.txtConfirmar.Location = new System.Drawing.Point(136, 14);
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.Size = new System.Drawing.Size(169, 13);
             this.txtConfirmar.TabIndex = 2;
@@ -127,9 +130,10 @@
             // txtClave
             // 
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClave.Location = new System.Drawing.Point(134, 16);
+            this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.Location = new System.Drawing.Point(136, 14);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(169, 13);
+            this.txtClave.Size = new System.Drawing.Size(167, 13);
             this.txtClave.TabIndex = 0;
             this.txtClave.UseSystemPasswordChar = true;
             // 
@@ -151,11 +155,17 @@
             this.stsUser.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsua});
-            this.stsUser.Location = new System.Drawing.Point(0, 344);
+            this.stsUser.Location = new System.Drawing.Point(0, 354);
             this.stsUser.Name = "stsUser";
             this.stsUser.Size = new System.Drawing.Size(389, 22);
             this.stsUser.TabIndex = 42;
             this.stsUser.Text = "statusStrip1";
+            // 
+            // stsUsua
+            // 
+            this.stsUsua.Name = "stsUsua";
+            this.stsUsua.Size = new System.Drawing.Size(118, 17);
+            this.stsUsua.Text = "toolStripStatusLabel1";
             // 
             // chckView
             // 
@@ -184,7 +194,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(145, 313);
+            this.btnCancelar.Location = new System.Drawing.Point(141, 313);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
             this.btnCancelar.TabIndex = 4;
@@ -204,7 +214,7 @@
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(85, 269);
+            this.btnIngresar.Location = new System.Drawing.Point(96, 265);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(189, 45);
             this.btnIngresar.TabIndex = 3;
@@ -231,11 +241,17 @@
             this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
-            // stsUsua
+            // pictureBox2
             // 
-            this.stsUsua.Name = "stsUsua";
-            this.stsUsua.Size = new System.Drawing.Size(118, 17);
-            this.stsUsua.Text = "toolStripStatusLabel1";
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(293, 198);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(96, 156);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 69;
+            pictureBox2.TabStop = false;
             // 
             // CambiodeClave
             // 
@@ -243,7 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(389, 366);
+            this.ClientSize = new System.Drawing.Size(389, 376);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.chckView);
             this.Controls.Add(this.lblShow);
@@ -254,9 +270,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(pictureBox2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(405, 405);
-            this.MinimumSize = new System.Drawing.Size(405, 405);
+            this.MaximumSize = new System.Drawing.Size(405, 415);
+            this.MinimumSize = new System.Drawing.Size(405, 415);
             this.Name = "CambiodeClave";
             this.Text = "CAMBIO DE CLAVE  | QNS_SysInv_X";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
@@ -268,6 +285,7 @@
             this.stsUser.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

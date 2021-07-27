@@ -19,7 +19,6 @@ namespace QNS_SysInv_X.MVCView
             this.user = usuario;
             this.stsUsua.Text = this.user.Usuario;
         }
-        private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
         private Entrega entrega;
@@ -129,8 +128,7 @@ namespace QNS_SysInv_X.MVCView
             this.txtDescripcion.Text = "";
             limpiarAlertas();
         }
-
-
+        
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Desea borrar los datos ingresados?", "SALIR", MessageBoxButtons.YesNo);

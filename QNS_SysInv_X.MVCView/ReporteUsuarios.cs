@@ -18,58 +18,47 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.toolStripStatusLabel1.Text = this.user.Usuario;
+            this.stsUsu.Text = this.user.Usuario;
         }
 
-        private void ReporteUsuarios_Load(object sender, EventArgs e)
+        private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
+            this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
             ReportParameterCollection reportParameters = new ReportParameterCollection();
-            reportParameters.Add(new ReportParameter("ParUsuario", toolStripStatusLabel1.Text));
+            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.LocalReport.Refresh();
-            // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
-            this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
+            // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
+            this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
             this.reportViewer1.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
-                    this.usuariosTableAdapter.FillBy(this.dS_QNS.Usuarios, txtFiltro.Text);
+                    this.UsuariosTableAdapter.FillBy(DS_QNS.Usuarios, txtFiltro.Text);
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
-                    this.usuariosTableAdapter.FillByApellido(this.dS_QNS.Usuarios, txtFiltro.Text);
+                    this.UsuariosTableAdapter.FillByCorreo(this.DS_QNS.Usuarios, txtFiltro.Text);
                 }
-                else if (cmbFiltro.SelectedIndex == 2)
-                {
-                    this.usuariosTableAdapter.FillByCorreo(this.dS_QNS.Usuarios, txtFiltro.Text);
-                }
-                else if (cmbFiltro.SelectedIndex == 3)
-                {
-                    this.usuariosTableAdapter.FillByNombre(this.dS_QNS.Usuarios, txtFiltro.Text);
-                }
+                
                 this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-           
-
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            this.usuariosTableAdapter.Fill(this.dS_QNS.Usuarios);
+            this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
 
             this.reportViewer1.RefreshReport();
         }
@@ -79,14 +68,13 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

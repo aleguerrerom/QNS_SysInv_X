@@ -33,7 +33,6 @@
             System.Windows.Forms.PictureBox pictureBox2;
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsArchivo = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ingresarConOtroUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarClaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMantenimiento = new System.Windows.Forms.ToolStripSplitButton();
@@ -112,26 +111,17 @@
             // tsArchivo
             // 
             this.tsArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresarConOtroUsuarioToolStripMenuItem,
             this.cambiarClaveToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.tsArchivo.Name = "tsArchivo";
             this.tsArchivo.Size = new System.Drawing.Size(63, 22);
             this.tsArchivo.Text = "Archivo";
             // 
-            // ingresarConOtroUsuarioToolStripMenuItem
-            // 
-            this.ingresarConOtroUsuarioToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ingresarConOtroUsuarioToolStripMenuItem.Name = "ingresarConOtroUsuarioToolStripMenuItem";
-            this.ingresarConOtroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.ingresarConOtroUsuarioToolStripMenuItem.Text = "Ingresar con otro Usuario";
-            this.ingresarConOtroUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ingresarConOtroUsuarioToolStripMenuItem_Click);
-            // 
             // cambiarClaveToolStripMenuItem
             // 
             this.cambiarClaveToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
-            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
             this.cambiarClaveToolStripMenuItem.Click += new System.EventHandler(this.cambiarClaveToolStripMenuItem_Click);
             // 
@@ -139,7 +129,7 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -377,7 +367,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusUsuario;
         private System.Windows.Forms.ToolStripDropDownButton tsArchivo;
-        private System.Windows.Forms.ToolStripMenuItem ingresarConOtroUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel aboutUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel tsAboutUs;

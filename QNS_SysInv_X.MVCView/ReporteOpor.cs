@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
 {
-    public partial class ReporteUsuario : Form
+    public partial class ReporteOpor : Form
     {
-        public ReporteUsuario()
+        public ReporteOpor()
         {
             InitializeComponent();
         }
 
         private Usuarios user;
 
-        public ReporteUsuario(Usuarios usuario)
+        public ReporteOpor(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;

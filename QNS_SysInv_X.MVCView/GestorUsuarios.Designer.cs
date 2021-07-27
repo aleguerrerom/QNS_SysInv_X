@@ -38,46 +38,47 @@
             this.deshabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.stsUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblClave = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblRol = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblApellido = new System.Windows.Forms.Label();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblConfirmar = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblConfirmar = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.rolBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -90,12 +91,23 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(14, 241);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(293, 137);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 47;
+            pictureBox1.TabStop = false;
             // 
             // toolStripLabel1
             // 
@@ -150,6 +162,12 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            // 
             // stsUsuario
             // 
             this.stsUsuario.Name = "stsUsuario";
@@ -179,6 +197,20 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Location = new System.Drawing.Point(8, 17);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(83, 16);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "USUARIO:      ";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtClave
             // 
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -205,6 +237,32 @@
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(332, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "    ";
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
+            // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.BackColor = System.Drawing.Color.Transparent;
+            this.lblClave.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Image = ((System.Drawing.Image)(resources.GetObject("lblClave.Image")));
+            this.lblClave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblClave.Location = new System.Drawing.Point(7, 16);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(107, 16);
+            this.lblClave.TabIndex = 3;
+            this.lblClave.Text = "CONTRASEÑA:      ";
+            this.lblClave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // cmbRol
             // 
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -230,6 +288,20 @@
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.BackColor = System.Drawing.Color.Transparent;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
+            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRol.Location = new System.Drawing.Point(7, 16);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(52, 16);
+            this.lblRol.TabIndex = 3;
+            this.lblRol.Text = "ROL:      ";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtNombre
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -253,6 +325,20 @@
             this.groupBox4.Size = new System.Drawing.Size(363, 44);
             this.groupBox4.TabIndex = 37;
             this.groupBox4.TabStop = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Image = ((System.Drawing.Image)(resources.GetObject("lblNombre.Image")));
+            this.lblNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombre.Location = new System.Drawing.Point(7, 16);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(80, 16);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "NOMBRE:      ";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtApellido
             // 
@@ -278,6 +364,17 @@
             this.groupBox5.TabIndex = 38;
             this.groupBox5.TabStop = false;
             // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Image = ((System.Drawing.Image)(resources.GetObject("lblApellido.Image")));
+            this.lblApellido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblApellido.Location = new System.Drawing.Point(8, 18);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(91, 13);
+            this.lblApellido.TabIndex = 33;
+            this.lblApellido.Text = "APELLIDO:     ";
+            // 
             // chckbxActivo
             // 
             this.chckbxActivo.AutoSize = true;
@@ -301,6 +398,20 @@
             this.groupBox6.Size = new System.Drawing.Size(363, 44);
             this.groupBox6.TabIndex = 38;
             this.groupBox6.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "ACTIVO:      ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtConfirmar
             // 
@@ -328,6 +439,32 @@
             this.groupBox7.TabIndex = 37;
             this.groupBox7.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(334, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 71;
+            this.label2.Text = "    ";
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
+            // 
+            // lblConfirmar
+            // 
+            this.lblConfirmar.AutoSize = true;
+            this.lblConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("lblConfirmar.Image")));
+            this.lblConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblConfirmar.Location = new System.Drawing.Point(7, 16);
+            this.lblConfirmar.Name = "lblConfirmar";
+            this.lblConfirmar.Size = new System.Drawing.Size(99, 16);
+            this.lblConfirmar.TabIndex = 3;
+            this.lblConfirmar.Text = "CONFIRMAR:      ";
+            this.lblConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtCorreo
             // 
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -351,6 +488,20 @@
             this.groupBox8.Size = new System.Drawing.Size(363, 44);
             this.groupBox8.TabIndex = 39;
             this.groupBox8.TabStop = false;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Image = ((System.Drawing.Image)(resources.GetObject("lblCorreo.Image")));
+            this.lblCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCorreo.Location = new System.Drawing.Point(7, 16);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(76, 16);
+            this.lblCorreo.TabIndex = 3;
+            this.lblCorreo.Text = "CORREO:      ";
+            this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStrip1
             // 
@@ -387,32 +538,6 @@
             this.label9.TabIndex = 69;
             this.label9.Text = "Buscar por Usuario";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(14, 241);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(293, 137);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 47;
-            pictureBox1.TabStop = false;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCorreo.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Image = ((System.Drawing.Image)(resources.GetObject("lblCorreo.Image")));
-            this.lblCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCorreo.Location = new System.Drawing.Point(7, 16);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(76, 16);
-            this.lblCorreo.TabIndex = 3;
-            this.lblCorreo.Text = "CORREO:      ";
-            this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnReport
             // 
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
@@ -425,32 +550,6 @@
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(334, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 71;
-            this.label2.Text = "    ";
-            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
-            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
-            // 
-            // lblConfirmar
-            // 
-            this.lblConfirmar.AutoSize = true;
-            this.lblConfirmar.BackColor = System.Drawing.Color.Transparent;
-            this.lblConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("lblConfirmar.Image")));
-            this.lblConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblConfirmar.Location = new System.Drawing.Point(7, 16);
-            this.lblConfirmar.Name = "lblConfirmar";
-            this.lblConfirmar.Size = new System.Drawing.Size(99, 16);
-            this.lblConfirmar.TabIndex = 3;
-            this.lblConfirmar.Text = "CONFIRMAR:      ";
-            this.lblConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCancel
             // 
@@ -482,99 +581,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(7, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "ACTIVO:      ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Image = ((System.Drawing.Image)(resources.GetObject("lblApellido.Image")));
-            this.lblApellido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApellido.Location = new System.Drawing.Point(8, 18);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(91, 13);
-            this.lblApellido.TabIndex = 33;
-            this.lblApellido.Text = "APELLIDO:     ";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Image = ((System.Drawing.Image)(resources.GetObject("lblNombre.Image")));
-            this.lblNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNombre.Location = new System.Drawing.Point(7, 16);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(80, 16);
-            this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "NOMBRE:      ";
-            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.BackColor = System.Drawing.Color.Transparent;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
-            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblRol.Location = new System.Drawing.Point(7, 16);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(52, 16);
-            this.lblRol.TabIndex = 3;
-            this.lblRol.Text = "ROL:      ";
-            this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(332, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "    ";
-            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            this.label1.MouseHover += new System.EventHandler(this.label1_MouseHover);
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.BackColor = System.Drawing.Color.Transparent;
-            this.lblClave.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Image = ((System.Drawing.Image)(resources.GetObject("lblClave.Image")));
-            this.lblClave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblClave.Location = new System.Drawing.Point(7, 16);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(107, 16);
-            this.lblClave.TabIndex = 3;
-            this.lblClave.Text = "CONTRASEÑA:      ";
-            this.lblClave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
-            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUsuario.Location = new System.Drawing.Point(8, 17);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(83, 16);
-            this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "USUARIO:      ";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // rolBindingSource3
             // 
             this.rolBindingSource3.DataMember = "Rol";
@@ -590,12 +596,6 @@
             // rolBindingSource1
             // 
             this.rolBindingSource1.DataMember = "Rol";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // GestorUsuarios
             // 
@@ -630,6 +630,7 @@
             this.Text = "GESTOR DE USUARIOS  | QNS_SysInv_X";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.GestorUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
@@ -652,7 +653,6 @@
             this.groupBox8.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
