@@ -119,14 +119,18 @@
             // 
             // dgvListar
             // 
+            this.dgvListar.AllowUserToResizeColumns = false;
+            this.dgvListar.AllowUserToResizeRows = false;
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListar.ContextMenuStrip = this.contextMenuStrip2;
             this.dgvListar.Location = new System.Drawing.Point(14, 388);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
+            this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(769, 211);
             this.dgvListar.TabIndex = 12;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);

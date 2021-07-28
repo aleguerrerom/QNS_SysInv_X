@@ -34,10 +34,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvListar = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.stsUsuario = new System.Windows.Forms.StatusStrip();
@@ -48,6 +46,8 @@
             this.cmbTelefono = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.cmbDireccion = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
@@ -106,26 +106,19 @@
             // 
             // dgvListar
             // 
+            this.dgvListar.AllowUserToResizeColumns = false;
+            this.dgvListar.AllowUserToResizeRows = false;
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListar.Location = new System.Drawing.Point(12, 174);
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
+            this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(697, 208);
             this.dgvListar.TabIndex = 56;
             this.dgvListar.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListar_RowHeaderMouseClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(331, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 16);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "SELECCIONE ARTICULO:";
             // 
             // toolStrip1
             // 
@@ -144,16 +137,6 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtID.Location = new System.Drawing.Point(470, 47);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(112, 20);
-            this.txtID.TabIndex = 59;
             // 
             // cmbCliente
             // 
@@ -196,7 +179,7 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(602, 127);
+            this.btnReport.Location = new System.Drawing.Point(600, 127);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 30);
             this.btnReport.TabIndex = 63;
@@ -216,29 +199,46 @@
             // cmbContacto
             // 
             this.cmbContacto.FormattingEnabled = true;
-            this.cmbContacto.Location = new System.Drawing.Point(602, 47);
+            this.cmbContacto.Location = new System.Drawing.Point(630, 132);
             this.cmbContacto.Name = "cmbContacto";
-            this.cmbContacto.Size = new System.Drawing.Size(96, 21);
+            this.cmbContacto.Size = new System.Drawing.Size(10, 21);
             this.cmbContacto.TabIndex = 65;
-            this.cmbContacto.Visible = false;
             // 
             // cmbTelefono
             // 
             this.cmbTelefono.FormattingEnabled = true;
-            this.cmbTelefono.Location = new System.Drawing.Point(602, 20);
+            this.cmbTelefono.Location = new System.Drawing.Point(665, 133);
             this.cmbTelefono.Name = "cmbTelefono";
-            this.cmbTelefono.Size = new System.Drawing.Size(96, 21);
+            this.cmbTelefono.Size = new System.Drawing.Size(10, 21);
             this.cmbTelefono.TabIndex = 66;
-            this.cmbTelefono.Visible = false;
             // 
             // cmbDireccion
             // 
             this.cmbDireccion.FormattingEnabled = true;
-            this.cmbDireccion.Location = new System.Drawing.Point(470, 19);
+            this.cmbDireccion.Location = new System.Drawing.Point(646, 132);
             this.cmbDireccion.Name = "cmbDireccion";
-            this.cmbDireccion.Size = new System.Drawing.Size(121, 21);
+            this.cmbDireccion.Size = new System.Drawing.Size(13, 21);
             this.cmbDireccion.TabIndex = 67;
-            this.cmbDireccion.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(331, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "SELECCIONE ARTICULO:";
+            // 
+            // txtID
+            // 
+            this.txtID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtID.Location = new System.Drawing.Point(470, 47);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(112, 20);
+            this.txtID.TabIndex = 59;
             // 
             // GestorPrestamo
             // 
@@ -283,10 +283,8 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvListar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.StatusStrip stsUsuario;
@@ -297,5 +295,7 @@
         private System.Windows.Forms.ComboBox cmbTelefono;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox cmbDireccion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

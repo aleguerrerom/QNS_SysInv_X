@@ -159,6 +159,8 @@
             // 
             // dgvListar
             // 
+            this.dgvListar.AllowUserToResizeColumns = false;
+            this.dgvListar.AllowUserToResizeRows = false;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NºParte,
@@ -168,7 +170,9 @@
             this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListar.Location = new System.Drawing.Point(9, 469);
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
+            this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(734, 82);
             this.dgvListar.TabIndex = 45;
             this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);

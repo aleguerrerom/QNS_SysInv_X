@@ -150,5 +150,10 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
+
+        private void dgvListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

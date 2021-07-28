@@ -81,7 +81,7 @@ namespace QNS_SysInv_X.MVCView
         private void Prestamo_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtID;
-       //   dgvListar.AllowUserToAddRows = false;
+            dgvListar.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
         }
@@ -146,22 +146,30 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtID.Text == "")
-            {
-                MessageBox.Show("Selecciona un articulo para procesar prestamo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.ActiveControl = txtID;
-            }
+            //if (this.txtID.Text == "")
+            //{
+            //    MessageBox.Show("Selecciona un articulo para procesar prestamo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    this.ActiveControl = txtID;
+            //}
+            //else 
             if (this.cmbCliente.Text == "")
             {
                 MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.ActiveControl = cmbCliente;
             }
             else
-            {   
-                    procesarPrestamo();
-                    AlmacenarPrestamo();
-                    limpiar();
-                    listar();
+            {
+                foreach (DataGridViewRow r in dgvListar.Rows)
+                {
+                    if (r.Selected == true)
+                    {
+                        procesarPrestamo();
+                    }
+                }
+                        AlmacenarPrestamo();
+                        limpiar();
+                        listar();
+                MessageBox.Show("El articulo fue procesado para prestamo correctamente");
             }
             #endregion
         }
@@ -177,17 +185,37 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 //AGREGAR NUEVO USUARIO
-                this.inventario = new Inventario();
-                this.inventario.Id = int.Parse(this.txtID.Text);
-              
-                this.inventario.opc = 6;
-                this.invH = new InventarioHelper(inventario);
-                ///LOG PARA USUARIOS
-                ///
-                
-                this.invH.CambioDeEstado();
-                MessageBox.Show("El articulo fue procesado para prestamo correctamente");
+                this.table = (DataTable)this.dgvListar.DataSource;
+                if (table == null)
+                {
+                    MessageBox.Show("No hay Registros de roles para actualizar");
+                }
+                else
+                {
+                                this.inventario = new Inventario();
+                                int indice = dgvListar.CurrentRow.Index;
+                                DataRow fila = table.Rows[indice];
+                                this.inventario.Id = int.Parse(fila["ID"].ToString());
 
+                    //ReportePrestamo repoPrestamo = new ReportePrestamo(user);
+                    //Prestamos loop = new Prestamos();
+                    //loop.Id = int.Parse(fila["ID"].ToString());
+                    //loop.NombreArticulo = fila["Nombre"].ToString();
+                    //loop.Tipo = fila["Tipo"].ToString();
+                    //loop.NumerodeSerie = fila["Numero_de_Serie"].ToString();
+                    //loop.Marca = fila["Marca"].ToString();
+                    //loop.Modelo = fila["Modelo"].ToString();
+                    //loop.Estado = fila["Estado"].ToString();
+                    //loop.Fecha = DateTime.Parse(fila["Fecha_Modificación"].ToString());
+                    //repoPrestamo.prestamoLista.Add(loop);
+                    this.inventario.opc = 6;
+                                this.invH = new InventarioHelper(inventario);
+
+                                this.invH.CambioDeEstado();
+                        
+                    
+                    
+                }
             }
             catch (Exception ex)
             {
@@ -202,8 +230,10 @@ namespace QNS_SysInv_X.MVCView
                
                 //AGREGAR NUEVO PRESTAMO
                 this.prestamos = new Prestamos();
-
-                this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
+                int indice = dgvListar.CurrentRow.Index;
+                DataRow fila = table.Rows[indice];
+                // this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
+                this.prestamos.Id_articulo = int.Parse(fila["ID"].ToString());
                 this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
                
                 this.prestamos.opc = 7;
@@ -286,15 +316,15 @@ namespace QNS_SysInv_X.MVCView
         List<int> listaPrestamo = new List<int>();
         private void dgvListar_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int n = dgvListar.CurrentRow.Index;
-            dgvListar.Rows[n].Selected = false;
-            dgvListar.ClearSelection();
-            if (listaPrestamo.Contains(n))
-                listaPrestamo.Remove(n);
-            else
-                listaPrestamo.Add(n);
-            foreach (int i in listaPrestamo)
-            { dgvListar.Rows[i].Selected = true; }
+            //int n = dgvListar.CurrentRow.Index;
+            //dgvListar.Rows[n].Selected = false;
+            //dgvListar.ClearSelection();
+            //if (listaPrestamo.Contains(n))
+            //    listaPrestamo.Remove(n);
+            //else
+            //    listaPrestamo.Add(n);
+            //foreach (int i in listaPrestamo)
+            //{ dgvListar.Rows[i].Selected = true; }
         }
     }
 }
