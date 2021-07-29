@@ -212,9 +212,6 @@ namespace QNS_SysInv_X.MVCView
                                 this.invH = new InventarioHelper(inventario);
 
                                 this.invH.CambioDeEstado();
-                        
-                    
-                    
                 }
             }
             catch (Exception ex)

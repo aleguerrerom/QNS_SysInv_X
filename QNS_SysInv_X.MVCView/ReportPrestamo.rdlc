@@ -157,7 +157,7 @@
         <Top>1.39305cm</Top>
         <Left>12.1737cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.22182cm</Width>
+        <Width>5.63973cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -277,16 +277,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.05236cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.93062cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.83365cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.94364cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -303,7 +303,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.79375cm</Height>
+              <Height>0.68792cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -315,7 +315,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Id</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft JhengHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -327,6 +331,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -345,7 +350,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre Articulo</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft JhengHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -357,6 +366,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -375,7 +385,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Tipo</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft YaHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -387,6 +401,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -404,8 +419,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Numerode Serie</Value>
-                              <Style />
+                              <Value>Numero de Serie</Value>
+                              <Style>
+                                <FontFamily>Microsoft JhengHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -417,6 +436,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -435,7 +455,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Marca</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft JhengHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -447,6 +471,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -465,7 +490,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Modelo</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft JhengHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -477,6 +506,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -495,7 +525,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Estado</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft YaHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -507,6 +541,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -525,7 +560,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Microsoft YaHei</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -537,6 +576,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -816,13 +856,17 @@
               <TablixMembers>
                 <TablixMember />
               </TablixMembers>
+              <Visibility>
+                <Hidden>=IIF((Fields!Marca.Value=""),true,false)</Hidden>
+              </Visibility>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSPrestamoLocal</DataSetName>
-        <Top>3.03954cm</Top>
-        <Height>1.5875cm</Height>
-        <Width>20cm</Width>
+        <Top>2.32517cm</Top>
+        <Left>0.13639cm</Left>
+        <Height>1.48167cm</Height>
+        <Width>18.76028cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -834,7 +878,7 @@
     <Height>3.00384in</Height>
     <Style />
   </Body>
-  <Width>7.87402in</Width>
+  <Width>7.95596in</Width>
   <Page>
     <PageHeader>
       <Height>1.87854cm</Height>
@@ -877,9 +921,8 @@
           <Source>Embedded</Source>
           <Value>Screenshot_1</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.038cm</Left>
-          <Height>1.47849cm</Height>
-          <Width>3.7225cm</Width>
+          <Height>1.73743cm</Height>
+          <Width>4.11938cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -935,7 +978,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Left>15.4639cm</Left>
+          <Left>15.5521cm</Left>
           <Height>0.63528cm</Height>
           <Width>3.18382cm</Width>
           <ZIndex>3</ZIndex>
@@ -999,8 +1042,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox34</rd:DefaultName>
-          <Top>0.80849cm</Top>
-          <Left>13.41779cm</Left>
+          <Top>1.04097cm</Top>
+          <Left>13.45307cm</Left>
           <Height>0.64382cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>5</ZIndex>
@@ -1032,7 +1075,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.84377cm</Top>
+          <Top>1.05833cm</Top>
           <Left>15.5521cm</Left>
           <Height>0.64382cm</Height>
           <Width>3.09562cm</Width>

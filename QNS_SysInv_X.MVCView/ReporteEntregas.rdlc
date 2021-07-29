@@ -256,7 +256,7 @@
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
         <Top>2.11695cm</Top>
-        <Left>12.32022cm</Left>
+        <Left>12.40842cm</Left>
         <Height>0.6cm</Height>
         <Width>6.22182cm</Width>
         <ZIndex>7</ZIndex>
@@ -357,8 +357,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.94626cm</Top>
-        <Left>0.35347cm</Left>
+        <Top>2.89334cm</Top>
+        <Left>0.28291cm</Left>
         <Height>0.57354cm</Height>
         <Width>2.39006cm</Width>
         <ZIndex>10</ZIndex>
@@ -449,7 +449,7 @@
               <Width>1.28292cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.57969cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.95002cm</Width>
@@ -463,7 +463,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.07156cm</Height>
+              <Height>0.70114cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -815,14 +815,17 @@
             </TablixMember>
             <TablixMember>
               <Group Name="Details" />
+              <Visibility>
+                <Hidden>=IIF((Fields!Cantidad.Value=""),true,false)</Hidden>
+              </Visibility>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSEntrega</DataSetName>
-        <Top>4.64785cm</Top>
-        <Left>0.30937cm</Left>
-        <Height>2.14312cm</Height>
-        <Width>17.55612cm</Width>
+        <Top>3.88056cm</Top>
+        <Left>0.37736cm</Left>
+        <Height>1.7727cm</Height>
+        <Width>18.63581cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -859,8 +862,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Cliente</rd:DefaultName>
-          <Top>0.17083cm</Top>
-          <Left>14.41515cm</Left>
+          <Top>0.06499cm</Top>
+          <Left>14.10011cm</Left>
           <Height>0.6cm</Height>
           <Width>3.51833cm</Width>
           <Style>
@@ -892,10 +895,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.19729cm</Top>
-          <Left>12.32022cm</Left>
+          <Top>0.09145cm</Top>
+          <Left>12.20393cm</Left>
           <Height>0.57354cm</Height>
-          <Width>1.95382cm</Width>
+          <Width>1.79035cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -912,6 +915,8 @@
           <Source>Embedded</Source>
           <Value>Screenshot_1</Value>
           <Sizing>FitProportional</Sizing>
+          <Top>0.03527cm</Top>
+          <Left>0.25645cm</Left>
           <Height>2.46155cm</Height>
           <Width>6.53527cm</Width>
           <ZIndex>2</ZIndex>
@@ -939,8 +944,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Cliente</rd:DefaultName>
-          <Top>0.94722cm</Top>
-          <Left>14.41515cm</Left>
+          <Top>0.84138cm</Top>
+          <Left>14.29886cm</Left>
           <Height>0.6cm</Height>
           <Width>3.51833cm</Width>
           <ZIndex>3</ZIndex>
@@ -973,8 +978,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.97368cm</Top>
-          <Left>12.32022cm</Left>
+          <Top>0.86784cm</Top>
+          <Left>12.20393cm</Left>
           <Height>0.57354cm</Height>
           <Width>1.95382cm</Width>
           <ZIndex>4</ZIndex>
@@ -1000,7 +1005,7 @@
                   <Style>
                     <FontFamily>Microsoft YaHei</FontFamily>
                     <FontWeight>Bold</FontWeight>
-                    <Color>Teal</Color>
+                    <Color>CornflowerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1008,8 +1013,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>1.68833cm</Top>
-          <Left>14.40161cm</Left>
+          <Top>1.58249cm</Top>
+          <Left>14.28532cm</Left>
           <Height>0.63528cm</Height>
           <Width>3.53187cm</Width>
           <ZIndex>5</ZIndex>
@@ -1042,8 +1047,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>1.72361cm</Top>
-          <Left>12.32022cm</Left>
+          <Top>1.61777cm</Top>
+          <Left>12.20393cm</Left>
           <Height>0.70266cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>6</ZIndex>
