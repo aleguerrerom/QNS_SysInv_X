@@ -94,19 +94,20 @@ namespace QNS_SysInv_X.MVCView
 
         private void Prestamo_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = txtID;
+            this.ActiveControl = cmbCliente;
             dataGridView1.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
-            DataGridViewCheckBoxColumn dgvcCheckBox = new DataGridViewCheckBoxColumn();
-            dgvcCheckBox.HeaderText = "Select";
-            dgvcCheckBox.ReadOnly = false;
-            dataGridView1.ReadOnly = false;
-            dataGridView1.Columns.Insert(8, dgvcCheckBox);
-            dgvcCheckBox.TrueValue = 1;
-            dgvcCheckBox.FalseValue = 0;
-           // dataGridView1.Columns.Add(dgvcCheckBox);
-           // AdjustColumnOrder();
+            //DataGridViewCheckBoxColumn dgvcCheckBox = new DataGridViewCheckBoxColumn();
+            //dgvcCheckBox.HeaderText = "Select";
+            //dgvcCheckBox.ReadOnly = false;
+            dataGridView1.ReadOnly = true;
+            //dataGridView1.Columns.Insert(8, dgvcCheckBox);
+            //dgvcCheckBox.TrueValue = 1;
+            //dgvcCheckBox.FalseValue = 0;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            // dataGridView1.Columns.Add(dgvcCheckBox);
+            // AdjustColumnOrder();
         }
         #region LISTAR INVENTARIO
         private void listar()
@@ -139,24 +140,24 @@ namespace QNS_SysInv_X.MVCView
         #region CARGAR DE TABLA
         private void CargarFromTable()
         {
-            try
-            {
-                this.table = (DataTable)this.dataGridView1.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Registros para prestamo");
-                }
-                else
-                {
-                    int indice = dataGridView1.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.txtID.Text = fila["ID"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    this.table = (DataTable)this.dataGridView1.DataSource;
+            //    if (table == null)
+            //    {
+            //        MessageBox.Show("No hay Registros para prestamo");
+            //    }
+            //    else
+            //    {
+            //        int indice = dataGridView1.CurrentRow.Index;
+            //        DataRow fila = table.Rows[indice];
+            //        this.txtID.Text = fila["ID"].ToString();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
         #endregion
@@ -175,31 +176,24 @@ namespace QNS_SysInv_X.MVCView
             //    this.ActiveControl = txtID;
             //}
             //else 
-            if (this.cmbCliente.Text == "")
-            {
-                MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.ActiveControl = cmbCliente;
-            }
-            else
-            {
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    if (r.Selected == true)
-                    {
-                        procesarPrestamo();
-                    }
-                }
-                AlmacenarPrestamo();
-                limpiar();
-                listar();
-                MessageBox.Show("El articulo fue procesado para prestamo correctamente");
-            }
+            //if (this.cmbCliente.Text == "")
+            //{
+            //    MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    this.ActiveControl = cmbCliente;
+            //}
+            //else
+            //{
+            //            procesarPrestamo();
+            //    AlmacenarPrestamo();
+            //    limpiar();
+            //    listar();
+            //    MessageBox.Show("El articulo fue procesado para prestamo correctamente");
+            //}
             #endregion
         }
 
         private void limpiar()
         {
-            this.txtID.Text = "";
             this.cmbCliente.SelectedIndex = -1;
         }
 
@@ -207,8 +201,12 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                //AGREGAR NUEVO USUARIO
-                this.table = (DataTable)this.dataGridView1.DataSource;
+                for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
+                {
+                    if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
+                    {
+                        //AGREGAR NUEVO USUARIO
+                        this.table = (DataTable)this.dataGridView1.DataSource;
                 if (table == null)
                 {
                     MessageBox.Show("No hay Registros de roles para actualizar");
@@ -218,8 +216,13 @@ namespace QNS_SysInv_X.MVCView
                     this.inventario = new Inventario();
                     int indice = dataGridView1.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    this.inventario.Id = int.Parse(fila["ID"].ToString());
-
+                    //this.inventario.Id = int.Parse(fila["ID"].ToString());
+                    
+                            // row is selected
+                            Prestamos loop = new Prestamos();
+                            this.inventario.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
+                        }
+                    }
                     //ReportePrestamo repoPrestamo = new ReportePrestamo(user);
                     //Prestamos loop = new Prestamos();
                     //loop.Id = int.Parse(fila["ID"].ToString());
@@ -251,8 +254,17 @@ namespace QNS_SysInv_X.MVCView
                 this.prestamos = new Prestamos();
                 int indice = dataGridView1.CurrentRow.Index;
                 DataRow fila = table.Rows[indice];
-                // this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
-                this.prestamos.Id_articulo = int.Parse(fila["ID"].ToString());
+                //// this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
+                for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
+                {
+                    if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
+                    {
+                        // row is selected
+                        Prestamos loop = new Prestamos();
+                        this.prestamos.Id_articulo = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
+                    }
+                }
+                //this.prestamos.Id_articulo = int.Parse(fila["ID"].ToString());
                 this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
 
                 this.prestamos.opc = 7;
@@ -300,53 +312,83 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                Prestamos prestamos = new Prestamos();
-                ReportePrestamo repoPrestamo = new ReportePrestamo(user);
 
-                prestamos.Contacto = cmbContacto.Text;
-                prestamos.Telefono = cmbTelefono.Text;
-                prestamos.Nombre = cmbCliente.Text;
-                prestamos.Direcicon = cmbDireccion.Text;
-                repoPrestamo.prestamoLista.Add(prestamos);
-
-                //foreach (DataGridViewRow r in dataGridView1.Rows)
-                //{
-
-                for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
+                if (this.dataGridView1.SelectedRows.Count == 0)
                 {
-                    //if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Value.ToString()) == true)
-                    //{
-                    if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Selected.ToString()) == true)
+
+                    MessageBox.Show("Debes seleccionar al menos un articulo para el prestamo");
+                }
+               else if (this.cmbCliente.Text == "")
+                {
+                    MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.ActiveControl = cmbCliente;
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Desea procesar los articulos prestamo?", "PRESTAMO", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        // row is selected
-                        Prestamos loop = new Prestamos();
-                        loop.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
-                        loop.NombreArticulo = this.dataGridView1.Rows[i].Cells[1].Value.ToString();
-                        loop.Tipo = this.dataGridView1.Rows[i].Cells[2].Value.ToString();
-                        loop.NumerodeSerie = this.dataGridView1.Rows[i].Cells[3].Value.ToString();
-                        loop.Marca = this.dataGridView1.Rows[i].Cells[4].Value.ToString();
-                        loop.Modelo = this.dataGridView1.Rows[i].Cells[5].Value.ToString();
-                        loop.Estado = this.dataGridView1.Rows[i].Cells[6].Value.ToString();
-                        loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
-                        repoPrestamo.prestamoLista.Add(loop);
+                        Prestamos prestamos = new Prestamos();
+                        ReportePrestamo repoPrestamo = new ReportePrestamo(user);
+
+                        prestamos.Contacto = cmbContacto.Text;
+                        prestamos.Telefono = cmbTelefono.Text;
+                        prestamos.Nombre = cmbCliente.Text;
+                        prestamos.Direcicon = cmbDireccion.Text;
+                        repoPrestamo.prestamoLista.Add(prestamos);
+
+                        //foreach (DataGridViewRow r in dataGridView1.Rows)
+                        //{
+
+                        for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
+                        {
+                            //if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Value.ToString()) == true)
+                            //{
+                            if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
+                            {
+                                // row is selected
+                                Prestamos loop = new Prestamos();
+                                loop.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
+                                loop.NombreArticulo = this.dataGridView1.Rows[i].Cells[1].Value.ToString();
+                                loop.Tipo = this.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                                loop.NumerodeSerie = this.dataGridView1.Rows[i].Cells[3].Value.ToString();
+                                loop.Marca = this.dataGridView1.Rows[i].Cells[4].Value.ToString();
+                                loop.Modelo = this.dataGridView1.Rows[i].Cells[5].Value.ToString();
+                                loop.Estado = this.dataGridView1.Rows[i].Cells[6].Value.ToString();
+                                loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                                repoPrestamo.prestamoLista.Add(loop);
+                            }
+                        }
+
+                        procesarPrestamo();
+                        AlmacenarPrestamo();
+                        limpiar();
+                        listar();
+                        MessageBox.Show("El articulo fue procesado para prestamo correctamente");
+                        repoPrestamo.ShowDialog();
+                    }
+                   
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        MessageBox.Show("No se procesaron los articulos");
                     }
                 }
-                repoPrestamo.ShowDialog();
             }
         }
 
         List<int> listaPrestamo = new List<int>();
-        private void dgvListar_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+      
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //int n = dataGridView1.CurrentRow.Index;
-            //dataGridView1.Rows[n].Selected = false;
-            //dataGridView1.ClearSelection();
-            //if (listaPrestamo.Contains(n))
-            //    listaPrestamo.Remove(n);
-            //else
-            //    listaPrestamo.Add(n);
-            //foreach (int i in listaPrestamo)
-            //{ dataGridView1.Rows[i].Selected = true; }
+            int n = dataGridView1.CurrentRow.Index;
+            dataGridView1.Rows[n].Selected = false;
+            dataGridView1.ClearSelection();
+            if (listaPrestamo.Contains(n))
+                listaPrestamo.Remove(n);
+            else
+                listaPrestamo.Add(n);
+            foreach (int i in listaPrestamo)
+            { dataGridView1.Rows[i].Selected = true; }
         }
     }
 }

@@ -81,14 +81,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2589696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2571776">
       <assemblyIdentity name="CNV_Inventario.MVCView" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SgHENctfEv954Bq1PqFHmCDFn1zXt/V78QmvpTSAzG4=</dsig:DigestValue>
+        <dsig:DigestValue>P/GYObsj+yNN7sCrk7/PHoi2ok6n9zrYtl+QR9lpqlE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
