@@ -72,18 +72,41 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void AdjustColumnOrder()
+        {
+        //    dataGridView1.Columns["id"].DisplayIndex = 0;
+        //    dataGridView1.Columns["Nombre"].DisplayIndex = 1;
+        //    dataGridView1.Columns["Tipo"].DisplayIndex = 2;
+        //    dataGridView1.Columns["Numero_de_Serie"].DisplayIndex = 3;
+        //    dataGridView1.Columns["Marca"].DisplayIndex = 4;
+        //    dataGridView1.Columns["Modelo"].DisplayIndex = 5;
+        //    dataGridView1.Columns["Estado"].DisplayIndex = 6;
+        //    dataGridView1.Columns["Fecha_Modificación"].DisplayIndex = 7;
+            //dataGridView1.Columns["Select"].DisplayIndex = 8;
+            //dataGridView1.Columns["Select"].ReadOnly = false;
+        }
+
 
         private void Prestamo_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtID;
-            dgvListar.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
+            DataGridViewCheckBoxColumn dgvcCheckBox = new DataGridViewCheckBoxColumn();
+            dgvcCheckBox.HeaderText = "Select";
+            dgvcCheckBox.ReadOnly = false;
+            dataGridView1.ReadOnly = false;
+            dataGridView1.Columns.Insert(8, dgvcCheckBox);
+            dgvcCheckBox.TrueValue = 1;
+            dgvcCheckBox.FalseValue = 0;
+           // dataGridView1.Columns.Add(dgvcCheckBox);
+           // AdjustColumnOrder();
         }
         #region LISTAR INVENTARIO
         private void listar()
@@ -101,8 +124,8 @@ namespace QNS_SysInv_X.MVCView
 
                 if (this.table.Rows.Count > 0)
                 {
-                    this.dgvListar.DataSource = this.table;
-                    this.dgvListar.ReadOnly = true;
+                    this.dataGridView1.DataSource = this.table;
+                    this.dataGridView1.ReadOnly = true;
                 }
             }
             catch (Exception ex)
@@ -118,14 +141,14 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                this.table = (DataTable)this.dgvListar.DataSource;
+                this.table = (DataTable)this.dataGridView1.DataSource;
                 if (table == null)
                 {
                     MessageBox.Show("No hay Registros para prestamo");
                 }
                 else
                 {
-                    int indice = dgvListar.CurrentRow.Index;
+                    int indice = dataGridView1.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.txtID.Text = fila["ID"].ToString();
                 }
@@ -134,7 +157,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
         #endregion
 
@@ -159,16 +182,16 @@ namespace QNS_SysInv_X.MVCView
             }
             else
             {
-                foreach (DataGridViewRow r in dgvListar.Rows)
+                foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
                     if (r.Selected == true)
                     {
                         procesarPrestamo();
                     }
                 }
-                        AlmacenarPrestamo();
-                        limpiar();
-                        listar();
+                AlmacenarPrestamo();
+                limpiar();
+                listar();
                 MessageBox.Show("El articulo fue procesado para prestamo correctamente");
             }
             #endregion
@@ -185,17 +208,17 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 //AGREGAR NUEVO USUARIO
-                this.table = (DataTable)this.dgvListar.DataSource;
+                this.table = (DataTable)this.dataGridView1.DataSource;
                 if (table == null)
                 {
                     MessageBox.Show("No hay Registros de roles para actualizar");
                 }
                 else
                 {
-                                this.inventario = new Inventario();
-                                int indice = dgvListar.CurrentRow.Index;
-                                DataRow fila = table.Rows[indice];
-                                this.inventario.Id = int.Parse(fila["ID"].ToString());
+                    this.inventario = new Inventario();
+                    int indice = dataGridView1.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.inventario.Id = int.Parse(fila["ID"].ToString());
 
                     //ReportePrestamo repoPrestamo = new ReportePrestamo(user);
                     //Prestamos loop = new Prestamos();
@@ -209,9 +232,9 @@ namespace QNS_SysInv_X.MVCView
                     //loop.Fecha = DateTime.Parse(fila["Fecha_Modificación"].ToString());
                     //repoPrestamo.prestamoLista.Add(loop);
                     this.inventario.opc = 6;
-                                this.invH = new InventarioHelper(inventario);
+                    this.invH = new InventarioHelper(inventario);
 
-                                this.invH.CambioDeEstado();
+                    this.invH.CambioDeEstado();
                 }
             }
             catch (Exception ex)
@@ -219,20 +242,19 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void AlmacenarPrestamo()
         {
             try
             {
-               
                 //AGREGAR NUEVO PRESTAMO
                 this.prestamos = new Prestamos();
-                int indice = dgvListar.CurrentRow.Index;
+                int indice = dataGridView1.CurrentRow.Index;
                 DataRow fila = table.Rows[indice];
                 // this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
                 this.prestamos.Id_articulo = int.Parse(fila["ID"].ToString());
                 this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
-               
+
                 this.prestamos.opc = 7;
                 this.presH = new PrestamoHelper(prestamos);
 
@@ -244,7 +266,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
                 ///LOG PARA PRESTAMOS
-                
+
                 this.presH.Prestamo();
             }
             catch (Exception ex)
@@ -287,25 +309,28 @@ namespace QNS_SysInv_X.MVCView
                 prestamos.Direcicon = cmbDireccion.Text;
                 repoPrestamo.prestamoLista.Add(prestamos);
 
-                //foreach (DataGridViewRow r in dgvListar.Rows)
+                //foreach (DataGridViewRow r in dataGridView1.Rows)
                 //{
 
-                for (int i = 0; i < dgvListar.RowCount; i = i+ 1)
-                        {
-                        //if (r.Selected == true)
-                        //{
-                            // row is selected
-                            Prestamos loop = new Prestamos();
-                            loop.Id = int.Parse(this.dgvListar.Rows[i].Cells[0].Value.ToString());
-                            loop.NombreArticulo = this.dgvListar.Rows[i].Cells[1].Value.ToString();
-                            loop.Tipo = this.dgvListar.Rows[i].Cells[2].Value.ToString();
-                            loop.NumerodeSerie = this.dgvListar.Rows[i].Cells[3].Value.ToString();
-                            loop.Marca = this.dgvListar.Rows[i].Cells[4].Value.ToString();
-                            loop.Modelo = this.dgvListar.Rows[i].Cells[5].Value.ToString();
-                            loop.Estado = this.dgvListar.Rows[i].Cells[6].Value.ToString();
-                            loop.Fecha = DateTime.Parse(dgvListar.Rows[i].Cells[7].Value.ToString());
-                            repoPrestamo.prestamoLista.Add(loop);
+                for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
+                {
+                    //if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Value.ToString()) == true)
+                    //{
+                    if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Selected.ToString()) == true)
+                    {
+                        // row is selected
+                        Prestamos loop = new Prestamos();
+                        loop.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
+                        loop.NombreArticulo = this.dataGridView1.Rows[i].Cells[1].Value.ToString();
+                        loop.Tipo = this.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        loop.NumerodeSerie = this.dataGridView1.Rows[i].Cells[3].Value.ToString();
+                        loop.Marca = this.dataGridView1.Rows[i].Cells[4].Value.ToString();
+                        loop.Modelo = this.dataGridView1.Rows[i].Cells[5].Value.ToString();
+                        loop.Estado = this.dataGridView1.Rows[i].Cells[6].Value.ToString();
+                        loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                        repoPrestamo.prestamoLista.Add(loop);
                     }
+                }
                 repoPrestamo.ShowDialog();
             }
         }
@@ -313,16 +338,15 @@ namespace QNS_SysInv_X.MVCView
         List<int> listaPrestamo = new List<int>();
         private void dgvListar_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //int n = dgvListar.CurrentRow.Index;
-            //dgvListar.Rows[n].Selected = false;
-            //dgvListar.ClearSelection();
+            //int n = dataGridView1.CurrentRow.Index;
+            //dataGridView1.Rows[n].Selected = false;
+            //dataGridView1.ClearSelection();
             //if (listaPrestamo.Contains(n))
             //    listaPrestamo.Remove(n);
             //else
             //    listaPrestamo.Add(n);
             //foreach (int i in listaPrestamo)
-            //{ dgvListar.Rows[i].Selected = true; }
+            //{ dataGridView1.Rows[i].Selected = true; }
         }
     }
 }
-

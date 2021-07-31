@@ -48,11 +48,14 @@
             this.cmbDireccion = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.stsUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -106,14 +109,15 @@
             // 
             // dgvListar
             // 
+            this.dgvListar.AllowUserToOrderColumns = true;
             this.dgvListar.AllowUserToResizeColumns = false;
             this.dgvListar.AllowUserToResizeRows = false;
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListar.Location = new System.Drawing.Point(12, 174);
             this.dgvListar.Name = "dgvListar";
-            this.dgvListar.ReadOnly = true;
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(697, 208);
             this.dgvListar.TabIndex = 56;
@@ -162,7 +166,7 @@
             this.stsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.stsUsuario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsUsu});
-            this.stsUsuario.Location = new System.Drawing.Point(0, 400);
+            this.stsUsuario.Location = new System.Drawing.Point(0, 665);
             this.stsUsuario.Name = "stsUsuario";
             this.stsUsuario.Size = new System.Drawing.Size(719, 22);
             this.stsUsuario.TabIndex = 62;
@@ -240,12 +244,31 @@
             this.txtID.Size = new System.Drawing.Size(112, 20);
             this.txtID.TabIndex = 59;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 418);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(681, 228);
+            this.dataGridView1.TabIndex = 68;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(72, 389);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 69;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // GestorPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(719, 422);
+            this.ClientSize = new System.Drawing.Size(719, 687);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.cmbDireccion);
             this.Controls.Add(this.cmbTelefono);
@@ -262,8 +285,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(735, 461);
-            this.MinimumSize = new System.Drawing.Size(735, 461);
+            this.MaximumSize = new System.Drawing.Size(735, 761);
+            this.MinimumSize = new System.Drawing.Size(735, 726);
             this.Name = "GestorPrestamo";
             this.Text = "GESTOR DE PRESTAMOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Prestamo_Load);
@@ -273,6 +296,7 @@
             this.toolStrip1.PerformLayout();
             this.stsUsuario.ResumeLayout(false);
             this.stsUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +321,7 @@
         private System.Windows.Forms.ComboBox cmbDireccion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
