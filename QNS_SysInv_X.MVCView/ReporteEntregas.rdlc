@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>1.22591cm</Top>
-        <Left>3.13468cm</Left>
+        <Top>1.27883cm</Top>
+        <Left>3.1264cm</Left>
         <Height>0.6cm</Height>
         <Width>5.98717cm</Width>
         <Style>
@@ -52,8 +52,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.2259cm</Top>
-        <Left>0.70933cm</Left>
+        <Top>1.27882cm</Top>
+        <Left>0.70105cm</Left>
         <Height>0.57354cm</Height>
         <Width>2.39007cm</Width>
         <ZIndex>1</ZIndex>
@@ -86,8 +86,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>1.28764cm</Top>
-        <Left>12.88777cm</Left>
+        <Top>1.34056cm</Top>
+        <Left>12.87949cm</Left>
         <Height>0.6cm</Height>
         <Width>6.57828cm</Width>
         <ZIndex>2</ZIndex>
@@ -120,8 +120,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.3141cm</Top>
-        <Left>9.29824cm</Left>
+        <Top>1.36702cm</Top>
+        <Left>9.28996cm</Left>
         <Height>0.57354cm</Height>
         <Width>3.33375cm</Width>
         <ZIndex>3</ZIndex>
@@ -154,8 +154,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>2.03756cm</Top>
-        <Left>3.16114cm</Left>
+        <Top>2.09048cm</Top>
+        <Left>3.15286cm</Left>
         <Height>0.6cm</Height>
         <Width>5.96071cm</Width>
         <ZIndex>4</ZIndex>
@@ -188,8 +188,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.08166cm</Top>
-        <Left>0.73579cm</Left>
+        <Top>2.13458cm</Top>
+        <Left>0.72751cm</Left>
         <Height>0.57354cm</Height>
         <Width>2.39007cm</Width>
         <ZIndex>5</ZIndex>
@@ -224,8 +224,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.10583cm</Top>
-        <Left>0.70933cm</Left>
+        <Top>0.15875cm</Top>
+        <Left>0.70105cm</Left>
         <Height>0.97896cm</Height>
         <Width>12.80583cm</Width>
         <ZIndex>6</ZIndex>
@@ -256,8 +256,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>2.09049cm</Top>
-        <Left>12.8613cm</Left>
+        <Top>2.14341cm</Top>
+        <Left>12.85302cm</Left>
         <Height>0.6cm</Height>
         <Width>6.60475cm</Width>
         <ZIndex>7</ZIndex>
@@ -290,8 +290,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.11695cm</Top>
-        <Left>9.33352cm</Left>
+        <Top>2.16987cm</Top>
+        <Left>9.32524cm</Left>
         <Height>0.57354cm</Height>
         <Width>3.29847cm</Width>
         <ZIndex>8</ZIndex>
@@ -324,8 +324,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>2.89334cm</Top>
-        <Left>3.26697cm</Left>
+        <Top>2.94626cm</Top>
+        <Left>3.25869cm</Left>
         <Height>0.6cm</Height>
         <Width>5.89898cm</Width>
         <ZIndex>9</ZIndex>
@@ -358,8 +358,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.89334cm</Top>
-        <Left>0.73579cm</Left>
+        <Top>2.94626cm</Top>
+        <Left>0.72751cm</Left>
         <Height>0.57354cm</Height>
         <Width>2.39006cm</Width>
         <ZIndex>10</ZIndex>
@@ -392,8 +392,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>2.9198cm</Top>
-        <Left>12.8613cm</Left>
+        <Top>2.97272cm</Top>
+        <Left>12.85302cm</Left>
         <Height>0.6cm</Height>
         <Width>6.60475cm</Width>
         <ZIndex>11</ZIndex>
@@ -426,8 +426,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.89334cm</Top>
-        <Left>9.30706cm</Left>
+        <Top>2.94626cm</Top>
+        <Left>9.29878cm</Left>
         <Height>0.57354cm</Height>
         <Width>3.29847cm</Width>
         <ZIndex>12</ZIndex>
@@ -824,7 +824,7 @@
         </TablixRowHierarchy>
         <DataSetName>DSEntrega</DataSetName>
         <Top>3.88056cm</Top>
-        <Left>0.83024cm</Left>
+        <Left>0.75087cm</Left>
         <Height>1.7727cm</Height>
         <Width>18.63581cm</Width>
         <ZIndex>13</ZIndex>
@@ -834,93 +834,93 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Cliente2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Fecha.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>CornflowerBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Cliente</rd:DefaultName>
+        <Top>0.15875cm</Top>
+        <Left>15.50889cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.51833cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Color>Blue</Color>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FECHA:</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>CornflowerBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.18521cm</Top>
+        <Left>13.61271cm</Left>
+        <Height>0.57354cm</Height>
+        <Width>1.79035cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Color>Blue</Color>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.09375in</Height>
+    <Height>4.41667in</Height>
     <Style />
   </Body>
   <Width>8.66436in</Width>
   <Page>
     <PageHeader>
-      <Height>2.34689cm</Height>
+      <Height>1.81772cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Cliente2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Fields!Fecha.Value</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>CornflowerBlue</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Cliente</rd:DefaultName>
-          <Top>0.09145cm</Top>
-          <Left>13.36454cm</Left>
-          <Height>0.6cm</Height>
-          <Width>3.51833cm</Width>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox4">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>FECHA:</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>CornflowerBlue</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.11791cm</Top>
-          <Left>11.46836cm</Left>
-          <Height>0.57354cm</Height>
-          <Width>1.79035cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Image Name="Image2">
           <Source>Embedded</Source>
           <Value>Screenshot_1</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.10266cm</Top>
-          <Left>1.1076cm</Left>
-          <Height>2.24423cm</Height>
-          <Width>6.53527cm</Width>
-          <ZIndex>2</ZIndex>
+          <Top>0.12912cm</Top>
+          <Left>0.62255cm</Left>
+          <Height>1.36518cm</Height>
+          <Width>4.99092cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -945,11 +945,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Cliente</rd:DefaultName>
-          <Top>0.86784cm</Top>
-          <Left>13.56329cm</Left>
+          <Top>0.07699cm</Top>
+          <Left>13.0647cm</Left>
           <Height>0.6cm</Height>
           <Width>3.51833cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -979,11 +979,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.8943cm</Top>
-          <Left>11.46836cm</Left>
+          <Top>0.10345cm</Top>
+          <Left>10.96977cm</Left>
           <Height>0.57354cm</Height>
           <Width>1.95382cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -1014,11 +1014,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>1.60895cm</Top>
-          <Left>13.54975cm</Left>
+          <Top>0.8181cm</Top>
+          <Left>13.05116cm</Left>
           <Height>0.63528cm</Height>
           <Width>3.53187cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1048,11 +1048,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>1.64423cm</Top>
-          <Left>11.46836cm</Left>
+          <Top>0.85338cm</Top>
+          <Left>10.96977cm</Left>
           <Height>0.70266cm</Height>
           <Width>1.79035cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1071,7 +1071,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.32292cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1093,8 +1093,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox25</rd:DefaultName>
-          <Top>0.28367cm</Top>
-          <Left>11.37963cm</Left>
+          <Top>0.31013cm</Top>
+          <Left>8.31047cm</Left>
           <Height>0.63528cm</Height>
           <Width>2.77812cm</Width>
           <Style>
@@ -1125,8 +1125,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>0.28367cm</Top>
-          <Left>9.29824cm</Left>
+          <Top>0.31013cm</Top>
+          <Left>6.22908cm</Left>
           <Height>0.70266cm</Height>
           <Width>1.79035cm</Width>
           <ZIndex>1</ZIndex>
@@ -1149,10 +1149,10 @@
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
-    <RightMargin>0.5cm</RightMargin>
-    <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>0.5cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

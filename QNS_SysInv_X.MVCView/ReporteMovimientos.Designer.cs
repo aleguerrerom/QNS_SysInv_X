@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMovimientos));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +49,9 @@
             this.movimientosLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.MovimientosLogTableAdapter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFinal = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).BeginInit();
@@ -142,9 +145,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSMovimientos";
-            reportDataSource1.Value = this.MovimientosLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSMovimientos";
+            reportDataSource2.Value = this.MovimientosLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportMovimientos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 152);
             this.reportViewer1.Name = "reportViewer1";
@@ -173,7 +176,7 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(527, 66);
+            this.dtpFecha.Location = new System.Drawing.Point(415, 109);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(142, 22);
             this.dtpFecha.TabIndex = 1;
@@ -213,12 +216,42 @@
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
             // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(690, 109);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(165, 22);
+            this.dtpFechaFinal.TabIndex = 73;
+            // 
+            // lblFechaFinal
+            // 
+            this.lblFechaFinal.AutoSize = true;
+            this.lblFechaFinal.Location = new System.Drawing.Point(602, 114);
+            this.lblFechaFinal.Name = "lblFechaFinal";
+            this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
+            this.lblFechaFinal.TabIndex = 72;
+            this.lblFechaFinal.Text = "FECHA FINAL:";
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(324, 113);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(87, 16);
+            this.lblFechaInicio.TabIndex = 71;
+            this.lblFechaInicio.Text = "FECHA INICIO:";
+            // 
             // ReporteMovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(867, 494);
+            this.Controls.Add(this.dtpFechaFinal);
+            this.Controls.Add(this.lblFechaFinal);
+            this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
@@ -269,5 +302,8 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
+        private System.Windows.Forms.Label lblFechaFinal;
+        private System.Windows.Forms.Label lblFechaInicio;
     }
 }

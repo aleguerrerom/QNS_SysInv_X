@@ -315,6 +315,7 @@
     <EmbeddedResource Include="GestorRoles.resx">
       <DependentUpon>GestorRoles.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DS_QNS.xsc">
       <DependentUpon>DS_QNS.xsd</DependentUpon>
     </None>

@@ -163,7 +163,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             else if (this.txtClave.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo CLAVE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo CONTRASEÑA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblClave.BackColor = System.Drawing.Color.DarkRed;
                 lblClave.ForeColor = System.Drawing.Color.White;
                 groupBox2.BackColor = System.Drawing.Color.DarkRed;
@@ -173,7 +173,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             else if (validate_Spaces.IsMatch(txtClave.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
                 lblClave.BackColor = System.Drawing.Color.DarkRed;
                 lblClave.ForeColor = System.Drawing.Color.White;
@@ -187,7 +187,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
                 lblConfirmar.ForeColor = System.Drawing.Color.White;
-                groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                groupBox3.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = cmbRol;
                 return;
             }
@@ -195,8 +195,8 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 limpiarAlertas();
                 MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
-                lblConfirmar.ForeColor = System.Drawing.Color.White;
+                lblRol.BackColor = System.Drawing.Color.DarkRed;
+                lblRol.ForeColor = System.Drawing.Color.White;
                 groupBox7.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtConfirmar;
                 return;
@@ -204,7 +204,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             else if (this.cmbRol.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo rol esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo ROL esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cmbRol.BackColor = System.Drawing.Color.DarkRed;
                 cmbRol.ForeColor = System.Drawing.Color.White;
                 groupBox3.BackColor = System.Drawing.Color.DarkRed;
@@ -544,7 +544,6 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 ReporteUsuarios repU = new ReporteUsuarios(user);
                 repU.Show();
-                this.Close();
             }
         }
 

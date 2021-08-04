@@ -8264,9 +8264,10 @@ SELECT ID, usuario, fecha, movimiento, detalle FROM MovimientosLog WHERE (ID = @
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        ID, usuario, fecha, movimiento, detalle\r\nFROM            Movimiento" +
-                "sLog\r\nWHERE        (fecha LIKE @fecha)";
+                "sLog\r\nWHERE     Fecha BETWEEN @fecha AND @fechaFINAL";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFINAL", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID, usuario, fecha, movimiento, detalle FROM dbo.MovimientosLog where usua" +
@@ -8303,9 +8304,10 @@ SELECT ID, usuario, fecha, movimiento, detalle FROM MovimientosLog WHERE (ID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFecha(DS_QNS.MovimientosLogDataTable dataTable, System.DateTime fecha) {
+        public virtual int FillByFecha(DS_QNS.MovimientosLogDataTable dataTable, System.DateTime fecha, System.DateTime fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8317,9 +8319,10 @@ SELECT ID, usuario, fecha, movimiento, detalle FROM MovimientosLog WHERE (ID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS_QNS.MovimientosLogDataTable GetDataByFecha(System.DateTime fecha) {
+        public virtual DS_QNS.MovimientosLogDataTable GetDataByFecha(System.DateTime fecha, System.DateTime fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fecha));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL));
             DS_QNS.MovimientosLogDataTable dataTable = new DS_QNS.MovimientosLogDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8750,9 +8753,10 @@ SELECT ID, nombreCliente, fechaCierre, marca, detalles, presupuesto, vendedor FR
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID, nombreCliente, fechaCierre, marca, detalles, presupuesto, vendedor FRO" +
-                "M dbo.Oportunidades WHERE fechaCierre=@fechaCierre";
+                "M dbo.Oportunidades WHERE fechaCierre between @fechaCierre and @fechaEnd";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaCierre", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaCierre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaEnd", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaCierre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8809,9 +8813,10 @@ SELECT ID, nombreCliente, fechaCierre, marca, detalles, presupuesto, vendedor FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFecha(DS_QNS.OportunidadesDataTable dataTable, System.DateTime fechaCierre) {
+        public virtual int FillByFecha(DS_QNS.OportunidadesDataTable dataTable, System.DateTime fechaCierre, System.DateTime fechaEnd) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaCierre));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaEnd));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8823,9 +8828,10 @@ SELECT ID, nombreCliente, fechaCierre, marca, detalles, presupuesto, vendedor FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS_QNS.OportunidadesDataTable GetDataByFecha(System.DateTime fechaCierre) {
+        public virtual DS_QNS.OportunidadesDataTable GetDataByFecha(System.DateTime fechaCierre, System.DateTime fechaEnd) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaCierre));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaEnd));
             DS_QNS.OportunidadesDataTable dataTable = new DS_QNS.OportunidadesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10497,15 +10503,17 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ID, usuario, fechaInicio, fechaSalida FROM dbo.AuditLog where  fechaInicio" +
-                " like @fechaInicio";
+                " BETWEEN @fechaInicio AND @fechaFINAL";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaInicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicio", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaInicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFINAL", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaInicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ID, usuario, fechaInicio, fechaSalida FROM dbo.AuditLog where fechaSalida=" +
-                "@fechaSalida ";
+            this._commandCollection[2].CommandText = "SELECT ID, usuario, fechaInicio, fechaSalida FROM dbo.AuditLog where fechaSalida " +
+                "BETWEEN @fechaSalida AND @fechaFINAL";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFINAL", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID, usuario, fechaInicio, fechaSalida FROM dbo.AuditLog where usuario=@usu" +
@@ -10542,9 +10550,10 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByfechaInicio(DS_QNS.AuditLogDataTable dataTable, System.DateTime fechaInicio) {
+        public virtual int FillByfechaInicio(DS_QNS.AuditLogDataTable dataTable, System.DateTime fechaInicio, System.DateTime fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaInicio));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10556,9 +10565,10 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS_QNS.AuditLogDataTable GetDataByfechaInicio(System.DateTime fechaInicio) {
+        public virtual DS_QNS.AuditLogDataTable GetDataByfechaInicio(System.DateTime fechaInicio, System.DateTime fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaInicio));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL));
             DS_QNS.AuditLogDataTable dataTable = new DS_QNS.AuditLogDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10568,13 +10578,19 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByfechaSalida(DS_QNS.AuditLogDataTable dataTable, global::System.Nullable<global::System.DateTime> fechaSalida) {
+        public virtual int FillByfechaSalida(DS_QNS.AuditLogDataTable dataTable, global::System.Nullable<global::System.DateTime> fechaSalida, global::System.Nullable<global::System.DateTime> fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((fechaSalida.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaSalida.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fechaFINAL.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10587,13 +10603,19 @@ SELECT ID, usuario, fechaInicio, fechaSalida FROM AuditLog WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DS_QNS.AuditLogDataTable GetDataByfechaSalida(global::System.Nullable<global::System.DateTime> fechaSalida) {
+        public virtual DS_QNS.AuditLogDataTable GetDataByfechaSalida(global::System.Nullable<global::System.DateTime> fechaSalida, global::System.Nullable<global::System.DateTime> fechaFINAL) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((fechaSalida.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaSalida.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((fechaFINAL.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFINAL.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DS_QNS.AuditLogDataTable dataTable = new DS_QNS.AuditLogDataTable();
             this.Adapter.Fill(dataTable);

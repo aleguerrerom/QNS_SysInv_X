@@ -44,7 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkOportunidades = new System.Windows.Forms.CheckBox();
             this.chkVendedores = new System.Windows.Forms.CheckBox();
@@ -111,7 +110,7 @@
             this.dgvListar.ShowCellErrors = false;
             this.dgvListar.ShowRowErrors = false;
             this.dgvListar.Size = new System.Drawing.Size(625, 173);
-            this.dgvListar.TabIndex = 49;
+            this.dgvListar.TabIndex = 16;
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // groupBox1
@@ -135,7 +134,7 @@
             this.label2.Location = new System.Drawing.Point(6, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 16);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 34;
             this.label2.Text = "NOMBRE DE ROL:      ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -143,7 +142,7 @@
             // 
             this.txtRol.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(134, 14);
+            this.txtRol.Location = new System.Drawing.Point(134, 13);
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(153, 15);
             this.txtRol.TabIndex = 0;
@@ -156,7 +155,7 @@
             this.btnCancel.Location = new System.Drawing.Point(204, 322);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 27);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "CANCELAR";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -170,7 +169,7 @@
             this.btnAdd.Location = new System.Drawing.Point(12, 322);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 27);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "ACEPTAR";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -185,12 +184,11 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(330, 24);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(307, 301);
-            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
             // label7
@@ -199,10 +197,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(168, 13);
+            this.label7.Location = new System.Drawing.Point(149, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 16);
-            this.label7.TabIndex = 8;
+            this.label7.TabIndex = 0;
             this.label7.Text = "ACTIVO/INACTIVO:      ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -215,7 +213,7 @@
             this.label6.Location = new System.Drawing.Point(6, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 16);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 1;
             this.label6.Text = "ENTREGA:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -228,7 +226,7 @@
             this.label5.Location = new System.Drawing.Point(6, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
-            this.label5.TabIndex = 6;
+            this.label5.TabIndex = 2;
             this.label5.Text = "PRESTAMO:      ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -241,7 +239,7 @@
             this.label4.Location = new System.Drawing.Point(6, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 16);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 3;
             this.label4.Text = "GESTOR DE USUARIOS:      ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -267,17 +265,9 @@
             this.label1.Location = new System.Drawing.Point(6, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 5;
             this.label1.Text = "OPCIONES:      ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(134, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 13);
-            this.textBox1.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -298,8 +288,8 @@
             this.groupBox3.Location = new System.Drawing.Point(4, 32);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(297, 263);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = true;
             // 
             // chkOportunidades
             // 
@@ -307,7 +297,7 @@
             this.chkOportunidades.Location = new System.Drawing.Point(204, 180);
             this.chkOportunidades.Name = "chkOportunidades";
             this.chkOportunidades.Size = new System.Drawing.Size(15, 14);
-            this.chkOportunidades.TabIndex = 7;
+            this.chkOportunidades.TabIndex = 10;
             this.chkOportunidades.UseVisualStyleBackColor = true;
             // 
             // chkVendedores
@@ -316,7 +306,7 @@
             this.chkVendedores.Location = new System.Drawing.Point(204, 209);
             this.chkVendedores.Name = "chkVendedores";
             this.chkVendedores.Size = new System.Drawing.Size(15, 14);
-            this.chkVendedores.TabIndex = 8;
+            this.chkVendedores.TabIndex = 11;
             this.chkVendedores.UseVisualStyleBackColor = true;
             // 
             // chkClientesx
@@ -325,7 +315,7 @@
             this.chkClientesx.Location = new System.Drawing.Point(204, 237);
             this.chkClientesx.Name = "chkClientesx";
             this.chkClientesx.Size = new System.Drawing.Size(15, 14);
-            this.chkClientesx.TabIndex = 9;
+            this.chkClientesx.TabIndex = 12;
             this.chkClientesx.UseVisualStyleBackColor = true;
             // 
             // label12
@@ -337,7 +327,7 @@
             this.label12.Location = new System.Drawing.Point(1, 235);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 16);
-            this.label12.TabIndex = 16;
+            this.label12.TabIndex = 12;
             this.label12.Text = "GESTOR CLIENTES:      ";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -350,7 +340,7 @@
             this.label11.Location = new System.Drawing.Point(1, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(154, 16);
-            this.label11.TabIndex = 15;
+            this.label11.TabIndex = 13;
             this.label11.Text = "GESTOR VENDEDORES:      ";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -373,7 +363,7 @@
             this.chkBitacora.Location = new System.Drawing.Point(204, 151);
             this.chkBitacora.Name = "chkBitacora";
             this.chkBitacora.Size = new System.Drawing.Size(15, 14);
-            this.chkBitacora.TabIndex = 6;
+            this.chkBitacora.TabIndex = 9;
             this.chkBitacora.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -385,7 +375,7 @@
             this.label9.Location = new System.Drawing.Point(1, 149);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 16);
-            this.label9.TabIndex = 12;
+            this.label9.TabIndex = 15;
             this.label9.Text = "BITACORA:      ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -395,7 +385,7 @@
             this.chckRoles.Location = new System.Drawing.Point(204, 124);
             this.chckRoles.Name = "chckRoles";
             this.chckRoles.Size = new System.Drawing.Size(15, 14);
-            this.chckRoles.TabIndex = 5;
+            this.chckRoles.TabIndex = 8;
             this.chckRoles.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -407,7 +397,7 @@
             this.label8.Location = new System.Drawing.Point(1, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(131, 16);
-            this.label8.TabIndex = 10;
+            this.label8.TabIndex = 16;
             this.label8.Text = "GESTOR DE ROLES:      ";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -417,7 +407,7 @@
             this.chkEntrega.Location = new System.Drawing.Point(204, 98);
             this.chkEntrega.Name = "chkEntrega";
             this.chkEntrega.Size = new System.Drawing.Size(15, 14);
-            this.chkEntrega.TabIndex = 4;
+            this.chkEntrega.TabIndex = 7;
             this.chkEntrega.UseVisualStyleBackColor = true;
             // 
             // chkPrestamo
@@ -426,7 +416,7 @@
             this.chkPrestamo.Location = new System.Drawing.Point(204, 68);
             this.chkPrestamo.Name = "chkPrestamo";
             this.chkPrestamo.Size = new System.Drawing.Size(15, 14);
-            this.chkPrestamo.TabIndex = 3;
+            this.chkPrestamo.TabIndex = 6;
             this.chkPrestamo.UseVisualStyleBackColor = true;
             // 
             // chckUsuarios
@@ -435,7 +425,7 @@
             this.chckUsuarios.Location = new System.Drawing.Point(204, 40);
             this.chckUsuarios.Name = "chckUsuarios";
             this.chckUsuarios.Size = new System.Drawing.Size(15, 14);
-            this.chckUsuarios.TabIndex = 2;
+            this.chckUsuarios.TabIndex = 5;
             this.chckUsuarios.UseVisualStyleBackColor = true;
             // 
             // chkInventario
@@ -444,7 +434,7 @@
             this.chkInventario.Location = new System.Drawing.Point(204, 12);
             this.chkInventario.Name = "chkInventario";
             this.chkInventario.Size = new System.Drawing.Size(15, 14);
-            this.chkInventario.TabIndex = 1;
+            this.chkInventario.TabIndex = 4;
             this.chkInventario.UseVisualStyleBackColor = true;
             // 
             // cmsOpciones
@@ -475,7 +465,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 533);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(649, 22);
-            this.statusStrip1.TabIndex = 51;
+            this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // stsUsuario
@@ -502,7 +492,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(649, 25);
-            this.toolStrip1.TabIndex = 67;
+            this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel2
@@ -519,16 +509,16 @@
             this.label13.Location = new System.Drawing.Point(327, 333);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(145, 16);
-            this.label13.TabIndex = 71;
+            this.label13.TabIndex = 4;
             this.label13.Text = "BUSCAR POR ID DE ROL:";
             // 
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(482, 331);
+            this.txtBuscar.Location = new System.Drawing.Point(482, 329);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(154, 22);
-            this.txtBuscar.TabIndex = 70;
+            this.txtBuscar.TabIndex = 15;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtID
@@ -536,7 +526,8 @@
             this.txtID.Location = new System.Drawing.Point(119, 296);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 73;
+            this.txtID.TabIndex = 3;
+            this.txtID.TabStop = false;
             this.txtID.Visible = false;
             // 
             // groupBox6
@@ -550,7 +541,7 @@
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox6.Size = new System.Drawing.Size(293, 44);
-            this.groupBox6.TabIndex = 74;
+            this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             // 
             // chckbxActivo
@@ -560,7 +551,7 @@
             this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chckbxActivo.Name = "chckbxActivo";
             this.chckbxActivo.Size = new System.Drawing.Size(15, 14);
-            this.chckbxActivo.TabIndex = 6;
+            this.chckbxActivo.TabIndex = 2;
             this.chckbxActivo.UseVisualStyleBackColor = true;
             // 
             // label14
@@ -635,7 +626,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkEntrega;

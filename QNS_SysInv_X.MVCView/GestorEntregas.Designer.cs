@@ -43,7 +43,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpContacto = new System.Windows.Forms.GroupBox();
-            this.txtContacto = new System.Windows.Forms.TextBox();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.lblContacto = new System.Windows.Forms.Label();
             this.gpMarca = new System.Windows.Forms.GroupBox();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -52,11 +52,11 @@
             this.txtSN = new System.Windows.Forms.TextBox();
             this.lblNS = new System.Windows.Forms.Label();
             this.gbDireccion = new System.Windows.Forms.GroupBox();
+            this.cmbDireccion = new System.Windows.Forms.ComboBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.gpCantidad = new System.Windows.Forms.GroupBox();
@@ -78,13 +78,9 @@
             this.txtNumFactura = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbTelefono = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbCliente = new System.Windows.Forms.ComboBox();
-            this.cmbDireccion = new System.Windows.Forms.ComboBox();
             this.cmbTelefono = new System.Windows.Forms.ComboBox();
-            this.cmbNombre = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpFecha.SuspendLayout();
@@ -220,7 +216,6 @@
             // 
             this.gpContacto.BackColor = System.Drawing.Color.White;
             this.gpContacto.Controls.Add(this.cmbNombre);
-            this.gpContacto.Controls.Add(this.txtContacto);
             this.gpContacto.Controls.Add(this.lblContacto);
             this.gpContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpContacto.Location = new System.Drawing.Point(380, 16);
@@ -231,15 +226,15 @@
             this.gpContacto.TabIndex = 51;
             this.gpContacto.TabStop = false;
             // 
-            // txtContacto
+            // cmbNombre
             // 
-            this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContacto.Location = new System.Drawing.Point(159, 16);
-            this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(197, 13);
-            this.txtContacto.TabIndex = 100;
-            this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
+            this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(159, 14);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(191, 21);
+            this.cmbNombre.TabIndex = 2;
+            this.cmbNombre.SelectedValueChanged += new System.EventHandler(this.cmbNombre_SelectedValueChanged);
             // 
             // lblContacto
             // 
@@ -332,7 +327,6 @@
             this.gbDireccion.BackColor = System.Drawing.Color.White;
             this.gbDireccion.Controls.Add(this.cmbDireccion);
             this.gbDireccion.Controls.Add(this.lblDireccion);
-            this.gbDireccion.Controls.Add(this.txtDireccion);
             this.gbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDireccion.Location = new System.Drawing.Point(7, 68);
             this.gbDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -341,6 +335,16 @@
             this.gbDireccion.Size = new System.Drawing.Size(363, 44);
             this.gbDireccion.TabIndex = 47;
             this.gbDireccion.TabStop = false;
+            // 
+            // cmbDireccion
+            // 
+            this.cmbDireccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDireccion.FormattingEnabled = true;
+            this.cmbDireccion.Location = new System.Drawing.Point(117, 16);
+            this.cmbDireccion.Name = "cmbDireccion";
+            this.cmbDireccion.Size = new System.Drawing.Size(225, 21);
+            this.cmbDireccion.TabIndex = 3;
+            this.cmbDireccion.SelectedIndexChanged += new System.EventHandler(this.cmbDireccion_SelectedIndexChanged);
             // 
             // lblDireccion
             // 
@@ -356,22 +360,11 @@
             this.lblDireccion.Text = "DIRECCION:      ";
             this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDireccion.Location = new System.Drawing.Point(159, 18);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(193, 13);
-            this.txtDireccion.TabIndex = 100;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
-            // 
             // gbCliente
             // 
             this.gbCliente.BackColor = System.Drawing.Color.White;
             this.gbCliente.Controls.Add(this.cmbCliente);
             this.gbCliente.Controls.Add(this.lblCliente);
-            this.gbCliente.Controls.Add(this.txtCliente);
             this.gbCliente.Location = new System.Drawing.Point(6, 16);
             this.gbCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbCliente.Name = "gbCliente";
@@ -379,6 +372,16 @@
             this.gbCliente.Size = new System.Drawing.Size(363, 44);
             this.gbCliente.TabIndex = 46;
             this.gbCliente.TabStop = false;
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(118, 14);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(225, 24);
+            this.cmbCliente.TabIndex = 1;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // lblCliente
             // 
@@ -393,17 +396,6 @@
             this.lblCliente.TabIndex = 3;
             this.lblCliente.Text = "CLIENTE:      ";
             this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(156, 20);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(197, 13);
-            this.txtCliente.TabIndex = 101;
-            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // toolStrip1
             // 
@@ -514,7 +506,7 @@
             // txtEntregadoPor
             // 
             this.txtEntregadoPor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEntregadoPor.Location = new System.Drawing.Point(160, 16);
+            this.txtEntregadoPor.Location = new System.Drawing.Point(160, 18);
             this.txtEntregadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEntregadoPor.Name = "txtEntregadoPor";
             this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
@@ -625,10 +617,10 @@
             // txtNumFactura
             // 
             this.txtNumFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumFactura.Location = new System.Drawing.Point(181, 18);
+            this.txtNumFactura.Location = new System.Drawing.Point(166, 18);
             this.txtNumFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumFactura.Name = "txtNumFactura";
-            this.txtNumFactura.Size = new System.Drawing.Size(169, 13);
+            this.txtNumFactura.Size = new System.Drawing.Size(184, 13);
             this.txtNumFactura.TabIndex = 6;
             this.txtNumFactura.TextChanged += new System.EventHandler(this.txtNumFactura_TextChanged);
             // 
@@ -654,7 +646,6 @@
             this.gbTelefono.BackColor = System.Drawing.Color.White;
             this.gbTelefono.Controls.Add(this.cmbTelefono);
             this.gbTelefono.Controls.Add(this.label2);
-            this.gbTelefono.Controls.Add(this.txtTelefono);
             this.gbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTelefono.Location = new System.Drawing.Point(7, 169);
             this.gbTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -663,6 +654,16 @@
             this.gbTelefono.Size = new System.Drawing.Size(363, 44);
             this.gbTelefono.TabIndex = 54;
             this.gbTelefono.TabStop = false;
+            // 
+            // cmbTelefono
+            // 
+            this.cmbTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTelefono.FormattingEnabled = true;
+            this.cmbTelefono.Location = new System.Drawing.Point(117, 13);
+            this.cmbTelefono.Name = "cmbTelefono";
+            this.cmbTelefono.Size = new System.Drawing.Size(225, 21);
+            this.cmbTelefono.TabIndex = 7;
+            this.cmbTelefono.SelectedIndexChanged += new System.EventHandler(this.cmbTelefono_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -676,16 +677,6 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "TELEFONO:           ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefono.Location = new System.Drawing.Point(159, 18);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(191, 13);
-            this.txtTelefono.TabIndex = 200;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // groupBox3
             // 
@@ -702,42 +693,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ARTICULOS A ENTREGAR";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // cmbCliente
-            // 
-            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(118, 14);
-            this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(225, 24);
-            this.cmbCliente.TabIndex = 1;
-            // 
-            // cmbDireccion
-            // 
-            this.cmbDireccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDireccion.FormattingEnabled = true;
-            this.cmbDireccion.Location = new System.Drawing.Point(117, 16);
-            this.cmbDireccion.Name = "cmbDireccion";
-            this.cmbDireccion.Size = new System.Drawing.Size(225, 21);
-            this.cmbDireccion.TabIndex = 3;
-            // 
-            // cmbTelefono
-            // 
-            this.cmbTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTelefono.FormattingEnabled = true;
-            this.cmbTelefono.Location = new System.Drawing.Point(126, 13);
-            this.cmbTelefono.Name = "cmbTelefono";
-            this.cmbTelefono.Size = new System.Drawing.Size(216, 21);
-            this.cmbTelefono.TabIndex = 7;
-            // 
-            // cmbNombre
-            // 
-            this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(159, 14);
-            this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(191, 21);
-            this.cmbNombre.TabIndex = 2;
             // 
             // GestorEntregas
             // 
@@ -814,15 +769,12 @@
         private System.Windows.Forms.Label lblNS;
         private System.Windows.Forms.GroupBox gbDireccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.GroupBox gbCliente;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TextBox txtSN;
-        private System.Windows.Forms.TextBox txtContacto;
         private System.Windows.Forms.GroupBox gpCantidad;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblCantidad;
@@ -842,7 +794,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox gbTelefono;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn NºParte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;

@@ -29,6 +29,10 @@ namespace QNS_SysInv_X.MVCView
             // TODO: This line of code loads data into the 'dS_QNS.MovimientosLog' table. You can move, or remove it, as needed.
             this.movimientosLogTableAdapter.Fill(this.dS_QNS.MovimientosLog);
             this.reportViewer1.RefreshReport();
+            dtpFecha.Value = DateTime.Today;
+            dtpFechaFinal.Value = DateTime.Today;
+            txtFiltro.Visible = false;
+            cmbFiltro.SelectedIndex = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +45,12 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
-                    this.movimientosLogTableAdapter.FillByFecha(this.dS_QNS.MovimientosLog, dtpFecha.Value);
+                    if (dtpFecha.Value > dtpFechaFinal.Value)
+                    {
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    this.movimientosLogTableAdapter.FillByFecha(this.dS_QNS.MovimientosLog, dtpFecha.Value,dtpFechaFinal.Value);
                 }
                 this.reportViewer1.RefreshReport();
             }
@@ -69,12 +78,20 @@ namespace QNS_SysInv_X.MVCView
             {
                 txtFiltro.Visible = true;
                 dtpFecha.Visible = false;
+                dtpFecha.Visible = false;
+                dtpFechaFinal.Visible = false;
+                lblFechaInicio.Visible = false;
+                lblFechaFinal.Visible = false;
 
             }
             else if (cmbFiltro.SelectedIndex == 1)
             {
                 dtpFecha.Visible = true;
                 txtFiltro.Visible = false;
+                dtpFecha.Visible = true;
+                dtpFechaFinal.Visible = true;
+                lblFechaInicio.Visible = true;
+                lblFechaFinal.Visible = true;
 
             }
         }

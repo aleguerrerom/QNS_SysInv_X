@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteLogsInicio));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AuditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +46,9 @@
             this.auditLogTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.AuditLogTableAdapter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFechaFinal = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AuditLogBindingSource)).BeginInit();
@@ -74,13 +77,13 @@
             // dS_QNS
             // 
             this.dS_QNS.DataSetName = "DS_QNS";
-            dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 82);
+            this.label1.Location = new System.Drawing.Point(320, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -91,7 +94,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(670, 74);
+            this.button1.Location = new System.Drawing.Point(668, 43);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
@@ -105,7 +108,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(763, 74);
+            this.button2.Location = new System.Drawing.Point(761, 43);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
@@ -117,7 +120,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(526, 78);
+            this.txtFiltro.Location = new System.Drawing.Point(524, 47);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(138, 22);
             this.txtFiltro.TabIndex = 2;
@@ -130,7 +133,7 @@
             "Usuario",
             "Fecha de Inicio",
             "Fecha de Salida"});
-            this.cmbFiltro.Location = new System.Drawing.Point(413, 76);
+            this.cmbFiltro.Location = new System.Drawing.Point(411, 45);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 0;
@@ -139,9 +142,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSLogInicio";
-            reportDataSource1.Value = this.AuditLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DSLogInicio";
+            reportDataSource3.Value = this.AuditLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportLogsInicio.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(14, 131);
             this.reportViewer1.Name = "reportViewer1";
@@ -170,7 +173,7 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(526, 78);
+            this.dtpFecha.Location = new System.Drawing.Point(411, 85);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(138, 22);
             this.dtpFecha.TabIndex = 1;
@@ -196,12 +199,42 @@
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
             // 
+            // lblFechaFinal
+            // 
+            this.lblFechaFinal.AutoSize = true;
+            this.lblFechaFinal.Location = new System.Drawing.Point(603, 86);
+            this.lblFechaFinal.Name = "lblFechaFinal";
+            this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
+            this.lblFechaFinal.TabIndex = 69;
+            this.lblFechaFinal.Text = "FECHA FINAL:";
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(320, 90);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(87, 16);
+            this.lblFechaInicio.TabIndex = 68;
+            this.lblFechaInicio.Text = "FECHA INICIO:";
+            // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFinal.Location = new System.Drawing.Point(683, 82);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(165, 22);
+            this.dtpFechaFinal.TabIndex = 70;
+            // 
             // ReporteLogsInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(862, 464);
+            this.Controls.Add(this.dtpFechaFinal);
+            this.Controls.Add(this.lblFechaFinal);
+            this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.toolStrip1);
@@ -247,5 +280,8 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.Label lblFechaFinal;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
     }
 }

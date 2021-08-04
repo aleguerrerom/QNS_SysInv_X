@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteOpor));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.oportunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,19 +42,20 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
-            this.oportunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.OportunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oportunidadesTableAdapter = new CNV_Inventario.MVCView.DS_QNSTableAdapters.OportunidadesTableAdapter();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.lblFechaFinal = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oportunidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OportunidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +71,16 @@
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
             // 
+            // oportunidadesBindingSource1
+            // 
+            this.oportunidadesBindingSource1.DataMember = "Oportunidades";
+            this.oportunidadesBindingSource1.DataSource = this.dS_QNS;
+            // 
+            // dS_QNS
+            // 
+            this.dS_QNS.DataSetName = "DS_QNS";
+            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -82,7 +95,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(670, 66);
+            this.button1.Location = new System.Drawing.Point(666, 66);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
@@ -116,9 +129,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSOportunidades";
-            reportDataSource1.Value = this.oportunidadesBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource5.Name = "DSOportunidades";
+            reportDataSource5.Value = this.oportunidadesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportOportunidades.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 156);
             this.reportViewer1.Name = "reportViewer1";
@@ -157,15 +170,15 @@
             this.cmbFiltro.TabIndex = 62;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
-            // dtpFecha
+            // dtpFechaInicio
             // 
-            this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(550, 65);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(100, 22);
-            this.dtpFecha.TabIndex = 3;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
+            this.dtpFechaInicio.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(430, 112);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(100, 22);
+            this.dtpFechaInicio.TabIndex = 3;
+            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // statusStrip1
             // 
@@ -184,16 +197,6 @@
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
             // 
-            // oportunidadesBindingSource1
-            // 
-            this.oportunidadesBindingSource1.DataMember = "Oportunidades";
-            this.oportunidadesBindingSource1.DataSource = this.dS_QNS;
-            // 
-            // dS_QNS
-            // 
-            this.dS_QNS.DataSetName = "DS_QNS";
-            this.dS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // OportunidadesBindingSource
             // 
             this.OportunidadesBindingSource.DataMember = "Oportunidades";
@@ -203,14 +206,44 @@
             // 
             this.oportunidadesTableAdapter.ClearBeforeFill = true;
             // 
+            // dtpEnd
+            // 
+            this.dtpEnd.CustomFormat = "dd/MM/yyyy";
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(750, 109);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(100, 22);
+            this.dtpEnd.TabIndex = 64;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(342, 115);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(87, 16);
+            this.lblFechaInicio.TabIndex = 65;
+            this.lblFechaInicio.Text = "FECHA INICIO:";
+            // 
+            // lblFechaFinal
+            // 
+            this.lblFechaFinal.AutoSize = true;
+            this.lblFechaFinal.Location = new System.Drawing.Point(666, 113);
+            this.lblFechaFinal.Name = "lblFechaFinal";
+            this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
+            this.lblFechaFinal.TabIndex = 66;
+            this.lblFechaFinal.Text = "FECHA FINAL:";
+            // 
             // ReporteOpor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(862, 513);
+            this.Controls.Add(this.lblFechaFinal);
+            this.Controls.Add(this.lblFechaInicio);
+            this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.reportViewer1);
@@ -228,12 +261,12 @@
             this.Text = "REPORTE OPORTUNIDADES  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oportunidadesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.oportunidadesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OportunidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,8 +286,11 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ComboBox cmbFiltro;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.Label lblFechaFinal;
     }
 }

@@ -115,12 +115,12 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO USUARIO int.Parse(
                 this.entrega = new Entrega();
-                this.entrega.Cliente = this.txtCliente.Text;
+                this.entrega.Cliente = this.cmbCliente.Text;
                 this.entrega.Fecha = this.dtpFecha.Value;
-                this.entrega.Contacto = this.txtContacto.Text;
-                this.entrega.Dirrecion = this.txtDireccion.Text;
+                this.entrega.Contacto = this.cmbNombre.Text;
+                this.entrega.Dirrecion = this.cmbDireccion.Text;
                 this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
-                this.entrega.Telefono = this.txtTelefono.Text;
+                this.entrega.Telefono = this.cmbTelefono.Text;
                 this.entrega.NumeroFactura = this.txtNumFactura.Text;
 
                 this.entrega.opc = 2;
@@ -148,15 +148,15 @@ namespace QNS_SysInv_X.MVCView
         
         private void limpiar()
         {
-            this.txtCliente.Text = "";
+            this.cmbCliente.Text = "";
             this.txtSN.Text = "";
             this.txtNumParte.Text = "";
             this.dtpFecha.Value = DateTime.Today;
-            this.txtDireccion.Text = "";
+            this.cmbCliente.Text = "";
             this.txtCantidad.Text = "";
             this.txtDescripcion.Text = "";
             this.txtEntregadoPor.Text = "";
-            this.txtContacto.Text = "";
+            this.cmbNombre.Text = "";
             // this.txtID.ReadOnly = false;
             limpiarAlertas();
         }
@@ -195,7 +195,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                if (this.cmbCliente.Text == "")
+                 if (this.cmbCliente.Text == "")
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo de CLIENTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -235,7 +235,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.txtEntregadoPor.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo ENTREGADO POR solo permite no puede ir vacio", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo ENTREGADO POR solo permite no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblEntregado.BackColor = System.Drawing.Color.DarkRed;
                     lblEntregado.ForeColor = System.Drawing.Color.White;
                     gpEntregado.BackColor = System.Drawing.Color.DarkRed;
@@ -244,7 +244,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.txtNumFactura.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite no puede ir vacio", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     label1.BackColor = System.Drawing.Color.DarkRed;
                     label1.ForeColor = System.Drawing.Color.White;
                     gpNumFactura.BackColor = System.Drawing.Color.DarkRed;
@@ -429,8 +429,8 @@ namespace QNS_SysInv_X.MVCView
 
         private void Entregas_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.txtCliente.Text != "" || this.txtSN.Text != "" || this.txtNumParte.Text != "" || this.txtDireccion.Text != ""
-                || this.txtCantidad.Text != "" || this.txtDescripcion.Text != "" || this.txtEntregadoPor.Text != "" || this.txtContacto.Text != "")
+            if (this.cmbCliente.Text != "" || this.txtSN.Text != "" || this.txtNumParte.Text != "" || this.cmbDireccion.Text != ""
+                || this.txtCantidad.Text != "" || this.txtDescripcion.Text != "" || this.txtEntregadoPor.Text != "" || this.cmbNombre.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -451,8 +451,12 @@ namespace QNS_SysInv_X.MVCView
         private void Entregas_Load(object sender, EventArgs e)
         {
             cargarComboCliente();
-            this.ActiveControl = txtCliente;
+            this.ActiveControl = cmbCliente;
             dgvListar.AllowUserToAddRows = false;
+            cmbCliente.SelectedIndex = -1;
+            cmbDireccion.SelectedIndex = -1;
+            cmbNombre.SelectedIndex = -1;
+            cmbTelefono.SelectedIndex = -1;
             listar();
         }
 
@@ -548,6 +552,26 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbNombre_SelectedValueChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbDireccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarAlertas();
+        }
+
+        private void cmbTelefono_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiarAlertas();
         }

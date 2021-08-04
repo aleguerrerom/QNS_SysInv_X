@@ -30,6 +30,9 @@ namespace QNS_SysInv_X.MVCView
             // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
             this.oportunidadesTableAdapter.Fill(this.dS_QNS.Oportunidades);
             this.reportViewer1.RefreshReport();
+            cmbFiltro.SelectedIndex = 1;
+            dtpEnd.Value = DateTime.Today;
+            dtpFechaInicio.Value = DateTime.Today;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,7 +46,16 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
-                    this.oportunidadesTableAdapter.FillByFecha(this.dS_QNS.Oportunidades, dtpFecha.Value);
+                    if (dtpFechaInicio.Value > dtpEnd.Value)
+                    {
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    //if (dtpFechaInicio.Value == dtpEnd.Value)
+                    //{
+                    //    MessageBox.Show("La fecha de inicio no puede ser igual a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //}
+                    else
+                    this.oportunidadesTableAdapter.FillByFecha(this.dS_QNS.Oportunidades, dtpFechaInicio.Value,dtpEnd.Value);
                 }
                 this.reportViewer1.RefreshReport();
             }
@@ -75,12 +87,18 @@ namespace QNS_SysInv_X.MVCView
             if (cmbFiltro.SelectedIndex == 0)
             {
                 txtFiltro.Visible = true;
-                dtpFecha.Visible = false;
+                dtpFechaInicio.Visible = false;
+                dtpEnd.Visible = false;
+                lblFechaInicio.Visible = false ;
+                lblFechaFinal.Visible = false;
             }
             else if (cmbFiltro.SelectedIndex == 1 || cmbFiltro.SelectedIndex == 2)
             {
-                dtpFecha.Visible = true;
+                dtpFechaInicio.Visible = true;
                 txtFiltro.Visible = false;
+                dtpEnd.Visible = true;
+                lblFechaInicio.Visible = true;
+                lblFechaFinal.Visible = true;
             }
         }
     }
