@@ -156,7 +156,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Oportunidad Insertada";
-                this.bitacora.Detalle = "Se agrego la oportunidad correctamente ";
+                this.bitacora.Detalle = "Se agrego la oportunidad correctamente. ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();

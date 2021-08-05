@@ -78,13 +78,13 @@ namespace QNS_SysInv_X.MVCView
                 else this.inventario.Activo = false;
                 this.inventario.opc = 2;
                 this.invH = new InventarioHelper(inventario);
-                ///LOG PARA USUARIOS
+                ///LOG PARA AGREGAR INVENTARIO
                 ////
-                
+
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsua.Text;
-                this.bitacora.Movimiento = "Inventario Agregado";
-                this.bitacora.Detalle = "Se agrego el articulo al inventario correctamente ";
+                this.bitacora.Movimiento = "Articulo Agregado";
+                this.bitacora.Detalle = "Se agrego el articulo "+this.txtNombreActivo.Text+" al inventario correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
@@ -312,7 +312,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsua.Text;
                 this.bitacora.Movimiento = "Actualizar Inventario";
-                this.bitacora.Detalle = "Se actualizo el inventario correctamente ";
+                this.bitacora.Detalle = "Se actualizo el articulo " + this.txtNombreActivo.Text + " correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();

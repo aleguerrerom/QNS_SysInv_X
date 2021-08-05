@@ -123,7 +123,7 @@ namespace QNS_SysInv_X.MVCView
                 
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsu.Text;
-                this.bitacora.Movimiento = "Actualizar";
+                this.bitacora.Movimiento = "Actualizar Rol";
                 this.bitacora.Detalle = "Se actualizo el rol " + this.txtRol.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
@@ -213,7 +213,7 @@ namespace QNS_SysInv_X.MVCView
                     
                     this.bitacora = new Bitacora();
                     this.bitacora.Usuario = this.stsUsu.Text;
-                    this.bitacora.Movimiento = "Agregar";
+                    this.bitacora.Movimiento = "Agregar Rol";
                     this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
                     this.bitacora.opc = 5;
                     this.bitH = new BitacoraHelper(bitacora);

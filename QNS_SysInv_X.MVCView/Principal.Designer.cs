@@ -336,6 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(699, 397);
             this.Controls.Add(pictureBox1);
             this.Controls.Add(pictureBox2);
@@ -346,7 +347,7 @@
             this.MinimumSize = new System.Drawing.Size(715, 436);
             this.Name = "Principal";
             this.Text = "PRINCIPAL  | QNS_SysInv_X";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.Snow;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_FormClosing);
             this.Load += new System.EventHandler(this.Principal_Load);
             this.Leave += new System.EventHandler(this.Principal_Leave);

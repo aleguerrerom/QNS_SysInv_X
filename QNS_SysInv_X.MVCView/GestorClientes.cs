@@ -113,7 +113,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Agregar Cliente";
-                this.bitacora.Detalle = "Se agrego el cliente correctamente " + this.txtNomb.Text;
+                this.bitacora.Detalle = "Se agrego el cliente " + this.txtNomb.Text + " correctamente " + this.txtNomb.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
@@ -411,7 +411,7 @@ namespace QNS_SysInv_X.MVCView
                  this.bitacora = new Bitacora();
                  this.bitacora.Usuario = this.stsUsuario.Text;
                  this.bitacora.Movimiento = "Actualizar Cliente";
-                 this.bitacora.Detalle = "Se actualizo el cliente correctamente " + this.txtNomb.Text;
+                 this.bitacora.Detalle = "Se actualizo el cliente " + this.txtNomb.Text + " correctamente " + this.txtNomb.Text;
                  this.bitacora.opc = 5;
                  this.bitH = new BitacoraHelper(bitacora);
                  this.bitH.LogMovimientos();

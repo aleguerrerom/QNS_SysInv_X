@@ -129,7 +129,7 @@ namespace QNS_SysInv_X.MVCView
                 ///
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsua.Text;
-                this.bitacora.Movimiento = "Ingreso entrega";
+                this.bitacora.Movimiento = "Proceso entrega";
                 this.bitacora.Detalle = "Se proceso la entrega correctamente";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
