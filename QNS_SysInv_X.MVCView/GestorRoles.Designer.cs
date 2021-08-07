@@ -74,12 +74,14 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -102,6 +104,7 @@
             this.dgvListar.AllowUserToResizeColumns = false;
             this.dgvListar.AllowUserToResizeRows = false;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListar.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListar.Location = new System.Drawing.Point(12, 357);
             this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
@@ -111,7 +114,9 @@
             this.dgvListar.ShowRowErrors = false;
             this.dgvListar.Size = new System.Drawing.Size(625, 173);
             this.dgvListar.TabIndex = 16;
+            this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
+            this.dgvListar.MouseHover += new System.EventHandler(this.dgvListar_MouseHover);
             // 
             // groupBox1
             // 
@@ -289,7 +294,6 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(297, 263);
             this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = true;
             // 
             // chkOportunidades
             // 
@@ -444,8 +448,10 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
             // 
             // toolStripLabel1
             // 
@@ -568,6 +574,13 @@
             this.label14.Text = "ACTIVO:      ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
+            // 
             // GestorRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,6 +613,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -656,5 +670,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox chckbxActivo;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
     }
 }

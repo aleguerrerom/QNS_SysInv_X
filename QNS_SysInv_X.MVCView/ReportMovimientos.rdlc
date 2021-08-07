@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>usuario</Value>
+                            <Value>Usuario</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -148,7 +148,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>fecha</Value>
+                                <Value>Fecha</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>movimiento</Value>
+                                    <Value>Movimiento</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -226,7 +226,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>detalle</Value>
+                                        <Value>Detalle</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>

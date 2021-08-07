@@ -70,10 +70,12 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
+            this.cmsInventario.SuspendLayout();
             this.gpFecha.SuspendLayout();
             this.gbEstado.SuspendLayout();
             this.gbModelo.SuspendLayout();
@@ -173,12 +175,15 @@
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(765, 195);
             this.dgvListar.TabIndex = 45;
+            this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // cmsInventario
             // 
+            this.cmsInventario.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
             this.cmsInventario.Name = "cmsInventario";
-            this.cmsInventario.Size = new System.Drawing.Size(61, 4);
+            this.cmsInventario.Size = new System.Drawing.Size(112, 26);
             // 
             // btnCancel
             // 
@@ -569,6 +574,13 @@
             this.label6.Text = "ACTIVO:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
+            // 
             // GestorInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +617,7 @@
             this.gbSN.ResumeLayout(false);
             this.gbSN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
+            this.cmsInventario.ResumeLayout(false);
             this.gpFecha.ResumeLayout(false);
             this.gpFecha.PerformLayout();
             this.gbEstado.ResumeLayout(false);
@@ -668,5 +681,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox chckbxActivo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
     }
 }

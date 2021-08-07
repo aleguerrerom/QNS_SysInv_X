@@ -388,7 +388,7 @@ namespace QNS_SysInv_X.MVCView
                     this.cmbCedVendedor.Text = fila["Cedula_Vendedor"].ToString();
                     this.cmbCedVendedor.Enabled = false;
                     this.dtpFecha.Text = fila["Fecha_de_Cierre"].ToString();
-                    this.idl.Text = fila["Cedula"].ToString();
+                    this.idl.Text = fila["ID"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }

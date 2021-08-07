@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>usuario</Value>
+                              <Value>Usuario</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>usuario</Value>
+                            <Value>Usuario</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -148,7 +148,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>activo</Value>
+                                <Value>Activo</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>apellido</Value>
+                                    <Value>Apellido</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -226,7 +226,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>correo</Value>
+                                        <Value>Correo</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -265,7 +265,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>rol</Value>
+                                            <Value>Rol</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>11pt</FontSize>

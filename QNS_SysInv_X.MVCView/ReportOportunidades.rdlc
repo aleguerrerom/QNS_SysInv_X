@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>nombre Cliente</Value>
+                            <Value>Nombre Cliente</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -148,7 +148,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>fecha Cierre</Value>
+                                <Value>Fecha Cierre</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>marca</Value>
+                                    <Value>Marca</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -226,7 +226,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>detalles</Value>
+                                        <Value>Detalles</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -265,7 +265,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>presupuesto</Value>
+                                            <Value>Presupuesto</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>11pt</FontSize>
@@ -304,7 +304,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>vendedor</Value>
+                                                <Value>Vendedor</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
                                                   <FontSize>11pt</FontSize>
@@ -438,7 +438,6 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>

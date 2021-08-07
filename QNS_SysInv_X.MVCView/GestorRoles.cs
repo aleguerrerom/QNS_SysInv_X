@@ -17,6 +17,7 @@ namespace QNS_SysInv_X.MVCView
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex validate_number = RegexExpression.number_validation();
+        static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
 
         public GestorRoles()
         {
@@ -41,11 +42,17 @@ namespace QNS_SysInv_X.MVCView
                 txtRol.Focus();
                 return;
             }
+            else if (validate_numberANDletter.IsMatch(txtRol.Text) != true)
+            {
+                MessageBox.Show("No se permiten caracter especiales en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtRol.Focus();
+                return;
+            }
             else
             {
                 if (this.txtID.ReadOnly)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Eliminar", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
 
@@ -282,6 +289,7 @@ namespace QNS_SysInv_X.MVCView
             dgvListar.AllowUserToAddRows = false;
             limpiar();
             listar();
+            dgvListar.ClearSelection();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -381,6 +389,70 @@ namespace QNS_SysInv_X.MVCView
             #endregion
         }
 
+        #region CARGAR DATOS SELECCIONADOS
+
+        private void ActivarDesactivarRol()
+        {
+            try
+            {
+                if (this.dgvListar.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Debes seleccionar al menos un rol para el Activar/Desactivar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.table = (DataTable)this.dgvListar.DataSource;
+                    this.txtID.Text = fila["ID"].ToString();
+                    this.roles = new Roles();
+                    //    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                    if (activarToolStripMenuItem.Text == "Desactivar")
+                    {
+                        roles.ID1 = int.Parse(fila["ID"].ToString());
+                        roles.opc = 7;
+                        this.rolH = new RolesHelper(roles);
+                        this.rolH.Buscar();
+
+                        MessageBox.Show("Se desactivo el rol");
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsu.Text;
+                        this.bitacora.Movimiento = "Inactivacion de rol";
+                        this.bitacora.Detalle = "Se Inactivo el rol correctamente ";
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    else if (activarToolStripMenuItem.Text == "Activar")
+                    {
+                        roles.ID1 = int.Parse(fila["ID"].ToString());
+                        roles.opc = 8;
+                        this.rolH = new RolesHelper(roles);
+                        this.rolH.Buscar();
+                        MessageBox.Show("Se activo el rol");
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsu.Text;
+                        this.bitacora.Movimiento = "Inactivacion de rol";
+                        this.bitacora.Detalle = "Se Inactivo el rol correctamente ";
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    listar();
+                    limpiar();
+                    dgvListar.ClearSelection();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            #endregion
+        }
+
+
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -432,6 +504,40 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void activarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivarDesactivarRol();
+        }
+
+        private void dgvListar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int indice = dgvListar.CurrentRow.Index;
+                DataRow fila = table.Rows[indice];
+                this.table = (DataTable)this.dgvListar.DataSource;
+              //  this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                if (bool.Parse(fila["Activo"].ToString()) == true)
+                {
+                    activarToolStripMenuItem.Text = "Desactivar";
+                }
+                else if (bool.Parse(fila["Activo"].ToString()) == false)
+                {
+                    activarToolStripMenuItem.Text = "Activar";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvListar_MouseHover(object sender, EventArgs e)
+        {
+           
         }
     }
 }

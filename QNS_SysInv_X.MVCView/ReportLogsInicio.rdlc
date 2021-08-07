@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>usuario</Value>
+                            <Value>Usuario</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -148,7 +148,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>fecha Inicio</Value>
+                                <Value>Fecha Inicio</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>fecha Salida</Value>
+                                    <Value>Fecha Salida</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>

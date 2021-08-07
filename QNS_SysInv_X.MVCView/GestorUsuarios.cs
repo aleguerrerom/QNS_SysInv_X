@@ -15,7 +15,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
-        
+
         static Regex validate_emailaddress = RegexExpression.email_validation();
 
         static Regex validate_letter = RegexExpression.letter_validation();
@@ -25,19 +25,19 @@ namespace QNS_SysInv_X.MVCView.Resources
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
 
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
-        
+
         public GestorUsuarios()
         {
             InitializeComponent();
         }
-        
+
         public GestorUsuarios(Usuarios usuario)
         {
             InitializeComponent();
             this.user = usuario;
             this.toolStripStatusLabel2.Text = this.user.Usuario;
         }
-        
+
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,7 +78,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.rolH = new RolesHelper(roles);
                 this.table = new DataTable();
                 this.table = this.rolH.ListarRol();
-                
+
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbRol.DataSource = this.table;
@@ -126,7 +126,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.bitH.LogMovimientos();
 
                 this.userHelper.Guardar();
-                MessageBox.Show("Usuario "+this.user.Usuario+" Almacenado");
+                MessageBox.Show("Usuario " + this.user.Usuario + " Almacenado");
             }
             catch (Exception ex)
             {
@@ -142,7 +142,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             if (this.txtUsuario.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de USUARIO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);     
+                MessageBox.Show("El campo de USUARIO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblUsuario.BackColor = System.Drawing.Color.DarkRed;
                 lblUsuario.ForeColor = System.Drawing.Color.White;
                 groupBox1.BackColor = System.Drawing.Color.DarkRed;
@@ -153,7 +153,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
+
                 lblUsuario.BackColor = System.Drawing.Color.DarkRed;
                 lblUsuario.ForeColor = System.Drawing.Color.White;
                 groupBox1.BackColor = System.Drawing.Color.DarkRed;
@@ -174,7 +174,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 limpiarAlertas();
                 MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
+
                 lblClave.BackColor = System.Drawing.Color.DarkRed;
                 lblClave.ForeColor = System.Drawing.Color.White;
                 groupBox2.BackColor = System.Drawing.Color.DarkRed;
@@ -254,7 +254,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.ActiveControl = txtApellido;
                 return;
             }
-            else if ( this.txtCorreo.Text == "")
+            else if (this.txtCorreo.Text == "")
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -292,7 +292,9 @@ namespace QNS_SysInv_X.MVCView.Resources
                             MessageBox.Show("No se actualizo el usuario");
                         }
                     }
-                    else { MessageBox.Show("Las claves deben ser iguales");
+                    else
+                    {
+                        MessageBox.Show("Las claves deben ser iguales");
                         limpiarAlertas();
                         lblClave.BackColor = System.Drawing.Color.DarkRed;
                         lblClave.ForeColor = System.Drawing.Color.White;
@@ -310,7 +312,9 @@ namespace QNS_SysInv_X.MVCView.Resources
                         listar();
                         limpiar();
                     }
-                    else { MessageBox.Show("Las claven deben ser iguales");
+                    else
+                    {
+                        MessageBox.Show("Las claven deben ser iguales");
                         limpiarAlertas();
                         lblClave.BackColor = System.Drawing.Color.DarkRed;
                         lblClave.ForeColor = System.Drawing.Color.White;
@@ -407,7 +411,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                 }
                 else
                 {
-
                     DialogResult dialogResult = MessageBox.Show("Desea eliminar el usuario", "Eliminar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
@@ -419,7 +422,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                         this.userHelper = new UsuariosHelper(user);
                         ///LOG PARA ELIMINAR
                         ///
-
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsuario.Text;
                         this.bitacora.Movimiento = "Eliminar Usuario";
@@ -427,7 +429,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();
-
                         this.userHelper.Eliminar();
                         MessageBox.Show("Usuario " + this.user.Usuario + " Eliminado");
                     }
@@ -451,31 +452,31 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             try
             {
-            this.user = new Usuarios();
-            this.user.Usuario = this.txtUsuario.Text;
-            this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
+                this.user = new Usuarios();
+                this.user.Usuario = this.txtUsuario.Text;
+                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
                 if (this.chckbxActivo.Checked)
                 {
                     this.user.Activo = true;
                 }
                 else { this.user.Activo = false; }
-            this.user.Rol = this.cmbRol.SelectedIndex +1;
-            this.user.Nombre = this.txtNombre.Text;
-            this.user.Apellido = this.txtApellido.Text;
-            this.user.Correo = this.txtCorreo.Text;
-            this.user.opc = 4;
-            this.userHelper = new UsuariosHelper(user);
-            //Bitacora 
-            this.bitacora = new Bitacora();
-            this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
-            this.bitacora.Movimiento = "Actualizar Usuario";
-            this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
-            this.bitacora.opc = 5;
-            this.bitH = new BitacoraHelper(bitacora);
-            this.bitH.LogMovimientos();
-            
-            this.userHelper.Actualizar();
-            MessageBox.Show("Datos del Usuario " + this.user.Usuario + " actualizados");
+                this.user.Rol = this.cmbRol.SelectedIndex + 1;
+                this.user.Nombre = this.txtNombre.Text;
+                this.user.Apellido = this.txtApellido.Text;
+                this.user.Correo = this.txtCorreo.Text;
+                this.user.opc = 4;
+                this.userHelper = new UsuariosHelper(user);
+                //Bitacora 
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
+                this.bitacora.Movimiento = "Actualizar Usuario";
+                this.bitacora.Detalle = "Se actualizo el usuario correctamente " + this.txtUsuario.Text;
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
+
+                this.userHelper.Actualizar();
+                MessageBox.Show("Datos del Usuario " + this.user.Usuario + " actualizados");
             }
             catch (Exception ex)
             {
@@ -483,7 +484,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             }
         }
         #endregion
-      
+
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -549,7 +550,7 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-                    this.Close();
+            this.Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -591,7 +592,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             if (this.txtUsuario.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
             || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != ""
             || this.cmbRol.Text != "")
-            { 
+            {
                 DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -607,7 +608,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 e.Cancel = false;
             }
         }
-        
+
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             txtClave.UseSystemPasswordChar = true;

@@ -70,10 +70,13 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gpCorreo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gpDireccion.SuspendLayout();
             this.gpTelefono.SuspendLayout();
             this.gbCedula.SuspendLayout();
@@ -166,12 +169,15 @@
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(806, 172);
             this.dgvListar.TabIndex = 57;
+            this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
             // 
             // btnCancel
             // 
@@ -575,6 +581,22 @@
             this.label6.Text = "ACTIVO:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(368, 334);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 20);
+            this.textBox1.TabIndex = 75;
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // GestorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,6 +622,7 @@
             this.Controls.Add(this.gbCedula);
             this.Controls.Add(this.gpVendedor);
             this.Controls.Add(this.gpCedula);
+            this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(846, 621);
             this.MinimumSize = new System.Drawing.Size(846, 621);
@@ -611,6 +634,7 @@
             this.gpCorreo.ResumeLayout(false);
             this.gpCorreo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gpDireccion.ResumeLayout(false);
             this.gpDireccion.PerformLayout();
             this.gpTelefono.ResumeLayout(false);
@@ -677,5 +701,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox chckbxActivo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

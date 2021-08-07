@@ -392,6 +392,7 @@ namespace QNS_SysInv_X.MVCView
             this.ActiveControl = txtNombreActivo;
             dgvListar.AllowUserToAddRows = false;
             listar();
+            dgvListar.ClearSelection(); 
         }
 
         private void dgvListar_DoubleClick(object sender, EventArgs e)
@@ -511,5 +512,94 @@ namespace QNS_SysInv_X.MVCView
         {
             limpiarAlertas();
         }
+
+        private void activarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivarDesactivarArticulo();
+        }
+
+        private void dgvListar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int indice = dgvListar.CurrentRow.Index;
+                DataRow fila = table.Rows[indice];
+                this.table = (DataTable)this.dgvListar.DataSource;
+              //  this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                if (bool.Parse(fila["Activo"].ToString()) == true)
+                {
+                    activarToolStripMenuItem.Text = "Desactivar";
+                }
+                else if (bool.Parse(fila["Activo"].ToString()) == false)
+                {
+                    activarToolStripMenuItem.Text = "Activar";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ActivarDesactivarArticulo()
+        {
+            try
+            {
+                if (this.dgvListar.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Debes seleccionar al menos un articulo para el Activar/Desactivar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.table = (DataTable)this.dgvListar.DataSource;
+                    this.txtID.Text = fila["ID"].ToString();
+                    this.inventario = new Inventario();
+                    //    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                    if (activarToolStripMenuItem.Text == "Desactivar")
+                    {
+                        inventario.Id = int.Parse(fila["ID"].ToString());
+                        inventario.opc = 9;
+                        this.invH = new InventarioHelper(inventario);
+                        this.invH.Buscar();
+                        MessageBox.Show("Se desactivo el articulo");
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsua.Text;
+                        this.bitacora.Movimiento = "Inactivacion del articulo";
+                        this.bitacora.Detalle = "Se Inactivo el articlo correctamente ID: " + inventario.Id;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    else if (activarToolStripMenuItem.Text == "Activar")
+                    {
+                        inventario.Id = int.Parse(fila["ID"].ToString());
+                        inventario.opc = 10;
+                        this.invH = new InventarioHelper(inventario);
+                        this.invH.Buscar();
+                        MessageBox.Show("Se activo el articulo");
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsua.Text;
+                        this.bitacora.Movimiento = "activacion de vendedor";
+                        this.bitacora.Detalle = "Se activo el articulo correctamente ID: " + inventario.Id;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    listar();
+                    limpiar();
+                    dgvListar.ClearSelection();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

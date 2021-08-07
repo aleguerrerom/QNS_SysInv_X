@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cedula</Value>
+                              <Value>Cedula</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -110,7 +110,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>tipo</Value>
+                            <Value>Tipo</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>8pt</FontSize>
@@ -149,7 +149,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>contacto</Value>
+                                <Value>Contacto</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>8pt</FontSize>
@@ -188,7 +188,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>telefono</Value>
+                                    <Value>Telefono</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>8pt</FontSize>
@@ -227,7 +227,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>correo</Value>
+                                        <Value>Correo</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>8pt</FontSize>
@@ -266,7 +266,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>direcion</Value>
+                                            <Value>Direcion</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>8pt</FontSize>
@@ -305,7 +305,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>agente</Value>
+                                                <Value>Agente</Value>
                                                 <Style>
                                                   <FontFamily>Tahoma</FontFamily>
                                                   <FontSize>8pt</FontSize>
@@ -344,7 +344,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>nombre</Value>
+                                                    <Value>Nombre</Value>
                                                     <Style>
                                                       <FontFamily>Tahoma</FontFamily>
                                                       <FontSize>8pt</FontSize>

@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cedula</Value>
+                              <Value>Cedula</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>nombre</Value>
+                            <Value>Nombre</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -148,7 +148,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>apellido1</Value>
+                                <Value>P/Apellido</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>apellido2</Value>
+                                    <Value>S/Apellido</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>11pt</FontSize>
@@ -226,7 +226,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>genero</Value>
+                                        <Value>Genero</Value>
                                         <Style>
                                           <FontFamily>Tahoma</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -256,7 +256,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>3.50542cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox3">
                                     <CanGrow>true</CanGrow>
@@ -265,7 +265,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>correo</Value>
+                                            <Value>Correo</Value>
                                             <Style>
                                               <FontFamily>Tahoma</FontFamily>
                                               <FontSize>11pt</FontSize>
@@ -508,7 +508,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.5cm</Size>
+                                <Size>3.50542cm</Size>
                                 <CellContents>
                                   <Textbox Name="correo">
                                     <CanGrow>true</CanGrow>
@@ -560,7 +560,7 @@
         <DataSetName>DSVendedores</DataSetName>
         <Left>0.44902cm</Left>
         <Height>1.2cm</Height>
-        <Width>15cm</Width>
+        <Width>16.00542cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

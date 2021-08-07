@@ -35,6 +35,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -76,9 +77,11 @@
             this.rolBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,12 +134,22 @@
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(769, 211);
             this.dgvListar.TabIndex = 12;
+           // this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip2
             // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 26);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(112, 26);
+            // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+         //   this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -590,12 +603,21 @@
             // 
             this.rolBindingSource1.DataMember = "Rol";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(430, 277);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 70;
+            this.textBox1.Visible = false;
+            // 
             // GestorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(795, 640);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
@@ -625,6 +647,7 @@
             this.Load += new System.EventHandler(this.GestorUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -703,5 +726,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

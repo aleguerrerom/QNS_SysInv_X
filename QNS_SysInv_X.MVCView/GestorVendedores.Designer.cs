@@ -36,6 +36,7 @@
             this.opdBrowse = new System.Windows.Forms.OpenFileDialog();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbGenero = new System.Windows.Forms.GroupBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.lblGenero = new System.Windows.Forms.Label();
@@ -67,10 +68,12 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gbGenero.SuspendLayout();
             this.gbFecha.SuspendLayout();
             this.gbApellido2.SuspendLayout();
@@ -126,12 +129,22 @@
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(742, 204);
             this.dgvListar.TabIndex = 67;
+            this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
+            // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // gbGenero
             // 
@@ -516,6 +529,14 @@
             this.label6.Text = "ACTIVO:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(311, 278);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 20);
+            this.textBox1.TabIndex = 84;
+            this.textBox1.Visible = false;
+            // 
             // GestorVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,6 +560,7 @@
             this.Controls.Add(this.gbCedula);
             this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(792, 646);
             this.MinimumSize = new System.Drawing.Size(792, 646);
@@ -550,6 +572,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gbGenero.ResumeLayout(false);
             this.gbGenero.PerformLayout();
             this.gbFecha.ResumeLayout(false);
@@ -610,5 +633,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox chckbxActivo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

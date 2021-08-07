@@ -135,7 +135,9 @@ namespace QNS_SysInv_X.MVCView
             cargarComboVendedor();
             listar();
             this.cmbVende.SelectedIndex = -1;
+            dgvListar.ClearSelection();
         }
+
         #region LIMPIAR ALERTAS
         private void limpiarAlertas()
         {
@@ -340,6 +342,7 @@ namespace QNS_SysInv_X.MVCView
             this.cmbVende.SelectedIndex = -1;
             this.txtCedula.ReadOnly = false;
             this.btnAdd.Text = "AGREGAR";
+            this.textBox1.Clear();
             limpiarAlertas();
         }
         #endregion
@@ -597,6 +600,100 @@ namespace QNS_SysInv_X.MVCView
         private void cmbVende_SelectedValueChanged(object sender, EventArgs e)
         {
             limpiarAlertas();
+        }
+
+        private void activarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivarDesactivarCliente();
+        }
+
+        private void ActivarDesactivarCliente()
+        {
+            try
+            {
+                if (this.dgvListar.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Debes seleccionar al menos un cliente para el Activar/Desactivar");
+                }
+                else
+                {
+                    int indice = dgvListar.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.table = (DataTable)this.dgvListar.DataSource;
+                    this.textBox1.Text = fila["cedula"].ToString();
+                    this.clientes = new Clientes();
+                    //    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                    if (activarToolStripMenuItem.Text == "Desactivar")
+                    {
+                        clientes.Cedula = int.Parse(fila["cedula"].ToString());
+                        clientes.opc = 8;
+                        this.clientesH = new ClientesHelper(clientes);
+                        this.clientesH.Buscar();
+
+                        MessageBox.Show("Se desactivo el Cliente.");
+                        //Bitacora 
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsuario.Text;
+                        this.bitacora.Movimiento = "Inactivacion del Cliente";
+                        this.bitacora.Detalle = "Se Inactivo el cliente correctamente cedula: " + clientes.Cedula;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    else if (activarToolStripMenuItem.Text == "Activar")
+                    {
+                        clientes.Cedula = int.Parse(fila["cedula"].ToString());
+                        clientes.opc = 9;
+                        this.clientesH = new ClientesHelper(clientes);
+                        this.clientesH.Buscar();
+                        MessageBox.Show("Se activo el Cliente ");
+                        //Bitacora 
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsuario.Text;
+                        this.bitacora.Movimiento = "Activación Cliente";
+                        this.bitacora.Detalle = "Se activo el Cliente correctamente cedula: " + clientes.Cedula;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    listar();
+                    limpiar();
+                    dgvListar.ClearSelection();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvListar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int indice = dgvListar.CurrentRow.Index;
+                DataRow fila = table.Rows[indice];
+                this.table = (DataTable)this.dgvListar.DataSource;
+               // this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
+                if (bool.Parse(fila["activo"].ToString()) == true)
+                {
+                    activarToolStripMenuItem.Text = "Desactivar";
+                }
+                else if (bool.Parse(fila["activo"].ToString()) == false)
+                {
+                    activarToolStripMenuItem.Text = "Activar";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
