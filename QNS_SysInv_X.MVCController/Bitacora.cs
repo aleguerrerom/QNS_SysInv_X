@@ -7,12 +7,10 @@ namespace QNS_SysInv_X.MVCController
         {
             get; set;
         }
-
-
+        
         private string usuario;
         private string movimiento;
         private string detalle;
-      
 
         public string Usuario
         {

@@ -169,7 +169,7 @@
             // 
             this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(159, 11);
+            this.cmbVendedor.Location = new System.Drawing.Point(147, 11);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(176, 21);
@@ -198,7 +198,6 @@
             this.idl.Size = new System.Drawing.Size(41, 13);
             this.idl.TabIndex = 67;
             this.idl.Text = "label1";
-            this.idl.Click += new System.EventHandler(this.idl_Click);
             // 
             // cmbCedVendedor
             // 
@@ -230,7 +229,6 @@
             this.gbDetalles.Size = new System.Drawing.Size(363, 44);
             this.gbDetalles.TabIndex = 64;
             this.gbDetalles.TabStop = false;
-            this.gbDetalles.Enter += new System.EventHandler(this.gbDetalles_Enter);
             // 
             // lblDetalles
             // 

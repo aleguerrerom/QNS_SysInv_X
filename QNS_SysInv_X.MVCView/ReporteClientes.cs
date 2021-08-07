@@ -61,10 +61,5 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-
-        private void stsUsu_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

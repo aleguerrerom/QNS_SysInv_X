@@ -26,17 +26,12 @@ namespace QNS_SysInv_X.MVCView
 
         private void listadoLogsUsuarios()
         {
-
             try
             {
-
                 this.bitacora = new Bitacora();
                 this.bitacora.opc = 1;
-
-                //rolhelper
+                
                 this.bitH = new BitacoraHelper(bitacora);
-
-                //datatable
                 this.table = new DataTable();
 
                 this.table = bitH.Listar();
@@ -90,11 +85,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.bitacora = new Bitacora();
                 this.bitacora.opc = 4;
-
-                //rolhelper
                 this.bitH = new BitacoraHelper(bitacora);
-
-                //datatable
                 this.table = new DataTable();
 
                 this.table = bitH.Listar();
@@ -150,10 +141,6 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-
-        private void dgvListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

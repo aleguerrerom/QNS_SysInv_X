@@ -32,6 +32,8 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteUsuarios));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.UsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
             this.dS_QNS1 = new QNS_SysInv_X.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,16 +45,14 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.DS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
-            this.UsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.UsuariosTableAdapter = new QNS_SysInv_X.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -66,6 +66,16 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 54;
             pictureBox2.TabStop = false;
+            // 
+            // UsuariosBindingSource
+            // 
+            this.UsuariosBindingSource.DataMember = "Usuarios";
+            this.UsuariosBindingSource.DataSource = this.DS_QNS;
+            // 
+            // DS_QNS
+            // 
+            this.DS_QNS.DataSetName = "DS_QNS";
+            this.DS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dS_QNS1
             // 
@@ -147,7 +157,6 @@
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 62;
-            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
@@ -178,16 +187,6 @@
             this.statusStrip1.TabIndex = 63;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // DS_QNS
-            // 
-            this.DS_QNS.DataSetName = "DS_QNS";
-            this.DS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // UsuariosBindingSource
-            // 
-            this.UsuariosBindingSource.DataMember = "Usuarios";
-            this.UsuariosBindingSource.DataSource = this.DS_QNS;
-            // 
             // UsuariosTableAdapter
             // 
             this.UsuariosTableAdapter.ClearBeforeFill = true;
@@ -216,13 +215,13 @@
             this.Text = "REPORTE USUARIOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

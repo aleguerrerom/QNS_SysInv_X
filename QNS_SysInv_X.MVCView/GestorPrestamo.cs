@@ -35,7 +35,7 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-
+        #region CARGAR COMBO BOX DE CLIENTE
         private void cargarComboCliente()
         {
             try
@@ -45,8 +45,7 @@ namespace QNS_SysInv_X.MVCView
                 this.clientesH = new ClientesHelper(clientes);
                 this.table = new DataTable();
                 this.table = this.clientesH.Listar();
-
-
+                
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbCliente.DataSource = this.table;
@@ -72,25 +71,12 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void AdjustColumnOrder()
-        {
-        //    dataGridView1.Columns["id"].DisplayIndex = 0;
-        //    dataGridView1.Columns["Nombre"].DisplayIndex = 1;
-        //    dataGridView1.Columns["Tipo"].DisplayIndex = 2;
-        //    dataGridView1.Columns["Numero_de_Serie"].DisplayIndex = 3;
-        //    dataGridView1.Columns["Marca"].DisplayIndex = 4;
-        //    dataGridView1.Columns["Modelo"].DisplayIndex = 5;
-        //    dataGridView1.Columns["Estado"].DisplayIndex = 6;
-        //    dataGridView1.Columns["Fecha_Modificación"].DisplayIndex = 7;
-            //dataGridView1.Columns["Select"].DisplayIndex = 8;
-            //dataGridView1.Columns["Select"].ReadOnly = false;
-        }
-
 
         private void Prestamo_Load(object sender, EventArgs e)
         {
@@ -98,16 +84,8 @@ namespace QNS_SysInv_X.MVCView
             dataGridView1.AllowUserToAddRows = false;
             listar();
             cargarComboCliente();
-            //DataGridViewCheckBoxColumn dgvcCheckBox = new DataGridViewCheckBoxColumn();
-            //dgvcCheckBox.HeaderText = "Select";
-            //dgvcCheckBox.ReadOnly = false;
             dataGridView1.ReadOnly = true;
-            //dataGridView1.Columns.Insert(8, dgvcCheckBox);
-            //dgvcCheckBox.TrueValue = 1;
-            //dgvcCheckBox.FalseValue = 0;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            // dataGridView1.Columns.Add(dgvcCheckBox);
-            // AdjustColumnOrder();
         }
         #region LISTAR INVENTARIO
         private void listar()
@@ -136,67 +114,12 @@ namespace QNS_SysInv_X.MVCView
         }
 
         #endregion 
-
-        #region CARGAR DE TABLA
-        private void CargarFromTable()
-        {
-            //try
-            //{
-            //    this.table = (DataTable)this.dataGridView1.DataSource;
-            //    if (table == null)
-            //    {
-            //        MessageBox.Show("No hay Registros para prestamo");
-            //    }
-            //    else
-            //    {
-            //        int indice = dataGridView1.CurrentRow.Index;
-            //        DataRow fila = table.Rows[indice];
-            //        this.txtID.Text = fila["ID"].ToString();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
-        }
-        #endregion
-
-        private void dgvListar_DoubleClick(object sender, EventArgs e)
-        {
-            CargarFromTable();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            //if (this.txtID.Text == "")
-            //{
-            //    MessageBox.Show("Selecciona un articulo para procesar prestamo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    this.ActiveControl = txtID;
-            //}
-            //else 
-            //if (this.cmbCliente.Text == "")
-            //{
-            //    MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    this.ActiveControl = cmbCliente;
-            //}
-            //else
-            //{
-            //            procesarPrestamo();
-            //    AlmacenarPrestamo();
-            //    limpiar();
-            //    listar();
-            //    MessageBox.Show("El articulo fue procesado para prestamo correctamente");
-            //}
-            #endregion
-        }
-
+        
         private void limpiar()
         {
             this.cmbCliente.SelectedIndex = -1;
         }
-
+        #region PROCESAMIENTO DE PRESTAMO
         private void procesarPrestamo()
         {
             try
@@ -216,24 +139,11 @@ namespace QNS_SysInv_X.MVCView
                     this.inventario = new Inventario();
                     int indice = dataGridView1.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    //this.inventario.Id = int.Parse(fila["ID"].ToString());
-                    
                             // row is selected
                             Prestamos loop = new Prestamos();
                             this.inventario.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
                         }
                     }
-                    //ReportePrestamo repoPrestamo = new ReportePrestamo(user);
-                    //Prestamos loop = new Prestamos();
-                    //loop.Id = int.Parse(fila["ID"].ToString());
-                    //loop.NombreArticulo = fila["Nombre"].ToString();
-                    //loop.Tipo = fila["Tipo"].ToString();
-                    //loop.NumerodeSerie = fila["Numero_de_Serie"].ToString();
-                    //loop.Marca = fila["Marca"].ToString();
-                    //loop.Modelo = fila["Modelo"].ToString();
-                    //loop.Estado = fila["Estado"].ToString();
-                    //loop.Fecha = DateTime.Parse(fila["Fecha_Modificación"].ToString());
-                    //repoPrestamo.prestamoLista.Add(loop);
                     this.inventario.opc = 6;
                     this.invH = new InventarioHelper(inventario);
 
@@ -245,7 +155,9 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
+        #region ALMACENAR PRESTAMO
         private void AlmacenarPrestamo()
         {
             try
@@ -254,7 +166,6 @@ namespace QNS_SysInv_X.MVCView
                 this.prestamos = new Prestamos();
                 int indice = dataGridView1.CurrentRow.Index;
                 DataRow fila = table.Rows[indice];
-                //// this.prestamos.Id_articulo = int.Parse(this.txtID.Text);
                 for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
                 {
                     if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
@@ -264,7 +175,6 @@ namespace QNS_SysInv_X.MVCView
                         this.prestamos.Id_articulo = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
                     }
                 }
-                //this.prestamos.Id_articulo = int.Parse(fila["ID"].ToString());
                 this.prestamos.Id_cliente = int.Parse(this.cmbCedula.Text);
 
                 this.prestamos.opc = 7;
@@ -286,6 +196,7 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -301,6 +212,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            #region PROCESO DE PRESTAMO Y REPORTE CON RESTRICCIONES
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
@@ -336,14 +248,9 @@ namespace QNS_SysInv_X.MVCView
                         prestamos.Nombre = cmbCliente.Text;
                         prestamos.Direcicon = cmbDireccion.Text;
                         repoPrestamo.prestamoLista.Add(prestamos);
-
-                        //foreach (DataGridViewRow r in dataGridView1.Rows)
-                        //{
-
+                        
                         for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
                         {
-                            //if (bool.Parse(this.dataGridView1.Rows[i].Cells[8].Value.ToString()) == true)
-                            //{
                             if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
                             {
                                 // row is selected
@@ -355,11 +262,10 @@ namespace QNS_SysInv_X.MVCView
                                 loop.Marca = this.dataGridView1.Rows[i].Cells[4].Value.ToString();
                                 loop.Modelo = this.dataGridView1.Rows[i].Cells[5].Value.ToString();
                                 loop.Estado = this.dataGridView1.Rows[i].Cells[6].Value.ToString();
-                                loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                                //loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
                                 repoPrestamo.prestamoLista.Add(loop);
                             }
                         }
-
                         procesarPrestamo();
                         AlmacenarPrestamo();
                         limpiar();
@@ -374,8 +280,11 @@ namespace QNS_SysInv_X.MVCView
                     }
                 }
             }
+
+            #endregion
         }
 
+        #region PROCESO DE MULTI SELECCION DE ROW EN DATAGRIDVIEW
         List<int> listaPrestamo = new List<int>();
       
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -390,5 +299,6 @@ namespace QNS_SysInv_X.MVCView
             foreach (int i in listaPrestamo)
             { dataGridView1.Rows[i].Selected = true; }
         }
+        #endregion
     }
 }

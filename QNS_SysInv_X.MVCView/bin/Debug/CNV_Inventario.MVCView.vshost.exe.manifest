@@ -57,14 +57,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCController.dll" size="40960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCController.dll" size="39424">
       <assemblyIdentity name="CNV_Inventario.MVCController" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CiYjgyfq+sBeff5i/CILVNcAeE9yz6GzoNxjvQiatiM=</dsig:DigestValue>
+        <dsig:DigestValue>JhZGEzUpe4qKMB6FHdxei/CLzclEr6uQkbKiLOYDz7M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -76,19 +76,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OHHJBSd9TsHUg7uxbvHht5JTQ8MgGw0UHOM+g6mLuNk=</dsig:DigestValue>
+        <dsig:DigestValue>ETFcrH98tkhYg2VlYH7nHpFYdy12VEwCNxEPhoxGBDc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2583040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2577920">
       <assemblyIdentity name="CNV_Inventario.MVCView" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nwc8rK/EIaATJLV3A257xIRbsRLEcpwX5m1N587bh68=</dsig:DigestValue>
+        <dsig:DigestValue>0ee594nWpWdM8Magqw4uhXyVnzxlYphd9A4i2S4Crrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -37,6 +37,7 @@
             this.txtMail = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gpDireccion = new System.Windows.Forms.GroupBox();
@@ -70,7 +71,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
@@ -179,6 +179,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
             // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,7 +206,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(353, 328);
+            this.btnAdd.Location = new System.Drawing.Point(350, 329);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 33);
@@ -517,7 +524,7 @@
             this.cmbCed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCed.FormattingEnabled = true;
             this.cmbCed.ItemHeight = 13;
-            this.cmbCed.Location = new System.Drawing.Point(441, 299);
+            this.cmbCed.Location = new System.Drawing.Point(430, 300);
             this.cmbCed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCed.Name = "cmbCed";
             this.cmbCed.Size = new System.Drawing.Size(194, 21);
@@ -581,13 +588,6 @@
             this.label6.Text = "ACTIVO:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // activarToolStripMenuItem
-            // 
-            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
-            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.activarToolStripMenuItem.Text = "Activar";
-            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(368, 334);
@@ -595,7 +595,6 @@
             this.textBox1.Size = new System.Drawing.Size(10, 20);
             this.textBox1.TabIndex = 75;
             this.textBox1.Visible = false;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // GestorClientes
             // 

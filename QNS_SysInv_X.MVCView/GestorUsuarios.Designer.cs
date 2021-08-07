@@ -33,9 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorUsuarios));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.dgvListar = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -78,10 +75,11 @@
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).BeginInit();
-            this.contextMenuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -96,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,39 +117,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel1.Text = "Salir";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
-            // dgvListar
-            // 
-            this.dgvListar.AllowUserToResizeColumns = false;
-            this.dgvListar.AllowUserToResizeRows = false;
-            this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.ContextMenuStrip = this.contextMenuStrip2;
-            this.dgvListar.Location = new System.Drawing.Point(14, 388);
-            this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvListar.MultiSelect = false;
-            this.dgvListar.Name = "dgvListar";
-            this.dgvListar.ReadOnly = true;
-            this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListar.Size = new System.Drawing.Size(769, 211);
-            this.dgvListar.TabIndex = 12;
-           // this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);
-            this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activarToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(112, 26);
-            // 
-            // activarToolStripMenuItem
-            // 
-            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
-            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.activarToolStripMenuItem.Text = "Activar";
-         //   this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -611,12 +578,42 @@
             this.textBox1.TabIndex = 70;
             this.textBox1.Visible = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 382);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(770, 220);
+            this.dataGridView1.TabIndex = 71;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 26);
+            // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click_1);
+            // 
             // GestorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(795, 640);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtBuscar);
@@ -626,7 +623,6 @@
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.dgvListar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox6);
@@ -646,8 +642,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestorUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.GestorUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();
-            this.contextMenuStrip2.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -672,6 +666,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,8 +676,6 @@
         #endregion
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.DataGridView dgvListar;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         
         private System.Windows.Forms.BindingSource rolBindingSource;
        
@@ -726,7 +720,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteLogsInicio));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AuditLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,7 +88,6 @@
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
             this.label1.Text = "FILTRAR POR:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -142,9 +141,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource3.Name = "DSLogInicio";
-            reportDataSource3.Value = this.AuditLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DSLogInicio";
+            reportDataSource1.Value = this.AuditLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportLogsInicio.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(14, 131);
             this.reportViewer1.Name = "reportViewer1";

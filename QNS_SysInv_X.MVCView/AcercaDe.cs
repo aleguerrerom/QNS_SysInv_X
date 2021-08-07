@@ -22,8 +22,6 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
-           
         }
-        
     }
 }

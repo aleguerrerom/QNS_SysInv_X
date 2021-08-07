@@ -28,6 +28,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            #region VALIDACIONES DE ESPACIOS ETCC
             // VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
@@ -64,10 +65,12 @@ namespace QNS_SysInv_X.MVCView
                     {
                         MessageBox.Show("No se actualizo la clave");
                     }
-                } }
-               
+                }
+            }
+            #endregion
         }
 
+        #region FUNCION CAMBIO DE CLAVE
         private void CambiarClave()
         {
 
@@ -96,15 +99,19 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region LIMPIAR CAMPOS
         private void limpiar()
         {
             this.txtClave.Text = "";
             this.txtConfirmar.Text = "";
-
         }
+        #endregion
 
         private void chckView_CheckedChanged(object sender, EventArgs e)
         {
+            #region OCULTAR O MOSTRAR CLAVE
             if (chckView.Checked)
             {
                 txtClave.UseSystemPasswordChar = false;
@@ -119,6 +126,7 @@ namespace QNS_SysInv_X.MVCView
                 var checkBox = (CheckBox)sender;
                 lblShow.Text = "VER CONTRASEÑA";
             }
+            #endregion
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

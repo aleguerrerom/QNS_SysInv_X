@@ -7,17 +7,14 @@ namespace QNS_SysInv_X.MVCModel
     public class Datos
     {
         #region Declaracion de Variables
-
         SqlConnection cnnConexion = null;
         SqlCommand cmdComando = null;
         SqlDataAdapter daAdaptador = null;
         DataTable Dtt = null;
         public string strCadenaConexion = string.Empty;
-
         #endregion
 
-        #region Constructor
-
+        #region Constructor de BD
         public Datos()
         {
               strCadenaConexion = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
@@ -25,18 +22,12 @@ namespace QNS_SysInv_X.MVCModel
             // modificar el string de coneccion en gestinar cursos en linea 262, para poder buscar esrudiantes y verificar estado...
             //strCadenaConexion = @"Data Source= DESKTOP-5O1V857\SQLEXPRESS;  Initial Catalog = DB_CNV; Integrated Security=SSPI";
         }
-
-
-
         #endregion
 
-        #region Metodos a Ejecutar
-
-
+        #region Metodos a Ejecutar SP
         public void EjecutarSP(SqlParameter[] parParametros, string parSPName)
         {
             // dtDatos = new DataSet();
-
             try
             {
                 //Instanciamos el objeto conexion con la cadena de conexion.
@@ -54,8 +45,6 @@ namespace QNS_SysInv_X.MVCModel
                 cmdComando.Parameters.AddRange(parParametros);
                 //Ejecutamos el TSQL(Transaction SQL) en el servidor.
                 cmdComando.ExecuteNonQuery();
-
-
             }
             catch (Exception ex)
             {
@@ -66,7 +55,6 @@ namespace QNS_SysInv_X.MVCModel
             {
                 cnnConexion.Dispose();
                 cmdComando.Dispose();
-
             }
 
         }

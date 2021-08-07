@@ -30,11 +30,10 @@ namespace QNS_SysInv_X.MVCView
         private BitacoraHelper bitH;
         
         static Regex validate_emailaddress = RegexExpression.email_validation();
-
         static Regex validate_letter = RegexExpression.letter_validation();
-
         static Regex validate_number = RegexExpression.number_validation();
 
+        #region CARGAR COMBO VENDEDOR
         private void cargarComboVendedor()
         {
             try
@@ -44,8 +43,7 @@ namespace QNS_SysInv_X.MVCView
                 this.vendedoresH = new VendedoresHelper(vendedores);
                 this.table = new DataTable();
                 this.table = this.vendedoresH.Listar();
-
-
+                
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbVende.DataSource = this.table;
@@ -61,7 +59,8 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-        
+        #endregion
+
         #region LISTAR CLientes
         private void listar()
         {
@@ -113,7 +112,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsuario.Text;
                 this.bitacora.Movimiento = "Agregar Cliente";
-                this.bitacora.Detalle = "Se agrego el cliente " + this.txtNomb.Text + " correctamente " + this.txtNomb.Text;
+                this.bitacora.Detalle = "Se agrego el cliente " + this.txtNomb.Text + " correctamente";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
@@ -346,49 +345,7 @@ namespace QNS_SysInv_X.MVCView
             limpiarAlertas();
         }
         #endregion
-
-        #region ELIMINAR CLIENTE
-        private void eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Clientes para eliminar");
-                }
-                else
-                {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.clientes = new Clientes();
-                    this.clientes.Cedula =
-                    this.clientes.Cedula = int.Parse(fila["cedula"].ToString());
-                    this.clientes.opc = 3;
-                    this.clientesH = new ClientesHelper(clientes);
-                    ///LOG PARA ELIMINAR
-                    ///
-
-                     this.bitacora = new Bitacora();
-                     this.bitacora.Usuario = this.stsUsuario.Text;
-                     this.bitacora.Movimiento = "Eliminar";
-                     this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["nombre"].ToString();
-                     this.bitacora.opc = 5;
-                     this.bitH = new BitacoraHelper(bitacora);
-                     this.bitH.LogMovimientos();
-
-                    this.clientesH.Eliminar();
-                    MessageBox.Show("Clientes Eliminado");
-                    listar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-        #endregion
-
+        
         #region ACTUALIZAR CLIENTE
         private void actualizar()
         {
@@ -414,7 +371,7 @@ namespace QNS_SysInv_X.MVCView
                  this.bitacora = new Bitacora();
                  this.bitacora.Usuario = this.stsUsuario.Text;
                  this.bitacora.Movimiento = "Actualizar Cliente";
-                 this.bitacora.Detalle = "Se actualizo el cliente " + this.txtNomb.Text + " correctamente " + this.txtNomb.Text;
+                this.bitacora.Detalle = "Se actualizo el cliente " + this.txtNomb.Text + " correctamente ";
                  this.bitacora.opc = 5;
                  this.bitH = new BitacoraHelper(bitacora);
                  this.bitH.LogMovimientos();
@@ -443,16 +400,16 @@ namespace QNS_SysInv_X.MVCView
                 {
                     int indice = dgvListar.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
-                    this.txtCedula.Text = fila["cedula"].ToString();
-                    this.cmbTipo.Text = fila["tipo"].ToString();
-                    this.txtContacto.Text = fila["contacto"].ToString();
+                    this.txtCedula.Text = fila["Cedula"].ToString();
+                    this.cmbTipo.Text = fila["Tipo"].ToString();
+                    this.txtContacto.Text = fila["Contacto"].ToString();
                     this.txtNomb.Text = fila["Nombre_Cliente"].ToString();
-                    this.txtTel.Text = fila["telefono"].ToString();
-                    this.txtMail.Text = fila["correo"].ToString();
+                    this.txtTel.Text = fila["Telefono"].ToString();
+                    this.txtMail.Text = fila["Correo"].ToString();
                     this.txtCedula.ReadOnly = true;
                     this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.cmbVende.Text = fila["Nombre_Vendedor"].ToString();
-                    this.rtbDireccion.Text = fila["direcion"].ToString();
+                    this.rtbDireccion.Text = fila["Direccion"].ToString();
                     this.btnAdd.Text = "ACTUALIZAR";
                 }
             }
@@ -527,8 +484,8 @@ namespace QNS_SysInv_X.MVCView
                 e.Cancel = false;
             }
         }
-        
 
+        #region BUSQUEDA DE CLIENTE POR CEUDLA
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -561,6 +518,7 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void txtCedula_TextChanged(object sender, EventArgs e)
         {
@@ -607,6 +565,7 @@ namespace QNS_SysInv_X.MVCView
             ActivarDesactivarCliente();
         }
 
+        #region ACTIVAR O DESACTIVAR CLIENTE
         private void ActivarDesactivarCliente()
         {
             try
@@ -622,7 +581,6 @@ namespace QNS_SysInv_X.MVCView
                     this.table = (DataTable)this.dgvListar.DataSource;
                     this.textBox1.Text = fila["cedula"].ToString();
                     this.clientes = new Clientes();
-                    //    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     if (activarToolStripMenuItem.Text == "Desactivar")
                     {
                         clientes.Cedula = int.Parse(fila["cedula"].ToString());
@@ -666,15 +624,16 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void dgvListar_Click(object sender, EventArgs e)
         {
+            #region VALIDAR VALOR DE TOOL STRIP
             try
             {
                 int indice = dgvListar.CurrentRow.Index;
                 DataRow fila = table.Rows[indice];
                 this.table = (DataTable)this.dgvListar.DataSource;
-               // this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                 if (bool.Parse(fila["activo"].ToString()) == true)
                 {
                     activarToolStripMenuItem.Text = "Desactivar";
@@ -689,11 +648,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            #endregion
         }
     }
 }

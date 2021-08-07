@@ -18,6 +18,7 @@ namespace QNS_SysInv_X.MVCController
         }
         //RETORA TABLA CON LOS USUARIOS
 
+        #region LISTAR
         public DataTable Listar()
         {
 
@@ -45,13 +46,13 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
 
-        //GUARDA USUARIOS
+        #region AGREGAR 
         public void Guardar()
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[10];
@@ -120,12 +121,10 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+#endregion
 
-       
-
+        #region CAMBIO DE ESTADO
         public void CambioDeEstado()
         {
             try
@@ -144,7 +143,6 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objInventario.Id;
 
-
                 cnGeneral.EjecutarSP(parParameter, "SPInventario");
 
             }
@@ -153,11 +151,11 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
         }
+#endregion
 
-
+        #region ACTUALIZAR
         public void Actualizar()
         {
-
             try
             {
                 cnGeneral = new Datos();
@@ -233,42 +231,12 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+#endregion
 
-        public void Eliminar()
-        {
-            try
-            {
-                cnGeneral = new Datos();
-
-                SqlParameter[] parParameter = new SqlParameter[2];
-
-                parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
-                parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objInventario.opc;
-
-                parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@id";
-                parParameter[1].SqlDbType = SqlDbType.Int;
-                parParameter[1].SqlValue = objInventario.Id;
-
-                cnGeneral.EjecutarSP(parParameter, "SPInventario");
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
-        }
-
+        #region BUSQUEDA
         public DataTable Buscar()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -286,11 +254,8 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].ParameterName = "@ID";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objInventario.Id;
-
-
-
+                
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPInventario");
-
             }
             catch (Exception ex)
             {
@@ -299,7 +264,6 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-
-
+        #endregion
     }
 }

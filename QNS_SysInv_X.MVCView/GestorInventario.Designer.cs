@@ -38,6 +38,7 @@
             this.txtSerialNumber = new System.Windows.Forms.TextBox();
             this.dgvListar = new System.Windows.Forms.DataGridView();
             this.cmsInventario = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gpFecha = new System.Windows.Forms.GroupBox();
@@ -70,7 +71,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chckbxActivo = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbSN.SuspendLayout();
@@ -185,6 +185,13 @@
             this.cmsInventario.Name = "cmsInventario";
             this.cmsInventario.Size = new System.Drawing.Size(112, 26);
             // 
+            // activarToolStripMenuItem
+            // 
+            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.activarToolStripMenuItem.Text = "Activar";
+            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,7 +271,6 @@
             this.gbEstado.Size = new System.Drawing.Size(363, 44);
             this.gbEstado.TabIndex = 52;
             this.gbEstado.TabStop = false;
-            this.gbEstado.Enter += new System.EventHandler(this.gbEstado_Enter);
             // 
             // cmbEstado
             // 
@@ -573,13 +579,6 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "ACTIVO:      ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // activarToolStripMenuItem
-            // 
-            this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
-            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.activarToolStripMenuItem.Text = "Activar";
-            this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click);
             // 
             // GestorInventario
             // 

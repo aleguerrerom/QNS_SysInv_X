@@ -15,7 +15,7 @@ namespace QNS_SysInv_X.MVCController
         {
             objPrestamo = parObjPrestamo;
         }
-
+        #region PROCESAMIENTO DE PRESTAMO
         public void Prestamo()
         {
             try
@@ -46,8 +46,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
+            #endregion
         }
     }
 }

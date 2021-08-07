@@ -33,50 +33,13 @@ namespace QNS_SysInv_X.MVCView
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DSPrestamoLocal", prestamoLista));
             // TODO: This line of code loads data into the 'dS_QNS.Prestamo' table. You can move, or remove it, as needed.
-        
-           // this.reportViewer1.LocalReport.Refresh();
-            // TODO: This line of code loads data into the 'dS_QNS.Prestamo' table. You can move, or remove it, as needed.
-           // this.prestamoTableAdapter.Fill(dS_QNS.Prestamo);
             this.reportViewer1.RefreshReport();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {/*
-            if (cmbFiltrar.SelectedIndex == 0)
-            {
-                this.prestamoTableAdapter.Fill(this.dS_QNS.Clientes, int.Parse(txtFiltro.Text));
-            }
-            else if (cmbFiltrar.SelectedIndex == 1)
-            {
-                this.clientesTableAdapter.FillByNombre(this.dS_QNS.Clientes, txtFiltro.Text);
-            }
-            this.reportViewer1.RefreshReport();*/
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reportViewer1_Load_1(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

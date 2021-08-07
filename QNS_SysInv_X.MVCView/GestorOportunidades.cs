@@ -21,11 +21,8 @@ namespace QNS_SysInv_X.MVCView
         private BitacoraHelper bitH;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
-
         static Regex validate_letter = RegexExpression.letter_validation();
-
         static Regex validate_number = RegexExpression.number_validation();
-
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
         public GestorOportunidades()
@@ -39,6 +36,8 @@ namespace QNS_SysInv_X.MVCView
             this.user = usuario;
             this.stsUsu.Text = this.user.Usuario;
         }
+
+        #region LIMPIZA DE ALERTAS
         private void limpiarAlertas()
         {
             lblNombreCliente.BackColor = System.Drawing.Color.White;
@@ -57,7 +56,9 @@ namespace QNS_SysInv_X.MVCView
             lblVendedor.ForeColor = System.Drawing.Color.Black;
             gbVendedor.BackColor = System.Drawing.Color.White;
         }
+        #endregion
 
+        #region CARGAR COMBOBOX DE VENDEDOR
         private void cargarComboVendedor()
         {
             try
@@ -83,7 +84,9 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
+        #region CARGAR COMBO BOX DE  CLIENTE
         private void cargarComboCliente()
         {
             try
@@ -106,6 +109,7 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         #region LISTAR OPORTUNIDADES
         private void listar()
@@ -171,11 +175,7 @@ namespace QNS_SysInv_X.MVCView
             }
         }
         #endregion
-
-        private void txtModelo_TextChanged(object sender, EventArgs e)
-        {
-        }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
@@ -289,47 +289,7 @@ namespace QNS_SysInv_X.MVCView
             limpiarAlertas();
         }
         #endregion
-
-        #region ELIMINAR OPORTUNIDAD
-        private void eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Oportunidades para eliminar");
-                }
-                else
-                {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.oportunidades = new Oportunidades();
-                    this.oportunidades.Nombrecliente =
-                    this.oportunidades.Nombrecliente = int.Parse(fila["nombreCliente"].ToString());
-                    this.oportunidades.opc = 3;
-                    this.oportunidadesH = new OportunidadesHelper(oportunidades);
-                    ///LOG PARA ELIMINAR
-                    ///
-                     this.bitacora = new Bitacora();
-                     this.bitacora.Usuario = this.stsUsuario.Text;
-                     this.bitacora.Movimiento = "Eliminar Oportunidad";
-                     this.bitacora.Detalle = "Se elimino la oportunidad seleccionada";
-                     this.bitacora.opc = 5;
-                     this.bitH = new BitacoraHelper(bitacora);
-                     this.bitH.LogMovimientos();
-                    this.oportunidadesH.Eliminar();
-                    MessageBox.Show("Oportunidad Eliminada");
-                    listar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-        #endregion
-
+        
         #region ACTUALIZAR OPORTUNIDADES
         private void actualizar()
         {
@@ -416,12 +376,6 @@ namespace QNS_SysInv_X.MVCView
             CargarFromTable();
         }
 
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            eliminar();
-            listar();
-        }
-
         private void GestorOportunidades_Load(object sender, EventArgs e)
         {
             listar();
@@ -485,6 +439,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            #region BUSCQUEDA DE OPORTUNIDAD POR ID
             try
             {
                 if (txtBuscar.Text == "")
@@ -514,18 +469,9 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+            #endregion
         }
-
-        private void idl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gbDetalles_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void txtDetalles_TextChanged(object sender, EventArgs e)
         {
             limpiarAlertas();

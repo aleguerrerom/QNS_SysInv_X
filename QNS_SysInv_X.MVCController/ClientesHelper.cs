@@ -18,6 +18,7 @@ namespace QNS_SysInv_X.MVCController
         }
         //RETORA TABLA CON LOS USUARIOS
 
+        #region LISTAR
         public DataTable Listar()
         {
             tblDatos = new DataTable();
@@ -32,16 +33,16 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlValue = objClientes.opc;
                 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPClientes");
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
             return tblDatos;
         }
+        #endregion
 
+        #region USUARIOS
         //GUARDA USUARIOS
         public void Guardar()
         {
@@ -114,15 +115,15 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
         }
-        
+        #endregion
+
+        #region ACTUALIZAR
         public void Actualizar()
         {
-
             try
             {
                 cnGeneral = new Datos();
-
-
+                
                 SqlParameter[] parParameter = new SqlParameter[10];
 
                 parParameter[0] = new SqlParameter();
@@ -188,32 +189,9 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
         }
+        #endregion
 
-        public void Eliminar()
-        {
-            try
-            {
-                cnGeneral = new Datos();
-
-                SqlParameter[] parParameter = new SqlParameter[2];
-                parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
-                parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objClientes.opc;
-
-                parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@cedula";
-                parParameter[1].SqlDbType = SqlDbType.Int;
-                parParameter[1].SqlValue = objClientes.Cedula;
-
-                cnGeneral.EjecutarSP(parParameter, "SPClientes");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
+        #region BUSCAR
         public DataTable Buscar()
         {
             tblDatos = new DataTable();
@@ -242,6 +220,6 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-
+        #endregion
     }
 }

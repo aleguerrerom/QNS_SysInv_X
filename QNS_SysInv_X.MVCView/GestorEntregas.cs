@@ -469,49 +469,7 @@ namespace QNS_SysInv_X.MVCView
             CargarFromTable();
             listar();
         }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {/*
-                if (txtBuscar.Text == "")
-                {
-                    listar();
-                }
-                else
-                {
-                    this.entrega = new Entrega();
-                    this.entrega.Opc = 4;
-                    this.entrega.Id = int.Parse(txtBuscar.Text);
-                    this.entregaH = new EntregaHelper(entrega);
-                    this.table = new DataTable();
-                    dgvListar.DataSource = table;
-                    this.table = this.entregaH.Buscar();
-                    if (this.table.Rows.Count > 0)
-                    {
-                        this.dgvListar.DataSource = this.table;
-                        this.dgvListar.ReadOnly = true;
-                    }
-                    else listar();
-                }
-                */
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dgvListar.SelectedRows)
@@ -519,11 +477,6 @@ namespace QNS_SysInv_X.MVCView
                 dgvListar.Rows.RemoveAt(item.Index);
                 dgvListar.Refresh();
             }
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void txtCliente_TextChanged(object sender, EventArgs e)

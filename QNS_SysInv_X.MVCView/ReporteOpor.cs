@@ -50,10 +50,6 @@ namespace QNS_SysInv_X.MVCView
                     {
                         MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    //if (dtpFechaInicio.Value == dtpEnd.Value)
-                    //{
-                    //    MessageBox.Show("La fecha de inicio no puede ser igual a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //}
                     else
                     this.oportunidadesTableAdapter.FillByFecha(this.dS_QNS.Oportunidades, dtpFechaInicio.Value,dtpEnd.Value);
                 }
@@ -76,12 +72,7 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbFiltro.SelectedIndex == 0)

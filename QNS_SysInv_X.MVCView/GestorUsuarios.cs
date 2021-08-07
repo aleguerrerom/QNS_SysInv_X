@@ -17,13 +17,9 @@ namespace QNS_SysInv_X.MVCView.Resources
         private BitacoraHelper bitH;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
-
         static Regex validate_letter = RegexExpression.letter_validation();
-
         static Regex validate_number = RegexExpression.number_validation();
-
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
-
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
         public GestorUsuarios()
@@ -56,8 +52,8 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.table = this.userHelper.Listar();
                 if (this.table.Rows.Count > 0)
                 {
-                    this.dgvListar.DataSource = this.table;
-                    this.dgvListar.ReadOnly = true;
+                    this.dataGridView1.DataSource = this.table;
+                    this.dataGridView1.ReadOnly = true;
                 }
             }
             catch (Exception ex)
@@ -120,7 +116,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
                 this.bitacora.Movimiento = "Agregar Usuario";
-                this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario;
+                this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
@@ -187,7 +183,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
                 lblConfirmar.ForeColor = System.Drawing.Color.White;
-                groupBox3.BackColor = System.Drawing.Color.DarkRed;
+                groupBox7.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = cmbRol;
                 return;
             }
@@ -197,7 +193,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblRol.BackColor = System.Drawing.Color.DarkRed;
                 lblRol.ForeColor = System.Drawing.Color.White;
-                groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                groupBox3.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtConfirmar;
                 return;
             }
@@ -345,6 +341,8 @@ namespace QNS_SysInv_X.MVCView.Resources
         }
 
         #endregion
+
+        #region limpiar alertas
         private void limpiarAlertas()
         {
             lblCorreo.BackColor = System.Drawing.Color.White;
@@ -372,10 +370,12 @@ namespace QNS_SysInv_X.MVCView.Resources
             lblRol.ForeColor = System.Drawing.Color.Black;
             groupBox3.BackColor = System.Drawing.Color.White;
         }
+        #endregion
+
         private void GestorUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dB_CNVDataSet1.Rol' table. You can move, or remove it, as needed.
-            dgvListar.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToAddRows = false;
             this.ActiveControl = txtUsuario;
             listar();
             cargarCombo();
@@ -393,59 +393,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
             }
         }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            eliminar();
-        }
-
-        #region ELIMINAR USUARIO
-        private void eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Usuarios para eliminar");
-                }
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Desea eliminar el usuario", "Eliminar", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        int indice = dgvListar.CurrentRow.Index;
-                        DataRow fila = table.Rows[indice];
-                        this.user = new Usuarios();
-                        this.user.Usuario = fila["usuario"].ToString();
-                        this.user.opc = 3;
-                        this.userHelper = new UsuariosHelper(user);
-                        ///LOG PARA ELIMINAR
-                        ///
-                        this.bitacora = new Bitacora();
-                        this.bitacora.Usuario = this.stsUsuario.Text;
-                        this.bitacora.Movimiento = "Eliminar Usuario";
-                        this.bitacora.Detalle = "Se elimino el usuario " + fila["usuario"].ToString();
-                        this.bitacora.opc = 5;
-                        this.bitH = new BitacoraHelper(bitacora);
-                        this.bitH.LogMovimientos();
-                        this.userHelper.Eliminar();
-                        MessageBox.Show("Usuario " + this.user.Usuario + " Eliminado");
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        MessageBox.Show("No se elimino el usuario");
-                    }
-                    
-                    listar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-        #endregion
+        
 
         #region ACTUALIZAR USUARIO
         private void actualizar()
@@ -484,11 +432,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             }
         }
         #endregion
-
-        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void dgvListar_DoubleClick(object sender, EventArgs e)
         {
             CargarFromTable();
@@ -499,19 +443,19 @@ namespace QNS_SysInv_X.MVCView.Resources
         {
             try
             {
-                this.table = (DataTable)this.dgvListar.DataSource;
+                this.table = (DataTable)this.dataGridView1.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                    MessageBox.Show("No hay Registros de Usuario para actualizar");
                 }
                 else
                 {
-                    int indice = dgvListar.CurrentRow.Index;
+                    int indice = dataGridView1.CurrentRow.Index;
                     DataRow fila = table.Rows[indice];
                     this.txtUsuario.Text = fila["Usuario"].ToString();
                     this.txtClave.Text = fila["Clave"].ToString();
-                    this.txtConfirmar.Text = this.txtClave.Text;
-                    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
+                    this.txtConfirmar.Text = fila["Clave"].ToString();
+                    this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
                     this.txtConfirmar.Text = "";
                     this.cmbRol.Text = fila["Nombre_Rol"].ToString();
                     this.txtNombre.Text = fila["Nombre"].ToString();
@@ -555,6 +499,7 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            #region BUSCAR USUARIO
             try
             {
                 if (txtBuscar.Text == "")
@@ -569,13 +514,13 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.userHelper = new UsuariosHelper(user);
 
                     this.table = new DataTable();
-                    dgvListar.DataSource = table;
+                    dataGridView1.DataSource = table;
                     this.table = this.userHelper.Buscar();
 
                     if (this.table.Rows.Count > 0)
                     {
-                        this.dgvListar.DataSource = this.table;
-                        this.dgvListar.ReadOnly = true;
+                        this.dataGridView1.DataSource = this.table;
+                        this.dataGridView1.ReadOnly = true;
                     }
 
                     else listar();
@@ -585,10 +530,12 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 MessageBox.Show(ex.Message);
             }
+            #endregion
         }
 
         private void GestorUsuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
+            #region VALIDACION DE CIERRE DE FORM
             if (this.txtUsuario.Text != "" || this.txtNombre.Text != "" || this.txtCorreo.Text != ""
             || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != ""
             || this.cmbRol.Text != "")
@@ -607,6 +554,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 e.Cancel = false;
             }
+            #endregion
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -627,20 +575,6 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             txtConfirmar.UseSystemPasswordChar = true;
-        }
-
-        private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //this.table = (DataTable)this.dgvListar.DataSource;
-            //int indice = dgvListar.CurrentRow.Index;
-            //DataRow fila = table.Rows[indice];
-            //if (bool.Parse(fila["activo"].ToString())==true) {
-            //    lblUsuario.Text = "pruena";
-            //}
-            //else 
-            //        { 
-            //    lblUsuario.Text = "damn";
-            //}
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -676,6 +610,103 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
             limpiarAlertas();
+        }
+
+        #region ACTIVAR O DESACTIVAR
+        private void ActivarDesactivarUsuario()
+        {
+            try
+            {
+                if (this.dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Debes seleccionar al menos un usuario para el Activar/Desactivar");
+                }
+                else
+                {
+                    int indice = dataGridView1.CurrentRow.Index;
+                    DataRow fila = table.Rows[indice];
+                    this.table = (DataTable)this.dataGridView1.DataSource;
+                    this.textBox1.Text = fila["Usuario"].ToString();
+                    this.user = new Usuarios();
+                    //this.chckbxActivo.Checked = bool.Parse(fila["activo"].ToString());
+                    if (activarToolStripMenuItem.Text == "Desactivar")
+                    {
+                        user.Usuario = this.textBox1.Text;
+                        user.opc = 8;
+                        this.userHelper = new UsuariosHelper(user);
+                        this.userHelper.Buscar();
+
+                        MessageBox.Show("Se desactivo el Usuario: " + user.Usuario);
+                        //Bitacora 
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
+                        this.bitacora.Movimiento = "Inactivacion de Usuario";
+                        this.bitacora.Detalle = "Se Inactivo el usuario correctamente " + user.Usuario;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    else if (activarToolStripMenuItem.Text == "Activar")
+                    {
+                        user.Usuario = this.textBox1.Text;
+                        user.opc = 9;
+                        this.userHelper = new UsuariosHelper(user);
+                        this.userHelper.Buscar();
+                        MessageBox.Show("Se activo el Usuario: " + user.Usuario);
+                        //Bitacora 
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
+                        this.bitacora.Movimiento = "Activación Usuario";
+                        this.bitacora.Detalle = "Se activo el usuario correctamente " + user.Usuario;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
+                    listar();
+                    limpiar();
+                    dataGridView1.ClearSelection();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
+        private void activarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ActivarDesactivarUsuario();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            CargarFromTable();
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            #region VALIDAR  VALOR DE TOOL STRIP VALUE
+            try
+            {
+                int indice = dataGridView1.CurrentRow.Index;
+                DataRow fila = table.Rows[indice];
+                this.table = (DataTable)this.dataGridView1.DataSource;
+                if (bool.Parse(fila["activo"].ToString()) == true)
+                {
+                    activarToolStripMenuItem.Text = "Desactivar";
+                }
+                else if (bool.Parse(fila["activo"].ToString()) == false)
+                {
+                    activarToolStripMenuItem.Text = "Activar";
+                }
+            }
+
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.Message);
+            }
+            #endregion
         }
     }
 }

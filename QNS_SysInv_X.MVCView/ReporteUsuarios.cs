@@ -29,14 +29,12 @@ namespace QNS_SysInv_X.MVCView
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.LocalReport.Refresh();
-            // TODO: This line of code loads data into the 'dS_QNS.Oportunidades' table. You can move, or remove it, as needed.
             this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
             this.reportViewer1.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (cmbFiltro.SelectedIndex == 0)
@@ -59,22 +57,12 @@ namespace QNS_SysInv_X.MVCView
         private void button2_Click(object sender, EventArgs e)
         {
             this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
-
             this.reportViewer1.RefreshReport();
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

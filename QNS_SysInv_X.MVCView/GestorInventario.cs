@@ -107,6 +107,7 @@ namespace QNS_SysInv_X.MVCView
             this.Close();
         }
 
+        #region LIMPIAR ALERTAS 
         private void limpiarAlertas()
         {
             lblNombre.BackColor = System.Drawing.Color.White;
@@ -131,6 +132,9 @@ namespace QNS_SysInv_X.MVCView
             lblFecha.ForeColor = System.Drawing.Color.Black;
             gpFecha.BackColor = System.Drawing.Color.White;
         }
+
+        #endregion
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
@@ -228,6 +232,7 @@ namespace QNS_SysInv_X.MVCView
             #endregion
         }
 
+        #region LIMPIAR DATOS
         private void limpiar()
         {
             this.txtNombreActivo.Clear();
@@ -242,46 +247,6 @@ namespace QNS_SysInv_X.MVCView
             this.txtID.Enabled = true;
             this.btnAdd.Text = "AGREGAR";
             limpiarAlertas();
-        }
-
-        #region ELIMINAR USUARIO
-        private void eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Registros para eliminar");
-                }
-                else
-                {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.inventario = new Inventario();
-                    this.inventario.Id = int.Parse(fila["id"].ToString());
-                    this.inventario.opc = 3;
-                    this.invH = new InventarioHelper(inventario);
-                    ///LOG PARA ELIMINAR
-                    ///
-                    
-                    this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
-                    this.bitacora.Movimiento = "Eliminar";
-                    this.bitacora.Detalle = "Se elimino el nuevo usuario " + fila["usuario"].ToString();
-                    this.bitacora.opc = 5;
-                    this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
-                    
-                    this.invH.Eliminar();
-                    MessageBox.Show("Registro Eliminado correctamente");
-                    listar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
         }
         #endregion
 
@@ -380,12 +345,7 @@ namespace QNS_SysInv_X.MVCView
         {
             CargarFromTable();
         }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            eliminar();
-            listar();
-        }
+        
 
         private void GestorInventario_Load(object sender, EventArgs e)
         {
@@ -443,7 +403,7 @@ namespace QNS_SysInv_X.MVCView
                 e.Cancel = false;
             }
         }
-
+        #region BUSQUEDA POR ID DE INVENTARIO
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -477,11 +437,7 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void gbEstado_Enter(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
 
         private void txtSerialNumber_TextChanged(object sender, EventArgs e)
         {
@@ -520,6 +476,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void dgvListar_Click(object sender, EventArgs e)
         {
+            #region VALIDAR TEXTO EN TOOL STRIP
             try
             {
                 int indice = dgvListar.CurrentRow.Index;
@@ -534,7 +491,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     activarToolStripMenuItem.Text = "Activar";
                 }
-
+                #endregion
             }
             catch (Exception ex)
             {
@@ -542,6 +499,7 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
+        #region ACTIVAR O DESACTIVAR
         private void ActivarDesactivarArticulo()
         {
             try
@@ -557,7 +515,6 @@ namespace QNS_SysInv_X.MVCView
                     this.table = (DataTable)this.dgvListar.DataSource;
                     this.txtID.Text = fila["ID"].ToString();
                     this.inventario = new Inventario();
-                    //    this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                     if (activarToolStripMenuItem.Text == "Desactivar")
                     {
                         inventario.Id = int.Parse(fila["ID"].ToString());
@@ -595,6 +552,7 @@ namespace QNS_SysInv_X.MVCView
                     dgvListar.ClearSelection();
                 }
             }
+            #endregion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

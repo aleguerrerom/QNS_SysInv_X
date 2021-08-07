@@ -16,11 +16,11 @@ namespace QNS_SysInv_X.MVCController
             objOportunidades = parObjOportunidades;
         }
 
+        #region GUARDAR
         public void Guardar()
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[7];
@@ -62,26 +62,20 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[6].ParameterName = "@vendedor";
                 parParameter[6].SqlDbType = SqlDbType.Int;
                 parParameter[6].SqlValue = objOportunidades.Vendedor;
-
-
+                
                 cnGeneral.EjecutarSP(parParameter, "SPOportunidades");
-
-
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+        #endregion
 
+        #region LISTAR
         public DataTable Listar()
         {
-
             tblDatos = new DataTable();
-
             try
             {
                 cnGeneral = new Datos();
@@ -93,9 +87,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objOportunidades.opc;
 
-
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOportunidades");
-
+               tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOportunidades");
             }
             catch (Exception ex)
             {
@@ -104,39 +96,9 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
 
-
-        public void Eliminar()
-        {
-            try
-            {
-                cnGeneral = new Datos();
-
-                SqlParameter[] parParameter = new SqlParameter[2];
-
-                parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
-                parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objOportunidades.opc;
-
-                parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@nombrecliente";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 50;
-                parParameter[1].SqlValue = objOportunidades.Nombrecliente;
-
-                cnGeneral.EjecutarSP(parParameter, "SPOportunidades");
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
-        }
-
-
+        #region ACTUALIZAR
         public void Actualizar()
         {
             try
@@ -187,18 +149,16 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].ParameterName = "@id";
                 parParameter[7].SqlDbType = SqlDbType.Int;
                 parParameter[7].SqlValue = objOportunidades.Id;
-
-
                 cnGeneral.EjecutarSP(parParameter, "SPOportunidades");
-
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+        #endregion
 
+        #region BUSCAR
         public DataTable Buscar()
         {
 
@@ -220,8 +180,6 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objOportunidades.Id;
 
-
-
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOportunidades");
 
             }
@@ -232,7 +190,7 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-
+        #endregion
     }
 
 }

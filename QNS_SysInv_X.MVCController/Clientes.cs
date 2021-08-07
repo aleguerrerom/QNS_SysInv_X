@@ -149,8 +149,6 @@ namespace QNS_SysInv_X.MVCController
                 nombre = value;
             }
         }
-
-        
         public Clientes(string tipo, int cedula, string contacto, string telefono, string correo, string direccion, int agente, string nombre, string usuario)
         {
             this.Tipo = tipo;

@@ -32,6 +32,8 @@
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RerporteClientes));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -42,15 +44,13 @@
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.stsStrip = new System.Windows.Forms.StatusStrip();
             this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DS_QNS = new QNS_SysInv_X.MVCView.DS_QNS();
-            this.ClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientesTableAdapter = new QNS_SysInv_X.MVCView.DS_QNSTableAdapters.ClientesTableAdapter();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.stsStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -64,6 +64,16 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 58;
             pictureBox2.TabStop = false;
+            // 
+            // ClientesBindingSource
+            // 
+            this.ClientesBindingSource.DataMember = "Clientes";
+            this.ClientesBindingSource.DataSource = this.DS_QNS;
+            // 
+            // DS_QNS
+            // 
+            this.DS_QNS.DataSetName = "DS_QNS";
+            this.DS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -172,17 +182,6 @@
             this.stsUsu.Name = "stsUsu";
             this.stsUsu.Size = new System.Drawing.Size(118, 17);
             this.stsUsu.Text = "toolStripStatusLabel1";
-            this.stsUsu.Click += new System.EventHandler(this.stsUsu_Click);
-            // 
-            // DS_QNS
-            // 
-            this.DS_QNS.DataSetName = "DS_QNS";
-            this.DS_QNS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ClientesBindingSource
-            // 
-            this.ClientesBindingSource.DataMember = "Clientes";
-            this.ClientesBindingSource.DataSource = this.DS_QNS;
             // 
             // ClientesTableAdapter
             // 
@@ -210,12 +209,12 @@
             this.Text = "REPORTE CLIENTES | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.stsStrip.ResumeLayout(false);
             this.stsStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_QNS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

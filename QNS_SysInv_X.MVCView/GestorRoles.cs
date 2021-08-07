@@ -32,6 +32,7 @@ namespace QNS_SysInv_X.MVCView
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            #region VALIDACIONES PARA AGREGAR O ACTUALIZAR
             if (this.txtRol.Text == "")
             {
                 MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar");
@@ -55,7 +56,6 @@ namespace QNS_SysInv_X.MVCView
                     DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-
                         actualizar();
                         listar();
                         limpiar();
@@ -72,9 +72,10 @@ namespace QNS_SysInv_X.MVCView
                         limpiar();
                     }
             }
+            #endregion
         }
 
-#region ACTUALIZAR ROLES
+        #region ACTUALIZAR ROLES
         private void actualizar()
         {
             try
@@ -150,6 +151,7 @@ namespace QNS_SysInv_X.MVCView
         }
 
         #endregion
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Desea borrar los datos ingresados?", "SALIR", MessageBoxButtons.YesNo);
@@ -260,7 +262,7 @@ namespace QNS_SysInv_X.MVCView
         }
         #endregion
 
-#region LISTAR ROLES
+        #region LISTAR ROLES
         private void listar()
         {
             try
@@ -291,56 +293,7 @@ namespace QNS_SysInv_X.MVCView
             listar();
             dgvListar.ClearSelection();
         }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Eliminar();
-            listar();
-
-        }
-
-        #region ELIMINAR ROLES
-        private void Eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Usuarios para eliminar");
-                }
-                else
-                {
-                    int indice = dgvListar.CurrentRow.Index;
-                    DataRow fila = table.Rows[indice];
-                    this.roles = new Roles();
-                    this.roles.Nombre = fila["nombre"].ToString();
-                    this.roles.opc = 3;
-                    this.rolH = new RolesHelper(roles);
-///LOG PARA USUARIOS
-
-                    this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.user.Usuario;
-                    this.bitacora.Movimiento = "Eliminar Rol";
-                    this.bitacora.Detalle = "Se elimino el rol " + this.txtRol.Text;
-                    this.bitacora.opc = 5;
-                    this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
-                   
-                    this.rolH.Eliminar();
-                    MessageBox.Show("Usuario Eliminado Eliminado");
-                    listar();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-    #endregion
-
+        
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cargardatosSeleccionado();
@@ -388,9 +341,8 @@ namespace QNS_SysInv_X.MVCView
             }
             #endregion
         }
-
-        #region CARGAR DATOS SELECCIONADOS
-
+        
+        #region ACTIVAR DESACTIVAR ROL
         private void ActivarDesactivarRol()
         {
             try
@@ -449,9 +401,8 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
-            #endregion
         }
-
+        #endregion
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
@@ -465,6 +416,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            #region BUSCAR POR ID de rol
             try
             {
                 if (txtBuscar.Text == "")
@@ -504,6 +456,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+            #endregion
         }
 
         private void activarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -513,12 +466,12 @@ namespace QNS_SysInv_X.MVCView
 
         private void dgvListar_Click(object sender, EventArgs e)
         {
+            #region DESACTIVAR O ACTIVAR SEGUN VALOR TOOL STRIP
             try
             {
                 int indice = dgvListar.CurrentRow.Index;
                 DataRow fila = table.Rows[indice];
                 this.table = (DataTable)this.dgvListar.DataSource;
-              //  this.chckbxActivo.Checked = bool.Parse(fila["Activo"].ToString());
                 if (bool.Parse(fila["Activo"].ToString()) == true)
                 {
                     activarToolStripMenuItem.Text = "Desactivar";
@@ -533,11 +486,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void dgvListar_MouseHover(object sender, EventArgs e)
-        {
-           
+            #endregion
         }
     }
 }

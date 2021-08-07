@@ -16,10 +16,10 @@ namespace QNS_SysInv_X.MVCController
             objUsuarios = parObjUsuarios;
         }
         //RETORA TABLA CON LOS USUARIOS
-        
+
+        #region LISTAR
         public DataTable Listar()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -42,13 +42,14 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-        
+        #endregion
+
+        #region GUARDAR
         //GUARDA USUARIOS
         public void Guardar()
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[8];
@@ -99,27 +100,20 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].SqlValue = objUsuarios.Correo;
 
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
-
-
-
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+        #endregion
 
-        
+        #region ACTUALIZAR
         public void Actualizar()
         {
-           
             try
             {
                 cnGeneral = new Datos();
-
-
                 SqlParameter[] parParameter = new SqlParameter[8];
 
                 parParameter[0] = new SqlParameter();
@@ -173,40 +167,10 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
-        
-        public void Eliminar()
-        {
-            try
-            {
-                cnGeneral = new Datos();
+        #endregion
 
-                SqlParameter[] parParameter = new SqlParameter[2];
-
-                parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
-                parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objUsuarios.opc;
-
-                parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@usuario";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 20;
-                parParameter[1].SqlValue = objUsuarios.Usuario;
-
-                cnGeneral.EjecutarSP(parParameter, "SPUsuario");
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
-        }
-        
+        #region VALIDAR LOGIN
         public DataTable ValidarLogin()
         {
 
@@ -246,11 +210,13 @@ namespace QNS_SysInv_X.MVCController
             return tblDatos;
         }
 
+        #endregion
+
+        #region CAMBIO DE CLAVE
         public void CambiarClave()
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[3];
@@ -271,21 +237,17 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[2].SqlDbType = SqlDbType.VarChar;
                 parParameter[2].Size = 50;
                 parParameter[2].SqlValue = objUsuarios.Clave;
-             
-
                 cnGeneral.EjecutarSP(parParameter, "SPUsuario");
-
-
-
+                
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+        #endregion
 
+        #region BUSCAR
         public DataTable Buscar()
         {
 
@@ -308,8 +270,6 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].Size = 20;
                 parParameter[1].SqlValue = objUsuarios.Usuario;
 
-
-
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
 
             }
@@ -320,7 +280,7 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
-
+        #endregion
     }
 }
 

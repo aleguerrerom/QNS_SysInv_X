@@ -17,6 +17,7 @@ namespace QNS_SysInv_X.MVCController
             objRoles = parobjRoles;
         }
 
+        #region GUARDAR
         public void GuardarRol()
         {
             try
@@ -65,20 +66,17 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[7].ParameterName = "@bitacora";
                 parParameter[7].SqlDbType = SqlDbType.Bit;
                 parParameter[7].SqlValue = objRoles.Bitacora;
-
-
+                
                 parParameter[8] = new SqlParameter();
                 parParameter[8].ParameterName = "@oportunidades";
                 parParameter[8].SqlDbType = SqlDbType.Bit;
                 parParameter[8].SqlValue = objRoles.Oportunidades;
-
-
+                
                 parParameter[9] = new SqlParameter();
                 parParameter[9].ParameterName = "@vendedores";
                 parParameter[9].SqlDbType = SqlDbType.Bit;
                 parParameter[9].SqlValue = objRoles.Vendedores;
-
-
+                
                 parParameter[10] = new SqlParameter();
                 parParameter[10].ParameterName = "@clientes";
                 parParameter[10].SqlDbType = SqlDbType.Bit;
@@ -88,8 +86,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[11].ParameterName = "@activo";
                 parParameter[11].SqlDbType = SqlDbType.Bit;
                 parParameter[11].SqlValue = objRoles.Activo;
-
-
+                
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");
             }
             catch (Exception ex)
@@ -98,38 +95,9 @@ namespace QNS_SysInv_X.MVCController
             }
 
         }
+        #endregion
 
-        public void Eliminar()
-        {
-            try
-            {
-                cnGeneral = new Datos();
-
-                SqlParameter[] parParameter = new SqlParameter[2];
-
-                parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
-                parParameter[0].SqlDbType = SqlDbType.Int;
-                parParameter[0].SqlValue = objRoles.opc;
-
-                parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@nombre";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 20;
-                parParameter[1].SqlValue = objRoles.Nombre;
-
-                cnGeneral.EjecutarSP(parParameter, "SPUsuario");
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
-        }
-
-
+        #region ACTUALIZAR
         public void ActualizarRol()
         {
             try
@@ -198,9 +166,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[11].ParameterName = "@activo";
                 parParameter[11].SqlDbType = SqlDbType.Bit;
                 parParameter[11].SqlValue = objRoles.Activo;
-
-
-
+                
                 cnGeneral.EjecutarSP(parParameter, "SPRoles");
             }
             catch (Exception ex)
@@ -208,10 +174,11 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
         }
+        #endregion
 
+        #region LISTAR
         public DataTable ListarRol()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -225,9 +192,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objRoles.opc;
 
-
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPRoles");
-
             }
             catch (Exception ex)
             {
@@ -236,10 +201,11 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
 
+        #region BUSCAR
         public DataTable BusquedaPermisoRol()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -257,8 +223,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].ParameterName = "@ID";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objRoles.ID1;
-
-
+                
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPRoles");
 
             }
@@ -269,10 +234,11 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
 
+        #region BUSCAR
         public DataTable Buscar()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -290,11 +256,8 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].ParameterName = "@ID";
                 parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = objRoles.ID1;
-
-
-
+                
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPRoles");
-
             }
             catch (Exception ex)
             {
@@ -303,7 +266,6 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
     }
-
-
 }

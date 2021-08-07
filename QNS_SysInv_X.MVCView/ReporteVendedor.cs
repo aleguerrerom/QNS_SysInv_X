@@ -25,10 +25,6 @@ namespace QNS_SysInv_X.MVCView
         {
             // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
             this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
-            // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
-            this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
-            // TODO: This line of code loads data into the 'dS_QNS.Rol' table. You can move, or remove it, as needed.
-            
             ReportParameterCollection reportParameters = new ReportParameterCollection();
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
@@ -74,14 +70,6 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        
     }
 }

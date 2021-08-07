@@ -16,9 +16,7 @@ namespace QNS_SysInv_X.MVCView
         private BitacoraHelper bitH;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
-
         static Regex validate_letter = RegexExpression.letter_validation();
-
         static Regex validate_number = RegexExpression.number_validation();
 
         public GestorVendedores(Usuarios usuario)
@@ -27,6 +25,8 @@ namespace QNS_SysInv_X.MVCView
             this.user = usuario;
             this.toolStripStatusLabel1.Text = this.user.Usuario;
         }
+
+        #region LIMIAR ALERTAS
         private void limpiarAlertas()
         {
             lblCedula.BackColor = System.Drawing.Color.White;
@@ -48,6 +48,7 @@ namespace QNS_SysInv_X.MVCView
             lblCorreo.ForeColor = System.Drawing.Color.Black;
             gbCorreo.BackColor = System.Drawing.Color.White;
         }
+        #endregion
 
         public GestorVendedores()
         {
@@ -318,57 +319,7 @@ namespace QNS_SysInv_X.MVCView
             {
             }
         }
-
-        #region ELIMINAR VENDEDOR
-        private void eliminar()
-        {/*
-            try
-            {
-                this.table = (DataTable)this.dgvListar.DataSource;
-                if (table == null)
-                {
-                    MessageBox.Show("No hay Vendedores para eliminar");
-                }
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Desea eliminar los datos del vendedor??", "Eliminar", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        int indice = dgvListar.CurrentRow.Index;
-                        DataRow fila = table.Rows[indice];
-                        this.vendedor = new Vendedores();
-                        this.vendedor.Cedula = int.Parse(fila["cedula"].ToString());
-                        this.vendedor.opc = 3;
-                        this.vendedorH = new VendedoresHelper(vendedor);
-                        ///LOG PARA ELIMINAR
-                        ///
-
-                        this.bitacora = new Bitacora();
-                        this.bitacora.Usuario = this.stsUsuario.Text;
-                        this.bitacora.Movimiento = "Eliminar Vendedor";
-                        this.bitacora.Detalle = "Se elimino el vendedor " + fila["nombre"].ToString();
-                        this.bitacora.opc = 5;
-                        this.bitH = new BitacoraHelper(bitacora);
-                        this.bitH.LogMovimientos();
-
-                        this.vendedorH.Eliminar();
-                        MessageBox.Show("Vendedor " + this.vendedor.Nombre + " Eliminado");
-                        listar();
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        MessageBox.Show("No se elimino el vendedor");
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-        #endregion
-
+        
         #region ACTUALIZAR USUARIO
         private void actualizar()
         {
@@ -444,12 +395,6 @@ namespace QNS_SysInv_X.MVCView
         #endregion
         
 
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            eliminar();
-            listar();
-        }
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -493,12 +438,11 @@ namespace QNS_SysInv_X.MVCView
             {
                 e.Cancel = false;
             }
-           
-          
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            #region BUSQUEDA DE VENDEDOR
             try
             {
                 if (txtBuscar.Text == "")
@@ -529,6 +473,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+            #endregion
         }
 
         private void txtCedula_TextChanged(object sender, EventArgs e)
@@ -565,6 +510,7 @@ namespace QNS_SysInv_X.MVCView
         {
             ActivarDesactivarVendedor();
         }
+        #region ACTIVAR DESACTIVAR
         private void ActivarDesactivarVendedor()
         {
             try
@@ -624,9 +570,11 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void dgvListar_Click(object sender, EventArgs e)
         {
+            #region VLIDAR VALOR DE TOOL STRIP
             try
             {
                 int indice = dgvListar.CurrentRow.Index;
@@ -647,6 +595,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 MessageBox.Show(ex.Message);
             }
+            #endregion
         }
     }
 

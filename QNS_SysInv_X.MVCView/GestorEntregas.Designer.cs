@@ -175,7 +175,6 @@
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(734, 82);
             this.dgvListar.TabIndex = 45;
-            this.dgvListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListar_CellContentClick);
             this.dgvListar.DoubleClick += new System.EventHandler(this.dgvListar_DoubleClick);
             // 
             // NºParte
@@ -676,7 +675,6 @@
             this.label2.Size = new System.Drawing.Size(102, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "TELEFONO:           ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox3
             // 
@@ -692,7 +690,6 @@
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ARTICULOS A ENTREGAR";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // GestorEntregas
             // 

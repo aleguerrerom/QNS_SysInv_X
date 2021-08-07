@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteOpor));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.oportunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -129,9 +129,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource5.Name = "DSOportunidades";
-            reportDataSource5.Value = this.oportunidadesBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource1.Name = "DSOportunidades";
+            reportDataSource1.Value = this.oportunidadesBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportOportunidades.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 156);
             this.reportViewer1.Name = "reportViewer1";
@@ -178,7 +178,6 @@
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(100, 22);
             this.dtpFechaInicio.TabIndex = 3;
-            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // statusStrip1
             // 

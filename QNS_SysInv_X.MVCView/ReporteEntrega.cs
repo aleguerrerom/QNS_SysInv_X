@@ -28,31 +28,17 @@ namespace QNS_SysInv_X.MVCView
             ReportParameterCollection reportParameters = new ReportParameterCollection();
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer2.LocalReport.SetParameters(reportParameters);
-           // this.reportViewer2.LocalReport.Refresh();
+            // this.reportViewer2.LocalReport.Refresh();
             reportViewer2.LocalReport.DataSources.Clear();
             reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("DSEntrega", entregaLista));
             // TODO: This line of code loads data into the 'dS_QNS.Entrega' table. You can move, or remove it, as needed.
             this.reportViewer2.RefreshReport();
         }
         
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
         }
     }
 }

@@ -18,9 +18,9 @@ namespace QNS_SysInv_X.MVCController
         }
         //RETORA TABLA CON LOS USUARIOS
 
+        #region LISTAR
         public DataTable Listar()
         {
-
             tblDatos = new DataTable();
 
             try
@@ -33,8 +33,7 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].ParameterName = "@opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = objbitacora.opc;
-
-
+                
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPBitacora");
 
             }
@@ -45,12 +44,14 @@ namespace QNS_SysInv_X.MVCController
 
             return tblDatos;
         }
+        #endregion
+
+        #region LOGS DE SESION
 
         public void LogSesion()
         {
             try
             {
-
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[2];
@@ -67,16 +68,15 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].SqlValue = objbitacora.Usuario;
                 
                 cnGeneral.EjecutarSP(parParameter, "SPBitacora");
-                
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-
         }
+        #endregion
 
+        #region LOGS DE MOVIMIENTOS
         public void LogMovimientos()
         {
             try
@@ -114,8 +114,7 @@ namespace QNS_SysInv_X.MVCController
             {
                 throw new Exception(ex.Message);
             }
-
-
+            #endregion
         }
     }
 }
