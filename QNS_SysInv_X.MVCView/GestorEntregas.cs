@@ -458,6 +458,10 @@ namespace QNS_SysInv_X.MVCView
             cmbNombre.SelectedIndex = -1;
             cmbTelefono.SelectedIndex = -1;
             listar();
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)

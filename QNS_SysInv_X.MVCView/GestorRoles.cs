@@ -292,6 +292,10 @@ namespace QNS_SysInv_X.MVCView
             limpiar();
             listar();
             dgvListar.ClearSelection();
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)

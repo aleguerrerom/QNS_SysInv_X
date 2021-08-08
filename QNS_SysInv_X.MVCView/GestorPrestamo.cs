@@ -86,6 +86,10 @@ namespace QNS_SysInv_X.MVCView
             cargarComboCliente();
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         #region LISTAR INVENTARIO
         private void listar()

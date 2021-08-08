@@ -16,7 +16,7 @@ namespace QNS_SysInv_X.MVCView
         private Usuarios user;
 
         static Regex validate_letter = RegexExpression.letter_validation();
-
+        static Regex validate_letteradnumbers = RegexExpression.numberANDletter_validation();
         public GestorInventario()
         {
             InitializeComponent();
@@ -160,7 +160,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_letter.IsMatch(txtTipo.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo TIPO solo permite letras", "InvalidO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo TIPO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblTipo.BackColor = System.Drawing.Color.DarkRed;
                 lblTipo.ForeColor = System.Drawing.Color.White;
                 gbTipo.BackColor = System.Drawing.Color.DarkRed;
@@ -171,6 +171,16 @@ namespace QNS_SysInv_X.MVCView
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de NUMERO DE SERIE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblSN.BackColor = System.Drawing.Color.DarkRed;
+                lblSN.ForeColor = System.Drawing.Color.White;
+                gbSN.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtSerialNumber;
+                return;
+            }
+            else if (validate_letteradnumbers.IsMatch(txtSerialNumber.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de NUMERO DE SERIE solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblSN.BackColor = System.Drawing.Color.DarkRed;
                 lblSN.ForeColor = System.Drawing.Color.White;
                 gbSN.BackColor = System.Drawing.Color.DarkRed;
@@ -190,6 +200,16 @@ namespace QNS_SysInv_X.MVCView
             else if( this.txtModelo.Text == "" ){
                 limpiarAlertas();
                 MessageBox.Show("El campo de MODELO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblModelo.BackColor = System.Drawing.Color.DarkRed;
+                lblModelo.ForeColor = System.Drawing.Color.White;
+                gbModelo.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtModelo;
+                return;
+            }
+            else if (validate_letteradnumbers.IsMatch(txtModelo.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de MODELO solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblModelo.BackColor = System.Drawing.Color.DarkRed;
                 lblModelo.ForeColor = System.Drawing.Color.White;
                 gbModelo.BackColor = System.Drawing.Color.DarkRed;
@@ -352,7 +372,11 @@ namespace QNS_SysInv_X.MVCView
             this.ActiveControl = txtNombreActivo;
             dgvListar.AllowUserToAddRows = false;
             listar();
-            dgvListar.ClearSelection(); 
+            dgvListar.ClearSelection();
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void dgvListar_DoubleClick(object sender, EventArgs e)

@@ -386,6 +386,10 @@ namespace QNS_SysInv_X.MVCView
             this.cmbNombre.SelectedIndex = -1;
             this.cmbCedVendedor.SelectedIndex = -1;
             this.cmbVendedor.SelectedIndex = -1;
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)

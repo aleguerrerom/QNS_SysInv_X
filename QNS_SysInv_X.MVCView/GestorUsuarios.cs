@@ -380,6 +380,10 @@ namespace QNS_SysInv_X.MVCView.Resources
             listar();
             cargarCombo();
             this.cmbRol.SelectedIndex = -1;
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

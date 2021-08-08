@@ -135,6 +135,10 @@ namespace QNS_SysInv_X.MVCView
             listar();
             this.cmbVende.SelectedIndex = -1;
             dgvListar.ClearSelection();
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         #region LIMPIAR ALERTAS
@@ -650,5 +654,6 @@ namespace QNS_SysInv_X.MVCView
             }
             #endregion
         }
+        
     }
 }

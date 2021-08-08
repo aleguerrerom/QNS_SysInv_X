@@ -167,6 +167,7 @@
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListar.ShowEditingIcon = false;
             this.dgvListar.Size = new System.Drawing.Size(806, 172);
             this.dgvListar.TabIndex = 57;
             this.dgvListar.Click += new System.EventHandler(this.dgvListar_Click);

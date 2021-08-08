@@ -130,6 +130,10 @@ namespace QNS_SysInv_X.MVCView
             dgvListar.AllowUserToAddRows = false;
             listar();
             dgvListar.ClearSelection();
+            foreach (DataGridViewColumn column in dgvListar.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         
         private void dgvListar_DoubleClick(object sender, EventArgs e)
