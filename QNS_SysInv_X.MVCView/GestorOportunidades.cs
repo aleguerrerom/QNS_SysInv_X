@@ -24,6 +24,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+        static Regex valida_numberandLetter = RegexExpression.numberANDletter_validation();
 
         public GestorOportunidades()
         {
@@ -199,6 +200,16 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtMarca;
                 return;
             }
+            else if (valida_numberandLetter.IsMatch(txtMarca.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo MARCA solo permite numeros y letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblMarca.BackColor = System.Drawing.Color.DarkRed;
+                lblMarca.ForeColor = System.Drawing.Color.White;
+                gbMarca.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtMarca;
+                return;
+            }
             else if (this.txtPresupuesto.Text == "")
             {
                 limpiarAlertas();
@@ -233,9 +244,9 @@ namespace QNS_SysInv_X.MVCView
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo DETALLES no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblPresupuesto.BackColor = System.Drawing.Color.DarkRed;
-                lblPresupuesto.ForeColor = System.Drawing.Color.White;
-                gbPresupuesto.BackColor = System.Drawing.Color.DarkRed;
+                lblDetalles.BackColor = System.Drawing.Color.DarkRed;
+                lblDetalles.ForeColor = System.Drawing.Color.White;
+                gbDetalles.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtDetalles;
                 return;
             }

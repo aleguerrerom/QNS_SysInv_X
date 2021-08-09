@@ -11,7 +11,6 @@ namespace QNS_SysInv_X.MVCController
                 + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
-
         public static Regex letter_validation()
         {
             string pattern = "^[a-zA-Z ]";

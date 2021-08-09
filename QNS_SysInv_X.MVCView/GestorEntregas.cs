@@ -55,16 +55,12 @@ namespace QNS_SysInv_X.MVCView
                 this.clientesH = new ClientesHelper(clientes);
                 this.table = new DataTable();
                 this.table = this.clientesH.Listar();
-
-
+                
                 if (this.table.Rows.Count > 0)
                 {
                     this.cmbCliente.DataSource = this.table;
                     cmbCliente.ValueMember = "nombre";
                     cmbCliente.DisplayMember = "nombre";
-                    //this.cmbCedula.DataSource = this.table;
-                    //cmbCedula.ValueMember = "cedula";
-                    //cmbCedula.DisplayMember = "cedula";
                     this.cmbNombre.DataSource = this.table;
                     cmbNombre.ValueMember = "contacto";
                     cmbNombre.DisplayMember = "contacto";
@@ -83,29 +79,6 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
-
-        #region LISTAR entrega
-        private void listar()
-        {/*
-            try
-            {
-                this.entrega = new Entrega();
-                this.entrega.Opc = 1;
-                this.entregaH = new EntregaHelper(entrega);
-                this.table = new DataTable();
-                this.table = this.entregaH.Listar();
-                if (this.table.Rows.Count > 0)
-                {
-                    this.dgvListar.DataSource = this.table;
-                    this.dgvListar.ReadOnly = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-        }
-        #endregion
 
         #region GUARDAR entrega
         //FUNCION AGREGAR NUEVO USUARIO
@@ -223,15 +196,6 @@ namespace QNS_SysInv_X.MVCView
                     gpContacto.BackColor = System.Drawing.Color.DarkRed;
                     this.ActiveControl = cmbCliente;
                 }
-                //else if (validate_letter.IsMatch(txtContacto.Text) != true)
-                //{
-                //    limpiarAlertas();
-                //    MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //    lblContacto.BackColor = System.Drawing.Color.DarkRed;
-                //    lblContacto.ForeColor = System.Drawing.Color.White;
-                //    gpContacto.BackColor = System.Drawing.Color.DarkRed;
-                //    this.ActiveControl = txtContacto;
-                //}
                 else if (this.txtEntregadoPor.Text == "")
                 {
                     limpiarAlertas();
@@ -319,6 +283,9 @@ namespace QNS_SysInv_X.MVCView
             lblEntregado.BackColor = System.Drawing.Color.White;
             lblEntregado.ForeColor = System.Drawing.Color.Black;
             gpEntregado.BackColor = System.Drawing.Color.White;
+            label1.BackColor = System.Drawing.Color.White;
+            label1.ForeColor = System.Drawing.Color.Black;
+            gpNumFactura.BackColor = System.Drawing.Color.White;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -343,16 +310,8 @@ namespace QNS_SysInv_X.MVCView
                 gpDescripcion.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtDescripcion;
             }
-            else if (this.txtNumParte.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de MARCA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblMarca.BackColor = System.Drawing.Color.DarkRed;
-                lblMarca.ForeColor = System.Drawing.Color.White;
-                gpMarca.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNumParte;
-            }
-            else if (this.txtCantidad.Text == "")
+           
+            else if (this.txtCantidad.Text == "" || String.IsNullOrEmpty(txtCantidad.Text))
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de CANTIDAD esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -382,8 +341,20 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
             {
                 MessageBox.Show("No se permiten espacios en el campo cantidad", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
                 txtCantidad.Focus();
                 return;
+            }
+            else if (this.txtNumParte.Text == "" || String.IsNullOrEmpty(txtNumFactura.Text))
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de NUMERO DE PARTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblMarca.BackColor = System.Drawing.Color.DarkRed;
+                lblMarca.ForeColor = System.Drawing.Color.White;
+                gpMarca.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtNumParte;
             }
             else
             {
@@ -457,7 +428,6 @@ namespace QNS_SysInv_X.MVCView
             cmbDireccion.SelectedIndex = -1;
             cmbNombre.SelectedIndex = -1;
             cmbTelefono.SelectedIndex = -1;
-            listar();
             foreach (DataGridViewColumn column in dgvListar.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -471,7 +441,6 @@ namespace QNS_SysInv_X.MVCView
         private void dgvListar_DoubleClick(object sender, EventArgs e)
         {
             CargarFromTable();
-            listar();
         }
         
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)

@@ -206,16 +206,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtModelo;
                 return;
             }
-            else if (validate_letteradnumbers.IsMatch(txtModelo.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de MODELO solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblModelo.BackColor = System.Drawing.Color.DarkRed;
-                lblModelo.ForeColor = System.Drawing.Color.White;
-                gbModelo.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtModelo;
-                return;
-            }
+            
             else if( this.cmbEstado.Text == "" ){
                 limpiarAlertas();
                 MessageBox.Show("El campo de ESTADO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

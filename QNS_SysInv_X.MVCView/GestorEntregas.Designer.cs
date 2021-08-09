@@ -172,6 +172,7 @@
             this.dgvListar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
+            this.dgvListar.ReadOnly = true;
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(734, 82);
             this.dgvListar.TabIndex = 45;
@@ -228,6 +229,7 @@
             // cmbNombre
             // 
             this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNombre.Enabled = false;
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Location = new System.Drawing.Point(159, 14);
             this.cmbNombre.Name = "cmbNombre";
@@ -338,6 +340,7 @@
             // cmbDireccion
             // 
             this.cmbDireccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDireccion.Enabled = false;
             this.cmbDireccion.FormattingEnabled = true;
             this.cmbDireccion.Location = new System.Drawing.Point(117, 16);
             this.cmbDireccion.Name = "cmbDireccion";
@@ -657,6 +660,7 @@
             // cmbTelefono
             // 
             this.cmbTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTelefono.Enabled = false;
             this.cmbTelefono.FormattingEnabled = true;
             this.cmbTelefono.Location = new System.Drawing.Point(117, 13);
             this.cmbTelefono.Name = "cmbTelefono";

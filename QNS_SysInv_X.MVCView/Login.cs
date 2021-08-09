@@ -52,12 +52,12 @@ namespace QNS_SysInv_X.MVCView
             #region Validaciones de Login y Proceso de Login
             try
             {
-                if (this.txtUsuarioLogin.Text == "")
+                if (this.txtUsuarioLogin.Text == "" || String.IsNullOrEmpty(txtUsuarioLogin.Text))
                 {
                     MessageBox.Show("Campos de usuario no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                else if (this.txtClaveLogin.Text == "")
+                else if (this.txtClaveLogin.Text == "" || String.IsNullOrEmpty(txtUsuarioLogin.Text))
                 {
                     MessageBox.Show("El campo de contraseña no pudes estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;

@@ -32,6 +32,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_emailaddress = RegexExpression.email_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
+        static Regex validate_numbersandletter = RegexExpression.numberANDletter_validation();
 
         #region CARGAR COMBO VENDEDOR
         private void cargarComboVendedor()
@@ -204,10 +205,10 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtNomb;
                 return;
             }
-            else if (validate_letter.IsMatch(txtNomb.Text) != true)
+            else if (validate_numbersandletter.IsMatch(txtNomb.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo NOMBRE solo permite letras y Numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNombre.BackColor = System.Drawing.Color.DarkRed;
                 lblNombre.ForeColor = System.Drawing.Color.White;
                 gpNombre.BackColor = System.Drawing.Color.DarkRed;
@@ -227,7 +228,7 @@ namespace QNS_SysInv_X.MVCView
             }
             else if (validate_emailaddress.IsMatch(txtMail.Text) != true)
             {
-                MessageBox.Show("Correo Invalido", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarAlertas();
                 lblCorreo.BackColor = System.Drawing.Color.DarkRed;
                 lblCorreo.ForeColor = System.Drawing.Color.White;
@@ -267,7 +268,7 @@ namespace QNS_SysInv_X.MVCView
             }
             else if (validate_letter.IsMatch(txtContacto.Text) != true)
             {
-                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarAlertas();
                 lblContacto.BackColor = System.Drawing.Color.DarkRed;
                 lblContacto.ForeColor = System.Drawing.Color.White;
@@ -288,7 +289,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_number.IsMatch(txtTel.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo TELÉFONO solo permite numeros", "InvalidO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo TELÉFONO solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblTelefono.BackColor = System.Drawing.Color.DarkRed;
                 lblTelefono.ForeColor = System.Drawing.Color.White;
                 gpTelefono.BackColor = System.Drawing.Color.DarkRed;
