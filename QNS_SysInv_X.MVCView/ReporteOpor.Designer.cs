@@ -163,7 +163,9 @@
             this.cmbFiltro.ItemHeight = 16;
             this.cmbFiltro.Items.AddRange(new object[] {
             "ID",
-            "Fecha de Cierre"});
+            "Fecha de Cierre",
+            "Nombre de Cliente",
+            "Marca"});
             this.cmbFiltro.Location = new System.Drawing.Point(430, 65);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);

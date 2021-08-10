@@ -277,7 +277,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void tsAyuda_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\images\guia.pdf");
+            System.Diagnostics.Process.Start(@"C:\Users\Alejandro\Desktop\QNS_SysInv_X\QNS_SysInv_X.MVCView\images\Manual de Usuario.pdf");
         }
 
         private void Principal_Load(object sender, EventArgs e)

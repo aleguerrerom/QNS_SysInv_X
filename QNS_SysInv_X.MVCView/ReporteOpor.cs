@@ -44,6 +44,14 @@ namespace QNS_SysInv_X.MVCView
                 {
                     this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
                 }
+                if (cmbFiltro.SelectedIndex == 2)
+                {
+                    this.oportunidadesTableAdapter.FillByNombre(this.dS_QNS.Oportunidades, txtFiltro.Text);
+                }
+                if (cmbFiltro.SelectedIndex == 3)
+                {
+                    this.oportunidadesTableAdapter.FillByMarca(this.dS_QNS.Oportunidades, txtFiltro.Text);
+                }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
                     if (dtpFechaInicio.Value > dtpEnd.Value)
@@ -75,7 +83,7 @@ namespace QNS_SysInv_X.MVCView
         
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbFiltro.SelectedIndex == 0)
+            if (cmbFiltro.SelectedIndex == 0 || cmbFiltro.SelectedIndex == 2 || cmbFiltro.SelectedIndex == 3)
             {
                 txtFiltro.Visible = true;
                 dtpFechaInicio.Visible = false;
@@ -83,7 +91,7 @@ namespace QNS_SysInv_X.MVCView
                 lblFechaInicio.Visible = false ;
                 lblFechaFinal.Visible = false;
             }
-            else if (cmbFiltro.SelectedIndex == 1 || cmbFiltro.SelectedIndex == 2)
+            else if (cmbFiltro.SelectedIndex == 1)
             {
                 dtpFechaInicio.Visible = true;
                 txtFiltro.Visible = false;
