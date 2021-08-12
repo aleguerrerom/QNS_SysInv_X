@@ -4,6 +4,7 @@ using QNS_SysInv_X.MVCController;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
@@ -11,7 +12,8 @@ namespace QNS_SysInv_X.MVCView
     public partial class RerporteClientes : Form
     {
         private Usuarios user;
-        
+        static Regex validate_number = RegexExpression.number_validation();
+
         public List<Clientes> clientes = new List<Clientes>();
         public RerporteClientes()
         {
@@ -26,6 +28,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
+            cmbFiltrar.SelectedIndex = 1;
             // TODO: This line of code loads data into the 'dS_QNS2.Clientes' table. You can move, or remove it, as needed.
             this.ClientesTableAdapter.Fill(this.DS_QNS.Clientes);
             ReportParameterCollection reportParameters = new ReportParameterCollection();
@@ -42,7 +45,14 @@ namespace QNS_SysInv_X.MVCView
         {
             if (cmbFiltrar.SelectedIndex == 0)
             {
-                this.ClientesTableAdapter.FillByCedula(this.DS_QNS.Clientes, int.Parse(txtFiltro.Text));
+                if (validate_number.IsMatch(txtFiltro.Text) != true)
+                {
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtFiltro.Clear();
+                    return;
+                }
+                else
+                    this.ClientesTableAdapter.FillByCedula(this.DS_QNS.Clientes, int.Parse(txtFiltro.Text));
             }
             else if (cmbFiltrar.SelectedIndex == 1)
             {
@@ -60,6 +70,14 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 }

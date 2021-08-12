@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using QNS_SysInv_X.MVCController;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
@@ -11,6 +12,8 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
         }
+        
+        static Regex validate_number = RegexExpression.number_validation();
 
         private Usuarios user;
 
@@ -23,6 +26,7 @@ namespace QNS_SysInv_X.MVCView
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 1;
             // TODO: This line of code loads data into the 'dS_QNS.Vendedores' table. You can move, or remove it, as needed.
             this.vendedoresTableAdapter.Fill(this.dS_QNS.Vendedores);
             ReportParameterCollection reportParameters = new ReportParameterCollection();
@@ -41,7 +45,14 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
-                    this.vendedoresTableAdapter.FillCedula(this.dS_QNS.Vendedores, int.Parse(txtFiltro.Text));
+                    if (validate_number.IsMatch(txtFiltro.Text) != true)
+                    {
+                        MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtFiltro.Clear();
+                        return;
+                    }
+                    else
+                        this.vendedoresTableAdapter.FillCedula(this.dS_QNS.Vendedores, int.Parse(txtFiltro.Text));
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
                 {
@@ -70,6 +81,13 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-        
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
     }
 }

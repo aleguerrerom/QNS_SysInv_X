@@ -124,6 +124,7 @@
             this.txtPresupuesto.Size = new System.Drawing.Size(180, 13);
             this.txtPresupuesto.TabIndex = 2;
             this.txtPresupuesto.TextChanged += new System.EventHandler(this.txtPresupuesto_TextChanged);
+            this.txtPresupuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresupuesto_KeyPress);
             // 
             // dgvListar
             // 
@@ -251,6 +252,7 @@
             this.txtDetalles.Size = new System.Drawing.Size(177, 13);
             this.txtDetalles.TabIndex = 4;
             this.txtDetalles.TextChanged += new System.EventHandler(this.txtDetalles_TextChanged);
+            this.txtDetalles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalles_KeyPress);
             // 
             // gpFecha
             // 
@@ -317,6 +319,7 @@
             this.txtMarca.Size = new System.Drawing.Size(180, 13);
             this.txtMarca.TabIndex = 1;
             this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
+            this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
             // 
             // gbClienteN
             // 

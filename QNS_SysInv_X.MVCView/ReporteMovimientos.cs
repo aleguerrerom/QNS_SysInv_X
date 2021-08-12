@@ -95,5 +95,13 @@ namespace QNS_SysInv_X.MVCView
 
             }
         }
+
+        private void ReporteMovimientos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
     }
 }

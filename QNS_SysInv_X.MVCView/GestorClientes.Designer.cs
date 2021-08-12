@@ -152,6 +152,7 @@
             this.txtMail.Size = new System.Drawing.Size(197, 13);
             this.txtMail.TabIndex = 2;
             this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
+            this.txtMail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMail_KeyPress);
             // 
             // dgvListar
             // 
@@ -239,6 +240,7 @@
             this.rtbDireccion.TabIndex = 7;
             this.rtbDireccion.Text = "";
             this.rtbDireccion.TextChanged += new System.EventHandler(this.rtbDireccion_TextChanged);
+            this.rtbDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbDireccion_KeyPress);
             // 
             // lblDireccion
             // 
@@ -289,6 +291,7 @@
             this.txtTel.Size = new System.Drawing.Size(197, 13);
             this.txtTel.TabIndex = 6;
             this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // gbCedula
             // 
@@ -395,6 +398,7 @@
             this.txtContacto.Size = new System.Drawing.Size(197, 13);
             this.txtContacto.TabIndex = 5;
             this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
+            this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);
             // 
             // lblContacto
             // 
@@ -447,6 +451,7 @@
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // gpNombre
             // 
@@ -471,6 +476,7 @@
             this.txtNomb.Size = new System.Drawing.Size(198, 13);
             this.txtNomb.TabIndex = 1;
             this.txtNomb.TextChanged += new System.EventHandler(this.txtNomb_TextChanged);
+            this.txtNomb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomb_KeyPress);
             // 
             // lblNombre
             // 
@@ -550,6 +556,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // groupBox6
             // 

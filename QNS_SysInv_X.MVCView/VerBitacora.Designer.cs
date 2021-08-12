@@ -63,7 +63,7 @@
             this.dgvListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListar.Location = new System.Drawing.Point(12, 215);
+            this.dgvListar.Location = new System.Drawing.Point(12, 211);
             this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;

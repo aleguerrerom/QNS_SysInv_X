@@ -49,11 +49,11 @@
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.stsUser.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -67,6 +67,18 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 41;
             pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            pictureBox2.ErrorImage = null;
+            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            pictureBox2.Location = new System.Drawing.Point(293, 198);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(96, 156);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 69;
+            pictureBox2.TabStop = false;
             // 
             // groupBox2
             // 
@@ -101,6 +113,7 @@
             this.txtConfirmar.Size = new System.Drawing.Size(169, 13);
             this.txtConfirmar.TabIndex = 2;
             this.txtConfirmar.UseSystemPasswordChar = true;
+            this.txtConfirmar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmar_KeyPress);
             // 
             // groupBox1
             // 
@@ -136,6 +149,7 @@
             this.txtClave.Size = new System.Drawing.Size(167, 13);
             this.txtClave.TabIndex = 0;
             this.txtClave.UseSystemPasswordChar = true;
+            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             // 
             // label1
             // 
@@ -241,18 +255,6 @@
             this.toolStripLabel2.Text = "SALIR";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.ErrorImage = null;
-            pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(293, 198);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(96, 156);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 69;
-            pictureBox2.TabStop = false;
-            // 
             // CambiodeClave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +279,7 @@
             this.Name = "CambiodeClave";
             this.Text = "CAMBIO DE CLAVE  | QNS_SysInv_X";
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -285,7 +288,6 @@
             this.stsUser.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

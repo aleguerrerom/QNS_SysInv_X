@@ -31,6 +31,7 @@ namespace QNS_SysInv_X.MVCView
             this.reportViewer1.LocalReport.Refresh();
             this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
             this.reportViewer1.RefreshReport();
+            cmbFiltro.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +64,14 @@ namespace QNS_SysInv_X.MVCView
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 }

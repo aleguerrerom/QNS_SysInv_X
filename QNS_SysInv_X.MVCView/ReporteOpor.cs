@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using QNS_SysInv_X.MVCController;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
@@ -13,6 +14,7 @@ namespace QNS_SysInv_X.MVCView
         }
 
         private Usuarios user;
+        static Regex validate_number = RegexExpression.number_validation();
 
         public ReporteOpor(Usuarios usuario)
         {
@@ -37,12 +39,18 @@ namespace QNS_SysInv_X.MVCView
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
-                    this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
+                    if (validate_number.IsMatch(txtFiltro.Text) != true)
+                    {
+                        MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtFiltro.Clear();
+                        return;
+                    }
+                    else
+                        this.oportunidadesTableAdapter.FillBy(this.dS_QNS.Oportunidades, int.Parse(txtFiltro.Text));
                 }
                 if (cmbFiltro.SelectedIndex == 2)
                 {
@@ -99,6 +107,14 @@ namespace QNS_SysInv_X.MVCView
                 lblFechaInicio.Visible = true;
                 lblFechaFinal.Visible = true;
             }
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 }

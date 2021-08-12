@@ -461,6 +461,20 @@ namespace QNS_SysInv_X.MVCView
                 {
                     listar();
                 }
+                else if (validate_number.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
                 else
                 {
                     this.oportunidades = new Oportunidades();
@@ -510,6 +524,30 @@ namespace QNS_SysInv_X.MVCView
         private void cmbVendedor_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiarAlertas();
+        }
+
+        private void txtMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtPresupuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtDetalles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 }

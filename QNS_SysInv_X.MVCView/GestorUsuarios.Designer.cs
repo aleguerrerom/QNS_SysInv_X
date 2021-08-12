@@ -156,6 +156,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(197, 15);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // groupBox1
             // 
@@ -194,6 +195,7 @@
             this.txtClave.TabIndex = 1;
             this.txtClave.UseSystemPasswordChar = true;
             this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
+            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
             // 
             // groupBox2
             // 
@@ -284,6 +286,7 @@
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // groupBox4
             // 
@@ -322,6 +325,7 @@
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
             this.txtApellido.TabIndex = 5;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // groupBox5
             // 
@@ -396,6 +400,7 @@
             this.txtConfirmar.TabIndex = 2;
             this.txtConfirmar.UseSystemPasswordChar = true;
             this.txtConfirmar.TextChanged += new System.EventHandler(this.txtConfirmar_TextChanged);
+            this.txtConfirmar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmar_KeyPress);
             // 
             // groupBox7
             // 
@@ -447,6 +452,7 @@
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
             this.txtCorreo.TabIndex = 7;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // groupBox8
             // 
@@ -501,6 +507,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(99, 22);
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // label9
             // 
@@ -603,7 +610,7 @@
             // activarToolStripMenuItem
             // 
             this.activarToolStripMenuItem.Name = "activarToolStripMenuItem";
-            this.activarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activarToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.activarToolStripMenuItem.Text = "Activar";
             this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click_1);
             // 

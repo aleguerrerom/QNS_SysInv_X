@@ -18,6 +18,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_emailaddress = RegexExpression.email_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
 
         public GestorVendedores(Usuarios usuario)
         {
@@ -453,6 +454,20 @@ namespace QNS_SysInv_X.MVCView
                 {
                     listar();
                 }
+                else if (validate_number.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
                 else
                 {
                     this.vendedor = new Vendedores();
@@ -600,6 +615,54 @@ namespace QNS_SysInv_X.MVCView
                 MessageBox.Show(ex.Message);
             }
             #endregion
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 

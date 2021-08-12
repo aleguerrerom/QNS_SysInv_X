@@ -15,6 +15,8 @@ namespace QNS_SysInv_X.MVCView
         private DataTable table;
         private Usuarios user;
 
+        static Regex validate_number = RegexExpression.number_validation();
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_letteradnumbers = RegexExpression.numberANDletter_validation();
         public GestorInventario()
@@ -427,6 +429,20 @@ namespace QNS_SysInv_X.MVCView
                 {
                     listar();
                 }
+                else if (validate_number.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
+                    return;
+                }
                 else
                 {
                     this.inventario = new Inventario();
@@ -574,5 +590,44 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
+        private void txtNombreActivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtSerialNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
     }
 }

@@ -164,6 +164,7 @@
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(153, 15);
             this.txtRol.TabIndex = 0;
+            this.txtRol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRol_KeyPress);
             // 
             // btnCancel
             // 
@@ -533,6 +534,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(154, 22);
             this.txtBuscar.TabIndex = 15;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // txtID
             // 

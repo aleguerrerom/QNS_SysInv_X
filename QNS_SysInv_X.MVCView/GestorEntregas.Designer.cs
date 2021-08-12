@@ -182,21 +182,25 @@
             // 
             this.NºParte.HeaderText = "NºParte";
             this.NºParte.Name = "NºParte";
+            this.NºParte.ReadOnly = true;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // Descripción
             // 
             this.Descripción.HeaderText = "Descripción";
             this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
             // 
             // Nº_de_Serie
             // 
             this.Nº_de_Serie.HeaderText = "Nº_de_Serie";
             this.Nº_de_Serie.Name = "Nº_de_Serie";
+            this.Nº_de_Serie.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -285,6 +289,7 @@
             this.txtNumParte.Name = "txtNumParte";
             this.txtNumParte.Size = new System.Drawing.Size(197, 13);
             this.txtNumParte.TabIndex = 21;
+            this.txtNumParte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumParte_KeyPress);
             // 
             // gpSN
             // 
@@ -308,6 +313,7 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(197, 13);
             this.txtSN.TabIndex = 8;
+            this.txtSN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSN_KeyPress);
             // 
             // lblNS
             // 
@@ -439,6 +445,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(197, 13);
             this.txtCantidad.TabIndex = 9;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // lblCantidad
             // 
@@ -476,6 +483,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 13);
             this.txtDescripcion.TabIndex = 10;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // lblDescripcion
             // 
@@ -514,6 +522,7 @@
             this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
             this.txtEntregadoPor.TabIndex = 4;
             this.txtEntregadoPor.TextChanged += new System.EventHandler(this.txtEntregadoPor_TextChanged);
+            this.txtEntregadoPor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntregadoPor_KeyPress);
             // 
             // lblEntregado
             // 
@@ -625,6 +634,7 @@
             this.txtNumFactura.Size = new System.Drawing.Size(184, 13);
             this.txtNumFactura.TabIndex = 6;
             this.txtNumFactura.TextChanged += new System.EventHandler(this.txtNumFactura_TextChanged);
+            this.txtNumFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumFactura_KeyPress);
             // 
             // groupBox2
             // 

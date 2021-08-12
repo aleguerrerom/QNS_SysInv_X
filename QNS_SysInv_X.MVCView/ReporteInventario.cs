@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using QNS_SysInv_X.MVCController;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCView
@@ -12,6 +13,8 @@ namespace QNS_SysInv_X.MVCView
             InitializeComponent();
         }
 
+        static Regex validate_number = RegexExpression.number_validation();
+
         private Usuarios user;
 
         public ReporteInventario(Usuarios usuario)
@@ -22,6 +25,7 @@ namespace QNS_SysInv_X.MVCView
         }
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 0;
             ReportParameterCollection reportParameters = new ReportParameterCollection();
             reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
@@ -39,6 +43,13 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (cmbFiltro.SelectedIndex == 0)
                 {
+                     if (validate_number.IsMatch(txtFiltro.Text) != true)
+                    {
+                        MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtFiltro.Clear();
+                        return;
+                    }
+                     else
                     this.inventarioTableAdapter.FillBy(this.dS_QNS.Inventario, int.Parse(txtFiltro.Text));
                 }
                 else if (cmbFiltro.SelectedIndex == 1)
@@ -73,13 +84,20 @@ namespace QNS_SysInv_X.MVCView
         private void button2_Click(object sender, EventArgs e)
         {
             this.inventarioTableAdapter.Fill(this.dS_QNS.Inventario);
-
             this.reportViewer1.RefreshReport();
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
         }
     }
 }

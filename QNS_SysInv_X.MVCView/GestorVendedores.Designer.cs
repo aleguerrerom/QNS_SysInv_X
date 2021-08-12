@@ -197,6 +197,7 @@
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
             this.txtCorreo.TabIndex = 3;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // gbFecha
             // 
@@ -269,6 +270,7 @@
             this.txtApellido2.Size = new System.Drawing.Size(183, 13);
             this.txtApellido2.TabIndex = 5;
             this.txtApellido2.TextChanged += new System.EventHandler(this.txtApellido2_TextChanged);
+            this.txtApellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido2_KeyPress);
             // 
             // gbNombre
             // 
@@ -307,6 +309,7 @@
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // gbCorreo
             // 
@@ -373,6 +376,7 @@
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
             this.txtApellido.TabIndex = 1;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // gbCedula
             // 
@@ -411,6 +415,7 @@
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label9
             // 
@@ -429,6 +434,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 10;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnReport
             // 

@@ -11,15 +11,17 @@ namespace QNS_SysInv_X.MVCController
                 + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
+
         public static Regex letter_validation()
         {
-            string pattern = "^[a-zA-Z ]";
+            // string pattern = "^[a-zA-Z ]"
+            string pattern = @"^[a-zA-Z]+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
         public static Regex number_validation()
         {
-            string pattern = "^[0-9]";
+            string pattern = @"^\d+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
@@ -34,6 +36,5 @@ namespace QNS_SysInv_X.MVCController
             string pattern = @"^\S+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
-
     }
 }

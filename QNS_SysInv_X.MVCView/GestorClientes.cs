@@ -28,7 +28,9 @@ namespace QNS_SysInv_X.MVCView
         private DataTable table;
         private Bitacora bitacora;
         private BitacoraHelper bitH;
-        
+
+
+        static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex validate_emailaddress = RegexExpression.email_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
@@ -188,7 +190,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_number.IsMatch(txtCedula.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCedula.BackColor = System.Drawing.Color.DarkRed;
                 lblCedula.ForeColor = System.Drawing.Color.White;
                 gpCedula.BackColor = System.Drawing.Color.DarkRed;
@@ -205,17 +207,6 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtNomb;
                 return;
             }
-            else if (validate_numbersandletter.IsMatch(txtNomb.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE solo permite letras y Numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                gpNombre.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNomb;
-                return;
-            }
-            
             else if (this.txtMail.Text == "")
             {
                 limpiarAlertas();
@@ -499,6 +490,18 @@ namespace QNS_SysInv_X.MVCView
                 {
                     listar();
                 }
+                else if (validate_number.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
                 else {
                     this.clientes = new Clientes();
                     this.clientes.opc = 7;
@@ -655,6 +658,61 @@ namespace QNS_SysInv_X.MVCView
             }
             #endregion
         }
-        
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtNomb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtMail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void rtbDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as RichTextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).SelectionStart == 0)
+                e.Handled = (e.KeyChar == (char)Keys.Space);
+            else
+                e.Handled = false;
+        }
     }
 }

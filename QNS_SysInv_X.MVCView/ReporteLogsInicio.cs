@@ -95,5 +95,10 @@ namespace QNS_SysInv_X.MVCView
                 lblFechaFinal.Visible = true;
             }
         }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

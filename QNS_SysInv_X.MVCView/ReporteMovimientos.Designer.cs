@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMovimientos));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -145,9 +145,9 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource2.Name = "DSMovimientos";
-            reportDataSource2.Value = this.MovimientosLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DSMovimientos";
+            reportDataSource1.Value = this.MovimientosLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportMovimientos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 152);
             this.reportViewer1.Name = "reportViewer1";
@@ -270,6 +270,7 @@
             this.Name = "ReporteMovimientos";
             this.Text = "REPORTE MOVIMIENTOS  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteInventario_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReporteMovimientos_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MovimientosLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();

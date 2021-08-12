@@ -80,6 +80,7 @@
             this.txtUsuarioLogin.Name = "txtUsuarioLogin";
             this.txtUsuarioLogin.Size = new System.Drawing.Size(169, 15);
             this.txtUsuarioLogin.TabIndex = 0;
+            this.txtUsuarioLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuarioLogin_KeyPress);
             // 
             // txtClaveLogin
             // 
@@ -90,6 +91,7 @@
             this.txtClaveLogin.Size = new System.Drawing.Size(169, 15);
             this.txtClaveLogin.TabIndex = 32;
             this.txtClaveLogin.UseSystemPasswordChar = true;
+            this.txtClaveLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClaveLogin_KeyPress);
             // 
             // groupBox1
             // 

@@ -158,6 +158,7 @@
             this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
             this.txtSerialNumber.TabIndex = 12;
             this.txtSerialNumber.TextChanged += new System.EventHandler(this.txtSerialNumber_TextChanged);
+            this.txtSerialNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNumber_KeyPress);
             // 
             // dgvListar
             // 
@@ -336,6 +337,7 @@
             this.txtModelo.Size = new System.Drawing.Size(197, 13);
             this.txtModelo.TabIndex = 14;
             this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
+            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
             // 
             // gbMarca
             // 
@@ -427,6 +429,7 @@
             this.txtTipo.Size = new System.Drawing.Size(197, 13);
             this.txtTipo.TabIndex = 11;
             this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
+            this.txtTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipo_KeyPress);
             // 
             // gbNombre
             // 
@@ -465,6 +468,7 @@
             this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
             this.txtNombreActivo.TabIndex = 10;
             this.txtNombreActivo.TextChanged += new System.EventHandler(this.txtNombreActivo_TextChanged);
+            this.txtNombreActivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreActivo_KeyPress);
             // 
             // idl
             // 
@@ -533,6 +537,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 21;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // txtID
             // 

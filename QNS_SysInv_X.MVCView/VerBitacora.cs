@@ -62,7 +62,7 @@ namespace QNS_SysInv_X.MVCView
                 listadoLogsUsuarios();
                 LabelDescription.Text = "Logs de Usuarios Logeados";
                 btnChange.Text = "VER LOGS DE MOVIMIENTOS";
-                dgvListar.Height = 279;
+                dgvListar.Height = 260;
                 dgvListar.Width = 380;
                 dgvListar.Left = 130;
                 dgvListar.Top = 215;
@@ -72,7 +72,7 @@ namespace QNS_SysInv_X.MVCView
                 listadoLogsMovimientos();
                 LabelDescription.Text = "Detalle de Logs de Movimientos en la Aplicacion";
                 btnChange.Text = "VER LOGS DE LOG IN";
-                dgvListar.Height = 279;
+                dgvListar.Height = 260;
                 dgvListar.Width = 643;
                 dgvListar.Left = 12;
                 dgvListar.Top = 215;
