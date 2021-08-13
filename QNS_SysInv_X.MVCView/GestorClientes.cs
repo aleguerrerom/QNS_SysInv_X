@@ -95,14 +95,14 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO USUARIO
                 this.clientes = new Clientes();
-                this.clientes.Cedula = int.Parse(this.txtCedula.Text);
+                this.clientes.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
                 this.clientes.Tipo = this.cmbTipo.Text;
-                this.clientes.Contacto = this.txtContacto.Text;
-                this.clientes.Nombre = this.txtNomb.Text;
-                this.clientes.Correo = this.txtMail.Text;
-                this.clientes.Agente = int.Parse(this.cmbCed.Text);
-                this.clientes.Direccion = this.rtbDireccion.Text;
-                this.clientes.Telefono = this.txtTel.Text;
+                this.clientes.Contacto = this.txtContacto.Text.TrimEnd();
+                this.clientes.Nombre = this.txtNomb.Text.TrimEnd();
+                this.clientes.Correo = this.txtMail.Text.TrimEnd();
+                this.clientes.Agente = int.Parse(this.cmbCed.Text.TrimEnd());
+                this.clientes.Direccion = this.rtbDireccion.Text.TrimEnd();
+                this.clientes.Telefono = this.txtTel.Text.TrimEnd();
                 if (this.chckbxActivo.Checked)
                 {
                     this.clientes.Activo = true;
@@ -349,14 +349,14 @@ namespace QNS_SysInv_X.MVCView
             {
                 //ACTUALIZAR CLIENTE
                 this.clientes = new Clientes();
-                this.clientes.Cedula = int.Parse(this.txtCedula.Text);
+                this.clientes.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
                 this.clientes.Tipo = this.cmbTipo.Text;
-                this.clientes.Contacto = this.txtContacto.Text;
-                this.clientes.Nombre= this.txtNomb.Text;
-                this.clientes.Correo = this.txtMail.Text;
-                this.clientes.Agente = int.Parse(this.cmbCed.Text);
-                this.clientes.Direccion = this.rtbDireccion.Text;
-                this.clientes.Telefono = this.txtTel.Text;
+                this.clientes.Contacto = this.txtContacto.Text.TrimEnd();
+                this.clientes.Nombre= this.txtNomb.Text.TrimEnd();
+                this.clientes.Correo = this.txtMail.Text.TrimEnd();
+                this.clientes.Agente = int.Parse(this.cmbCed.Text.TrimEnd());
+                this.clientes.Direccion = this.rtbDireccion.Text.TrimEnd();
+                this.clientes.Telefono = this.txtTel.Text.TrimEnd();
                 if (this.chckbxActivo.Checked)
                 {
                     this.clientes.Activo = true;

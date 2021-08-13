@@ -21,7 +21,8 @@ namespace QNS_SysInv_X.MVCView.Resources
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
-
+        static Regex OnlyLettersandSpaces = RegexExpression.OnlyLettersandSpaces();
+        
         public GestorUsuarios()
         {
             InitializeComponent();
@@ -98,17 +99,17 @@ namespace QNS_SysInv_X.MVCView.Resources
             {
                 //AGREGAR NUEVO USUARIO
                 this.user = new Usuarios();
-                this.user.Usuario = this.txtUsuario.Text;
-                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
+                this.user.Usuario = this.txtUsuario.Text.TrimEnd();
+                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text.TrimEnd());
                 if (this.chckbxActivo.Checked)
                 {
                     this.user.Activo = true;
                 }
                 else this.user.Activo = false;
                 this.user.Rol = this.cmbRol.SelectedIndex + 1;
-                this.user.Nombre = this.txtNombre.Text;
-                this.user.Apellido = this.txtApellido.Text;
-                this.user.Correo = this.txtCorreo.Text;
+                this.user.Nombre = this.txtNombre.Text.TrimEnd();
+                this.user.Apellido = this.txtApellido.Text.TrimEnd();
+                this.user.Correo = this.txtCorreo.Text.TrimEnd();
                 this.user.opc = 2;
                 this.userHelper = new UsuariosHelper(user);
                 ///LOG PARA USUARIOS
@@ -217,7 +218,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 this.ActiveControl = txtNombre;
                 return;
             }
-            else if (validate_letter.IsMatch(txtNombre.Text) != true)
+            else if (OnlyLettersandSpaces.IsMatch(txtNombre.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -239,7 +240,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 return;
             }
 
-            else if (validate_letter.IsMatch(txtApellido.Text) != true)
+            else if (OnlyLettersandSpaces.IsMatch(txtApellido.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -405,17 +406,17 @@ namespace QNS_SysInv_X.MVCView.Resources
             try
             {
                 this.user = new Usuarios();
-                this.user.Usuario = this.txtUsuario.Text;
-                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
+                this.user.Usuario = this.txtUsuario.Text.TrimEnd();
+                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text).TrimEnd();
                 if (this.chckbxActivo.Checked)
                 {
                     this.user.Activo = true;
                 }
                 else { this.user.Activo = false; }
                 this.user.Rol = this.cmbRol.SelectedIndex + 1;
-                this.user.Nombre = this.txtNombre.Text;
-                this.user.Apellido = this.txtApellido.Text;
-                this.user.Correo = this.txtCorreo.Text;
+                this.user.Nombre = this.txtNombre.Text.TrimEnd();
+                this.user.Apellido = this.txtApellido.Text.TrimEnd();
+                this.user.Correo = this.txtCorreo.Text.TrimEnd();
                 this.user.opc = 4;
                 this.userHelper = new UsuariosHelper(user);
                 //Bitacora 

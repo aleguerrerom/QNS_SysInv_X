@@ -78,8 +78,8 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.user = new Usuarios();
                 this.user.Usuario = this.stsUser.Text ;
-                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text);
-                 this.user.opc = 6;
+                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text.TrimEnd());
+                this.user.opc = 6;
 
                  this.userHelper = new UsuariosHelper(user);
                 

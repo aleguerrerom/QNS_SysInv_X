@@ -25,6 +25,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex valida_numberandLetter = RegexExpression.numberANDletter_validation();
+        static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
 
         public GestorOportunidades()
         {
@@ -149,9 +150,9 @@ namespace QNS_SysInv_X.MVCView
                 this.oportunidades = new Oportunidades();
                 this.oportunidades.Nombrecliente = this.cmbNombre.Text;
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
-                this.oportunidades.Marca = this.txtMarca.Text;
-                this.oportunidades.Detalles = this.txtDetalles.Text;
-                this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
+                this.oportunidades.Marca = this.txtMarca.Text.TrimEnd();
+                this.oportunidades.Detalles = this.txtDetalles.Text.TrimEnd();
+                this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text.TrimEnd());
                 this.oportunidades.Vendedor = int.Parse(this.cmbCedVendedor.Text);
 
                 this.oportunidades.opc = 2;
@@ -200,7 +201,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtMarca;
                 return;
             }
-            else if (valida_numberandLetter.IsMatch(txtMarca.Text) != true)
+            else if (OnlyLetterNumberssandSpaces.IsMatch(txtMarca.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo MARCA solo permite numeros y letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -308,10 +309,10 @@ namespace QNS_SysInv_X.MVCView
             {
                 this.oportunidades = new Oportunidades();
 
-                this.oportunidades.Nombrecliente = this.cmbNombre.Text;
+                this.oportunidades.Nombrecliente = this.cmbNombre.Text.TrimEnd();
                 this.oportunidades.Fechacierre = this.dtpFecha.Value;
-                this.oportunidades.Marca = this.txtMarca.Text;
-                this.oportunidades.Detalles = this.txtDetalles.Text;
+                this.oportunidades.Marca = this.txtMarca.Text.TrimEnd();
+                this.oportunidades.Detalles = this.txtDetalles.Text.TrimEnd();
                 this.oportunidades.Presupuesto = int.Parse(this.txtPresupuesto.Text);
                 this.oportunidades.Id = int.Parse(this.idl.Text);
                 this.oportunidades.Vendedor = int.Parse(this.cmbCedVendedor.Text);

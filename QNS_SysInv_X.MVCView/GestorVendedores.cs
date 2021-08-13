@@ -19,6 +19,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
+        static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
 
         public GestorVendedores(Usuarios usuario)
         {
@@ -90,13 +91,13 @@ namespace QNS_SysInv_X.MVCView
             {
                 //AGREGAR NUEVO USUARIO
                 this.vendedor = new Vendedores();
-                this.vendedor.Cedula = int.Parse(this.txtCedula.Text);
-                this.vendedor.Nombre = this.txtNombre.Text;
-                this.vendedor.Apellido1 = this.txtApellido.Text;
-                this.vendedor.Apellido2 = this.txtApellido2.Text;
+                this.vendedor.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
+                this.vendedor.Nombre = this.txtNombre.Text.TrimEnd();
+                this.vendedor.Apellido1 = this.txtApellido.Text.TrimEnd();
+                this.vendedor.Apellido2 = this.txtApellido2.Text.TrimEnd();
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
-                this.vendedor.Correo = this.txtCorreo.Text;
+                this.vendedor.Correo = this.txtCorreo.Text.TrimEnd();
                 if (this.chckbxActivo.Checked)
                 {
                     this.vendedor.Activo = true;
@@ -188,7 +189,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtApellido;
                 return;
             }
-            else if (validate_letter.IsMatch(txtApellido.Text) != true)
+            else if (OnlyLetterNumberssandSpaces.IsMatch(txtApellido.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -239,7 +240,7 @@ namespace QNS_SysInv_X.MVCView
                 return;
             }
 
-            else if (validate_letter.IsMatch(txtNombre.Text) != true)
+            else if (OnlyLetterNumberssandSpaces.IsMatch(txtNombre.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -259,7 +260,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtApellido2;
                 return;
             }
-            else if (validate_letter.IsMatch(txtApellido2.Text) != true)
+            else if (OnlyLetterNumberssandSpaces.IsMatch(txtApellido2.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo SEGUNDO APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -331,13 +332,13 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 this.vendedor = new Vendedores();
-                this.vendedor.Cedula = int.Parse(this.txtCedula.Text);
-                this.vendedor.Nombre = this.txtNombre.Text;
-                this.vendedor.Apellido1 = this.txtApellido.Text;
-                this.vendedor.Apellido2 = this.txtApellido2.Text;
+                this.vendedor.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
+                this.vendedor.Nombre = this.txtNombre.Text.TrimEnd();
+                this.vendedor.Apellido1 = this.txtApellido.Text.TrimEnd();
+                this.vendedor.Apellido2 = this.txtApellido2.Text.TrimEnd();
                 this.vendedor.Genero = this.cmbGenero.Text;
                 this.vendedor.Fechanacimiento = this.dtpFechaAnace.Value;
-                this.vendedor.Correo = this.txtCorreo.Text;
+                this.vendedor.Correo = this.txtCorreo.Text.TrimEnd();
                 if (this.chckbxActivo.Checked)
                 {
                     this.vendedor.Activo = true;

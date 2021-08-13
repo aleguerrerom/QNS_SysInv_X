@@ -29,11 +29,10 @@ namespace QNS_SysInv_X.MVCView
         private ClientesHelper clientesH;
 
         static Regex validate_emailaddress = RegexExpression.email_validation();
-
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
-
         static Regex validate_letter = RegexExpression.letter_validation();
-
+        static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
+        static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
         static Regex validate_number = RegexExpression.number_validation();
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -71,7 +70,6 @@ namespace QNS_SysInv_X.MVCView
                     cmbDireccion.ValueMember = "direcion";
                     cmbDireccion.DisplayMember = "direcion";
                 }
-
             }
             catch (Exception ex)
             {
@@ -86,15 +84,15 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                //AGREGAR NUEVO USUARIO int.Parse(
+                //AGREGAR NUEVO USUARIO 
                 this.entrega = new Entrega();
                 this.entrega.Cliente = this.cmbCliente.Text;
                 this.entrega.Fecha = this.dtpFecha.Value;
                 this.entrega.Contacto = this.cmbNombre.Text;
                 this.entrega.Dirrecion = this.cmbDireccion.Text;
-                this.entrega.EntregadoPor = this.txtEntregadoPor.Text;
-                this.entrega.Telefono = this.cmbTelefono.Text;
-                this.entrega.NumeroFactura = this.txtNumFactura.Text;
+                this.entrega.EntregadoPor = this.txtEntregadoPor.Text.TrimEnd();
+                this.entrega.Telefono = this.cmbTelefono.Text.TrimEnd();
+                this.entrega.NumeroFactura = this.txtNumFactura.Text.TrimEnd();
 
                 this.entrega.opc = 2;
                 this.entregaH = new EntregaHelper(entrega);
@@ -130,7 +128,6 @@ namespace QNS_SysInv_X.MVCView
             this.txtDescripcion.Text = "";
             this.txtEntregadoPor.Text = "";
             this.cmbNombre.Text = "";
-            // this.txtID.ReadOnly = false;
             limpiarAlertas();
         }
 
@@ -168,7 +165,7 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-                 if (this.cmbCliente.Text == "")
+                if (this.cmbCliente.Text == "")
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo de CLIENTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -199,21 +196,41 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.txtEntregadoPor.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo ENTREGADO POR solo permite no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo ENTREGADO POR no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblEntregado.BackColor = System.Drawing.Color.DarkRed;
                     lblEntregado.ForeColor = System.Drawing.Color.White;
                     gpEntregado.BackColor = System.Drawing.Color.DarkRed;
-                    this.ActiveControl = txtNumFactura;
+                    this.ActiveControl = txtEntregadoPor;
                 }
+                else if (OnlyLetterNumberssandSpaces.IsMatch(txtEntregadoPor.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo ENTREGADO POR solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblEntregado.BackColor = System.Drawing.Color.DarkRed;
+                    lblEntregado.ForeColor = System.Drawing.Color.White;
+                    gpEntregado.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtEntregadoPor;
+                }
+                
                 else if (this.txtNumFactura.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NUMERO DE FACTURA no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     label1.BackColor = System.Drawing.Color.DarkRed;
                     label1.ForeColor = System.Drawing.Color.White;
                     gpNumFactura.BackColor = System.Drawing.Color.DarkRed;
                     this.ActiveControl = txtNumFactura;
                 }
+                else if (validate_numberANDletter.IsMatch(txtNumFactura.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label1.BackColor = System.Drawing.Color.DarkRed;
+                    label1.ForeColor = System.Drawing.Color.White;
+                    gpNumFactura.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtNumFactura;
+                }
+
                 else if (this.cmbTelefono.Text == "")
                 {
                     limpiarAlertas();

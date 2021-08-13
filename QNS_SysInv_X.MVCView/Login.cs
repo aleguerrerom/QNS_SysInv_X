@@ -62,16 +62,17 @@ namespace QNS_SysInv_X.MVCView
                     MessageBox.Show("El campo de contraseña no pudes estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                else { 
+                else
+                {
                     this.user = new Usuarios();
-                    this.user.Usuario = this.txtUsuarioLogin.Text;
-                    this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text);
-                   // this.user.Clave = this.txtClaveLogin.Text;
+                    this.user.Usuario = this.txtUsuarioLogin.Text.TrimEnd();
+                    this.user.Clave = EncryptionHelper.Encrypt(this.txtClaveLogin.Text.TrimEnd());
+                    // this.user.Clave = this.txtClaveLogin.Text;
                     this.user.opc = 5;
                     this.userHelper = new UsuariosHelper(user);
                     this.table = new DataTable();
                     this.table = this.userHelper.ValidarLogin();
-                    
+
                     if (table.Rows.Count > 0)
                     {
                         DataRow fila = table.Rows[0];
@@ -81,6 +82,13 @@ namespace QNS_SysInv_X.MVCView
                         this.user.Apellido = fila["apellido"].ToString();
                         Principal inicio = new Principal(user);
                         LogInicioSesion();
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.txtUsuarioLogin.Text;
+                        this.bitacora.Movimiento = "Inicio de sesión exsitoso";
+                        this.bitacora.Detalle = "Inicio de sesión correcto de: " + this.txtUsuarioLogin.Text;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
                         inicio.Show();
                         this.Hide();
                     }
@@ -102,7 +110,17 @@ namespace QNS_SysInv_X.MVCView
                         this.ActiveControl = txtClaveLogin;
                         return;
                     }
-                    else MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario o rol se encuentra inactivo.");
+                    else
+                    {
+                        MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario o rol se encuentra inactivo.");
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.txtUsuarioLogin.Text;
+                        this.bitacora.Movimiento = "Inicio de sesión faliido";
+                        this.bitacora.Detalle = "Inicio de sesión fallido de: " + this.txtUsuarioLogin.Text;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+                    }
                 }
             }
             catch (Exception ex)

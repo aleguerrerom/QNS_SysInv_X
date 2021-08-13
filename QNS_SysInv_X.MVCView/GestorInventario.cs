@@ -19,6 +19,10 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_letteradnumbers = RegexExpression.numberANDletter_validation();
+        static Regex OnlyLettersandSpaces = RegexExpression.OnlyLettersandSpaces();
+        static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
+        
+
         public GestorInventario()
         {
             InitializeComponent();
@@ -159,7 +163,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtTipo;
                 return;
             }
-            else if (validate_letter.IsMatch(txtTipo.Text) != true)
+            else if (OnlyLetterNumberssandSpaces.IsMatch(txtTipo.Text) != true)
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo TIPO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -182,7 +186,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_letteradnumbers.IsMatch(txtSerialNumber.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de NUMERO DE SERIE solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de NUMERO DE SERIE no permite espacios o caracteres especiales, solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblSN.BackColor = System.Drawing.Color.DarkRed;
                 lblSN.ForeColor = System.Drawing.Color.White;
                 gbSN.BackColor = System.Drawing.Color.DarkRed;
@@ -269,14 +273,14 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 this.inventario = new Inventario();
-                this.inventario.Nombre1 = this.txtNombreActivo.Text;
-                this.inventario.Tipo = this.txtTipo.Text;
-                this.inventario.Serialnumber = this.txtSerialNumber.Text;
+                this.inventario.Nombre1 = this.txtNombreActivo.Text.TrimEnd();
+                this.inventario.Tipo = this.txtTipo.Text.TrimEnd();
+                this.inventario.Serialnumber = this.txtSerialNumber.Text.TrimEnd();
                 this.inventario.Marca = this.cmbBrand.Text;
-                this.inventario.Modelo = this.txtModelo.Text;
+                this.inventario.Modelo = this.txtModelo.Text.TrimEnd();
                 this.inventario.Estado = this.cmbEstado.Text;
                 this.inventario.Fechamodificacion = this.dtpFecha.Value;
-                this.inventario.Usuario = this.stsUsua.Text;
+                this.inventario.Usuario = this.stsUsua.Text.TrimEnd();
                 this.inventario.Id = int.Parse(this.idl.Text);
                 if (this.chckbxActivo.Checked)
                 {

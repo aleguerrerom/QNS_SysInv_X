@@ -81,7 +81,7 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 this.roles = new Roles();
-            roles.Nombre = this.txtRol.Text;
+            roles.Nombre = this.txtRol.Text.TrimEnd();
             if (chkInventario.Checked)
                 roles.Inventario = true;
             else
@@ -171,7 +171,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 // inicializo Usuario
                 roles = new Roles();
-                roles.Nombre = this.txtRol.Text;
+                roles.Nombre = this.txtRol.Text.TrimEnd();
                 if (chkInventario.Checked)
                     roles.Inventario = true;
                 else

@@ -109,6 +109,11 @@ namespace QNS_SysInv_X.MVCView
                 {
                     this.dataGridView1.DataSource = this.table;
                     this.dataGridView1.ReadOnly = true;
+                  
+                }
+                else
+                {
+                    this.dataGridView1.DataSource = null;
                 }
             }
             catch (Exception ex)
@@ -228,10 +233,13 @@ namespace QNS_SysInv_X.MVCView
             }
             if (IsOpen == false)
             {
-
-                if (this.dataGridView1.SelectedRows.Count == 0)
+                  if (dataGridView1.RowCount == 0)
                 {
-
+                    MessageBox.Show("No hay articulos para prestar", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    
+                }
+                 else if (this.dataGridView1.SelectedRows.Count == 0)
+                {
                     MessageBox.Show("Debes seleccionar al menos un articulo para el prestamo");
                 }
                else if (this.cmbCliente.Text == "")
@@ -252,11 +260,12 @@ namespace QNS_SysInv_X.MVCView
                         prestamos.Nombre = cmbCliente.Text;
                         prestamos.Direcicon = cmbDireccion.Text;
                         repoPrestamo.prestamoLista.Add(prestamos);
-                        
+                        listar();
                         for (int i = 0; i < dataGridView1.RowCount; i = i + 1)
                         {
                             if (bool.Parse(this.dataGridView1.Rows[i].Cells[1].Selected.ToString()) == true)
                             {
+                                listar();
                                 // row is selected
                                 Prestamos loop = new Prestamos();
                                 loop.Id = int.Parse(this.dataGridView1.Rows[i].Cells[0].Value.ToString());
@@ -266,7 +275,6 @@ namespace QNS_SysInv_X.MVCView
                                 loop.Marca = this.dataGridView1.Rows[i].Cells[4].Value.ToString();
                                 loop.Modelo = this.dataGridView1.Rows[i].Cells[5].Value.ToString();
                                 loop.Estado = this.dataGridView1.Rows[i].Cells[6].Value.ToString();
-                                //loop.Fecha = DateTime.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
                                 repoPrestamo.prestamoLista.Add(loop);
                             }
                         }
@@ -276,6 +284,7 @@ namespace QNS_SysInv_X.MVCView
                         listar();
                         MessageBox.Show("El articulo fue procesado para prestamo correctamente");
                         repoPrestamo.ShowDialog();
+                      
                     }
                    
                     else if (dialogResult == DialogResult.No)
