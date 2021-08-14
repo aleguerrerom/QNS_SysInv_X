@@ -35,6 +35,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_numbersandletter = RegexExpression.numberANDletter_validation();
+        static Regex OnlyLettersandSpaces = RegexExpression.OnlyLettersandSpaces();
 
         #region CARGAR COMBO VENDEDOR
         private void cargarComboVendedor()
@@ -257,7 +258,7 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtContacto;
                 return;
             }
-            else if (validate_letter.IsMatch(txtContacto.Text) != true)
+            else if (OnlyLettersandSpaces.IsMatch(txtContacto.Text) != true)
             {
                 MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 limpiarAlertas();

@@ -58,14 +58,7 @@ namespace QNS_SysInv_X.MVCModel
             }
 
         }
-
-
-
-
-
-
-
-
+        
         public DataTable RetornaTabla(SqlParameter[] parParametros, string parTSQL)
         {
             Dtt = null;
@@ -100,8 +93,7 @@ namespace QNS_SysInv_X.MVCModel
             }
             return Dtt;
         }
-
-
+       
         #endregion
     }
 }

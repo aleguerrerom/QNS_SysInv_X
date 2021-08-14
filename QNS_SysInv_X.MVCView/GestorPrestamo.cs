@@ -111,10 +111,10 @@ namespace QNS_SysInv_X.MVCView
                     this.dataGridView1.ReadOnly = true;
                   
                 }
-                else
-                {
-                    this.dataGridView1.DataSource = null;
-                }
+                ////else
+                ////{
+                ////    this.dataGridView1.DataSource = null;
+                ////}
             }
             catch (Exception ex)
             {
@@ -299,18 +299,18 @@ namespace QNS_SysInv_X.MVCView
 
         #region PROCESO DE MULTI SELECCION DE ROW EN DATAGRIDVIEW
         List<int> listaPrestamo = new List<int>();
-      
+
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int n = dataGridView1.CurrentRow.Index;
-            dataGridView1.Rows[n].Selected = false;
-            dataGridView1.ClearSelection();
-            if (listaPrestamo.Contains(n))
-                listaPrestamo.Remove(n);
-            else
-                listaPrestamo.Add(n);
-            foreach (int i in listaPrestamo)
-            { dataGridView1.Rows[i].Selected = true; }
+            //    int n = dataGridView1.CurrentRow.Index;
+            //    dataGridView1.Rows[n].Selected = false;
+            //    dataGridView1.ClearSelection();
+            //    if (listaPrestamo.Contains(n))
+            //        listaPrestamo.Remove(n);
+            //    else
+            //        listaPrestamo.Add(n);
+            //    foreach (int i in listaPrestamo)
+            //    { dataGridView1.Rows[i].Selected = true; }
         }
         #endregion
     }
