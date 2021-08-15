@@ -296,9 +296,9 @@
             this.lblEstado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblEstado.Location = new System.Drawing.Point(8, 18);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(72, 16);
+            this.lblEstado.Size = new System.Drawing.Size(75, 16);
             this.lblEstado.TabIndex = 33;
-            this.lblEstado.Text = "ESTADO:     ";
+            this.lblEstado.Text = "ESTADO:      ";
             // 
             // gbModelo
             // 
@@ -462,7 +462,7 @@
             // 
             this.txtNombreActivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActivo.Location = new System.Drawing.Point(156, 20);
+            this.txtNombreActivo.Location = new System.Drawing.Point(156, 18);
             this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreActivo.Name = "txtNombreActivo";
             this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
@@ -523,18 +523,19 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(666, 322);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.Size = new System.Drawing.Size(108, 13);
             this.label9.TabIndex = 71;
-            this.label9.Text = "Buscar por ID:";
+            this.label9.Text = "BUSCAR POR ID:";
             // 
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Location = new System.Drawing.Point(669, 341);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(109, 20);
             this.txtBuscar.TabIndex = 21;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);

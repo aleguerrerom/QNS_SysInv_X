@@ -88,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 70);
+            this.label1.Location = new System.Drawing.Point(323, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -98,7 +98,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(675, 64);
+            this.button1.Location = new System.Drawing.Point(675, 52);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 28);
@@ -112,7 +112,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(768, 64);
+            this.button2.Location = new System.Drawing.Point(768, 52);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 28);
@@ -124,7 +124,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(527, 66);
+            this.txtFiltro.Location = new System.Drawing.Point(527, 54);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(142, 22);
             this.txtFiltro.TabIndex = 2;
@@ -136,7 +136,7 @@
             this.cmbFiltro.Items.AddRange(new object[] {
             "Usuario",
             "Fecha de Modificación"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 64);
+            this.cmbFiltro.Location = new System.Drawing.Point(414, 52);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
             this.cmbFiltro.TabIndex = 0;
@@ -176,7 +176,7 @@
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(415, 109);
+            this.dtpFecha.Location = new System.Drawing.Point(415, 97);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(142, 22);
             this.dtpFecha.TabIndex = 1;
@@ -220,7 +220,7 @@
             // 
             this.dtpFechaFinal.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaFinal.Location = new System.Drawing.Point(690, 109);
+            this.dtpFechaFinal.Location = new System.Drawing.Point(690, 97);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(165, 22);
             this.dtpFechaFinal.TabIndex = 73;
@@ -228,7 +228,7 @@
             // lblFechaFinal
             // 
             this.lblFechaFinal.AutoSize = true;
-            this.lblFechaFinal.Location = new System.Drawing.Point(602, 114);
+            this.lblFechaFinal.Location = new System.Drawing.Point(602, 102);
             this.lblFechaFinal.Name = "lblFechaFinal";
             this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
             this.lblFechaFinal.TabIndex = 72;
@@ -237,7 +237,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(324, 113);
+            this.lblFechaInicio.Location = new System.Drawing.Point(324, 101);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(87, 16);
             this.lblFechaInicio.TabIndex = 71;

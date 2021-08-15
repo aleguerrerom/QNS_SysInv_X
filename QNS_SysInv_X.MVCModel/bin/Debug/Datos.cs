@@ -56,7 +56,6 @@ namespace QNS_SysInv_X.MVCModel
                 cnnConexion.Dispose();
                 cmdComando.Dispose();
             }
-
         }
         
         public DataTable RetornaTabla(SqlParameter[] parParametros, string parTSQL)

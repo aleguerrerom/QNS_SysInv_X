@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace QNS_SysInv_X.MVCView.Resources
 {
@@ -133,192 +134,216 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private bool ValidarExistencia()
         {
-            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtUsuario.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de USUARIO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblUsuario.BackColor = System.Drawing.Color.DarkRed;
-                lblUsuario.ForeColor = System.Drawing.Color.White;
-                groupBox1.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtUsuario;
-                return;
-            }
-            else if (validate_numberANDletter.IsMatch(txtUsuario.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            string constring = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
+            SqlConnection con = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("Select count(*) from Usuarios where usuario= @usuario", con);
+            cmd.Parameters.AddWithValue("@usuario", this.txtUsuario.Text);
+            con.Open();
 
-                lblUsuario.BackColor = System.Drawing.Color.DarkRed;
-                lblUsuario.ForeColor = System.Drawing.Color.White;
-                groupBox1.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtUsuario;
-                return;
-            }
-            else if (this.txtClave.Text == "")
+            int TotalRows = 0;
+            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
+            if (TotalRows > 0)
             {
-                limpiarAlertas();
-                MessageBox.Show("El campo CONTRASEÑA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblClave.BackColor = System.Drawing.Color.DarkRed;
-                lblClave.ForeColor = System.Drawing.Color.White;
-                groupBox2.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtClave;
-                return;
-            }
-            else if (validate_Spaces.IsMatch(txtClave.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                lblClave.BackColor = System.Drawing.Color.DarkRed;
-                lblClave.ForeColor = System.Drawing.Color.White;
-                groupBox2.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtClave;
-                return;
-            }
-            else if (this.txtConfirmar.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
-                lblConfirmar.ForeColor = System.Drawing.Color.White;
-                groupBox7.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = cmbRol;
-                return;
-            }
-            else if (this.cmbRol.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblRol.BackColor = System.Drawing.Color.DarkRed;
-                lblRol.ForeColor = System.Drawing.Color.White;
-                groupBox3.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtConfirmar;
-                return;
-            }
-            else if (this.cmbRol.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo ROL esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                cmbRol.BackColor = System.Drawing.Color.DarkRed;
-                cmbRol.ForeColor = System.Drawing.Color.White;
-                groupBox3.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = cmbRol;
-                return;
-            }
-            else if (this.txtNombre.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                groupBox4.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNombre;
-                return;
-            }
-            else if (OnlyLettersandSpaces.IsMatch(txtNombre.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtNombre.Text.Remove(txtNombre.Text.Length - 1);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                groupBox4.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNombre;
-                return;
-            }
-            else if (this.txtApellido.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo APELLIDO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblApellido.BackColor = System.Drawing.Color.DarkRed;
-                lblApellido.ForeColor = System.Drawing.Color.White;
-                groupBox5.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtApellido;
-                return;
-            }
-
-            else if (OnlyLettersandSpaces.IsMatch(txtApellido.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtApellido.Text.Remove(txtApellido.Text.Length - 1);
-                lblApellido.BackColor = System.Drawing.Color.DarkRed;
-                lblApellido.ForeColor = System.Drawing.Color.White;
-                groupBox5.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtApellido;
-                return;
-            }
-            else if (this.txtCorreo.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCorreo.BackColor = System.Drawing.Color.DarkRed;
-                lblCorreo.ForeColor = System.Drawing.Color.White;
-                groupBox8.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtCorreo;
-                return;
-            }
-            else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("Formato Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCorreo.BackColor = System.Drawing.Color.DarkRed;
-                lblCorreo.ForeColor = System.Drawing.Color.White;
-                groupBox8.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtCorreo;
-                return;
+                MessageBox.Show("El usuario ingresado " + txtUsuario.Text + " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
             }
             else
             {
-                if (this.txtUsuario.ReadOnly)
+                return false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
+            if (!ValidarExistencia())
+            {
+                if (this.txtUsuario.Text == "")
                 {
-                    if (this.txtClave.Text == this.txtConfirmar.Text)
-                    {
-                        DialogResult dialogResult = MessageBox.Show("Desea actualizar el usuario?", "Actualizar", MessageBoxButtons.YesNo);
-                        if (dialogResult == DialogResult.Yes)
-                        {
-                            actualizar();
-                            listar();
-                            limpiar();
-                        }
-                        else if (dialogResult == DialogResult.No)
-                        {
-                            MessageBox.Show("No se actualizo el usuario");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Las claves deben ser iguales");
-                        limpiarAlertas();
-                        lblClave.BackColor = System.Drawing.Color.DarkRed;
-                        lblClave.ForeColor = System.Drawing.Color.White;
-                        groupBox2.BackColor = System.Drawing.Color.DarkRed;
-                        lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
-                        lblConfirmar.ForeColor = System.Drawing.Color.White;
-                        groupBox7.BackColor = System.Drawing.Color.DarkRed;
-                    }
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de USUARIO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblUsuario.BackColor = System.Drawing.Color.DarkRed;
+                    lblUsuario.ForeColor = System.Drawing.Color.White;
+                    groupBox1.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtUsuario;
+                    return;
+                }
+                else if (validate_numberANDletter.IsMatch(txtUsuario.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    lblUsuario.BackColor = System.Drawing.Color.DarkRed;
+                    lblUsuario.ForeColor = System.Drawing.Color.White;
+                    groupBox1.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtUsuario;
+                    return;
+                }
+                else if (this.txtClave.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo CONTRASEÑA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblClave.BackColor = System.Drawing.Color.DarkRed;
+                    lblClave.ForeColor = System.Drawing.Color.White;
+                    groupBox2.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtClave;
+                    return;
+                }
+                else if (validate_Spaces.IsMatch(txtClave.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    lblClave.BackColor = System.Drawing.Color.DarkRed;
+                    lblClave.ForeColor = System.Drawing.Color.White;
+                    groupBox2.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtClave;
+                    return;
+                }
+                else if (this.txtConfirmar.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
+                    lblConfirmar.ForeColor = System.Drawing.Color.White;
+                    groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = cmbRol;
+                    return;
+                }
+                else if (this.cmbRol.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblRol.BackColor = System.Drawing.Color.DarkRed;
+                    lblRol.ForeColor = System.Drawing.Color.White;
+                    groupBox3.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtConfirmar;
+                    return;
+                }
+                else if (this.cmbRol.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo ROL esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    cmbRol.BackColor = System.Drawing.Color.DarkRed;
+                    cmbRol.ForeColor = System.Drawing.Color.White;
+                    groupBox3.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = cmbRol;
+                    return;
+                }
+                else if (this.txtNombre.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                    lblNombre.ForeColor = System.Drawing.Color.White;
+                    groupBox4.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtNombre;
+                    return;
+                }
+                else if (OnlyLettersandSpaces.IsMatch(txtNombre.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtNombre.Text.Remove(txtNombre.Text.Length - 1);
+                    lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                    lblNombre.ForeColor = System.Drawing.Color.White;
+                    groupBox4.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtNombre;
+                    return;
+                }
+                else if (this.txtApellido.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo APELLIDO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblApellido.BackColor = System.Drawing.Color.DarkRed;
+                    lblApellido.ForeColor = System.Drawing.Color.White;
+                    groupBox5.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtApellido;
+                    return;
+                }
+
+                else if (OnlyLettersandSpaces.IsMatch(txtApellido.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtApellido.Text.Remove(txtApellido.Text.Length - 1);
+                    lblApellido.BackColor = System.Drawing.Color.DarkRed;
+                    lblApellido.ForeColor = System.Drawing.Color.White;
+                    groupBox5.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtApellido;
+                    return;
+                }
+                else if (this.txtCorreo.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    lblCorreo.ForeColor = System.Drawing.Color.White;
+                    groupBox8.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtCorreo;
+                    return;
+                }
+                else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("Formato Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    lblCorreo.ForeColor = System.Drawing.Color.White;
+                    groupBox8.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtCorreo;
+                    return;
                 }
                 else
                 {
-                    if (this.txtClave.Text == this.txtConfirmar.Text)
+                    if (this.txtUsuario.ReadOnly)
                     {
-                        guardar();
-                        listar();
-                        limpiar();
+                        if (this.txtClave.Text == this.txtConfirmar.Text)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Desea actualizar el usuario?", "Actualizar", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                actualizar();
+                                listar();
+                                limpiar();
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                MessageBox.Show("No se actualizo el usuario");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las claves deben ser iguales");
+                            limpiarAlertas();
+                            lblClave.BackColor = System.Drawing.Color.DarkRed;
+                            lblClave.ForeColor = System.Drawing.Color.White;
+                            groupBox2.BackColor = System.Drawing.Color.DarkRed;
+                            lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
+                            lblConfirmar.ForeColor = System.Drawing.Color.White;
+                            groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Las claven deben ser iguales");
-                        limpiarAlertas();
-                        lblClave.BackColor = System.Drawing.Color.DarkRed;
-                        lblClave.ForeColor = System.Drawing.Color.White;
-                        groupBox2.BackColor = System.Drawing.Color.DarkRed;
-                        lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
-                        lblConfirmar.ForeColor = System.Drawing.Color.White;
-                        groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                        if (this.txtClave.Text == this.txtConfirmar.Text)
+                        {
+                            guardar();
+                            listar();
+                            limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las claven deben ser iguales");
+                            limpiarAlertas();
+                            lblClave.BackColor = System.Drawing.Color.DarkRed;
+                            lblClave.ForeColor = System.Drawing.Color.White;
+                            groupBox2.BackColor = System.Drawing.Color.DarkRed;
+                            lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
+                            lblConfirmar.ForeColor = System.Drawing.Color.White;
+                            groupBox7.BackColor = System.Drawing.Color.DarkRed;
+                        }
                     }
                 }
             }

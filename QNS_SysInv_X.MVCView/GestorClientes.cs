@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using QNS_SysInv_X.MVCController;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace QNS_SysInv_X.MVCView
 {
@@ -175,150 +176,174 @@ namespace QNS_SysInv_X.MVCView
         }
         #endregion
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private bool ValidarExistencia()
         {
-            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (this.txtCedula.Text == "")
+            string constring = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
+            SqlConnection con = new SqlConnection(constring);
+            SqlCommand cmd = new SqlCommand("Select count(*) from Clientes where cedula= @cedula", con);
+            cmd.Parameters.AddWithValue("@cedula", this.txtCedula.Text);
+            con.Open();
+
+            int TotalRows = 0;
+            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
+            if (TotalRows > 0)
             {
-                limpiarAlertas();
-                MessageBox.Show("El campo de CEDULA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCedula.BackColor = System.Drawing.Color.DarkRed;
-                lblCedula.ForeColor = System.Drawing.Color.White;
-                gpCedula.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtCedula;
-                return;
-            }
-            else if (validate_number.IsMatch(txtCedula.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo CEDULA solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCedula.BackColor = System.Drawing.Color.DarkRed;
-                lblCedula.ForeColor = System.Drawing.Color.White;
-                gpCedula.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtCedula;
-                return;
-            }
-            else if (this.txtNomb.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblNombre.BackColor = System.Drawing.Color.DarkRed;
-                lblNombre.ForeColor = System.Drawing.Color.White;
-                gpNombre.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtNomb;
-                return;
-            }
-            else if (this.txtMail.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblCorreo.BackColor = System.Drawing.Color.DarkRed;
-                lblCorreo.ForeColor = System.Drawing.Color.White;
-                gpCorreo.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtMail;
-                return;
-            }
-            else if (validate_emailaddress.IsMatch(txtMail.Text) != true)
-            {
-                MessageBox.Show("Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                limpiarAlertas();
-                lblCorreo.BackColor = System.Drawing.Color.DarkRed;
-                lblCorreo.ForeColor = System.Drawing.Color.White;
-                gpCorreo.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtMail;
-                return;
-            }
-            else if (this.cmbVende.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("Debes de seleccionar VENDEDOR", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblVendedor.BackColor = System.Drawing.Color.DarkRed;
-                lblVendedor.ForeColor = System.Drawing.Color.White;
-                gpVendedor.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = cmbVende;
-                return;
-            }
-            else if (this.cmbTipo.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de TIPO CEDULA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblTipo.BackColor = System.Drawing.Color.DarkRed;
-                lblTipo.ForeColor = System.Drawing.Color.White;
-                gbCedula.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtMail;
-                return;
-            }
-            else if (this.txtContacto.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblContacto.BackColor = System.Drawing.Color.DarkRed;
-                lblContacto.ForeColor = System.Drawing.Color.White;
-                gpContacto.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtContacto;
-                return;
-            }
-            else if (OnlyLettersandSpaces.IsMatch(txtContacto.Text) != true)
-            {
-                MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                limpiarAlertas();
-                lblContacto.BackColor = System.Drawing.Color.DarkRed;
-                lblContacto.ForeColor = System.Drawing.Color.White;
-                gpContacto.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtContacto;
-                return;
-            }
-            else if (this.txtTel.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de TELÉFONO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblTelefono.BackColor = System.Drawing.Color.DarkRed;
-                lblTelefono.ForeColor = System.Drawing.Color.White;
-                gpTelefono.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtTel;
-                return;
-            }
-            else if (validate_number.IsMatch(txtTel.Text) != true)
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo TELÉFONO solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblTelefono.BackColor = System.Drawing.Color.DarkRed;
-                lblTelefono.ForeColor = System.Drawing.Color.White;
-                gpTelefono.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = txtTel;
-                return;
-            }
-            else if (this.rtbDireccion.Text == "")
-            {
-                limpiarAlertas();
-                MessageBox.Show("El campo de DIRECCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                lblDireccion.BackColor = System.Drawing.Color.DarkRed;
-                lblDireccion.ForeColor = System.Drawing.Color.White;
-                gpDireccion.BackColor = System.Drawing.Color.DarkRed;
-                this.ActiveControl = rtbDireccion;
-                return;
+                MessageBox.Show("La cedula ingresada " + txtCedula.Text + " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
             }
             else
             {
-                if (this.txtCedula.ReadOnly == true)
+                return false;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
+            if (!ValidarExistencia())
+            {
+                if (this.txtCedula.Text == "")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea actualizar los datos del cliente?", "Eliminar", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                    actualizar();
-                    listar();
-                    limpiar();
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        MessageBox.Show("No se actualizaron los datos del cliente");
-                    }
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de CEDULA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                    lblCedula.ForeColor = System.Drawing.Color.White;
+                    gpCedula.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtCedula;
+                    return;
+                }
+                else if (validate_number.IsMatch(txtCedula.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo CEDULA solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                    lblCedula.ForeColor = System.Drawing.Color.White;
+                    gpCedula.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtCedula;
+                    return;
+                }
+                else if (this.txtNomb.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblNombre.BackColor = System.Drawing.Color.DarkRed;
+                    lblNombre.ForeColor = System.Drawing.Color.White;
+                    gpNombre.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtNomb;
+                    return;
+                }
+                else if (this.txtMail.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    lblCorreo.ForeColor = System.Drawing.Color.White;
+                    gpCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtMail;
+                    return;
+                }
+                else if (validate_emailaddress.IsMatch(txtMail.Text) != true)
+                {
+                    MessageBox.Show("Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    limpiarAlertas();
+                    lblCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    lblCorreo.ForeColor = System.Drawing.Color.White;
+                    gpCorreo.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtMail;
+                    return;
+                }
+                else if (this.cmbVende.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("Debes de seleccionar VENDEDOR", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblVendedor.BackColor = System.Drawing.Color.DarkRed;
+                    lblVendedor.ForeColor = System.Drawing.Color.White;
+                    gpVendedor.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = cmbVende;
+                    return;
+                }
+                else if (this.cmbTipo.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de TIPO CEDULA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblTipo.BackColor = System.Drawing.Color.DarkRed;
+                    lblTipo.ForeColor = System.Drawing.Color.White;
+                    gbCedula.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtMail;
+                    return;
+                }
+                else if (this.txtContacto.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                    lblContacto.ForeColor = System.Drawing.Color.White;
+                    gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtContacto;
+                    return;
+                }
+                else if (OnlyLettersandSpaces.IsMatch(txtContacto.Text) != true)
+                {
+                    MessageBox.Show("El campo CONTACTO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    limpiarAlertas();
+                    lblContacto.BackColor = System.Drawing.Color.DarkRed;
+                    lblContacto.ForeColor = System.Drawing.Color.White;
+                    gpContacto.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtContacto;
+                    return;
+                }
+                else if (this.txtTel.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de TELÉFONO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblTelefono.BackColor = System.Drawing.Color.DarkRed;
+                    lblTelefono.ForeColor = System.Drawing.Color.White;
+                    gpTelefono.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtTel;
+                    return;
+                }
+                else if (validate_number.IsMatch(txtTel.Text) != true)
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo TELÉFONO solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblTelefono.BackColor = System.Drawing.Color.DarkRed;
+                    lblTelefono.ForeColor = System.Drawing.Color.White;
+                    gpTelefono.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = txtTel;
+                    return;
+                }
+                else if (this.rtbDireccion.Text == "")
+                {
+                    limpiarAlertas();
+                    MessageBox.Show("El campo de DIRECCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblDireccion.BackColor = System.Drawing.Color.DarkRed;
+                    lblDireccion.ForeColor = System.Drawing.Color.White;
+                    gpDireccion.BackColor = System.Drawing.Color.DarkRed;
+                    this.ActiveControl = rtbDireccion;
+                    return;
                 }
                 else
                 {
-                    guardar();
-                    listar();
-                    limpiar();
+                    if (this.txtCedula.ReadOnly == true)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Desea actualizar los datos del cliente?", "Eliminar", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            actualizar();
+                            listar();
+                            limpiar();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            MessageBox.Show("No se actualizaron los datos del cliente");
+                        }
+                    }
+                    else
+                    {
+                        guardar();
+                        listar();
+                        limpiar();
+                    }
                 }
             }
             #endregion
@@ -365,13 +390,13 @@ namespace QNS_SysInv_X.MVCView
                 else this.clientes.Activo = false;
                 this.clientes.opc = 4;
                 this.clientesH = new ClientesHelper(clientes);
-                 this.bitacora = new Bitacora();
-                 this.bitacora.Usuario = this.stsUsuario.Text;
-                 this.bitacora.Movimiento = "Actualizar Cliente";
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.stsUsuario.Text;
+                this.bitacora.Movimiento = "Actualizar Cliente";
                 this.bitacora.Detalle = "Se actualizo el cliente " + this.txtNomb.Text + " correctamente ";
-                 this.bitacora.opc = 5;
-                 this.bitH = new BitacoraHelper(bitacora);
-                 this.bitH.LogMovimientos();
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
 
                 this.clientesH.Actualizar();
                 MessageBox.Show("Datos de clientes actualizados");

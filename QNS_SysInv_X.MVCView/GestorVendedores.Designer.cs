@@ -165,9 +165,9 @@
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
-            "masculino",
-            "femenino"});
-            this.cmbGenero.Location = new System.Drawing.Point(159, 16);
+            "Masculino",
+            "Femenino"});
+            this.cmbGenero.Location = new System.Drawing.Point(159, 14);
             this.cmbGenero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(194, 21);
@@ -245,7 +245,7 @@
             this.gbApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbApellido2.Name = "gbApellido2";
             this.gbApellido2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbApellido2.Size = new System.Drawing.Size(363, 44);
+            this.gbApellido2.Size = new System.Drawing.Size(363, 45);
             this.gbApellido2.TabIndex = 76;
             this.gbApellido2.TabStop = false;
             // 
@@ -257,9 +257,9 @@
             this.lblApellido2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblApellido2.Location = new System.Drawing.Point(8, 18);
             this.lblApellido2.Name = "lblApellido2";
-            this.lblApellido2.Size = new System.Drawing.Size(141, 16);
+            this.lblApellido2.Size = new System.Drawing.Size(144, 16);
             this.lblApellido2.TabIndex = 33;
-            this.lblApellido2.Text = "SEGUNDO APELLIDO:     ";
+            this.lblApellido2.Text = "SEGUNDO APELLIDO:      ";
             // 
             // txtApellido2
             // 
@@ -370,7 +370,7 @@
             // txtApellido
             // 
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Location = new System.Drawing.Point(159, 18);
+            this.txtApellido.Location = new System.Drawing.Point(155, 18);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
@@ -409,7 +409,7 @@
             // 
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(156, 20);
+            this.txtCedula.Location = new System.Drawing.Point(155, 18);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
@@ -514,7 +514,7 @@
             // chckbxActivo
             // 
             this.chckbxActivo.AutoSize = true;
-            this.chckbxActivo.Location = new System.Drawing.Point(204, 16);
+            this.chckbxActivo.Location = new System.Drawing.Point(248, 17);
             this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chckbxActivo.Name = "chckbxActivo";
             this.chckbxActivo.Size = new System.Drawing.Size(15, 14);

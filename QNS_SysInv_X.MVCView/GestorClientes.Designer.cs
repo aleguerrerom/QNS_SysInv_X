@@ -278,9 +278,9 @@
             this.lblTelefono.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTelefono.Location = new System.Drawing.Point(8, 18);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(84, 16);
+            this.lblTelefono.Size = new System.Drawing.Size(87, 16);
             this.lblTelefono.TabIndex = 33;
-            this.lblTelefono.Text = "TELEFONO:     ";
+            this.lblTelefono.Text = "TELEFONO:      ";
             // 
             // txtTel
             // 
@@ -445,7 +445,7 @@
             // 
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(156, 20);
+            this.txtCedula.Location = new System.Drawing.Point(156, 18);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
@@ -531,10 +531,10 @@
             this.cmbCed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCed.FormattingEnabled = true;
             this.cmbCed.ItemHeight = 13;
-            this.cmbCed.Location = new System.Drawing.Point(430, 300);
+            this.cmbCed.Location = new System.Drawing.Point(421, 300);
             this.cmbCed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCed.Name = "cmbCed";
-            this.cmbCed.Size = new System.Drawing.Size(194, 21);
+            this.cmbCed.Size = new System.Drawing.Size(27, 21);
             this.cmbCed.TabIndex = 4;
             this.cmbCed.Visible = false;
             // 
@@ -551,9 +551,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(697, 341);
+            this.txtBuscar.Location = new System.Drawing.Point(697, 339);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(121, 20);
             this.txtBuscar.TabIndex = 11;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -575,7 +575,7 @@
             // chckbxActivo
             // 
             this.chckbxActivo.AutoSize = true;
-            this.chckbxActivo.Location = new System.Drawing.Point(204, 16);
+            this.chckbxActivo.Location = new System.Drawing.Point(247, 18);
             this.chckbxActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chckbxActivo.Name = "chckbxActivo";
             this.chckbxActivo.Size = new System.Drawing.Size(15, 14);

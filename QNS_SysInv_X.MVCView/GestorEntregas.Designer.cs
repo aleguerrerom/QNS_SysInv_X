@@ -275,11 +275,11 @@
             this.lblMarca.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.Image = ((System.Drawing.Image)(resources.GetObject("lblMarca.Image")));
             this.lblMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblMarca.Location = new System.Drawing.Point(8, 18);
+            this.lblMarca.Location = new System.Drawing.Point(8, 16);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(135, 16);
+            this.lblMarca.Size = new System.Drawing.Size(138, 16);
             this.lblMarca.TabIndex = 33;
-            this.lblMarca.Text = "NUMERO DE PARTE:     ";
+            this.lblMarca.Text = "NUMERO DE PARTE:      ";
             // 
             // txtNumParte
             // 
@@ -308,7 +308,7 @@
             // txtSN
             // 
             this.txtSN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSN.Location = new System.Drawing.Point(160, 16);
+            this.txtSN.Location = new System.Drawing.Point(160, 17);
             this.txtSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(197, 13);
@@ -348,7 +348,7 @@
             this.cmbDireccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDireccion.Enabled = false;
             this.cmbDireccion.FormattingEnabled = true;
-            this.cmbDireccion.Location = new System.Drawing.Point(117, 16);
+            this.cmbDireccion.Location = new System.Drawing.Point(117, 15);
             this.cmbDireccion.Name = "cmbDireccion";
             this.cmbDireccion.Size = new System.Drawing.Size(225, 21);
             this.cmbDireccion.TabIndex = 3;
@@ -385,7 +385,7 @@
             // 
             this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(118, 14);
+            this.cmbCliente.Location = new System.Drawing.Point(118, 13);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(225, 24);
             this.cmbCliente.TabIndex = 1;
@@ -440,7 +440,7 @@
             // txtCantidad
             // 
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCantidad.Location = new System.Drawing.Point(160, 16);
+            this.txtCantidad.Location = new System.Drawing.Point(160, 18);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(197, 13);
@@ -478,7 +478,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Location = new System.Drawing.Point(160, 16);
+            this.txtDescripcion.Location = new System.Drawing.Point(160, 17);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 13);
@@ -560,7 +560,7 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(548, 429);
+            this.btnReport.Location = new System.Drawing.Point(595, 428);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(148, 33);
             this.btnReport.TabIndex = 24;
@@ -574,7 +574,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(383, 429);
+            this.btnCancel.Location = new System.Drawing.Point(347, 428);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 33);
@@ -589,10 +589,10 @@
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAdd.Location = new System.Drawing.Point(375, 125);
+            this.btnAdd.Location = new System.Drawing.Point(485, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 25);
+            this.btnAdd.Size = new System.Drawing.Size(145, 25);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "AGREGAR ARTICULO";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -621,9 +621,9 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Location = new System.Drawing.Point(8, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 16);
+            this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 33;
-            this.label1.Text = "NUMERO DE FACTURA:     ";
+            this.label1.Text = "NUMERO DE FACTURA:      ";
             // 
             // txtNumFactura
             // 
@@ -686,9 +686,9 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(8, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 33;
-            this.label2.Text = "TELEFONO:           ";
+            this.label2.Text = "TELEFONO:     ";
             // 
             // groupBox3
             // 
@@ -700,7 +700,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(8, 261);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(752, 153);
+            this.groupBox3.Size = new System.Drawing.Size(752, 161);
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ARTICULOS A ENTREGAR";

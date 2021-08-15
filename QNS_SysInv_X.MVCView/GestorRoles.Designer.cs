@@ -538,7 +538,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(119, 296);
+            this.txtID.Location = new System.Drawing.Point(13, 325);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 3;
@@ -590,7 +590,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 555);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.toolStrip1);
@@ -601,6 +600,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtID);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(665, 594);
             this.MinimumSize = new System.Drawing.Size(665, 594);

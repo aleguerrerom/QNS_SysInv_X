@@ -660,10 +660,15 @@ namespace QNS_SysInv_X.MVCView
             DialogResult dialogResult = MessageBox.Show("Desea cerrar la sesión?", "SALIR", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                this.bitacora = new Bitacora();
+                this.bitacora.Usuario = this.statusUsuario.Text;
+                this.bitacora.Movimiento = "Cierre de Sesión existoso";
+                this.bitacora.Detalle = "Se cerro sesion de forma correcta: " + this.statusUsuario.Text;
+                this.bitacora.opc = 5;
+                this.bitH = new BitacoraHelper(bitacora);
+                this.bitH.LogMovimientos();
                 LogCierreSesion();
-                Login login = new Login();
                 cerrarTodo();
-                login.Show();
                 e.Cancel = false;
             }
             else if (dialogResult == DialogResult.No)

@@ -7,7 +7,7 @@ namespace QNS_SysInv_X.MVCController
 {
     public class VendedoresHelper
     {
-        Datos cnGeneral = null;
+       public Datos cnGeneral = null;
         Vendedores objVendedores = null;
         DataTable tblDatos = null;
         
@@ -41,6 +41,39 @@ namespace QNS_SysInv_X.MVCController
             return tblDatos;
         }
         #endregion
+
+        #region LISTAR
+        public DataTable Validar()
+        {
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objVendedores.opc;
+                
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objVendedores.Cedula;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedor");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
+        #endregion
+
 
         #region GUARDAR
         //GUARDA Venndedores

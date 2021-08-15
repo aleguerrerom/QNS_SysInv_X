@@ -40,7 +40,6 @@
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.idl = new System.Windows.Forms.Label();
-            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.gbDetalles = new System.Windows.Forms.GroupBox();
             this.lblDetalles = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -170,7 +170,7 @@
             // 
             this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(147, 11);
+            this.cmbVendedor.Location = new System.Drawing.Point(159, 13);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(176, 21);
@@ -199,14 +199,6 @@
             this.idl.Size = new System.Drawing.Size(41, 13);
             this.idl.TabIndex = 67;
             this.idl.Text = "label1";
-            // 
-            // cmbCedVendedor
-            // 
-            this.cmbCedVendedor.FormattingEnabled = true;
-            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 11);
-            this.cmbCedVendedor.Name = "cmbCedVendedor";
-            this.cmbCedVendedor.Size = new System.Drawing.Size(121, 21);
-            this.cmbCedVendedor.TabIndex = 73;
             // 
             // dtpFecha
             // 
@@ -313,7 +305,7 @@
             // txtMarca
             // 
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMarca.Location = new System.Drawing.Point(165, 16);
+            this.txtMarca.Location = new System.Drawing.Point(165, 18);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(180, 13);
@@ -441,20 +433,30 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(654, 251);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(654, 261);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.Size = new System.Drawing.Size(108, 13);
             this.label9.TabIndex = 71;
-            this.label9.Text = "Buscar por ID:";
+            this.label9.Text = "BUSCAR POR ID:";
             this.label9.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(657, 270);
+            this.txtBuscar.Location = new System.Drawing.Point(657, 277);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(99, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(112, 20);
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // cmbCedVendedor
+            // 
+            this.cmbCedVendedor.FormattingEnabled = true;
+            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 14);
+            this.cmbCedVendedor.Name = "cmbCedVendedor";
+            this.cmbCedVendedor.Size = new System.Drawing.Size(18, 21);
+            this.cmbCedVendedor.TabIndex = 73;
+            this.cmbCedVendedor.Visible = false;
             // 
             // GestorOportunidades
             // 
@@ -538,7 +540,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cmbCedVendedor;
         private System.Windows.Forms.ToolStripStatusLabel stsUsu;
+        private System.Windows.Forms.ComboBox cmbCedVendedor;
     }
 }

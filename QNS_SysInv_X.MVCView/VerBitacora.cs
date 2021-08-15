@@ -24,6 +24,7 @@ namespace QNS_SysInv_X.MVCView
             this.stsUsuarios.Text = this.user.Usuario;
         }
 
+        #region LISTADO DE LOGS DE USUARIOS
         private void listadoLogsUsuarios()
         {
             try
@@ -36,25 +37,26 @@ namespace QNS_SysInv_X.MVCView
 
                 this.table = bitH.Listar();
                 if (table.Rows.Count > 0)
-                    this.dgvListar.DataSource = table;
+                { this.dgvListar.DataSource = table; }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
         private void Bitacora_Load(object sender, EventArgs e)
         {
             listadoLogsUsuarios();
             LabelDescription.Text = "Logs de Usuarios Logeados";
             btnChange.Text = "VER LOGS DE MOVIMIENTOS";
-            dgvListar.Height = 279;
+            dgvListar.Height = 260;
             dgvListar.Width = 380;
             dgvListar.Left = 130;
             dgvListar.Top = 215;
         }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (btnChange.Text == "VER LOGS DE LOG IN")
@@ -79,6 +81,8 @@ namespace QNS_SysInv_X.MVCView
             }
         }
 
+
+        #region BITACORA DE MOVIMIENTOS
         private void listadoLogsMovimientos()
         {
             try
@@ -90,13 +94,14 @@ namespace QNS_SysInv_X.MVCView
 
                 this.table = bitH.Listar();
                 if (table.Rows.Count > 0)
-                    this.dgvListar.DataSource = table;
+                { this.dgvListar.DataSource = table; }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void btnReport_Click(object sender, EventArgs e)
         {
@@ -117,7 +122,6 @@ namespace QNS_SysInv_X.MVCView
                     reporte.Show();
                 }
             }
-
             else
             {
                 bool IsOpen = false;
@@ -141,6 +145,5 @@ namespace QNS_SysInv_X.MVCView
         {
             this.Close();
         }
-        
     }
 }

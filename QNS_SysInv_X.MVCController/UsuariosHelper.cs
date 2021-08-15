@@ -2,6 +2,7 @@
 using QNS_SysInv_X.MVCModel;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QNS_SysInv_X.MVCController
 {
@@ -173,7 +174,6 @@ namespace QNS_SysInv_X.MVCController
         #region VALIDAR LOGIN
         public DataTable ValidarLogin()
         {
-
             tblDatos = new DataTable();
 
             try
