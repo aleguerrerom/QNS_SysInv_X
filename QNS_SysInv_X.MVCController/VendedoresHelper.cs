@@ -42,7 +42,7 @@ namespace QNS_SysInv_X.MVCController
         }
         #endregion
 
-        #region LISTAR
+        #region VALIDAR
         public DataTable Validar()
         {
             tblDatos = new DataTable();

@@ -58,14 +58,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCController.dll" size="39936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCController.dll" size="40960">
       <assemblyIdentity name="CNV_Inventario.MVCController" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FnAx+X7ZB5seCWOXRtn7fljLky6XP+0TpjBgb+3i52s=</dsig:DigestValue>
+        <dsig:DigestValue>0mvR9HzONNfLnjmufkocgHFwwpwRPRsfNBjusiv64qE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -82,14 +82,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2673664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CNV_Inventario.MVCView.exe" size="2674176">
       <assemblyIdentity name="CNV_Inventario.MVCView" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>s7dEydrkwPf7klPwny/22XR16QntICMY+T6FCMVjOYM=</dsig:DigestValue>
+        <dsig:DigestValue>rvwv61Vzw/N24bhbFyupONK9sVifADXE5Op3KdkRwoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

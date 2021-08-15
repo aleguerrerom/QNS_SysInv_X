@@ -136,23 +136,24 @@ namespace QNS_SysInv_X.MVCView.Resources
 
         private bool ValidarExistencia()
         {
-            string constring = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
-            SqlConnection con = new SqlConnection(constring);
-            SqlCommand cmd = new SqlCommand("Select count(*) from Usuarios where usuario= @usuario", con);
-            cmd.Parameters.AddWithValue("@usuario", this.txtUsuario.Text);
-            con.Open();
+            this.user = new Usuarios();
+            this.user.Usuario = this.txtUsuario.Text;
+            this.user.opc = 10;
 
-            int TotalRows = 0;
-            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
-            if (TotalRows > 0)
+            this.userHelper = new UsuariosHelper(user);
+            this.table = new DataTable();
+            this.table = this.userHelper.Validar();
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("El usuario ingresado " + txtUsuario.Text + " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El usuario " + this.txtUsuario.Text + " ya existe en la base de datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblUsuario.BackColor = System.Drawing.Color.DarkRed;
+                lblUsuario.ForeColor = System.Drawing.Color.White;
+                groupBox1.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtUsuario;
                 return true;
             }
             else
-            {
                 return false;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)

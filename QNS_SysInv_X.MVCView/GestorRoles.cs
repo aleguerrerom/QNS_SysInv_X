@@ -30,47 +30,71 @@ namespace QNS_SysInv_X.MVCView
             this.user = usuario;
             this.stsUsu.Text = this.user.Usuario;
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+
+        private bool ValidarExistencia()
         {
-            #region VALIDACIONES PARA AGREGAR O ACTUALIZAR
-            if (this.txtRol.Text == "")
+            this.roles = new Roles();
+            this.roles.Nombre = (this.txtRol.Text);
+            this.roles.opc = 9;
+
+            this.rolH = new RolesHelper(roles);
+            this.table = new DataTable();
+            this.table = this.rolH.Validar();
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar");
-            }
-            else if (validate_Spaces.IsMatch(txtRol.Text) != true)
-            {
-                MessageBox.Show("No se permiten espacios en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtRol.Focus();
-                return;
-            }
-            else if (validate_numberANDletter.IsMatch(txtRol.Text) != true)
-            {
-                MessageBox.Show("No se permiten caracter especiales en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtRol.Focus();
-                return;
+                MessageBox.Show("El rol con el nombre " + this.txtRol.Text + " ya existe en la base de datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.ActiveControl = txtRol;
+                return true;
             }
             else
+                return false;
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!ValidarExistencia())
             {
-                if (this.txtID.ReadOnly)
+                #region VALIDACIONES PARA AGREGAR O ACTUALIZAR
+                if (this.txtRol.Text == "")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Actualizar", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        actualizar();
-                        listar();
-                        limpiar();
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        MessageBox.Show("No se actualizo el rol");
-                    }
+                    MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar");
+                }
+                else if (validate_Spaces.IsMatch(txtRol.Text) != true)
+                {
+                    MessageBox.Show("No se permiten espacios en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtRol.Focus();
+                    return;
+                }
+                else if (validate_numberANDletter.IsMatch(txtRol.Text) != true)
+                {
+                    MessageBox.Show("No se permiten caracter especiales en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtRol.Focus();
+                    return;
                 }
                 else
+                {
+                    if (this.txtID.ReadOnly)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Desea actualizar el rol?", "Actualizar", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            actualizar();
+                            listar();
+                            limpiar();
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            MessageBox.Show("No se actualizo el rol");
+                        }
+                    }
+                    else
                     {
                         guardar();
                         listar();
                         limpiar();
                     }
+                }
             }
             #endregion
         }

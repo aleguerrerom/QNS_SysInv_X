@@ -161,45 +161,37 @@ namespace QNS_SysInv_X.MVCView
             else
             {
             }
+
         }
 
         private bool ValidarExistencia()
-        {
-            //this.vendedor = new Vendedores();
-            //this.vendedor.Cedula = Convert.ToInt32(this.txtCedula.Text.TrimEnd());
-            //this.vendedor.opc = 10;
-            //this.vendedorH = new VendedoresHelper(vendedor);
-            ////this.table = null;
-            ////this.table = new DataTable();
-            ////this.table = 
-            //this.vendedorH.Validar();
-            ////this.vendedorH.Validar();
+           { 
 
-            string constring = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
-            SqlConnection con = new SqlConnection(constring);
-            SqlCommand cmd = new SqlCommand("Select count(*) from Vendedores where cedula= @cedula", con);
-            cmd.Parameters.AddWithValue("@cedula", this.txtCedula.Text);
-            con.Open();
+            this.vendedor = new Vendedores();
+            this.vendedor.Cedula = int.Parse(this.txtCedula.Text);
+            this.vendedor.opc = 9;
 
-            //int TotalRows = 0;
-            //TotalRows = Convert.ToInt32(this.vendedorH.Validar());
-            int TotalRows = 0;
-            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
-            if (TotalRows > 0)
+            this.vendedorH = new VendedoresHelper(vendedor);
+            this.table = new DataTable();
+            this.table = this.vendedorH.Validar();
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("La cedula ingresada " + txtCedula.Text + " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("La cedula del vendedor  "+ this.txtCedula.Text+" ya existe en la base de datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gbCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
                 return true;
             }
             else
-            {
-                return false;
-            }
+            return false;
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
+    private void btnAdd_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (!ValidarExistencia()) {
+            if (!ValidarExistencia())
+            {
                 if (this.txtCedula.Text == "")
                 {
                     limpiarAlertas();
@@ -332,9 +324,10 @@ namespace QNS_SysInv_X.MVCView
                         guardar();
                         listar();
                         limpiar();
+
                     }
+                    #endregion
                 }
-                #endregion
             }
         }
         #region LIMPIAR CAMPOS
@@ -705,6 +698,11 @@ namespace QNS_SysInv_X.MVCView
                 e.Handled = (e.KeyChar == (char)Keys.Space);
             else
                 e.Handled = false;
+        }
+
+        private void txtCedula_Leave(object sender, EventArgs e)
+        {
+            
         }
     }
 

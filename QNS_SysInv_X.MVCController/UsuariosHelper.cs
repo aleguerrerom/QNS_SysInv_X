@@ -45,6 +45,40 @@ namespace QNS_SysInv_X.MVCController
         }
         #endregion
 
+        #region VALIDAR
+        public DataTable Validar()
+        {
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objUsuarios.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@usuario";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 50;
+                parParameter[1].SqlValue = objUsuarios.Usuario;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
+        #endregion
+
+
         #region GUARDAR
         //GUARDA USUARIOS
         public void Guardar()

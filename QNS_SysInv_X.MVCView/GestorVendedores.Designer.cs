@@ -416,6 +416,7 @@
             this.txtCedula.TabIndex = 0;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // label9
             // 

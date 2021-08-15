@@ -18,6 +18,39 @@ namespace QNS_SysInv_X.MVCController
         }
         //RETORA TABLA CON LOS USUARIOS
 
+        #region VALIDAR
+        public DataTable Validar()
+        {
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objClientes.opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objClientes.Cedula;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPVendedor");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return tblDatos;
+        }
+        #endregion
+
+
         #region LISTAR
         public DataTable Listar()
         {

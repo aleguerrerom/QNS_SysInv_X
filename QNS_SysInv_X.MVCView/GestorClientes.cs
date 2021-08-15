@@ -178,23 +178,24 @@ namespace QNS_SysInv_X.MVCView
 
         private bool ValidarExistencia()
         {
-            string constring = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
-            SqlConnection con = new SqlConnection(constring);
-            SqlCommand cmd = new SqlCommand("Select count(*) from Clientes where cedula= @cedula", con);
-            cmd.Parameters.AddWithValue("@cedula", this.txtCedula.Text);
-            con.Open();
+            this.clientes = new Clientes();
+            this.clientes.Cedula = int.Parse(this.txtCedula.Text);
+            this.clientes.opc = 10;
 
-            int TotalRows = 0;
-            TotalRows = Convert.ToInt32(cmd.ExecuteScalar());
-            if (TotalRows > 0)
+            this.clientesH = new ClientesHelper(clientes);
+            this.table = new DataTable();
+            this.table = this.clientesH.Validar();
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("La cedula ingresada " + txtCedula.Text + " ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El cliente con la cedula " +this.txtCedula.Text+ " ya existe en la base de datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gpCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
                 return true;
             }
             else
-            {
                 return false;
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
