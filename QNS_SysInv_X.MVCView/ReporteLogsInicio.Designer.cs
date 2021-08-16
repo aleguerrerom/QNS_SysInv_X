@@ -123,7 +123,6 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(138, 22);
             this.txtFiltro.TabIndex = 2;
-            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
             // 
             // cmbFiltro
             // 

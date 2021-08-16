@@ -112,7 +112,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else
                     {
-                        MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario o rol se encuentra inactivo.");
+                        MessageBox.Show("Datos de inicio de sesión incorrectos o el usuario o rol se encuentra inactivo.", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.txtUsuarioLogin.Text;
                         this.bitacora.Movimiento = "Inicio de sesión faliido";

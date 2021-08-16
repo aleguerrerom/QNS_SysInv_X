@@ -153,7 +153,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(156, 18);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(197, 15);
+            this.txtUsuario.Size = new System.Drawing.Size(178, 15);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
@@ -243,7 +243,7 @@
             this.cmbRol.Location = new System.Drawing.Point(159, 14);
             this.cmbRol.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(194, 21);
+            this.cmbRol.Size = new System.Drawing.Size(175, 21);
             this.cmbRol.TabIndex = 3;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 

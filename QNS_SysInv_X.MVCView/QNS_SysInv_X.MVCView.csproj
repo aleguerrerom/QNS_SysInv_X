@@ -28,7 +28,7 @@
     <ProductName>QNS_SysInv_X</ProductName>
     <PublisherName>QNS_SysInv_X</PublisherName>
     <SuiteName>QNS_SysInv_X</SuiteName>
-    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

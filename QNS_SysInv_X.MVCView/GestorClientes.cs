@@ -93,41 +93,45 @@ namespace QNS_SysInv_X.MVCView
         //FUNCION AGREGAR NUEVO Clientes
         private void guardar()
         {
-            try
+            if (!ValidarExistencia())
             {
-                //AGREGAR NUEVO USUARIO
-                this.clientes = new Clientes();
-                this.clientes.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
-                this.clientes.Tipo = this.cmbTipo.Text;
-                this.clientes.Contacto = this.txtContacto.Text.TrimEnd();
-                this.clientes.Nombre = this.txtNomb.Text.TrimEnd();
-                this.clientes.Correo = this.txtMail.Text.TrimEnd();
-                this.clientes.Agente = int.Parse(this.cmbCed.Text.TrimEnd());
-                this.clientes.Direccion = this.rtbDireccion.Text.TrimEnd();
-                this.clientes.Telefono = this.txtTel.Text.TrimEnd();
-                if (this.chckbxActivo.Checked)
+                try
                 {
-                    this.clientes.Activo = true;
-                }
-                else this.clientes.Activo = false;
-                this.clientes.opc = 2;
-                this.clientesH = new ClientesHelper(clientes);
-                ///LOG PARA USUARIOS
-                
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.stsUsuario.Text;
-                this.bitacora.Movimiento = "Agregar Cliente";
-                this.bitacora.Detalle = "Se agrego el cliente " + this.txtNomb.Text + " correctamente";
-                this.bitacora.opc = 5;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
+                    //AGREGAR NUEVO USUARIO
+                    this.clientes = new Clientes();
+                    this.clientes.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
+                    this.clientes.Tipo = this.cmbTipo.Text;
+                    this.clientes.Contacto = this.txtContacto.Text.TrimEnd();
+                    this.clientes.Telefono = this.txtTel.Text.TrimEnd();
+                    this.clientes.Correo = this.txtMail.Text.TrimEnd();
+                    this.clientes.Direccion = this.rtbDireccion.Text.TrimEnd();
+                    this.clientes.Agente = int.Parse(this.cmbCed.Text.TrimEnd());
+                    this.clientes.Nombre = this.txtNomb.Text.TrimEnd();
+                    if (this.chckbxActivo.Checked)
+                    {
+                        this.clientes.Activo = true;
+                    }
+                    else this.clientes.Activo = false;
+                    this.clientes.opc = 2;
+                    this.clientesH = new ClientesHelper(clientes);
+                    ///LOG PARA USUARIOS
 
-                this.clientesH.Guardar();
-                MessageBox.Show("Datos de Cliente Almacenado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    this.bitacora = new Bitacora();
+                    this.bitacora.Usuario = this.stsUsuario.Text;
+                    this.bitacora.Movimiento = "Agregar Cliente";
+                    this.bitacora.Detalle = "Se agrego el cliente " + this.txtNomb.Text + " correctamente";
+                    this.bitacora.opc = 5;
+                    this.bitH = new BitacoraHelper(bitacora);
+                    this.bitH.LogMovimientos();
+
+                    this.clientesH.Guardar();
+                    MessageBox.Show("Datos de Cliente Almacenado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         #endregion
@@ -201,8 +205,6 @@ namespace QNS_SysInv_X.MVCView
         private void btnAdd_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (!ValidarExistencia())
-            {
                 if (this.txtCedula.Text == "")
                 {
                     limpiarAlertas();
@@ -336,17 +338,16 @@ namespace QNS_SysInv_X.MVCView
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("No se actualizaron los datos del cliente");
+                            MessageBox.Show("No se actualizaron los datos del cliente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
                         guardar();
                         listar();
-                        limpiar();
                     }
                 }
-            }
+            
             #endregion
         }
 
@@ -400,7 +401,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.clientesH.Actualizar();
-                MessageBox.Show("Datos de clientes actualizados");
+                MessageBox.Show("Datos de clientes actualizados", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -417,7 +418,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de estudiante para actualizar");
+                    MessageBox.Show("No hay Registros de estudiante para actualizar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -607,7 +608,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.dgvListar.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un cliente para el Activar/Desactivar");
+                    MessageBox.Show("Debes seleccionar al menos un cliente para el Activar/Desactivar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

@@ -285,10 +285,10 @@
             // txtTel
             // 
             this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTel.Location = new System.Drawing.Point(153, 16);
+            this.txtTel.Location = new System.Drawing.Point(140, 16);
             this.txtTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(197, 13);
+            this.txtTel.Size = new System.Drawing.Size(210, 13);
             this.txtTel.TabIndex = 6;
             this.txtTel.TextChanged += new System.EventHandler(this.txtTel_TextChanged);
             this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
@@ -354,10 +354,10 @@
             this.cmbVende.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVende.FormattingEnabled = true;
             this.cmbVende.ItemHeight = 13;
-            this.cmbVende.Location = new System.Drawing.Point(162, 16);
+            this.cmbVende.Location = new System.Drawing.Point(155, 16);
             this.cmbVende.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVende.Name = "cmbVende";
-            this.cmbVende.Size = new System.Drawing.Size(194, 21);
+            this.cmbVende.Size = new System.Drawing.Size(201, 21);
             this.cmbVende.TabIndex = 3;
             this.cmbVende.SelectedValueChanged += new System.EventHandler(this.cmbVende_SelectedValueChanged);
             // 
@@ -392,10 +392,10 @@
             // txtContacto
             // 
             this.txtContacto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContacto.Location = new System.Drawing.Point(155, 17);
+            this.txtContacto.Location = new System.Drawing.Point(140, 17);
             this.txtContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(197, 13);
+            this.txtContacto.Size = new System.Drawing.Size(212, 13);
             this.txtContacto.TabIndex = 5;
             this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             this.txtContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContacto_KeyPress);

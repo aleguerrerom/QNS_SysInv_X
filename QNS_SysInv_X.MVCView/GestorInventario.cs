@@ -236,7 +236,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                 else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("No se actualizo el articulo");
+                    MessageBox.Show("No se actualizo el articulo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
                 else
@@ -300,7 +300,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
                 
                 this.invH.Actualizar();
-                MessageBox.Show("Registro de articulo actualizado");
+                MessageBox.Show("Registro de articulo actualizado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -317,7 +317,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros para actualizar");
+                    MessageBox.Show("No hay Registros para actualizar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -541,7 +541,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.dgvListar.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un articulo para el Activar/Desactivar");
+                    MessageBox.Show("Debes seleccionar al menos un articulo para el Activar/Desactivar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -561,7 +561,7 @@ namespace QNS_SysInv_X.MVCView
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsua.Text;
                         this.bitacora.Movimiento = "Inactivacion del articulo";
-                        this.bitacora.Detalle = "Se Inactivo el articlo correctamente ID: " + inventario.Id;
+                        this.bitacora.Detalle = "Se desactivo el articlo correctamente ID: " + inventario.Id;
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();

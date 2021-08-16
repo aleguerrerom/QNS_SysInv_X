@@ -53,8 +53,6 @@ namespace QNS_SysInv_X.MVCView
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!ValidarExistencia())
-            {
                 #region VALIDACIONES PARA AGREGAR O ACTUALIZAR
                 if (this.txtRol.Text == "")
                 {
@@ -85,17 +83,16 @@ namespace QNS_SysInv_X.MVCView
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("No se actualizo el rol");
+                            MessageBox.Show("No se actualizo el rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
                         guardar();
                         listar();
-                        limpiar();
                     }
                 }
-            }
+            
             #endregion
         }
 
@@ -165,7 +162,7 @@ namespace QNS_SysInv_X.MVCView
 
                 this.rolH.ActualizarRol();
                 limpiar();
-                MessageBox.Show("Datos del Rol actualizados");
+                MessageBox.Show("Datos del Rol actualizados", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             catch (Exception ex)
@@ -194,70 +191,73 @@ namespace QNS_SysInv_X.MVCView
             try
             {
                 // inicializo Usuario
-                roles = new Roles();
-                roles.Nombre = this.txtRol.Text.TrimEnd();
-                if (chkInventario.Checked)
-                    roles.Inventario = true;
-                else
-                    roles.Inventario = false;
-                if (chckUsuarios.Checked)
-                    roles.Usuarios = true;
-                else
-                    roles.Usuarios = false;
-                if (chkPrestamo.Checked)
-                    roles.Prestamo = true;
-                else
-                    roles.Prestamo = false;
-                if (chkEntrega.Checked)
-                    roles.Entrega = true;
-                else
-                    roles.Entrega = false;
-                if (chckRoles.Checked)
-                    roles.Roless = true;
-                else
-                    roles.Roless = false;
-                if (chkBitacora.Checked)
-                    roles.Bitacora = true;
-                else
-                    roles.Bitacora = false;
-                if (chkOportunidades.Checked)
-                    roles.Oportunidades = true;
-                else
-                    roles.Oportunidades = false;
-                if (chkVendedores.Checked)
-                    roles.Vendedores = true;
-                else
-                    roles.Vendedores = false;
-                if (chkClientesx.Checked)
-                    roles.Clientes = true;
-                else
-                    roles.Clientes = false;
-                if (this.chckbxActivo.Checked)
+
+                if (!ValidarExistencia())
                 {
-                    this.roles.Activo = true;
+                    roles = new Roles();
+                    roles.Nombre = this.txtRol.Text.TrimEnd();
+                    if (chkInventario.Checked)
+                        roles.Inventario = true;
+                    else
+                        roles.Inventario = false;
+                    if (chckUsuarios.Checked)
+                        roles.Usuarios = true;
+                    else
+                        roles.Usuarios = false;
+                    if (chkPrestamo.Checked)
+                        roles.Prestamo = true;
+                    else
+                        roles.Prestamo = false;
+                    if (chkEntrega.Checked)
+                        roles.Entrega = true;
+                    else
+                        roles.Entrega = false;
+                    if (chckRoles.Checked)
+                        roles.Roless = true;
+                    else
+                        roles.Roless = false;
+                    if (chkBitacora.Checked)
+                        roles.Bitacora = true;
+                    else
+                        roles.Bitacora = false;
+                    if (chkOportunidades.Checked)
+                        roles.Oportunidades = true;
+                    else
+                        roles.Oportunidades = false;
+                    if (chkVendedores.Checked)
+                        roles.Vendedores = true;
+                    else
+                        roles.Vendedores = false;
+                    if (chkClientesx.Checked)
+                        roles.Clientes = true;
+                    else
+                        roles.Clientes = false;
+                    if (this.chckbxActivo.Checked)
+                    {
+                        this.roles.Activo = true;
+                    }
+                    else this.roles.Activo = false;
+                    roles.opc = 2;
+                    if (this.txtRol.Text != "")
+                    {
+                        this.rolH = new RolesHelper(roles);
+                        ///LOG PARA ROLES
+
+                        this.bitacora = new Bitacora();
+                        this.bitacora.Usuario = this.stsUsu.Text;
+                        this.bitacora.Movimiento = "Agregar Rol";
+                        this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
+                        this.bitacora.opc = 5;
+                        this.bitH = new BitacoraHelper(bitacora);
+                        this.bitH.LogMovimientos();
+
+                        this.rolH.GuardarRol();
+                        MessageBox.Show("Rol almacenado correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                    }
+                    else
+                        MessageBox.Show("Debe indicar el nombre del rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else this.roles.Activo = false;
-                roles.opc = 2;
-                //roles.id_username_bitacora = Principal.id_username_bitacora;
-                if (this.txtRol.Text != "")
-                {
-                   this.rolH = new RolesHelper(roles);
-                    ///LOG PARA ROLES
-                    
-                    this.bitacora = new Bitacora();
-                    this.bitacora.Usuario = this.stsUsu.Text;
-                    this.bitacora.Movimiento = "Agregar Rol";
-                    this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
-                    this.bitacora.opc = 5;
-                    this.bitH = new BitacoraHelper(bitacora);
-                    this.bitH.LogMovimientos();
-                    
-                    this.rolH.GuardarRol();
-                    MessageBox.Show("Rol almacenado");
-                    limpiar();
-                }
-                else
-                    MessageBox.Show("Debe indicar el nombre del rol");
             }
 
             catch (Exception ex)
@@ -340,7 +340,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros de roles para actualizar");
+                    MessageBox.Show("No hay Registros de roles para actualizar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -377,7 +377,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.dgvListar.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un rol para el Activar/Desactivar");
+                    MessageBox.Show("Debes seleccionar al menos un rol para el Activar/Desactivar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -394,7 +394,7 @@ namespace QNS_SysInv_X.MVCView
                         this.rolH = new RolesHelper(roles);
                         this.rolH.Buscar();
 
-                        MessageBox.Show("Se desactivo el rol");
+                        MessageBox.Show("Se desactivo el rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsu.Text;
@@ -415,7 +415,7 @@ namespace QNS_SysInv_X.MVCView
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsu.Text;
                         this.bitacora.Movimiento = "Inactivacion de rol";
-                        this.bitacora.Detalle = "Se Inactivo el rol correctamente ";
+                        this.bitacora.Detalle = "Se desactivo el rol correctamente ";
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();

@@ -49,7 +49,7 @@
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(167, 51);
+            pictureBox1.Location = new System.Drawing.Point(144, 51);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(357, 119);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@
             this.btnChange.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnChange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChange.Location = new System.Drawing.Point(167, 176);
+            this.btnChange.Location = new System.Drawing.Point(144, 176);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(243, 33);
             this.btnChange.TabIndex = 53;
@@ -100,7 +100,7 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(428, 176);
+            this.btnReport.Location = new System.Drawing.Point(405, 176);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(96, 33);
             this.btnReport.TabIndex = 57;

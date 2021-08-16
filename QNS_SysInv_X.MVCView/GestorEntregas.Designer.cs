@@ -235,9 +235,9 @@
             this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombre.Enabled = false;
             this.cmbNombre.FormattingEnabled = true;
-            this.cmbNombre.Location = new System.Drawing.Point(159, 14);
+            this.cmbNombre.Location = new System.Drawing.Point(168, 14);
             this.cmbNombre.Name = "cmbNombre";
-            this.cmbNombre.Size = new System.Drawing.Size(191, 21);
+            this.cmbNombre.Size = new System.Drawing.Size(182, 21);
             this.cmbNombre.TabIndex = 2;
             this.cmbNombre.SelectedValueChanged += new System.EventHandler(this.cmbNombre_SelectedValueChanged);
             // 
@@ -265,7 +265,7 @@
             this.gpMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpMarca.Name = "gpMarca";
             this.gpMarca.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gpMarca.Size = new System.Drawing.Size(363, 44);
+            this.gpMarca.Size = new System.Drawing.Size(369, 44);
             this.gpMarca.TabIndex = 52;
             this.gpMarca.TabStop = false;
             // 
@@ -287,7 +287,7 @@
             this.txtNumParte.Location = new System.Drawing.Point(159, 18);
             this.txtNumParte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumParte.Name = "txtNumParte";
-            this.txtNumParte.Size = new System.Drawing.Size(197, 13);
+            this.txtNumParte.Size = new System.Drawing.Size(196, 13);
             this.txtNumParte.TabIndex = 21;
             this.txtNumParte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumParte_KeyPress);
             // 
@@ -311,7 +311,7 @@
             this.txtSN.Location = new System.Drawing.Point(160, 17);
             this.txtSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSN.Name = "txtSN";
-            this.txtSN.Size = new System.Drawing.Size(197, 13);
+            this.txtSN.Size = new System.Drawing.Size(187, 13);
             this.txtSN.TabIndex = 8;
             this.txtSN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSN_KeyPress);
             // 
@@ -433,17 +433,17 @@
             this.gpCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpCantidad.Name = "gpCantidad";
             this.gpCantidad.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gpCantidad.Size = new System.Drawing.Size(363, 44);
+            this.gpCantidad.Size = new System.Drawing.Size(373, 44);
             this.gpCantidad.TabIndex = 51;
             this.gpCantidad.TabStop = false;
             // 
             // txtCantidad
             // 
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCantidad.Location = new System.Drawing.Point(160, 18);
+            this.txtCantidad.Location = new System.Drawing.Point(174, 17);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(197, 13);
+            this.txtCantidad.Size = new System.Drawing.Size(183, 13);
             this.txtCantidad.TabIndex = 9;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -481,7 +481,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(160, 17);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 13);
+            this.txtDescripcion.Size = new System.Drawing.Size(188, 13);
             this.txtDescripcion.TabIndex = 10;
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
@@ -516,10 +516,10 @@
             // txtEntregadoPor
             // 
             this.txtEntregadoPor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEntregadoPor.Location = new System.Drawing.Point(160, 18);
+            this.txtEntregadoPor.Location = new System.Drawing.Point(168, 18);
             this.txtEntregadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEntregadoPor.Name = "txtEntregadoPor";
-            this.txtEntregadoPor.Size = new System.Drawing.Size(197, 13);
+            this.txtEntregadoPor.Size = new System.Drawing.Size(181, 13);
             this.txtEntregadoPor.TabIndex = 4;
             this.txtEntregadoPor.TextChanged += new System.EventHandler(this.txtEntregadoPor_TextChanged);
             this.txtEntregadoPor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntregadoPor_KeyPress);

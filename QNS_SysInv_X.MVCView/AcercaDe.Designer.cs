@@ -51,7 +51,7 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(21, 90);
+            pictureBox1.Location = new System.Drawing.Point(18, 90);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(251, 97);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,9 +74,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(94, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 21);
+            this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Version 1.0";
+            this.label1.Text = "Version 1.45";
             // 
             // label2
             // 

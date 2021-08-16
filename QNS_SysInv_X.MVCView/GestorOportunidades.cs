@@ -39,7 +39,7 @@ namespace QNS_SysInv_X.MVCView
             this.stsUsu.Text = this.user.Usuario;
         }
 
-        #region LIMPIZA DE ALERTAS
+        #region LIMPIEZA DE ALERTAS
         private void limpiarAlertas()
         {
             lblNombreCliente.BackColor = System.Drawing.Color.White;
@@ -168,7 +168,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.oportunidadesH.Guardar();
-                MessageBox.Show("Oportunidad  Almacenada");
+                MessageBox.Show("Oportunidad  Almacenada", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -274,7 +274,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se actualizo la oportunidad");
+                        MessageBox.Show("No se actualizo la oportunidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -329,7 +329,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.oportunidadesH.Actualizar();
-                MessageBox.Show("Datos de oportunidad actualizados");
+                MessageBox.Show("Datos de oportunidad actualizados", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

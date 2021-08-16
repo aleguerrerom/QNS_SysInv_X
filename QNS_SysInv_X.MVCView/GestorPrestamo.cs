@@ -64,7 +64,6 @@ namespace QNS_SysInv_X.MVCView
                     cmbDireccion.ValueMember = "direcion";
                     cmbDireccion.DisplayMember = "direcion";
                 }
-
             }
             catch (Exception ex)
             {
@@ -92,7 +91,6 @@ namespace QNS_SysInv_X.MVCView
         {
             try
             {
-                //cargarCombo();
                 this.inventario = new Inventario();
                 this.inventario.opc = 5;
 
@@ -136,7 +134,7 @@ namespace QNS_SysInv_X.MVCView
                         this.table = (DataTable)this.dataGridView1.DataSource;
                         if (table == null)
                         {
-                            MessageBox.Show("No hay Registros de roles para actualizar");
+                            MessageBox.Show("No hay Registros de roles para actualizar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -234,7 +232,7 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else if (this.dataGridView1.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un articulo para el prestamo");
+                    MessageBox.Show("Debes seleccionar al menos un articulo para el prestamo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (this.cmbCliente.Text == "")
                 {
@@ -276,13 +274,13 @@ namespace QNS_SysInv_X.MVCView
                         AlmacenarPrestamo();
                         limpiar();
                         listar();
-                        MessageBox.Show("El articulo fue procesado para prestamo correctamente");
+                        MessageBox.Show("El articulo fue procesado para prestamo correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         repoPrestamo.ShowDialog();
                     }
 
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se procesaron los articulos");
+                        MessageBox.Show("No se procesaron los articulos", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

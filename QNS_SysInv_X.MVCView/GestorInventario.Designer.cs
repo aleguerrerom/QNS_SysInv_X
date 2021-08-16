@@ -152,10 +152,10 @@
             // txtSerialNumber
             // 
             this.txtSerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerialNumber.Location = new System.Drawing.Point(159, 18);
+            this.txtSerialNumber.Location = new System.Drawing.Point(163, 18);
             this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(197, 13);
+            this.txtSerialNumber.Size = new System.Drawing.Size(193, 13);
             this.txtSerialNumber.TabIndex = 12;
             this.txtSerialNumber.TextChanged += new System.EventHandler(this.txtSerialNumber_TextChanged);
             this.txtSerialNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNumber_KeyPress);
@@ -242,7 +242,7 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(198, 17);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(147, 20);
             this.dtpFecha.TabIndex = 16;
             // 
             // lblFecha
@@ -282,9 +282,9 @@
             "Bodega",
             "Prestamo",
             "Produccion"});
-            this.cmbEstado.Location = new System.Drawing.Point(198, 14);
+            this.cmbEstado.Location = new System.Drawing.Point(192, 14);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(147, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(153, 21);
             this.cmbEstado.TabIndex = 5;
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
@@ -331,10 +331,10 @@
             // txtModelo
             // 
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtModelo.Location = new System.Drawing.Point(159, 18);
+            this.txtModelo.Location = new System.Drawing.Point(192, 18);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(197, 13);
+            this.txtModelo.Size = new System.Drawing.Size(153, 13);
             this.txtModelo.TabIndex = 14;
             this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
             this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
@@ -423,10 +423,10 @@
             // txtTipo
             // 
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Location = new System.Drawing.Point(159, 18);
+            this.txtTipo.Location = new System.Drawing.Point(162, 18);
             this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(197, 13);
+            this.txtTipo.Size = new System.Drawing.Size(194, 13);
             this.txtTipo.TabIndex = 11;
             this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
             this.txtTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipo_KeyPress);
@@ -462,10 +462,10 @@
             // 
             this.txtNombreActivo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActivo.Location = new System.Drawing.Point(156, 18);
+            this.txtNombreActivo.Location = new System.Drawing.Point(163, 18);
             this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreActivo.Name = "txtNombreActivo";
-            this.txtNombreActivo.Size = new System.Drawing.Size(197, 13);
+            this.txtNombreActivo.Size = new System.Drawing.Size(190, 13);
             this.txtNombreActivo.TabIndex = 10;
             this.txtNombreActivo.TextChanged += new System.EventHandler(this.txtNombreActivo_TextChanged);
             this.txtNombreActivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreActivo_KeyPress);

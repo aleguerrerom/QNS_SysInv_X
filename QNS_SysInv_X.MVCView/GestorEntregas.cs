@@ -119,15 +119,19 @@ namespace QNS_SysInv_X.MVCView
         
         private void limpiar()
         {
-            this.cmbCliente.Text = "";
-            this.txtSN.Text = "";
-            this.txtNumParte.Text = "";
+            this.cmbCliente.SelectedIndex = -1;
+            this.cmbDireccion.SelectedIndex = -1;
+            this.cmbTelefono.SelectedIndex = -1;
+            this.cmbNombre.SelectedIndex = -1;
+            this.cmbCliente.SelectedIndex = -1;
+            this.txtEntregadoPor.Text = "";
+            this.txtNumFactura.Text = "";
             this.dtpFecha.Value = DateTime.Today;
-            this.cmbCliente.Text = "";
             this.txtCantidad.Text = "";
             this.txtDescripcion.Text = "";
             this.txtEntregadoPor.Text = "";
-            this.cmbNombre.Text = "";
+            this.txtSN.Text = "";
+            this.dgvListar.Rows.Clear();
             limpiarAlertas();
         }
 
@@ -364,7 +368,7 @@ namespace QNS_SysInv_X.MVCView
                 txtCantidad.Focus();
                 return;
             }
-            else if (this.txtNumParte.Text == "" || String.IsNullOrEmpty(txtNumFactura.Text))
+            else if (this.txtNumParte.Text == "" || String.IsNullOrEmpty(txtNumParte.Text))
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de NUMERO DE PARTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

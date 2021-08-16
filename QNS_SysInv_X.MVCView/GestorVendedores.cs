@@ -31,7 +31,7 @@ namespace QNS_SysInv_X.MVCView
             this.toolStripStatusLabel1.Text = this.user.Usuario;
         }
 
-        #region LIMIAR ALERTAS
+        #region LIMPIAR ALERTAS
         private void limpiarAlertas()
         {
             lblCedula.BackColor = System.Drawing.Color.White;
@@ -90,9 +90,11 @@ namespace QNS_SysInv_X.MVCView
         //FUNCION AGREGAR NUEVO USUARIO
         private void guardar()
         {
-            try
+
+            if (!ValidarExistencia())
             {
-              
+                try
+                {
                     this.vendedor = new Vendedores();
                     this.vendedor.opc = 2;
                     this.vendedor.Cedula = int.Parse(this.txtCedula.Text.TrimEnd());
@@ -120,16 +122,16 @@ namespace QNS_SysInv_X.MVCView
                     this.bitH.LogMovimientos();
 
                     this.vendedorH.Guardar();
-                    MessageBox.Show("Vendedor  " + this.vendedor.Nombre + " Almacenado");
-                
-            }
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show("Vendedor  " + this.vendedor.Nombre + " Almacenado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
-
         #endregion
       
         private void GestorRespaldos_Load(object sender, EventArgs e)
@@ -190,8 +192,7 @@ namespace QNS_SysInv_X.MVCView
     private void btnAdd_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (!ValidarExistencia())
-            {
+            
                 if (this.txtCedula.Text == "")
                 {
                     limpiarAlertas();
@@ -316,19 +317,17 @@ namespace QNS_SysInv_X.MVCView
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("No se actualizó el vendedor");
+                            MessageBox.Show("No se actualizó el vendedor", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
                         guardar();
                         listar();
-                        limpiar();
-
                     }
                     #endregion
                 }
-            }
+            
         }
         #region LIMPIAR CAMPOS
         public void limpiar()
@@ -391,7 +390,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
 
                 this.vendedorH.Actualizar();
-                MessageBox.Show("Datos del Vendedor " + this.vendedor.Nombre + " actualizados");
+                MessageBox.Show("Datos del Vendedor " + this.vendedor.Nombre + " actualizados", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -434,7 +433,6 @@ namespace QNS_SysInv_X.MVCView
         }
         #endregion
         
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -572,7 +570,7 @@ namespace QNS_SysInv_X.MVCView
                 if (this.dgvListar.SelectedRows.Count == 0)
                 {
 
-                    MessageBox.Show("Debes seleccionar al menos un vendedor para Activar/Desactivar");
+                    MessageBox.Show("Debes seleccionar al menos un vendedor para Activar/Desactivar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

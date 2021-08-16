@@ -40,6 +40,7 @@
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
             this.lblVendedor = new System.Windows.Forms.Label();
             this.idl = new System.Windows.Forms.Label();
+            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.gbDetalles = new System.Windows.Forms.GroupBox();
             this.lblDetalles = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cmbCedVendedor = new System.Windows.Forms.ComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.gbPresupuesto.SuspendLayout();
@@ -173,7 +173,7 @@
             this.cmbVendedor.Location = new System.Drawing.Point(159, 13);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
-            this.cmbVendedor.Size = new System.Drawing.Size(176, 21);
+            this.cmbVendedor.Size = new System.Drawing.Size(177, 21);
             this.cmbVendedor.TabIndex = 5;
             this.cmbVendedor.SelectedIndexChanged += new System.EventHandler(this.cmbVendedor_SelectedIndexChanged);
             // 
@@ -199,6 +199,15 @@
             this.idl.Size = new System.Drawing.Size(41, 13);
             this.idl.TabIndex = 67;
             this.idl.Text = "label1";
+            // 
+            // cmbCedVendedor
+            // 
+            this.cmbCedVendedor.FormattingEnabled = true;
+            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 14);
+            this.cmbCedVendedor.Name = "cmbCedVendedor";
+            this.cmbCedVendedor.Size = new System.Drawing.Size(18, 21);
+            this.cmbCedVendedor.TabIndex = 73;
+            this.cmbCedVendedor.Visible = false;
             // 
             // dtpFecha
             // 
@@ -448,15 +457,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(112, 20);
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // cmbCedVendedor
-            // 
-            this.cmbCedVendedor.FormattingEnabled = true;
-            this.cmbCedVendedor.Location = new System.Drawing.Point(179, 14);
-            this.cmbCedVendedor.Name = "cmbCedVendedor";
-            this.cmbCedVendedor.Size = new System.Drawing.Size(18, 21);
-            this.cmbCedVendedor.TabIndex = 73;
-            this.cmbCedVendedor.Visible = false;
             // 
             // GestorOportunidades
             // 

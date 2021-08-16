@@ -32,7 +32,7 @@ namespace QNS_SysInv_X.MVCView
             // VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
-                MessageBox.Show("Tienes que llenar todos los campos, para agregar o actualizar");
+                MessageBox.Show("Debes llenar ambos campos para cambiar clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             else if (validate_Spaces.IsMatch(txtClave.Text) != true)
@@ -51,7 +51,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtClave.Text != this.txtConfirmar.Text)
                 {
-                      MessageBox.Show("Las claven deben ser iguales");
+                      MessageBox.Show("Las claves deben ser iguales", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 
                 else {
@@ -63,7 +63,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se actualizo la clave");
+                        MessageBox.Show("No se actualizo la clave", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -92,7 +92,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
                 
                 this.userHelper.CambiarClave();
-                MessageBox.Show("La clave ha sido actualizada");
+                MessageBox.Show("La clave ha sido actualizada","Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

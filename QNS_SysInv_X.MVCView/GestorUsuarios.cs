@@ -96,39 +96,44 @@ namespace QNS_SysInv_X.MVCView.Resources
         //FUNCION AGREGAR NUEVO USUARIO
         private void guardar()
         {
-            try
+
+            if (!ValidarExistencia())
             {
-                //AGREGAR NUEVO USUARIO
-                this.user = new Usuarios();
-                this.user.Usuario = this.txtUsuario.Text.TrimEnd();
-                this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text.TrimEnd());
-                if (this.chckbxActivo.Checked)
+                try
                 {
-                    this.user.Activo = true;
+                    //AGREGAR NUEVO USUARIO
+                    this.user = new Usuarios();
+                    this.user.Usuario = this.txtUsuario.Text.TrimEnd();
+                    this.user.Clave = EncryptionHelper.Encrypt(this.txtClave.Text.TrimEnd());
+                    if (this.chckbxActivo.Checked)
+                    {
+                        this.user.Activo = true;
+                    }
+                    else this.user.Activo = false;
+                    this.user.Rol = this.cmbRol.SelectedIndex + 1;
+                    this.user.Nombre = this.txtNombre.Text.TrimEnd();
+                    this.user.Apellido = this.txtApellido.Text.TrimEnd();
+                    this.user.Correo = this.txtCorreo.Text.TrimEnd();
+                    this.user.opc = 2;
+                    this.userHelper = new UsuariosHelper(user);
+                    ///LOG PARA USUARIOS
+
+                    this.bitacora = new Bitacora();
+                    this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
+                    this.bitacora.Movimiento = "Agregar Usuario";
+                    this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario.Text;
+                    this.bitacora.opc = 5;
+                    this.bitH = new BitacoraHelper(bitacora);
+                    this.bitH.LogMovimientos();
+
+                    this.userHelper.Guardar();
+                    MessageBox.Show("Usuario " + this.user.Usuario + " Almacenado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
                 }
-                else this.user.Activo = false;
-                this.user.Rol = this.cmbRol.SelectedIndex + 1;
-                this.user.Nombre = this.txtNombre.Text.TrimEnd();
-                this.user.Apellido = this.txtApellido.Text.TrimEnd();
-                this.user.Correo = this.txtCorreo.Text.TrimEnd();
-                this.user.opc = 2;
-                this.userHelper = new UsuariosHelper(user);
-                ///LOG PARA USUARIOS
-
-                this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
-                this.bitacora.Movimiento = "Agregar Usuario";
-                this.bitacora.Detalle = "Se agrego un nuevo usuario" + this.txtUsuario.Text;
-                this.bitacora.opc = 5;
-                this.bitH = new BitacoraHelper(bitacora);
-                this.bitH.LogMovimientos();
-
-                this.userHelper.Guardar();
-                MessageBox.Show("Usuario " + this.user.Usuario + " Almacenado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -159,8 +164,7 @@ namespace QNS_SysInv_X.MVCView.Resources
         private void button1_Click(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            if (!ValidarExistencia())
-            {
+            
                 if (this.txtUsuario.Text == "")
                 {
                     limpiarAlertas();
@@ -311,12 +315,12 @@ namespace QNS_SysInv_X.MVCView.Resources
                             }
                             else if (dialogResult == DialogResult.No)
                             {
-                                MessageBox.Show("No se actualizo el usuario");
+                                MessageBox.Show("No se actualizo el usuario", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Las claves deben ser iguales");
+                            MessageBox.Show("Las claves deben ser iguales", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiarAlertas();
                             lblClave.BackColor = System.Drawing.Color.DarkRed;
                             lblClave.ForeColor = System.Drawing.Color.White;
@@ -332,11 +336,10 @@ namespace QNS_SysInv_X.MVCView.Resources
                         {
                             guardar();
                             listar();
-                            limpiar();
                         }
                         else
                         {
-                            MessageBox.Show("Las claven deben ser iguales");
+                            MessageBox.Show("Las claven deben ser iguales", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             limpiarAlertas();
                             lblClave.BackColor = System.Drawing.Color.DarkRed;
                             lblClave.ForeColor = System.Drawing.Color.White;
@@ -347,7 +350,6 @@ namespace QNS_SysInv_X.MVCView.Resources
                         }
                     }
                 }
-            }
             #endregion
         }
 
