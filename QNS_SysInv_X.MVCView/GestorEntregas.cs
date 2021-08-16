@@ -255,12 +255,12 @@ namespace QNS_SysInv_X.MVCView
                     Entrega entrega = new Entrega();
                     ReporteEntrega repoEntrega = new ReporteEntrega(user);
                     entrega.Cliente = cmbCliente.Text;
-                    entrega.EntregadoPor = txtEntregadoPor.Text;
-                    entrega.Contacto = cmbNombre.Text;
-                    entrega.Fecha = dtpFecha.Value;
-                    entrega.Dirrecion = cmbDireccion.Text;
-                    entrega.NumeroFactura = txtNumFactura.Text;
                     entrega.Telefono = cmbTelefono.Text;
+                    entrega.NumeroFactura = txtNumFactura.Text;
+                    entrega.Fecha = dtpFecha.Value;
+                    entrega.Contacto = cmbNombre.Text;
+                    entrega.Dirrecion = cmbDireccion.Text;
+                    entrega.EntregadoPor = txtEntregadoPor.Text;
                     repoEntrega.entregaLista.Add(entrega);
 
                     for (int i = 0; i < dgvListar.RowCount; i++)

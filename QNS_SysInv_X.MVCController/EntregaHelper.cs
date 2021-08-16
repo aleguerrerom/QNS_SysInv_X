@@ -12,7 +12,6 @@ namespace QNS_SysInv_X.MVCController
         Entrega objEntrega = null;
         DataTable tblDatos = null;
 
-
         public EntregaHelper(Entrega parObjEntrega)
         {
             objEntrega = parObjEntrega;
@@ -39,39 +38,39 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[1].SqlValue = objEntrega.Cliente;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@fecha";
-                parParameter[2].SqlDbType = SqlDbType.DateTime;
-                parParameter[2].SqlValue = objEntrega.Fecha;
-
+                parParameter[2].ParameterName = "@telefono";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = objEntrega.Telefono;
+                
                 parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@contacto";
+                parParameter[3].ParameterName = "@numFactura";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 50;
-                parParameter[3].SqlValue = objEntrega.Contacto;
+                parParameter[3].SqlValue = objEntrega.NumeroFactura;
 
                 parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@direccion";
-                parParameter[4].SqlDbType = SqlDbType.VarChar;
-                parParameter[4].Size = 50;
-                parParameter[4].SqlValue = objEntrega.NumeroDeSerie;
+                parParameter[4].ParameterName = "@fecha";
+                parParameter[4].SqlDbType = SqlDbType.DateTime;
+                parParameter[4].SqlValue = objEntrega.Fecha;
 
                 parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@entregadoPor";
+                parParameter[5].ParameterName = "@contacto";
                 parParameter[5].SqlDbType = SqlDbType.VarChar;
                 parParameter[5].Size = 50;
-                parParameter[5].SqlValue = objEntrega.EntregadoPor;
+                parParameter[5].SqlValue = objEntrega.Contacto;
 
                 parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@telefono";
+                parParameter[6].ParameterName = "@direccion";
                 parParameter[6].SqlDbType = SqlDbType.VarChar;
                 parParameter[6].Size = 50;
-                parParameter[6].SqlValue = objEntrega.Telefono;
+                parParameter[6].SqlValue = objEntrega.Dirrecion;
 
                 parParameter[7] = new SqlParameter();
-                parParameter[7].ParameterName = "@numFactura";
+                parParameter[7].ParameterName = "@entregadoPor";
                 parParameter[7].SqlDbType = SqlDbType.VarChar;
                 parParameter[7].Size = 50;
-                parParameter[7].SqlValue = objEntrega.NumeroFactura;
+                parParameter[7].SqlValue = objEntrega.EntregadoPor;
                 
                 cnGeneral.EjecutarSP(parParameter, "SPEntrega");
 
@@ -81,8 +80,6 @@ namespace QNS_SysInv_X.MVCController
                 throw new Exception(ex.Message);
             }
             #endregion
-
-
+          }
         }
-    }
-        }
+      }
