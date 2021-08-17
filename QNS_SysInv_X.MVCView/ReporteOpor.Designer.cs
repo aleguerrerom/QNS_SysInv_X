@@ -95,7 +95,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(662, 54);
+            this.button1.Location = new System.Drawing.Point(660, 53);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
@@ -169,7 +169,7 @@
             "Marca"});
             this.cmbFiltro.Location = new System.Drawing.Point(426, 53);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
+            this.cmbFiltro.Size = new System.Drawing.Size(114, 24);
             this.cmbFiltro.TabIndex = 62;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
@@ -177,9 +177,9 @@
             // 
             this.dtpFechaInicio.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(426, 101);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(426, 95);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(100, 22);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(114, 22);
             this.dtpFechaInicio.TabIndex = 3;
             // 
             // statusStrip1
@@ -229,7 +229,7 @@
             // lblFechaFinal
             // 
             this.lblFechaFinal.AutoSize = true;
-            this.lblFechaFinal.Location = new System.Drawing.Point(662, 101);
+            this.lblFechaFinal.Location = new System.Drawing.Point(657, 98);
             this.lblFechaFinal.Name = "lblFechaFinal";
             this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
             this.lblFechaFinal.TabIndex = 66;

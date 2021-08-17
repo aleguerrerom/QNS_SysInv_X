@@ -365,7 +365,7 @@
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(92, 16);
             this.lblDireccion.TabIndex = 3;
-            this.lblDireccion.Text = "DIRECCION:      ";
+            this.lblDireccion.Text = "DIRECCIÓN:      ";
             this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbCliente
@@ -496,7 +496,7 @@
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(106, 16);
             this.lblDescripcion.TabIndex = 3;
-            this.lblDescripcion.Text = "DESCRIPCION:      ";
+            this.lblDescripcion.Text = "DESCRIPCIÓN:      ";
             this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gpEntregado
@@ -594,7 +594,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(145, 25);
             this.btnAdd.TabIndex = 22;
-            this.btnAdd.Text = "AGREGAR ARTICULO";
+            this.btnAdd.Text = "AGREGAR ARTÍCULO";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -688,7 +688,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 33;
-            this.label2.Text = "TELEFONO:     ";
+            this.label2.Text = "TELÉFONO:     ";
             // 
             // groupBox3
             // 

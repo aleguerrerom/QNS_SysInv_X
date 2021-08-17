@@ -172,7 +172,7 @@ namespace QNS_SysInv_X.MVCView
                 if (this.cmbCliente.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de CLIENTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de CLIENTE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblCliente.BackColor = System.Drawing.Color.DarkRed;
                     lblCliente.ForeColor = System.Drawing.Color.White;
                     gbCliente.BackColor = System.Drawing.Color.DarkRed;
@@ -182,7 +182,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.cmbDireccion.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de DIRECCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de DIRECCIÓN esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblDireccion.BackColor = System.Drawing.Color.DarkRed;
                     lblDireccion.ForeColor = System.Drawing.Color.White;
                     gbDireccion.BackColor = System.Drawing.Color.DarkRed;
@@ -191,7 +191,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.cmbCliente.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de CONTACTO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de CONTACTO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblContacto.BackColor = System.Drawing.Color.DarkRed;
                     lblContacto.ForeColor = System.Drawing.Color.White;
                     gpContacto.BackColor = System.Drawing.Color.DarkRed;
@@ -200,7 +200,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.txtEntregadoPor.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo ENTREGADO POR no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo ENTREGADO POR no puede ir vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblEntregado.BackColor = System.Drawing.Color.DarkRed;
                     lblEntregado.ForeColor = System.Drawing.Color.White;
                     gpEntregado.BackColor = System.Drawing.Color.DarkRed;
@@ -209,7 +209,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (OnlyLetterNumberssandSpaces.IsMatch(txtEntregadoPor.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo ENTREGADO POR solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo ENTREGADO POR solo permite letras y numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblEntregado.BackColor = System.Drawing.Color.DarkRed;
                     lblEntregado.ForeColor = System.Drawing.Color.White;
                     gpEntregado.BackColor = System.Drawing.Color.DarkRed;
@@ -219,7 +219,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.txtNumFactura.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NUMERO DE FACTURA no puede ir vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NUMERO DE FACTURA no puede ir vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     label1.BackColor = System.Drawing.Color.DarkRed;
                     label1.ForeColor = System.Drawing.Color.White;
                     gpNumFactura.BackColor = System.Drawing.Color.DarkRed;
@@ -228,7 +228,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (validate_numberANDletter.IsMatch(txtNumFactura.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NUMERO DE FACTURA solo permite letras y numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     label1.BackColor = System.Drawing.Color.DarkRed;
                     label1.ForeColor = System.Drawing.Color.White;
                     gpNumFactura.BackColor = System.Drawing.Color.DarkRed;
@@ -238,7 +238,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (this.cmbTelefono.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de TELEFONO no puede estar esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de TÉLEFONO no puede estar esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     label2.BackColor = System.Drawing.Color.DarkRed;
                     label2.ForeColor = System.Drawing.Color.White;
                     gbTelefono.BackColor = System.Drawing.Color.DarkRed;
@@ -247,7 +247,7 @@ namespace QNS_SysInv_X.MVCView
                 else if (dgvListar.RowCount == 0)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("Debes incluir al menos un articulos a la entrega", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debes incluir al menos un articulos a la entrega", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.ActiveControl = txtSN;
                 }
                 else
@@ -316,7 +316,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtSN.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de Numero de Serie esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de Numero de Serie esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNS.BackColor = System.Drawing.Color.DarkRed;
                 lblNS.ForeColor = System.Drawing.Color.White;
                 gpSN.BackColor = System.Drawing.Color.DarkRed;
@@ -325,7 +325,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtDescripcion.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de DESCRIPCIÓN esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de DESCRIPCIÓN esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblDescripcion.BackColor = System.Drawing.Color.DarkRed;
                 lblDescripcion.ForeColor = System.Drawing.Color.White;
                 gpDescripcion.BackColor = System.Drawing.Color.DarkRed;
@@ -335,7 +335,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtCantidad.Text == "" || String.IsNullOrEmpty(txtCantidad.Text))
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de CANTIDAD esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de CANTIDAD esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCantidad.BackColor = System.Drawing.Color.DarkRed;
                 lblCantidad.ForeColor = System.Drawing.Color.White;
                 gpCantidad.BackColor = System.Drawing.Color.DarkRed;
@@ -344,7 +344,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de CANTIDAD no puede tener espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de CANTIDAD no puede tener espacios", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCantidad.BackColor = System.Drawing.Color.DarkRed;
                 lblCantidad.ForeColor = System.Drawing.Color.White;
                 gpCantidad.BackColor = System.Drawing.Color.DarkRed;
@@ -353,7 +353,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_number.IsMatch(txtCantidad.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de CANTIDAD solo puede tener números", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de CANTIDAD solo puede tener números", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCantidad.BackColor = System.Drawing.Color.DarkRed;
                 lblCantidad.ForeColor = System.Drawing.Color.White;
                 gpCantidad.BackColor = System.Drawing.Color.DarkRed;
@@ -361,7 +361,7 @@ namespace QNS_SysInv_X.MVCView
             }
             else if (validate_Spaces.IsMatch(txtCantidad.Text) != true)
             {
-                MessageBox.Show("No se permiten espacios en el campo cantidad", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios en el campo cantidad", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCantidad.BackColor = System.Drawing.Color.DarkRed;
                 lblCantidad.ForeColor = System.Drawing.Color.White;
                 gpCantidad.BackColor = System.Drawing.Color.DarkRed;
@@ -371,7 +371,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtNumParte.Text == "" || String.IsNullOrEmpty(txtNumParte.Text))
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de NUMERO DE PARTE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de NUMERO DE PARTE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblMarca.BackColor = System.Drawing.Color.DarkRed;
                 lblMarca.ForeColor = System.Drawing.Color.White;
                 gpMarca.BackColor = System.Drawing.Color.DarkRed;

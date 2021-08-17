@@ -161,7 +161,7 @@
             this.MaximumSize = new System.Drawing.Size(683, 542);
             this.MinimumSize = new System.Drawing.Size(683, 542);
             this.Name = "VerBitacora";
-            this.Text = "BITACORA  | QNS_SysInv_X";
+            this.Text = "BITÁCORA  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.Bitacora_Load);
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListar)).EndInit();

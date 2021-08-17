@@ -146,7 +146,7 @@ namespace QNS_SysInv_X.MVCView
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtNombreActivo.Text == "" ){
                 limpiarAlertas();
-                MessageBox.Show("El campo de NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de NOMBRE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNombre.BackColor = System.Drawing.Color.DarkRed;
                 lblNombre.ForeColor = System.Drawing.Color.White;
                 gbNombre.BackColor = System.Drawing.Color.DarkRed;
@@ -156,7 +156,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtTipo.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de TIPO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de TIPO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblTipo.BackColor = System.Drawing.Color.DarkRed;
                 lblTipo.ForeColor = System.Drawing.Color.White;
                 gbTipo.BackColor = System.Drawing.Color.DarkRed;
@@ -166,7 +166,7 @@ namespace QNS_SysInv_X.MVCView
             else if (OnlyLetterNumberssandSpaces.IsMatch(txtTipo.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo TIPO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo TIPO solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblTipo.BackColor = System.Drawing.Color.DarkRed;
                 lblTipo.ForeColor = System.Drawing.Color.White;
                 gbTipo.BackColor = System.Drawing.Color.DarkRed;
@@ -176,7 +176,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtSerialNumber.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de NUMERO DE SERIE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de NUMERO DE SERIE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblSN.BackColor = System.Drawing.Color.DarkRed;
                 lblSN.ForeColor = System.Drawing.Color.White;
                 gbSN.BackColor = System.Drawing.Color.DarkRed;
@@ -186,7 +186,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_letteradnumbers.IsMatch(txtSerialNumber.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de NUMERO DE SERIE no permite espacios o caracteres especiales, solo permite letras y numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de NUMERO DE SERIE no permite espacios o caracteres especiales, solo permite letras y numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblSN.BackColor = System.Drawing.Color.DarkRed;
                 lblSN.ForeColor = System.Drawing.Color.White;
                 gbSN.BackColor = System.Drawing.Color.DarkRed;
@@ -196,7 +196,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.cmbBrand.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo de MARCA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de MARCA esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblMarca.BackColor = System.Drawing.Color.DarkRed;
                 lblMarca.ForeColor = System.Drawing.Color.White;
                 gbMarca.BackColor = System.Drawing.Color.DarkRed;
@@ -205,7 +205,7 @@ namespace QNS_SysInv_X.MVCView
             }
             else if( this.txtModelo.Text == "" ){
                 limpiarAlertas();
-                MessageBox.Show("El campo de MODELO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de MODELO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblModelo.BackColor = System.Drawing.Color.DarkRed;
                 lblModelo.ForeColor = System.Drawing.Color.White;
                 gbModelo.BackColor = System.Drawing.Color.DarkRed;
@@ -215,7 +215,7 @@ namespace QNS_SysInv_X.MVCView
             
             else if( this.cmbEstado.Text == "" ){
                 limpiarAlertas();
-                MessageBox.Show("El campo de ESTADO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo de ESTADO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblEstado.BackColor = System.Drawing.Color.DarkRed;
                 lblEstado.ForeColor = System.Drawing.Color.White;
                 gbEstado.BackColor = System.Drawing.Color.DarkRed;
@@ -236,7 +236,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                 else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("No se actualizo el articulo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se actualizo el articulo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
                 else
@@ -300,7 +300,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitH.LogMovimientos();
                 
                 this.invH.Actualizar();
-                MessageBox.Show("Registro de articulo actualizado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registro de articulo actualizado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -317,7 +317,7 @@ namespace QNS_SysInv_X.MVCView
                 this.table = (DataTable)this.dgvListar.DataSource;
                 if (table == null)
                 {
-                    MessageBox.Show("No hay Registros para actualizar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No hay Registros para actualizar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -409,7 +409,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.txtNombreActivo.Text != "" || this.txtModelo.Text != "" || this.txtSerialNumber.Text != ""
             || this.cmbEstado.Text != "" || this.txtTipo.Text != "" || this.cmbBrand.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderán lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     e.Cancel = false;
@@ -436,14 +436,14 @@ namespace QNS_SysInv_X.MVCView
                 else if (validate_number.IsMatch(txtBuscar.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }
                 else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }
@@ -560,8 +560,8 @@ namespace QNS_SysInv_X.MVCView
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsua.Text;
-                        this.bitacora.Movimiento = "Inactivacion del articulo";
-                        this.bitacora.Detalle = "Se desactivo el articlo correctamente ID: " + inventario.Id;
+                        this.bitacora.Movimiento = "Inactivación del articulo";
+                        this.bitacora.Detalle = "Se desactivo el articulo correctamente ID: " + inventario.Id;
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();
@@ -576,7 +576,7 @@ namespace QNS_SysInv_X.MVCView
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsua.Text;
-                        this.bitacora.Movimiento = "activacion de vendedor";
+                        this.bitacora.Movimiento = "Activación de vendedor";
                         this.bitacora.Detalle = "Se activo el articulo correctamente ID: " + inventario.Id;
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);

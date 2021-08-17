@@ -54,12 +54,12 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtUsuarioLogin.Text == "" || String.IsNullOrEmpty(txtUsuarioLogin.Text))
                 {
-                    MessageBox.Show("Campos de usuario no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Campos de usuario no puede estar vacÍo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 else if (this.txtClaveLogin.Text == "" || String.IsNullOrEmpty(txtUsuarioLogin.Text))
                 {
-                    MessageBox.Show("El campo de contraseña no pudes estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de contraseña no puede estar vacÍo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 else
@@ -94,7 +94,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (validate_numberANDletter.IsMatch(txtUsuarioLogin.Text) != true)
                     {
-                        MessageBox.Show("Solo letras y numeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Solo letras y nÚmeros son permitidos en campo de Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         this.ActiveControl = txtUsuarioLogin;
                         return;
                     }

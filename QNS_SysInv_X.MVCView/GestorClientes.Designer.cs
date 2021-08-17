@@ -253,7 +253,7 @@
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(92, 16);
             this.lblDireccion.TabIndex = 3;
-            this.lblDireccion.Text = "DIRECCION:      ";
+            this.lblDireccion.Text = "DIRECCIÓN:      ";
             this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gpTelefono
@@ -280,7 +280,7 @@
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(87, 16);
             this.lblTelefono.TabIndex = 33;
-            this.lblTelefono.Text = "TELEFONO:      ";
+            this.lblTelefono.Text = "TELÉFONO:      ";
             // 
             // txtTel
             // 
@@ -332,7 +332,7 @@
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(104, 16);
             this.lblTipo.TabIndex = 3;
-            this.lblTipo.Text = "TIPO CEDULA:      ";
+            this.lblTipo.Text = "TIPO CÉDULA:      ";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gpVendedor
@@ -438,7 +438,7 @@
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(74, 16);
             this.lblCedula.TabIndex = 3;
-            this.lblCedula.Text = "CEDULA:      ";
+            this.lblCedula.Text = "CÉDULA:      ";
             this.lblCedula.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCedula

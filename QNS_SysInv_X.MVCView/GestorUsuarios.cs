@@ -127,7 +127,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                     this.bitH.LogMovimientos();
 
                     this.userHelper.Guardar();
-                    MessageBox.Show("Usuario " + this.user.Usuario + " Almacenado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario " + this.user.Usuario + " Almacenado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                 }
                 catch (Exception ex)
@@ -168,7 +168,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 if (this.txtUsuario.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de USUARIO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de USUARIO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblUsuario.BackColor = System.Drawing.Color.DarkRed;
                     lblUsuario.ForeColor = System.Drawing.Color.White;
                     groupBox1.BackColor = System.Drawing.Color.DarkRed;
@@ -178,7 +178,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (validate_numberANDletter.IsMatch(txtUsuario.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de USUARIO solo letras y numeros son permitio", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     lblUsuario.BackColor = System.Drawing.Color.DarkRed;
                     lblUsuario.ForeColor = System.Drawing.Color.White;
@@ -189,7 +189,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.txtClave.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo CONTRASEÑA esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo CONTRASEÑA esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblClave.BackColor = System.Drawing.Color.DarkRed;
                     lblClave.ForeColor = System.Drawing.Color.White;
                     groupBox2.BackColor = System.Drawing.Color.DarkRed;
@@ -199,7 +199,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (validate_Spaces.IsMatch(txtClave.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No se permiten espacios en la CONTRASEÑA", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     lblClave.BackColor = System.Drawing.Color.DarkRed;
                     lblClave.ForeColor = System.Drawing.Color.White;
@@ -210,7 +210,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.txtConfirmar.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de CONFIRMAR esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de CONFIRMAR esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblConfirmar.BackColor = System.Drawing.Color.DarkRed;
                     lblConfirmar.ForeColor = System.Drawing.Color.White;
                     groupBox7.BackColor = System.Drawing.Color.DarkRed;
@@ -220,7 +220,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.cmbRol.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("Debes seleccionar una opción en Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debes seleccionar una opción en Rol", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblRol.BackColor = System.Drawing.Color.DarkRed;
                     lblRol.ForeColor = System.Drawing.Color.White;
                     groupBox3.BackColor = System.Drawing.Color.DarkRed;
@@ -230,7 +230,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.cmbRol.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo ROL esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo ROL esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     cmbRol.BackColor = System.Drawing.Color.DarkRed;
                     cmbRol.ForeColor = System.Drawing.Color.White;
                     groupBox3.BackColor = System.Drawing.Color.DarkRed;
@@ -240,7 +240,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.txtNombre.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NOMBRE esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NOMBRE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblNombre.BackColor = System.Drawing.Color.DarkRed;
                     lblNombre.ForeColor = System.Drawing.Color.White;
                     groupBox4.BackColor = System.Drawing.Color.DarkRed;
@@ -250,7 +250,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (OnlyLettersandSpaces.IsMatch(txtNombre.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo NOMBRE solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo NOMBRE solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNombre.Text.Remove(txtNombre.Text.Length - 1);
                     lblNombre.BackColor = System.Drawing.Color.DarkRed;
                     lblNombre.ForeColor = System.Drawing.Color.White;
@@ -261,7 +261,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.txtApellido.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo APELLIDO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo APELLIDO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblApellido.BackColor = System.Drawing.Color.DarkRed;
                     lblApellido.ForeColor = System.Drawing.Color.White;
                     groupBox5.BackColor = System.Drawing.Color.DarkRed;
@@ -272,7 +272,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (OnlyLettersandSpaces.IsMatch(txtApellido.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo APELLIDO solo permite letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo APELLIDO solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtApellido.Text.Remove(txtApellido.Text.Length - 1);
                     lblApellido.BackColor = System.Drawing.Color.DarkRed;
                     lblApellido.ForeColor = System.Drawing.Color.White;
@@ -283,7 +283,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (this.txtCorreo.Text == "")
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo CORREO esta vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo CORREO esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblCorreo.BackColor = System.Drawing.Color.DarkRed;
                     lblCorreo.ForeColor = System.Drawing.Color.White;
                     groupBox8.BackColor = System.Drawing.Color.DarkRed;
@@ -293,7 +293,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (validate_emailaddress.IsMatch(txtCorreo.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("Formato Correo Invalido", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Formato Correo Inválido", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     lblCorreo.BackColor = System.Drawing.Color.DarkRed;
                     lblCorreo.ForeColor = System.Drawing.Color.White;
                     groupBox8.BackColor = System.Drawing.Color.DarkRed;
@@ -542,7 +542,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                 else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }
@@ -580,7 +580,7 @@ namespace QNS_SysInv_X.MVCView.Resources
             || this.txtApellido.Text != "" || this.txtClave.Text != "" || this.txtConfirmar.Text != ""
             || this.cmbRol.Text != "")
             {
-                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderan lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Desea salir? Si sale se perderán lo datos ingresados", "SALIR", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     e.Cancel = false;
@@ -681,7 +681,7 @@ namespace QNS_SysInv_X.MVCView.Resources
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.toolStripStatusLabel2.Text;
                         this.bitacora.Movimiento = "Inactivacion de Usuario";
-                        this.bitacora.Detalle = "Se Inactivo el usuario correctamente " + user.Usuario;
+                        this.bitacora.Detalle = "Se desactivo el usuario correctamente " + user.Usuario;
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();

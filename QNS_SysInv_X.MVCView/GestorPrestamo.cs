@@ -218,7 +218,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "REPORTE PRESTAMO  | QNS_SysInv_X")
+                if (f.Text == "REPORTE PRÉSTAMO  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -228,20 +228,20 @@ namespace QNS_SysInv_X.MVCView
             {
                  if (dataGridView1.RowCount == 0)
                 {
-                    MessageBox.Show("No hay articulos para prestar", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No hay articulís para prestar", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (this.dataGridView1.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un articulo para el prestamo", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Debes seleccionar al menos un artículo para el prestamo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (this.cmbCliente.Text == "")
                 {
-                    MessageBox.Show("Selecciona un cliente para prestar el articulo", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Selecciona un cliente para prestar el artículo", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.ActiveControl = cmbCliente;
                 }
                 else
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea procesar los articulos prestamo?", "PRESTAMO", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Desea procesar los articulos préstamo?", "PRÉSTAMO", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         Prestamos prestamos = new Prestamos();
@@ -274,13 +274,13 @@ namespace QNS_SysInv_X.MVCView
                         AlmacenarPrestamo();
                         limpiar();
                         listar();
-                        MessageBox.Show("El articulo fue procesado para prestamo correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El articulo fue procesado para préstamo correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         repoPrestamo.ShowDialog();
                     }
 
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se procesaron los articulos", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se procesaron los articulos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

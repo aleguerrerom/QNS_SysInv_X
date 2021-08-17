@@ -32,18 +32,18 @@ namespace QNS_SysInv_X.MVCView
             // VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
             if (this.txtClave.Text == "" || this.txtConfirmar.Text == "")
             {
-                MessageBox.Show("Debes llenar ambos campos para cambiar clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes llenar ambos campos para cambiar clave", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             else if (validate_Spaces.IsMatch(txtClave.Text) != true)
             {
-                MessageBox.Show("No se permiten espacios en la Clave", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios en la Clave", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.ActiveControl = txtClave;
                 return;
             }
             else if (validate_Spaces.IsMatch(txtConfirmar.Text) != true)
             {
-                MessageBox.Show("No se permiten espacios en el espacio Confirmar", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios en el espacio Confirmar", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.ActiveControl = txtConfirmar;
                 return;
             }
@@ -51,7 +51,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.txtClave.Text != this.txtConfirmar.Text)
                 {
-                      MessageBox.Show("Las claves deben ser iguales", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                      MessageBox.Show("Las claves deben ser iguales", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 
                 else {
@@ -63,7 +63,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se actualizo la clave", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se actualizó la clave", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

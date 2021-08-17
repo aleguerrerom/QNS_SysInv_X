@@ -162,13 +162,13 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Oportunidad Insertada";
-                this.bitacora.Detalle = "Se agrego la oportunidad correctamente. ";
+                this.bitacora.Detalle = "Se agregó la oportunidad correctamente. ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
 
                 this.oportunidadesH.Guardar();
-                MessageBox.Show("Oportunidad  Almacenada", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Oportunidad  Almacenada", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -184,7 +184,7 @@ namespace QNS_SysInv_X.MVCView
             if (this.cmbNombre.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("Debes de seleccionar un NOMBRE DE CLIENTE", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes de seleccionar un NOMBRE DE CLIENTE", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblNombreCliente.BackColor = System.Drawing.Color.DarkRed;
                 lblNombreCliente.ForeColor = System.Drawing.Color.White;
                 gbClienteN.BackColor = System.Drawing.Color.DarkRed;
@@ -194,7 +194,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtMarca.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo MARCA no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo MARCA no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblMarca.BackColor = System.Drawing.Color.DarkRed;
                 lblMarca.ForeColor = System.Drawing.Color.White;
                 gbMarca.BackColor = System.Drawing.Color.DarkRed;
@@ -204,7 +204,7 @@ namespace QNS_SysInv_X.MVCView
             else if (OnlyLetterNumberssandSpaces.IsMatch(txtMarca.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo MARCA solo permite numeros y letras", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo MARCA solo permite números y letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblMarca.BackColor = System.Drawing.Color.DarkRed;
                 lblMarca.ForeColor = System.Drawing.Color.White;
                 gbMarca.BackColor = System.Drawing.Color.DarkRed;
@@ -214,7 +214,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtPresupuesto.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo PRESUPUESTO no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo PRESUPUESTO no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblPresupuesto.BackColor = System.Drawing.Color.DarkRed;
                 lblPresupuesto.ForeColor = System.Drawing.Color.White;
                 gbPresupuesto.BackColor = System.Drawing.Color.DarkRed;
@@ -224,7 +224,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_Spaces.IsMatch(txtPresupuesto.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("No se permiten espacios en el campo presupuesto", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se permiten espacios en el campo presupuesto", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblPresupuesto.BackColor = System.Drawing.Color.DarkRed;
                 lblPresupuesto.ForeColor = System.Drawing.Color.White;
                 gbPresupuesto.BackColor = System.Drawing.Color.DarkRed;
@@ -234,7 +234,7 @@ namespace QNS_SysInv_X.MVCView
             else if (validate_number.IsMatch(txtPresupuesto.Text) != true)
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo PRESUPUESTO solo permite numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblPresupuesto.BackColor = System.Drawing.Color.DarkRed;
                 lblPresupuesto.ForeColor = System.Drawing.Color.White;
                 gbPresupuesto.BackColor = System.Drawing.Color.DarkRed;
@@ -244,7 +244,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.txtDetalles.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("El campo DETALLES no puede estar vacio", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El campo DETALLES no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblDetalles.BackColor = System.Drawing.Color.DarkRed;
                 lblDetalles.ForeColor = System.Drawing.Color.White;
                 gbDetalles.BackColor = System.Drawing.Color.DarkRed;
@@ -254,7 +254,7 @@ namespace QNS_SysInv_X.MVCView
             else if (this.cmbVendedor.Text == "")
             {
                 limpiarAlertas();
-                MessageBox.Show("Debes de seleccionar VENDEDOR", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debes de seleccionar VENDEDOR", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblVendedor.BackColor = System.Drawing.Color.DarkRed;
                 lblVendedor.ForeColor = System.Drawing.Color.White;
                 gbVendedor.BackColor = System.Drawing.Color.DarkRed;
@@ -265,7 +265,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.cmbCedVendedor.Enabled == false)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Desea actualziar la oportunidad?", "Actualizar", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Desea actualizar la oportunidad?", "Actualizar", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         actualizar();
@@ -274,7 +274,7 @@ namespace QNS_SysInv_X.MVCView
                     }
                     else if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("No se actualizo la oportunidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se actualizo la oportunidad", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -323,13 +323,13 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.stsUsu.Text;
                 this.bitacora.Movimiento = "Actualizar Oportunidad";
-                this.bitacora.Detalle = "Se actualizo la oportunidad correctamente ";
+                this.bitacora.Detalle = "Se actualizó la oportunidad correctamente ";
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();
 
                 this.oportunidadesH.Actualizar();
-                MessageBox.Show("Datos de oportunidad actualizados", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos de oportunidad actualizados", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -465,14 +465,14 @@ namespace QNS_SysInv_X.MVCView
                 else if (validate_number.IsMatch(txtBuscar.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda solo permite números", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }
                 else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
                 {
                     limpiarAlertas();
-                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }

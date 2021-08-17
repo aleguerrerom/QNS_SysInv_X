@@ -56,17 +56,17 @@ namespace QNS_SysInv_X.MVCView
                 #region VALIDACIONES PARA AGREGAR O ACTUALIZAR
                 if (this.txtRol.Text == "")
                 {
-                    MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar");
+                    MessageBox.Show("Tienes que llenar el campo de nombre de rol para agregar o actualizar", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (validate_Spaces.IsMatch(txtRol.Text) != true)
                 {
-                    MessageBox.Show("No se permiten espacios en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No se permiten espacios en el campo nombre de Rol", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRol.Focus();
                     return;
                 }
                 else if (validate_numberANDletter.IsMatch(txtRol.Text) != true)
                 {
-                    MessageBox.Show("No se permiten caracter especiales en el campo nombre de Rol", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No se permiten caracter especiales en el campo nombre de Rol", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRol.Focus();
                     return;
                 }
@@ -83,7 +83,7 @@ namespace QNS_SysInv_X.MVCView
                         }
                         else if (dialogResult == DialogResult.No)
                         {
-                            MessageBox.Show("No se actualizo el rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se actualizó el rol", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -246,17 +246,17 @@ namespace QNS_SysInv_X.MVCView
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsu.Text;
                         this.bitacora.Movimiento = "Agregar Rol";
-                        this.bitacora.Detalle = "Se agrego el nuevo rol " + this.txtRol.Text;
+                        this.bitacora.Detalle = "Se agregó el nuevo rol " + this.txtRol.Text;
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();
 
                         this.rolH.GuardarRol();
-                        MessageBox.Show("Rol almacenado correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Rol almacenado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();
                     }
                     else
-                        MessageBox.Show("Debe indicar el nombre del rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Debe indicar el nombre del rol", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -377,7 +377,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (this.dgvListar.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Debes seleccionar al menos un rol para el Activar/Desactivar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Debes seleccionar al menos un rol para el Activar/Desactivar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -394,12 +394,12 @@ namespace QNS_SysInv_X.MVCView
                         this.rolH = new RolesHelper(roles);
                         this.rolH.Buscar();
 
-                        MessageBox.Show("Se desactivo el rol", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se desactivo el rol", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsu.Text;
-                        this.bitacora.Movimiento = "Inactivacion de rol";
-                        this.bitacora.Detalle = "Se Inactivo el rol correctamente ";
+                        this.bitacora.Movimiento = "Inactivación de rol";
+                        this.bitacora.Detalle = "Se desactivo el rol correctamente ";
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();
@@ -414,8 +414,8 @@ namespace QNS_SysInv_X.MVCView
 
                         this.bitacora = new Bitacora();
                         this.bitacora.Usuario = this.stsUsu.Text;
-                        this.bitacora.Movimiento = "Inactivacion de rol";
-                        this.bitacora.Detalle = "Se desactivo el rol correctamente ";
+                        this.bitacora.Movimiento = "Activacion de rol";
+                        this.bitacora.Detalle = "Se activo el rol correctamente ";
                         this.bitacora.opc = 5;
                         this.bitH = new BitacoraHelper(bitacora);
                         this.bitH.LogMovimientos();
@@ -453,13 +453,13 @@ namespace QNS_SysInv_X.MVCView
                 }
                 else if (validate_number.IsMatch(txtBuscar.Text) != true)
                 {
-                    MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda solo permite numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }
                 else if (validate_Spaces.IsMatch(txtBuscar.Text) != true)
                 {
-                    MessageBox.Show("El campo de busqueda no permite espacios", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El campo de busqueda no permite espacios", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBuscar.Text = txtBuscar.Text.Remove(txtBuscar.Text.Length - 1);
                     return;
                 }

@@ -185,7 +185,7 @@
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(75, 16);
             this.lblGenero.TabIndex = 3;
-            this.lblGenero.Text = "GENERO:      ";
+            this.lblGenero.Text = "GÉNERO:      ";
             this.lblGenero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCorreo

@@ -47,7 +47,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     if (dtpFecha.Value > dtpFechaFinal.Value)
                     {
-                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     this.movimientosLogTableAdapter.FillByFecha(this.dS_QNS.MovimientosLog, dtpFecha.Value,dtpFechaFinal.Value);

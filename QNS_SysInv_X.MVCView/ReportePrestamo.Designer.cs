@@ -102,7 +102,7 @@
             this.MaximumSize = new System.Drawing.Size(874, 626);
             this.MinimumSize = new System.Drawing.Size(874, 626);
             this.Name = "ReportePrestamo";
-            this.Text = "REPORTE PRESTAMO  | QNS_SysInv_X";
+            this.Text = "REPORTE PRÉSTAMO  | QNS_SysInv_X";
             this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_QNS)).EndInit();

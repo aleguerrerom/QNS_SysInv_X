@@ -35,7 +35,6 @@ namespace QNS_SysInv_X.MVCView
             this.reportViewer2.RefreshReport();
         }
         
-
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             this.Close();

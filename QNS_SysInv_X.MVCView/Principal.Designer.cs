@@ -216,13 +216,13 @@
             this.prestamoToolStripMenuItem});
             this.tsrTramite.Name = "tsrTramite";
             this.tsrTramite.Size = new System.Drawing.Size(71, 22);
-            this.tsrTramite.Text = "Tramites";
+            this.tsrTramite.Text = "Trámites";
             // 
             // entregaToolStripMenuItem
             // 
             this.entregaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.entregaToolStripMenuItem.Name = "entregaToolStripMenuItem";
-            this.entregaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.entregaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.entregaToolStripMenuItem.Text = "Entrega";
             this.entregaToolStripMenuItem.Visible = false;
             this.entregaToolStripMenuItem.Click += new System.EventHandler(this.entregaToolStripMenuItem_Click);
@@ -231,8 +231,8 @@
             // 
             this.prestamoToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.prestamoToolStripMenuItem.Name = "prestamoToolStripMenuItem";
-            this.prestamoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.prestamoToolStripMenuItem.Text = "Prestamo";
+            this.prestamoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prestamoToolStripMenuItem.Text = "Préstamo";
             this.prestamoToolStripMenuItem.Visible = false;
             this.prestamoToolStripMenuItem.Click += new System.EventHandler(this.prestamoToolStripMenuItem_Click);
             // 
@@ -297,7 +297,7 @@
             // 
             this.tsBita.Name = "tsBita";
             this.tsBita.Size = new System.Drawing.Size(53, 22);
-            this.tsBita.Text = "Bitacora";
+            this.tsBita.Text = "Bitácora";
             this.tsBita.Visible = false;
             this.tsBita.Click += new System.EventHandler(this.toolStripLabel1_Click_1);
             // 

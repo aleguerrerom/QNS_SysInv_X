@@ -246,7 +246,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
             this.label5.TabIndex = 2;
-            this.label5.Text = "PRESTAMO:      ";
+            this.label5.Text = "PRÉSTAMO:      ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
@@ -395,7 +395,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 16);
             this.label9.TabIndex = 15;
-            this.label9.Text = "BITACORA:      ";
+            this.label9.Text = "BITÁCORA:      ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chckRoles

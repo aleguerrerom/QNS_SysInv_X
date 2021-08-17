@@ -290,7 +290,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                if (f.Text == "BITÁCORA  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -386,7 +386,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "GESTOR DE PRESTAMOS  | QNS_SysInv_X")
+                if (f.Text == "GESTOR DE PRÉSTAMOS  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -516,7 +516,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                if (f.Text == "BITÁCORA  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -534,7 +534,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                if (f.Text == "BITÁCORA  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -552,7 +552,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "BITACORA  | QNS_SysInv_X")
+                if (f.Text == "BITÁCORA  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -642,7 +642,7 @@ namespace QNS_SysInv_X.MVCView
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Text == "REPORTE PRESTAMO  | QNS_SysInv_X")
+                if (f.Text == "REPORTE PRÉSTAMO  | QNS_SysInv_X")
                 {
                     IsOpen = true;
                     f.BringToFront();
@@ -663,7 +663,7 @@ namespace QNS_SysInv_X.MVCView
                 this.bitacora = new Bitacora();
                 this.bitacora.Usuario = this.statusUsuario.Text;
                 this.bitacora.Movimiento = "Cierre de Sesión existoso";
-                this.bitacora.Detalle = "Se cerro sesion de forma correcta: " + this.statusUsuario.Text;
+                this.bitacora.Detalle = "Se cerró sesión de forma correcta: " + this.statusUsuario.Text;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();

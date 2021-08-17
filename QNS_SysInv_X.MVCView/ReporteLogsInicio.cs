@@ -46,7 +46,7 @@ namespace QNS_SysInv_X.MVCView
             {
                     if (dtpFecha.Value > dtpFechaFinal.Value)
                     {
-                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                         this.auditLogTableAdapter.FillByfechaInicio(this.dS_QNS.AuditLog, dtpFecha.Value, dtpFechaFinal.Value);
@@ -55,7 +55,7 @@ namespace QNS_SysInv_X.MVCView
             {
                 if (dtpFecha.Value > dtpFechaFinal.Value)
                 {
-                    MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                     this.auditLogTableAdapter.FillByfechaSalida(this.dS_QNS.AuditLog, dtpFecha.Value, dtpFechaFinal.Value);

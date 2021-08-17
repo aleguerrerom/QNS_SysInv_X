@@ -72,7 +72,7 @@ namespace QNS_SysInv_X.MVCView
             else
             {
                 listadoLogsMovimientos();
-                LabelDescription.Text = "Detalle de Logs de Movimientos en la Aplicacion";
+                LabelDescription.Text = "Detalle de Logs de Movimientos en la Aplicación";
                 btnChange.Text = "VER LOGS DE LOG IN";
                 dgvListar.Height = 260;
                 dgvListar.Width = 643;
@@ -80,8 +80,7 @@ namespace QNS_SysInv_X.MVCView
                 dgvListar.Top = 215;
             }
         }
-
-
+        
         #region BITACORA DE MOVIMIENTOS
         private void listadoLogsMovimientos()
         {

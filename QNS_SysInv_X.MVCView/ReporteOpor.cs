@@ -45,7 +45,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     if (validate_number.IsMatch(txtFiltro.Text) != true)
                     {
-                        MessageBox.Show("El campo de busqueda solo permite numeros", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("El campo de busqueda solo permite números", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtFiltro.Clear();
                         return;
                     }
@@ -64,7 +64,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     if (dtpFechaInicio.Value > dtpEnd.Value)
                     {
-                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la final", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     this.oportunidadesTableAdapter.FillByFecha(this.dS_QNS.Oportunidades, dtpFechaInicio.Value,dtpEnd.Value);
