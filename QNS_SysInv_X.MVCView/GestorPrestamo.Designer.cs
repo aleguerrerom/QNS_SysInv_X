@@ -131,7 +131,7 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(543, 54);
+            this.btnReport.Location = new System.Drawing.Point(543, 55);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(164, 30);
             this.btnReport.TabIndex = 63;

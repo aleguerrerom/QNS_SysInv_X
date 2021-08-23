@@ -14,7 +14,7 @@ namespace QNS_SysInv_X.MVCController
 
         public static Regex letter_validation()
         {
-            string pattern = @"^[a-zA-Z]+$";
+            string pattern = @"^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
@@ -26,13 +26,13 @@ namespace QNS_SysInv_X.MVCController
 
         public static Regex OnlyLettersandSpaces()
         {
-            string pattern = "^[A-Za-z ]+$";
+            string pattern = "^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
         public static Regex OnlyLetterNumberssandSpaces()
         {
-            string pattern = "^[0-9A-Za-z ]+$";
+            string pattern = "^[0-9A-Za-zñÑáéíóúÁÉÍÓÚ ]+$";
             return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 

@@ -32,6 +32,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex validate_letter = RegexExpression.letter_validation();
         static Regex validate_numberANDletter = RegexExpression.numberANDletter_validation();
+        static Regex OnlyLettersandSpaces = RegexExpression.OnlyLettersandSpaces();
         static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
         static Regex validate_number = RegexExpression.number_validation();
 
@@ -206,7 +207,7 @@ namespace QNS_SysInv_X.MVCView
                     gpEntregado.BackColor = System.Drawing.Color.DarkRed;
                     this.ActiveControl = txtEntregadoPor;
                 }
-                else if (OnlyLetterNumberssandSpaces.IsMatch(txtEntregadoPor.Text) != true)
+                else if (OnlyLettersandSpaces.IsMatch(txtEntregadoPor.Text) != true)
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo ENTREGADO POR solo permite letras y numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

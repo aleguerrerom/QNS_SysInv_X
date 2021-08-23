@@ -165,15 +165,15 @@ namespace QNS_SysInv_X.MVCController
                 parParameter[0].SqlValue = objClientes.opc;
 
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@tipo";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
-                parParameter[1].Size = 50;
-                parParameter[1].SqlValue = objClientes.Tipo;
+                parParameter[1].ParameterName = "@cedula";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = objClientes.Cedula;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@cedula";
-                parParameter[2].SqlDbType = SqlDbType.Int;
-                parParameter[2].SqlValue = objClientes.Cedula;
+                parParameter[2].ParameterName = "@tipo";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 50;
+                parParameter[2].SqlValue = objClientes.Tipo;
 
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@contacto";

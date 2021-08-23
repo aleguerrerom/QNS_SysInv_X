@@ -23,6 +23,7 @@ namespace QNS_SysInv_X.MVCView
         static Regex validate_number = RegexExpression.number_validation();
         static Regex validate_Spaces = RegexExpression.AvoidSpaces_validation();
         static Regex OnlyLetterNumberssandSpaces = RegexExpression.OnlyLetterNumberssandSpaces();
+        static Regex OnlyLettersandSpaces = RegexExpression.OnlyLettersandSpaces();
 
         public GestorVendedores(Usuarios usuario)
         {
@@ -223,7 +224,7 @@ namespace QNS_SysInv_X.MVCView
                     this.ActiveControl = txtApellido;
                     return;
                 }
-                else if (OnlyLetterNumberssandSpaces.IsMatch(txtApellido.Text) != true)
+                else if (OnlyLettersandSpaces.IsMatch(txtApellido.Text) != true)
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo PRIMER APELLIDO solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -274,7 +275,7 @@ namespace QNS_SysInv_X.MVCView
                     return;
                 }
 
-                else if (OnlyLetterNumberssandSpaces.IsMatch(txtNombre.Text) != true)
+                else if (OnlyLettersandSpaces.IsMatch(txtNombre.Text) != true)
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo NOMBRE solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -294,7 +295,7 @@ namespace QNS_SysInv_X.MVCView
                     this.ActiveControl = txtApellido2;
                     return;
                 }
-                else if (OnlyLetterNumberssandSpaces.IsMatch(txtApellido2.Text) != true)
+                else if (OnlyLettersandSpaces.IsMatch(txtApellido2.Text) != true)
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo SEGUNDO APELLIDO solo permite letras", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
