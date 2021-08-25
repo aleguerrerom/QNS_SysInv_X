@@ -193,28 +193,38 @@ namespace QNS_SysInv_X.MVCView
     private void btnAdd_Click_1(object sender, EventArgs e)
         {
             #region VALIDACIONES ESPACIO VACIOS Y SI ES AGREGA O ACTUALIZA
-            
-                if (this.txtCedula.Text == "")
-                {
-                    limpiarAlertas();
-                    MessageBox.Show("El campo CÉDULA no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    lblCedula.BackColor = System.Drawing.Color.DarkRed;
-                    lblCedula.ForeColor = System.Drawing.Color.White;
-                    gbCedula.BackColor = System.Drawing.Color.DarkRed;
-                    this.ActiveControl = txtCedula;
-                    return;
-                }
-                else if (validate_number.IsMatch(txtCedula.Text) != true)
-                {
-                    limpiarAlertas();
-                    MessageBox.Show("El campo CÉDULA solo permite numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    lblCedula.BackColor = System.Drawing.Color.DarkRed;
-                    lblCedula.ForeColor = System.Drawing.Color.White;
-                    gbCedula.BackColor = System.Drawing.Color.DarkRed;
-                    this.ActiveControl = txtCedula;
-                    return;
-                }
-                else if (this.txtApellido.Text == "")
+
+            if (this.txtCedula.Text == "")
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CÉDULA no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gbCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
+                return;
+            }
+            else if (validate_number.IsMatch(txtCedula.Text) != true)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CÉDULA solo permite numeros", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gbCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
+                return;
+            }
+            else if (int.Parse(txtCedula.Text) > 2147483647 || int.Parse(txtCedula.Text) < 99999999)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CÉDULA solo puede tener 9 digitos", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gbCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
+                return;
+            }
+            else if (this.txtApellido.Text == "")
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo PRIMER APELLIDO no puede estar vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

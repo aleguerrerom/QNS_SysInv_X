@@ -161,6 +161,7 @@
             this.txtRol.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRol.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRol.Location = new System.Drawing.Point(134, 13);
+            this.txtRol.MaxLength = 50;
             this.txtRol.Name = "txtRol";
             this.txtRol.Size = new System.Drawing.Size(153, 15);
             this.txtRol.TabIndex = 0;
@@ -530,6 +531,7 @@
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(482, 329);
+            this.txtBuscar.MaxLength = 9;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(154, 22);
             this.txtBuscar.TabIndex = 15;

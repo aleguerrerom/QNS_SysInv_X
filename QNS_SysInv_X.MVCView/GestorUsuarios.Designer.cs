@@ -152,6 +152,7 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Location = new System.Drawing.Point(156, 18);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(178, 15);
             this.txtUsuario.TabIndex = 0;
@@ -188,6 +189,7 @@
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Location = new System.Drawing.Point(159, 18);
             this.txtClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtClave.MaxLength = 50;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(174, 13);
             this.txtClave.TabIndex = 1;
@@ -280,6 +282,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Location = new System.Drawing.Point(156, 18);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
             this.txtNombre.TabIndex = 4;
@@ -319,6 +322,7 @@
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Location = new System.Drawing.Point(155, 18);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
             this.txtApellido.TabIndex = 5;
@@ -393,6 +397,7 @@
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmar.Location = new System.Drawing.Point(159, 18);
             this.txtConfirmar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirmar.MaxLength = 50;
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.Size = new System.Drawing.Size(175, 13);
             this.txtConfirmar.TabIndex = 2;
@@ -446,6 +451,7 @@
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreo.Location = new System.Drawing.Point(157, 18);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
             this.txtCorreo.TabIndex = 7;
@@ -501,6 +507,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(647, 349);
+            this.txtBuscar.MaxLength = 50;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(136, 22);
             this.txtBuscar.TabIndex = 11;

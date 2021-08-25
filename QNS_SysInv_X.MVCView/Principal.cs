@@ -661,9 +661,9 @@ namespace QNS_SysInv_X.MVCView
             if (dialogResult == DialogResult.Yes)
             {
                 this.bitacora = new Bitacora();
-                this.bitacora.Usuario = this.statusUsuario.Text;
+                this.bitacora.Usuario = this.user.Nombre;
                 this.bitacora.Movimiento = "Cierre de Sesión existoso";
-                this.bitacora.Detalle = "Se cerró sesión de forma correcta: " + this.statusUsuario.Text;
+                this.bitacora.Detalle = "Se cerró sesión de forma correcta: " + this.user.Nombre;
                 this.bitacora.opc = 5;
                 this.bitH = new BitacoraHelper(bitacora);
                 this.bitH.LogMovimientos();

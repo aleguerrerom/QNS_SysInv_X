@@ -241,6 +241,16 @@ namespace QNS_SysInv_X.MVCView
                 this.ActiveControl = txtPresupuesto;
                 return;
             }
+            else if (int.Parse(txtPresupuesto.Text) > 999999999 || int.Parse(txtPresupuesto.Text) < 100)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo PRESUPUESTO permite valores de $999999999 a $100", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblPresupuesto.BackColor = System.Drawing.Color.DarkRed;
+                lblPresupuesto.ForeColor = System.Drawing.Color.White;
+                gbPresupuesto.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtPresupuesto;
+                return;
+            }
             else if (this.txtDetalles.Text == "")
             {
                 limpiarAlertas();

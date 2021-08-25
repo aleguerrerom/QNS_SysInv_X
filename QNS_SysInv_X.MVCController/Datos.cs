@@ -17,10 +17,10 @@ namespace QNS_SysInv_X.MVCModel
         #region Constructor de BD
         public Datos()
         {
-              strCadenaConexion = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
+             strCadenaConexion = @"Data Source=192.168.50.15,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
            // strCadenaConexion = @"Data Source=192.168.10.10,51688; initial catalog=DB_CNV; user id=sa; password=1234QWer";
             // modificar el string de coneccion en gestinar cursos en linea 262, para poder buscar esrudiantes y verificar estado...
-            //strCadenaConexion = @"Data Source= DESKTOP-5O1V857\SQLEXPRESS;  Initial Catalog = DB_CNV; Integrated Security=SSPI";
+           // strCadenaConexion = @"Data Source= CNV-SOPORTE\SQLEXPRESS;  Initial Catalog = DB_CNV; Integrated Security=SSPI";
         }
         #endregion
 

@@ -77,6 +77,7 @@
             this.txtUsuarioLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuarioLogin.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioLogin.Location = new System.Drawing.Point(134, 13);
+            this.txtUsuarioLogin.MaxLength = 50;
             this.txtUsuarioLogin.Name = "txtUsuarioLogin";
             this.txtUsuarioLogin.Size = new System.Drawing.Size(169, 15);
             this.txtUsuarioLogin.TabIndex = 0;
@@ -87,6 +88,7 @@
             this.txtClaveLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClaveLogin.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClaveLogin.Location = new System.Drawing.Point(136, 13);
+            this.txtClaveLogin.MaxLength = 50;
             this.txtClaveLogin.Name = "txtClaveLogin";
             this.txtClaveLogin.Size = new System.Drawing.Size(169, 15);
             this.txtClaveLogin.TabIndex = 32;

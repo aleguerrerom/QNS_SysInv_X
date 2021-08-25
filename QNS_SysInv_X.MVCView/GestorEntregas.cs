@@ -332,7 +332,7 @@ namespace QNS_SysInv_X.MVCView
                 gpDescripcion.BackColor = System.Drawing.Color.DarkRed;
                 this.ActiveControl = txtDescripcion;
             }
-           
+
             else if (this.txtCantidad.Text == "" || String.IsNullOrEmpty(txtCantidad.Text))
             {
                 limpiarAlertas();
@@ -355,6 +355,15 @@ namespace QNS_SysInv_X.MVCView
             {
                 limpiarAlertas();
                 MessageBox.Show("El campo de CANTIDAD solo puede tener números", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCantidad.BackColor = System.Drawing.Color.DarkRed;
+                lblCantidad.ForeColor = System.Drawing.Color.White;
+                gpCantidad.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCantidad;
+            }
+            else if (int.Parse(txtCantidad.Text) > 1000 || int.Parse(txtCantidad.Text) < 1)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo de CANTIDAD solo puede tener cantidad entre 1 y 10000", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 lblCantidad.BackColor = System.Drawing.Color.DarkRed;
                 lblCantidad.ForeColor = System.Drawing.Color.White;
                 gpCantidad.BackColor = System.Drawing.Color.DarkRed;

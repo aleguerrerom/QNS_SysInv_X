@@ -154,6 +154,7 @@
             this.txtSerialNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerialNumber.Location = new System.Drawing.Point(163, 18);
             this.txtSerialNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSerialNumber.MaxLength = 50;
             this.txtSerialNumber.Name = "txtSerialNumber";
             this.txtSerialNumber.Size = new System.Drawing.Size(193, 13);
             this.txtSerialNumber.TabIndex = 12;
@@ -333,6 +334,7 @@
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Location = new System.Drawing.Point(192, 18);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtModelo.MaxLength = 50;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(153, 13);
             this.txtModelo.TabIndex = 14;
@@ -425,6 +427,7 @@
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipo.Location = new System.Drawing.Point(162, 18);
             this.txtTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTipo.MaxLength = 50;
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(194, 13);
             this.txtTipo.TabIndex = 11;
@@ -464,6 +467,7 @@
             this.txtNombreActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreActivo.Location = new System.Drawing.Point(163, 18);
             this.txtNombreActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombreActivo.MaxLength = 50;
             this.txtNombreActivo.Name = "txtNombreActivo";
             this.txtNombreActivo.Size = new System.Drawing.Size(190, 13);
             this.txtNombreActivo.TabIndex = 10;
@@ -534,6 +538,7 @@
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Location = new System.Drawing.Point(669, 341);
+            this.txtBuscar.MaxLength = 9;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(109, 20);
             this.txtBuscar.TabIndex = 21;

@@ -193,6 +193,7 @@
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorreo.Location = new System.Drawing.Point(156, 17);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(197, 13);
             this.txtCorreo.TabIndex = 3;
@@ -266,6 +267,7 @@
             this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido2.Location = new System.Drawing.Point(173, 18);
             this.txtApellido2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtApellido2.MaxLength = 50;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(183, 13);
             this.txtApellido2.TabIndex = 5;
@@ -305,6 +307,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Location = new System.Drawing.Point(159, 18);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 13);
             this.txtNombre.TabIndex = 4;
@@ -372,6 +375,7 @@
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Location = new System.Drawing.Point(155, 18);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(197, 13);
             this.txtApellido.TabIndex = 1;
@@ -411,6 +415,7 @@
             this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedula.Location = new System.Drawing.Point(155, 18);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCedula.MaxLength = 9;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(197, 13);
             this.txtCedula.TabIndex = 0;
@@ -431,6 +436,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(649, 341);
+            this.txtBuscar.MaxLength = 9;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(99, 20);
             this.txtBuscar.TabIndex = 10;

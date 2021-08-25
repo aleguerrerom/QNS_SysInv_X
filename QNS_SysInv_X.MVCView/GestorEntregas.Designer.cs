@@ -286,6 +286,7 @@
             this.txtNumParte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumParte.Location = new System.Drawing.Point(159, 18);
             this.txtNumParte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumParte.MaxLength = 50;
             this.txtNumParte.Name = "txtNumParte";
             this.txtNumParte.Size = new System.Drawing.Size(196, 13);
             this.txtNumParte.TabIndex = 21;
@@ -310,6 +311,7 @@
             this.txtSN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSN.Location = new System.Drawing.Point(160, 17);
             this.txtSN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSN.MaxLength = 50;
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(187, 13);
             this.txtSN.TabIndex = 8;
@@ -442,6 +444,7 @@
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCantidad.Location = new System.Drawing.Point(174, 17);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCantidad.MaxLength = 4;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(183, 13);
             this.txtCantidad.TabIndex = 9;
@@ -480,6 +483,7 @@
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Location = new System.Drawing.Point(160, 17);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(188, 13);
             this.txtDescripcion.TabIndex = 10;
@@ -518,6 +522,7 @@
             this.txtEntregadoPor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEntregadoPor.Location = new System.Drawing.Point(168, 18);
             this.txtEntregadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEntregadoPor.MaxLength = 50;
             this.txtEntregadoPor.Name = "txtEntregadoPor";
             this.txtEntregadoPor.Size = new System.Drawing.Size(181, 13);
             this.txtEntregadoPor.TabIndex = 4;
@@ -630,6 +635,7 @@
             this.txtNumFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumFactura.Location = new System.Drawing.Point(166, 18);
             this.txtNumFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumFactura.MaxLength = 50;
             this.txtNumFactura.Name = "txtNumFactura";
             this.txtNumFactura.Size = new System.Drawing.Size(184, 13);
             this.txtNumFactura.TabIndex = 6;

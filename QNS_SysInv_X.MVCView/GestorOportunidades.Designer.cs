@@ -120,6 +120,7 @@
             this.txtPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPresupuesto.Location = new System.Drawing.Point(166, 18);
             this.txtPresupuesto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPresupuesto.MaxLength = 9;
             this.txtPresupuesto.Name = "txtPresupuesto";
             this.txtPresupuesto.Size = new System.Drawing.Size(180, 13);
             this.txtPresupuesto.TabIndex = 2;
@@ -170,7 +171,7 @@
             // 
             this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(159, 13);
+            this.cmbVendedor.Location = new System.Drawing.Point(158, 14);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(177, 21);
@@ -249,6 +250,7 @@
             this.txtDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDetalles.Location = new System.Drawing.Point(159, 18);
             this.txtDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDetalles.MaxLength = 9;
             this.txtDetalles.Name = "txtDetalles";
             this.txtDetalles.Size = new System.Drawing.Size(177, 13);
             this.txtDetalles.TabIndex = 4;
@@ -316,6 +318,7 @@
             this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMarca.Location = new System.Drawing.Point(165, 18);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMarca.MaxLength = 50;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(180, 13);
             this.txtMarca.TabIndex = 1;

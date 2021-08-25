@@ -225,7 +225,17 @@ namespace QNS_SysInv_X.MVCView
                     this.ActiveControl = txtCedula;
                     return;
                 }
-                else if (this.txtNomb.Text == "")
+            else if (int.Parse(txtCedula.Text) > 999999999 || int.Parse(txtCedula.Text) < 99999999)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo CÉDULA solo permite 9 digitos", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblCedula.BackColor = System.Drawing.Color.DarkRed;
+                lblCedula.ForeColor = System.Drawing.Color.White;
+                gpCedula.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtCedula;
+                return;
+            }
+            else if (this.txtNomb.Text == "")
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo de NOMBRE esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -315,7 +325,17 @@ namespace QNS_SysInv_X.MVCView
                     this.ActiveControl = txtTel;
                     return;
                 }
-                else if (this.rtbDireccion.Text == "")
+            else if (int.Parse(txtTel.Text) > 99999999 || int.Parse(txtTel.Text) < 9999999)
+            {
+                limpiarAlertas();
+                MessageBox.Show("El campo TELÉFONO debe tener 8 digitos", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTelefono.BackColor = System.Drawing.Color.DarkRed;
+                lblTelefono.ForeColor = System.Drawing.Color.White;
+                gpTelefono.BackColor = System.Drawing.Color.DarkRed;
+                this.ActiveControl = txtTel;
+                return;
+            }
+            else if (this.rtbDireccion.Text == "")
                 {
                     limpiarAlertas();
                     MessageBox.Show("El campo de DIRECCIÓN esta vacío", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -389,7 +409,7 @@ namespace QNS_SysInv_X.MVCView
                 {
                     this.clientes.Activo = true;
                 }
-                else this.clientes.Activo = false;
+                else { this.clientes.Activo = false; }
                 this.clientes.opc = 4;
                 this.clientesH = new ClientesHelper(clientes);
                 this.bitacora = new Bitacora();
