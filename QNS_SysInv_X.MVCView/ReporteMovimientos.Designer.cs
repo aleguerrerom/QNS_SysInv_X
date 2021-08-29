@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox pictureBox2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMovimientos));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.MovimientosLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_QNS = new CNV_Inventario.MVCView.DS_QNS();
             this.label1 = new System.Windows.Forms.Label();
@@ -136,18 +136,18 @@
             this.cmbFiltro.Items.AddRange(new object[] {
             "Usuario",
             "Fecha de Modificación"});
-            this.cmbFiltro.Location = new System.Drawing.Point(414, 52);
+            this.cmbFiltro.Location = new System.Drawing.Point(407, 52);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
+            this.cmbFiltro.Size = new System.Drawing.Size(114, 24);
             this.cmbFiltro.TabIndex = 0;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "DSMovimientos";
-            reportDataSource1.Value = this.MovimientosLogBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSMovimientos";
+            reportDataSource2.Value = this.MovimientosLogBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CNV_Inventario.MVCView.ReportMovimientos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 152);
             this.reportViewer1.Name = "reportViewer1";
@@ -175,10 +175,11 @@
             // dtpFecha
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(415, 97);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(142, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(168, 22);
             this.dtpFecha.TabIndex = 1;
             // 
             // inventarioBindingSource
@@ -219,10 +220,11 @@
             // dtpFechaFinal
             // 
             this.dtpFechaFinal.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaFinal.Location = new System.Drawing.Point(690, 97);
+            this.dtpFechaFinal.Location = new System.Drawing.Point(685, 97);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(165, 22);
+            this.dtpFechaFinal.Size = new System.Drawing.Size(179, 22);
             this.dtpFechaFinal.TabIndex = 73;
             // 
             // lblFechaFinal

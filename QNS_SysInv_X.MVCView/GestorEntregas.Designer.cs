@@ -284,11 +284,11 @@
             // txtNumParte
             // 
             this.txtNumParte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumParte.Location = new System.Drawing.Point(159, 18);
+            this.txtNumParte.Location = new System.Drawing.Point(174, 18);
             this.txtNumParte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumParte.MaxLength = 50;
             this.txtNumParte.Name = "txtNumParte";
-            this.txtNumParte.Size = new System.Drawing.Size(196, 13);
+            this.txtNumParte.Size = new System.Drawing.Size(181, 13);
             this.txtNumParte.TabIndex = 21;
             this.txtNumParte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumParte_KeyPress);
             // 

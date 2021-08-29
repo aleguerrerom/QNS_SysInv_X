@@ -250,7 +250,7 @@
             this.txtDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDetalles.Location = new System.Drawing.Point(159, 18);
             this.txtDetalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDetalles.MaxLength = 9;
+            this.txtDetalles.MaxLength = 100;
             this.txtDetalles.Name = "txtDetalles";
             this.txtDetalles.Size = new System.Drawing.Size(177, 13);
             this.txtDetalles.TabIndex = 4;

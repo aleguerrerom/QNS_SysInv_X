@@ -18,15 +18,16 @@ namespace QNS_SysInv_X.MVCView
         {
             InitializeComponent();
             this.user = usuario;
-            this.stsUsu.Text = this.user.Usuario;
+            this.STS.Text = this.user.Usuario;
         }
 
         private void ReporteInventario_Load(object sender, EventArgs e)
         {
+            label2.Text = this.STS.Text;
             // TODO: This line of code loads data into the 'dS_QNS.Usuarios' table. You can move, or remove it, as needed.
             this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);
             ReportParameterCollection reportParameters = new ReportParameterCollection();
-            reportParameters.Add(new ReportParameter("Parameter1", stsUsu.Text));
+            reportParameters.Add(new ReportParameter("Parameter1", label2.Text));
             this.reportViewer1.LocalReport.SetParameters(reportParameters);
             this.reportViewer1.LocalReport.Refresh();
             this.UsuariosTableAdapter.Fill(this.DS_QNS.Usuarios);

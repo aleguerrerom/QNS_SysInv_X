@@ -32,7 +32,7 @@ namespace QNS_SysInv_X.MVCView
             dtpFecha.Value = DateTime.Today;
             dtpFechaFinal.Value = DateTime.Today;
             txtFiltro.Visible = false;
-            cmbFiltro.SelectedIndex = -1;
+            cmbFiltro.SelectedIndex = 1;
         }
 
         private void button1_Click(object sender, EventArgs e)

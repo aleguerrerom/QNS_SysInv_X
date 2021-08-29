@@ -43,9 +43,10 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.stsUsu = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.UsuariosTableAdapter = new QNS_SysInv_X.MVCView.DS_QNSTableAdapters.UsuariosTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.STS = new System.Windows.Forms.ToolStripStatusLabel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosBindingSource)).BeginInit();
@@ -171,17 +172,11 @@
             this.reportViewer1.Size = new System.Drawing.Size(838, 332);
             this.reportViewer1.TabIndex = 60;
             // 
-            // stsUsu
-            // 
-            this.stsUsu.Name = "stsUsu";
-            this.stsUsu.Size = new System.Drawing.Size(118, 17);
-            this.stsUsu.Text = "toolStripStatusLabel1";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stsUsu});
+            this.STS});
             this.statusStrip1.Location = new System.Drawing.Point(0, 491);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(862, 22);
@@ -192,12 +187,28 @@
             // 
             this.UsuariosTableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(483, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 16);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "label2";
+            // 
+            // STS
+            // 
+            this.STS.Name = "STS";
+            this.STS.Size = new System.Drawing.Size(118, 17);
+            this.STS.Text = "toolStripStatusLabel1";
+            // 
             // ReporteUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(862, 513);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.toolStrip1);
@@ -238,10 +249,11 @@
         private System.Windows.Forms.ComboBox cmbFiltro;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private QNS_SysInv_X.MVCView.DS_QNS dS_QNS1;
-        private System.Windows.Forms.ToolStripStatusLabel stsUsu;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.BindingSource UsuariosBindingSource;
         private DS_QNS DS_QNS;
         private DS_QNSTableAdapters.UsuariosTableAdapter UsuariosTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripStatusLabel STS;
     }
 }

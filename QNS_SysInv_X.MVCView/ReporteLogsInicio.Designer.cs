@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 51);
+            this.label1.Location = new System.Drawing.Point(291, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 56;
@@ -119,9 +119,9 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(524, 47);
+            this.txtFiltro.Location = new System.Drawing.Point(534, 47);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(138, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(128, 22);
             this.txtFiltro.TabIndex = 2;
             // 
             // cmbFiltro
@@ -132,9 +132,9 @@
             "Usuario",
             "Fecha de Inicio",
             "Fecha de Salida"});
-            this.cmbFiltro.Location = new System.Drawing.Point(411, 45);
+            this.cmbFiltro.Location = new System.Drawing.Point(382, 43);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(100, 24);
+            this.cmbFiltro.Size = new System.Drawing.Size(136, 24);
             this.cmbFiltro.TabIndex = 0;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
@@ -171,10 +171,11 @@
             // dtpFecha
             // 
             this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(411, 85);
+            this.dtpFecha.Location = new System.Drawing.Point(382, 83);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(138, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(148, 22);
             this.dtpFecha.TabIndex = 1;
             // 
             // auditLogTableAdapter
@@ -201,7 +202,7 @@
             // lblFechaFinal
             // 
             this.lblFechaFinal.AutoSize = true;
-            this.lblFechaFinal.Location = new System.Drawing.Point(603, 86);
+            this.lblFechaFinal.Location = new System.Drawing.Point(594, 87);
             this.lblFechaFinal.Name = "lblFechaFinal";
             this.lblFechaFinal.Size = new System.Drawing.Size(83, 16);
             this.lblFechaFinal.TabIndex = 69;
@@ -210,7 +211,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(320, 90);
+            this.lblFechaInicio.Location = new System.Drawing.Point(291, 88);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(87, 16);
             this.lblFechaInicio.TabIndex = 68;
@@ -219,6 +220,7 @@
             // dtpFechaFinal
             // 
             this.dtpFechaFinal.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaFinal.Location = new System.Drawing.Point(683, 82);
             this.dtpFechaFinal.Name = "dtpFechaFinal";

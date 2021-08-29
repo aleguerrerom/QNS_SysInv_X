@@ -109,6 +109,7 @@
             // 
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmar.Location = new System.Drawing.Point(136, 14);
+            this.txtConfirmar.MaxLength = 50;
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.Size = new System.Drawing.Size(169, 13);
             this.txtConfirmar.TabIndex = 2;
@@ -145,6 +146,7 @@
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.Location = new System.Drawing.Point(136, 14);
+            this.txtClave.MaxLength = 50;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(167, 13);
             this.txtClave.TabIndex = 0;

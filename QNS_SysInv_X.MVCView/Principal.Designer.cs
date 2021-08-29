@@ -82,7 +82,7 @@
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
             pictureBox2.ErrorImage = null;
             pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            pictureBox2.Location = new System.Drawing.Point(524, 175);
+            pictureBox2.Location = new System.Drawing.Point(524, 174);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(175, 201);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,8 +99,8 @@
             this.aboutUsToolStripMenuItem,
             this.tsrTramite,
             this.tstripReportes,
-            this.tsBita,
             this.tsAboutUs,
+            this.tsBita,
             this.tsAyuda});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -222,7 +222,7 @@
             // 
             this.entregaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.entregaToolStripMenuItem.Name = "entregaToolStripMenuItem";
-            this.entregaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entregaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entregaToolStripMenuItem.Text = "Entrega";
             this.entregaToolStripMenuItem.Visible = false;
             this.entregaToolStripMenuItem.Click += new System.EventHandler(this.entregaToolStripMenuItem_Click);
@@ -231,7 +231,7 @@
             // 
             this.prestamoToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.prestamoToolStripMenuItem.Name = "prestamoToolStripMenuItem";
-            this.prestamoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prestamoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.prestamoToolStripMenuItem.Text = "Préstamo";
             this.prestamoToolStripMenuItem.Visible = false;
             this.prestamoToolStripMenuItem.Click += new System.EventHandler(this.prestamoToolStripMenuItem_Click);
@@ -304,8 +304,8 @@
             // tsAboutUs
             // 
             this.tsAboutUs.Name = "tsAboutUs";
-            this.tsAboutUs.Size = new System.Drawing.Size(61, 22);
-            this.tsAboutUs.Text = "AcercaDe";
+            this.tsAboutUs.Size = new System.Drawing.Size(62, 22);
+            this.tsAboutUs.Text = "Acerca de";
             this.tsAboutUs.Click += new System.EventHandler(this.tsAboutUs_Click);
             // 
             // tsAyuda

@@ -78,6 +78,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.activarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -324,7 +325,7 @@
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(197, 13);
+            this.txtApellido.Size = new System.Drawing.Size(197, 15);
             this.txtApellido.TabIndex = 5;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
@@ -334,7 +335,7 @@
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.lblApellido);
             this.groupBox5.Controls.Add(this.txtApellido);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(398, 87);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
@@ -348,9 +349,9 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Image = ((System.Drawing.Image)(resources.GetObject("lblApellido.Image")));
             this.lblApellido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApellido.Location = new System.Drawing.Point(8, 18);
+            this.lblApellido.Location = new System.Drawing.Point(10, 18);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(91, 13);
+            this.lblApellido.Size = new System.Drawing.Size(81, 16);
             this.lblApellido.TabIndex = 33;
             this.lblApellido.Text = "APELLIDO:     ";
             // 
@@ -385,7 +386,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Location = new System.Drawing.Point(11, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 3;
@@ -534,6 +535,7 @@
             this.btnReport.Text = "REPORTES";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Visible = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnCancel
@@ -619,12 +621,22 @@
             this.activarToolStripMenuItem.Text = "Activar";
             this.activarToolStripMenuItem.Click += new System.EventHandler(this.activarToolStripMenuItem_Click_1);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(521, 261);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "label3";
+            // 
             // GestorUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(795, 640);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
@@ -736,5 +748,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem activarToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
     }
 }

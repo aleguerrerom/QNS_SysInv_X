@@ -464,7 +464,6 @@ namespace QNS_SysInv_X.MVCView
             {
                 ReporteVendedor repoVendedores = new ReporteVendedor(user);
                 repoVendedores.Show();
-                this.Close();
             }
         }
 
